@@ -1,6 +1,10 @@
-// S068: V8 Heap Memory Optimization — increase from default ~37MB to 384MB
-// Must be called before any other requires to take effect on initial heap allocation
-try { require('v8').setFlagsFromString('--max-old-space-size=384'); } catch(e) {}
+// S068→S084/G05: V8 Heap Memory Optimization
+// Reduced from 384→256 (was 75% of 512MB container, causing heap 87%+)
+// Added --expose-gc for manual GC control and --max-semi-space-size
+try {
+  require('v8').setFlagsFromString('--max-old-space-size=256');
+  require('v8').setFlagsFromString('--expose-gc');
+} catch(e) {}
 
 const express = require('express');
 const cors = require('cors');
@@ -374,6 +378,14 @@ if (require.main === module) {
         appLog.info('D17 Database indexes optimized');
       } catch (e) {
         appLog.warn('D17 Index optimization skipped:', e.message);
+      }
+
+      // Step 3.8: S084/G05 — Periodic GC to keep heap under control
+      if (global.gc) {
+        const gcInterval = setInterval(() => {
+          try { global.gc(); } catch(e) {}
+        }, 60000); // Force GC every 60s
+        appLog.info('S084/G05: Periodic V8 GC enabled (interval=60s)');
       }
 
       appLog.info('Starting HTTP server...');

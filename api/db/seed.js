@@ -204,7 +204,7 @@ async function seed(options = {}) {
     // ============================================
     log('[Seed] Creating users...');
     for (const userData of SEED_USERS) {
-      const hashedPassword = await bcrypt.hash(userData.password, 12);
+      const hashedPassword = await bcrypt.hash(userData.password, 10); // S084/G05: reduced from 12→10 (DEFECT-001)
       // Extract password before spreading (model uses passwordHash, not password)
       const { password: rawPassword, ...safeData } = userData;
       const [user] = await db.User.findOrCreate({

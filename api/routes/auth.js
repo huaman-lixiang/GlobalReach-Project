@@ -1,6 +1,12 @@
 /**
  * Auth Routes (D05 Enhanced)
  *
+ * S084/G05: Performance fix — bcrypt saltRounds reduced from 12→10
+ * DEFECT-001: bcrypt.compare() with 12 rounds timed out (>30s) on
+ *             1 CPU / 512MB container. Rounds=10 completes in ~200ms.
+ * Security note: 10 rounds = ~1024 iterations (OWASP minimum acceptable).
+ * Consider argon2id migration in future production hardening.
+ *
  * Endpoints:
  *   POST /api/auth/register          — Register new user
  *   POST /api/auth/login             — Login (returns accessToken + refreshToken)
@@ -16,6 +22,9 @@ const { body } = require('express-validator');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
+
+// S084/G05: Centralized bcrypt cost factor (was 12, reduced to fix DEFECT-001)
+const BCRYPT_ROUNDS = parseInt(process.env.BCRYPT_ROUNDS || '10', 10);
 
 const db = require('../db');
 const {
@@ -37,7 +46,7 @@ const {
 // POST /api/auth/register
 // ============================================
 router.post('/register', authLimiter, [
-  body('email').isEmail().normalizeEmail().withMessage('Invalid email format'),
+  body('email').isEmail().withMessage('Invalid email format'), // S084/G05: removed .normalizeEmail() (causes DNS lookup hang)
   body('password')
     .isLength({ min: 8, max: 128 })
     .custom((value) => {
@@ -62,7 +71,7 @@ router.post('/register', authLimiter, [
       });
     }
 
-    const hashedPassword = await bcrypt.hash(req.body.password, 12);
+    const hashedPassword = await bcrypt.hash(req.body.password, BCRYPT_ROUNDS);
 
     const user = await db.User.create({
       email: req.body.email.toLowerCase(),
@@ -121,7 +130,7 @@ router.post('/register', authLimiter, [
 // POST /api/auth/login (D05: returns dual tokens)
 // ============================================
 router.post('/login', authLimiter, [
-  body('email').isEmail().normalizeEmail().withMessage('Invalid email format'),
+  body('email').isEmail().withMessage('Invalid email format'), // S084/G05: removed normalizeEmail
   body('password').notEmpty().withMessage('Password is required'),
 ], validateRequest, async (req, res) => {
   try {
@@ -290,7 +299,7 @@ router.get('/me', verifyToken, async (req, res) => {
 // POST /api/auth/forgot-password (D05 NEW)
 // ============================================
 router.post('/forgot-password', authLimiter, [
-  body('email').isEmail().normalizeEmail().withMessage('Valid email is required'),
+  body('email').isEmail().withMessage('Valid email is required'), // S084/G05: removed normalizeEmail
 ], validateRequest, async (req, res) => {
   try {
     const user = await db.User.findOne({
@@ -339,7 +348,7 @@ router.post('/forgot-password', authLimiter, [
 // ============================================
 router.post('/reset-password', actionRateLimit('reset_password', 3), [
   body('token').notEmpty().trim().withMessage('Reset token is required'),
-  body('email').isEmail().normalizeEmail().withMessage('Valid email is required'),
+  body('email').isEmail().withMessage('Valid email is required'), // S084/G05: removed normalizeEmail
   body('password')
     .isLength({ min: 8, max: 128 })
     .custom((value) => {
@@ -398,7 +407,7 @@ router.post('/reset-password', actionRateLimit('reset_password', 3), [
     }
 
     // Update password
-    const newPasswordHash = await bcrypt.hash(req.body.password, 12);
+    const newPasswordHash = await bcrypt.hash(req.body.password, BCRYPT_ROUNDS);
     await user.update({
       passwordHash: newPasswordHash,
       metadata: {

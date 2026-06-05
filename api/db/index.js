@@ -2,14 +2,17 @@ const { Sequelize, DataTypes } = require('sequelize');
 const path = require('path');
 
 // Initialize PostgreSQL connection (production)
+// S084/G05: DB Pool optimized for 512MB container (was max:20/min:5 = ~150MB)
+// Reduced to max:10/min:2 = ~50MB, saving ~100MB for application logic
 const sequelize = new Sequelize(process.env.DATABASE_URL || 'postgresql://globalreach_user:changeme@localhost:5432/globalreach_prod', {
   dialect: 'postgres',
   logging: process.env.NODE_ENV === 'development' ? console.log : false,
   pool: {
-    max: parseInt(process.env.DB_POOL_MAX || '20'),
-    min: parseInt(process.env.DB_POOL_MIN || '5'),
+    max: parseInt(process.env.DB_POOL_MAX || '10'),
+    min: parseInt(process.env.DB_POOL_MIN || '2'),
     acquire: parseInt(process.env.DB_ACQUIRE_TIMEOUT || '30000'),
     idle: parseInt(process.env.DB_IDLE_TIMEOUT || '10000'),
+    evict: parseInt(process.env.DB_EVICT_TIMEOUT || '5000'),
   },
 });
 

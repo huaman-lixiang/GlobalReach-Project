@@ -219,27 +219,28 @@ const revokeAllUserTokens = async (userId) => {
 // ============================================
 // Validation Helper
 // ============================================
-
-const validateRequest = (validations) => {
-  return async (req, res, next) => {
-    await Promise.all(validations.map(validation => validation.run(req)));
-
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({
-        success: false,
-        error: 'VALIDATION_ERROR',
-        message: 'Request validation failed',
-        details: errors.array().map(err => ({
-          field: err.path,
-          value: err.value,
-          message: err.msg,
-        })),
-      });
-    }
-
-    next();
-  };
+// S084/G05 DEFECT-001 FIX:
+// Root cause: validateRequest was a factory function (validations) => middleware,
+// but was used as direct middleware in 45+ routes. Express called it as
+// validateRequest(req,res,next), making 'validations' = req object, then
+// req.map(v => v.run(req)) hung indefinitely on req's property iteration.
+// Fix: Changed to direct middleware - validators already ran as route middleware
+// array, we only need to check validationResult(req).
+const validateRequest = (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({
+      success: false,
+      error: 'VALIDATION_ERROR',
+      message: 'Request validation failed',
+      details: errors.array().map(err => ({
+        field: err.path,
+        value: err.value,
+        message: err.msg,
+      })),
+    });
+  }
+  next();
 };
 
 // ============================================

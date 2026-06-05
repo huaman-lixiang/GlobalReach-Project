@@ -9,7 +9,7 @@ async function main() {
   // ============================================
   // 1. Create Admin User
   // ============================================
-  const hashedPassword = await bcrypt.hash('Admin123456', 12);
+  const hashedPassword = await bcrypt.hash('Admin123456', 10); // S084/G05: 12→10 (DEFECT-001)
 
   const admin = await prisma.user.upsert({
     where: { email: 'admin@globalreach.com' },
@@ -32,7 +32,7 @@ async function main() {
     update: {},
     create: {
       email: 'demo@globalreach.com',
-      passwordHash: await bcrypt.hash('Demo123456', 12),
+      passwordHash: await bcrypt.hash('Demo123456', 10), // S084/G05: 12→10 (DEFECT-001)
       name: 'Demo User',
       role: 'USER',
       isEmailVerified: true,
