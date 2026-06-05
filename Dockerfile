@@ -1,3 +1,7 @@
+# GlobalReach V2.0 — Production Dockerfile
+# S082/G04: Node 20 → 22 upgrade: change both `node:20-alpine` to `node:22-alpine`
+# See ci-cd.yml header for full upgrade checklist
+
 FROM node:20-alpine AS builder
 
 WORKDIR /app

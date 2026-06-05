@@ -1,6 +1,18 @@
 # GlobalReach V2.0 — CI/CD Pipeline
 # S071: Production-ready pipeline with real deployment
-# Trigger: push to main / PR to main
+# S082/G04: Security hardening — Node.js upgrade path documented
+#
+# ⚠️ NODE.js UPGRADE PATH (S082 G04):
+#   Current: Node.js 20.x (LTS, deprecates 2026-06-16)
+#   Target:  Node.js 22.x LTS → eventually 24.x
+#   Action items:
+#     1. Change NODE_VERSION below from '20.x' to '22.x'
+#     2. Update Dockerfile base image: node:20-alpine → node:22-alpine
+#     3. Update docker-compose.prod.yml API resource limits if needed
+#     4. Run full test suite after upgrade
+#   Note: GitHub Actions will auto-enforce Node24 for JS actions in future.
+#         Set FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: false to opt out if needed.
+#         Ref: https://github.blog/changelog/2025-02-06-node-js-21-will-be-the-default-for-javascript-actions/
 
 name: GlobalReach CI/CD Pipeline
 
@@ -22,6 +34,7 @@ on:
         type: boolean
 
 env:
+  # TODO(S085): Upgrade to '22.x' before Node.js 20 EOL (2026-06-16)
   NODE_VERSION: '20.x'
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}/api
