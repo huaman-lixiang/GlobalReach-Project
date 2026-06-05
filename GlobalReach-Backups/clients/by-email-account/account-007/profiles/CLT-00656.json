@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00656",
+  "emailAccount": "account-007",
+  "basicInfo": {
+    "name": "Karen Sanchez",
+    "email": "karen.sanchez@company.com",
+    "company": "Bright Jackson Imports",
+    "website": "www.brightjacksonimports.com",
+    "country": "NZ",
+    "countryName": "New Zealand",
+    "timezone": "Pacific/Auckland",
+    "language": "en",
+    "phone": "+2768760836530",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2025-10-30",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 3,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-07-25T14:32:51.899Z",
+    "updatedAt": "2026-05-09T14:32:51.899Z",
+    "version": 1,
+    "dataHash": "0aaa988f1f02e0c5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

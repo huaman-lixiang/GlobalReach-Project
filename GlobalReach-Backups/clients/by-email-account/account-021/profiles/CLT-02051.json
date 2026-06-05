@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02051",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Amanda Brown",
+    "email": "amanda.brown@gmail.com",
+    "company": "Global Nelson ToyBox",
+    "website": "www.globalnelsontoybox.com",
+    "country": "SG",
+    "countryName": "Singapore",
+    "timezone": "Asia/Singapore",
+    "language": "en",
+    "phone": "+2717208798777",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2025-07-28",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 29,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 1,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-08-03T14:32:52.337Z",
+    "updatedAt": "2026-05-09T14:32:52.337Z",
+    "version": 1,
+    "dataHash": "e672dfd15da930d5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00826",
+  "emailAccount": "account-009",
+  "basicInfo": {
+    "name": "Samantha Thomas",
+    "email": "samantha.thomas@gmail.com",
+    "company": "Super Allen Distribution",
+    "website": "www.superallendistribution.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+2674370577400",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2025-01-28",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 20,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-15T14:32:51.951Z",
+    "updatedAt": "2026-05-09T14:32:51.951Z",
+    "version": 1,
+    "dataHash": "68340d077e7c5f86",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

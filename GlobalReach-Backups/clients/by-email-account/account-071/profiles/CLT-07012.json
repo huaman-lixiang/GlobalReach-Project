@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07012",
+  "emailAccount": "account-071",
+  "basicInfo": {
+    "name": "Janet Walker",
+    "email": "janet.walker@company.com",
+    "company": "Mega Lopez DreamPlay",
+    "website": "www.megalopezdreamplay.com",
+    "country": "SA",
+    "countryName": "Saudi Arabia",
+    "timezone": "Asia/Riyadh",
+    "language": "ar",
+    "phone": "+2650654524215",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2024-05-17",
+    "status": "sleeping",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 2,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-03-07T14:32:53.824Z",
+    "updatedAt": "2026-05-09T14:32:53.824Z",
+    "version": 1,
+    "dataHash": "367c202b2af9a4a6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

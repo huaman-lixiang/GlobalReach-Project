@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05859",
+  "emailAccount": "account-059",
+  "basicInfo": {
+    "name": "Larry Martinez",
+    "email": "larry.martinez@outlook.com",
+    "company": "Star Moore Corp.",
+    "website": "www.starmoorecorp.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+4207184279353",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-12-25",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 7,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 22,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-09-24T14:32:53.488Z",
+    "updatedAt": "2026-05-09T14:32:53.488Z",
+    "version": 1,
+    "dataHash": "7526bc6c251b417f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

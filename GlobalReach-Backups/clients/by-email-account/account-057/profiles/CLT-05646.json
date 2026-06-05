@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05646",
+  "emailAccount": "account-057",
+  "basicInfo": {
+    "name": "Frank Adams",
+    "email": "frank.adams@web.de",
+    "company": "Prime Clark Imports",
+    "website": "www.primeclarkimports.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+5616833434606",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2025-10-16",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 67,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 15,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-07-14T14:32:53.427Z",
+    "updatedAt": "2026-05-09T14:32:53.427Z",
+    "version": 1,
+    "dataHash": "70d1d0d4623421fc",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

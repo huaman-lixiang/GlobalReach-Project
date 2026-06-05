@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01345",
+  "emailAccount": "account-014",
+  "basicInfo": {
+    "name": "Carol Jones",
+    "email": "carol.jones@company.com",
+    "company": "Happy Taylor Inc.",
+    "website": "www.happytaylorinc.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+7280801462311",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "educational",
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2024,
+    "lastContactDate": "2025-12-14",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 25,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-11-14T14:32:52.119Z",
+    "updatedAt": "2026-05-09T14:32:52.119Z",
+    "version": 1,
+    "dataHash": "39a1e8889e0354a0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

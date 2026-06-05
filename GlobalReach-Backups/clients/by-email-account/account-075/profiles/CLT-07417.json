@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07417",
+  "emailAccount": "account-075",
+  "basicInfo": {
+    "name": "Nancy Lewis",
+    "email": "nancy.lewis@outlook.com",
+    "company": "Royal Johnson Corp.",
+    "website": "www.royaljohnsoncorp.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+7340535634774",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-08-31",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 26,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-05-31T14:32:53.943Z",
+    "updatedAt": "2026-05-09T14:32:53.943Z",
+    "version": 1,
+    "dataHash": "e0a9125d05f83e53",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

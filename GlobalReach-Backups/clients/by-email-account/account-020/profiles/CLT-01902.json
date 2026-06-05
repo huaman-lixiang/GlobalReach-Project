@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01902",
+  "emailAccount": "account-020",
+  "basicInfo": {
+    "name": "Gregory Roberts",
+    "email": "gregory.roberts@bigpond.com",
+    "company": "Royal Jones Kids World",
+    "website": "www.royaljoneskidsworld.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+4007006977104",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2024,
+    "lastContactDate": "2025-09-23",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 5,
+    "priorityScore": 62
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-11-12T14:32:52.287Z",
+    "updatedAt": "2026-05-09T14:32:52.287Z",
+    "version": 1,
+    "dataHash": "47f7f73b8cdc8efe",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

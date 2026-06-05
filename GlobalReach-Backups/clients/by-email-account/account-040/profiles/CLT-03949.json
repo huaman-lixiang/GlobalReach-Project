@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03949",
+  "emailAccount": "account-040",
+  "basicInfo": {
+    "name": "Emma Brown",
+    "email": "emma.brown@t-online.de",
+    "company": "Imperial Moore International",
+    "website": "www.imperialmooreinternational.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+2416328929787",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "educational",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2024-09-04",
+    "status": "churned",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 38,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-01-08T14:32:52.929Z",
+    "updatedAt": "2026-05-09T14:32:52.929Z",
+    "version": 1,
+    "dataHash": "c79f49bdc696aa09",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

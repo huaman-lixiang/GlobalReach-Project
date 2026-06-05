@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03177",
+  "emailAccount": "account-032",
+  "basicInfo": {
+    "name": "Lisa Allen",
+    "email": "lisa.allen@company.com",
+    "company": "Alpha Miller Toys & Games",
+    "website": "www.alphamillertoysgames.com",
+    "country": "IL",
+    "countryName": "Israel",
+    "timezone": "Asia/Jerusalem",
+    "language": "en",
+    "phone": "+8931276656581",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-02-25",
+    "status": "churned",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 18,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 37,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-06-05T14:32:52.695Z",
+    "updatedAt": "2026-05-09T14:32:52.695Z",
+    "version": 1,
+    "dataHash": "12d88ceaa25a3747",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

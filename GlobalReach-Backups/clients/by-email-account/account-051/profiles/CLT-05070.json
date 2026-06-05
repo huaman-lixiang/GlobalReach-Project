@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05070",
+  "emailAccount": "account-051",
+  "basicInfo": {
+    "name": "Joseph Moore",
+    "email": "joseph.moore@gmail.com",
+    "company": "Universal Lewis Ltd.",
+    "website": "www.universallewisltd.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+9847910791863",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-03-13",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 10,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-08-20T14:32:53.266Z",
+    "updatedAt": "2026-05-09T14:32:53.266Z",
+    "version": 1,
+    "dataHash": "352b81c9737b6f5b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

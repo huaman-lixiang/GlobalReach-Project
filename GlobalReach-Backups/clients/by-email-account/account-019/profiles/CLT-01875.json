@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01875",
+  "emailAccount": "account-019",
+  "basicInfo": {
+    "name": "Benjamin Lopez",
+    "email": "benjamin.lopez@gmail.com",
+    "company": "Happy Hernandez Ltd.",
+    "website": "www.happyhernandezltd.com",
+    "country": "AE",
+    "countryName": "UAE",
+    "timezone": "Asia/Dubai",
+    "language": "ar",
+    "phone": "+2608735206946",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2024-11-04",
+    "status": "churned",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 2,
+    "priorityScore": 63
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-06-24T14:32:52.278Z",
+    "updatedAt": "2026-05-09T14:32:52.278Z",
+    "version": 1,
+    "dataHash": "feaa746430eaf986",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

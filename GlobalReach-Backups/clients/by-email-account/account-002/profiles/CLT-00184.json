@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00184",
+  "emailAccount": "account-002",
+  "basicInfo": {
+    "name": "Cynthia Carter",
+    "email": "cynthia.carter@company.es",
+    "company": "Alpha Green Happy Kids",
+    "website": "www.alphagreenhappykids.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+3899429806963",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-03-19",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "12:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 89,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-12-12T14:32:51.751Z",
+    "updatedAt": "2026-05-09T14:32:51.751Z",
+    "version": 1,
+    "dataHash": "3cefe04a6ff40c8d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

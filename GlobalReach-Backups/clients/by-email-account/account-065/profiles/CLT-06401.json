@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06401",
+  "emailAccount": "account-065",
+  "basicInfo": {
+    "name": "Charles Roberts",
+    "email": "charles.roberts@gmail.com",
+    "company": "Creative Wright LLC",
+    "website": "www.creativewrightllc.com",
+    "country": "SG",
+    "countryName": "Singapore",
+    "timezone": "Asia/Singapore",
+    "language": "en",
+    "phone": "+6944907754656",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2018,
+    "lastContactDate": "2024-12-24",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 10,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-11-01T14:32:53.645Z",
+    "updatedAt": "2026-05-09T14:32:53.645Z",
+    "version": 1,
+    "dataHash": "6126a5fd96e05ab4",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

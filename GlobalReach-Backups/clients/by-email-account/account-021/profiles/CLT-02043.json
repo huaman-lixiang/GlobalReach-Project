@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02043",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Donna Hernandez",
+    "email": "donna.hernandez@outlook.com.au",
+    "company": "Imperial White Toys & Games",
+    "website": "www.imperialwhitetoysgames.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+5307177689460",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2018,
+    "lastContactDate": "2025-04-12",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 30,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-09-29T14:32:52.335Z",
+    "updatedAt": "2026-05-09T14:32:52.335Z",
+    "version": 1,
+    "dataHash": "abcd09553160664a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02410",
+  "emailAccount": "account-025",
+  "basicInfo": {
+    "name": "Michelle Hill",
+    "email": "michelle.hill@company.it",
+    "company": "Happy Thomas DreamPlay",
+    "website": "www.happythomasdreamplay.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+1226843535923",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2024-10-27",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 29,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 1,
+    "priorityScore": 88
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-02-13T14:32:52.458Z",
+    "updatedAt": "2026-05-09T14:32:52.458Z",
+    "version": 1,
+    "dataHash": "726af3d43f8757a3",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

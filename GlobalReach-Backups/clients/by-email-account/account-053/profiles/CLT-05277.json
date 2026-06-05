@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05277",
+  "emailAccount": "account-053",
+  "basicInfo": {
+    "name": "Donna Ramirez",
+    "email": "donna.ramirez@t-online.de",
+    "company": "Apex Wilson Corp.",
+    "website": "www.apexwilsoncorp.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+4230794511781",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2024-12-16",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 34,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-08-11T14:32:53.324Z",
+    "updatedAt": "2026-05-09T14:32:53.324Z",
+    "version": 1,
+    "dataHash": "780375f1bc32926c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

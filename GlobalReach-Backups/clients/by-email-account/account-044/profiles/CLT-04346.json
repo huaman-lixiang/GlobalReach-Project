@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04346",
+  "emailAccount": "account-044",
+  "basicInfo": {
+    "name": "Amanda Scott",
+    "email": "amanda.scott@gmail.com",
+    "company": "Pinnacle Adams Co.",
+    "website": "www.pinnacleadamsco.com",
+    "country": "IE",
+    "countryName": "Ireland",
+    "timezone": "Europe/Dublin",
+    "language": "en",
+    "phone": "+5378790400495",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "educational",
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-04-11",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-05-07",
+    "replyRate": 73,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "13:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 86,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-10-11T14:32:53.048Z",
+    "updatedAt": "2026-05-09T14:32:53.048Z",
+    "version": 1,
+    "dataHash": "d45bb5b38f00c4e6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

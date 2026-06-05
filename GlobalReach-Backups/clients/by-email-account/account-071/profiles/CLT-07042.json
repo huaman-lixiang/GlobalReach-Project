@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07042",
+  "emailAccount": "account-071",
+  "basicInfo": {
+    "name": "Nicole Green",
+    "email": "nicole.green@outlook.com",
+    "company": "Super Lewis Enterprises",
+    "website": "www.superlewisenterprises.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+5329989528470",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-01-11",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 0,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-08-15T14:32:53.832Z",
+    "updatedAt": "2026-05-09T14:32:53.832Z",
+    "version": 1,
+    "dataHash": "c01ca0b23eb60ccc",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

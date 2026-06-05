@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01327",
+  "emailAccount": "account-014",
+  "basicInfo": {
+    "name": "Dorothy Young",
+    "email": "dorothy.young@yahoo.com",
+    "company": "Fantastic Lewis Distribution",
+    "website": "www.fantasticlewisdistribution.com",
+    "country": "TR",
+    "countryName": "Turkey",
+    "timezone": "Europe/Istanbul",
+    "language": "en",
+    "phone": "+2586917694021",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "infant-toddler",
+      "rc-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-04-07",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": null,
+    "replyRate": 71,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 77,
+    "priorityScore": 63
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-12-15T14:32:52.114Z",
+    "updatedAt": "2026-05-09T14:32:52.114Z",
+    "version": 1,
+    "dataHash": "7f3f1230638371a4",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

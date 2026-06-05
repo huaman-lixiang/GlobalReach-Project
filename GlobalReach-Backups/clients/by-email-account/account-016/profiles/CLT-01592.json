@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01592",
+  "emailAccount": "account-016",
+  "basicInfo": {
+    "name": "Alexander Flores",
+    "email": "alexander.flores@yahoo.com",
+    "company": "Imperial Brown ToyBox",
+    "website": "www.imperialbrowntoybox.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+9199896530548",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys",
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-04-20",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 33,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-12-11T14:32:52.192Z",
+    "updatedAt": "2026-05-09T14:32:52.192Z",
+    "version": 1,
+    "dataHash": "d356047125450f3a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

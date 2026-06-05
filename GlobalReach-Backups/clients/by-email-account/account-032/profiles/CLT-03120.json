@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-03120",
+  "emailAccount": "account-032",
+  "basicInfo": {
+    "name": "Lisa Davis",
+    "email": "lisa.davis@company.com",
+    "company": "Super Clark ToyBox",
+    "website": "www.superclarktoybox.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+6281251597977",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2019,
+    "lastContactDate": "2024-05-20",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 15,
+    "priorityScore": 86
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-10-05T14:32:52.678Z",
+    "updatedAt": "2026-05-09T14:32:52.678Z",
+    "version": 1,
+    "dataHash": "8148541e57cd1c19",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

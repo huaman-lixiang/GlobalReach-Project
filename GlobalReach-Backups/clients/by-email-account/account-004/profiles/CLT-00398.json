@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00398",
+  "emailAccount": "account-004",
+  "basicInfo": {
+    "name": "Carol King",
+    "email": "carol.king@outlook.com.au",
+    "company": "Apex Clark Corp.",
+    "website": "www.apexclarkcorp.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+7161705577147",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2025-09-04",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 36,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-29T14:32:51.817Z",
+    "updatedAt": "2026-05-09T14:32:51.817Z",
+    "version": 1,
+    "dataHash": "0111c39eff9fe15c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

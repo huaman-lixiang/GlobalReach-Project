@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02062",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Nancy Robinson",
+    "email": "nancy.robinson@outlook.com",
+    "company": "Whimsical Gonzalez FunZone",
+    "website": "www.whimsicalgonzalezfunzone.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+3536573110012",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-02-24",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": null,
+    "replyRate": 64,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 83,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-07-05T14:32:52.341Z",
+    "updatedAt": "2026-05-09T14:32:52.341Z",
+    "version": 1,
+    "dataHash": "1d3b5dd530a6f3ff",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

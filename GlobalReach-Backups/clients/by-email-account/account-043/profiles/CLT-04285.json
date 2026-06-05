@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04285",
+  "emailAccount": "account-043",
+  "basicInfo": {
+    "name": "Paul Williams",
+    "email": "paul.williams@gmail.com",
+    "company": "Premier Roberts Imports",
+    "website": "www.premierrobertsimports.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+3312796533219",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-09-26",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 35,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-07-13T14:32:53.030Z",
+    "updatedAt": "2026-05-09T14:32:53.030Z",
+    "version": 1,
+    "dataHash": "f6baf3830d68e7c0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

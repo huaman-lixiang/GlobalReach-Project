@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00264",
+  "emailAccount": "account-003",
+  "basicInfo": {
+    "name": "Anna Rivera",
+    "email": "anna.rivera@gmail.com",
+    "company": "Playful Scott Little Stars",
+    "website": "www.playfulscottlittlestars.com",
+    "country": "PL",
+    "countryName": "Poland",
+    "timezone": "Europe/Warsaw",
+    "language": "en",
+    "phone": "+152878642383",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-07-16",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 29,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-23T14:32:51.776Z",
+    "updatedAt": "2026-05-09T14:32:51.776Z",
+    "version": 1,
+    "dataHash": "1326f3b2e26daa9b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00332",
+  "emailAccount": "account-004",
+  "basicInfo": {
+    "name": "Kimberly Hernandez",
+    "email": "kimberly.hernandez@company.de",
+    "company": "Alpha Martinez Co.",
+    "website": "www.alphamartinezco.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+9514435139255",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-04-02",
+    "status": "sleeping",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 4,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-10-31T14:32:51.796Z",
+    "updatedAt": "2026-05-09T14:32:51.796Z",
+    "version": 1,
+    "dataHash": "ab1d2ef5f1f41d15",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

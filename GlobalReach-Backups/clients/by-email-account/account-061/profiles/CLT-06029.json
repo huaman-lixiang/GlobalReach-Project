@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06029",
+  "emailAccount": "account-061",
+  "basicInfo": {
+    "name": "Kimberly Anderson",
+    "email": "kimberly.anderson@gmail.com",
+    "company": "Happy Robinson LLC",
+    "website": "www.happyrobinsonllc.com",
+    "country": "VN",
+    "countryName": "Vietnam",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "language": "en",
+    "phone": "+4428191622428",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2024-07-12",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 6,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-04-18T14:32:53.538Z",
+    "updatedAt": "2026-05-09T14:32:53.538Z",
+    "version": 1,
+    "dataHash": "86557c0f772c3b53",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

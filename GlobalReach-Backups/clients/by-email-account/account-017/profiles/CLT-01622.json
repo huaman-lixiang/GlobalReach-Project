@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01622",
+  "emailAccount": "account-017",
+  "basicInfo": {
+    "name": "Jeffrey Ramirez",
+    "email": "jeffrey.ramirez@company.com",
+    "company": "Prime Jackson Little Stars",
+    "website": "www.primejacksonlittlestars.com",
+    "country": "AE",
+    "countryName": "UAE",
+    "timezone": "Asia/Dubai",
+    "language": "ar",
+    "phone": "+9774369987799",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-05-18",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 17,
+    "priorityScore": 63
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-05-26T14:32:52.202Z",
+    "updatedAt": "2026-05-09T14:32:52.202Z",
+    "version": 1,
+    "dataHash": "b22b39422d105788",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

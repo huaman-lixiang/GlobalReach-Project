@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01654",
+  "emailAccount": "account-017",
+  "basicInfo": {
+    "name": "Joshua Jones",
+    "email": "joshua.jones@company.com",
+    "company": "Happy Thomas Happy Kids",
+    "website": "www.happythomashappykids.com",
+    "country": "CN",
+    "countryName": "China",
+    "timezone": "Asia/Shanghai",
+    "language": "en",
+    "phone": "+5372414488385",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-02-22",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-30",
+    "replyRate": 45,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 80,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-20T14:32:52.212Z",
+    "updatedAt": "2026-05-09T14:32:52.212Z",
+    "version": 1,
+    "dataHash": "6a9b525cf7d1485d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

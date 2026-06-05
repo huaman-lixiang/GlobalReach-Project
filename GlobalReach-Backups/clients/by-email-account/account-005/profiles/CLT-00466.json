@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00466",
+  "emailAccount": "account-005",
+  "basicInfo": {
+    "name": "Donna Jackson",
+    "email": "donna.jackson@yahoo.com",
+    "company": "Summit Ramirez Enterprises",
+    "website": "www.summitramirezenterprises.com",
+    "country": "MX",
+    "countryName": "Mexico",
+    "timezone": "America/Mexico_City",
+    "language": "en",
+    "phone": "+499963308099",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2026-01-23",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 35,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-02-09T14:32:51.840Z",
+    "updatedAt": "2026-05-09T14:32:51.840Z",
+    "version": 1,
+    "dataHash": "230c59972b87e180",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

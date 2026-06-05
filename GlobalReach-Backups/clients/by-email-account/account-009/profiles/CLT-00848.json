@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00848",
+  "emailAccount": "account-009",
+  "basicInfo": {
+    "name": "Linda Martin",
+    "email": "linda.martin@company.com",
+    "company": "Premier Nelson DreamPlay",
+    "website": "www.premiernelsondreamplay.com",
+    "country": "IN",
+    "countryName": "India",
+    "timezone": "Asia/Kolkata",
+    "language": "en",
+    "phone": "+2414991631479",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-04-15",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-05-04",
+    "replyRate": 140,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 77,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-01-06T14:32:51.957Z",
+    "updatedAt": "2026-05-09T14:32:51.957Z",
+    "version": 1,
+    "dataHash": "d0574131c5713b96",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

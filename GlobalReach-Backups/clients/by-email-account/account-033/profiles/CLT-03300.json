@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03300",
+  "emailAccount": "account-033",
+  "basicInfo": {
+    "name": "Paul Adams",
+    "email": "paul.adams@yahoo.com",
+    "company": "Prime Campbell Little Stars",
+    "website": "www.primecampbelllittlestars.com",
+    "country": "EG",
+    "countryName": "Egypt",
+    "timezone": "Africa/Cairo",
+    "language": "en",
+    "phone": "+4788112988743",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-06-10",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 10,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 8,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-01-30T14:32:52.733Z",
+    "updatedAt": "2026-05-09T14:32:52.733Z",
+    "version": 1,
+    "dataHash": "304edb93cdfd4feb",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

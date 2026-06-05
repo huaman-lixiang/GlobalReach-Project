@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01330",
+  "emailAccount": "account-014",
+  "basicInfo": {
+    "name": "Sandra Jones",
+    "email": "sandra.jones@company.nl",
+    "company": "Apex Roberts ToyBox",
+    "website": "www.apexrobertstoybox.com",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "timezone": "Europe/Amsterdam",
+    "language": "en",
+    "phone": "+340642225513",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2019,
+    "lastContactDate": "2024-11-17",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 26,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-10-18T14:32:52.115Z",
+    "updatedAt": "2026-05-09T14:32:52.115Z",
+    "version": 1,
+    "dataHash": "0a97e8634c2d1d89",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02721",
+  "emailAccount": "account-028",
+  "basicInfo": {
+    "name": "Jeffrey Rodriguez",
+    "email": "jeffrey.rodriguez@company.es",
+    "company": "Apex Smith Toys & Games",
+    "website": "www.apexsmithtoysgames.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+5298689259203",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "rc-toys",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-07-30",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 14,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-04T14:32:52.558Z",
+    "updatedAt": "2026-05-09T14:32:52.558Z",
+    "version": 1,
+    "dataHash": "c377f03c819939a8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

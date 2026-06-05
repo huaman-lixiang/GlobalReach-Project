@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06950",
+  "emailAccount": "account-070",
+  "basicInfo": {
+    "name": "Helen Martinez",
+    "email": "helen.martinez@gmail.com",
+    "company": "Moon Sanchez Trading",
+    "website": "www.moonsancheztrading.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+6560270961047",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-10-27",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 8,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-02-06T14:32:53.805Z",
+    "updatedAt": "2026-05-09T14:32:53.805Z",
+    "version": 1,
+    "dataHash": "4c8a5e444ea1594f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

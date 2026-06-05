@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04299",
+  "emailAccount": "account-043",
+  "basicInfo": {
+    "name": "Kathleen Young",
+    "email": "kathleen.young@yahoo.com",
+    "company": "Imperial Brown Co.",
+    "website": "www.imperialbrownco.com",
+    "country": "TH",
+    "countryName": "Thailand",
+    "timezone": "Asia/Bangkok",
+    "language": "en",
+    "phone": "+4272495473582",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-06-21",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 22,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-06-01T14:32:53.034Z",
+    "updatedAt": "2026-05-09T14:32:53.034Z",
+    "version": 1,
+    "dataHash": "1979646585ccc6cf",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01314",
+  "emailAccount": "account-014",
+  "basicInfo": {
+    "name": "Jason Harris",
+    "email": "jason.harris@gmail.com",
+    "company": "Ultra Brown International",
+    "website": "www.ultrabrowninternational.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+7749880864774",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-03-06",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 15,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-04-28T14:32:52.110Z",
+    "updatedAt": "2026-05-09T14:32:52.110Z",
+    "version": 1,
+    "dataHash": "4710d7a6b49e05c0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

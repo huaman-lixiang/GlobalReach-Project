@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03045",
+  "emailAccount": "account-031",
+  "basicInfo": {
+    "name": "Joshua Lee",
+    "email": "joshua.lee@company.nl",
+    "company": "Imaginative Smith Corp.",
+    "website": "www.imaginativesmithcorp.com",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "timezone": "Europe/Amsterdam",
+    "language": "en",
+    "phone": "+181660613872",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2017,
+    "lastContactDate": "2025-01-28",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 24,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-11-19T14:32:52.655Z",
+    "updatedAt": "2026-05-09T14:32:52.655Z",
+    "version": 1,
+    "dataHash": "fcca446ac7692d14",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00715",
+  "emailAccount": "account-008",
+  "basicInfo": {
+    "name": "Linda Williams",
+    "email": "linda.williams@yahoo.co.jp",
+    "company": "Moon Lopez Enterprises",
+    "website": "www.moonlopezenterprises.co.jp",
+    "country": "JP",
+    "countryName": "Japan",
+    "timezone": "Asia/Tokyo",
+    "language": "en",
+    "phone": "+8705182717831",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "smart-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-04-02",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 24,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-10-04T14:32:51.918Z",
+    "updatedAt": "2026-05-09T14:32:51.918Z",
+    "version": 1,
+    "dataHash": "018a91b8079b37b7",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

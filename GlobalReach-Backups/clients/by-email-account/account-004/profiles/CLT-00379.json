@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00379",
+  "emailAccount": "account-004",
+  "basicInfo": {
+    "name": "Daniel Torres",
+    "email": "daniel.torres@gmail.com",
+    "company": "Universal Green WonderToys",
+    "website": "www.universalgreenwondertoys.com",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "timezone": "Europe/Amsterdam",
+    "language": "en",
+    "phone": "+7580678955079",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-04-25",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 39,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-12-22T14:32:51.811Z",
+    "updatedAt": "2026-05-09T14:32:51.811Z",
+    "version": 1,
+    "dataHash": "c598e8ff1afa6ac0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

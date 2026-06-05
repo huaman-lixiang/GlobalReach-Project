@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00820",
+  "emailAccount": "account-009",
+  "basicInfo": {
+    "name": "Laura Lewis",
+    "email": "laura.lewis@orange.fr",
+    "company": "Summit Anderson ToyBox",
+    "website": "www.summitandersontoybox.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+1285565311624",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2024-12-25",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 22,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 37,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-07-01T14:32:51.949Z",
+    "updatedAt": "2026-05-09T14:32:51.949Z",
+    "version": 1,
+    "dataHash": "7e9c0199796635e8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

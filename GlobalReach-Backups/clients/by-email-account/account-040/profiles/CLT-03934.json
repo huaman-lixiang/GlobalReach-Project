@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03934",
+  "emailAccount": "account-040",
+  "basicInfo": {
+    "name": "Michelle Campbell",
+    "email": "michelle.campbell@yahoo.com",
+    "company": "Fantastic Brown Co.",
+    "website": "www.fantasticbrownco.com",
+    "country": "PH",
+    "countryName": "Philippines",
+    "timezone": "Asia/Manila",
+    "language": "en",
+    "phone": "+8692303168243",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-04-18",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 29,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 28,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-12-09T14:32:52.924Z",
+    "updatedAt": "2026-05-09T14:32:52.924Z",
+    "version": 1,
+    "dataHash": "3bc39d223b0f4199",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

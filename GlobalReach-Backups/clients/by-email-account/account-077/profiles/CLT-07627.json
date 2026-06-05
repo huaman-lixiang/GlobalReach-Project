@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07627",
+  "emailAccount": "account-077",
+  "basicInfo": {
+    "name": "Betty Perez",
+    "email": "betty.perez@company.com",
+    "company": "Universal Campbell International",
+    "website": "www.universalcampbellinternational.com",
+    "country": "CZ",
+    "countryName": "Czech Republic",
+    "timezone": "Europe/Prague",
+    "language": "en",
+    "phone": "+527623593080",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "rc-toys",
+      "educational"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2024-11-24",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 4,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-09-30T14:32:54.004Z",
+    "updatedAt": "2026-05-09T14:32:54.004Z",
+    "version": 1,
+    "dataHash": "7b4fc2d1c883f313",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

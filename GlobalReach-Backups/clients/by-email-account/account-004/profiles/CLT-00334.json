@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00334",
+  "emailAccount": "account-004",
+  "basicInfo": {
+    "name": "Mark Garcia",
+    "email": "mark.garcia@gmail.com",
+    "company": "Imaginative Rivera Inc.",
+    "website": "www.imaginativeriverainc.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+7075231108701",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-03-29",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 150,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 73,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-12-07T14:32:51.797Z",
+    "updatedAt": "2026-05-09T14:32:51.797Z",
+    "version": 1,
+    "dataHash": "1326d7ac6941687c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04437",
+  "emailAccount": "account-045",
+  "basicInfo": {
+    "name": "John Robinson",
+    "email": "john.robinson@company.com",
+    "company": "Zenith Walker DreamPlay",
+    "website": "www.zenithwalkerdreamplay.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+9095385386487",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-05-06",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-17",
+    "replyRate": 63,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "11:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 90,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-06-11T14:32:53.076Z",
+    "updatedAt": "2026-05-09T14:32:53.076Z",
+    "version": 1,
+    "dataHash": "8c8419d00fe3328a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

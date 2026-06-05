@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00888",
+  "emailAccount": "account-009",
+  "basicInfo": {
+    "name": "Stephanie Jackson",
+    "email": "stephanie.jackson@gmail.com",
+    "company": "Mighty Allen Inc.",
+    "website": "www.mightyalleninc.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+8908271247622",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2022,
+    "lastContactDate": "2024-09-09",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 35,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-06-11T14:32:51.970Z",
+    "updatedAt": "2026-05-09T14:32:51.970Z",
+    "version": 1,
+    "dataHash": "129f16d4b4bd8134",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

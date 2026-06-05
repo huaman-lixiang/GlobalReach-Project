@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06955",
+  "emailAccount": "account-070",
+  "basicInfo": {
+    "name": "Kimberly Green",
+    "email": "kimberly.green@web.de",
+    "company": "Creative Lewis Enterprises",
+    "website": "www.creativelewisenterprises.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+8016551569765",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-04-07",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": "2026-04-13",
+    "replyRate": 15,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 96,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-07-08T14:32:53.807Z",
+    "updatedAt": "2026-05-09T14:32:53.807Z",
+    "version": 1,
+    "dataHash": "fc69bedb908f5d61",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

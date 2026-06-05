@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04313",
+  "emailAccount": "account-044",
+  "basicInfo": {
+    "name": "Steven Harris",
+    "email": "steven.harris@web.de",
+    "company": "Alpha Moore Inc.",
+    "website": "www.alphamooreinc.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+8876584086478",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2025-08-16",
+    "status": "sleeping",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 19,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-09-10T14:32:53.038Z",
+    "updatedAt": "2026-05-09T14:32:53.038Z",
+    "version": 1,
+    "dataHash": "da0d8a70ede2959a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

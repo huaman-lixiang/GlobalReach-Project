@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04117",
+  "emailAccount": "account-042",
+  "basicInfo": {
+    "name": "Sandra Brown",
+    "email": "sandra.brown@company.com",
+    "company": "Playful Martinez Distribution",
+    "website": "www.playfulmartinezdistribution.com",
+    "country": "SA",
+    "countryName": "Saudi Arabia",
+    "timezone": "Asia/Riyadh",
+    "language": "ar",
+    "phone": "+4972358983241",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-03-28",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 13,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 6,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-01T14:32:52.979Z",
+    "updatedAt": "2026-05-09T14:32:52.979Z",
+    "version": 1,
+    "dataHash": "b4a7b9afad66c3ce",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

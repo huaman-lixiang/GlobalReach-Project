@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03805",
+  "emailAccount": "account-039",
+  "basicInfo": {
+    "name": "William Jones",
+    "email": "william.jones@yahoo.com",
+    "company": "Sun Gonzalez Inc.",
+    "website": "www.sungonzalezinc.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+8045877516478",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2024-10-02",
+    "status": "sleeping",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 6,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-12T14:32:52.886Z",
+    "updatedAt": "2026-05-09T14:32:52.886Z",
+    "version": 1,
+    "dataHash": "f34a3af3d6be9c93",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00997",
+  "emailAccount": "account-010",
+  "basicInfo": {
+    "name": "Samantha Clark",
+    "email": "samantha.clark@company.com",
+    "company": "Apex Walker Kids World",
+    "website": "www.apexwalkerkidsworld.com",
+    "country": "FI",
+    "countryName": "Finland",
+    "timezone": "Europe/Helsinki",
+    "language": "en",
+    "phone": "+4777128543913",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-03-02",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 88,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-04-21T14:32:52.003Z",
+    "updatedAt": "2026-05-09T14:32:52.003Z",
+    "version": 1,
+    "dataHash": "4f780fa13cdf23a2",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

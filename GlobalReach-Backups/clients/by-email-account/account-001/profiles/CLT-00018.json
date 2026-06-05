@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00018",
+  "emailAccount": "account-001",
+  "basicInfo": {
+    "name": "Robert Jackson",
+    "email": "robert.jackson@gmail.com",
+    "company": "Moon Miller Toys & Games",
+    "website": "www.moonmillertoysgames.com",
+    "country": "SG",
+    "countryName": "Singapore",
+    "timezone": "Asia/Singapore",
+    "language": "en",
+    "phone": "+9930653564541",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2025-09-21",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 23,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-04-13T14:32:51.697Z",
+    "updatedAt": "2026-05-09T14:32:51.697Z",
+    "version": 1,
+    "dataHash": "afa5a0eb61ba19cc",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

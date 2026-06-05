@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00783",
+  "emailAccount": "account-008",
+  "basicInfo": {
+    "name": "Angela Baker",
+    "email": "angela.baker@outlook.com",
+    "company": "Playful Campbell International",
+    "website": "www.playfulcampbellinternational.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+9305977350382",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-04-05",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 16,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 13,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 63,
+    "priorityScore": 75
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-02-03T14:32:51.937Z",
+    "updatedAt": "2026-05-09T14:32:51.937Z",
+    "version": 1,
+    "dataHash": "73b61ead8fc4632c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

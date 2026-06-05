@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04389",
+  "emailAccount": "account-044",
+  "basicInfo": {
+    "name": "Susan King",
+    "email": "susan.king@company.com",
+    "company": "Whimsical Thomas Little Stars",
+    "website": "www.whimsicalthomaslittlestars.com",
+    "country": "CH",
+    "countryName": "Switzerland",
+    "timezone": "Europe/Zurich",
+    "language": "en",
+    "phone": "+3123650060831",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-03-04",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 17,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-13",
+    "replyRate": 24,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 73,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-12T14:32:53.061Z",
+    "updatedAt": "2026-05-09T14:32:53.061Z",
+    "version": 1,
+    "dataHash": "73505fedd26a8d96",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

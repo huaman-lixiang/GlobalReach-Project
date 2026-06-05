@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00984",
+  "emailAccount": "account-010",
+  "basicInfo": {
+    "name": "Thomas Campbell",
+    "email": "thomas.campbell@gmail.com",
+    "company": "Royal King International",
+    "website": "www.royalkinginternational.com",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "timezone": "Europe/Amsterdam",
+    "language": "en",
+    "phone": "+1278922139127",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "smart-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-02-21",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "13:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "smart-toys",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 94,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-10-20T14:32:51.999Z",
+    "updatedAt": "2026-05-09T14:32:51.999Z",
+    "version": 1,
+    "dataHash": "079bea1d0641e95e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

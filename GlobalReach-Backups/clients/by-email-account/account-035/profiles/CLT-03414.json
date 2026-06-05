@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-03414",
+  "emailAccount": "account-035",
+  "basicInfo": {
+    "name": "Jason Nguyen",
+    "email": "jason.nguyen@gmail.com",
+    "company": "Star Carter Ltd.",
+    "website": "www.starcarterltd.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+3397896461121",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "outdoor",
+      "smart-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-01-04",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 9,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-05-27T14:32:52.768Z",
+    "updatedAt": "2026-05-09T14:32:52.768Z",
+    "version": 1,
+    "dataHash": "8e05c752b415ef03",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05187",
+  "emailAccount": "account-052",
+  "basicInfo": {
+    "name": "Shirley Brown",
+    "email": "shirley.brown@gmail.com",
+    "company": "Ultra Anderson ToyBox",
+    "website": "www.ultraandersontoybox.com",
+    "country": "AT",
+    "countryName": "Austria",
+    "timezone": "Europe/Vienna",
+    "language": "en",
+    "phone": "+47817586201",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-03-19",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-04-20",
+    "replyRate": 27,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 62,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-09-20T14:32:53.299Z",
+    "updatedAt": "2026-05-09T14:32:53.299Z",
+    "version": 1,
+    "dataHash": "b5ca54bac7c735c1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

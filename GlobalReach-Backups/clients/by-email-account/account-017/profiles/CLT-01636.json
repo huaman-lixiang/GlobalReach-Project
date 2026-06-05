@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01636",
+  "emailAccount": "account-017",
+  "basicInfo": {
+    "name": "Michelle Robinson",
+    "email": "michelle.robinson@orange.fr",
+    "company": "Bright Allen Co.",
+    "website": "www.brightallenco.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+78472016702",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2024-09-09",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 19,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-01-10T14:32:52.206Z",
+    "updatedAt": "2026-05-09T14:32:52.206Z",
+    "version": 1,
+    "dataHash": "362a7b4700a9dbc0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

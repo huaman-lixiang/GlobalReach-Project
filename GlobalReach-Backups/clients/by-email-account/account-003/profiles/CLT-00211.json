@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00211",
+  "emailAccount": "account-003",
+  "basicInfo": {
+    "name": "Nancy Smith",
+    "email": "nancy.smith@gmail.com",
+    "company": "Omega White DreamPlay",
+    "website": "www.omegawhitedreamplay.com",
+    "country": "AE",
+    "countryName": "UAE",
+    "timezone": "Asia/Dubai",
+    "language": "ar",
+    "phone": "+7702871986190",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2024-08-18",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 36,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-06-17T14:32:51.760Z",
+    "updatedAt": "2026-05-09T14:32:51.760Z",
+    "version": 1,
+    "dataHash": "c35dfcbd347a3193",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

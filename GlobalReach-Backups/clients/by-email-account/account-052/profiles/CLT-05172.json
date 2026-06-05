@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-05172",
+  "emailAccount": "account-052",
+  "basicInfo": {
+    "name": "Donna Davis",
+    "email": "donna.davis@gmail.com",
+    "company": "Global Martinez LLC",
+    "website": "www.globalmartinezllc.com",
+    "country": "ID",
+    "countryName": "Indonesia",
+    "timezone": "Asia/Jakarta",
+    "language": "en",
+    "phone": "+7632623358535",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys",
+      "rc-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-10-05",
+    "status": "sleeping",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 14,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-04-30T14:32:53.295Z",
+    "updatedAt": "2026-05-09T14:32:53.295Z",
+    "version": 1,
+    "dataHash": "78f9ddc7b7737ade",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

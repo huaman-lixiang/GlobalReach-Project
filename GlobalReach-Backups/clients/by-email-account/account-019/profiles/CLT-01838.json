@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01838",
+  "emailAccount": "account-019",
+  "basicInfo": {
+    "name": "Stephanie Flores",
+    "email": "stephanie.flores@yahoo.com",
+    "company": "Apex Jackson LLC",
+    "website": "www.apexjacksonllc.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+4342814443524",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2026-05-06",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-05-02",
+    "replyRate": 29,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "14:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 98,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-01-19T14:32:52.267Z",
+    "updatedAt": "2026-05-09T14:32:52.267Z",
+    "version": 1,
+    "dataHash": "35b4f0bc55ecacd0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

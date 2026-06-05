@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03358",
+  "emailAccount": "account-034",
+  "basicInfo": {
+    "name": "John Gonzalez",
+    "email": "john.gonzalez@outlook.com",
+    "company": "Universal Nguyen Trading",
+    "website": "www.universalnguyentrading.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+1469923204708",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-05-03",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-27",
+    "replyRate": 117,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 85,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-26T14:32:52.751Z",
+    "updatedAt": "2026-05-09T14:32:52.751Z",
+    "version": 1,
+    "dataHash": "4ec022d0a100ad7b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

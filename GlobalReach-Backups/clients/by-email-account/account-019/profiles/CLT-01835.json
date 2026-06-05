@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01835",
+  "emailAccount": "account-019",
+  "basicInfo": {
+    "name": "Pamela Wilson",
+    "email": "pamela.wilson@company.ca",
+    "company": "Happy Gonzalez PlayTime",
+    "website": "www.happygonzalezplaytime.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+9636695254649",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "educational",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-10-07",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 23,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-10-12T14:32:52.266Z",
+    "updatedAt": "2026-05-09T14:32:52.266Z",
+    "version": 1,
+    "dataHash": "a802aed0fb7a332b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

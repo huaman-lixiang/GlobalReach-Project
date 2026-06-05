@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03467",
+  "emailAccount": "account-035",
+  "basicInfo": {
+    "name": "Michelle Gonzalez",
+    "email": "michelle.gonzalez@gmail.com",
+    "company": "Global Sanchez Enterprises",
+    "website": "www.globalsanchezenterprises.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+6783156403020",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2025,
+    "lastContactDate": "2024-11-04",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 22,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-02-01T14:32:52.784Z",
+    "updatedAt": "2026-05-09T14:32:52.784Z",
+    "version": 1,
+    "dataHash": "22a0b4241235cfd1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

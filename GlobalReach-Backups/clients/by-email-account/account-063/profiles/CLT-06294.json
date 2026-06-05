@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06294",
+  "emailAccount": "account-063",
+  "basicInfo": {
+    "name": "Eric Smith",
+    "email": "eric.smith@gmail.com",
+    "company": "Mega White PlayTime",
+    "website": "www.megawhiteplaytime.com",
+    "country": "HK",
+    "countryName": "Hong Kong",
+    "timezone": "Asia/Hong_Kong",
+    "language": "en",
+    "phone": "+4652909350590",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2025-08-14",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 8,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 15,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-12-18T14:32:53.614Z",
+    "updatedAt": "2026-05-09T14:32:53.614Z",
+    "version": 1,
+    "dataHash": "43ddddfab925130a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

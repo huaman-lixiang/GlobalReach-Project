@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05901",
+  "emailAccount": "account-060",
+  "basicInfo": {
+    "name": "Frank Young",
+    "email": "frank.young@company.com",
+    "company": "Prime Johnson Co.",
+    "website": "www.primejohnsonco.com",
+    "country": "CN",
+    "countryName": "China",
+    "timezone": "Asia/Shanghai",
+    "language": "en",
+    "phone": "+5455368472003",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-03-17",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 39,
+    "priorityScore": 60
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-05-05T14:32:53.500Z",
+    "updatedAt": "2026-05-09T14:32:53.500Z",
+    "version": 1,
+    "dataHash": "75466dee39382537",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

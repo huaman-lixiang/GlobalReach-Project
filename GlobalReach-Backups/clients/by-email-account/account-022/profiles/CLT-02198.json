@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02198",
+  "emailAccount": "account-022",
+  "basicInfo": {
+    "name": "William Ramirez",
+    "email": "william.ramirez@company.com",
+    "company": "Apex Baker ToyBox",
+    "website": "www.apexbakertoybox.com",
+    "country": "AT",
+    "countryName": "Austria",
+    "timezone": "Europe/Vienna",
+    "language": "en",
+    "phone": "+2019108876120",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-05-13",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 17,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-09-21T14:32:52.388Z",
+    "updatedAt": "2026-05-09T14:32:52.388Z",
+    "version": 1,
+    "dataHash": "aac1db37e4fabbdf",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

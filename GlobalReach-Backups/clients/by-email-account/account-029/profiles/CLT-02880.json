@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02880",
+  "emailAccount": "account-029",
+  "basicInfo": {
+    "name": "Eric Wright",
+    "email": "eric.wright@outlook.com",
+    "company": "Fantastic Walker Inc.",
+    "website": "www.fantasticwalkerinc.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+4146365120008",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-02-25",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 17,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": "2026-04-12",
+    "replyRate": 12,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 86,
+    "priorityScore": 64
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-16T14:32:52.606Z",
+    "updatedAt": "2026-05-09T14:32:52.606Z",
+    "version": 1,
+    "dataHash": "023e6b23a2a20b2c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07500",
+  "emailAccount": "account-075",
+  "basicInfo": {
+    "name": "Joshua White",
+    "email": "joshua.white@yahoo.com",
+    "company": "Happy Jones Ltd.",
+    "website": "www.happyjonesltd.com",
+    "country": "DK",
+    "countryName": "Denmark",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "phone": "+6278719257129",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "outdoor",
+      "smart-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2018,
+    "lastContactDate": "2024-11-21",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 10,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-07-02T14:32:53.967Z",
+    "updatedAt": "2026-05-09T14:32:53.967Z",
+    "version": 1,
+    "dataHash": "955c6d594e735751",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05309",
+  "emailAccount": "account-054",
+  "basicInfo": {
+    "name": "Mark Carter",
+    "email": "mark.carter@company.co.uk",
+    "company": "Ultra Taylor Inc.",
+    "website": "www.ultrataylorinc.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+2139670759492",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2025-09-01",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 35,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-09-09T14:32:53.333Z",
+    "updatedAt": "2026-05-09T14:32:53.333Z",
+    "version": 1,
+    "dataHash": "436d9c377a5b0fc5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

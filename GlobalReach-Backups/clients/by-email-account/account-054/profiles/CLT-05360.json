@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05360",
+  "emailAccount": "account-054",
+  "basicInfo": {
+    "name": "Lisa Perez",
+    "email": "lisa.perez@orange.fr",
+    "company": "Sun Lopez Co.",
+    "website": "www.sunlopezco.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+5013862069539",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-04-30",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 20,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-25",
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 98,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-09T14:32:53.347Z",
+    "updatedAt": "2026-05-09T14:32:53.347Z",
+    "version": 1,
+    "dataHash": "e5fee5a941216fab",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

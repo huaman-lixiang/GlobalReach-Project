@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04044",
+  "emailAccount": "account-041",
+  "basicInfo": {
+    "name": "Donald Baker",
+    "email": "donald.baker@yahoo.com",
+    "company": "Imperial Sanchez Enterprises",
+    "website": "www.imperialsanchezenterprises.com",
+    "country": "SE",
+    "countryName": "Sweden",
+    "timezone": "Europe/Stockholm",
+    "language": "en",
+    "phone": "+5449949027521",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2026,
+    "lastContactDate": "2025-05-29",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 37,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-11-02T14:32:52.957Z",
+    "updatedAt": "2026-05-09T14:32:52.957Z",
+    "version": 1,
+    "dataHash": "25048eb51b271eb1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

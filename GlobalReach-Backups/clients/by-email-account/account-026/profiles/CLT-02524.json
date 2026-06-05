@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02524",
+  "emailAccount": "account-026",
+  "basicInfo": {
+    "name": "Pamela Anderson",
+    "email": "pamela.anderson@gmail.com",
+    "company": "Universal Torres Co.",
+    "website": "www.universaltorresco.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+1188899541956",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-08-21",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 27,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-26T14:32:52.494Z",
+    "updatedAt": "2026-05-09T14:32:52.494Z",
+    "version": 1,
+    "dataHash": "a378b57e0c029268",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

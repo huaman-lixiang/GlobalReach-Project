@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07471",
+  "emailAccount": "account-075",
+  "basicInfo": {
+    "name": "Laura Moore",
+    "email": "laura.moore@yahoo.com",
+    "company": "Imperial Nelson Imports",
+    "website": "www.imperialnelsonimports.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+6142414342143",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2025-11-30",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 18,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 18,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-11-12T14:32:53.958Z",
+    "updatedAt": "2026-05-09T14:32:53.958Z",
+    "version": 1,
+    "dataHash": "f54d0e411317e95f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

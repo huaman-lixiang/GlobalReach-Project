@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03946",
+  "emailAccount": "account-040",
+  "basicInfo": {
+    "name": "Carol Young",
+    "email": "carol.young@gmail.com",
+    "company": "Whimsical Moore Enterprises",
+    "website": "www.whimsicalmooreenterprises.com",
+    "country": "BE",
+    "countryName": "Belgium",
+    "timezone": "Europe/Brussels",
+    "language": "en",
+    "phone": "+4450811968361",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-10-14",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 8,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 20,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-05-03T14:32:52.928Z",
+    "updatedAt": "2026-05-09T14:32:52.928Z",
+    "version": 1,
+    "dataHash": "7906863ce9103868",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

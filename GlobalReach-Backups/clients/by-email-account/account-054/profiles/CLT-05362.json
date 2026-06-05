@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05362",
+  "emailAccount": "account-054",
+  "basicInfo": {
+    "name": "Ashley Walker",
+    "email": "ashley.walker@company.ca",
+    "company": "Super Hall LLC",
+    "website": "www.superhallllc.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+1923164621348",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-05-25",
+    "status": "churned",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 13,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 30,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-07-23T14:32:53.348Z",
+    "updatedAt": "2026-05-09T14:32:53.348Z",
+    "version": 1,
+    "dataHash": "623dfcfc62d6cd00",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

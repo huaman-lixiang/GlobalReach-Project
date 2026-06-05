@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05428",
+  "emailAccount": "account-055",
+  "basicInfo": {
+    "name": "Barbara Mitchell",
+    "email": "barbara.mitchell@yahoo.com",
+    "company": "Alpha Scott Group",
+    "website": "www.alphascottgroup.com",
+    "country": "GR",
+    "countryName": "Greece",
+    "timezone": "Europe/Athens",
+    "language": "en",
+    "phone": "+742749739593",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2025-10-14",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 27,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-07-13T14:32:53.366Z",
+    "updatedAt": "2026-05-09T14:32:53.366Z",
+    "version": 1,
+    "dataHash": "23268fb57f44978f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

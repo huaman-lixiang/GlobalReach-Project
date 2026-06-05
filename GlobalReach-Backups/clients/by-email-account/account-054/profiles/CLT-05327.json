@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05327",
+  "emailAccount": "account-054",
+  "basicInfo": {
+    "name": "Daniel Thompson",
+    "email": "daniel.thompson@company.de",
+    "company": "Omega Baker Ltd.",
+    "website": "www.omegabakerltd.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+8894979654930",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-05-07",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-12",
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 63,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-10-10T14:32:53.338Z",
+    "updatedAt": "2026-05-09T14:32:53.338Z",
+    "version": 1,
+    "dataHash": "aa07aaa436ae63fe",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

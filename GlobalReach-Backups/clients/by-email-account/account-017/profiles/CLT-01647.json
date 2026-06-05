@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01647",
+  "emailAccount": "account-017",
+  "basicInfo": {
+    "name": "Brandon Roberts",
+    "email": "brandon.roberts@gmail.com",
+    "company": "Pinnacle White Inc.",
+    "website": "www.pinnaclewhiteinc.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+1771464514953",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-03-09",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 17,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-06-22T14:32:52.209Z",
+    "updatedAt": "2026-05-09T14:32:52.209Z",
+    "version": 1,
+    "dataHash": "012caa17b796e2b6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

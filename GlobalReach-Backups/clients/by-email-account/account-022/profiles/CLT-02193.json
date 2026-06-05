@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02193",
+  "emailAccount": "account-022",
+  "basicInfo": {
+    "name": "Charles Lee",
+    "email": "charles.lee@sfr.fr",
+    "company": "Pinnacle Smith Enterprises",
+    "website": "www.pinnaclesmithenterprises.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+3405857972205",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2025-11-21",
+    "status": "churned",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 10,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 18,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-07-30T14:32:52.387Z",
+    "updatedAt": "2026-05-09T14:32:52.387Z",
+    "version": 1,
+    "dataHash": "1b099df83b517b63",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

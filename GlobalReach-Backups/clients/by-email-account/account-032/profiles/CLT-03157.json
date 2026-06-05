@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03157",
+  "emailAccount": "account-032",
+  "basicInfo": {
+    "name": "Margaret Perez",
+    "email": "margaret.perez@gmail.com",
+    "company": "Whimsical Gonzalez Inc.",
+    "website": "www.whimsicalgonzalezinc.co.jp",
+    "country": "JP",
+    "countryName": "Japan",
+    "timezone": "Asia/Tokyo",
+    "language": "en",
+    "phone": "+6010512819970",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-03-20",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 22,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 92,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-07-04T14:32:52.689Z",
+    "updatedAt": "2026-05-09T14:32:52.689Z",
+    "version": 1,
+    "dataHash": "a631a7213dbe2ceb",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

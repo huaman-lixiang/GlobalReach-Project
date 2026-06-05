@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02900",
+  "emailAccount": "account-029",
+  "basicInfo": {
+    "name": "Eric Baker",
+    "email": "eric.baker@web.de",
+    "company": "Apex Green Distribution",
+    "website": "www.apexgreendistribution.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+9618165240817",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-03-28",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 7,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-05-30T14:32:52.612Z",
+    "updatedAt": "2026-05-09T14:32:52.612Z",
+    "version": 1,
+    "dataHash": "e01d20d0f776b254",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

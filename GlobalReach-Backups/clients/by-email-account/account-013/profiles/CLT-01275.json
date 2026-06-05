@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01275",
+  "emailAccount": "account-013",
+  "basicInfo": {
+    "name": "Melissa Clark",
+    "email": "melissa.clark@company.com",
+    "company": "Global Robinson Group",
+    "website": "www.globalrobinsongroup.com",
+    "country": "MY",
+    "countryName": "Malaysia",
+    "timezone": "Asia/Kuala_Lumpur",
+    "language": "en",
+    "phone": "+1035155665375",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2025-05-13",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 7,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 7,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-17T14:32:52.097Z",
+    "updatedAt": "2026-05-09T14:32:52.097Z",
+    "version": 1,
+    "dataHash": "50e6a3d10ab38339",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

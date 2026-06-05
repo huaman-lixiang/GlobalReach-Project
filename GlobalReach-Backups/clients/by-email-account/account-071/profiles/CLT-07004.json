@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07004",
+  "emailAccount": "account-071",
+  "basicInfo": {
+    "name": "Susan Jackson",
+    "email": "susan.jackson@outlook.com",
+    "company": "Global Baker ToyBox",
+    "website": "www.globalbakertoybox.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+4196923075203",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2024-08-21",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 13,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 3,
+    "priorityScore": 84
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-30T14:32:53.821Z",
+    "updatedAt": "2026-05-09T14:32:53.821Z",
+    "version": 1,
+    "dataHash": "5f366c6f2aa7e995",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

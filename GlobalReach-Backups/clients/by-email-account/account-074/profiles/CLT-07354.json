@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07354",
+  "emailAccount": "account-074",
+  "basicInfo": {
+    "name": "Susan Williams",
+    "email": "susan.williams@company.com",
+    "company": "Playful Anderson Ltd.",
+    "website": "www.playfulandersonltd.com",
+    "country": "MY",
+    "countryName": "Malaysia",
+    "timezone": "Asia/Kuala_Lumpur",
+    "language": "en",
+    "phone": "+5910348907925",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2025,
+    "lastContactDate": "2024-10-28",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 2,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-07-29T14:32:53.923Z",
+    "updatedAt": "2026-05-09T14:32:53.923Z",
+    "version": 1,
+    "dataHash": "42644a007ef01d37",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

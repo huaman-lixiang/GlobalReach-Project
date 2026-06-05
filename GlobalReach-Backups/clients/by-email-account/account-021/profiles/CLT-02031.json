@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02031",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Lisa Moore",
+    "email": "lisa.moore@outlook.com",
+    "company": "Fantastic White Corp.",
+    "website": "www.fantasticwhitecorp.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+1536819058837",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-06-20",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 20,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-04-17T14:32:52.331Z",
+    "updatedAt": "2026-05-09T14:32:52.331Z",
+    "version": 1,
+    "dataHash": "d9bc92c0e0dc627f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

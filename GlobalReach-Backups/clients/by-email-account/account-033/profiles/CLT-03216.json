@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03216",
+  "emailAccount": "account-033",
+  "basicInfo": {
+    "name": "Daniel Torres",
+    "email": "daniel.torres@yahoo.com",
+    "company": "Star Anderson DreamPlay",
+    "website": "www.starandersondreamplay.com",
+    "country": "IE",
+    "countryName": "Ireland",
+    "timezone": "Europe/Dublin",
+    "language": "en",
+    "phone": "+8735739384654",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-02-11",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 20,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 61,
+    "priorityScore": 62
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-01-29T14:32:52.708Z",
+    "updatedAt": "2026-05-09T14:32:52.708Z",
+    "version": 1,
+    "dataHash": "b31ce91b4b13af61",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

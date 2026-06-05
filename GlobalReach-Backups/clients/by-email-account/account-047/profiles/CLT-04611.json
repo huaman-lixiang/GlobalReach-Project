@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04611",
+  "emailAccount": "account-047",
+  "basicInfo": {
+    "name": "Richard Hernandez",
+    "email": "richard.hernandez@company.de",
+    "company": "Moon Allen Enterprises",
+    "website": "www.moonallenenterprises.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+8614121474483",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-10-11",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 9,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-09T14:32:53.131Z",
+    "updatedAt": "2026-05-09T14:32:53.131Z",
+    "version": 1,
+    "dataHash": "72888bbab1756c63",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

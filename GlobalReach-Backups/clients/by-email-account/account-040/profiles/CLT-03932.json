@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03932",
+  "emailAccount": "account-040",
+  "basicInfo": {
+    "name": "Sandra Wright",
+    "email": "sandra.wright@yahoo.com",
+    "company": "Creative Miller FunZone",
+    "website": "www.creativemillerfunzone.com",
+    "country": "CN",
+    "countryName": "China",
+    "timezone": "Asia/Shanghai",
+    "language": "en",
+    "phone": "+3104669640823",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "rc-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-22",
+    "status": "churned",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 14,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-07-04T14:32:52.924Z",
+    "updatedAt": "2026-05-09T14:32:52.924Z",
+    "version": 1,
+    "dataHash": "1cb17a063ed97ef7",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02486",
+  "emailAccount": "account-025",
+  "basicInfo": {
+    "name": "Nicholas Williams",
+    "email": "nicholas.williams@company.com",
+    "company": "Sun Torres PlayTime",
+    "website": "www.suntorresplaytime.com",
+    "country": "NO",
+    "countryName": "Norway",
+    "timezone": "Europe/Oslo",
+    "language": "en",
+    "phone": "+2044218953499",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "infant-toddler",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-01-12",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 40,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-03-16T14:32:52.482Z",
+    "updatedAt": "2026-05-09T14:32:52.482Z",
+    "version": 1,
+    "dataHash": "2b4ad7eab265d31b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

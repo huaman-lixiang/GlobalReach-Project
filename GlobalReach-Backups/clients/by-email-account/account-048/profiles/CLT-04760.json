@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04760",
+  "emailAccount": "account-048",
+  "basicInfo": {
+    "name": "Joshua Roberts",
+    "email": "joshua.roberts@company.de",
+    "company": "Global Baker Imports",
+    "website": "www.globalbakerimports.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+5573655369298",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-02-17",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 29,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 29,
+    "priorityScore": 81
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-07-25T14:32:53.176Z",
+    "updatedAt": "2026-05-09T14:32:53.176Z",
+    "version": 1,
+    "dataHash": "dff24fcb974ad640",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

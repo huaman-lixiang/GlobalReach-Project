@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07768",
+  "emailAccount": "account-078",
+  "basicInfo": {
+    "name": "Brenda Clark",
+    "email": "brenda.clark@yahoo.com",
+    "company": "Happy Sanchez Inc.",
+    "website": "www.happysanchezinc.com",
+    "country": "PT",
+    "countryName": "Portugal",
+    "timezone": "Europe/Lisbon",
+    "language": "en",
+    "phone": "+2092945760489",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-03-13",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-05-09",
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "11:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 93,
+    "priorityScore": 52
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-03-27T14:32:54.045Z",
+    "updatedAt": "2026-05-09T14:32:54.045Z",
+    "version": 1,
+    "dataHash": "d3ae2544b2871e66",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

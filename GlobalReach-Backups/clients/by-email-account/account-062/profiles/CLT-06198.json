@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06198",
+  "emailAccount": "account-062",
+  "basicInfo": {
+    "name": "Gregory Thomas",
+    "email": "gregory.thomas@gmail.com",
+    "company": "Super Thomas WonderToys",
+    "website": "www.superthomaswondertoys.com",
+    "country": "MX",
+    "countryName": "Mexico",
+    "timezone": "America/Mexico_City",
+    "language": "en",
+    "phone": "+9219841675001",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "educational",
+      "smart-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-05-31",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 9,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-05-19T14:32:53.586Z",
+    "updatedAt": "2026-05-09T14:32:53.586Z",
+    "version": 1,
+    "dataHash": "f751b6f0b79f06bf",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

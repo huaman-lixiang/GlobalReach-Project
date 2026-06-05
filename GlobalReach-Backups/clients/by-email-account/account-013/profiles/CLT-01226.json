@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01226",
+  "emailAccount": "account-013",
+  "basicInfo": {
+    "name": "Daniel Scott",
+    "email": "daniel.scott@libero.it",
+    "company": "Mighty Anderson Distribution",
+    "website": "www.mightyandersondistribution.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+6963388467312",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2024-05-31",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 38,
+    "priorityScore": 81
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-02-18T14:32:52.082Z",
+    "updatedAt": "2026-05-09T14:32:52.082Z",
+    "version": 1,
+    "dataHash": "2e6a4e384de88b36",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

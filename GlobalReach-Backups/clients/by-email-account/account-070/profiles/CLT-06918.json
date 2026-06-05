@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-06918",
+  "emailAccount": "account-070",
+  "basicInfo": {
+    "name": "Sandra Lee",
+    "email": "sandra.lee@company.com",
+    "company": "Global Johnson Ltd.",
+    "website": "www.globaljohnsonltd.com",
+    "country": "KE",
+    "countryName": "Kenya",
+    "timezone": "Africa/Nairobi",
+    "language": "en",
+    "phone": "+8912606215778",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2024-12-28",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 20,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-12-05T14:32:53.796Z",
+    "updatedAt": "2026-05-09T14:32:53.796Z",
+    "version": 1,
+    "dataHash": "d0c08a5375f5a3eb",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

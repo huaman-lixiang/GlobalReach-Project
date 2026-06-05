@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03226",
+  "emailAccount": "account-033",
+  "basicInfo": {
+    "name": "Linda Robinson",
+    "email": "linda.robinson@company.com",
+    "company": "Grand Sanchez PlayTime",
+    "website": "www.grandsanchezplaytime.com",
+    "country": "CH",
+    "countryName": "Switzerland",
+    "timezone": "Europe/Zurich",
+    "language": "en",
+    "phone": "+3100749133391",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-03-29",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-12",
+    "replyRate": 175,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 80,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-02-13T14:32:52.711Z",
+    "updatedAt": "2026-05-09T14:32:52.711Z",
+    "version": 1,
+    "dataHash": "e2cfd1d82b5be92d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

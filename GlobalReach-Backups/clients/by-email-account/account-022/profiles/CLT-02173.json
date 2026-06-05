@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02173",
+  "emailAccount": "account-022",
+  "basicInfo": {
+    "name": "Charles Davis",
+    "email": "charles.davis@gmail.com",
+    "company": "Grand Jackson DreamPlay",
+    "website": "www.grandjacksondreamplay.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+3772315824446",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-04-27",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": null,
+    "replyRate": 31,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 99,
+    "priorityScore": 89
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-03-10T14:32:52.379Z",
+    "updatedAt": "2026-05-09T14:32:52.379Z",
+    "version": 1,
+    "dataHash": "f3f6ae92d301e359",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

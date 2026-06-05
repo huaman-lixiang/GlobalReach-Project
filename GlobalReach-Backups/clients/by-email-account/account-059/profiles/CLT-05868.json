@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05868",
+  "emailAccount": "account-059",
+  "basicInfo": {
+    "name": "Janet Johnson",
+    "email": "janet.johnson@outlook.com",
+    "company": "Sun Anderson Co.",
+    "website": "www.sunandersonco.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+931216591131",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2025-11-28",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 15,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-09-12T14:32:53.490Z",
+    "updatedAt": "2026-05-09T14:32:53.490Z",
+    "version": 1,
+    "dataHash": "4fe33a5f4de5e595",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

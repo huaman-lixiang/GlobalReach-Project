@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04099",
+  "emailAccount": "account-041",
+  "basicInfo": {
+    "name": "Jonathan Mitchell",
+    "email": "jonathan.mitchell@yahoo.co.uk",
+    "company": "Sun Adams LLC",
+    "website": "www.sunadamsllc.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+3299674484501",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-05-02",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-05-06",
+    "replyRate": 36,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 86,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-01-07T14:32:52.973Z",
+    "updatedAt": "2026-05-09T14:32:52.973Z",
+    "version": 1,
+    "dataHash": "9dff8c43fea7b4c1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02884",
+  "emailAccount": "account-029",
+  "basicInfo": {
+    "name": "Justin Thomas",
+    "email": "justin.thomas@yahoo.com",
+    "company": "Mega Wright Imports",
+    "website": "www.megawrightimports.com",
+    "country": "ZA",
+    "countryName": "South Africa",
+    "timezone": "Africa/Johannesburg",
+    "language": "en",
+    "phone": "+3696787889675",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-03-17",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 13,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "13:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 79,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-03-19T14:32:52.607Z",
+    "updatedAt": "2026-05-09T14:32:52.607Z",
+    "version": 1,
+    "dataHash": "17f3fadd3a3584dc",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

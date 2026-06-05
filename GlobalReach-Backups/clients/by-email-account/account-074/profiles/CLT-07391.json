@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07391",
+  "emailAccount": "account-074",
+  "basicInfo": {
+    "name": "Laura Martin",
+    "email": "laura.martin@yahoo.com",
+    "company": "Happy Lee Distribution",
+    "website": "www.happyleedistribution.com",
+    "country": "PL",
+    "countryName": "Poland",
+    "timezone": "Europe/Warsaw",
+    "language": "en",
+    "phone": "+7924418328056",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-02-16",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 62,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-08-16T14:32:53.935Z",
+    "updatedAt": "2026-05-09T14:32:53.935Z",
+    "version": 1,
+    "dataHash": "ca45868109d2ba91",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

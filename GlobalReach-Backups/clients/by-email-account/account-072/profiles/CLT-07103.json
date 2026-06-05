@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07103",
+  "emailAccount": "account-072",
+  "basicInfo": {
+    "name": "Jason King",
+    "email": "jason.king@gmail.com",
+    "company": "Prime Miller International",
+    "website": "www.primemillerinternational.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+7352069240245",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "infant-toddler",
+      "educational",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-04-16",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": null,
+    "replyRate": 43,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 75,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-09-30T14:32:53.850Z",
+    "updatedAt": "2026-05-09T14:32:53.850Z",
+    "version": 1,
+    "dataHash": "f8ddafb48c9fe2df",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

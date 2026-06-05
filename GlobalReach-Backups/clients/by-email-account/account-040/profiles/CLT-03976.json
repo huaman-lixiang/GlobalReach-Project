@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03976",
+  "emailAccount": "account-040",
+  "basicInfo": {
+    "name": "Betty Mitchell",
+    "email": "betty.mitchell@company.com",
+    "company": "Ultra Clark FunZone",
+    "website": "www.ultraclarkfunzone.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+3442172669825",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-05-17",
+    "status": "churned",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 8,
+    "priorityScore": 52
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-06-11T14:32:52.938Z",
+    "updatedAt": "2026-05-09T14:32:52.938Z",
+    "version": 1,
+    "dataHash": "b6a3da7a4397a4aa",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

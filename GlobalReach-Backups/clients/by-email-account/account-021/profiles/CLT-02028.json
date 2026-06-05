@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02028",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Mary Adams",
+    "email": "mary.adams@yahoo.com",
+    "company": "Bright Johnson Enterprises",
+    "website": "www.brightjohnsonenterprises.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+7995971104110",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-01-08",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 22,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 22,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-03-30T14:32:52.329Z",
+    "updatedAt": "2026-05-09T14:32:52.329Z",
+    "version": 1,
+    "dataHash": "ed0965e18b0fabdf",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

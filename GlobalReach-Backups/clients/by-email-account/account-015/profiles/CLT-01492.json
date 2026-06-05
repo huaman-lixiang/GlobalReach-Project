@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01492",
+  "emailAccount": "account-015",
+  "basicInfo": {
+    "name": "James Campbell",
+    "email": "james.campbell@yahoo.com",
+    "company": "Joyful Hill Kids World",
+    "website": "www.joyfulhillkidsworld.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+3295050378649",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2026,
+    "lastContactDate": "2024-07-18",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 6,
+    "priorityScore": 60
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-05-11T14:32:52.162Z",
+    "updatedAt": "2026-05-09T14:32:52.162Z",
+    "version": 1,
+    "dataHash": "e4a578d66b63f292",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05435",
+  "emailAccount": "account-055",
+  "basicInfo": {
+    "name": "Sandra Davis",
+    "email": "sandra.davis@yahoo.com",
+    "company": "Star Nelson Distribution",
+    "website": "www.starnelsondistribution.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+1651977164022",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-10-24",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 36,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-06-01T14:32:53.368Z",
+    "updatedAt": "2026-05-09T14:32:53.368Z",
+    "version": 1,
+    "dataHash": "0d6c4013acbced7e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

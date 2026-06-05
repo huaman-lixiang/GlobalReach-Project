@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07460",
+  "emailAccount": "account-075",
+  "basicInfo": {
+    "name": "Lisa Roberts",
+    "email": "lisa.roberts@hotmail.com",
+    "company": "Moon Mitchell PlayTime",
+    "website": "www.moonmitchellplaytime.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+6983195362770",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2025-08-07",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 34,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-02T14:32:53.955Z",
+    "updatedAt": "2026-05-09T14:32:53.955Z",
+    "version": 1,
+    "dataHash": "6cf6905e52753eb9",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

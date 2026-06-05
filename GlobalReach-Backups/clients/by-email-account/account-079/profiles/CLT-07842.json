@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07842",
+  "emailAccount": "account-079",
+  "basicInfo": {
+    "name": "Justin Scott",
+    "email": "justin.scott@yahoo.com",
+    "company": "Grand Jones Distribution",
+    "website": "www.grandjonesdistribution.com",
+    "country": "NO",
+    "countryName": "Norway",
+    "timezone": "Europe/Oslo",
+    "language": "en",
+    "phone": "+7398508188618",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2025-03-13",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 22,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-12-12T14:32:54.065Z",
+    "updatedAt": "2026-05-09T14:32:54.065Z",
+    "version": 1,
+    "dataHash": "1d71dde48c1d55a6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

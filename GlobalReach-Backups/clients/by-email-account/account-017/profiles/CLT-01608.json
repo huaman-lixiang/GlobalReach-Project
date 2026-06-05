@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01608",
+  "emailAccount": "account-017",
+  "basicInfo": {
+    "name": "Amy Carter",
+    "email": "amy.carter@company.com",
+    "company": "Alpha Torres Toys & Games",
+    "website": "www.alphatorrestoysgames.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+3409301629446",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-03-12",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 29,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-06-02T14:32:52.198Z",
+    "updatedAt": "2026-05-09T14:32:52.198Z",
+    "version": 1,
+    "dataHash": "018577debf37a99e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

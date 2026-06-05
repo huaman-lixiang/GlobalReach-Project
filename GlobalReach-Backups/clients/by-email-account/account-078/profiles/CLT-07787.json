@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07787",
+  "emailAccount": "account-078",
+  "basicInfo": {
+    "name": "Joshua Adams",
+    "email": "joshua.adams@gmail.com",
+    "company": "Joyful Smith Co.",
+    "website": "www.joyfulsmithco.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+8810129151300",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "smart-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2025-04-07",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 30,
+    "priorityScore": 57
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-12-14T14:32:54.050Z",
+    "updatedAt": "2026-05-09T14:32:54.050Z",
+    "version": 1,
+    "dataHash": "4db6f5221cdef6ac",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

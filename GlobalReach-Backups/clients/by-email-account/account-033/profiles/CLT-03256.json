@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03256",
+  "emailAccount": "account-033",
+  "basicInfo": {
+    "name": "Rebecca Jones",
+    "email": "rebecca.jones@company.com",
+    "company": "Super Miller Happy Kids",
+    "website": "www.supermillerhappykids.com",
+    "country": "SA",
+    "countryName": "Saudi Arabia",
+    "timezone": "Asia/Riyadh",
+    "language": "ar",
+    "phone": "+3428870107328",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-03-04",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 20,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-26",
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 83,
+    "priorityScore": 75
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-02-16T14:32:52.720Z",
+    "updatedAt": "2026-05-09T14:32:52.720Z",
+    "version": 1,
+    "dataHash": "ad8fd989c02d5be3",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

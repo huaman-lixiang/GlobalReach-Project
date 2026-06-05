@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02477",
+  "emailAccount": "account-025",
+  "basicInfo": {
+    "name": "Jeffrey Adams",
+    "email": "jeffrey.adams@company.ca",
+    "company": "Sun Moore Toys & Games",
+    "website": "www.sunmooretoysgames.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+4217741075149",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-04-03",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 12,
+    "priorityScore": 84
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-01-25T14:32:52.479Z",
+    "updatedAt": "2026-05-09T14:32:52.479Z",
+    "version": 1,
+    "dataHash": "7ca9c383ce6a4d3b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

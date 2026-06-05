@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01550",
+  "emailAccount": "account-016",
+  "basicInfo": {
+    "name": "Patricia Lewis",
+    "email": "patricia.lewis@yahoo.com",
+    "company": "Royal Anderson ToyBox",
+    "website": "www.royalandersontoybox.com",
+    "country": "AE",
+    "countryName": "UAE",
+    "timezone": "Asia/Dubai",
+    "language": "ar",
+    "phone": "+7636522057353",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-02-26",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 67,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 32,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-06-20T14:32:52.180Z",
+    "updatedAt": "2026-05-09T14:32:52.180Z",
+    "version": 1,
+    "dataHash": "bb15bcb76c977853",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

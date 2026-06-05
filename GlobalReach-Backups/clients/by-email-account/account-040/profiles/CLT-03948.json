@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03948",
+  "emailAccount": "account-040",
+  "basicInfo": {
+    "name": "Sarah Young",
+    "email": "sarah.young@gmail.com",
+    "company": "Mega Walker Trading",
+    "website": "www.megawalkertrading.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+3659414422131",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-04-18",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-25",
+    "replyRate": 56,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "11:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 69,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-09-26T14:32:52.929Z",
+    "updatedAt": "2026-05-09T14:32:52.929Z",
+    "version": 1,
+    "dataHash": "293bc7d10150a235",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

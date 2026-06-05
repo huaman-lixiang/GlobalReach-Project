@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01358",
+  "emailAccount": "account-014",
+  "basicInfo": {
+    "name": "Amy Roberts",
+    "email": "amy.roberts@yahoo.com",
+    "company": "Universal Flores International",
+    "website": "www.universalfloresinternational.com",
+    "country": "NG",
+    "countryName": "Nigeria",
+    "timezone": "Africa/Lagos",
+    "language": "en",
+    "phone": "+465536043689",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "rc-toys",
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2016,
+    "lastContactDate": "2024-08-05",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 22,
+    "priorityScore": 75
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-02-15T14:32:52.123Z",
+    "updatedAt": "2026-05-09T14:32:52.123Z",
+    "version": 1,
+    "dataHash": "e2f92e84bc6d0bb2",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

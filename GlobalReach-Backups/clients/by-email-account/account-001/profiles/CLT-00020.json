@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00020",
+  "emailAccount": "account-001",
+  "basicInfo": {
+    "name": "Joshua Robinson",
+    "email": "joshua.robinson@company.com",
+    "company": "Pinnacle Thompson FunZone",
+    "website": "www.pinnaclethompsonfunzone.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+3304140131215",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2024-11-21",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 15,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-09-16T14:32:51.698Z",
+    "updatedAt": "2026-05-09T14:32:51.698Z",
+    "version": 1,
+    "dataHash": "680ea1cd0b4d8629",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

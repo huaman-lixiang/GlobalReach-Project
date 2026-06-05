@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00273",
+  "emailAccount": "account-003",
+  "basicInfo": {
+    "name": "Mark Garcia",
+    "email": "mark.garcia@company.ca",
+    "company": "Ultra Adams Little Stars",
+    "website": "www.ultraadamslittlestars.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+6367005821093",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-04-08",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 18,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-04-08T14:32:51.779Z",
+    "updatedAt": "2026-05-09T14:32:51.779Z",
+    "version": 1,
+    "dataHash": "095b88ea9e918af9",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

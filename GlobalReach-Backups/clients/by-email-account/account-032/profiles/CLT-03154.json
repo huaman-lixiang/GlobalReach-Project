@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-03154",
+  "emailAccount": "account-032",
+  "basicInfo": {
+    "name": "Scott Moore",
+    "email": "scott.moore@gmail.com",
+    "company": "Alpha Nelson Little Stars",
+    "website": "www.alphanelsonlittlestars.com",
+    "country": "SA",
+    "countryName": "Saudi Arabia",
+    "timezone": "Asia/Riyadh",
+    "language": "ar",
+    "phone": "+907454999117",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2025-02-17",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 14,
+    "priorityScore": 64
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-02-04T14:32:52.688Z",
+    "updatedAt": "2026-05-09T14:32:52.688Z",
+    "version": 1,
+    "dataHash": "73b62671c979bf4f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

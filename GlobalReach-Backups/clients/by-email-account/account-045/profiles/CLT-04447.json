@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04447",
+  "emailAccount": "account-045",
+  "basicInfo": {
+    "name": "Sarah Smith",
+    "email": "sarah.smith@company.com",
+    "company": "Elite Torres WonderToys",
+    "website": "www.elitetorreswondertoys.com",
+    "country": "BE",
+    "countryName": "Belgium",
+    "timezone": "Europe/Brussels",
+    "language": "en",
+    "phone": "+4980063362775",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-05-01",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 17,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": null,
+    "replyRate": 35,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "11:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 86,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-09-28T14:32:53.079Z",
+    "updatedAt": "2026-05-09T14:32:53.079Z",
+    "version": 1,
+    "dataHash": "a918b2566922535d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

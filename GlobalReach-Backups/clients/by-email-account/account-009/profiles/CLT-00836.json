@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00836",
+  "emailAccount": "account-009",
+  "basicInfo": {
+    "name": "Steven Brown",
+    "email": "steven.brown@yahoo.com",
+    "company": "Moon Taylor Corp.",
+    "website": "www.moontaylorcorp.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+2512703465709",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-02-05",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 37,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-02-07T14:32:51.954Z",
+    "updatedAt": "2026-05-09T14:32:51.954Z",
+    "version": 1,
+    "dataHash": "0017a32e383cd1a1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

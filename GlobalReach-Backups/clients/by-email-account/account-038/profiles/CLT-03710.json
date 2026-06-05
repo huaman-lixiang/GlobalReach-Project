@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03710",
+  "emailAccount": "account-038",
+  "basicInfo": {
+    "name": "Christopher White",
+    "email": "christopher.white@yahoo.com",
+    "company": "Grand Lee Kids World",
+    "website": "www.grandleekidsworld.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+3973021208810",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2024-12-21",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 32,
+    "priorityScore": 89
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-29T14:32:52.858Z",
+    "updatedAt": "2026-05-09T14:32:52.858Z",
+    "version": 1,
+    "dataHash": "280fc2f29506db9d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

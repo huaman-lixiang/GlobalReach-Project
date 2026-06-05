@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00173",
+  "emailAccount": "account-002",
+  "basicInfo": {
+    "name": "Eric Wilson",
+    "email": "eric.wilson@yahoo.co.jp",
+    "company": "Premier White Corp.",
+    "website": "www.premierwhitecorp.co.jp",
+    "country": "JP",
+    "countryName": "Japan",
+    "timezone": "Asia/Tokyo",
+    "language": "en",
+    "phone": "+5358023241672",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-04-17",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 16,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-05-01",
+    "replyRate": 38,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 63,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-07-23T14:32:51.747Z",
+    "updatedAt": "2026-05-09T14:32:51.747Z",
+    "version": 1,
+    "dataHash": "8fbd07998ab13c36",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

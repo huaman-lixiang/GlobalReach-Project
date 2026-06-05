@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03320",
+  "emailAccount": "account-034",
+  "basicInfo": {
+    "name": "Carolyn Jackson",
+    "email": "carolyn.jackson@company.ca",
+    "company": "Summit Torres Co.",
+    "website": "www.summittorresco.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+2762924163252",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2024-11-18",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 21,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-04-10T14:32:52.740Z",
+    "updatedAt": "2026-05-09T14:32:52.740Z",
+    "version": 1,
+    "dataHash": "aaffe4bfe0a51796",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

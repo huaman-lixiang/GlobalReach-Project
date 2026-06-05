@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04349",
+  "emailAccount": "account-044",
+  "basicInfo": {
+    "name": "Cynthia Jones",
+    "email": "cynthia.jones@web.de",
+    "company": "Super Walker Group",
+    "website": "www.superwalkergroup.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+6361755480581",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2024-07-10",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 34,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-09-04T14:32:53.049Z",
+    "updatedAt": "2026-05-09T14:32:53.049Z",
+    "version": 1,
+    "dataHash": "65b95ea86c6fbd5e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

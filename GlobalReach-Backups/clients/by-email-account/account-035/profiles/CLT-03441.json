@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03441",
+  "emailAccount": "account-035",
+  "basicInfo": {
+    "name": "Carolyn Nguyen",
+    "email": "carolyn.nguyen@company.es",
+    "company": "Super Torres Ltd.",
+    "website": "www.supertorresltd.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+8133131046614",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-03-06",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 7,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 11,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-16T14:32:52.776Z",
+    "updatedAt": "2026-05-09T14:32:52.776Z",
+    "version": 1,
+    "dataHash": "1c2600a9d2dd383c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

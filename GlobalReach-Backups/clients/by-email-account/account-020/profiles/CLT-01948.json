@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01948",
+  "emailAccount": "account-020",
+  "basicInfo": {
+    "name": "Joshua Jones",
+    "email": "joshua.jones@gmail.com",
+    "company": "Creative Williams Toys & Games",
+    "website": "www.creativewilliamstoysgames.com",
+    "country": "TR",
+    "countryName": "Turkey",
+    "timezone": "Europe/Istanbul",
+    "language": "en",
+    "phone": "+3374446450705",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2024-12-07",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 10,
+    "priorityScore": 58
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-08-01T14:32:52.301Z",
+    "updatedAt": "2026-05-09T14:32:52.301Z",
+    "version": 1,
+    "dataHash": "14b33d1047e67bcd",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

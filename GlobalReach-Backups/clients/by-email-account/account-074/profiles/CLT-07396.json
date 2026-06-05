@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07396",
+  "emailAccount": "account-074",
+  "basicInfo": {
+    "name": "Thomas Torres",
+    "email": "thomas.torres@company.fr",
+    "company": "Mighty Perez Corp.",
+    "website": "www.mightyperezcorp.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+3416905003976",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-04-09",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-25",
+    "replyRate": 114,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "12:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 88,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-05-25T14:32:53.936Z",
+    "updatedAt": "2026-05-09T14:32:53.936Z",
+    "version": 1,
+    "dataHash": "413e4d44730efcec",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

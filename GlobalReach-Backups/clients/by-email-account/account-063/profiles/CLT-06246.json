@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06246",
+  "emailAccount": "account-063",
+  "basicInfo": {
+    "name": "Emily Johnson",
+    "email": "emily.johnson@yahoo.com",
+    "company": "Whimsical Nguyen Co.",
+    "website": "www.whimsicalnguyenco.com",
+    "country": "NG",
+    "countryName": "Nigeria",
+    "timezone": "Africa/Lagos",
+    "language": "en",
+    "phone": "+40231655129",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-12-08",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 26,
+    "priorityScore": 58
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-05-04T14:32:53.600Z",
+    "updatedAt": "2026-05-09T14:32:53.600Z",
+    "version": 1,
+    "dataHash": "eef826974fb02bec",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

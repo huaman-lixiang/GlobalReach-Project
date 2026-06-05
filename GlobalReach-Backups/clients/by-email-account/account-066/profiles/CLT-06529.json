@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06529",
+  "emailAccount": "account-066",
+  "basicInfo": {
+    "name": "Lisa Lopez",
+    "email": "lisa.lopez@company.com",
+    "company": "Prime Young Corp.",
+    "website": "www.primeyoungcorp.com",
+    "country": "SG",
+    "countryName": "Singapore",
+    "timezone": "Asia/Singapore",
+    "language": "en",
+    "phone": "+2032725617473",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-09-24",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 15,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 8,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-09-08T14:32:53.682Z",
+    "updatedAt": "2026-05-09T14:32:53.682Z",
+    "version": 1,
+    "dataHash": "491789a5b864db92",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

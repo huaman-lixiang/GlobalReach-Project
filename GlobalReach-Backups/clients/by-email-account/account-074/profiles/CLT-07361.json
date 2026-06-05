@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07361",
+  "emailAccount": "account-074",
+  "basicInfo": {
+    "name": "Laura Gonzalez",
+    "email": "laura.gonzalez@company.co.jp",
+    "company": "Imaginative Campbell Inc.",
+    "website": "www.imaginativecampbellinc.co.jp",
+    "country": "JP",
+    "countryName": "Japan",
+    "timezone": "Asia/Tokyo",
+    "language": "en",
+    "phone": "+751788860489",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-02-25",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 18,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": null,
+    "replyRate": 28,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 65,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-06-29T14:32:53.926Z",
+    "updatedAt": "2026-05-09T14:32:53.926Z",
+    "version": 1,
+    "dataHash": "1ed1b3a0cb738538",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

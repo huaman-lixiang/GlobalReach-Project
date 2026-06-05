@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05783",
+  "emailAccount": "account-058",
+  "basicInfo": {
+    "name": "Randy Baker",
+    "email": "randy.baker@company.com",
+    "company": "Fantastic Anderson FunZone",
+    "website": "www.fantasticandersonfunzone.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+322656730015",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-05-03",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-05-01",
+    "replyRate": 250,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 86,
+    "priorityScore": 64
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-05-02T14:32:53.466Z",
+    "updatedAt": "2026-05-09T14:32:53.466Z",
+    "version": 1,
+    "dataHash": "03417a06dd148ce4",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

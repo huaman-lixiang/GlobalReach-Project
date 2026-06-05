@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02332",
+  "emailAccount": "account-024",
+  "basicInfo": {
+    "name": "Paul Hernandez",
+    "email": "paul.hernandez@t-online.de",
+    "company": "Elite Scott Co.",
+    "website": "www.elitescottco.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+1972052598864",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-03-02",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": null,
+    "replyRate": 42,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "13:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 99,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-06-01T14:32:52.431Z",
+    "updatedAt": "2026-05-09T14:32:52.431Z",
+    "version": 1,
+    "dataHash": "90ce338eebbffde7",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

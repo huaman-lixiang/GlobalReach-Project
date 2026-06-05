@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07445",
+  "emailAccount": "account-075",
+  "basicInfo": {
+    "name": "John Perez",
+    "email": "john.perez@gmail.com",
+    "company": "Royal Mitchell Distribution",
+    "website": "www.royalmitchelldistribution.com",
+    "country": "TH",
+    "countryName": "Thailand",
+    "timezone": "Asia/Bangkok",
+    "language": "en",
+    "phone": "+4709614984731",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2024-12-31",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 29,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-11-17T14:32:53.951Z",
+    "updatedAt": "2026-05-09T14:32:53.951Z",
+    "version": 1,
+    "dataHash": "a654ff2f0d348bd4",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

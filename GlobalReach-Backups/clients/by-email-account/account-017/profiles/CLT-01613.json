@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01613",
+  "emailAccount": "account-017",
+  "basicInfo": {
+    "name": "Betty Thomas",
+    "email": "betty.thomas@gmail.com",
+    "company": "Imperial Ramirez LLC",
+    "website": "www.imperialramirezllc.com",
+    "country": "PL",
+    "countryName": "Poland",
+    "timezone": "Europe/Warsaw",
+    "language": "en",
+    "phone": "+7203405065343",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2022,
+    "lastContactDate": "2026-05-03",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 31,
+    "priorityScore": 52
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-04-07T14:32:52.199Z",
+    "updatedAt": "2026-05-09T14:32:52.199Z",
+    "version": 1,
+    "dataHash": "0132a35c00d4e998",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

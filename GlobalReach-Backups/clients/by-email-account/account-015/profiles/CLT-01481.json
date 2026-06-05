@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01481",
+  "emailAccount": "account-015",
+  "basicInfo": {
+    "name": "Betty Carter",
+    "email": "betty.carter@gmail.com",
+    "company": "Imaginative Campbell Corp.",
+    "website": "www.imaginativecampbellcorp.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+7213680566269",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-08-27",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 14,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-06-23T14:32:52.159Z",
+    "updatedAt": "2026-05-09T14:32:52.159Z",
+    "version": 1,
+    "dataHash": "c30ee35857daf811",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07107",
+  "emailAccount": "account-072",
+  "basicInfo": {
+    "name": "Linda Carter",
+    "email": "linda.carter@gmail.com",
+    "company": "Bright Young Happy Kids",
+    "website": "www.brightyounghappykids.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+9446005206647",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2024-11-17",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 6,
+    "priorityScore": 80
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-06-20T14:32:53.851Z",
+    "updatedAt": "2026-05-09T14:32:53.851Z",
+    "version": 1,
+    "dataHash": "511134d3b4e9d0b4",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

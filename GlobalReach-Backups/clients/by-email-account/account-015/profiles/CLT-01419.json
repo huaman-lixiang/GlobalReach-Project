@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01419",
+  "emailAccount": "account-015",
+  "basicInfo": {
+    "name": "Barbara Young",
+    "email": "barbara.young@orange.fr",
+    "company": "Sun Davis WonderToys",
+    "website": "www.sundaviswondertoys.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+5170985509147",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-02-10",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 29,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 17,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-06-06T14:32:52.141Z",
+    "updatedAt": "2026-05-09T14:32:52.141Z",
+    "version": 1,
+    "dataHash": "9197d14badb04af6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

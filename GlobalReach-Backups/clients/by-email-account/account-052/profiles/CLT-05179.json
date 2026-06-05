@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05179",
+  "emailAccount": "account-052",
+  "basicInfo": {
+    "name": "Betty Perez",
+    "email": "betty.perez@company.co.jp",
+    "company": "Happy Carter Imports",
+    "website": "www.happycarterimports.co.jp",
+    "country": "JP",
+    "countryName": "Japan",
+    "timezone": "Asia/Tokyo",
+    "language": "en",
+    "phone": "+8950425114739",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2024-11-29",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 39,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-12-26T14:32:53.297Z",
+    "updatedAt": "2026-05-09T14:32:53.297Z",
+    "version": 1,
+    "dataHash": "6750e58d03920533",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

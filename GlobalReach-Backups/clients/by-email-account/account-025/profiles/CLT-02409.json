@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02409",
+  "emailAccount": "account-025",
+  "basicInfo": {
+    "name": "Mary Williams",
+    "email": "mary.williams@gmail.com",
+    "company": "Fantastic Nelson Toys & Games",
+    "website": "www.fantasticnelsontoysgames.com",
+    "country": "NO",
+    "countryName": "Norway",
+    "timezone": "Europe/Oslo",
+    "language": "en",
+    "phone": "+931462110734",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "rc-toys",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-12-27",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 36,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-01-31T14:32:52.457Z",
+    "updatedAt": "2026-05-09T14:32:52.457Z",
+    "version": 1,
+    "dataHash": "132b12bf91dd8e3c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00581",
+  "emailAccount": "account-006",
+  "basicInfo": {
+    "name": "James Young",
+    "email": "james.young@yahoo.com",
+    "company": "Omega Lopez FunZone",
+    "website": "www.omegalopezfunzone.com",
+    "country": "PL",
+    "countryName": "Poland",
+    "timezone": "Europe/Warsaw",
+    "language": "en",
+    "phone": "+5641070465955",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2026-02-28",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 9,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 14,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-04-07T14:32:51.876Z",
+    "updatedAt": "2026-05-09T14:32:51.876Z",
+    "version": 1,
+    "dataHash": "8881ee0e9b47a432",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

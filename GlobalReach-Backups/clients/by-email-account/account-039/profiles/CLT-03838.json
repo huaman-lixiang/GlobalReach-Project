@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03838",
+  "emailAccount": "account-039",
+  "basicInfo": {
+    "name": "Deborah Martinez",
+    "email": "deborah.martinez@yahoo.com",
+    "company": "Global Smith WonderToys",
+    "website": "www.globalsmithwondertoys.com",
+    "country": "SG",
+    "countryName": "Singapore",
+    "timezone": "Asia/Singapore",
+    "language": "en",
+    "phone": "+2619417805990",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2025-04-18",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 3,
+    "priorityScore": 88
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-03-27T14:32:52.896Z",
+    "updatedAt": "2026-05-09T14:32:52.896Z",
+    "version": 1,
+    "dataHash": "3001bb27fbd4cc9c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

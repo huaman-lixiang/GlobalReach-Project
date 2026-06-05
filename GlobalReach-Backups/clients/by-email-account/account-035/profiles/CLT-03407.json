@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03407",
+  "emailAccount": "account-035",
+  "basicInfo": {
+    "name": "Daniel Brown",
+    "email": "daniel.brown@company.es",
+    "company": "Zenith Garcia DreamPlay",
+    "website": "www.zenithgarciadreamplay.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+2276944377739",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2025-08-14",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 10,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-05-28T14:32:52.766Z",
+    "updatedAt": "2026-05-09T14:32:52.766Z",
+    "version": 1,
+    "dataHash": "c29c038fb140ad51",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

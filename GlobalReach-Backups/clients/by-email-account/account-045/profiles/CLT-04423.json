@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04423",
+  "emailAccount": "account-045",
+  "basicInfo": {
+    "name": "Deborah Thomas",
+    "email": "deborah.thomas@company.de",
+    "company": "Super Rodriguez Co.",
+    "website": "www.superrodriguezco.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+871672754100",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-02-15",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 17,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-23",
+    "replyRate": 24,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 83,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-01-17T14:32:53.071Z",
+    "updatedAt": "2026-05-09T14:32:53.071Z",
+    "version": 1,
+    "dataHash": "8dad6cf82af8b312",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

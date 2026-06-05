@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01082",
+  "emailAccount": "account-011",
+  "basicInfo": {
+    "name": "James Taylor",
+    "email": "james.taylor@gmail.com",
+    "company": "Alpha Taylor International",
+    "website": "www.alphataylorinternational.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+7860987086217",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-07-22",
+    "status": "sleeping",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 34,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-01-27T14:32:52.030Z",
+    "updatedAt": "2026-05-09T14:32:52.030Z",
+    "version": 1,
+    "dataHash": "18182277e7f50772",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

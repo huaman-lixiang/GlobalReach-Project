@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03965",
+  "emailAccount": "account-040",
+  "basicInfo": {
+    "name": "William Johnson",
+    "email": "william.johnson@gmail.com",
+    "company": "Sun Perez Co.",
+    "website": "www.sunperezco.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+2842488502676",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-03-02",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-04-28",
+    "replyRate": 27,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "14:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 88,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-10-28T14:32:52.935Z",
+    "updatedAt": "2026-05-09T14:32:52.935Z",
+    "version": 1,
+    "dataHash": "64a4630132a10a68",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

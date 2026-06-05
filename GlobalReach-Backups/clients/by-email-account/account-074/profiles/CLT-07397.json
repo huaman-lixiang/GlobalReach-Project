@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07397",
+  "emailAccount": "account-074",
+  "basicInfo": {
+    "name": "Samantha Torres",
+    "email": "samantha.torres@company.nl",
+    "company": "Universal Davis International",
+    "website": "www.universaldavisinternational.com",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "timezone": "Europe/Amsterdam",
+    "language": "en",
+    "phone": "+1164151035301",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2024-08-17",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 4,
+    "priorityScore": 86
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-10-12T14:32:53.936Z",
+    "updatedAt": "2026-05-09T14:32:53.936Z",
+    "version": 1,
+    "dataHash": "339167e0ac6be634",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

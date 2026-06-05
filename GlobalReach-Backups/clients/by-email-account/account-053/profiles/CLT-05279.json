@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05279",
+  "emailAccount": "account-053",
+  "basicInfo": {
+    "name": "Nancy Brown",
+    "email": "nancy.brown@company.co.jp",
+    "company": "Alpha Smith WonderToys",
+    "website": "www.alphasmithwondertoys.co.jp",
+    "country": "JP",
+    "countryName": "Japan",
+    "timezone": "Asia/Tokyo",
+    "language": "en",
+    "phone": "+3883183997783",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-02-15",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 18,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": "2026-04-27",
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "13:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 86,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-08-17T14:32:53.325Z",
+    "updatedAt": "2026-05-09T14:32:53.325Z",
+    "version": 1,
+    "dataHash": "ce217bf4474fc707",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

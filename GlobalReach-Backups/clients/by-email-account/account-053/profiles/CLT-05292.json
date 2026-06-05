@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05292",
+  "emailAccount": "account-053",
+  "basicInfo": {
+    "name": "Kenneth Rivera",
+    "email": "kenneth.rivera@company.com",
+    "company": "Premier Allen Enterprises",
+    "website": "www.premierallenenterprises.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+9780794273894",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-01-13",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 36,
+    "priorityScore": 64
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-05-24T14:32:53.328Z",
+    "updatedAt": "2026-05-09T14:32:53.328Z",
+    "version": 1,
+    "dataHash": "187fd61eb6e0db9c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

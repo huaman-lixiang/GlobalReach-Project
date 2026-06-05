@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01935",
+  "emailAccount": "account-020",
+  "basicInfo": {
+    "name": "Jacob Walker",
+    "email": "jacob.walker@outlook.com",
+    "company": "Prime Thomas Enterprises",
+    "website": "www.primethomasenterprises.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+2519226498633",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2025-05-29",
+    "status": "sleeping",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 8,
+    "priorityScore": 81
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-04-15T14:32:52.297Z",
+    "updatedAt": "2026-05-09T14:32:52.297Z",
+    "version": 1,
+    "dataHash": "9986b6c702e8d446",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

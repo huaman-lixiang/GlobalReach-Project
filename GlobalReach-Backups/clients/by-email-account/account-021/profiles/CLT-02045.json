@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02045",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Matthew Hall",
+    "email": "matthew.hall@yahoo.com",
+    "company": "Mega Torres Inc.",
+    "website": "www.megatorresinc.com",
+    "country": "SG",
+    "countryName": "Singapore",
+    "timezone": "Asia/Singapore",
+    "language": "en",
+    "phone": "+5056519226161",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "infant-toddler",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-03-01",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": null,
+    "replyRate": 75,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 73,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-10-13T14:32:52.335Z",
+    "updatedAt": "2026-05-09T14:32:52.335Z",
+    "version": 1,
+    "dataHash": "71061cb20e149f23",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

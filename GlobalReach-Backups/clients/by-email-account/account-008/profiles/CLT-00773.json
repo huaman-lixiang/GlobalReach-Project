@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00773",
+  "emailAccount": "account-008",
+  "basicInfo": {
+    "name": "Richard Robinson",
+    "email": "richard.robinson@yahoo.com",
+    "company": "Imperial Green Corp.",
+    "website": "www.imperialgreencorp.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+9395679434610",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2024-09-30",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 8,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 38,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-05-28T14:32:51.934Z",
+    "updatedAt": "2026-05-09T14:32:51.934Z",
+    "version": 1,
+    "dataHash": "b19b0285159b6e4c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

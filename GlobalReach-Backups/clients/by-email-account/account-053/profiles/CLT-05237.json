@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05237",
+  "emailAccount": "account-053",
+  "basicInfo": {
+    "name": "Raymond Flores",
+    "email": "raymond.flores@company.com",
+    "company": "Alpha Carter Happy Kids",
+    "website": "www.alphacarterhappykids.com",
+    "country": "MY",
+    "countryName": "Malaysia",
+    "timezone": "Asia/Kuala_Lumpur",
+    "language": "en",
+    "phone": "+2398222481192",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-10-28",
+    "status": "churned",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 23,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-08-08T14:32:53.313Z",
+    "updatedAt": "2026-05-09T14:32:53.313Z",
+    "version": 1,
+    "dataHash": "2434a5f92f5938ab",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

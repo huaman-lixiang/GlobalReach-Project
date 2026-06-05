@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04512",
+  "emailAccount": "account-046",
+  "basicInfo": {
+    "name": "Nancy Martinez",
+    "email": "nancy.martinez@gmail.com",
+    "company": "Happy Lewis Ltd.",
+    "website": "www.happylewisltd.com",
+    "country": "TR",
+    "countryName": "Turkey",
+    "timezone": "Europe/Istanbul",
+    "language": "en",
+    "phone": "+7536966260837",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "smart-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-04-26",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-19",
+    "replyRate": 700,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "smart-toys",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 74,
+    "priorityScore": 62
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-12-05T14:32:53.100Z",
+    "updatedAt": "2026-05-09T14:32:53.100Z",
+    "version": 1,
+    "dataHash": "933fbf6ec9d014c9",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

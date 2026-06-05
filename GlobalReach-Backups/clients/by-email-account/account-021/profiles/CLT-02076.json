@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-02076",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Shirley Campbell",
+    "email": "shirley.campbell@outlook.com",
+    "company": "Apex King Happy Kids",
+    "website": "www.apexkinghappykids.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+9026103900494",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "outdoor",
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2025-04-02",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 36,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-09-24T14:32:52.347Z",
+    "updatedAt": "2026-05-09T14:32:52.347Z",
+    "version": 1,
+    "dataHash": "550f7fab6ce4f1a6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01255",
+  "emailAccount": "account-013",
+  "basicInfo": {
+    "name": "Gregory Flores",
+    "email": "gregory.flores@gmail.com",
+    "company": "Whimsical Jones Ltd.",
+    "website": "www.whimsicaljonesltd.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+1560260367438",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-06-19",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 34,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-06-21T14:32:52.091Z",
+    "updatedAt": "2026-05-09T14:32:52.091Z",
+    "version": 1,
+    "dataHash": "150269d57e694eff",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

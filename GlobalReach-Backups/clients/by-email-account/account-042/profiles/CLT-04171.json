@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04171",
+  "emailAccount": "account-042",
+  "basicInfo": {
+    "name": "John Moore",
+    "email": "john.moore@company.nl",
+    "company": "Royal Allen FunZone",
+    "website": "www.royalallenfunzone.com",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "timezone": "Europe/Amsterdam",
+    "language": "en",
+    "phone": "+1331055780054",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-02-20",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 29,
+    "priorityScore": 86
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-09-07T14:32:52.995Z",
+    "updatedAt": "2026-05-09T14:32:52.995Z",
+    "version": 1,
+    "dataHash": "dea76b861500d17a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

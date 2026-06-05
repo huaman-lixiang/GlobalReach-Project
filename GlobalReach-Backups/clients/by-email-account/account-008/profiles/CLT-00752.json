@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00752",
+  "emailAccount": "account-008",
+  "basicInfo": {
+    "name": "Barbara Wright",
+    "email": "barbara.wright@company.com",
+    "company": "Bright Mitchell Trading",
+    "website": "www.brightmitchelltrading.com",
+    "country": "VN",
+    "countryName": "Vietnam",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "language": "en",
+    "phone": "+3843258382748",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-03-31",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 34,
+    "priorityScore": 80
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-08-29T14:32:51.928Z",
+    "updatedAt": "2026-05-09T14:32:51.928Z",
+    "version": 1,
+    "dataHash": "f8f5f02931d0cc83",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

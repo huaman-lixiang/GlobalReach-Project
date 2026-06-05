@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04633",
+  "emailAccount": "account-047",
+  "basicInfo": {
+    "name": "Jennifer Adams",
+    "email": "jennifer.adams@company.com",
+    "company": "Omega Adams PlayTime",
+    "website": "www.omegaadamsplaytime.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+6490075648549",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-06-17",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 3,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-02-15T14:32:53.137Z",
+    "updatedAt": "2026-05-09T14:32:53.137Z",
+    "version": 1,
+    "dataHash": "fe924fc683328f32",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

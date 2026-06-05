@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04693",
+  "emailAccount": "account-047",
+  "basicInfo": {
+    "name": "Mark Baker",
+    "email": "mark.baker@gmail.com",
+    "company": "Universal Robinson Co.",
+    "website": "www.universalrobinsonco.com",
+    "country": "EG",
+    "countryName": "Egypt",
+    "timezone": "Africa/Cairo",
+    "language": "en",
+    "phone": "+3534901288772",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-12-13",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 8,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 7,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-04-30T14:32:53.156Z",
+    "updatedAt": "2026-05-09T14:32:53.156Z",
+    "version": 1,
+    "dataHash": "488a1919600297a2",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

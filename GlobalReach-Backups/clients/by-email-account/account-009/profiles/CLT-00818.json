@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00818",
+  "emailAccount": "account-009",
+  "basicInfo": {
+    "name": "Pamela Harris",
+    "email": "pamela.harris@gmail.com",
+    "company": "Creative Rodriguez Corp.",
+    "website": "www.creativerodriguezcorp.com",
+    "country": "IN",
+    "countryName": "India",
+    "timezone": "Asia/Kolkata",
+    "language": "en",
+    "phone": "+6879205993720",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-09-04",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 7,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-05-22T14:32:51.948Z",
+    "updatedAt": "2026-05-09T14:32:51.948Z",
+    "version": 1,
+    "dataHash": "46aa7c7457f9a5d8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

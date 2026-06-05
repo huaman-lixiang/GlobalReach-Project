@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06203",
+  "emailAccount": "account-063",
+  "basicInfo": {
+    "name": "Stephanie Adams",
+    "email": "stephanie.adams@company.com",
+    "company": "Prime Allen ToyBox",
+    "website": "www.primeallentoybox.com",
+    "country": "CH",
+    "countryName": "Switzerland",
+    "timezone": "Europe/Zurich",
+    "language": "en",
+    "phone": "+464374044969",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2019,
+    "lastContactDate": "2025-04-12",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 15,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 31,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-09-05T14:32:53.588Z",
+    "updatedAt": "2026-05-09T14:32:53.588Z",
+    "version": 1,
+    "dataHash": "e4d7c3cf3d92d496",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

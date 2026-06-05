@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05784",
+  "emailAccount": "account-058",
+  "basicInfo": {
+    "name": "Samuel Harris",
+    "email": "samuel.harris@yahoo.com",
+    "company": "Super Martin ToyBox",
+    "website": "www.supermartintoybox.com",
+    "country": "SG",
+    "countryName": "Singapore",
+    "timezone": "Asia/Singapore",
+    "language": "en",
+    "phone": "+8236207058716",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2018,
+    "lastContactDate": "2025-02-14",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 15,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 4,
+    "priorityScore": 81
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-04-14T14:32:53.466Z",
+    "updatedAt": "2026-05-09T14:32:53.466Z",
+    "version": 1,
+    "dataHash": "e83fbee200aa4b67",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

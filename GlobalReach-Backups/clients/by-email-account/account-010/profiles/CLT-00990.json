@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00990",
+  "emailAccount": "account-010",
+  "basicInfo": {
+    "name": "David Lee",
+    "email": "david.lee@company.com",
+    "company": "Premier Lewis Enterprises",
+    "website": "www.premierlewisenterprises.com",
+    "country": "MX",
+    "countryName": "Mexico",
+    "timezone": "America/Mexico_City",
+    "language": "en",
+    "phone": "+7887371681530",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-02-21",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 7,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-22T14:32:52.001Z",
+    "updatedAt": "2026-05-09T14:32:52.001Z",
+    "version": 1,
+    "dataHash": "cdd75cf4e43681a4",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

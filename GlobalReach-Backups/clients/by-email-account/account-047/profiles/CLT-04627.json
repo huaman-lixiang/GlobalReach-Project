@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04627",
+  "emailAccount": "account-047",
+  "basicInfo": {
+    "name": "Edward Roberts",
+    "email": "edward.roberts@company.de",
+    "company": "Summit Miller Little Stars",
+    "website": "www.summitmillerlittlestars.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+9766507738284",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2018,
+    "lastContactDate": "2024-11-30",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 33,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-07-02T14:32:53.136Z",
+    "updatedAt": "2026-05-09T14:32:53.136Z",
+    "version": 1,
+    "dataHash": "ef5a765c5f8c66e1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03057",
+  "emailAccount": "account-031",
+  "basicInfo": {
+    "name": "Randy Green",
+    "email": "randy.green@company.com",
+    "company": "Super Nguyen PlayTime",
+    "website": "www.supernguyenplaytime.com",
+    "country": "ID",
+    "countryName": "Indonesia",
+    "timezone": "Asia/Jakarta",
+    "language": "en",
+    "phone": "+1078248367429",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2024-06-17",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 37,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-17T14:32:52.659Z",
+    "updatedAt": "2026-05-09T14:32:52.659Z",
+    "version": 1,
+    "dataHash": "a636a5541ceb1222",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

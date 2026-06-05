@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04559",
+  "emailAccount": "account-046",
+  "basicInfo": {
+    "name": "Jennifer Mitchell",
+    "email": "jennifer.mitchell@company.com",
+    "company": "Mega Wilson Inc.",
+    "website": "www.megawilsoninc.com",
+    "country": "MY",
+    "countryName": "Malaysia",
+    "timezone": "Asia/Kuala_Lumpur",
+    "language": "en",
+    "phone": "+2237711793439",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-01-13",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 13,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-09-04T14:32:53.115Z",
+    "updatedAt": "2026-05-09T14:32:53.115Z",
+    "version": 1,
+    "dataHash": "7e9434e8292c3686",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

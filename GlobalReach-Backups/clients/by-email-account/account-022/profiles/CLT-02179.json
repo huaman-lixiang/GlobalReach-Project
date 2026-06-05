@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02179",
+  "emailAccount": "account-022",
+  "basicInfo": {
+    "name": "Melissa Hill",
+    "email": "melissa.hill@yahoo.com",
+    "company": "Moon Harris DreamPlay",
+    "website": "www.moonharrisdreamplay.com",
+    "country": "CL",
+    "countryName": "Chile",
+    "timezone": "America/Santiago",
+    "language": "en",
+    "phone": "+2615394099081",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-02-22",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 18,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": "2026-04-20",
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 99,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-11-25T14:32:52.381Z",
+    "updatedAt": "2026-05-09T14:32:52.381Z",
+    "version": 1,
+    "dataHash": "3bfab62d9bdac02c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

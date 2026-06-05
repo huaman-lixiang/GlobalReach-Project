@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01912",
+  "emailAccount": "account-020",
+  "basicInfo": {
+    "name": "Emma Martin",
+    "email": "emma.martin@gmail.com",
+    "company": "Sun Thompson Little Stars",
+    "website": "www.sunthompsonlittlestars.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+2746571242576",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "educational",
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2024-08-21",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 36,
+    "priorityScore": 63
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-08-17T14:32:52.290Z",
+    "updatedAt": "2026-05-09T14:32:52.290Z",
+    "version": 1,
+    "dataHash": "0d5f3b2eb84e47c0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

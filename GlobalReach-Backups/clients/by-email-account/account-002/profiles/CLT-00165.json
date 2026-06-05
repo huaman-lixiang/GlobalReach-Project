@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00165",
+  "emailAccount": "account-002",
+  "basicInfo": {
+    "name": "Rebecca Lewis",
+    "email": "rebecca.lewis@gmail.com",
+    "company": "Sun Allen Happy Kids",
+    "website": "www.sunallenhappykids.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+6755337757102",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "infant-toddler",
+      "outdoor",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2024-12-14",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 0,
+    "priorityScore": 57
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-02-16T14:32:51.745Z",
+    "updatedAt": "2026-05-09T14:32:51.745Z",
+    "version": 1,
+    "dataHash": "78af1ff5c25bdc77",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

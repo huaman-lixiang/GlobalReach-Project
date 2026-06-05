@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07795",
+  "emailAccount": "account-078",
+  "basicInfo": {
+    "name": "Amy Perez",
+    "email": "amy.perez@hotmail.com",
+    "company": "Elite Hill Group",
+    "website": "www.elitehillgroup.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+1433890394934",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2023,
+    "lastContactDate": "2024-08-28",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 0,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-24T14:32:54.052Z",
+    "updatedAt": "2026-05-09T14:32:54.052Z",
+    "version": 1,
+    "dataHash": "4b08ff1f1680fca6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

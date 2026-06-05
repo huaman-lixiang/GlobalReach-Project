@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-06454",
+  "emailAccount": "account-065",
+  "basicInfo": {
+    "name": "Joseph Jackson",
+    "email": "joseph.jackson@company.com",
+    "company": "Fantastic Walker Inc.",
+    "website": "www.fantasticwalkerinc.com",
+    "country": "MX",
+    "countryName": "Mexico",
+    "timezone": "America/Mexico_City",
+    "language": "en",
+    "phone": "+4556445554775",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-04-07",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 35,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-01-02T14:32:53.660Z",
+    "updatedAt": "2026-05-09T14:32:53.660Z",
+    "version": 1,
+    "dataHash": "b472ed383486f115",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

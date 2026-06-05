@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00765",
+  "emailAccount": "account-008",
+  "basicInfo": {
+    "name": "Emma Rivera",
+    "email": "emma.rivera@gmail.com",
+    "company": "Creative Flores Ltd.",
+    "website": "www.creativefloresltd.com",
+    "country": "AT",
+    "countryName": "Austria",
+    "timezone": "Europe/Vienna",
+    "language": "en",
+    "phone": "+5677084395949",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "infant-toddler",
+      "smart-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-11-23",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 39,
+    "priorityScore": 62
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-08-21T14:32:51.932Z",
+    "updatedAt": "2026-05-09T14:32:51.932Z",
+    "version": 1,
+    "dataHash": "10e33b892cdc0ac2",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

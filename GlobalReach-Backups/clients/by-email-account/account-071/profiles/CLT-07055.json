@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07055",
+  "emailAccount": "account-071",
+  "basicInfo": {
+    "name": "Susan Gonzalez",
+    "email": "susan.gonzalez@libero.it",
+    "company": "Whimsical Lee PlayTime",
+    "website": "www.whimsicalleeplaytime.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+2613618809863",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational",
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-01-17",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 11,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-09-30T14:32:53.836Z",
+    "updatedAt": "2026-05-09T14:32:53.836Z",
+    "version": 1,
+    "dataHash": "00d385cd673c8c38",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

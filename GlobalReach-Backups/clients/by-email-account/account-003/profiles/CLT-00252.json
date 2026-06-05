@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00252",
+  "emailAccount": "account-003",
+  "basicInfo": {
+    "name": "Janet Rodriguez",
+    "email": "janet.rodriguez@company.com",
+    "company": "Playful Torres DreamPlay",
+    "website": "www.playfultorresdreamplay.com",
+    "country": "NO",
+    "countryName": "Norway",
+    "timezone": "Europe/Oslo",
+    "language": "en",
+    "phone": "+1534017296623",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-07-15",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 20,
+    "priorityScore": 60
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-03-11T14:32:51.772Z",
+    "updatedAt": "2026-05-09T14:32:51.772Z",
+    "version": 1,
+    "dataHash": "665ab6e2a81d9ba5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

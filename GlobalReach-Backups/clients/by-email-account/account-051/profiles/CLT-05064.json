@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05064",
+  "emailAccount": "account-051",
+  "basicInfo": {
+    "name": "Christine Jackson",
+    "email": "christine.jackson@yahoo.com",
+    "company": "Creative Adams Happy Kids",
+    "website": "www.creativeadamshappykids.com",
+    "country": "AT",
+    "countryName": "Austria",
+    "timezone": "Europe/Vienna",
+    "language": "en",
+    "phone": "+8098485901936",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2024-06-24",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 37,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-11-15T14:32:53.265Z",
+    "updatedAt": "2026-05-09T14:32:53.265Z",
+    "version": 1,
+    "dataHash": "3659665d6aa478ae",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

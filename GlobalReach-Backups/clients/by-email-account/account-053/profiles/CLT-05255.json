@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05255",
+  "emailAccount": "account-053",
+  "basicInfo": {
+    "name": "Samuel Carter",
+    "email": "samuel.carter@company.com",
+    "company": "Mighty Taylor Distribution",
+    "website": "www.mightytaylordistribution.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+3345626878962",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-03-04",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 7,
+    "priorityScore": 81
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-05-17T14:32:53.318Z",
+    "updatedAt": "2026-05-09T14:32:53.318Z",
+    "version": 1,
+    "dataHash": "f76b183ef621eabf",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

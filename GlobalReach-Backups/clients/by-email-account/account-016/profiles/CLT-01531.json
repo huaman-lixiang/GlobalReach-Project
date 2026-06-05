@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01531",
+  "emailAccount": "account-016",
+  "basicInfo": {
+    "name": "David Miller",
+    "email": "david.miller@hotmail.com",
+    "company": "Playful Anderson Imports",
+    "website": "www.playfulandersonimports.com",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "timezone": "Europe/Amsterdam",
+    "language": "en",
+    "phone": "+2501182409751",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-03-07",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 33,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-05-10T14:32:52.174Z",
+    "updatedAt": "2026-05-09T14:32:52.174Z",
+    "version": 1,
+    "dataHash": "d122bde588a78133",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

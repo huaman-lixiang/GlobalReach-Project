@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04031",
+  "emailAccount": "account-041",
+  "basicInfo": {
+    "name": "Anthony Robinson",
+    "email": "anthony.robinson@company.com",
+    "company": "Mighty Walker Kids World",
+    "website": "www.mightywalkerkidsworld.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+5188128501943",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-04-05",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-04-22",
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 87,
+    "priorityScore": 80
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-10-01T14:32:52.954Z",
+    "updatedAt": "2026-05-09T14:32:52.954Z",
+    "version": 1,
+    "dataHash": "9435cbe010e98b31",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

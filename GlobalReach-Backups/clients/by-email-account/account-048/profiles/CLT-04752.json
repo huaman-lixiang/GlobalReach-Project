@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04752",
+  "emailAccount": "account-048",
+  "basicInfo": {
+    "name": "Mary Smith",
+    "email": "mary.smith@yahoo.com",
+    "company": "Imperial Hernandez DreamPlay",
+    "website": "www.imperialhernandezdreamplay.com",
+    "country": "EG",
+    "countryName": "Egypt",
+    "timezone": "Africa/Cairo",
+    "language": "en",
+    "phone": "+352974525919",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "educational",
+      "smart-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-02-28",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-04-24",
+    "replyRate": 75,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "educational",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 100,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-10-28T14:32:53.173Z",
+    "updatedAt": "2026-05-09T14:32:53.173Z",
+    "version": 1,
+    "dataHash": "b517b98ec08d3bfa",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

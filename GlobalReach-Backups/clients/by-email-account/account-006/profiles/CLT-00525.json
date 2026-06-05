@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00525",
+  "emailAccount": "account-006",
+  "basicInfo": {
+    "name": "Amanda Anderson",
+    "email": "amanda.anderson@company.com",
+    "company": "Royal Hill International",
+    "website": "www.royalhillinternational.com",
+    "country": "PL",
+    "countryName": "Poland",
+    "timezone": "Europe/Warsaw",
+    "language": "en",
+    "phone": "+7909203423108",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-08-23",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 7,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 17,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-10-18T14:32:51.859Z",
+    "updatedAt": "2026-05-09T14:32:51.859Z",
+    "version": 1,
+    "dataHash": "711b611b0e95598c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-05215",
+  "emailAccount": "account-053",
+  "basicInfo": {
+    "name": "Helen White",
+    "email": "helen.white@company.com",
+    "company": "Sun King Distribution",
+    "website": "www.sunkingdistribution.com",
+    "country": "AR",
+    "countryName": "Argentina",
+    "timezone": "America/Buenos_Aires",
+    "language": "ar",
+    "phone": "+7718925845124",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-02-12",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": null,
+    "replyRate": 175,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 83,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-09-26T14:32:53.307Z",
+    "updatedAt": "2026-05-09T14:32:53.307Z",
+    "version": 1,
+    "dataHash": "7b0f4f68ea6dd192",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05514",
+  "emailAccount": "account-056",
+  "basicInfo": {
+    "name": "Kimberly Ramirez",
+    "email": "kimberly.ramirez@hotmail.com",
+    "company": "Premier Clark Group",
+    "website": "www.premierclarkgroup.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+7391431009622",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-12-16",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 3,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-03-13T14:32:53.390Z",
+    "updatedAt": "2026-05-09T14:32:53.390Z",
+    "version": 1,
+    "dataHash": "43b754f78175364a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

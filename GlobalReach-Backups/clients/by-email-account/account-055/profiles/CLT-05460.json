@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05460",
+  "emailAccount": "account-055",
+  "basicInfo": {
+    "name": "Brian Hall",
+    "email": "brian.hall@company.com",
+    "company": "Whimsical Hernandez LLC",
+    "website": "www.whimsicalhernandezllc.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+2985932714972",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-03-01",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 60,
+    "priorityScore": 88
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-04-29T14:32:53.374Z",
+    "updatedAt": "2026-05-09T14:32:53.374Z",
+    "version": 1,
+    "dataHash": "1dd97b9c967041e6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

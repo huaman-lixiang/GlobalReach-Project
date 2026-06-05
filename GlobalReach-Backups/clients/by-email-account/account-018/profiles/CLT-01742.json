@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01742",
+  "emailAccount": "account-018",
+  "basicInfo": {
+    "name": "Randy Lopez",
+    "email": "randy.lopez@company.co.jp",
+    "company": "Premier Thomas Co.",
+    "website": "www.premierthomasco.co.jp",
+    "country": "JP",
+    "countryName": "Japan",
+    "timezone": "Asia/Tokyo",
+    "language": "en",
+    "phone": "+2586038071011",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2018,
+    "lastContactDate": "2025-10-01",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 8,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-22T14:32:52.237Z",
+    "updatedAt": "2026-05-09T14:32:52.237Z",
+    "version": 1,
+    "dataHash": "63fbfa387e4f7f10",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

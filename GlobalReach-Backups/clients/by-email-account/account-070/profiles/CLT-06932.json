@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-06932",
+  "emailAccount": "account-070",
+  "basicInfo": {
+    "name": "John Baker",
+    "email": "john.baker@t-online.de",
+    "company": "Sun Hernandez ToyBox",
+    "website": "www.sunhernandeztoybox.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+3590693054189",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-08-13",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 40,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-10-23T14:32:53.800Z",
+    "updatedAt": "2026-05-09T14:32:53.800Z",
+    "version": 1,
+    "dataHash": "5d10382c3b762bc0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

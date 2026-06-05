@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05979",
+  "emailAccount": "account-060",
+  "basicInfo": {
+    "name": "Brandon Adams",
+    "email": "brandon.adams@company.co.uk",
+    "company": "Imaginative Hall Group",
+    "website": "www.imaginativehallgroup.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+4076742134366",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-03-29",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-04-28",
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 63,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-04-25T14:32:53.523Z",
+    "updatedAt": "2026-05-09T14:32:53.523Z",
+    "version": 1,
+    "dataHash": "d1b957fe59a9973b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

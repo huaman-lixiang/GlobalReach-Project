@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00218",
+  "emailAccount": "account-003",
+  "basicInfo": {
+    "name": "Kathleen Hernandez",
+    "email": "kathleen.hernandez@company.ca",
+    "company": "Joyful Thompson Imports",
+    "website": "www.joyfulthompsonimports.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+6842780697204",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "rc-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-03-31",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": "2026-05-08",
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "rc-toys",
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 79,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-28T14:32:51.762Z",
+    "updatedAt": "2026-05-09T14:32:51.762Z",
+    "version": 1,
+    "dataHash": "e511d0b76e7955d2",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

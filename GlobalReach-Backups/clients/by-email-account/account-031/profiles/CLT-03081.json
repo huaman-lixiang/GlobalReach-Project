@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03081",
+  "emailAccount": "account-031",
+  "basicInfo": {
+    "name": "Amanda Allen",
+    "email": "amanda.allen@company.de",
+    "company": "Joyful Jackson International",
+    "website": "www.joyfuljacksoninternational.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+507822275329",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2025-10-24",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 1,
+    "priorityScore": 81
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-05-03T14:32:52.667Z",
+    "updatedAt": "2026-05-09T14:32:52.667Z",
+    "version": 1,
+    "dataHash": "6c0af4f51ada8da3",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

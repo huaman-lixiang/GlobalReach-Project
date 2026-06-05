@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-06021",
+  "emailAccount": "account-061",
+  "basicInfo": {
+    "name": "Joseph Moore",
+    "email": "joseph.moore@gmail.com",
+    "company": "Sun Wright Happy Kids",
+    "website": "www.sunwrighthappykids.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+9239458935552",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2025-05-05",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 21,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-10-30T14:32:53.535Z",
+    "updatedAt": "2026-05-09T14:32:53.535Z",
+    "version": 1,
+    "dataHash": "704fcdaec0d7a64d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

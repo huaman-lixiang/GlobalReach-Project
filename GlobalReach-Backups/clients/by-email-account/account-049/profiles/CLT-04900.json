@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04900",
+  "emailAccount": "account-049",
+  "basicInfo": {
+    "name": "Sharon Miller",
+    "email": "sharon.miller@gmail.com",
+    "company": "Apex Nguyen LLC",
+    "website": "www.apexnguyenllc.com",
+    "country": "VN",
+    "countryName": "Vietnam",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "language": "en",
+    "phone": "+7962710355166",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2024-09-17",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 35,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-03-12T14:32:53.218Z",
+    "updatedAt": "2026-05-09T14:32:53.218Z",
+    "version": 1,
+    "dataHash": "0fcacf2bfcc1a409",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

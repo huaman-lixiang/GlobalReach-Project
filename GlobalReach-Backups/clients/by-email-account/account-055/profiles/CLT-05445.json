@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05445",
+  "emailAccount": "account-055",
+  "basicInfo": {
+    "name": "David Adams",
+    "email": "david.adams@outlook.com",
+    "company": "Prime Roberts Imports",
+    "website": "www.primerobertsimports.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+4303654883690",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-03-17",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": "2026-04-17",
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 70,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-06-05T14:32:53.370Z",
+    "updatedAt": "2026-05-09T14:32:53.370Z",
+    "version": 1,
+    "dataHash": "e3be567940b7616a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04444",
+  "emailAccount": "account-045",
+  "basicInfo": {
+    "name": "Kenneth Clark",
+    "email": "kenneth.clark@yahoo.com",
+    "company": "Summit Baker DreamPlay",
+    "website": "www.summitbakerdreamplay.com",
+    "country": "TH",
+    "countryName": "Thailand",
+    "timezone": "Asia/Bangkok",
+    "language": "en",
+    "phone": "+8470794453282",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2024,
+    "lastContactDate": "2024-10-31",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 35,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-09-20T14:32:53.079Z",
+    "updatedAt": "2026-05-09T14:32:53.079Z",
+    "version": 1,
+    "dataHash": "1d10baaa3d63586a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

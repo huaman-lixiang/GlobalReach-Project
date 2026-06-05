@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07402",
+  "emailAccount": "account-075",
+  "basicInfo": {
+    "name": "Karen Allen",
+    "email": "karen.allen@gmail.com",
+    "company": "Ultra Harris Corp.",
+    "website": "www.ultraharriscorp.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+6832632605818",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-04-21",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-05-01",
+    "replyRate": 80,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 65,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-04-17T14:32:53.938Z",
+    "updatedAt": "2026-05-09T14:32:53.938Z",
+    "version": 1,
+    "dataHash": "9e29dcf5b4cac756",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

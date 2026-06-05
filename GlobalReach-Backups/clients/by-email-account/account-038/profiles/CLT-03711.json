@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03711",
+  "emailAccount": "account-038",
+  "basicInfo": {
+    "name": "Elizabeth Thomas",
+    "email": "elizabeth.thomas@yahoo.co.uk",
+    "company": "Universal Allen Corp.",
+    "website": "www.universalallencorp.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+4709769794877",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-04-11",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-05-01",
+    "replyRate": 600,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "rc-toys",
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 61,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-09-12T14:32:52.858Z",
+    "updatedAt": "2026-05-09T14:32:52.858Z",
+    "version": 1,
+    "dataHash": "e15bbb6bd075992a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

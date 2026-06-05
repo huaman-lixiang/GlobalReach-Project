@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00464",
+  "emailAccount": "account-005",
+  "basicInfo": {
+    "name": "Betty Walker",
+    "email": "betty.walker@yahoo.com",
+    "company": "Premier Brown Imports",
+    "website": "www.premierbrownimports.com",
+    "country": "SA",
+    "countryName": "Saudi Arabia",
+    "timezone": "Asia/Riyadh",
+    "language": "ar",
+    "phone": "+8615597908768",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-17",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 16,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-07-24T14:32:51.839Z",
+    "updatedAt": "2026-05-09T14:32:51.839Z",
+    "version": 1,
+    "dataHash": "6ebe5d115e0902bf",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

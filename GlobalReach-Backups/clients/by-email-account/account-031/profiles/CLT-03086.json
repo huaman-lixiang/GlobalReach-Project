@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03086",
+  "emailAccount": "account-031",
+  "basicInfo": {
+    "name": "Michelle Carter",
+    "email": "michelle.carter@company.fr",
+    "company": "Ultra Clark Corp.",
+    "website": "www.ultraclarkcorp.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+8760682657061",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "educational",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2024,
+    "lastContactDate": "2024-11-08",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 27,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-07-28T14:32:52.668Z",
+    "updatedAt": "2026-05-09T14:32:52.668Z",
+    "version": 1,
+    "dataHash": "1980ea346d475a7b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

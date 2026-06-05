@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03669",
+  "emailAccount": "account-037",
+  "basicInfo": {
+    "name": "Carolyn Garcia",
+    "email": "carolyn.garcia@company.com.au",
+    "company": "Creative Miller Ltd.",
+    "website": "www.creativemillerltd.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+7605073686300",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-03-12",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 19,
+    "priorityScore": 80
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-04-18T14:32:52.845Z",
+    "updatedAt": "2026-05-09T14:32:52.845Z",
+    "version": 1,
+    "dataHash": "574dae95d7a0eba6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

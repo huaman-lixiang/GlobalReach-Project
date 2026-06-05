@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07825",
+  "emailAccount": "account-079",
+  "basicInfo": {
+    "name": "Michelle Perez",
+    "email": "michelle.perez@gmail.com",
+    "company": "Mega Jackson PlayTime",
+    "website": "www.megajacksonplaytime.com",
+    "country": "SE",
+    "countryName": "Sweden",
+    "timezone": "Europe/Stockholm",
+    "language": "en",
+    "phone": "+8478137237097",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2024-05-26",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 67,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 16,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-02-06T14:32:54.061Z",
+    "updatedAt": "2026-05-09T14:32:54.061Z",
+    "version": 1,
+    "dataHash": "2193b5baa0ffcfe2",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

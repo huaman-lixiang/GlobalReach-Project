@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02741",
+  "emailAccount": "account-028",
+  "basicInfo": {
+    "name": "Larry Campbell",
+    "email": "larry.campbell@yahoo.com",
+    "company": "Happy Nelson PlayTime",
+    "website": "www.happynelsonplaytime.com",
+    "country": "CZ",
+    "countryName": "Czech Republic",
+    "timezone": "Europe/Prague",
+    "language": "en",
+    "phone": "+2471893983483",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2017,
+    "lastContactDate": "2024-07-03",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 20,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-12-14T14:32:52.564Z",
+    "updatedAt": "2026-05-09T14:32:52.564Z",
+    "version": 1,
+    "dataHash": "ca58c8c700141d1b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

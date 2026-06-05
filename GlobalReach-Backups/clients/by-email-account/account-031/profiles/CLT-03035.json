@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03035",
+  "emailAccount": "account-031",
+  "basicInfo": {
+    "name": "Nancy Williams",
+    "email": "nancy.williams@gmail.com",
+    "company": "Royal Ramirez Little Stars",
+    "website": "www.royalramirezlittlestars.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+9432255055867",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "infant-toddler",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-12-12",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 18,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-30T14:32:52.653Z",
+    "updatedAt": "2026-05-09T14:32:52.653Z",
+    "version": 1,
+    "dataHash": "f3b8b9b442bde98a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

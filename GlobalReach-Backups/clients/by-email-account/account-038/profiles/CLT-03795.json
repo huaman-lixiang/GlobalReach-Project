@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03795",
+  "emailAccount": "account-038",
+  "basicInfo": {
+    "name": "Thomas Sanchez",
+    "email": "thomas.sanchez@company.de",
+    "company": "Creative Smith Ltd.",
+    "website": "www.creativesmithltd.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+4271130726967",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2024-10-11",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 8,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-12-11T14:32:52.883Z",
+    "updatedAt": "2026-05-09T14:32:52.883Z",
+    "version": 1,
+    "dataHash": "740163884dc89352",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

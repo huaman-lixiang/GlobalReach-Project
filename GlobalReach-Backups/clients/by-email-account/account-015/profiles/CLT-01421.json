@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01421",
+  "emailAccount": "account-015",
+  "basicInfo": {
+    "name": "Amy Brown",
+    "email": "amy.brown@company.it",
+    "company": "Bright Williams Group",
+    "website": "www.brightwilliamsgroup.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+7565817923419",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-04-20",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": "2026-05-08",
+    "replyRate": 5,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 83,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-09-23T14:32:52.141Z",
+    "updatedAt": "2026-05-09T14:32:52.141Z",
+    "version": 1,
+    "dataHash": "430d5d46640153f3",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

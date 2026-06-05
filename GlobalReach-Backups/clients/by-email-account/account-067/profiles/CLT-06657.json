@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06657",
+  "emailAccount": "account-067",
+  "basicInfo": {
+    "name": "Frank King",
+    "email": "frank.king@company.com",
+    "company": "Omega Roberts Inc.",
+    "website": "www.omegarobertsinc.com",
+    "country": "ZA",
+    "countryName": "South Africa",
+    "timezone": "Africa/Johannesburg",
+    "language": "en",
+    "phone": "+5650141264643",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational",
+      "smart-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-01-07",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 17,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-10-17T14:32:53.720Z",
+    "updatedAt": "2026-05-09T14:32:53.720Z",
+    "version": 1,
+    "dataHash": "d7a74a65c6842615",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01116",
+  "emailAccount": "account-012",
+  "basicInfo": {
+    "name": "William Mitchell",
+    "email": "william.mitchell@gmail.com",
+    "company": "Prime Smith Group",
+    "website": "www.primesmithgroup.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+9292782260929",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "educational",
+      "outdoor",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-12-07",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 20,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-04-26T14:32:52.049Z",
+    "updatedAt": "2026-05-09T14:32:52.049Z",
+    "version": 1,
+    "dataHash": "f5f60b1a0d671df7",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

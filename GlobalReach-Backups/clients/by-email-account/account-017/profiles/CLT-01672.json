@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01672",
+  "emailAccount": "account-017",
+  "basicInfo": {
+    "name": "Donald Green",
+    "email": "donald.green@company.de",
+    "company": "Playful Adams Happy Kids",
+    "website": "www.playfuladamshappykids.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+4007382391764",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-01-27",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 39,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-06-14T14:32:52.217Z",
+    "updatedAt": "2026-05-09T14:32:52.217Z",
+    "version": 1,
+    "dataHash": "8843221bd01d50bc",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

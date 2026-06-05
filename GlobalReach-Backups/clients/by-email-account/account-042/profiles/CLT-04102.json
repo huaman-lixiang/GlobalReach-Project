@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04102",
+  "emailAccount": "account-042",
+  "basicInfo": {
+    "name": "George Anderson",
+    "email": "george.anderson@company.fr",
+    "company": "Sun Taylor Enterprises",
+    "website": "www.suntaylorenterprises.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+3460916364792",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-04-27",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 17,
+    "priorityScore": 75
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-28T14:32:52.974Z",
+    "updatedAt": "2026-05-09T14:32:52.974Z",
+    "version": 1,
+    "dataHash": "c75a86bbb436823c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

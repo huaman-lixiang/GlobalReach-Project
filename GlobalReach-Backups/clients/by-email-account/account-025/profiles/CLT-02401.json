@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02401",
+  "emailAccount": "account-025",
+  "basicInfo": {
+    "name": "Jacob Lopez",
+    "email": "jacob.lopez@company.ca",
+    "company": "Universal Young Distribution",
+    "website": "www.universalyoungdistribution.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+708450700499",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-01-21",
+    "status": "sleeping",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 2,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-25T14:32:52.455Z",
+    "updatedAt": "2026-05-09T14:32:52.455Z",
+    "version": 1,
+    "dataHash": "775fc252bb1bcb27",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

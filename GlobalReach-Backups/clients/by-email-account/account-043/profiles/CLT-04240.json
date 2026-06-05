@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04240",
+  "emailAccount": "account-043",
+  "basicInfo": {
+    "name": "Ronald Martinez",
+    "email": "ronald.martinez@company.com",
+    "company": "Sun Sanchez Imports",
+    "website": "www.sunsanchezimports.com",
+    "country": "PL",
+    "countryName": "Poland",
+    "timezone": "Europe/Warsaw",
+    "language": "en",
+    "phone": "+1696576075953",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2024-07-18",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 15,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-08-27T14:32:53.016Z",
+    "updatedAt": "2026-05-09T14:32:53.016Z",
+    "version": 1,
+    "dataHash": "cdbb7bf8a378833e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

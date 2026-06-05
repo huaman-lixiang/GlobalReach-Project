@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02988",
+  "emailAccount": "account-030",
+  "basicInfo": {
+    "name": "Rachel Lopez",
+    "email": "rachel.lopez@hotmail.com",
+    "company": "Whimsical Garcia Ltd.",
+    "website": "www.whimsicalgarcialtd.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+6066399608403",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-01-10",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 35,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-01-21T14:32:52.638Z",
+    "updatedAt": "2026-05-09T14:32:52.638Z",
+    "version": 1,
+    "dataHash": "dbe9fbaeee50b1f6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

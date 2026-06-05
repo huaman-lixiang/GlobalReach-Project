@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07689",
+  "emailAccount": "account-077",
+  "basicInfo": {
+    "name": "Carol Wilson",
+    "email": "carol.wilson@company.com",
+    "company": "Mega Brown Co.",
+    "website": "www.megabrownco.com",
+    "country": "SG",
+    "countryName": "Singapore",
+    "timezone": "Asia/Singapore",
+    "language": "en",
+    "phone": "+9392306899051",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "rc-toys",
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-02-05",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 26,
+    "priorityScore": 86
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-12-05T14:32:54.022Z",
+    "updatedAt": "2026-05-09T14:32:54.022Z",
+    "version": 1,
+    "dataHash": "0634d695305dd47f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

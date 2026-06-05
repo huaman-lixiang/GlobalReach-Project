@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-06071",
+  "emailAccount": "account-061",
+  "basicInfo": {
+    "name": "Cynthia Baker",
+    "email": "cynthia.baker@yahoo.com",
+    "company": "Super Hall Enterprises",
+    "website": "www.superhallenterprises.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+7502807937758",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-12-09",
+    "status": "churned",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 16,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-07-21T14:32:53.549Z",
+    "updatedAt": "2026-05-09T14:32:53.549Z",
+    "version": 1,
+    "dataHash": "0134b1dc2a92ce77",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

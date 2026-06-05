@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03013",
+  "emailAccount": "account-031",
+  "basicInfo": {
+    "name": "Brandon Ramirez",
+    "email": "brandon.ramirez@gmail.com",
+    "company": "Star Flores PlayTime",
+    "website": "www.starfloresplaytime.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+7416946154133",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2022,
+    "lastContactDate": "2024-12-03",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 14,
+    "priorityScore": 64
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-06-04T14:32:52.646Z",
+    "updatedAt": "2026-05-09T14:32:52.646Z",
+    "version": 1,
+    "dataHash": "9fef917a3d32713e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01435",
+  "emailAccount": "account-015",
+  "basicInfo": {
+    "name": "Thomas Lee",
+    "email": "thomas.lee@yahoo.com",
+    "company": "Star Roberts ToyBox",
+    "website": "www.starrobertstoybox.com",
+    "country": "NO",
+    "countryName": "Norway",
+    "timezone": "Europe/Oslo",
+    "language": "en",
+    "phone": "+8482681003731",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-03-01",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 13,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 24,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-02-13T14:32:52.145Z",
+    "updatedAt": "2026-05-09T14:32:52.145Z",
+    "version": 1,
+    "dataHash": "ae43e40cdb6695c1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

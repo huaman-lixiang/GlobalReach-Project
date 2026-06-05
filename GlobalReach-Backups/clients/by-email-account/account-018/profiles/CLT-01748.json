@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01748",
+  "emailAccount": "account-018",
+  "basicInfo": {
+    "name": "Rachel Mitchell",
+    "email": "rachel.mitchell@t-online.de",
+    "company": "Omega Sanchez Trading",
+    "website": "www.omegasancheztrading.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+6486098274614",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-05-02",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-05-01",
+    "replyRate": 160,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 95,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-05-01T14:32:52.239Z",
+    "updatedAt": "2026-05-09T14:32:52.239Z",
+    "version": 1,
+    "dataHash": "6a1c7dbd5f1e462a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

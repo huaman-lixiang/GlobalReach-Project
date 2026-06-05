@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-06141",
+  "emailAccount": "account-062",
+  "basicInfo": {
+    "name": "Pamela Jackson",
+    "email": "pamela.jackson@company.co.uk",
+    "company": "Sun Roberts DreamPlay",
+    "website": "www.sunrobertsdreamplay.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+6216259064431",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-01-23",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 20,
+    "priorityScore": 62
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-08-02T14:32:53.570Z",
+    "updatedAt": "2026-05-09T14:32:53.570Z",
+    "version": 1,
+    "dataHash": "e96044a40e1a799c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

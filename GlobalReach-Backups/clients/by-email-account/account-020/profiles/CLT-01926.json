@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01926",
+  "emailAccount": "account-020",
+  "basicInfo": {
+    "name": "Amy Lopez",
+    "email": "amy.lopez@gmail.com",
+    "company": "Alpha Carter Toys & Games",
+    "website": "www.alphacartertoysgames.com",
+    "country": "MA",
+    "countryName": "Morocco",
+    "timezone": "Africa/Casablanca",
+    "language": "en",
+    "phone": "+5972005941301",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-05-11",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 25,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-08-07T14:32:52.295Z",
+    "updatedAt": "2026-05-09T14:32:52.295Z",
+    "version": 1,
+    "dataHash": "36b4eb83dc7e0f45",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

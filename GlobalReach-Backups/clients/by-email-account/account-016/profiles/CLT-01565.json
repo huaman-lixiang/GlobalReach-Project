@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01565",
+  "emailAccount": "account-016",
+  "basicInfo": {
+    "name": "Carol Jackson",
+    "email": "carol.jackson@outlook.com.au",
+    "company": "Elite Martinez Corp.",
+    "website": "www.elitemartinezcorp.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+3106355919309",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-04-17",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-10",
+    "replyRate": 54,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 76,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-09-21T14:32:52.184Z",
+    "updatedAt": "2026-05-09T14:32:52.184Z",
+    "version": 1,
+    "dataHash": "29966711216ea082",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

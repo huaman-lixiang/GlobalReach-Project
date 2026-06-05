@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06422",
+  "emailAccount": "account-065",
+  "basicInfo": {
+    "name": "Carol Nguyen",
+    "email": "carol.nguyen@yahoo.com",
+    "company": "Star Nguyen Distribution",
+    "website": "www.starnguyendistribution.com",
+    "country": "MY",
+    "countryName": "Malaysia",
+    "timezone": "Asia/Kuala_Lumpur",
+    "language": "en",
+    "phone": "+292380843573",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-11-25",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 6,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-03-09T14:32:53.651Z",
+    "updatedAt": "2026-05-09T14:32:53.651Z",
+    "version": 1,
+    "dataHash": "c03655b061356e5a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

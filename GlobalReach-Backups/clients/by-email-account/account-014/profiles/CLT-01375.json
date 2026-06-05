@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01375",
+  "emailAccount": "account-014",
+  "basicInfo": {
+    "name": "Mark Garcia",
+    "email": "mark.garcia@company.co.uk",
+    "company": "Apex Adams Inc.",
+    "website": "www.apexadamsinc.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+9720280355476",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "educational",
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-24",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 30,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "educational",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 63,
+    "priorityScore": 57
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-10-15T14:32:52.128Z",
+    "updatedAt": "2026-05-09T14:32:52.128Z",
+    "version": 1,
+    "dataHash": "bf927c6ec8f45bc5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

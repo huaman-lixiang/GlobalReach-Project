@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04846",
+  "emailAccount": "account-049",
+  "basicInfo": {
+    "name": "Melissa Walker",
+    "email": "melissa.walker@gmail.com",
+    "company": "Universal Thompson Kids World",
+    "website": "www.universalthompsonkidsworld.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+3321961762195",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-03-05",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-05-05",
+    "replyRate": 47,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 71,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-04-20T14:32:53.202Z",
+    "updatedAt": "2026-05-09T14:32:53.202Z",
+    "version": 1,
+    "dataHash": "677e59d51d78dc97",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

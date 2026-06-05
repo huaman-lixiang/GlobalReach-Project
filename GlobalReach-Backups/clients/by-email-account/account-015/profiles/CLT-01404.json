@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01404",
+  "emailAccount": "account-015",
+  "basicInfo": {
+    "name": "Stephen Carter",
+    "email": "stephen.carter@gmail.com",
+    "company": "Apex Williams Ltd.",
+    "website": "www.apexwilliamsltd.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+8825296634777",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2025-03-22",
+    "status": "sleeping",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 25,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-09-28T14:32:52.137Z",
+    "updatedAt": "2026-05-09T14:32:52.137Z",
+    "version": 1,
+    "dataHash": "d01abc3bf4075fb1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

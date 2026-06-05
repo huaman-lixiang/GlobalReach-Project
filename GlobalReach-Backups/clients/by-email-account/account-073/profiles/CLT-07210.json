@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07210",
+  "emailAccount": "account-073",
+  "basicInfo": {
+    "name": "Larry Adams",
+    "email": "larry.adams@company.com",
+    "company": "Prime White International",
+    "website": "www.primewhiteinternational.com",
+    "country": "MX",
+    "countryName": "Mexico",
+    "timezone": "America/Mexico_City",
+    "language": "en",
+    "phone": "+6226638778263",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-05-06",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-21",
+    "replyRate": 267,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 74,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-01-02T14:32:53.881Z",
+    "updatedAt": "2026-05-09T14:32:53.881Z",
+    "version": 1,
+    "dataHash": "2a6194c10bcaacc8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03495",
+  "emailAccount": "account-035",
+  "basicInfo": {
+    "name": "Rachel Scott",
+    "email": "rachel.scott@gmail.com",
+    "company": "Global Wright Group",
+    "website": "www.globalwrightgroup.com",
+    "country": "PL",
+    "countryName": "Poland",
+    "timezone": "Europe/Warsaw",
+    "language": "en",
+    "phone": "+6989400202063",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-04-18",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-04-29",
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 85,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-12-29T14:32:52.792Z",
+    "updatedAt": "2026-05-09T14:32:52.792Z",
+    "version": 1,
+    "dataHash": "93752531bd8b3716",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

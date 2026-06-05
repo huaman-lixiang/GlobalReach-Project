@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02251",
+  "emailAccount": "account-023",
+  "basicInfo": {
+    "name": "Edward Thomas",
+    "email": "edward.thomas@yahoo.com",
+    "company": "Zenith Perez Distribution",
+    "website": "www.zenithperezdistribution.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+538542524203",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2024-10-28",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 14,
+    "priorityScore": 58
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-06-06T14:32:52.406Z",
+    "updatedAt": "2026-05-09T14:32:52.406Z",
+    "version": 1,
+    "dataHash": "8018e3f3f1a1546b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

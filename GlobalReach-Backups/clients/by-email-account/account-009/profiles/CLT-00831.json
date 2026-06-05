@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00831",
+  "emailAccount": "account-009",
+  "basicInfo": {
+    "name": "Paul Perez",
+    "email": "paul.perez@gmail.com",
+    "company": "Fantastic Ramirez International",
+    "website": "www.fantasticramirezinternational.com",
+    "country": "MX",
+    "countryName": "Mexico",
+    "timezone": "America/Mexico_City",
+    "language": "en",
+    "phone": "+494793699163",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2024-05-20",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 10,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-20T14:32:51.952Z",
+    "updatedAt": "2026-05-09T14:32:51.952Z",
+    "version": 1,
+    "dataHash": "7b56bdc56dc2fef7",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

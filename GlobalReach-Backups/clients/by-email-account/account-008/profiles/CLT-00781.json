@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00781",
+  "emailAccount": "account-008",
+  "basicInfo": {
+    "name": "Carol Mitchell",
+    "email": "carol.mitchell@gmail.com",
+    "company": "Grand Smith PlayTime",
+    "website": "www.grandsmithplaytime.com",
+    "country": "MX",
+    "countryName": "Mexico",
+    "timezone": "America/Mexico_City",
+    "language": "en",
+    "phone": "+2322737979221",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2016,
+    "lastContactDate": "2024-07-29",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 11,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-10-02T14:32:51.937Z",
+    "updatedAt": "2026-05-09T14:32:51.937Z",
+    "version": 1,
+    "dataHash": "53a9babe07f0b904",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

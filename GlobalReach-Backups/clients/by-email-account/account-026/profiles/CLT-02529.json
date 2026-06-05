@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02529",
+  "emailAccount": "account-026",
+  "basicInfo": {
+    "name": "Jonathan Ramirez",
+    "email": "jonathan.ramirez@company.com",
+    "company": "Playful Martinez International",
+    "website": "www.playfulmartinezinternational.com",
+    "country": "SG",
+    "countryName": "Singapore",
+    "timezone": "Asia/Singapore",
+    "language": "en",
+    "phone": "+08620870244",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2024-10-27",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 5,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-04-14T14:32:52.496Z",
+    "updatedAt": "2026-05-09T14:32:52.496Z",
+    "version": 1,
+    "dataHash": "b0832d8aaacdbfbe",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

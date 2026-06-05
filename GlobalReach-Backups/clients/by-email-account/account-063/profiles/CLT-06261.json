@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-06261",
+  "emailAccount": "account-063",
+  "basicInfo": {
+    "name": "Mark White",
+    "email": "mark.white@company.ca",
+    "company": "Moon Martin Happy Kids",
+    "website": "www.moonmartinhappykids.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+4093243767660",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "outdoor",
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-04-29",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-15",
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 96,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-24T14:32:53.604Z",
+    "updatedAt": "2026-05-09T14:32:53.604Z",
+    "version": 1,
+    "dataHash": "04ffb2b88598201b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

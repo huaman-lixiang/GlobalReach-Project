@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02405",
+  "emailAccount": "account-025",
+  "basicInfo": {
+    "name": "Thomas Thomas",
+    "email": "thomas.thomas@company.com",
+    "company": "Summit Perez Little Stars",
+    "website": "www.summitperezlittlestars.com",
+    "country": "PL",
+    "countryName": "Poland",
+    "timezone": "Europe/Warsaw",
+    "language": "en",
+    "phone": "+4902840686787",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "infant-toddler",
+      "educational"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-04-23",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 33,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-02-12T14:32:52.456Z",
+    "updatedAt": "2026-05-09T14:32:52.456Z",
+    "version": 1,
+    "dataHash": "ac7b9271db9c888c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

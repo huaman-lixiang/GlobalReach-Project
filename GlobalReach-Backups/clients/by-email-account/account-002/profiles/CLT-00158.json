@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00158",
+  "emailAccount": "account-002",
+  "basicInfo": {
+    "name": "Sharon Scott",
+    "email": "sharon.scott@gmail.com",
+    "company": "Imaginative Martin Co.",
+    "website": "www.imaginativemartinco.com",
+    "country": "VN",
+    "countryName": "Vietnam",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "language": "en",
+    "phone": "+1577394813929",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-04-17",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": null,
+    "replyRate": 27,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 65,
+    "priorityScore": 64
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-11-10T14:32:51.743Z",
+    "updatedAt": "2026-05-09T14:32:51.743Z",
+    "version": 1,
+    "dataHash": "3d6f9e9680843b16",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

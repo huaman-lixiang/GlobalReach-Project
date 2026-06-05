@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04300",
+  "emailAccount": "account-043",
+  "basicInfo": {
+    "name": "Rachel Williams",
+    "email": "rachel.williams@hotmail.com",
+    "company": "Omega Johnson WonderToys",
+    "website": "www.omegajohnsonwondertoys.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+5672410577258",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-05-09",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 16,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-05-05",
+    "replyRate": 44,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 78,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-08-22T14:32:53.034Z",
+    "updatedAt": "2026-05-09T14:32:53.034Z",
+    "version": 1,
+    "dataHash": "ddd79062e4d9f132",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05808",
+  "emailAccount": "account-059",
+  "basicInfo": {
+    "name": "Edward Lewis",
+    "email": "edward.lewis@company.co.jp",
+    "company": "Happy Clark Happy Kids",
+    "website": "www.happyclarkhappykids.co.jp",
+    "country": "JP",
+    "countryName": "Japan",
+    "timezone": "Asia/Tokyo",
+    "language": "en",
+    "phone": "+9105666019487",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-08-01",
+    "status": "churned",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 37,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-09-25T14:32:53.473Z",
+    "updatedAt": "2026-05-09T14:32:53.473Z",
+    "version": 1,
+    "dataHash": "a0af7238d58671b3",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

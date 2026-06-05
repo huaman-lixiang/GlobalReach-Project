@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05936",
+  "emailAccount": "account-060",
+  "basicInfo": {
+    "name": "Amy Ramirez",
+    "email": "amy.ramirez@yahoo.com",
+    "company": "Universal Mitchell Group",
+    "website": "www.universalmitchellgroup.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+3467272280772",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-04-10",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-18",
+    "replyRate": 42,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 88,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-08-30T14:32:53.510Z",
+    "updatedAt": "2026-05-09T14:32:53.510Z",
+    "version": 1,
+    "dataHash": "35781a166f03cb7f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04465",
+  "emailAccount": "account-045",
+  "basicInfo": {
+    "name": "Karen Green",
+    "email": "karen.green@yahoo.com",
+    "company": "Premier Hernandez Enterprises",
+    "website": "www.premierhernandezenterprises.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+1428469331978",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "educational",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-01-31",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 10,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-07-01T14:32:53.085Z",
+    "updatedAt": "2026-05-09T14:32:53.085Z",
+    "version": 1,
+    "dataHash": "9b4d96f6b7ca36f8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

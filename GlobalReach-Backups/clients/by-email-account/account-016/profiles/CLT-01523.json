@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01523",
+  "emailAccount": "account-016",
+  "basicInfo": {
+    "name": "Carol Gonzalez",
+    "email": "carol.gonzalez@company.de",
+    "company": "Prime Wright Trading",
+    "website": "www.primewrighttrading.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+9209926260488",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational",
+      "smart-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-02-27",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-16",
+    "replyRate": 89,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 98,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-12-26T14:32:52.171Z",
+    "updatedAt": "2026-05-09T14:32:52.171Z",
+    "version": 1,
+    "dataHash": "8ba3e1c0c080502f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

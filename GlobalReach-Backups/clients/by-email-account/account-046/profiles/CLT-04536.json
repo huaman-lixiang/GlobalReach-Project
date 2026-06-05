@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04536",
+  "emailAccount": "account-046",
+  "basicInfo": {
+    "name": "Sandra Hill",
+    "email": "sandra.hill@company.com",
+    "company": "Playful Gonzalez Co.",
+    "website": "www.playfulgonzalezco.com",
+    "country": "CH",
+    "countryName": "Switzerland",
+    "timezone": "Europe/Zurich",
+    "language": "en",
+    "phone": "+5290623945349",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "outdoor",
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2024-08-03",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 30,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-04-01T14:32:53.108Z",
+    "updatedAt": "2026-05-09T14:32:53.108Z",
+    "version": 1,
+    "dataHash": "fafb299a35176c03",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

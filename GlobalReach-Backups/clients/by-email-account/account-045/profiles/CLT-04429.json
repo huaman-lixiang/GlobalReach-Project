@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04429",
+  "emailAccount": "account-045",
+  "basicInfo": {
+    "name": "Jeffrey Anderson",
+    "email": "jeffrey.anderson@outlook.com.au",
+    "company": "Imaginative Jackson LLC",
+    "website": "www.imaginativejacksonllc.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+1630285493583",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "educational",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2025-01-12",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 13,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 32,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-08-18T14:32:53.073Z",
+    "updatedAt": "2026-05-09T14:32:53.073Z",
+    "version": 1,
+    "dataHash": "8c2c76ca0e9e7dd6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00117",
+  "emailAccount": "account-002",
+  "basicInfo": {
+    "name": "George Harris",
+    "email": "george.harris@yahoo.co.uk",
+    "company": "Star Scott FunZone",
+    "website": "www.starscottfunzone.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+1208921199662",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2024,
+    "lastContactDate": "2025-09-07",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 19,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-04-05T14:32:51.730Z",
+    "updatedAt": "2026-05-09T14:32:51.730Z",
+    "version": 1,
+    "dataHash": "b71e58bdbb7766ad",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

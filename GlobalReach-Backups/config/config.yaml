@@ -1,0 +1,541 @@
+# ═══════════════════════════════════════════════════════════
+#  GlobalReach v1.0 - 主配置文件 (config.yaml)
+#  ═══════════════════════════════════════════════════════════
+#  项目: 全球触达 - AI驱动的海外B2B邮件营销智能体系统
+#  版本: 1.0.0
+#  创建日期: 2026-05-09
+#  说明: 本文件是GlobalReach系统的核心配置,所有模块依赖此配置
+#  ⚠️ 警告: 敏感信息(密码/API密钥)请使用AES-256加密存储
+#  ═══════════════════════════════════════════════════════════
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 第一部分: 项目元信息 (Project Metadata)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+project:
+  name: "GlobalReach"                    # 项目名称
+  code_name: "全球触达"                   # 中文代号
+  version: "1.0.0"                       # 语义化版本号
+  environment: "development"             # 环境: development / production / staging
+  root_path: "D:\\GlobalReach"         # 工作区根路径(绝对路径)
+  created_at: "2026-05-09T00:00:00Z"     # 项目创建时间(ISO8601)
+  last_updated: "2026-05-09T00:00:00Z"   # 最后更新时间
+  maintainer: "AI Assistant"             # 维护者信息
+  license: "PROPRIETARY"                 # 许可证类型
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 第二部分: 安全与加密配置 (Security & Encryption)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+security:
+  # 加密算法配置 (符合项目宪法要求: AES-256-GCM)
+  encryption_algorithm: "AES-256-GCM"    # 军用级加密标准
+  key_location: ".security/keys/master.key"  # 主密钥存储路径
+  key_length: 256                        # 密钥长度(bits)
+  iv_length: 96                          # 初始化向量长度(bits)
+  tag_length: 128                        # 认证标签长度(bits)
+  
+  # 会话管理
+  audit_log_enabled: true                # 启用操作审计日志
+  session_timeout_minutes: 30            # 会话超时时间(分钟)
+  max_login_attempts: 5                  # 最大登录尝试次数
+  lockout_duration_minutes: 15           # 锁定持续时间(分钟)
+  
+  # 密码策略
+  password_min_length: 16                # 最小密码长度
+  require_special_chars: true            # 要求特殊字符
+  
+  # 数据分类标准 (GDPR/网络安全法合规)
+  data_classification:
+    - level: "public"
+      description: "非敏感业务数据"
+      encryption_required: false
+      
+    - level: "internal"
+      description: "内部运营数据"
+      encryption_required: false
+      
+    - level: "confidential"
+      description: "客户联系信息/业务数据"
+      encryption_required: true
+      access_log_required: true
+      
+    - level: "restricted"
+      description: "邮箱密码/API密钥/支付信息"
+      encryption_required: true
+      access_log_required: true
+      dual_control_required: true
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 第三部分: 邮箱系统配置 (Email System)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+email_system:
+  total_accounts: 80                     # 邮箱账号总数
+  accounts_config_path: "data/email-accounts/accounts.json"  # 账号配置文件路径
+  
+  # 速率限制 (防封号策略)
+  rate_limiting:
+    seconds_between_emails: 3            # 发送间隔(秒) - 必须≥3
+    max_emails_per_account_per_day: 100  # 单账号日限(封) - 必须≤100
+    max_concurrent_connections: 10       # 最大并发连接数
+    burst_limit: 5                       # 突发发送上限
+    cooldown_seconds: 60                 # 冷却时间(秒)
+    
+  # 支持的邮箱服务商 (5种)
+  supported_providers:
+    # Gmail (Google)
+    - provider: "gmail"
+      name: "Gmail"
+      imap_host: "imap.gmail.com"
+      imap_port: 993                     # IMAPS端口
+      smtp_host: "smtp.gmail.com"
+      smtp_port: 587                     # SMTP+STARTTLS端口
+      encryption: "TLS"
+      auth_method: "OAuth2"              # 推荐认证方式
+      max_daily_send: 500                # Gmail日限
+      
+    # Outlook/Microsoft 365
+    - provider: "outlook"
+      name: "Microsoft Outlook"
+      imap_host: "outlook.office365.com"
+      imap_port: 993
+      smtp_host: "smtp.office365.com"
+      smtp_port: 587
+      encryption: "STARTTLS"
+      auth_method: "OAuth2"
+      max_daily_send: 1000               # O365日限较高
+      
+    # 企业邮箱 (自定义域名)
+    - provider: "enterprise"
+      name: "企业邮箱"
+      imap_host: "imap.enterprise.com"   # 需替换为实际地址
+      imap_port: 993
+      smtp_host: "smtp.enterprise.com"   # 需替换为实际地址
+      smtp_port: 465                     # SMTPS端口
+      encryption: "SSL/TLS"
+      auth_method: "Password"            # 传统密码认证
+      max_daily_send: 2000               # 企业邮箱限制宽松
+      
+    # QQ邮箱
+    - provider: "qq"
+      name: "QQ邮箱"
+      imap_host: "imap.qq.com"
+      imap_port: 993
+      smtp_host: "smtp.qq.com"
+      smtp_port: 465
+      encryption: "SSL/TLS"
+      auth_method: "AuthorizationCode"   # 授权码
+      max_daily_send: 200               
+      
+    # 163网易邮箱
+    - provider: "163"
+      name: "163邮箱"
+      imap_host: "imap.163.com"
+      imap_port: 993
+      smtp_host: "smtp.163.com"
+      smtp_port: 465
+      encryption: "SSL/TLS"
+      auth_method: "AuthorizationCode"
+      max_daily_send: 200
+      
+  # 连接池管理 (IMAP/SMTP)
+  connection_pool:
+    min_connections: 5                   # 最小保持连接数
+    max_connections: 20                  # 最大连接数
+    idle_timeout_ms: 30000               # 空闲超时(毫秒)
+    connection_timeout_ms: 10000        # 连接超时(毫秒)
+    health_check_interval_ms: 60000      # 健康检查间隔(毫秒)
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 第四部分: 调度系统配置 (Scheduling System)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+scheduling:
+  timezone: "Asia/Shanghai"              # 系统时区
+  locale: "zh-CN"                        # 地区设置
+  
+  # 智能发送窗口 (按客户当地时间)
+  sending_hours:
+    start: "09:00"                       # 开始时间(客户当地)
+    end: "17:00"                         # 结束时间(客户当地)
+    timezone_target: "local"             # 使用客户本地时区
+    skip_weekends: true                  # 跳过周末
+    skip_holidays:                       # 跳过的节假日列表(YYYY-MM-DD)
+      - "2026-01-01"                     # 元旦
+      - "2026-01-29" ~ "2026-02-03"      # 春节假期(示例格式,实际需展开)
+      - "2026-04-06"                     # 清明节
+      - "2026-05-01"                     # 劳动节
+      - "2026-06-19"                     # 端午节
+      - "2026-10-01" ~ "2026-10-07"      # 国庆节
+    
+  # 收件箱监控配置
+  monitoring:
+    check_interval_hours: 2              # 检查间隔(小时) - 每2小时
+    monitoring_window_start: "08:00"     # 监控窗口开始(北京时间)
+    monitoring_window_end: "22:00"       # 监控窗口结束(北京时间)
+    urgent_keywords:                     # 紧急关键词触发实时告警
+      - "order"                          # 订单相关
+      - "urgent"                         # 紧急
+      - "MOQ"                            # 最小起订量
+      - "price"                          # 价格询问
+      - "sample"                         # 样品需求
+      - "quotation"                      # 报价单
+      - "shipment"                       # 发货
+      - "payment"                        # 付款
+      
+  # 报告与备份调度
+  reporting:
+    daily_report_time: "22:30"           # 日报生成时间
+    backup_time: "02:00"                 # 数据备份时间
+    log_rotation_time: "00:00"           # 日志轮转时间
+    weekly_summary_day: "monday"         # 周报生成日
+    monthly_report_day: 1                # 月报生成日(每月几号)
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 第五部分: 蒸馏学习机制配置 (Distillation System)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+distillation:
+  enabled: true                          # 是否启用蒸馏机制
+  interval_days: 3                       # 执行间隔(天)
+  execution_days:                        # 执行日期(每周几)
+    - "sunday"
+    - "wednesday"
+    - "saturday"
+  execution_time: "03:00"                # 执行时间(凌晨,避免影响业务)
+  match_threshold: 0.95                  # 匹配度目标阈值(≥95%)
+  convergence_threshold: 0.01            # 收敛判断阈值(<1%提升则停止)
+  max_rounds: 50                         # 最大蒸馏轮次
+  
+  # 五维差异评估权重 (总和=100%)
+  evaluation_weights:
+    content_completeness: 0.30           # 内容完整性 30%
+    language_style: 0.25                 # 语言风格 25%
+    structure_layout: 0.20               # 结构布局 20%
+    cta_effectiveness: 0.15              # CTA有效性 15%
+    personalization: 0.10                # 个性化程度 10%
+    
+  # 样本要求
+  sample_requirements:
+    min_pairs_per_round: 10              # 每轮最少配对样本数
+    max_age_days: 30                     # 样本最大年龄(天)
+    quality_filter: true                 # 启用质量过滤
+    
+  # 输出配置
+  output:
+    rules_file: ".memory/semantic/skill_evolution.md"      # 规则输出文件
+    metrics_file: ".memory/semantic/distillation_metrics.json"  # 指标输出
+    backup_enabled: true                                         # 自动备份
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 第六部分: 多语言支持配置 (Multi-Language Support)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+languages:
+  default: "en"                         # 默认语言
+  fallback: "en"                        # 回退语言
+  supported:                            # 支持的语言列表(5种)
+    # 英语 (主要语言)
+    - code: "en"
+      name: "English"
+      native_name: "English"
+      direction: "LTR"                  # 文字方向: Left-to-Right
+      markets:                           # 主要市场国家代码
+        - "US"                          # 美国
+        - "GB"                          # 英国
+        - "CA"                          # 加拿大
+        - "AU"                          # 澳大利亚
+        - "NZ"                          # 新西兰
+        
+    # 西班牙语
+    - code: "es"
+      name: "Spanish"
+      native_name: "Español"
+      direction: "LTR"
+      markets:
+        - "ES"                          # 西班牙
+        - "MX"                          # 墨西哥
+        - "AR"                          # 阿根廷
+        - "CO"                          # 哥伦比亚
+        - "PE"                          # 秘鲁
+        - "CL"                          # 智利
+        
+    # 法语
+    - code: "fr"
+      name: "French"
+      native_name: "Français"
+      direction: "LTR"
+      markets:
+        - "FR"                          # 法国
+        - "BE"                          # 比利时
+        - "CH"                          # 瑞士
+        - "CA"                          # 加拿大(魁北克)
+        - "MA"                          # 摩洛哥
+        
+    # 阿拉伯语 (RTL特殊处理)
+    - code: "ar"
+      name: "Arabic"
+      native_name: "العربية"
+      direction: "RTL"                  # Right-to-Left (从右到左)
+      markets:
+        - "SA"                          # 沙特阿拉伯
+        - "AE"                          # 阿联酋
+        - "EG"                          # 埃及
+        - "QA"                          # 卡塔尔
+        - "KW"                          # 科威特
+        
+    # 德语
+    - code: "de"
+      name: "German"
+      native_name: "Deutsch"
+      direction: "LTR"
+      markets:
+        - "DE"                          # 德国
+        - "AT"                          # 奥地利
+        - "CH"                          # 瑞士
+        
+  # 自动检测配置
+  auto_detection:
+    enabled: true                        # 启用自动语言检测
+    confidence_threshold: 0.8            # 置信度阈值
+    fallback_strategy: "use_client_country"  # 回退策略: 使用客户国家
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 第七部分: 客户管理配置 (Client Management)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+client_management:
+  # 客户等级定义 (A/B/C三级)
+  levels:
+    # A级: VIP客户
+    - level: "A"
+      name: "VIP客户"
+      description: "高价值客户,所有邮件需人工确认"
+      auto_send: false                  # 不自动发送
+      review_required: true             # 必须人工审核
+      priority_response: true           # 优先响应
+      criteria:
+        min_order_value: 10000          # 最小订单金额($)
+        min_order_frequency: "quarterly" # 最小订购频率(季度)
+        
+    # B级: 重要客户
+    - level: "B"
+      name: "重要客户"
+      description: "中等价值客户,标准自动化流程"
+      auto_send: true                   # 可自动发送
+      review_required: false            # 无需人工审核
+      priority_response: false          # 正常优先级
+      criteria:
+        min_order_value: 3000
+        min_order_frequency: "semi_annual"  # 半年一次
+        
+    # C级: 普通客户
+    - level: "C"
+      name: "普通客户"
+      description: "潜力客户,批量自动化处理"
+      auto_send: true
+      review_required: false
+      priority_response: false
+      criteria:
+        min_order_value: 0              # 无最低要求
+        min_order_frequency: "any"      # 任意频率
+        
+  # 客户状态生命周期
+  status_lifecycle:
+    - status: "new"                     # 新客户
+      next_status: "active"
+      auto_transition_days: 0           # 立即激活
+      
+    - status: "active"                  # 活跃客户
+      next_statuses:
+        - "sleeping"                    # → 沉睡
+        - "churned"                     # → 流失
+      auto_transition_days: 90          # 90天无互动→沉睡
+      
+    - status: "sleeping"                # 沉睡客户
+      next_statuses:
+        - "active"                      # → 重新激活
+        - "churned"                     # → 流失
+      reactivation_attempts: 3          # 尝试激活次数
+      reactivation_interval_days: 30    # 激活间隔(天)
+      
+    - status: "churned"                 # 流失客户
+      next_statuses:
+        - "active"                      # → 可能回归
+      reactivation_cooldown_days: 180   # 冷却期(半年后再联系)
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 第八部分: AI模型配置 (AI Model Settings)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ai_settings:
+  primary_provider: "openai"            # 主要AI服务商
+  fallback_provider: "deepseek"         # 备用AI服务商
+  
+  # OpenAI GPT配置
+  openai:
+    api_key_env: "OPENAI_API_KEY"       # 环境变量名(不硬编码!)
+    model: "gpt-4-turbo"               # 推荐模型
+    max_tokens: 4096                    # 最大token数
+    temperature: 0.7                    # 创造性参数(0-1)
+    top_p: 0.9                          # 核采样
+    presence_penalty: 0.3               # 存在惩罚
+    frequency_penalty: 0.3              # 频率惩罚
+    timeout_ms: 30000                   # 超时时间(30秒)
+    max_retries: 3                      # 最大重试次数
+    
+  # DeepSeek备用配置
+  deepseek:
+    api_key_env: "DEEPSEEK_API_KEY"
+    model: "deepseek-chat"
+    max_tokens: 4096
+    temperature: 0.7
+    timeout_ms: 30000
+    max_retries: 3
+    
+  # 邮件生成专项配置
+  email_generation:
+    subject_line_templates: 20          # 主题行模板数量
+    cta_library_size: 20                # CTA行动号召库大小
+    personalization_depth: "deep"       # 个性化深度: shallow/medium/deep
+    tone_options:                       # 语调选项
+      - "formal"                        # 正式
+      - "friendly"                      # 友好
+      - "professional"                  # 专业
+      - "casual"                        # 随意
+    quality_check_enabled: true         # 启用质量检查
+    min_quality_score: 85               # 最低质量分数(0-100)
+    
+  # 回复分析专项配置
+  reply_analysis:
+    intent_categories:                  # 意图分类类别
+      - "inquiry"                       # 询价
+      - "sample_request"                # 样品需求
+      - "order_intent"                  # 下单意向
+      - "rejection"                     # 拒绝
+      - "negotiation"                   # 谈判
+      - "follow_up"                     # 跟进
+      - "other"                         # 其他
+    sentiment_analysis: true            # 情感分析
+    urgency_detection: true             # 紧急度检测
+    key_info_extraction: true           # 关键信息提取
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 第九部分: 日志系统配置 (Logging System)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+logging:
+  level: "info"                         # 日志级别: debug/info/warn/error/fatal
+  retain_days: 90                       # 日志保留天数(≥90天满足审计需求)
+  format: "json"                        # 日志格式: json/text
+  timestamp_format: "ISO8601"           # 时间戳格式
+  
+  # 日志文件路径
+  paths:
+    application: ".logs/app.log"        # 应用主日志
+    errors: ".logs/errors.log"          # 错误日志
+    security: ".security/logs/security.log"  # 安全审计日志
+    performance: ".logs/performance.log"     # 性能日志
+    
+  # 日志轮转配置
+  rotation:
+    max_size_mb: 100                    # 单个日志最大大小(MB)
+    max_files: 10                       # 最多保留文件数
+    compress: true                      # 启用压缩(.gz)
+    
+  # 敏感数据脱敏 (安全合规!)
+  sensitive_data_masking:
+    enabled: true                       # 启用脱敏
+    patterns:                           # 脱敏规则
+      - pattern: "email"                # 邮箱地址
+        mask_with: "***@***.***"        # 替换为
+      - pattern: "phone"                # 电话号码
+        mask_with: "***-****-****"
+      - pattern: "password"             # 密码
+        mask_with: "********"
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 第十部分: 性能目标配置 (Performance Targets)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+performance_targets:
+  email_generation_time_ms: 3000        # 单封邮件生成时间(<3秒)
+  batch_processing_time_hours: 4        # 8000封批处理时间(<4小时)
+  report_generation_time_sec: 30        # 日报生成时间(<30秒)
+  memory_usage_max_mb: 512              # 内存占用峰值(<512MB)
+  disk_io_speed_mbps: 50                # 磁盘IO速度(>50MB/s)
+  concurrent_tasks_max: 10              # 最大并发任务数
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 第十一部分: 备份策略配置 (Backup Strategy)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+backup:
+  enabled: true                         # 启用备份
+  schedule: "daily"                     # 备份频率: daily/weekly/monthly
+  time: "02:00"                         # 备份执行时间
+  location: ".security/backups/daily"   # 备份存储位置
+  retention_days: 30                    # 备份保留天数
+  encryption_enabled: true              # 备份文件加密
+  compression_enabled: true             # 启用压缩
+  
+  include_patterns:                     # 包含的文件模式
+    - "data/**/*"                       # 所有数据文件
+    - ".memory/**/*"                    # 记忆文件
+  exclude_patterns:                     # 排除的文件模式
+    - "*.tmp"                           # 临时文件
+    - ".logs/**/*"                      # 日志文件(单独归档)
+    
+  verification:                         # 备份验证
+    auto_verify: true                   # 自动验证
+    integrity_check: "sha256"           # 完整性校验算法
+    restore_test_interval_days: 7       # 恢复测试间隔(每周)
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 第十二部分: 通知系统配置 (Notification System)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+notifications:
+  enabled: true                         # 启用通知
+  
+  channels:                             # 通知渠道
+    - type: "desktop"                   # 桌面通知
+      enabled: true
+      sound: true                       # 提示音
+      urgent_only: false                # 仅紧急事件?
+      
+    - type: "log"                       # 日志记录
+      enabled: true
+      include_in_report: true           # 包含在日报中
+      
+  events:                               # 事件通知规则
+    - event: "urgent_email_detected"    # 检测到紧急邮件
+      channels: ["desktop", "log"]
+      priority: "high"                  # 高优先级
+      
+    - event: "account_rate_limited"     # 账号被限速
+      channels: ["log"]
+      priority: "medium"                # 中优先级
+      
+    - event: "distillation_completed"   # 蒸馏任务完成
+      channels: ["log"]
+      priority: "low"                   # 低优先级
+      
+    - event: "backup_completed"         # 备份完成
+      channels: ["log"]
+      priority: "low"
+      
+    - event: "error_threshold_exceeded"# 错误超过阈值
+      channels: ["desktop", "log"]
+      priority: "critical"              # 严重级别
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 第十三部分: 功能开关配置 (Feature Flags)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+feature_flags:
+  enable_ab_testing: false              # A/B测试框架 (P1功能)
+  enable_multi_language_expansion: false # 多语言扩展 (日语/韩语等, P2功能)
+  enable_social_media_integration: false # 社交媒体集成 (LinkedIn/WhatsApp, P2功能)
+  enable_voice_assistant: false         # AI语音助手 (P2功能)
+  enable_crm_integration: false         # CRM集成 (Salesforce/HubSpot, P2功能)
+  enable_blockchain_audit: false        # 区块链存证 (P2功能)
+  debug_mode: false                     # 调试模式
+  verbose_logging: false                # 详细日志
+
+# ═══════════════════════════════════════════════════════════
+#  配置文件结束
+#  ═══════════════════════════════════════════════════════════
+#  总行数: 约450行 (YAML格式,人类可读)
+#  覆盖范围: 13大配置模块, 100+配置项
+#  符合标准: GlobalReach项目宪法v1.0 第五章技术架构约束
+#  下一步: 执行 Task 1-3 (配置80个邮箱账号 accounts.json)
+#  ═══════════════════════════════════════════════════════════

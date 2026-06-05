@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06944",
+  "emailAccount": "account-070",
+  "basicInfo": {
+    "name": "Barbara Scott",
+    "email": "barbara.scott@company.com",
+    "company": "Joyful Roberts WonderToys",
+    "website": "www.joyfulrobertswondertoys.com",
+    "country": "KE",
+    "countryName": "Kenya",
+    "timezone": "Africa/Nairobi",
+    "language": "en",
+    "phone": "+1444514714114",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2024-09-24",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 6,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-12-05T14:32:53.804Z",
+    "updatedAt": "2026-05-09T14:32:53.804Z",
+    "version": 1,
+    "dataHash": "6787484bc9dccdd8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

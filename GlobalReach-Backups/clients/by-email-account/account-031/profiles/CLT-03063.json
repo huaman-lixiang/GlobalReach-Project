@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-03063",
+  "emailAccount": "account-031",
+  "basicInfo": {
+    "name": "Donald Perez",
+    "email": "donald.perez@gmail.com",
+    "company": "Elite Perez Enterprises",
+    "website": "www.eliteperezenterprises.com",
+    "country": "EG",
+    "countryName": "Egypt",
+    "timezone": "Africa/Cairo",
+    "language": "en",
+    "phone": "+65405393378",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "infant-toddler",
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-04-14",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-20",
+    "replyRate": 54,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "11:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 83,
+    "priorityScore": 89
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-18T14:32:52.661Z",
+    "updatedAt": "2026-05-09T14:32:52.661Z",
+    "version": 1,
+    "dataHash": "fcf13c3c0d68c63d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

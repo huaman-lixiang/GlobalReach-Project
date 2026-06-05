@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05504",
+  "emailAccount": "account-056",
+  "basicInfo": {
+    "name": "Christine Garcia",
+    "email": "christine.garcia@gmail.com",
+    "company": "Universal Williams PlayTime",
+    "website": "www.universalwilliamsplaytime.com",
+    "country": "CN",
+    "countryName": "China",
+    "timezone": "Asia/Shanghai",
+    "language": "en",
+    "phone": "+7489012401440",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-05-03",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 16,
+    "priorityScore": 62
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-14T14:32:53.387Z",
+    "updatedAt": "2026-05-09T14:32:53.387Z",
+    "version": 1,
+    "dataHash": "ba48dabb4b9ca0b2",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

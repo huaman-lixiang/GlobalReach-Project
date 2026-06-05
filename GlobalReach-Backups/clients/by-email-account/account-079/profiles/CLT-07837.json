@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07837",
+  "emailAccount": "account-079",
+  "basicInfo": {
+    "name": "Brenda Harris",
+    "email": "brenda.harris@company.com",
+    "company": "Happy Garcia Co.",
+    "website": "www.happygarciaco.com",
+    "country": "CH",
+    "countryName": "Switzerland",
+    "timezone": "Europe/Zurich",
+    "language": "en",
+    "phone": "+791007574595",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-04-28",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": null,
+    "replyRate": 55,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 69,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-04-09T14:32:54.064Z",
+    "updatedAt": "2026-05-09T14:32:54.064Z",
+    "version": 1,
+    "dataHash": "ca5bae2b2505231e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

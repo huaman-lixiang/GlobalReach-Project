@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05828",
+  "emailAccount": "account-059",
+  "basicInfo": {
+    "name": "Donald Anderson",
+    "email": "donald.anderson@gmail.com",
+    "company": "Playful Clark International",
+    "website": "www.playfulclarkinternational.com",
+    "country": "TH",
+    "countryName": "Thailand",
+    "timezone": "Asia/Bangkok",
+    "language": "en",
+    "phone": "+8002128016829",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-04-25",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-11",
+    "replyRate": 36,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "11:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 93,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-08-27T14:32:53.479Z",
+    "updatedAt": "2026-05-09T14:32:53.479Z",
+    "version": 1,
+    "dataHash": "d3ecbade0cfd4592",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

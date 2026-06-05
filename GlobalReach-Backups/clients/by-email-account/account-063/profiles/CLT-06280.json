@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-06280",
+  "emailAccount": "account-063",
+  "basicInfo": {
+    "name": "Melissa Johnson",
+    "email": "melissa.johnson@libero.it",
+    "company": "Sun Lewis Little Stars",
+    "website": "www.sunlewislittlestars.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+6758213832443",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2024,
+    "lastContactDate": "2025-12-21",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 29,
+    "priorityScore": 63
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-08-06T14:32:53.609Z",
+    "updatedAt": "2026-05-09T14:32:53.609Z",
+    "version": 1,
+    "dataHash": "2f00566ca4d11dc5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

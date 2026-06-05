@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04864",
+  "emailAccount": "account-049",
+  "basicInfo": {
+    "name": "Raymond Martin",
+    "email": "raymond.martin@yahoo.com",
+    "company": "Summit Mitchell Happy Kids",
+    "website": "www.summitmitchellhappykids.com",
+    "country": "EG",
+    "countryName": "Egypt",
+    "timezone": "Africa/Cairo",
+    "language": "en",
+    "phone": "+468532220683",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "infant-toddler",
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-02-23",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 7,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-02-26T14:32:53.207Z",
+    "updatedAt": "2026-05-09T14:32:53.207Z",
+    "version": 1,
+    "dataHash": "231f27e3984070ee",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

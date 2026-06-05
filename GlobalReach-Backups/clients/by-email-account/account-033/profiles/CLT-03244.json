@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03244",
+  "emailAccount": "account-033",
+  "basicInfo": {
+    "name": "Scott King",
+    "email": "scott.king@outlook.com",
+    "company": "Apex Brown International",
+    "website": "www.apexbrowninternational.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+3932525886688",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-04-11",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 8,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 19,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-02-28T14:32:52.716Z",
+    "updatedAt": "2026-05-09T14:32:52.716Z",
+    "version": 1,
+    "dataHash": "201e0c171b61d56a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

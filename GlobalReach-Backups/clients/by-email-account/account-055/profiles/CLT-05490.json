@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05490",
+  "emailAccount": "account-055",
+  "basicInfo": {
+    "name": "Frank Harris",
+    "email": "frank.harris@company.ca",
+    "company": "Universal Anderson Group",
+    "website": "www.universalandersongroup.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+5585773700192",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-03-23",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": "2026-04-19",
+    "replyRate": 9,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "12:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 83,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-02-21T14:32:53.383Z",
+    "updatedAt": "2026-05-09T14:32:53.383Z",
+    "version": 1,
+    "dataHash": "1fd1150996a50990",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

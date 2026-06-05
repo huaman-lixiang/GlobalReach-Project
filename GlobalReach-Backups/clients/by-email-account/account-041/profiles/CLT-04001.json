@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04001",
+  "emailAccount": "account-041",
+  "basicInfo": {
+    "name": "Sharon White",
+    "email": "sharon.white@outlook.com",
+    "company": "Royal Young Enterprises",
+    "website": "www.royalyoungenterprises.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+9355761135581",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2024-09-07",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 8,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-06-22T14:32:52.945Z",
+    "updatedAt": "2026-05-09T14:32:52.945Z",
+    "version": 1,
+    "dataHash": "d32089523bbde580",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

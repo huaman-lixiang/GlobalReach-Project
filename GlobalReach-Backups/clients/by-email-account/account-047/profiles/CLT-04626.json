@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04626",
+  "emailAccount": "account-047",
+  "basicInfo": {
+    "name": "Karen Jones",
+    "email": "karen.jones@yahoo.com",
+    "company": "Global Taylor Ltd.",
+    "website": "www.globaltaylorltd.com",
+    "country": "CH",
+    "countryName": "Switzerland",
+    "timezone": "Europe/Zurich",
+    "language": "en",
+    "phone": "+4970432842882",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2024-08-06",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 24,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-07-11T14:32:53.135Z",
+    "updatedAt": "2026-05-09T14:32:53.135Z",
+    "version": 1,
+    "dataHash": "13a54fcfdbc1d5ce",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

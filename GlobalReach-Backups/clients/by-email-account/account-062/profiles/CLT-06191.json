@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06191",
+  "emailAccount": "account-062",
+  "basicInfo": {
+    "name": "Timothy Nguyen",
+    "email": "timothy.nguyen@gmail.com",
+    "company": "Sun Moore Little Stars",
+    "website": "www.sunmoorelittlestars.co.jp",
+    "country": "JP",
+    "countryName": "Japan",
+    "timezone": "Asia/Tokyo",
+    "language": "en",
+    "phone": "+163074236506",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-03-02",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 16,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 91,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-12-13T14:32:53.584Z",
+    "updatedAt": "2026-05-09T14:32:53.584Z",
+    "version": 1,
+    "dataHash": "b691987c16bfce7f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

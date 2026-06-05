@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02164",
+  "emailAccount": "account-022",
+  "basicInfo": {
+    "name": "Samuel Torres",
+    "email": "samuel.torres@gmail.com",
+    "company": "Creative Harris LLC",
+    "website": "www.creativeharrisllc.com",
+    "country": "KW",
+    "countryName": "Kuwait",
+    "timezone": "Asia/Kuwait",
+    "language": "en",
+    "phone": "+8522115529690",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-02-16",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": "2026-04-25",
+    "replyRate": 10,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 85,
+    "priorityScore": 89
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-12-23T14:32:52.376Z",
+    "updatedAt": "2026-05-09T14:32:52.376Z",
+    "version": 1,
+    "dataHash": "5489c418aba9bfdd",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

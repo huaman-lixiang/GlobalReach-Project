@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00964",
+  "emailAccount": "account-010",
+  "basicInfo": {
+    "name": "Steven Moore",
+    "email": "steven.moore@gmail.com",
+    "company": "Fantastic Lewis ToyBox",
+    "website": "www.fantasticlewistoybox.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+947801582619",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-06-14",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 24,
+    "priorityScore": 63
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-06-06T14:32:51.993Z",
+    "updatedAt": "2026-05-09T14:32:51.993Z",
+    "version": 1,
+    "dataHash": "fbf9fd7ffecbf984",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

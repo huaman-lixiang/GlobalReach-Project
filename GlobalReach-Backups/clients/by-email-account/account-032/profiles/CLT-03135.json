@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-03135",
+  "emailAccount": "account-032",
+  "basicInfo": {
+    "name": "Ronald Anderson",
+    "email": "ronald.anderson@company.nl",
+    "company": "Imperial Thompson PlayTime",
+    "website": "www.imperialthompsonplaytime.com",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "timezone": "Europe/Amsterdam",
+    "language": "en",
+    "phone": "+8214159356831",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "smart-toys",
+      "educational",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-04-28",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 8,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 13,
+    "priorityScore": 60
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-12-20T14:32:52.683Z",
+    "updatedAt": "2026-05-09T14:32:52.683Z",
+    "version": 1,
+    "dataHash": "812d0a4205d0c713",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

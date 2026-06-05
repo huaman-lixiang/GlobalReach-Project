@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01429",
+  "emailAccount": "account-015",
+  "basicInfo": {
+    "name": "Angela Baker",
+    "email": "angela.baker@company.com",
+    "company": "Royal Moore Inc.",
+    "website": "www.royalmooreinc.com",
+    "country": "SG",
+    "countryName": "Singapore",
+    "timezone": "Asia/Singapore",
+    "language": "en",
+    "phone": "+3249368451920",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-04-08",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-16",
+    "replyRate": 36,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 96,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-01-05T14:32:52.144Z",
+    "updatedAt": "2026-05-09T14:32:52.144Z",
+    "version": 1,
+    "dataHash": "0bb7c3e59565e9d8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07999",
+  "emailAccount": "account-080",
+  "basicInfo": {
+    "name": "Melissa Rivera",
+    "email": "melissa.rivera@gmail.com",
+    "company": "Pinnacle Taylor Inc.",
+    "website": "www.pinnacletaylorinc.com",
+    "country": "TH",
+    "countryName": "Thailand",
+    "timezone": "Asia/Bangkok",
+    "language": "en",
+    "phone": "+7314515908372",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2024-09-11",
+    "status": "churned",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 31,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-06-13T14:32:54.111Z",
+    "updatedAt": "2026-05-09T14:32:54.111Z",
+    "version": 1,
+    "dataHash": "ff813a340a50667e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

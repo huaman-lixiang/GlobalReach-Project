@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02018",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "William Mitchell",
+    "email": "william.mitchell@yahoo.com",
+    "company": "Whimsical Brown Toys & Games",
+    "website": "www.whimsicalbrowntoysgames.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+5194755063836",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-04-30",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-18",
+    "replyRate": 53,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "12:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 98,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-06-24T14:32:52.325Z",
+    "updatedAt": "2026-05-09T14:32:52.325Z",
+    "version": 1,
+    "dataHash": "82e820bda2ab8b09",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

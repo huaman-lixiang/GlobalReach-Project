@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-05206",
+  "emailAccount": "account-053",
+  "basicInfo": {
+    "name": "Jessica Nelson",
+    "email": "jessica.nelson@hotmail.com",
+    "company": "Omega Nguyen Little Stars",
+    "website": "www.omeganguyenlittlestars.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+8056920017150",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2024-11-06",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 28,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-06-10T14:32:53.305Z",
+    "updatedAt": "2026-05-09T14:32:53.305Z",
+    "version": 1,
+    "dataHash": "6ec0a6946e169a41",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

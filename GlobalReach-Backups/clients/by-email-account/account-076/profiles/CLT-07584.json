@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07584",
+  "emailAccount": "account-076",
+  "basicInfo": {
+    "name": "Emily Davis",
+    "email": "emily.davis@company.com",
+    "company": "Alpha Lewis Corp.",
+    "website": "www.alphalewiscorp.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+3528948988303",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-03-22",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-05-08",
+    "replyRate": 32,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 79,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-14T14:32:53.991Z",
+    "updatedAt": "2026-05-09T14:32:53.991Z",
+    "version": 1,
+    "dataHash": "092549d3ef061b48",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

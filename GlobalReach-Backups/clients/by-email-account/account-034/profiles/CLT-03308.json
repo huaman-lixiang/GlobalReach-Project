@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03308",
+  "emailAccount": "account-034",
+  "basicInfo": {
+    "name": "Sharon Davis",
+    "email": "sharon.davis@yahoo.com",
+    "company": "Universal Brown Inc.",
+    "website": "www.universalbrowninc.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+9427467757602",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-02-24",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": null,
+    "replyRate": 83,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 91,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-18T14:32:52.736Z",
+    "updatedAt": "2026-05-09T14:32:52.736Z",
+    "version": 1,
+    "dataHash": "a69bcb2cc82949ce",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

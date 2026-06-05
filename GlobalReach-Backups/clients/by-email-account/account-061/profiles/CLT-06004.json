@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-06004",
+  "emailAccount": "account-061",
+  "basicInfo": {
+    "name": "Karen Robinson",
+    "email": "karen.robinson@outlook.com",
+    "company": "Creative Gonzalez LLC",
+    "website": "www.creativegonzalezllc.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+2180401486946",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "rc-toys",
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-03-29",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 20,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-19",
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "11:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 88,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-08-19T14:32:53.531Z",
+    "updatedAt": "2026-05-09T14:32:53.531Z",
+    "version": 1,
+    "dataHash": "c42d16a543195b48",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

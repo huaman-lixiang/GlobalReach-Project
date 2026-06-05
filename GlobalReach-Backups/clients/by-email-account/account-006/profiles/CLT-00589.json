@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00589",
+  "emailAccount": "account-006",
+  "basicInfo": {
+    "name": "Jeffrey Jackson",
+    "email": "jeffrey.jackson@gmail.com",
+    "company": "Royal Mitchell PlayTime",
+    "website": "www.royalmitchellplaytime.com",
+    "country": "IL",
+    "countryName": "Israel",
+    "timezone": "Asia/Jerusalem",
+    "language": "en",
+    "phone": "+1233551215260",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-03-30",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-14",
+    "replyRate": 53,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 64,
+    "priorityScore": 75
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-03-23T14:32:51.878Z",
+    "updatedAt": "2026-05-09T14:32:51.878Z",
+    "version": 1,
+    "dataHash": "6fccd16c0f4e9086",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

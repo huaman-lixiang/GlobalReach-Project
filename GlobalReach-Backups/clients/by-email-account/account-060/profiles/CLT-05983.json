@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05983",
+  "emailAccount": "account-060",
+  "basicInfo": {
+    "name": "Jeffrey Jackson",
+    "email": "jeffrey.jackson@yahoo.com",
+    "company": "Joyful Lee Imports",
+    "website": "www.joyfulleeimports.com",
+    "country": "VN",
+    "countryName": "Vietnam",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "language": "en",
+    "phone": "+8731514758542",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2024-08-19",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 15,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-03-01T14:32:53.524Z",
+    "updatedAt": "2026-05-09T14:32:53.524Z",
+    "version": 1,
+    "dataHash": "3774b742473d41e9",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

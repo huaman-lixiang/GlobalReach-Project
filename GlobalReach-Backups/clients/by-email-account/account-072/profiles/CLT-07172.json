@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07172",
+  "emailAccount": "account-072",
+  "basicInfo": {
+    "name": "Timothy Johnson",
+    "email": "timothy.johnson@gmail.com",
+    "company": "Sun Moore WonderToys",
+    "website": "www.sunmoorewondertoys.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+427886392776",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "infant-toddler",
+      "rc-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2024-09-11",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 31,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-28T14:32:53.869Z",
+    "updatedAt": "2026-05-09T14:32:53.869Z",
+    "version": 1,
+    "dataHash": "50ad741eb1cf63cb",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

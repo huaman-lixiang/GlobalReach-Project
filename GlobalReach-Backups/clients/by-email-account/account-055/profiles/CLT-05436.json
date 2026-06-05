@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-05436",
+  "emailAccount": "account-055",
+  "basicInfo": {
+    "name": "Gregory Moore",
+    "email": "gregory.moore@yahoo.com",
+    "company": "Universal Campbell Imports",
+    "website": "www.universalcampbellimports.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+7646222254439",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "rc-toys",
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2024-12-02",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 5,
+    "priorityScore": 60
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-05-02T14:32:53.368Z",
+    "updatedAt": "2026-05-09T14:32:53.368Z",
+    "version": 1,
+    "dataHash": "6687c1ab9146d1f9",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

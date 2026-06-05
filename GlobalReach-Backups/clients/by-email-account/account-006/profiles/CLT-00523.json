@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00523",
+  "emailAccount": "account-006",
+  "basicInfo": {
+    "name": "Betty Carter",
+    "email": "betty.carter@gmail.com",
+    "company": "Super Lee Happy Kids",
+    "website": "www.superleehappykids.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+3214813920418",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-02-25",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 36,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-04-01T14:32:51.859Z",
+    "updatedAt": "2026-05-09T14:32:51.859Z",
+    "version": 1,
+    "dataHash": "7a024480fb4d9c4c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

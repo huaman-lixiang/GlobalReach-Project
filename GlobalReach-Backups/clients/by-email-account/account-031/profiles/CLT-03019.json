@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03019",
+  "emailAccount": "account-031",
+  "basicInfo": {
+    "name": "Barbara Anderson",
+    "email": "barbara.anderson@yahoo.com",
+    "company": "Sun Torres LLC",
+    "website": "www.suntorresllc.com",
+    "country": "IN",
+    "countryName": "India",
+    "timezone": "Asia/Kolkata",
+    "language": "en",
+    "phone": "+747035996971",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2021,
+    "lastContactDate": "2024-05-24",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 18,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 1,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-01-05T14:32:52.648Z",
+    "updatedAt": "2026-05-09T14:32:52.648Z",
+    "version": 1,
+    "dataHash": "01f8898bdfdb1dc8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

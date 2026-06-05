@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04081",
+  "emailAccount": "account-041",
+  "basicInfo": {
+    "name": "Christine Campbell",
+    "email": "christine.campbell@company.co.uk",
+    "company": "Grand Hall DreamPlay",
+    "website": "www.grandhalldreamplay.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+9535840409593",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-09-12",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 31,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-19T14:32:52.968Z",
+    "updatedAt": "2026-05-09T14:32:52.968Z",
+    "version": 1,
+    "dataHash": "4b19b6c7ed5e0c09",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

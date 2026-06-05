@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04811",
+  "emailAccount": "account-049",
+  "basicInfo": {
+    "name": "Kenneth Clark",
+    "email": "kenneth.clark@gmail.com",
+    "company": "Bright Clark DreamPlay",
+    "website": "www.brightclarkdreamplay.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+2467196359272",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-03-23",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 4,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-06-14T14:32:53.192Z",
+    "updatedAt": "2026-05-09T14:32:53.192Z",
+    "version": 1,
+    "dataHash": "1f948f341a7f8df7",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

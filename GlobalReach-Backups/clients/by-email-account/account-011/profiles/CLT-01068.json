@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01068",
+  "emailAccount": "account-011",
+  "basicInfo": {
+    "name": "Robert Wright",
+    "email": "robert.wright@company.fr",
+    "company": "Sun Wright Distribution",
+    "website": "www.sunwrightdistribution.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+8050389498646",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "educational",
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-02-16",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 20,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-05-03",
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 77,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-04-22T14:32:52.026Z",
+    "updatedAt": "2026-05-09T14:32:52.026Z",
+    "version": 1,
+    "dataHash": "5225362bbe80cec3",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07587",
+  "emailAccount": "account-076",
+  "basicInfo": {
+    "name": "Andrew White",
+    "email": "andrew.white@company.com",
+    "company": "Super Smith Inc.",
+    "website": "www.supersmithinc.com",
+    "country": "BE",
+    "countryName": "Belgium",
+    "timezone": "Europe/Brussels",
+    "language": "en",
+    "phone": "+3689484365405",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-04-03",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 25,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-05-17T14:32:53.992Z",
+    "updatedAt": "2026-05-09T14:32:53.992Z",
+    "version": 1,
+    "dataHash": "8aa7f7954df1448f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

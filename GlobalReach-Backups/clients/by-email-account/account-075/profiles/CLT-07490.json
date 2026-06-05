@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07490",
+  "emailAccount": "account-075",
+  "basicInfo": {
+    "name": "Paul Clark",
+    "email": "paul.clark@gmail.com",
+    "company": "Ultra Mitchell Ltd.",
+    "website": "www.ultramitchellltd.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+5174197035884",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-24",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 20,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-04-30",
+    "replyRate": 15,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 82,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-26T14:32:53.964Z",
+    "updatedAt": "2026-05-09T14:32:53.964Z",
+    "version": 1,
+    "dataHash": "147f2a159f697f28",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

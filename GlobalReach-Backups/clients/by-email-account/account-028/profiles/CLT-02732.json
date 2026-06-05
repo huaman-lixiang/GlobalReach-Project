@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02732",
+  "emailAccount": "account-028",
+  "basicInfo": {
+    "name": "Gary Campbell",
+    "email": "gary.campbell@company.com",
+    "company": "Imperial Torres PlayTime",
+    "website": "www.imperialtorresplaytime.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+8697444531607",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-04-08",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 9,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 72,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-19T14:32:52.561Z",
+    "updatedAt": "2026-05-09T14:32:52.561Z",
+    "version": 1,
+    "dataHash": "ba2a05af2e4f154a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02023",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Rachel Jones",
+    "email": "rachel.jones@company.com",
+    "company": "Bright Sanchez PlayTime",
+    "website": "www.brightsanchezplaytime.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+6429646435514",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2024,
+    "lastContactDate": "2024-12-29",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 29,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-07-07T14:32:52.327Z",
+    "updatedAt": "2026-05-09T14:32:52.327Z",
+    "version": 1,
+    "dataHash": "155754e990011c2f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03984",
+  "emailAccount": "account-040",
+  "basicInfo": {
+    "name": "Kenneth Young",
+    "email": "kenneth.young@yahoo.com",
+    "company": "Global Wilson Inc.",
+    "website": "www.globalwilsoninc.com",
+    "country": "CN",
+    "countryName": "China",
+    "timezone": "Asia/Shanghai",
+    "language": "en",
+    "phone": "+5021673399476",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2025-04-14",
+    "status": "churned",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 35,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-02T14:32:52.940Z",
+    "updatedAt": "2026-05-09T14:32:52.940Z",
+    "version": 1,
+    "dataHash": "627f277767df050d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

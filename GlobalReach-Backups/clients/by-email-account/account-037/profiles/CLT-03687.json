@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03687",
+  "emailAccount": "account-037",
+  "basicInfo": {
+    "name": "Justin Jones",
+    "email": "justin.jones@outlook.com",
+    "company": "Universal Taylor Ltd.",
+    "website": "www.universaltaylorltd.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+4010075427245",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-09-28",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 25,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-12-14T14:32:52.850Z",
+    "updatedAt": "2026-05-09T14:32:52.850Z",
+    "version": 1,
+    "dataHash": "e3eeb3b5b3000a82",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

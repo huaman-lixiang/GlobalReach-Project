@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07929",
+  "emailAccount": "account-080",
+  "basicInfo": {
+    "name": "Linda Flores",
+    "email": "linda.flores@company.com",
+    "company": "Summit Scott Corp.",
+    "website": "www.summitscottcorp.com",
+    "country": "PH",
+    "countryName": "Philippines",
+    "timezone": "Asia/Manila",
+    "language": "en",
+    "phone": "+683654698992",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2026-03-07",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-05-04",
+    "replyRate": 16,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "16:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 73,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-11-06T14:32:54.090Z",
+    "updatedAt": "2026-05-09T14:32:54.090Z",
+    "version": 1,
+    "dataHash": "a1ec4c21d36f06b5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

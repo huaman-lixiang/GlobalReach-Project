@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05548",
+  "emailAccount": "account-056",
+  "basicInfo": {
+    "name": "George Brown",
+    "email": "george.brown@company.nl",
+    "company": "Mega Young PlayTime",
+    "website": "www.megayoungplaytime.com",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "timezone": "Europe/Amsterdam",
+    "language": "en",
+    "phone": "+5133210286096",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2025-08-05",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 12,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-10-13T14:32:53.399Z",
+    "updatedAt": "2026-05-09T14:32:53.399Z",
+    "version": 1,
+    "dataHash": "578e15684f9ff4b0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

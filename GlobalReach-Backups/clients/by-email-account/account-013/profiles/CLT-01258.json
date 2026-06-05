@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01258",
+  "emailAccount": "account-013",
+  "basicInfo": {
+    "name": "James Martinez",
+    "email": "james.martinez@web.de",
+    "company": "Creative Lewis Enterprises",
+    "website": "www.creativelewisenterprises.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+9876123795698",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-03-25",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": null,
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 78,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-07-11T14:32:52.092Z",
+    "updatedAt": "2026-05-09T14:32:52.092Z",
+    "version": 1,
+    "dataHash": "f8778584ee3f43ed",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

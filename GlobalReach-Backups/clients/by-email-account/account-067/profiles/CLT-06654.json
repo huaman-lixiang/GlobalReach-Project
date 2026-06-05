@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-06654",
+  "emailAccount": "account-067",
+  "basicInfo": {
+    "name": "Stephanie Davis",
+    "email": "stephanie.davis@yahoo.com",
+    "company": "Star Davis Group",
+    "website": "www.stardavisgroup.com",
+    "country": "PL",
+    "countryName": "Poland",
+    "timezone": "Europe/Warsaw",
+    "language": "en",
+    "phone": "+7393142950081",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "educational",
+      "smart-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2024-07-28",
+    "status": "churned",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 22,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-05-19T14:32:53.719Z",
+    "updatedAt": "2026-05-09T14:32:53.719Z",
+    "version": 1,
+    "dataHash": "7aa83f6d1bb4ce75",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

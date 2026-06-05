@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01464",
+  "emailAccount": "account-015",
+  "basicInfo": {
+    "name": "Ryan Clark",
+    "email": "ryan.clark@yahoo.com",
+    "company": "Pinnacle Roberts Group",
+    "website": "www.pinnaclerobertsgroup.com",
+    "country": "MY",
+    "countryName": "Malaysia",
+    "timezone": "Asia/Kuala_Lumpur",
+    "language": "en",
+    "phone": "+2722645727007",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-04-14",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-05-09",
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 93,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-01-20T14:32:52.154Z",
+    "updatedAt": "2026-05-09T14:32:52.154Z",
+    "version": 1,
+    "dataHash": "16d86efeb32dbbb0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

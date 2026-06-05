@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-05919",
+  "emailAccount": "account-060",
+  "basicInfo": {
+    "name": "Sharon White",
+    "email": "sharon.white@company.de",
+    "company": "Elite Moore International",
+    "website": "www.elitemooreinternational.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+6063444538393",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor",
+      "smart-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-07-15",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 0,
+    "priorityScore": 52
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-12-29T14:32:53.505Z",
+    "updatedAt": "2026-05-09T14:32:53.505Z",
+    "version": 1,
+    "dataHash": "b066ba8c6fddd84e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-02926",
+  "emailAccount": "account-030",
+  "basicInfo": {
+    "name": "Brian Perez",
+    "email": "brian.perez@outlook.com",
+    "company": "Happy Rodriguez Imports",
+    "website": "www.happyrodriguezimports.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+6817391566850",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "educational",
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2025-01-26",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 8,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-03-25T14:32:52.620Z",
+    "updatedAt": "2026-05-09T14:32:52.620Z",
+    "version": 1,
+    "dataHash": "954b4c6b6f268450",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

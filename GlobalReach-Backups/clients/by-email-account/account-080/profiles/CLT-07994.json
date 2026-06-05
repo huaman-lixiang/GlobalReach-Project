@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07994",
+  "emailAccount": "account-080",
+  "basicInfo": {
+    "name": "Jason Williams",
+    "email": "jason.williams@gmail.com",
+    "company": "Joyful Nelson Distribution",
+    "website": "www.joyfulnelsondistribution.com",
+    "country": "IL",
+    "countryName": "Israel",
+    "timezone": "Asia/Jerusalem",
+    "language": "en",
+    "phone": "+3184979452043",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-01-12",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 8,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 22,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-12-02T14:32:54.109Z",
+    "updatedAt": "2026-05-09T14:32:54.109Z",
+    "version": 1,
+    "dataHash": "88f47be40729a4a9",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

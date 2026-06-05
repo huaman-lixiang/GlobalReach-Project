@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00491",
+  "emailAccount": "account-005",
+  "basicInfo": {
+    "name": "Stephen Taylor",
+    "email": "stephen.taylor@yahoo.com",
+    "company": "Zenith Campbell ToyBox",
+    "website": "www.zenithcampbelltoybox.com",
+    "country": "VN",
+    "countryName": "Vietnam",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "language": "en",
+    "phone": "+7646665436976",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-11-25",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 8,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-11-27T14:32:51.847Z",
+    "updatedAt": "2026-05-09T14:32:51.847Z",
+    "version": 1,
+    "dataHash": "ba8aa27b2e23fc90",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

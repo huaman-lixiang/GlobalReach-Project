@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00824",
+  "emailAccount": "account-009",
+  "basicInfo": {
+    "name": "William Green",
+    "email": "william.green@gmail.com",
+    "company": "Omega Rivera LLC",
+    "website": "www.omegariverallc.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+3058268341856",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "educational",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-02-25",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational",
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 87,
+    "priorityScore": 62
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-10-02T14:32:51.950Z",
+    "updatedAt": "2026-05-09T14:32:51.950Z",
+    "version": 1,
+    "dataHash": "da393eb7751b0f5e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

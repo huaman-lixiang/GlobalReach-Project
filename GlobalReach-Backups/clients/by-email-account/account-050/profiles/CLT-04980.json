@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04980",
+  "emailAccount": "account-050",
+  "basicInfo": {
+    "name": "Brenda Lopez",
+    "email": "brenda.lopez@company.com",
+    "company": "Premier Brown Ltd.",
+    "website": "www.premierbrownltd.com",
+    "country": "CL",
+    "countryName": "Chile",
+    "timezone": "America/Santiago",
+    "language": "en",
+    "phone": "+1671005406125",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-02-13",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-13",
+    "replyRate": 73,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 86,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-10-03T14:32:53.241Z",
+    "updatedAt": "2026-05-09T14:32:53.241Z",
+    "version": 1,
+    "dataHash": "db15112b9f16c469",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

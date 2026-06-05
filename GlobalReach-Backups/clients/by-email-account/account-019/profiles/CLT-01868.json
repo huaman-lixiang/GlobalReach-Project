@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01868",
+  "emailAccount": "account-019",
+  "basicInfo": {
+    "name": "Mary Scott",
+    "email": "mary.scott@company.de",
+    "company": "Pinnacle Flores WonderToys",
+    "website": "www.pinnaclefloreswondertoys.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+7065049004381",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2025-12-03",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 5,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-12-28T14:32:52.276Z",
+    "updatedAt": "2026-05-09T14:32:52.276Z",
+    "version": 1,
+    "dataHash": "c508178893cf45df",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

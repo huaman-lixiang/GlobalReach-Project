@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02109",
+  "emailAccount": "account-022",
+  "basicInfo": {
+    "name": "Robert Rodriguez",
+    "email": "robert.rodriguez@gmail.com",
+    "company": "Prime Scott Trading",
+    "website": "www.primescotttrading.com",
+    "country": "DK",
+    "countryName": "Denmark",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "phone": "+6981864584338",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys",
+      "educational"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-02-17",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-04-16",
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "14:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "smart-toys",
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 72,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-06-23T14:32:52.359Z",
+    "updatedAt": "2026-05-09T14:32:52.359Z",
+    "version": 1,
+    "dataHash": "be40d220d898d6db",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

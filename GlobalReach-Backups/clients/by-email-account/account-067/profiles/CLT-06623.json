@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-06623",
+  "emailAccount": "account-067",
+  "basicInfo": {
+    "name": "Nicholas Martin",
+    "email": "nicholas.martin@gmail.com",
+    "company": "Elite Miller Imports",
+    "website": "www.elitemillerimports.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+3857299302646",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2022,
+    "lastContactDate": "2026-02-13",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 22,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 19,
+    "priorityScore": 80
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-09-20T14:32:53.710Z",
+    "updatedAt": "2026-05-09T14:32:53.710Z",
+    "version": 1,
+    "dataHash": "2ed7dded41ba6b11",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

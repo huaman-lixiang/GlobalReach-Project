@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-06025",
+  "emailAccount": "account-061",
+  "basicInfo": {
+    "name": "Brenda Robinson",
+    "email": "brenda.robinson@orange.fr",
+    "company": "Royal Thomas Inc.",
+    "website": "www.royalthomasinc.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+2563057723508",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2017,
+    "lastContactDate": "2024-09-29",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 22,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-09-08T14:32:53.536Z",
+    "updatedAt": "2026-05-09T14:32:53.536Z",
+    "version": 1,
+    "dataHash": "3b823511f0ce01e2",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

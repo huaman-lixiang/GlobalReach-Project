@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04118",
+  "emailAccount": "account-042",
+  "basicInfo": {
+    "name": "Lisa Torres",
+    "email": "lisa.torres@yahoo.com",
+    "company": "Playful Johnson Imports",
+    "website": "www.playfuljohnsonimports.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+9000346202390",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-05-08",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-05-07",
+    "replyRate": 38,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "16:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 82,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-06-16T14:32:52.979Z",
+    "updatedAt": "2026-05-09T14:32:52.979Z",
+    "version": 1,
+    "dataHash": "ad8f129740281d45",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05987",
+  "emailAccount": "account-060",
+  "basicInfo": {
+    "name": "Susan Rivera",
+    "email": "susan.rivera@gmail.com",
+    "company": "Omega Roberts Co.",
+    "website": "www.omegarobertsco.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+4319995143012",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-03-20",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 38,
+    "priorityScore": 63
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-10-18T14:32:53.525Z",
+    "updatedAt": "2026-05-09T14:32:53.525Z",
+    "version": 1,
+    "dataHash": "f80dca9bacc3476e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

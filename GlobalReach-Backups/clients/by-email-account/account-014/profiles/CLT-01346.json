@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01346",
+  "emailAccount": "account-014",
+  "basicInfo": {
+    "name": "Justin Nelson",
+    "email": "justin.nelson@company.com",
+    "company": "Omega Ramirez ToyBox",
+    "website": "www.omegaramireztoybox.com",
+    "country": "PL",
+    "countryName": "Poland",
+    "timezone": "Europe/Warsaw",
+    "language": "en",
+    "phone": "+3976215988479",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "outdoor",
+      "smart-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2018,
+    "lastContactDate": "2025-05-04",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 17,
+    "priorityScore": 60
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-05T14:32:52.120Z",
+    "updatedAt": "2026-05-09T14:32:52.120Z",
+    "version": 1,
+    "dataHash": "8884fbc05f0448fa",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

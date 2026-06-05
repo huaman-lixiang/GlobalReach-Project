@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03391",
+  "emailAccount": "account-034",
+  "basicInfo": {
+    "name": "Laura Lee",
+    "email": "laura.lee@company.co.uk",
+    "company": "Pinnacle Ramirez Little Stars",
+    "website": "www.pinnacleramirezlittlestars.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+6395786102561",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-04-15",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": "2026-04-14",
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 96,
+    "priorityScore": 52
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-01-02T14:32:52.761Z",
+    "updatedAt": "2026-05-09T14:32:52.761Z",
+    "version": 1,
+    "dataHash": "3408941ccfd522e2",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

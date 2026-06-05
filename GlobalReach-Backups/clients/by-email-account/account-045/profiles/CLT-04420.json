@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04420",
+  "emailAccount": "account-045",
+  "basicInfo": {
+    "name": "Brian Mitchell",
+    "email": "brian.mitchell@yahoo.co.jp",
+    "company": "Pinnacle Smith Ltd.",
+    "website": "www.pinnaclesmithltd.co.jp",
+    "country": "JP",
+    "countryName": "Japan",
+    "timezone": "Asia/Tokyo",
+    "language": "en",
+    "phone": "+9980174402770",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2024-08-04",
+    "status": "churned",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 31,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-09-02T14:32:53.071Z",
+    "updatedAt": "2026-05-09T14:32:53.071Z",
+    "version": 1,
+    "dataHash": "86ab28c020e08152",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

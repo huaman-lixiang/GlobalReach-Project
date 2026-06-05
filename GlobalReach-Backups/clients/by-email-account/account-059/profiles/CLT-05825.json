@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05825",
+  "emailAccount": "account-059",
+  "basicInfo": {
+    "name": "Amy Jackson",
+    "email": "amy.jackson@company.de",
+    "company": "Imaginative Robinson Group",
+    "website": "www.imaginativerobinsongroup.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+2351751779113",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-02-09",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-11",
+    "replyRate": 114,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 86,
+    "priorityScore": 88
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-17T14:32:53.478Z",
+    "updatedAt": "2026-05-09T14:32:53.478Z",
+    "version": 1,
+    "dataHash": "5829b7fbb0d70d3d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

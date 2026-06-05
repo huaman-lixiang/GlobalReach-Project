@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00050",
+  "emailAccount": "account-001",
+  "basicInfo": {
+    "name": "Sandra Moore",
+    "email": "sandra.moore@gmail.com",
+    "company": "Fantastic Jackson WonderToys",
+    "website": "www.fantasticjacksonwondertoys.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+139589162983",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "educational",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-03-19",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-29",
+    "replyRate": 47,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational",
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 96,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-09-24T14:32:51.708Z",
+    "updatedAt": "2026-05-09T14:32:51.708Z",
+    "version": 1,
+    "dataHash": "69c65bdf38d9ad23",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

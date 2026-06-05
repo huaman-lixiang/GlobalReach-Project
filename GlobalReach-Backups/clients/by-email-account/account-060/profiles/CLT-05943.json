@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05943",
+  "emailAccount": "account-060",
+  "basicInfo": {
+    "name": "Jennifer Robinson",
+    "email": "jennifer.robinson@gmail.com",
+    "company": "Grand Mitchell FunZone",
+    "website": "www.grandmitchellfunzone.co.jp",
+    "country": "JP",
+    "countryName": "Japan",
+    "timezone": "Asia/Tokyo",
+    "language": "en",
+    "phone": "+6509438348238",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-03-20",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": null,
+    "replyRate": 37,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 80,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-06T14:32:53.512Z",
+    "updatedAt": "2026-05-09T14:32:53.512Z",
+    "version": 1,
+    "dataHash": "aed24f3a468cd636",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

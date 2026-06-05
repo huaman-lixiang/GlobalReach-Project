@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03289",
+  "emailAccount": "account-033",
+  "basicInfo": {
+    "name": "Barbara Hernandez",
+    "email": "barbara.hernandez@gmail.com",
+    "company": "Royal Jones Ltd.",
+    "website": "www.royaljonesltd.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+1681883621431",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-03-23",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-18",
+    "replyRate": 73,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "13:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 75,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-09-29T14:32:52.730Z",
+    "updatedAt": "2026-05-09T14:32:52.730Z",
+    "version": 1,
+    "dataHash": "8480654ca228e754",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

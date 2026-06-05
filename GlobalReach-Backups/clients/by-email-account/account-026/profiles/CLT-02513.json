@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-02513",
+  "emailAccount": "account-026",
+  "basicInfo": {
+    "name": "Sandra Taylor",
+    "email": "sandra.taylor@company.com",
+    "company": "Universal Nelson PlayTime",
+    "website": "www.universalnelsonplaytime.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+3763002304736",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "smart-toys",
+      "educational",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-10-14",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 2,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-08-17T14:32:52.491Z",
+    "updatedAt": "2026-05-09T14:32:52.491Z",
+    "version": 1,
+    "dataHash": "a3b5406b31476278",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

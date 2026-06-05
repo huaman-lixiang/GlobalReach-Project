@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05714",
+  "emailAccount": "account-058",
+  "basicInfo": {
+    "name": "Donna King",
+    "email": "donna.king@yahoo.com",
+    "company": "Premier Jackson International",
+    "website": "www.premierjacksoninternational.com",
+    "country": "SG",
+    "countryName": "Singapore",
+    "timezone": "Asia/Singapore",
+    "language": "en",
+    "phone": "+1304170915819",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2024,
+    "lastContactDate": "2025-03-24",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 15,
+    "priorityScore": 52
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-04-07T14:32:53.447Z",
+    "updatedAt": "2026-05-09T14:32:53.447Z",
+    "version": 1,
+    "dataHash": "084741f3aa6b2976",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

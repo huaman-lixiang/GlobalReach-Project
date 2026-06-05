@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01828",
+  "emailAccount": "account-019",
+  "basicInfo": {
+    "name": "Angela Mitchell",
+    "email": "angela.mitchell@yahoo.com",
+    "company": "Royal Wright Distribution",
+    "website": "www.royalwrightdistribution.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+7100477782310",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2026-03-08",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-21",
+    "replyRate": 250,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 73,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-04-02T14:32:52.264Z",
+    "updatedAt": "2026-05-09T14:32:52.264Z",
+    "version": 1,
+    "dataHash": "ab0f4bbf37115ca3",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

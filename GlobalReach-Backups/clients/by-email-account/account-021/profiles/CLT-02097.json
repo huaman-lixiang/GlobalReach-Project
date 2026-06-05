@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02097",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Anthony Martin",
+    "email": "anthony.martin@company.ca",
+    "company": "Creative Wilson Kids World",
+    "website": "www.creativewilsonkidsworld.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+5098364439754",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-05-07",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-04-21",
+    "replyRate": 60,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 85,
+    "priorityScore": 80
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-03-16T14:32:52.354Z",
+    "updatedAt": "2026-05-09T14:32:52.354Z",
+    "version": 1,
+    "dataHash": "a8e8cc497220a9ab",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02070",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Alexander Brown",
+    "email": "alexander.brown@company.com",
+    "company": "Universal Johnson Co.",
+    "website": "www.universaljohnsonco.com",
+    "country": "ZA",
+    "countryName": "South Africa",
+    "timezone": "Africa/Johannesburg",
+    "language": "en",
+    "phone": "+255808135539",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2025-06-01",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 30,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-12-20T14:32:52.344Z",
+    "updatedAt": "2026-05-09T14:32:52.344Z",
+    "version": 1,
+    "dataHash": "b5a9f49e1820935a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07116",
+  "emailAccount": "account-072",
+  "basicInfo": {
+    "name": "Carol Roberts",
+    "email": "carol.roberts@yahoo.com",
+    "company": "Prime Wilson Group",
+    "website": "www.primewilsongroup.com",
+    "country": "QA",
+    "countryName": "Qatar",
+    "timezone": "Asia/Qatar",
+    "language": "en",
+    "phone": "+8110201917059",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "infant-toddler",
+      "outdoor",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2024-06-22",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 14,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-09-24T14:32:53.853Z",
+    "updatedAt": "2026-05-09T14:32:53.853Z",
+    "version": 1,
+    "dataHash": "a1c9374d58d42249",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

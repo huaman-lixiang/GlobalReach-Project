@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01709",
+  "emailAccount": "account-018",
+  "basicInfo": {
+    "name": "Stephanie Baker",
+    "email": "stephanie.baker@company.es",
+    "company": "Super Scott Enterprises",
+    "website": "www.superscottenterprises.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+7731667852657",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2024-09-27",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 7,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 11,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-06-11T14:32:52.228Z",
+    "updatedAt": "2026-05-09T14:32:52.228Z",
+    "version": 1,
+    "dataHash": "1d5022043c9b4e0c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

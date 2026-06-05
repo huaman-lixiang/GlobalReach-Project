@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-06160",
+  "emailAccount": "account-062",
+  "basicInfo": {
+    "name": "Richard Sanchez",
+    "email": "richard.sanchez@outlook.com",
+    "company": "Ultra Mitchell Inc.",
+    "website": "www.ultramitchellinc.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+3873613878025",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2024-12-09",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 7,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 13,
+    "priorityScore": 84
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-03-27T14:32:53.575Z",
+    "updatedAt": "2026-05-09T14:32:53.575Z",
+    "version": 1,
+    "dataHash": "871d459a13ba8ba7",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

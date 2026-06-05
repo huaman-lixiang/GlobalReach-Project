@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01195",
+  "emailAccount": "account-012",
+  "basicInfo": {
+    "name": "Shirley Flores",
+    "email": "shirley.flores@company.ca",
+    "company": "Joyful Nguyen LLC",
+    "website": "www.joyfulnguyenllc.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+5418755840683",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-05-05",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 22,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-04-24T14:32:52.073Z",
+    "updatedAt": "2026-05-09T14:32:52.073Z",
+    "version": 1,
+    "dataHash": "f0107eb134e957c6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

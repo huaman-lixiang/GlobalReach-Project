@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04906",
+  "emailAccount": "account-050",
+  "basicInfo": {
+    "name": "Rebecca Rivera",
+    "email": "rebecca.rivera@company.com",
+    "company": "Pinnacle Ramirez Enterprises",
+    "website": "www.pinnacleramirezenterprises.com",
+    "country": "AE",
+    "countryName": "UAE",
+    "timezone": "Asia/Dubai",
+    "language": "ar",
+    "phone": "+9027347693082",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-02-24",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 22,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 9,
+    "priorityScore": 60
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-10-04T14:32:53.220Z",
+    "updatedAt": "2026-05-09T14:32:53.220Z",
+    "version": 1,
+    "dataHash": "c452997cd08b8d5d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

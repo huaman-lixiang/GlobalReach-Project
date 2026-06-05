@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01325",
+  "emailAccount": "account-014",
+  "basicInfo": {
+    "name": "Samuel Ramirez",
+    "email": "samuel.ramirez@gmail.com",
+    "company": "Happy Baker Group",
+    "website": "www.happybakergroup.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+4138701284719",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2025-11-11",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 29,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 34,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-01-27T14:32:52.113Z",
+    "updatedAt": "2026-05-09T14:32:52.113Z",
+    "version": 1,
+    "dataHash": "70ffb98b8d52b813",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

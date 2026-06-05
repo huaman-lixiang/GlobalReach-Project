@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-03464",
+  "emailAccount": "account-035",
+  "basicInfo": {
+    "name": "Richard White",
+    "email": "richard.white@gmail.com",
+    "company": "Global Brown Inc.",
+    "website": "www.globalbrowninc.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+7810610255953",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-04-20",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 17,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-25",
+    "replyRate": 29,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 80,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-12-26T14:32:52.783Z",
+    "updatedAt": "2026-05-09T14:32:52.783Z",
+    "version": 1,
+    "dataHash": "5c6cc3f313d0c9ad",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

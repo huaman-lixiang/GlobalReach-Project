@@ -1,0 +1,42 @@
+{
+  "version": "2.0",
+  "timestamp": "2026-05-10T16:16:42.402Z",
+  "type": "FULL",
+  "tool": "SimpleBackupTool v2.0",
+  "directories": [
+    {
+      "name": "config",
+      "sourcePath": "D:\\GlobalReach\\.config",
+      "fileCount": 2,
+      "totalSize": 26810
+    },
+    {
+      "name": "email-accounts",
+      "sourcePath": "D:\\GlobalReach\\data\\email-accounts",
+      "fileCount": 1,
+      "totalSize": 0
+    },
+    {
+      "name": "clients",
+      "sourcePath": "D:\\GlobalReach\\data\\clients",
+      "fileCount": 8007,
+      "totalSize": 12893861
+    },
+    {
+      "name": "products",
+      "sourcePath": "D:\\GlobalReach\\data\\products",
+      "fileCount": 21,
+      "totalSize": 51855
+    }
+  ],
+  "summary": {
+    "totalFiles": 8031,
+    "totalSizeBytes": 12972526,
+    "checksums": [
+      {
+        "algorithm": "SHA-256",
+        "value": "7e7df33c48bd219a"
+      }
+    ]
+  }
+}

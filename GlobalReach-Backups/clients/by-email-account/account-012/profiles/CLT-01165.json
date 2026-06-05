@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01165",
+  "emailAccount": "account-012",
+  "basicInfo": {
+    "name": "Gary Jackson",
+    "email": "gary.jackson@gmail.com",
+    "company": "Star Rivera Enterprises",
+    "website": "www.starriveraenterprises.com",
+    "country": "NZ",
+    "countryName": "New Zealand",
+    "timezone": "Pacific/Auckland",
+    "language": "en",
+    "phone": "+4532334731852",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2024-07-19",
+    "status": "churned",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 8,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 31,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-09T14:32:52.064Z",
+    "updatedAt": "2026-05-09T14:32:52.064Z",
+    "version": 1,
+    "dataHash": "5915fb4cc8b71d6c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

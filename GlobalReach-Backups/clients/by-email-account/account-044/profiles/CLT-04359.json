@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04359",
+  "emailAccount": "account-044",
+  "basicInfo": {
+    "name": "Nicholas Torres",
+    "email": "nicholas.torres@gmail.com",
+    "company": "Summit Lopez Corp.",
+    "website": "www.summitlopezcorp.com",
+    "country": "ID",
+    "countryName": "Indonesia",
+    "timezone": "Asia/Jakarta",
+    "language": "en",
+    "phone": "+2745553377673",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "infant-toddler",
+      "smart-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-07-29",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 4,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-02-04T14:32:53.052Z",
+    "updatedAt": "2026-05-09T14:32:53.052Z",
+    "version": 1,
+    "dataHash": "3f858ffd9d77fc75",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

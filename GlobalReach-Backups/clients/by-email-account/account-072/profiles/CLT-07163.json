@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07163",
+  "emailAccount": "account-072",
+  "basicInfo": {
+    "name": "Stephen Robinson",
+    "email": "stephen.robinson@company.com",
+    "company": "Grand Lewis Co.",
+    "website": "www.grandlewisco.com",
+    "country": "GR",
+    "countryName": "Greece",
+    "timezone": "Europe/Athens",
+    "language": "en",
+    "phone": "+285753882431",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2025-03-14",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 67,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 5,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-12-09T14:32:53.867Z",
+    "updatedAt": "2026-05-09T14:32:53.867Z",
+    "version": 1,
+    "dataHash": "0eced37104ebcc00",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

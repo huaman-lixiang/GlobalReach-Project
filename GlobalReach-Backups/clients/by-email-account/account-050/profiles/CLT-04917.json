@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04917",
+  "emailAccount": "account-050",
+  "basicInfo": {
+    "name": "Christopher Carter",
+    "email": "christopher.carter@company.nl",
+    "company": "Imaginative Lewis Group",
+    "website": "www.imaginativelewisgroup.com",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "timezone": "Europe/Amsterdam",
+    "language": "en",
+    "phone": "+305428809326",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2022,
+    "lastContactDate": "2026-02-28",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-21",
+    "replyRate": 63,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 95,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-21T14:32:53.223Z",
+    "updatedAt": "2026-05-09T14:32:53.223Z",
+    "version": 1,
+    "dataHash": "241c7b630d3fa62c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

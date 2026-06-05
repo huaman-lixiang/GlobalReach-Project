@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04443",
+  "emailAccount": "account-045",
+  "basicInfo": {
+    "name": "Linda Jackson",
+    "email": "linda.jackson@company.fr",
+    "company": "Sun Thomas Kids World",
+    "website": "www.sunthomaskidsworld.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+1528019534485",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "educational",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-02-28",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 29,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-10-25T14:32:53.078Z",
+    "updatedAt": "2026-05-09T14:32:53.078Z",
+    "version": 1,
+    "dataHash": "6dcd1c620564ddac",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02176",
+  "emailAccount": "account-022",
+  "basicInfo": {
+    "name": "Kevin Clark",
+    "email": "kevin.clark@company.com",
+    "company": "Summit Williams ToyBox",
+    "website": "www.summitwilliamstoybox.com",
+    "country": "SA",
+    "countryName": "Saudi Arabia",
+    "timezone": "Asia/Riyadh",
+    "language": "ar",
+    "phone": "+1901332476928",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-03-01",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 74,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-04-04T14:32:52.380Z",
+    "updatedAt": "2026-05-09T14:32:52.380Z",
+    "version": 1,
+    "dataHash": "0c5fc13a33a344e2",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

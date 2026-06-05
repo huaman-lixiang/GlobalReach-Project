@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04177",
+  "emailAccount": "account-042",
+  "basicInfo": {
+    "name": "Donna Mitchell",
+    "email": "donna.mitchell@company.com",
+    "company": "Global Sanchez Kids World",
+    "website": "www.globalsanchezkidsworld.com",
+    "country": "MA",
+    "countryName": "Morocco",
+    "timezone": "Africa/Casablanca",
+    "language": "en",
+    "phone": "+5241700387118",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-02-16",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 17,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": "2026-04-30",
+    "replyRate": 6,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 97,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-03-25T14:32:52.997Z",
+    "updatedAt": "2026-05-09T14:32:52.997Z",
+    "version": 1,
+    "dataHash": "cbb6ddb83cd4e85f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

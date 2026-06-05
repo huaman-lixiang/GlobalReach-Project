@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00593",
+  "emailAccount": "account-006",
+  "basicInfo": {
+    "name": "Larry Clark",
+    "email": "larry.clark@yahoo.com",
+    "company": "Mega Williams Trading",
+    "website": "www.megawilliamstrading.com",
+    "country": "NO",
+    "countryName": "Norway",
+    "timezone": "Europe/Oslo",
+    "language": "en",
+    "phone": "+5238151406315",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-02-08",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 14,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-03-12T14:32:51.880Z",
+    "updatedAt": "2026-05-09T14:32:51.880Z",
+    "version": 1,
+    "dataHash": "c0dbab249e499dd4",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

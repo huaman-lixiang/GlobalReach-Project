@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02922",
+  "emailAccount": "account-030",
+  "basicInfo": {
+    "name": "Kevin Harris",
+    "email": "kevin.harris@gmail.com",
+    "company": "Prime Nguyen Group",
+    "website": "www.primenguyengroup.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+388268266838",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-29",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-23",
+    "replyRate": 400,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "16:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 90,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-12-23T14:32:52.619Z",
+    "updatedAt": "2026-05-09T14:32:52.619Z",
+    "version": 1,
+    "dataHash": "328a1a7ccf9f8345",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

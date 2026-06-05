@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-02770",
+  "emailAccount": "account-028",
+  "basicInfo": {
+    "name": "William Young",
+    "email": "william.young@gmail.com",
+    "company": "Super Taylor WonderToys",
+    "website": "www.supertaylorwondertoys.com",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "timezone": "Europe/Amsterdam",
+    "language": "en",
+    "phone": "+7395201510478",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "rc-toys",
+      "infant-toddler",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-04-15",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 7,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 62,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-10-25T14:32:52.573Z",
+    "updatedAt": "2026-05-09T14:32:52.573Z",
+    "version": 1,
+    "dataHash": "8be9a98e4ba02e4e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

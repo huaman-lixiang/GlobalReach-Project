@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00193",
+  "emailAccount": "account-002",
+  "basicInfo": {
+    "name": "Deborah King",
+    "email": "deborah.king@yahoo.com",
+    "company": "Whimsical Carter Inc.",
+    "website": "www.whimsicalcarterinc.com",
+    "country": "AE",
+    "countryName": "UAE",
+    "timezone": "Asia/Dubai",
+    "language": "ar",
+    "phone": "+3562461612261",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "infant-toddler",
+      "educational",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2024-11-09",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 19,
+    "priorityScore": 62
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-12T14:32:51.754Z",
+    "updatedAt": "2026-05-09T14:32:51.754Z",
+    "version": 1,
+    "dataHash": "1c72f9c5e62192eb",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

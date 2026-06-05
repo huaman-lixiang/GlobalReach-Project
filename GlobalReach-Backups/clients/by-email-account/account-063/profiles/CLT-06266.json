@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-06266",
+  "emailAccount": "account-063",
+  "basicInfo": {
+    "name": "Samuel Smith",
+    "email": "samuel.smith@company.com",
+    "company": "Mighty Wilson Distribution",
+    "website": "www.mightywilsondistribution.com",
+    "country": "ZA",
+    "countryName": "South Africa",
+    "timezone": "Africa/Johannesburg",
+    "language": "en",
+    "phone": "+1599828802629",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "smart-toys",
+      "educational",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-11-19",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 30,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-09-19T14:32:53.605Z",
+    "updatedAt": "2026-05-09T14:32:53.605Z",
+    "version": 1,
+    "dataHash": "f578e9cc786c1751",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

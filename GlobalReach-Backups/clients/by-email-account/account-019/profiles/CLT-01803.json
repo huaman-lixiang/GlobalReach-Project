@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01803",
+  "emailAccount": "account-019",
+  "basicInfo": {
+    "name": "Michael Nelson",
+    "email": "michael.nelson@yahoo.com",
+    "company": "Zenith Lee WonderToys",
+    "website": "www.zenithleewondertoys.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+4873730155779",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2024-09-15",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 18,
+    "priorityScore": 63
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-04-19T14:32:52.256Z",
+    "updatedAt": "2026-05-09T14:32:52.256Z",
+    "version": 1,
+    "dataHash": "9d50b9bff571d3d4",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

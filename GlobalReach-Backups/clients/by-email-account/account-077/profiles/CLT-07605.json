@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07605",
+  "emailAccount": "account-077",
+  "basicInfo": {
+    "name": "Stephanie Anderson",
+    "email": "stephanie.anderson@company.com",
+    "company": "Prime Allen Toys & Games",
+    "website": "www.primeallentoysgames.com",
+    "country": "ZA",
+    "countryName": "South Africa",
+    "timezone": "Africa/Johannesburg",
+    "language": "en",
+    "phone": "+3458710722316",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-01-14",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 7,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-08-18T14:32:53.998Z",
+    "updatedAt": "2026-05-09T14:32:53.998Z",
+    "version": 1,
+    "dataHash": "47b9ce2bb31d0e28",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

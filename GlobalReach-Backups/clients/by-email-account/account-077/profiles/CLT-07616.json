@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07616",
+  "emailAccount": "account-077",
+  "basicInfo": {
+    "name": "Emma Hernandez",
+    "email": "emma.hernandez@yahoo.com",
+    "company": "Elite Lewis Trading",
+    "website": "www.elitelewistrading.com",
+    "country": "CH",
+    "countryName": "Switzerland",
+    "timezone": "Europe/Zurich",
+    "language": "en",
+    "phone": "+1482636324043",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-07-25",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 20,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-02-03T14:32:54.001Z",
+    "updatedAt": "2026-05-09T14:32:54.001Z",
+    "version": 1,
+    "dataHash": "54d44ca99f8e7431",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

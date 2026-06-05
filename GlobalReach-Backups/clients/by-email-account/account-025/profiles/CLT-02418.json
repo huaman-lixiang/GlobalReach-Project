@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02418",
+  "emailAccount": "account-025",
+  "basicInfo": {
+    "name": "David Hill",
+    "email": "david.hill@gmail.com",
+    "company": "Premier Mitchell LLC",
+    "website": "www.premiermitchellllc.com",
+    "country": "NZ",
+    "countryName": "New Zealand",
+    "timezone": "Pacific/Auckland",
+    "language": "en",
+    "phone": "+6666321287512",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-05-03",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 8,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-02T14:32:52.460Z",
+    "updatedAt": "2026-05-09T14:32:52.460Z",
+    "version": 1,
+    "dataHash": "aabc8ba79a498b26",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

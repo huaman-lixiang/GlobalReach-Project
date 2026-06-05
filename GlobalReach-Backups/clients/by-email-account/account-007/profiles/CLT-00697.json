@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00697",
+  "emailAccount": "account-007",
+  "basicInfo": {
+    "name": "Christine Thomas",
+    "email": "christine.thomas@gmail.com",
+    "company": "Prime Green Inc.",
+    "website": "www.primegreeninc.com",
+    "country": "SG",
+    "countryName": "Singapore",
+    "timezone": "Asia/Singapore",
+    "language": "en",
+    "phone": "+9113101148499",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-03",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-24",
+    "replyRate": 64,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "11:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 78,
+    "priorityScore": 84
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-08-25T14:32:51.912Z",
+    "updatedAt": "2026-05-09T14:32:51.912Z",
+    "version": 1,
+    "dataHash": "19afd89c1adac800",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03054",
+  "emailAccount": "account-031",
+  "basicInfo": {
+    "name": "Cynthia Carter",
+    "email": "cynthia.carter@t-online.de",
+    "company": "Apex Carter Little Stars",
+    "website": "www.apexcarterlittlestars.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+189838059268",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-11-03",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 31,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-02-03T14:32:52.658Z",
+    "updatedAt": "2026-05-09T14:32:52.658Z",
+    "version": 1,
+    "dataHash": "8ae0921a89ef1f37",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

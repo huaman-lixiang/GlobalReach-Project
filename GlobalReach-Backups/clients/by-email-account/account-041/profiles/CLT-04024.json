@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04024",
+  "emailAccount": "account-041",
+  "basicInfo": {
+    "name": "Sandra Scott",
+    "email": "sandra.scott@outlook.com",
+    "company": "Universal Baker Inc.",
+    "website": "www.universalbakerinc.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+6401550287201",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "rc-toys",
+      "classic-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-03-16",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 16,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-26",
+    "replyRate": 31,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 84,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-12-12T14:32:52.952Z",
+    "updatedAt": "2026-05-09T14:32:52.952Z",
+    "version": 1,
+    "dataHash": "29c7c86c9ff2258b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

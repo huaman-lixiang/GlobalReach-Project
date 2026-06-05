@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02449",
+  "emailAccount": "account-025",
+  "basicInfo": {
+    "name": "Gregory Jones",
+    "email": "gregory.jones@gmail.com",
+    "company": "Mighty Clark PlayTime",
+    "website": "www.mightyclarkplaytime.com",
+    "country": "IN",
+    "countryName": "India",
+    "timezone": "Asia/Kolkata",
+    "language": "en",
+    "phone": "+8482078275302",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-03-25",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 21,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-04-12T14:32:52.470Z",
+    "updatedAt": "2026-05-09T14:32:52.470Z",
+    "version": 1,
+    "dataHash": "4a5891cf5c0b71ff",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07334",
+  "emailAccount": "account-074",
+  "basicInfo": {
+    "name": "Emma Lopez",
+    "email": "emma.lopez@gmail.com",
+    "company": "Grand King ToyBox",
+    "website": "www.grandkingtoybox.com",
+    "country": "SG",
+    "countryName": "Singapore",
+    "timezone": "Asia/Singapore",
+    "language": "en",
+    "phone": "+4817931996113",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-09-23",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 29,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-02-22T14:32:53.918Z",
+    "updatedAt": "2026-05-09T14:32:53.918Z",
+    "version": 1,
+    "dataHash": "64eb18dd38e0fa32",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

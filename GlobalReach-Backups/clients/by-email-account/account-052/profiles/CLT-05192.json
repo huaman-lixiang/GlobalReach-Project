@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05192",
+  "emailAccount": "account-052",
+  "basicInfo": {
+    "name": "Mark Garcia",
+    "email": "mark.garcia@gmail.com",
+    "company": "Global Martinez FunZone",
+    "website": "www.globalmartinezfunzone.com",
+    "country": "AT",
+    "countryName": "Austria",
+    "timezone": "Europe/Vienna",
+    "language": "en",
+    "phone": "+4798598379711",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-12-10",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 13,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-08-21T14:32:53.300Z",
+    "updatedAt": "2026-05-09T14:32:53.300Z",
+    "version": 1,
+    "dataHash": "ccebc9180a34b0d0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

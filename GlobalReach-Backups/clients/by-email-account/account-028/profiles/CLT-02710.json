@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02710",
+  "emailAccount": "account-028",
+  "basicInfo": {
+    "name": "Larry Perez",
+    "email": "larry.perez@yahoo.com",
+    "company": "Apex Nelson Kids World",
+    "website": "www.apexnelsonkidsworld.com",
+    "country": "CZ",
+    "countryName": "Czech Republic",
+    "timezone": "Europe/Prague",
+    "language": "en",
+    "phone": "+4925004765335",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2025-06-01",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 19,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-10-12T14:32:52.555Z",
+    "updatedAt": "2026-05-09T14:32:52.555Z",
+    "version": 1,
+    "dataHash": "813a0c318d141a9d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

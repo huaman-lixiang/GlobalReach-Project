@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00393",
+  "emailAccount": "account-004",
+  "basicInfo": {
+    "name": "Brian Lee",
+    "email": "brian.lee@yahoo.com",
+    "company": "Alpha Gonzalez Corp.",
+    "website": "www.alphagonzalezcorp.com",
+    "country": "MA",
+    "countryName": "Morocco",
+    "timezone": "Africa/Casablanca",
+    "language": "en",
+    "phone": "+2083195231016",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-05-03",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": null,
+    "replyRate": 46,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "12:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 68,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-07-05T14:32:51.816Z",
+    "updatedAt": "2026-05-09T14:32:51.816Z",
+    "version": 1,
+    "dataHash": "4e26185b0613aa71",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

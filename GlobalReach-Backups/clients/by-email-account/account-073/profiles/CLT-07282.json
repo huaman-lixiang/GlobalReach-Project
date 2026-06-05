@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07282",
+  "emailAccount": "account-073",
+  "basicInfo": {
+    "name": "Scott Allen",
+    "email": "scott.allen@company.com",
+    "company": "Joyful Taylor Toys & Games",
+    "website": "www.joyfultaylortoysgames.com",
+    "country": "FI",
+    "countryName": "Finland",
+    "timezone": "Europe/Helsinki",
+    "language": "en",
+    "phone": "+2803576392705",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-04-19",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-30",
+    "replyRate": 114,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 72,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-06-06T14:32:53.902Z",
+    "updatedAt": "2026-05-09T14:32:53.902Z",
+    "version": 1,
+    "dataHash": "b1b0af46a4d5c939",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

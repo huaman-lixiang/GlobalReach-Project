@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05193",
+  "emailAccount": "account-052",
+  "basicInfo": {
+    "name": "Ronald Anderson",
+    "email": "ronald.anderson@hotmail.com",
+    "company": "Alpha Martin Co.",
+    "website": "www.alphamartinco.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+7774699036838",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-10-12",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 3,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-12-31T14:32:53.301Z",
+    "updatedAt": "2026-05-09T14:32:53.301Z",
+    "version": 1,
+    "dataHash": "d2dee1e552e6f354",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

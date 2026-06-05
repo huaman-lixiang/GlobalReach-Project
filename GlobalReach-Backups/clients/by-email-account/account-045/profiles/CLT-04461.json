@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04461",
+  "emailAccount": "account-045",
+  "basicInfo": {
+    "name": "Gregory Allen",
+    "email": "gregory.allen@outlook.com.au",
+    "company": "Prime Green Ltd.",
+    "website": "www.primegreenltd.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+2461554383578",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-03-04",
+    "status": "sleeping",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 9,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 5,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-05-21T14:32:53.083Z",
+    "updatedAt": "2026-05-09T14:32:53.083Z",
+    "version": 1,
+    "dataHash": "14f6869e55a7e638",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

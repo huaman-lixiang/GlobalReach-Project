@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00259",
+  "emailAccount": "account-003",
+  "basicInfo": {
+    "name": "Jennifer Adams",
+    "email": "jennifer.adams@company.com",
+    "company": "Bright Williams DreamPlay",
+    "website": "www.brightwilliamsdreamplay.com",
+    "country": "AR",
+    "countryName": "Argentina",
+    "timezone": "America/Buenos_Aires",
+    "language": "ar",
+    "phone": "+7664594756800",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-05-04",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": "2026-05-07",
+    "replyRate": 13,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 84,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-02-12T14:32:51.774Z",
+    "updatedAt": "2026-05-09T14:32:51.774Z",
+    "version": 1,
+    "dataHash": "1425f35588c388ed",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

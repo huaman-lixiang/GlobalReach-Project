@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04488",
+  "emailAccount": "account-045",
+  "basicInfo": {
+    "name": "Emma Johnson",
+    "email": "emma.johnson@yahoo.com",
+    "company": "Whimsical Brown Co.",
+    "website": "www.whimsicalbrownco.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+565184109022",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2025-04-11",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 17,
+    "priorityScore": 57
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-01-03T14:32:53.092Z",
+    "updatedAt": "2026-05-09T14:32:53.092Z",
+    "version": 1,
+    "dataHash": "10cc8b1b8b9254dd",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

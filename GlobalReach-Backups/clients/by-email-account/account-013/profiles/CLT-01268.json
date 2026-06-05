@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01268",
+  "emailAccount": "account-013",
+  "basicInfo": {
+    "name": "Larry Adams",
+    "email": "larry.adams@gmail.com",
+    "company": "Omega Baker ToyBox",
+    "website": "www.omegabakertoybox.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+4662139186108",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "11-50",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-07-08",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 67,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 15,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-03-04T14:32:52.095Z",
+    "updatedAt": "2026-05-09T14:32:52.095Z",
+    "version": 1,
+    "dataHash": "7a817be4720ecb68",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

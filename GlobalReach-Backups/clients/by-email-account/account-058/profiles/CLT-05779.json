@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05779",
+  "emailAccount": "account-058",
+  "basicInfo": {
+    "name": "Amy Clark",
+    "email": "amy.clark@yahoo.com",
+    "company": "Mighty Scott Happy Kids",
+    "website": "www.mightyscotthappykids.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+4706798080599",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2018,
+    "lastContactDate": "2025-12-12",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 67,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 29,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-01-17T14:32:53.465Z",
+    "updatedAt": "2026-05-09T14:32:53.465Z",
+    "version": 1,
+    "dataHash": "32646acf977d8902",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

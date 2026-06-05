@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00601",
+  "emailAccount": "account-007",
+  "basicInfo": {
+    "name": "David Anderson",
+    "email": "david.anderson@yahoo.com",
+    "company": "Prime Johnson International",
+    "website": "www.primejohnsoninternational.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+8591805749611",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2024-08-26",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 16,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-12-12T14:32:51.883Z",
+    "updatedAt": "2026-05-09T14:32:51.883Z",
+    "version": 1,
+    "dataHash": "f96d357064023b56",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

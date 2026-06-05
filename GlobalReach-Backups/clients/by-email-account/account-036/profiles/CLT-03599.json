@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03599",
+  "emailAccount": "account-036",
+  "basicInfo": {
+    "name": "Barbara King",
+    "email": "barbara.king@yahoo.com",
+    "company": "Happy Rivera Distribution",
+    "website": "www.happyriveradistribution.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+733665918215",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "smart-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2025-05-25",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 7,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 19,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-09-07T14:32:52.824Z",
+    "updatedAt": "2026-05-09T14:32:52.824Z",
+    "version": 1,
+    "dataHash": "108a69cede4e753c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

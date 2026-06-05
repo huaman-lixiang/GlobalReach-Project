@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05234",
+  "emailAccount": "account-053",
+  "basicInfo": {
+    "name": "Donald King",
+    "email": "donald.king@sfr.fr",
+    "company": "Zenith Ramirez Distribution",
+    "website": "www.zenithramirezdistribution.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+2714880886734",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-03-04",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-10",
+    "replyRate": 37,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 71,
+    "priorityScore": 89
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-06-21T14:32:53.313Z",
+    "updatedAt": "2026-05-09T14:32:53.313Z",
+    "version": 1,
+    "dataHash": "3ddf37a372e25d12",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

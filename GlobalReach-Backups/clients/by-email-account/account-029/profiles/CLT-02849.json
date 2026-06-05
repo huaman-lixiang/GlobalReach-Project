@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02849",
+  "emailAccount": "account-029",
+  "basicInfo": {
+    "name": "Linda Brown",
+    "email": "linda.brown@outlook.com",
+    "company": "Playful White DreamPlay",
+    "website": "www.playfulwhitedreamplay.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+2013634364415",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-03-08",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-05-07",
+    "replyRate": 117,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 67,
+    "priorityScore": 60
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-11-16T14:32:52.597Z",
+    "updatedAt": "2026-05-09T14:32:52.597Z",
+    "version": 1,
+    "dataHash": "e01c8097c32e56fc",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

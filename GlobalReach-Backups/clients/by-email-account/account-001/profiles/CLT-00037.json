@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00037",
+  "emailAccount": "account-001",
+  "basicInfo": {
+    "name": "Jacob Rodriguez",
+    "email": "jacob.rodriguez@company.co.uk",
+    "company": "Pinnacle Rodriguez FunZone",
+    "website": "www.pinnaclerodriguezfunzone.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+2457812657627",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2024-11-26",
+    "status": "churned",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 38,
+    "priorityScore": 57
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-08-05T14:32:51.704Z",
+    "updatedAt": "2026-05-09T14:32:51.704Z",
+    "version": 1,
+    "dataHash": "edb7cd5ef44abe78",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

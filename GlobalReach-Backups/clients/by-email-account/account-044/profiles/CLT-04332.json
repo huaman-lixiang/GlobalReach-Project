@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04332",
+  "emailAccount": "account-044",
+  "basicInfo": {
+    "name": "Elizabeth Wilson",
+    "email": "elizabeth.wilson@sfr.fr",
+    "company": "Royal Smith Imports",
+    "website": "www.royalsmithimports.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+7280193065529",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-04-30",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 18,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-05-05",
+    "replyRate": 39,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 78,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-03-23T14:32:53.044Z",
+    "updatedAt": "2026-05-09T14:32:53.044Z",
+    "version": 1,
+    "dataHash": "378bb54c62b8c21e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

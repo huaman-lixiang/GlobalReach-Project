@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02624",
+  "emailAccount": "account-027",
+  "basicInfo": {
+    "name": "Sarah Adams",
+    "email": "sarah.adams@yahoo.com",
+    "company": "Universal Hill Inc.",
+    "website": "www.universalhillinc.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+964426074177",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-04-02",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 38,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 93,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-17T14:32:52.527Z",
+    "updatedAt": "2026-05-09T14:32:52.527Z",
+    "version": 1,
+    "dataHash": "106b1b901dea556a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

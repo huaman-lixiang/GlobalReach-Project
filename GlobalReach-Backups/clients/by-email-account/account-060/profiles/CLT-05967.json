@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05967",
+  "emailAccount": "account-060",
+  "basicInfo": {
+    "name": "Nancy Hill",
+    "email": "nancy.hill@company.com",
+    "company": "Happy Gonzalez Group",
+    "website": "www.happygonzalezgroup.com",
+    "country": "IN",
+    "countryName": "India",
+    "timezone": "Asia/Kolkata",
+    "language": "en",
+    "phone": "+1642325738354",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-02-23",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": null,
+    "replyRate": 140,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "11:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 97,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-09-14T14:32:53.520Z",
+    "updatedAt": "2026-05-09T14:32:53.520Z",
+    "version": 1,
+    "dataHash": "354aaa0c83f147f8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06659",
+  "emailAccount": "account-067",
+  "basicInfo": {
+    "name": "Deborah Jones",
+    "email": "deborah.jones@yahoo.com",
+    "company": "Royal Campbell FunZone",
+    "website": "www.royalcampbellfunzone.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+1423606432790",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "infant-toddler",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-09-22",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 20,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-07-15T14:32:53.720Z",
+    "updatedAt": "2026-05-09T14:32:53.720Z",
+    "version": 1,
+    "dataHash": "ad2740ab1b0a8c2a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

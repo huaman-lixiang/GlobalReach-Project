@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-05399",
+  "emailAccount": "account-054",
+  "basicInfo": {
+    "name": "Janet Gonzalez",
+    "email": "janet.gonzalez@yahoo.com",
+    "company": "Royal Baker DreamPlay",
+    "website": "www.royalbakerdreamplay.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+2744722682710",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2015,
+    "lastContactDate": "2024-07-21",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 22,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 19,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-12-01T14:32:53.358Z",
+    "updatedAt": "2026-05-09T14:32:53.358Z",
+    "version": 1,
+    "dataHash": "4c1de4e151cf6046",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

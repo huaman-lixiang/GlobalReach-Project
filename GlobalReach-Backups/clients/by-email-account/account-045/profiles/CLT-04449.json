@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04449",
+  "emailAccount": "account-045",
+  "basicInfo": {
+    "name": "Jacob Brown",
+    "email": "jacob.brown@yahoo.com",
+    "company": "Mega Gonzalez PlayTime",
+    "website": "www.megagonzalezplaytime.com",
+    "country": "DK",
+    "countryName": "Denmark",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "phone": "+9513364720540",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2025-11-04",
+    "status": "churned",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 7,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-10-29T14:32:53.080Z",
+    "updatedAt": "2026-05-09T14:32:53.080Z",
+    "version": 1,
+    "dataHash": "d2e9324318f83601",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

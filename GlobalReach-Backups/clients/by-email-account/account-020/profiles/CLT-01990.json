@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01990",
+  "emailAccount": "account-020",
+  "basicInfo": {
+    "name": "Donna Robinson",
+    "email": "donna.robinson@gmail.com",
+    "company": "Whimsical Williams Ltd.",
+    "website": "www.whimsicalwilliamsltd.com",
+    "country": "CL",
+    "countryName": "Chile",
+    "timezone": "America/Santiago",
+    "language": "en",
+    "phone": "+9256517882692",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-01-31",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 4,
+    "priorityScore": 89
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-01-13T14:32:52.316Z",
+    "updatedAt": "2026-05-09T14:32:52.316Z",
+    "version": 1,
+    "dataHash": "a870989382fad2e1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

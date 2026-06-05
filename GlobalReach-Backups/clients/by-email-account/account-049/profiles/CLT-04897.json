@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04897",
+  "emailAccount": "account-049",
+  "basicInfo": {
+    "name": "Dorothy Rodriguez",
+    "email": "dorothy.rodriguez@company.com",
+    "company": "Sun Williams Group",
+    "website": "www.sunwilliamsgroup.com",
+    "country": "SE",
+    "countryName": "Sweden",
+    "timezone": "Europe/Stockholm",
+    "language": "en",
+    "phone": "+5455311984580",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-03-14",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": null,
+    "replyRate": 250,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "14:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 88,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-01-13T14:32:53.217Z",
+    "updatedAt": "2026-05-09T14:32:53.217Z",
+    "version": 1,
+    "dataHash": "f61eb03d57a418db",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

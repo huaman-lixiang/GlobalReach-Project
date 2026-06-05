@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03121",
+  "emailAccount": "account-032",
+  "basicInfo": {
+    "name": "John Gonzalez",
+    "email": "john.gonzalez@orange.fr",
+    "company": "Super Moore Co.",
+    "website": "www.supermooreco.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+11612040375",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-04-17",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "11:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 61,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-05-13T14:32:52.678Z",
+    "updatedAt": "2026-05-09T14:32:52.678Z",
+    "version": 1,
+    "dataHash": "7db4e245c176d67b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

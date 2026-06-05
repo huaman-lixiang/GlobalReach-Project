@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01462",
+  "emailAccount": "account-015",
+  "basicInfo": {
+    "name": "Kathleen Green",
+    "email": "kathleen.green@yahoo.com",
+    "company": "Royal Walker DreamPlay",
+    "website": "www.royalwalkerdreamplay.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+3192173442615",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-11-09",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 3,
+    "priorityScore": 57
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-10-22T14:32:52.153Z",
+    "updatedAt": "2026-05-09T14:32:52.153Z",
+    "version": 1,
+    "dataHash": "c0b3b39103b1da2e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

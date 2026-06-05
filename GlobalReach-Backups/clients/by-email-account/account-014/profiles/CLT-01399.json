@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01399",
+  "emailAccount": "account-014",
+  "basicInfo": {
+    "name": "Gary Roberts",
+    "email": "gary.roberts@yahoo.com",
+    "company": "Universal Rodriguez International",
+    "website": "www.universalrodriguezinternational.com",
+    "country": "NZ",
+    "countryName": "New Zealand",
+    "timezone": "Pacific/Auckland",
+    "language": "en",
+    "phone": "+1746785725162",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-04-02",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": null,
+    "replyRate": 63,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "13:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 89,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-07-11T14:32:52.135Z",
+    "updatedAt": "2026-05-09T14:32:52.135Z",
+    "version": 1,
+    "dataHash": "0bc620f464965e35",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

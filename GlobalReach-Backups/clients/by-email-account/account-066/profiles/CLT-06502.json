@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-06502",
+  "emailAccount": "account-066",
+  "basicInfo": {
+    "name": "Deborah Gonzalez",
+    "email": "deborah.gonzalez@company.com",
+    "company": "Bright Martin Group",
+    "website": "www.brightmartingroup.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+3991669557767",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-04-03",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 18,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 28,
+    "priorityScore": 75
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-04-24T14:32:53.674Z",
+    "updatedAt": "2026-05-09T14:32:53.674Z",
+    "version": 1,
+    "dataHash": "64af2c59cf87ce29",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04268",
+  "emailAccount": "account-043",
+  "basicInfo": {
+    "name": "Susan Carter",
+    "email": "susan.carter@gmail.com",
+    "company": "Star Green Distribution",
+    "website": "www.stargreendistribution.com",
+    "country": "PE",
+    "countryName": "Peru",
+    "timezone": "America/Lima",
+    "language": "en",
+    "phone": "+8428568070165",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-04-04",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 43,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "15:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 90,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-06-03T14:32:53.024Z",
+    "updatedAt": "2026-05-09T14:32:53.024Z",
+    "version": 1,
+    "dataHash": "6671c4e62bba5fe5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

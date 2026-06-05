@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07960",
+  "emailAccount": "account-080",
+  "basicInfo": {
+    "name": "Robert Rivera",
+    "email": "robert.rivera@company.com",
+    "company": "Moon Baker Distribution",
+    "website": "www.moonbakerdistribution.com",
+    "country": "QA",
+    "countryName": "Qatar",
+    "timezone": "Asia/Qatar",
+    "language": "en",
+    "phone": "+6533748892744",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2024-05-23",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 0,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-08-06T14:32:54.099Z",
+    "updatedAt": "2026-05-09T14:32:54.099Z",
+    "version": 1,
+    "dataHash": "5b3d647d7b0e5451",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

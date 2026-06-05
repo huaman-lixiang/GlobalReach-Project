@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04483",
+  "emailAccount": "account-045",
+  "basicInfo": {
+    "name": "Steven Young",
+    "email": "steven.young@orange.fr",
+    "company": "Imperial Gonzalez Imports",
+    "website": "www.imperialgonzalezimports.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+309060172477",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "infant-toddler",
+      "educational",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2019,
+    "lastContactDate": "2025-01-28",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 8,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 38,
+    "priorityScore": 75
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-05-03T14:32:53.091Z",
+    "updatedAt": "2026-05-09T14:32:53.091Z",
+    "version": 1,
+    "dataHash": "c79744ae2691af3a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

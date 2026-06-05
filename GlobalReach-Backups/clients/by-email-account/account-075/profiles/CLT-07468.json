@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07468",
+  "emailAccount": "account-075",
+  "basicInfo": {
+    "name": "George Johnson",
+    "email": "george.johnson@yahoo.com",
+    "company": "Elite Thompson Group",
+    "website": "www.elitethompsongroup.com",
+    "country": "ZA",
+    "countryName": "South Africa",
+    "timezone": "Africa/Johannesburg",
+    "language": "en",
+    "phone": "+6667336726886",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-02-24",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "12:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 81,
+    "priorityScore": 57
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-11-11T14:32:53.957Z",
+    "updatedAt": "2026-05-09T14:32:53.957Z",
+    "version": 1,
+    "dataHash": "127b175e03912c0f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

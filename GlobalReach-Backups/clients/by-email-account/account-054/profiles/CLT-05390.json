@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05390",
+  "emailAccount": "account-054",
+  "basicInfo": {
+    "name": "Nicole Baker",
+    "email": "nicole.baker@bigpond.com",
+    "company": "Premier Miller Distribution",
+    "website": "www.premiermillerdistribution.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+9328819855004",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2020,
+    "lastContactDate": "2024-12-03",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 20,
+    "priorityScore": 60
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-11-12T14:32:53.355Z",
+    "updatedAt": "2026-05-09T14:32:53.355Z",
+    "version": 1,
+    "dataHash": "e97d230d1a910512",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

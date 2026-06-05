@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01407",
+  "emailAccount": "account-015",
+  "basicInfo": {
+    "name": "Janet Hill",
+    "email": "janet.hill@company.fr",
+    "company": "Universal Taylor Little Stars",
+    "website": "www.universaltaylorlittlestars.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+4609600850876",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-03-01",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-24",
+    "replyRate": 31,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "12:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 72,
+    "priorityScore": 64
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-07-12T14:32:52.137Z",
+    "updatedAt": "2026-05-09T14:32:52.137Z",
+    "version": 1,
+    "dataHash": "e915dc8f4caafdcf",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

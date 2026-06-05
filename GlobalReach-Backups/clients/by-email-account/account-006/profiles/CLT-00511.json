@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00511",
+  "emailAccount": "account-006",
+  "basicInfo": {
+    "name": "Mark Miller",
+    "email": "mark.miller@gmail.com",
+    "company": "Moon Wright Inc.",
+    "website": "www.moonwrightinc.com",
+    "country": "NZ",
+    "countryName": "New Zealand",
+    "timezone": "Pacific/Auckland",
+    "language": "en",
+    "phone": "+6988096518894",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2024-10-16",
+    "status": "churned",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 27,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-05-07T14:32:51.855Z",
+    "updatedAt": "2026-05-09T14:32:51.855Z",
+    "version": 1,
+    "dataHash": "a4aea81d0a3f7db0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

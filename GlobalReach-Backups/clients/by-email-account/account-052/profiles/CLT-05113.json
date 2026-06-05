@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05113",
+  "emailAccount": "account-052",
+  "basicInfo": {
+    "name": "Sharon Campbell",
+    "email": "sharon.campbell@company.com",
+    "company": "Fantastic Davis Enterprises",
+    "website": "www.fantasticdavisenterprises.com",
+    "country": "MX",
+    "countryName": "Mexico",
+    "timezone": "America/Mexico_City",
+    "language": "en",
+    "phone": "+9447560374477",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2015,
+    "lastContactDate": "2024-07-08",
+    "status": "sleeping",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 15,
+    "priorityScore": 86
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-01-08T14:32:53.278Z",
+    "updatedAt": "2026-05-09T14:32:53.278Z",
+    "version": 1,
+    "dataHash": "425868662ee30ca2",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

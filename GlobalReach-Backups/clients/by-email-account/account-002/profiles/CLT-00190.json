@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00190",
+  "emailAccount": "account-002",
+  "basicInfo": {
+    "name": "Linda Nelson",
+    "email": "linda.nelson@yahoo.com",
+    "company": "Playful Walker FunZone",
+    "website": "www.playfulwalkerfunzone.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+5154498436058",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2025-12-21",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 12,
+    "priorityScore": 88
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-12T14:32:51.753Z",
+    "updatedAt": "2026-05-09T14:32:51.753Z",
+    "version": 1,
+    "dataHash": "28473ca09c9bd4c8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

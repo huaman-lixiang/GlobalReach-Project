@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-02625",
+  "emailAccount": "account-027",
+  "basicInfo": {
+    "name": "Carolyn Smith",
+    "email": "carolyn.smith@sfr.fr",
+    "company": "Zenith Smith Ltd.",
+    "website": "www.zenithsmithltd.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+7555933916527",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "rc-toys",
+      "infant-toddler",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-05-03",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 37,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-10-30T14:32:52.527Z",
+    "updatedAt": "2026-05-09T14:32:52.527Z",
+    "version": 1,
+    "dataHash": "e0f78b672043f3a9",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

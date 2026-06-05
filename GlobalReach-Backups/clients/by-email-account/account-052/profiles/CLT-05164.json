@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-05164",
+  "emailAccount": "account-052",
+  "basicInfo": {
+    "name": "Janet Taylor",
+    "email": "janet.taylor@gmail.com",
+    "company": "Bright Johnson Toys & Games",
+    "website": "www.brightjohnsontoysgames.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+3509494015627",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "outdoor",
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-04-30",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-20",
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "12:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 79,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-10-27T14:32:53.293Z",
+    "updatedAt": "2026-05-09T14:32:53.293Z",
+    "version": 1,
+    "dataHash": "7a455ed696d9264e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

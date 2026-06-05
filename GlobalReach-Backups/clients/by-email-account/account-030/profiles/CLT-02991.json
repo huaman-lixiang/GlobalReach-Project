@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-02991",
+  "emailAccount": "account-030",
+  "basicInfo": {
+    "name": "Kimberly Scott",
+    "email": "kimberly.scott@hotmail.com",
+    "company": "Imperial Moore LLC",
+    "website": "www.imperialmoorellc.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+9936758051931",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "outdoor",
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-04-18",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-05-07",
+    "replyRate": 67,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 72,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-08-09T14:32:52.639Z",
+    "updatedAt": "2026-05-09T14:32:52.639Z",
+    "version": 1,
+    "dataHash": "c553e3930e4a3185",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

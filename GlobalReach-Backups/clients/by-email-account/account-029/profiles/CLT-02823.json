@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02823",
+  "emailAccount": "account-029",
+  "basicInfo": {
+    "name": "Deborah Nelson",
+    "email": "deborah.nelson@yahoo.com",
+    "company": "Prime Moore Enterprises",
+    "website": "www.primemooreenterprises.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+721857898736",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-06-12",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 31,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-01-03T14:32:52.589Z",
+    "updatedAt": "2026-05-09T14:32:52.589Z",
+    "version": 1,
+    "dataHash": "79c0a0daa4ac0978",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

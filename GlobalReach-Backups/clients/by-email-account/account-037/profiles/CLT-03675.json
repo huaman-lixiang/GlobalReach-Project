@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-03675",
+  "emailAccount": "account-037",
+  "basicInfo": {
+    "name": "Emily Nelson",
+    "email": "emily.nelson@company.co.jp",
+    "company": "Pinnacle Garcia LLC",
+    "website": "www.pinnaclegarciallc.co.jp",
+    "country": "JP",
+    "countryName": "Japan",
+    "timezone": "Asia/Tokyo",
+    "language": "en",
+    "phone": "+8571105100506",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "outdoor",
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-01-18",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 34,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-08-16T14:32:52.847Z",
+    "updatedAt": "2026-05-09T14:32:52.847Z",
+    "version": 1,
+    "dataHash": "b759cfdd7375c9ce",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02812",
+  "emailAccount": "account-029",
+  "basicInfo": {
+    "name": "Rachel Martin",
+    "email": "rachel.martin@yahoo.com",
+    "company": "Mighty Hill Distribution",
+    "website": "www.mightyhilldistribution.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+3047293729413",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-10-02",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 5,
+    "priorityScore": 58
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-05-19T14:32:52.586Z",
+    "updatedAt": "2026-05-09T14:32:52.586Z",
+    "version": 1,
+    "dataHash": "ab100f6a323ceb6e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

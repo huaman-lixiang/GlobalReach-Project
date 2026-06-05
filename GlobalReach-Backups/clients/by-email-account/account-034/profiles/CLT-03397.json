@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03397",
+  "emailAccount": "account-034",
+  "basicInfo": {
+    "name": "Carol Carter",
+    "email": "carol.carter@gmail.com",
+    "company": "Imperial Rodriguez Imports",
+    "website": "www.imperialrodriguezimports.com",
+    "country": "PH",
+    "countryName": "Philippines",
+    "timezone": "Asia/Manila",
+    "language": "en",
+    "phone": "+5896567363881",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-03-03",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 40,
+    "priorityScore": 80
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-01-06T14:32:52.763Z",
+    "updatedAt": "2026-05-09T14:32:52.763Z",
+    "version": 1,
+    "dataHash": "37b8a3dfdd664037",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

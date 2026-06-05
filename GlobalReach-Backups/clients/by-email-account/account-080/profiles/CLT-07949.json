@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07949",
+  "emailAccount": "account-080",
+  "basicInfo": {
+    "name": "Amanda Torres",
+    "email": "amanda.torres@gmail.com",
+    "company": "Ultra Perez PlayTime",
+    "website": "www.ultraperezplaytime.com",
+    "country": "AT",
+    "countryName": "Austria",
+    "timezone": "Europe/Vienna",
+    "language": "en",
+    "phone": "+485161853577",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2025-06-23",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 10,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-10-16T14:32:54.096Z",
+    "updatedAt": "2026-05-09T14:32:54.096Z",
+    "version": 1,
+    "dataHash": "6ab300584f0ec8fd",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

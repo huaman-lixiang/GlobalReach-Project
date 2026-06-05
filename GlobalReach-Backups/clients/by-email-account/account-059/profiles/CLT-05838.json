@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05838",
+  "emailAccount": "account-059",
+  "basicInfo": {
+    "name": "Mark Green",
+    "email": "mark.green@company.com",
+    "company": "Omega Clark Corp.",
+    "website": "www.omegaclarkcorp.com",
+    "country": "CH",
+    "countryName": "Switzerland",
+    "timezone": "Europe/Zurich",
+    "language": "en",
+    "phone": "+120075159041",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2025-01-17",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 10,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 20,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-12-22T14:32:53.482Z",
+    "updatedAt": "2026-05-09T14:32:53.482Z",
+    "version": 1,
+    "dataHash": "16e8942770e75cc4",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

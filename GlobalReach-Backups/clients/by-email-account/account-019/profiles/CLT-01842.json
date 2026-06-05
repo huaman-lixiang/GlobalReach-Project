@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01842",
+  "emailAccount": "account-019",
+  "basicInfo": {
+    "name": "Gary Johnson",
+    "email": "gary.johnson@company.com",
+    "company": "Summit Lopez Ltd.",
+    "website": "www.summitlopezltd.com",
+    "country": "ID",
+    "countryName": "Indonesia",
+    "timezone": "Asia/Jakarta",
+    "language": "en",
+    "phone": "+6783940146198",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-04-02",
+    "status": "churned",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 19,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-10-05T14:32:52.268Z",
+    "updatedAt": "2026-05-09T14:32:52.268Z",
+    "version": 1,
+    "dataHash": "809a24a1513bdf3a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

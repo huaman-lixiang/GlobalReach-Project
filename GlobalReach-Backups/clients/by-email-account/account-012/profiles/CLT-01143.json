@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01143",
+  "emailAccount": "account-012",
+  "basicInfo": {
+    "name": "Elizabeth Green",
+    "email": "elizabeth.green@gmail.com",
+    "company": "Alpha Jones Co.",
+    "website": "www.alphajonesco.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+9959854482705",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-09-16",
+    "status": "churned",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 24,
+    "priorityScore": 84
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-04-10T14:32:52.057Z",
+    "updatedAt": "2026-05-09T14:32:52.057Z",
+    "version": 1,
+    "dataHash": "30da76696ad455f1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

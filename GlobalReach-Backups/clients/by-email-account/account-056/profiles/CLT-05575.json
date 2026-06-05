@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05575",
+  "emailAccount": "account-056",
+  "basicInfo": {
+    "name": "Margaret Carter",
+    "email": "margaret.carter@hotmail.com",
+    "company": "Grand Gonzalez ToyBox",
+    "website": "www.grandgonzaleztoybox.com",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "timezone": "Europe/Amsterdam",
+    "language": "en",
+    "phone": "+7888510026441",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "educational",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-02-17",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 18,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": null,
+    "replyRate": 28,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 79,
+    "priorityScore": 88
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-08-15T14:32:53.407Z",
+    "updatedAt": "2026-05-09T14:32:53.407Z",
+    "version": 1,
+    "dataHash": "97af06bec97e22fd",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

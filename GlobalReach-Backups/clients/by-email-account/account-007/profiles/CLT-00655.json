@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00655",
+  "emailAccount": "account-007",
+  "basicInfo": {
+    "name": "Dorothy Scott",
+    "email": "dorothy.scott@gmail.com",
+    "company": "Omega Taylor LLC",
+    "website": "www.omegataylorllc.com",
+    "country": "CL",
+    "countryName": "Chile",
+    "timezone": "America/Santiago",
+    "language": "en",
+    "phone": "+2636497175488",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2024,
+    "lastContactDate": "2025-07-07",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 23,
+    "priorityScore": 86
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-03-28T14:32:51.899Z",
+    "updatedAt": "2026-05-09T14:32:51.899Z",
+    "version": 1,
+    "dataHash": "7a465efb586b84f8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

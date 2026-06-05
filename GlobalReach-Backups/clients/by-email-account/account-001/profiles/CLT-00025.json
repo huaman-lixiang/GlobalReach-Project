@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00025",
+  "emailAccount": "account-001",
+  "basicInfo": {
+    "name": "Jacob White",
+    "email": "jacob.white@yahoo.com",
+    "company": "Imaginative Gonzalez Enterprises",
+    "website": "www.imaginativegonzalezenterprises.com",
+    "country": "TH",
+    "countryName": "Thailand",
+    "timezone": "Asia/Bangkok",
+    "language": "en",
+    "phone": "+3982741696187",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "infant-toddler",
+      "rc-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-03-31",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": null,
+    "replyRate": 800,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "12:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 88,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-06-26T14:32:51.700Z",
+    "updatedAt": "2026-05-09T14:32:51.700Z",
+    "version": 1,
+    "dataHash": "3dbce5a7e7659b57",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

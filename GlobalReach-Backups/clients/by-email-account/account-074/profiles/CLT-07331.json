@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07331",
+  "emailAccount": "account-074",
+  "basicInfo": {
+    "name": "Kenneth King",
+    "email": "kenneth.king@company.it",
+    "company": "Alpha Taylor Happy Kids",
+    "website": "www.alphataylorhappykids.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+3901663949032",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2025-01-22",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 8,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 6,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-04-07T14:32:53.917Z",
+    "updatedAt": "2026-05-09T14:32:53.917Z",
+    "version": 1,
+    "dataHash": "35088110480d2091",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-05196",
+  "emailAccount": "account-052",
+  "basicInfo": {
+    "name": "Anna Williams",
+    "email": "anna.williams@yahoo.com",
+    "company": "Mighty Jackson Ltd.",
+    "website": "www.mightyjacksonltd.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+903090486785",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "rc-toys",
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-04-12",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": null,
+    "replyRate": 300,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 99,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-16T14:32:53.301Z",
+    "updatedAt": "2026-05-09T14:32:53.301Z",
+    "version": 1,
+    "dataHash": "b9ae2a6ccd7e644c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

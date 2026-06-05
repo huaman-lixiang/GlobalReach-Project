@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-02978",
+  "emailAccount": "account-030",
+  "basicInfo": {
+    "name": "John Brown",
+    "email": "john.brown@orange.fr",
+    "company": "Zenith Wilson Co.",
+    "website": "www.zenithwilsonco.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+6396191851205",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "educational",
+      "smart-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2024-06-29",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 22,
+    "priorityScore": 89
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-07T14:32:52.635Z",
+    "updatedAt": "2026-05-09T14:32:52.635Z",
+    "version": 1,
+    "dataHash": "e84909c24b2bf85c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03236",
+  "emailAccount": "account-033",
+  "basicInfo": {
+    "name": "Janet Johnson",
+    "email": "janet.johnson@orange.fr",
+    "company": "Creative Hall Corp.",
+    "website": "www.creativehallcorp.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+1455378873302",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2024-05-31",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 25,
+    "priorityScore": 84
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-05-21T14:32:52.714Z",
+    "updatedAt": "2026-05-09T14:32:52.714Z",
+    "version": 1,
+    "dataHash": "ac7169c1167f94f6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-05792",
+  "emailAccount": "account-058",
+  "basicInfo": {
+    "name": "Mark Wright",
+    "email": "mark.wright@t-online.de",
+    "company": "Royal Lee Imports",
+    "website": "www.royalleeimports.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+3488536097055",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "outdoor",
+      "infant-toddler",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-04-25",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-11",
+    "replyRate": 57,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "12:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 97,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-09-30T14:32:53.468Z",
+    "updatedAt": "2026-05-09T14:32:53.468Z",
+    "version": 1,
+    "dataHash": "323aa8eba6e06e00",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06846",
+  "emailAccount": "account-069",
+  "basicInfo": {
+    "name": "Jeffrey Perez",
+    "email": "jeffrey.perez@gmail.com",
+    "company": "Super Ramirez Little Stars",
+    "website": "www.superramirezlittlestars.com",
+    "country": "SE",
+    "countryName": "Sweden",
+    "timezone": "Europe/Stockholm",
+    "language": "en",
+    "phone": "+6074991713356",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-02-13",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-17",
+    "replyRate": 70,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "13:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 84,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-26T14:32:53.775Z",
+    "updatedAt": "2026-05-09T14:32:53.775Z",
+    "version": 1,
+    "dataHash": "a73a33fe58d91691",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

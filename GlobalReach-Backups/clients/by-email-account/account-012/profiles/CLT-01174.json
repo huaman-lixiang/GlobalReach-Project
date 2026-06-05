@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01174",
+  "emailAccount": "account-012",
+  "basicInfo": {
+    "name": "Nancy Wilson",
+    "email": "nancy.wilson@yahoo.com",
+    "company": "Moon Williams LLC",
+    "website": "www.moonwilliamsllc.com",
+    "country": "TH",
+    "countryName": "Thailand",
+    "timezone": "Asia/Bangkok",
+    "language": "en",
+    "phone": "+3399826107268",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2016,
+    "lastContactDate": "2024-07-15",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 29,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-07-08T14:32:52.067Z",
+    "updatedAt": "2026-05-09T14:32:52.067Z",
+    "version": 1,
+    "dataHash": "5a7140dcea31f7ba",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00991",
+  "emailAccount": "account-010",
+  "basicInfo": {
+    "name": "Thomas Moore",
+    "email": "thomas.moore@company.com",
+    "company": "Grand Anderson Inc.",
+    "website": "www.grandandersoninc.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+2059116046552",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-02-15",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 150,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "12:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 79,
+    "priorityScore": 84
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-03-17T14:32:52.001Z",
+    "updatedAt": "2026-05-09T14:32:52.001Z",
+    "version": 1,
+    "dataHash": "91f1ecdee7e6154e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

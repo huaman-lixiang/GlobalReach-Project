@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03813",
+  "emailAccount": "account-039",
+  "basicInfo": {
+    "name": "Samuel Taylor",
+    "email": "samuel.taylor@gmail.com",
+    "company": "Zenith White LLC",
+    "website": "www.zenithwhitellc.com",
+    "country": "TR",
+    "countryName": "Turkey",
+    "timezone": "Europe/Istanbul",
+    "language": "en",
+    "phone": "+7490768630423",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "smart-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2025,
+    "lastContactDate": "2024-12-04",
+    "status": "churned",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 39,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-06-21T14:32:52.889Z",
+    "updatedAt": "2026-05-09T14:32:52.889Z",
+    "version": 1,
+    "dataHash": "526095a57dbe0660",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

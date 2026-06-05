@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00387",
+  "emailAccount": "account-004",
+  "basicInfo": {
+    "name": "Lisa Scott",
+    "email": "lisa.scott@gmail.com",
+    "company": "Sun Rodriguez Happy Kids",
+    "website": "www.sunrodriguezhappykids.com",
+    "country": "ID",
+    "countryName": "Indonesia",
+    "timezone": "Asia/Jakarta",
+    "language": "en",
+    "phone": "+446425273038",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-03-05",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-21",
+    "replyRate": 29,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "11:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 82,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-10-29T14:32:51.814Z",
+    "updatedAt": "2026-05-09T14:32:51.814Z",
+    "version": 1,
+    "dataHash": "e72b8c6a095bffbc",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

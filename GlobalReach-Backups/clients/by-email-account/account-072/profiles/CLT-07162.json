@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07162",
+  "emailAccount": "account-072",
+  "basicInfo": {
+    "name": "Brenda Roberts",
+    "email": "brenda.roberts@gmail.com",
+    "company": "Global Perez WonderToys",
+    "website": "www.globalperezwondertoys.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+3062824457942",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-02-10",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-20",
+    "replyRate": 88,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 68,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-10-19T14:32:53.866Z",
+    "updatedAt": "2026-05-09T14:32:53.866Z",
+    "version": 1,
+    "dataHash": "51e8b893df3d19d0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

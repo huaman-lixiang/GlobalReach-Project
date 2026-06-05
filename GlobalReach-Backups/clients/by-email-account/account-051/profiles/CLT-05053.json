@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05053",
+  "emailAccount": "account-051",
+  "basicInfo": {
+    "name": "Timothy Green",
+    "email": "timothy.green@gmail.com",
+    "company": "Imperial Thompson LLC",
+    "website": "www.imperialthompsonllc.co.jp",
+    "country": "JP",
+    "countryName": "Japan",
+    "timezone": "Asia/Tokyo",
+    "language": "en",
+    "phone": "+3892559555174",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-03-30",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-05-08",
+    "replyRate": 30,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "15:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 72,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-01T14:32:53.262Z",
+    "updatedAt": "2026-05-09T14:32:53.262Z",
+    "version": 1,
+    "dataHash": "a8930ce1db31bc0b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

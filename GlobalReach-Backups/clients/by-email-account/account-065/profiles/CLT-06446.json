@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-06446",
+  "emailAccount": "account-065",
+  "basicInfo": {
+    "name": "Kevin Miller",
+    "email": "kevin.miller@company.com",
+    "company": "Moon Carter LLC",
+    "website": "www.mooncarterllc.com",
+    "country": "GR",
+    "countryName": "Greece",
+    "timezone": "Europe/Athens",
+    "language": "en",
+    "phone": "+3860295342934",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-12-15",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 22,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 33,
+    "priorityScore": 86
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-08-20T14:32:53.658Z",
+    "updatedAt": "2026-05-09T14:32:53.658Z",
+    "version": 1,
+    "dataHash": "ad9483e5a3f5ebb4",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

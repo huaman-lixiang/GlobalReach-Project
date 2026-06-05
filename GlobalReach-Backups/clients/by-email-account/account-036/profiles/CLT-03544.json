@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03544",
+  "emailAccount": "account-036",
+  "basicInfo": {
+    "name": "Betty Robinson",
+    "email": "betty.robinson@company.es",
+    "company": "Happy Rodriguez LLC",
+    "website": "www.happyrodriguezllc.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+7049923771303",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2025-01-04",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 7,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-05-10T14:32:52.807Z",
+    "updatedAt": "2026-05-09T14:32:52.807Z",
+    "version": 1,
+    "dataHash": "27d9b0cd5755a053",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

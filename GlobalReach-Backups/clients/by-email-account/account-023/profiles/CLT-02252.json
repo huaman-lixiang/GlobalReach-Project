@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02252",
+  "emailAccount": "account-023",
+  "basicInfo": {
+    "name": "Daniel Young",
+    "email": "daniel.young@company.com",
+    "company": "Playful Moore FunZone",
+    "website": "www.playfulmoorefunzone.com",
+    "country": "AR",
+    "countryName": "Argentina",
+    "timezone": "America/Buenos_Aires",
+    "language": "ar",
+    "phone": "+610667233051",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2024-10-08",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 4,
+    "priorityScore": 58
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-12-23T14:32:52.406Z",
+    "updatedAt": "2026-05-09T14:32:52.406Z",
+    "version": 1,
+    "dataHash": "c7395036d8961659",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

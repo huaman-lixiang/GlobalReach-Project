@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03990",
+  "emailAccount": "account-040",
+  "basicInfo": {
+    "name": "Samuel Mitchell",
+    "email": "samuel.mitchell@company.com",
+    "company": "Summit Wilson Imports",
+    "website": "www.summitwilsonimports.com",
+    "country": "PE",
+    "countryName": "Peru",
+    "timezone": "America/Lima",
+    "language": "en",
+    "phone": "+3731008355268",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-05-06",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-05-01",
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "12:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 73,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-12-08T14:32:52.941Z",
+    "updatedAt": "2026-05-09T14:32:52.941Z",
+    "version": 1,
+    "dataHash": "099582cd6bb08f95",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

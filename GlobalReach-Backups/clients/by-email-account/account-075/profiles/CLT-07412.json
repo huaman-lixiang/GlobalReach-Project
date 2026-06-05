@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07412",
+  "emailAccount": "account-075",
+  "basicInfo": {
+    "name": "Dorothy White",
+    "email": "dorothy.white@gmail.com",
+    "company": "Happy Hill Distribution",
+    "website": "www.happyhilldistribution.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+3465437631547",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "educational",
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-03-09",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-04-22",
+    "replyRate": 60,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "educational",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 92,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-08-11T14:32:53.941Z",
+    "updatedAt": "2026-05-09T14:32:53.941Z",
+    "version": 1,
+    "dataHash": "7e689be5f3681598",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

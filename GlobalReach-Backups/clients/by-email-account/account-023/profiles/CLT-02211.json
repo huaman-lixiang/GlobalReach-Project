@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-02211",
+  "emailAccount": "account-023",
+  "basicInfo": {
+    "name": "Samuel Williams",
+    "email": "samuel.williams@yahoo.com",
+    "company": "Star Robinson Corp.",
+    "website": "www.starrobinsoncorp.com",
+    "country": "HK",
+    "countryName": "Hong Kong",
+    "timezone": "Asia/Hong_Kong",
+    "language": "en",
+    "phone": "+4432856744875",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2017,
+    "lastContactDate": "2024-09-28",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 11,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-01-10T14:32:52.393Z",
+    "updatedAt": "2026-05-09T14:32:52.393Z",
+    "version": 1,
+    "dataHash": "007058ecf91b8e58",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

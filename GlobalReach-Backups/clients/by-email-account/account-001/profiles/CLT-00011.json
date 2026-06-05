@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00011",
+  "emailAccount": "account-001",
+  "basicInfo": {
+    "name": "Carol Gonzalez",
+    "email": "carol.gonzalez@gmail.com",
+    "company": "Super Thompson Imports",
+    "website": "www.superthompsonimports.com",
+    "country": "DK",
+    "countryName": "Denmark",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "phone": "+2170706980418",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2024-12-12",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 29,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-18T14:32:51.695Z",
+    "updatedAt": "2026-05-09T14:32:51.695Z",
+    "version": 1,
+    "dataHash": "9e97fc61eddbacd5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

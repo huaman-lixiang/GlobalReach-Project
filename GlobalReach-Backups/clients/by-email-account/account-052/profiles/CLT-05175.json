@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05175",
+  "emailAccount": "account-052",
+  "basicInfo": {
+    "name": "Eric Brown",
+    "email": "eric.brown@outlook.com",
+    "company": "Grand Green Imports",
+    "website": "www.grandgreenimports.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+8513541655519",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-03-31",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": "2026-05-06",
+    "replyRate": 7,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "14:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 75,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-09-10T14:32:53.296Z",
+    "updatedAt": "2026-05-09T14:32:53.296Z",
+    "version": 1,
+    "dataHash": "6bb7596df374e18b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02919",
+  "emailAccount": "account-030",
+  "basicInfo": {
+    "name": "Emma Williams",
+    "email": "emma.williams@yahoo.com",
+    "company": "Sun Carter Group",
+    "website": "www.suncartergroup.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+1483832113584",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-03-22",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-12",
+    "replyRate": 47,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 64,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-12-10T14:32:52.618Z",
+    "updatedAt": "2026-05-09T14:32:52.618Z",
+    "version": 1,
+    "dataHash": "b3396685cb352291",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

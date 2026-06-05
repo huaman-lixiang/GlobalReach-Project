@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01312",
+  "emailAccount": "account-014",
+  "basicInfo": {
+    "name": "Barbara Allen",
+    "email": "barbara.allen@sfr.fr",
+    "company": "Sun Baker International",
+    "website": "www.sunbakerinternational.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+4320660117586",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-04-17",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": null,
+    "replyRate": 53,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "11:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 72,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-05-20T14:32:52.109Z",
+    "updatedAt": "2026-05-09T14:32:52.109Z",
+    "version": 1,
+    "dataHash": "18b78eb421c5be88",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

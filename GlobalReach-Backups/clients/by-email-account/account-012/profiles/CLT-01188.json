@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01188",
+  "emailAccount": "account-012",
+  "basicInfo": {
+    "name": "Angela Nguyen",
+    "email": "angela.nguyen@company.co.uk",
+    "company": "Playful Carter Kids World",
+    "website": "www.playfulcarterkidsworld.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+1804689607039",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-03-16",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-04-30",
+    "replyRate": 16,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 63,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-11-18T14:32:52.071Z",
+    "updatedAt": "2026-05-09T14:32:52.071Z",
+    "version": 1,
+    "dataHash": "3a188ef294c9ffd6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02188",
+  "emailAccount": "account-022",
+  "basicInfo": {
+    "name": "Angela Rivera",
+    "email": "angela.rivera@company.com",
+    "company": "Imperial Lewis WonderToys",
+    "website": "www.imperiallewiswondertoys.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+292457325344",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2025-02-01",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 1,
+    "priorityScore": 64
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-11-26T14:32:52.384Z",
+    "updatedAt": "2026-05-09T14:32:52.384Z",
+    "version": 1,
+    "dataHash": "f47bb5a4bd1bb14a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

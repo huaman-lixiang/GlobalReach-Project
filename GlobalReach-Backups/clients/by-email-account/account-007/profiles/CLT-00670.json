@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00670",
+  "emailAccount": "account-007",
+  "basicInfo": {
+    "name": "Dorothy White",
+    "email": "dorothy.white@company.it",
+    "company": "Sun Rivera Inc.",
+    "website": "www.sunriverainc.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+1259621711980",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2017,
+    "lastContactDate": "2025-10-19",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 3,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-10-31T14:32:51.904Z",
+    "updatedAt": "2026-05-09T14:32:51.904Z",
+    "version": 1,
+    "dataHash": "c5567b319cb6e7ef",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

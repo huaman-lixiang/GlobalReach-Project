@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-05592",
+  "emailAccount": "account-056",
+  "basicInfo": {
+    "name": "Mark Anderson",
+    "email": "mark.anderson@company.com",
+    "company": "Mighty Mitchell Imports",
+    "website": "www.mightymitchellimports.com",
+    "country": "PL",
+    "countryName": "Poland",
+    "timezone": "Europe/Warsaw",
+    "language": "en",
+    "phone": "+2489907008503",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2019,
+    "lastContactDate": "2024-12-24",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 30,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-12-20T14:32:53.412Z",
+    "updatedAt": "2026-05-09T14:32:53.412Z",
+    "version": 1,
+    "dataHash": "ff4b0e496231a8f8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

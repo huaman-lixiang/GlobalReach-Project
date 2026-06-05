@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05501",
+  "emailAccount": "account-056",
+  "basicInfo": {
+    "name": "Stephanie Thomas",
+    "email": "stephanie.thomas@yahoo.com",
+    "company": "Moon Roberts Trading",
+    "website": "www.moonrobertstrading.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+1849860997963",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "infant-toddler",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-02-25",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-05-04",
+    "replyRate": 86,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "11:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "infant-toddler",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 84,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-12-12T14:32:53.386Z",
+    "updatedAt": "2026-05-09T14:32:53.386Z",
+    "version": 1,
+    "dataHash": "614b755ec5b351fc",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

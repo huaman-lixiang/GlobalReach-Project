@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03925",
+  "emailAccount": "account-040",
+  "basicInfo": {
+    "name": "Jennifer Flores",
+    "email": "jennifer.flores@company.com",
+    "company": "Mega Thompson Inc.",
+    "website": "www.megathompsoninc.com",
+    "country": "AR",
+    "countryName": "Argentina",
+    "timezone": "America/Buenos_Aires",
+    "language": "ar",
+    "phone": "+2814492624771",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2025-02-13",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 11,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-10-04T14:32:52.922Z",
+    "updatedAt": "2026-05-09T14:32:52.922Z",
+    "version": 1,
+    "dataHash": "8de78be62fb1fd2b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

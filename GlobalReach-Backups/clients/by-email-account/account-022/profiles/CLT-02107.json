@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02107",
+  "emailAccount": "account-022",
+  "basicInfo": {
+    "name": "Michael Nguyen",
+    "email": "michael.nguyen@gmail.com",
+    "company": "Prime Baker Distribution",
+    "website": "www.primebakerdistribution.com",
+    "country": "MX",
+    "countryName": "Mexico",
+    "timezone": "America/Mexico_City",
+    "language": "en",
+    "phone": "+5502523909625",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-04-29",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": "2026-05-09",
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 83,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-11-18T14:32:52.358Z",
+    "updatedAt": "2026-05-09T14:32:52.358Z",
+    "version": 1,
+    "dataHash": "34c828a6f04913ac",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

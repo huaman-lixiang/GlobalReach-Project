@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03997",
+  "emailAccount": "account-040",
+  "basicInfo": {
+    "name": "Kevin Lopez",
+    "email": "kevin.lopez@gmail.com",
+    "company": "Prime Martinez Imports",
+    "website": "www.primemartinezimports.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+796450145876",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-04-02",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 300,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "13:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 83,
+    "priorityScore": 52
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-01-26T14:32:52.943Z",
+    "updatedAt": "2026-05-09T14:32:52.943Z",
+    "version": 1,
+    "dataHash": "86039003a3e26721",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

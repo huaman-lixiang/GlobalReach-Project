@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03477",
+  "emailAccount": "account-035",
+  "basicInfo": {
+    "name": "Larry Ramirez",
+    "email": "larry.ramirez@company.com",
+    "company": "Imperial Wilson LLC",
+    "website": "www.imperialwilsonllc.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+2350292940813",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-04-02",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": null,
+    "replyRate": 800,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 80,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-12-03T14:32:52.787Z",
+    "updatedAt": "2026-05-09T14:32:52.787Z",
+    "version": 1,
+    "dataHash": "25335e13927ed7b0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

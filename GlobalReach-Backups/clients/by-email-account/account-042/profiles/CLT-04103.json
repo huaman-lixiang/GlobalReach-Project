@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04103",
+  "emailAccount": "account-042",
+  "basicInfo": {
+    "name": "Brian Thompson",
+    "email": "brian.thompson@company.com",
+    "company": "Fantastic Wright FunZone",
+    "website": "www.fantasticwrightfunzone.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+8838367262976",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-24",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 20,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 72,
+    "priorityScore": 89
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-10-22T14:32:52.975Z",
+    "updatedAt": "2026-05-09T14:32:52.975Z",
+    "version": 1,
+    "dataHash": "654d4aea9c5d825c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04519",
+  "emailAccount": "account-046",
+  "basicInfo": {
+    "name": "Deborah Scott",
+    "email": "deborah.scott@gmail.com",
+    "company": "Super Thomas International",
+    "website": "www.superthomasinternational.com",
+    "country": "IE",
+    "countryName": "Ireland",
+    "timezone": "Europe/Dublin",
+    "language": "en",
+    "phone": "+6327298390065",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-03-10",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 18,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-11-10T14:32:53.102Z",
+    "updatedAt": "2026-05-09T14:32:53.102Z",
+    "version": 1,
+    "dataHash": "e1f13aa24e53cd3d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

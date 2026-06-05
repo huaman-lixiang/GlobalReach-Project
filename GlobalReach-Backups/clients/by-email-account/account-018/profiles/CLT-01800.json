@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01800",
+  "emailAccount": "account-018",
+  "basicInfo": {
+    "name": "Emily Nguyen",
+    "email": "emily.nguyen@gmail.com",
+    "company": "Alpha Robinson DreamPlay",
+    "website": "www.alpharobinsondreamplay.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+4442302085740",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "rc-toys",
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-07-06",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 36,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-06-30T14:32:52.255Z",
+    "updatedAt": "2026-05-09T14:32:52.255Z",
+    "version": 1,
+    "dataHash": "f85f3ab1d53a768e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

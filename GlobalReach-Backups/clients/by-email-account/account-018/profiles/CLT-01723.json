@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01723",
+  "emailAccount": "account-018",
+  "basicInfo": {
+    "name": "Emma Thomas",
+    "email": "emma.thomas@outlook.com",
+    "company": "Imperial Green Distribution",
+    "website": "www.imperialgreendistribution.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+9680419117711",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "smart-toys",
+      "rc-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2019,
+    "lastContactDate": "2025-03-25",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 3,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-25T14:32:52.232Z",
+    "updatedAt": "2026-05-09T14:32:52.232Z",
+    "version": 1,
+    "dataHash": "cefd515a5f78cf77",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

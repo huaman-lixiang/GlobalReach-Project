@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07013",
+  "emailAccount": "account-071",
+  "basicInfo": {
+    "name": "Emily Garcia",
+    "email": "emily.garcia@gmail.com",
+    "company": "Star Smith Imports",
+    "website": "www.starsmithimports.com",
+    "country": "BE",
+    "countryName": "Belgium",
+    "timezone": "Europe/Brussels",
+    "language": "en",
+    "phone": "+2496894328179",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "educational",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-01-26",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 4,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-08-30T14:32:53.824Z",
+    "updatedAt": "2026-05-09T14:32:53.824Z",
+    "version": 1,
+    "dataHash": "428f217d6c7e753b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

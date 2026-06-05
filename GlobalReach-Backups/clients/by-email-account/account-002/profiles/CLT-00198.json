@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00198",
+  "emailAccount": "account-002",
+  "basicInfo": {
+    "name": "William Davis",
+    "email": "william.davis@gmail.com",
+    "company": "Alpha Roberts Group",
+    "website": "www.alpharobertsgroup.com",
+    "country": "AE",
+    "countryName": "UAE",
+    "timezone": "Asia/Dubai",
+    "language": "ar",
+    "phone": "+8120226993369",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "educational",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-03-16",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 17,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-04-13",
+    "replyRate": 18,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "educational",
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 73,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-02-15T14:32:51.755Z",
+    "updatedAt": "2026-05-09T14:32:51.755Z",
+    "version": 1,
+    "dataHash": "b13ab2c477be6bb1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

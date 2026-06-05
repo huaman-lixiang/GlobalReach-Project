@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-06129",
+  "emailAccount": "account-062",
+  "basicInfo": {
+    "name": "Betty Roberts",
+    "email": "betty.roberts@yahoo.co.uk",
+    "company": "Super Gonzalez ToyBox",
+    "website": "www.supergonzaleztoybox.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+1862947128074",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "educational",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-01-05",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 9,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-04-03T14:32:53.566Z",
+    "updatedAt": "2026-05-09T14:32:53.566Z",
+    "version": 1,
+    "dataHash": "b1b33ca6b6c393cd",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

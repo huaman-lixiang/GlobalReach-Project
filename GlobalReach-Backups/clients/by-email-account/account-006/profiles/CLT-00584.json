@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00584",
+  "emailAccount": "account-006",
+  "basicInfo": {
+    "name": "Michelle Torres",
+    "email": "michelle.torres@gmail.com",
+    "company": "Apex Allen ToyBox",
+    "website": "www.apexallentoybox.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+8465627661078",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2024-12-22",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 10,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 19,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-10-19T14:32:51.877Z",
+    "updatedAt": "2026-05-09T14:32:51.877Z",
+    "version": 1,
+    "dataHash": "4cfce199e31519cf",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

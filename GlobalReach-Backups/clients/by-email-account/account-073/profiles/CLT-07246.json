@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07246",
+  "emailAccount": "account-073",
+  "basicInfo": {
+    "name": "Nancy Rivera",
+    "email": "nancy.rivera@company.ca",
+    "company": "Alpha Mitchell PlayTime",
+    "website": "www.alphamitchellplaytime.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+7514644471431",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-05-02",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": null,
+    "replyRate": 46,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "11:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "educational",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 92,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-08-14T14:32:53.892Z",
+    "updatedAt": "2026-05-09T14:32:53.892Z",
+    "version": 1,
+    "dataHash": "8843d9c5881b2626",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

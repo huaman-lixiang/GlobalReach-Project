@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04341",
+  "emailAccount": "account-044",
+  "basicInfo": {
+    "name": "Donald Perez",
+    "email": "donald.perez@company.com",
+    "company": "Elite Sanchez DreamPlay",
+    "website": "www.elitesanchezdreamplay.com",
+    "country": "VN",
+    "countryName": "Vietnam",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "language": "en",
+    "phone": "+107744371979",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "infant-toddler",
+      "educational",
+      "smart-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-04-26",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-04-20",
+    "replyRate": 55,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "infant-toddler",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 62,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-10-29T14:32:53.047Z",
+    "updatedAt": "2026-05-09T14:32:53.047Z",
+    "version": 1,
+    "dataHash": "dc1f139cbfe7364f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

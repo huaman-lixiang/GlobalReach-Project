@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05005",
+  "emailAccount": "account-051",
+  "basicInfo": {
+    "name": "Gregory Baker",
+    "email": "gregory.baker@web.de",
+    "company": "Happy Flores LLC",
+    "website": "www.happyfloresllc.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+1997639368218",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-02-07",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 1,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-07-19T14:32:53.249Z",
+    "updatedAt": "2026-05-09T14:32:53.249Z",
+    "version": 1,
+    "dataHash": "8c7ab669bdcf2e84",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02935",
+  "emailAccount": "account-030",
+  "basicInfo": {
+    "name": "Richard Clark",
+    "email": "richard.clark@libero.it",
+    "company": "Global Taylor Toys & Games",
+    "website": "www.globaltaylortoysgames.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+9938406454024",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-05-01",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": null,
+    "replyRate": 800,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 72,
+    "priorityScore": 89
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-05-10T14:32:52.623Z",
+    "updatedAt": "2026-05-09T14:32:52.623Z",
+    "version": 1,
+    "dataHash": "ba1a16afc7cf2b50",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

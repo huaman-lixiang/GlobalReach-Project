@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-02604",
+  "emailAccount": "account-027",
+  "basicInfo": {
+    "name": "Michael Rivera",
+    "email": "michael.rivera@gmail.com",
+    "company": "Whimsical Thompson Corp.",
+    "website": "www.whimsicalthompsoncorp.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+4076353746485",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-04-06",
+    "status": "churned",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 0,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-11T14:32:52.521Z",
+    "updatedAt": "2026-05-09T14:32:52.521Z",
+    "version": 1,
+    "dataHash": "46e0b48038e5cb40",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

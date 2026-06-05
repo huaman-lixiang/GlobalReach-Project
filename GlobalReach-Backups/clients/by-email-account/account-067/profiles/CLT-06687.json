@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06687",
+  "emailAccount": "account-067",
+  "basicInfo": {
+    "name": "Benjamin Jackson",
+    "email": "benjamin.jackson@company.com",
+    "company": "Happy Miller Kids World",
+    "website": "www.happymillerkidsworld.com",
+    "country": "ZA",
+    "countryName": "South Africa",
+    "timezone": "Africa/Johannesburg",
+    "language": "en",
+    "phone": "+2079497898898",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-24",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-14",
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "12:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 91,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-07-28T14:32:53.728Z",
+    "updatedAt": "2026-05-09T14:32:53.728Z",
+    "version": 1,
+    "dataHash": "d3832f825a856c43",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

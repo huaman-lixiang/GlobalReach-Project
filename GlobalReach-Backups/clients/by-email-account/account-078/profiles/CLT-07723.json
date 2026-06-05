@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07723",
+  "emailAccount": "account-078",
+  "basicInfo": {
+    "name": "Angela Thompson",
+    "email": "angela.thompson@gmail.com",
+    "company": "Mega Davis ToyBox",
+    "website": "www.megadavistoybox.com",
+    "country": "FI",
+    "countryName": "Finland",
+    "timezone": "Europe/Helsinki",
+    "language": "en",
+    "phone": "+4733377363956",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2025-02-24",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 27,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-25T14:32:54.032Z",
+    "updatedAt": "2026-05-09T14:32:54.032Z",
+    "version": 1,
+    "dataHash": "b760c6f9853c6454",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

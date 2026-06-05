@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02160",
+  "emailAccount": "account-022",
+  "basicInfo": {
+    "name": "Emma Smith",
+    "email": "emma.smith@t-online.de",
+    "company": "Mighty Rodriguez Trading",
+    "website": "www.mightyrodrigueztrading.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+7587026526888",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-02-18",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": "2026-04-16",
+    "replyRate": 7,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 86,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-10-21T14:32:52.375Z",
+    "updatedAt": "2026-05-09T14:32:52.375Z",
+    "version": 1,
+    "dataHash": "43bcc87bbe1c65eb",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

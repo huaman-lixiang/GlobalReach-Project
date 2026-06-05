@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02406",
+  "emailAccount": "account-025",
+  "basicInfo": {
+    "name": "Linda Baker",
+    "email": "linda.baker@gmail.com",
+    "company": "Bright Martinez Imports",
+    "website": "www.brightmartinezimports.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+9469780378538",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-24",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-20",
+    "replyRate": 350,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 73,
+    "priorityScore": 52
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-12-28T14:32:52.456Z",
+    "updatedAt": "2026-05-09T14:32:52.456Z",
+    "version": 1,
+    "dataHash": "6f7064485e40a2c5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

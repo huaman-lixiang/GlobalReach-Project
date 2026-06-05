@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05755",
+  "emailAccount": "account-058",
+  "basicInfo": {
+    "name": "Lisa Brown",
+    "email": "lisa.brown@yahoo.com",
+    "company": "Alpha Wright DreamPlay",
+    "website": "www.alphawrightdreamplay.com",
+    "country": "GR",
+    "countryName": "Greece",
+    "timezone": "Europe/Athens",
+    "language": "en",
+    "phone": "+8476992255444",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-03-10",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 38,
+    "priorityScore": 84
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-10-08T14:32:53.458Z",
+    "updatedAt": "2026-05-09T14:32:53.458Z",
+    "version": 1,
+    "dataHash": "f1cb284171334205",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00640",
+  "emailAccount": "account-007",
+  "basicInfo": {
+    "name": "Michelle Lopez",
+    "email": "michelle.lopez@yahoo.com",
+    "company": "Joyful Thompson Little Stars",
+    "website": "www.joyfulthompsonlittlestars.com",
+    "country": "DK",
+    "countryName": "Denmark",
+    "timezone": "Europe/Copenhagen",
+    "language": "en",
+    "phone": "+4486731710751",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-02-13",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-05-01",
+    "replyRate": 47,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 73,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-30T14:32:51.894Z",
+    "updatedAt": "2026-05-09T14:32:51.894Z",
+    "version": 1,
+    "dataHash": "8de6ea7e89b8abfc",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

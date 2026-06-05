@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00350",
+  "emailAccount": "account-004",
+  "basicInfo": {
+    "name": "Larry Lee",
+    "email": "larry.lee@yahoo.com",
+    "company": "Bright Sanchez LLC",
+    "website": "www.brightsanchezllc.com",
+    "country": "IE",
+    "countryName": "Ireland",
+    "timezone": "Europe/Dublin",
+    "language": "en",
+    "phone": "+5429820594766",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-04-01",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 15,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-19",
+    "replyRate": 47,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "12:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 61,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-04-21T14:32:51.802Z",
+    "updatedAt": "2026-05-09T14:32:51.802Z",
+    "version": 1,
+    "dataHash": "34761f857d608ad6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

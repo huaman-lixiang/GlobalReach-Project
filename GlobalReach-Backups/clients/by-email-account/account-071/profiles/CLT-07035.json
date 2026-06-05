@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07035",
+  "emailAccount": "account-071",
+  "basicInfo": {
+    "name": "John Martinez",
+    "email": "john.martinez@gmail.com",
+    "company": "Grand Roberts WonderToys",
+    "website": "www.grandrobertswondertoys.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+781852491043",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-03-13",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-04-14",
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 90,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-10-15T14:32:53.830Z",
+    "updatedAt": "2026-05-09T14:32:53.830Z",
+    "version": 1,
+    "dataHash": "92efa7a3149a8740",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04436",
+  "emailAccount": "account-045",
+  "basicInfo": {
+    "name": "Steven Robinson",
+    "email": "steven.robinson@yahoo.com",
+    "company": "Royal Thomas Little Stars",
+    "website": "www.royalthomaslittlestars.com",
+    "country": "CZ",
+    "countryName": "Czech Republic",
+    "timezone": "Europe/Prague",
+    "language": "en",
+    "phone": "+8869156963108",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2015,
+    "lastContactDate": "2024-09-17",
+    "status": "churned",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 27,
+    "priorityScore": 63
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-03-20T14:32:53.076Z",
+    "updatedAt": "2026-05-09T14:32:53.076Z",
+    "version": 1,
+    "dataHash": "798b3726f6e6a143",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

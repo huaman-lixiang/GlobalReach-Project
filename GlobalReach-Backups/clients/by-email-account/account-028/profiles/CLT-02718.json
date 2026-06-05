@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02718",
+  "emailAccount": "account-028",
+  "basicInfo": {
+    "name": "Michael Green",
+    "email": "michael.green@hotmail.com",
+    "company": "Zenith Nguyen Kids World",
+    "website": "www.zenithnguyenkidsworld.com",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "timezone": "Europe/Amsterdam",
+    "language": "en",
+    "phone": "+1231373816304",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-03-14",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-04-10",
+    "replyRate": 46,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "14:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 78,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-05-22T14:32:52.557Z",
+    "updatedAt": "2026-05-09T14:32:52.557Z",
+    "version": 1,
+    "dataHash": "94b6f8575ad2e705",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00233",
+  "emailAccount": "account-003",
+  "basicInfo": {
+    "name": "Brian Nelson",
+    "email": "brian.nelson@company.com.au",
+    "company": "Summit Jones Kids World",
+    "website": "www.summitjoneskidsworld.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+3958309271727",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2024-12-03",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 6,
+    "priorityScore": 81
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-02-19T14:32:51.766Z",
+    "updatedAt": "2026-05-09T14:32:51.766Z",
+    "version": 1,
+    "dataHash": "549d473c77690581",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

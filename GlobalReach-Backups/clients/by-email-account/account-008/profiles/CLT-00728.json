@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00728",
+  "emailAccount": "account-008",
+  "basicInfo": {
+    "name": "Amanda Jones",
+    "email": "amanda.jones@company.com",
+    "company": "Joyful Davis International",
+    "website": "www.joyfuldavisinternational.com",
+    "country": "CZ",
+    "countryName": "Czech Republic",
+    "timezone": "Europe/Prague",
+    "language": "en",
+    "phone": "+5699317252201",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-05-04",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 9,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-05-29T14:32:51.922Z",
+    "updatedAt": "2026-05-09T14:32:51.922Z",
+    "version": 1,
+    "dataHash": "4883c0dd7c10daef",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

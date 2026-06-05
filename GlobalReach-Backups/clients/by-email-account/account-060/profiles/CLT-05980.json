@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-05980",
+  "emailAccount": "account-060",
+  "basicInfo": {
+    "name": "Pamela Green",
+    "email": "pamela.green@company.es",
+    "company": "Elite Anderson Distribution",
+    "website": "www.eliteandersondistribution.es",
+    "country": "ES",
+    "countryName": "Spain",
+    "timezone": "Europe/Madrid",
+    "language": "es",
+    "phone": "+3488402099007",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2015,
+    "lastContactDate": "2024-05-30",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 1,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-02-08T14:32:53.523Z",
+    "updatedAt": "2026-05-09T14:32:53.523Z",
+    "version": 1,
+    "dataHash": "fd839602b26cebbe",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

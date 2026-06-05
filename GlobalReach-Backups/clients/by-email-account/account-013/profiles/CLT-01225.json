@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01225",
+  "emailAccount": "account-013",
+  "basicInfo": {
+    "name": "Barbara Martin",
+    "email": "barbara.martin@company.com",
+    "company": "Star Wilson LLC",
+    "website": "www.starwilsonllc.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+591562385363",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-05-04",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-29",
+    "replyRate": 57,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "10:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 73,
+    "priorityScore": 75
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-10T14:32:52.082Z",
+    "updatedAt": "2026-05-09T14:32:52.082Z",
+    "version": 1,
+    "dataHash": "876aa91833d6ba0c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

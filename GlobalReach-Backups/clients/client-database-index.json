@@ -1,0 +1,149 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-05-09T14:32:54.112Z",
+  "system": "GlobalReach v1.0 Client Database",
+  "summary": {
+    "total_clients": 8000,
+    "total_accounts": 80,
+    "clients_per_account": 100,
+    "errors": 0,
+    "generation_time_seconds": "2.42"
+  },
+  "distribution": {
+    "by_level": {
+      "A": 1189,
+      "B": 2435,
+      "C": 4376
+    },
+    "by_status": {
+      "active": 2747,
+      "sleeping": 3166,
+      "churned": 2087
+    },
+    "top_countries": [
+      {
+        "country": "US",
+        "count": 917
+      },
+      {
+        "country": "DE",
+        "count": 581
+      },
+      {
+        "country": "GB",
+        "count": 528
+      },
+      {
+        "country": "FR",
+        "count": 488
+      },
+      {
+        "country": "AU",
+        "count": 372
+      },
+      {
+        "country": "CA",
+        "count": 371
+      },
+      {
+        "country": "JP",
+        "count": 359
+      },
+      {
+        "country": "ES",
+        "count": 306
+      },
+      {
+        "country": "IT",
+        "count": 287
+      },
+      {
+        "country": "BR",
+        "count": 274
+      },
+      {
+        "country": "NL",
+        "count": 217
+      },
+      {
+        "country": "MX",
+        "count": 210
+      },
+      {
+        "country": "KR",
+        "count": 203
+      },
+      {
+        "country": "AE",
+        "count": 173
+      },
+      {
+        "country": "SA",
+        "count": 167
+      }
+    ],
+    "top_industries": [
+      {
+        "industry": "E-commerce Platform",
+        "count": 835
+      },
+      {
+        "industry": "Import Export Company",
+        "count": 828
+      },
+      {
+        "industry": "Online Marketplace",
+        "count": 816
+      },
+      {
+        "industry": "Supermarket",
+        "count": 811
+      },
+      {
+        "industry": "Gift Shop Chain",
+        "count": 806
+      },
+      {
+        "industry": "Wholesaler",
+        "count": 805
+      },
+      {
+        "industry": "Distributor",
+        "count": 805
+      },
+      {
+        "industry": "Specialty Store",
+        "count": 795
+      },
+      {
+        "industry": "Department Store",
+        "count": 762
+      },
+      {
+        "industry": "Toy Retail Chain",
+        "count": 737
+      }
+    ]
+  },
+  "quality_metrics": {
+    "unique_client_ids": 8000,
+    "unique_emails": 8000,
+    "countries_covered": 52,
+    "industries_represented": 10,
+    "avg_engagement_score": 0,
+    "active_clients": 2747,
+    "high_value_clients_A": 1189
+  },
+  "data_integrity": {
+    "schema_version": "1.0",
+    "required_fields_present": true,
+    "encryption_status": "N/A (contact info in clear for initial import)",
+    "hash_verification_enabled": true,
+    "next_steps": [
+      "Replace with real customer data from Excel export",
+      "Verify email validity and remove bounce-prone addresses",
+      "Enrich with additional data points (social media, etc.)",
+      "Implement AES-256 encryption for sensitive fields"
+    ]
+  }
+}

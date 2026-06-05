@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01266",
+  "emailAccount": "account-013",
+  "basicInfo": {
+    "name": "David Baker",
+    "email": "david.baker@yahoo.com",
+    "company": "Royal Flores Imports",
+    "website": "www.royalfloresimports.com",
+    "country": "IN",
+    "countryName": "India",
+    "timezone": "Asia/Kolkata",
+    "language": "en",
+    "phone": "+7337343539451",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-04-14",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-05-05",
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "educational",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 100,
+    "priorityScore": 60
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-02-09T14:32:52.094Z",
+    "updatedAt": "2026-05-09T14:32:52.094Z",
+    "version": 1,
+    "dataHash": "20a79370fd169303",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

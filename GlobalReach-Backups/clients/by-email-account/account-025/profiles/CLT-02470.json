@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02470",
+  "emailAccount": "account-025",
+  "basicInfo": {
+    "name": "Donald Harris",
+    "email": "donald.harris@gmail.com",
+    "company": "Grand Roberts Group",
+    "website": "www.grandrobertsgroup.com",
+    "country": "KW",
+    "countryName": "Kuwait",
+    "timezone": "Asia/Kuwait",
+    "language": "en",
+    "phone": "+5628281544887",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-04-28",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 29,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 6,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-07-21T14:32:52.477Z",
+    "updatedAt": "2026-05-09T14:32:52.477Z",
+    "version": 1,
+    "dataHash": "51ad5b6fe2c5f1f5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

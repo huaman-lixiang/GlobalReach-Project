@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07720",
+  "emailAccount": "account-078",
+  "basicInfo": {
+    "name": "Janet Garcia",
+    "email": "janet.garcia@yahoo.com",
+    "company": "Prime Robinson Inc.",
+    "website": "www.primerobinsoninc.com",
+    "country": "RU",
+    "countryName": "Russia",
+    "timezone": "Europe/Moscow",
+    "language": "en",
+    "phone": "+565850023086",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-04-08",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 4,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-09-28T14:32:54.031Z",
+    "updatedAt": "2026-05-09T14:32:54.031Z",
+    "version": 1,
+    "dataHash": "3a3bb0f8364592a4",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01925",
+  "emailAccount": "account-020",
+  "basicInfo": {
+    "name": "Edward Hill",
+    "email": "edward.hill@gmail.com",
+    "company": "Prime Roberts International",
+    "website": "www.primerobertsinternational.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+203555907422",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2025-09-01",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 32,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-05-01T14:32:52.294Z",
+    "updatedAt": "2026-05-09T14:32:52.294Z",
+    "version": 1,
+    "dataHash": "7704b847820ab028",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

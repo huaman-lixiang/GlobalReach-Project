@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00346",
+  "emailAccount": "account-004",
+  "basicInfo": {
+    "name": "John Williams",
+    "email": "john.williams@outlook.com",
+    "company": "Fantastic Clark Kids World",
+    "website": "www.fantasticclarkkidsworld.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+1340310861685",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-02-15",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 16,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-24",
+    "replyRate": 44,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "14:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 71,
+    "priorityScore": 89
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-04-11T14:32:51.801Z",
+    "updatedAt": "2026-05-09T14:32:51.801Z",
+    "version": 1,
+    "dataHash": "93ce955d7cd0dae1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

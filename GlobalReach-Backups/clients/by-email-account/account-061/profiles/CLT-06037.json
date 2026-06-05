@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-06037",
+  "emailAccount": "account-061",
+  "basicInfo": {
+    "name": "Jacob Ramirez",
+    "email": "jacob.ramirez@company.com",
+    "company": "Omega Taylor Inc.",
+    "website": "www.omegataylorinc.com",
+    "country": "SE",
+    "countryName": "Sweden",
+    "timezone": "Europe/Stockholm",
+    "language": "en",
+    "phone": "+2721971885906",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-11-25",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 9,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 18,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-10-09T14:32:53.540Z",
+    "updatedAt": "2026-05-09T14:32:53.540Z",
+    "version": 1,
+    "dataHash": "c73165b453c63de9",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

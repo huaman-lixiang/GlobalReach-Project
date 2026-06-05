@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04380",
+  "emailAccount": "account-044",
+  "basicInfo": {
+    "name": "Linda Sanchez",
+    "email": "linda.sanchez@gmail.com",
+    "company": "Grand King Co.",
+    "website": "www.grandkingco.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+4586112696989",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-03-27",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 18,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-05-09",
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "16:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 75,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-04-24T14:32:53.058Z",
+    "updatedAt": "2026-05-09T14:32:53.058Z",
+    "version": 1,
+    "dataHash": "20281f4a2d1075a8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02071",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Mary Ramirez",
+    "email": "mary.ramirez@yahoo.com",
+    "company": "Prime Gonzalez PlayTime",
+    "website": "www.primegonzalezplaytime.com",
+    "country": "HK",
+    "countryName": "Hong Kong",
+    "timezone": "Asia/Hong_Kong",
+    "language": "en",
+    "phone": "+4736233878742",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2024-12-31",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 19,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-02-16T14:32:52.344Z",
+    "updatedAt": "2026-05-09T14:32:52.344Z",
+    "version": 1,
+    "dataHash": "840c9998b1352c1f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

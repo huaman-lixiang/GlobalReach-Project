@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00680",
+  "emailAccount": "account-007",
+  "basicInfo": {
+    "name": "Barbara Walker",
+    "email": "barbara.walker@gmail.com",
+    "company": "Alpha Thompson FunZone",
+    "website": "www.alphathompsonfunzone.com",
+    "country": "KR",
+    "countryName": "South Korea",
+    "timezone": "Asia/Seoul",
+    "language": "en",
+    "phone": "+9798955344401",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-10-02",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 9,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 25,
+    "priorityScore": 95
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-02-21T14:32:51.906Z",
+    "updatedAt": "2026-05-09T14:32:51.906Z",
+    "version": 1,
+    "dataHash": "5559e936e1791bf0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

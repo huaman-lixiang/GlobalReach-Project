@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04875",
+  "emailAccount": "account-049",
+  "basicInfo": {
+    "name": "Pamela Nguyen",
+    "email": "pamela.nguyen@company.co.uk",
+    "company": "Sun White International",
+    "website": "www.sunwhiteinternational.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+5049798539343",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "educational",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2025-10-01",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 15,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 6,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-12-04T14:32:53.210Z",
+    "updatedAt": "2026-05-09T14:32:53.210Z",
+    "version": 1,
+    "dataHash": "d1d30278e0d7adf5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

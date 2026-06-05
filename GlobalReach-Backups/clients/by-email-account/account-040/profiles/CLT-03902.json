@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03902",
+  "emailAccount": "account-040",
+  "basicInfo": {
+    "name": "Christopher Jackson",
+    "email": "christopher.jackson@gmail.com",
+    "company": "Playful Walker Corp.",
+    "website": "www.playfulwalkercorp.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+2342145272673",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-30",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": null,
+    "replyRate": 83,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "15:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 100,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-02-04T14:32:52.915Z",
+    "updatedAt": "2026-05-09T14:32:52.915Z",
+    "version": 1,
+    "dataHash": "f2ba1ce437a2aa5e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

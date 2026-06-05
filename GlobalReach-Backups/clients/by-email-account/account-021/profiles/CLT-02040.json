@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02040",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Timothy Mitchell",
+    "email": "timothy.mitchell@yahoo.com",
+    "company": "Apex Allen Kids World",
+    "website": "www.apexallenkidsworld.com",
+    "country": "CZ",
+    "countryName": "Czech Republic",
+    "timezone": "Europe/Prague",
+    "language": "en",
+    "phone": "+3613667725743",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2022,
+    "lastContactDate": "2026-03-22",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-26",
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 99,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-06-16T14:32:52.334Z",
+    "updatedAt": "2026-05-09T14:32:52.334Z",
+    "version": 1,
+    "dataHash": "65692ab5d5b1263a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05791",
+  "emailAccount": "account-058",
+  "basicInfo": {
+    "name": "Timothy Clark",
+    "email": "timothy.clark@yahoo.com",
+    "company": "Prime Thomas PlayTime",
+    "website": "www.primethomasplaytime.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+8053871801915",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-03-12",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 20,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-17",
+    "replyRate": 35,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 60,
+    "priorityScore": 64
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-11-02T14:32:53.468Z",
+    "updatedAt": "2026-05-09T14:32:53.468Z",
+    "version": 1,
+    "dataHash": "be713b2bc2b6b61d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

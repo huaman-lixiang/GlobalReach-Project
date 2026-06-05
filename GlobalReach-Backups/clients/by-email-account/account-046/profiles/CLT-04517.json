@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04517",
+  "emailAccount": "account-046",
+  "basicInfo": {
+    "name": "Andrew Harris",
+    "email": "andrew.harris@company.com",
+    "company": "Imaginative Lopez Ltd.",
+    "website": "www.imaginativelopezltd.com",
+    "country": "NZ",
+    "countryName": "New Zealand",
+    "timezone": "Pacific/Auckland",
+    "language": "en",
+    "phone": "+1500040851634",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-02-21",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": null,
+    "replyRate": 120,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 68,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-05-18T14:32:53.101Z",
+    "updatedAt": "2026-05-09T14:32:53.101Z",
+    "version": 1,
+    "dataHash": "5686e44fe0f349e6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

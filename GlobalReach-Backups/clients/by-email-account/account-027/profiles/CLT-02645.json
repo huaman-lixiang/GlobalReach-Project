@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-02645",
+  "emailAccount": "account-027",
+  "basicInfo": {
+    "name": "Kimberly Torres",
+    "email": "kimberly.torres@company.it",
+    "company": "Imperial Lopez WonderToys",
+    "website": "www.imperiallopezwondertoys.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+9806499710875",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-04-15",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 16,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 76,
+    "priorityScore": 62
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-23T14:32:52.533Z",
+    "updatedAt": "2026-05-09T14:32:52.533Z",
+    "version": 1,
+    "dataHash": "3710cc6ac55c5bfc",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

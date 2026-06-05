@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00642",
+  "emailAccount": "account-007",
+  "basicInfo": {
+    "name": "Susan Martin",
+    "email": "susan.martin@gmail.com",
+    "company": "Elite Davis Inc.",
+    "website": "www.elitedavisinc.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+2391520757665",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-04-21",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-26",
+    "replyRate": 45,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "12:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 95,
+    "priorityScore": 58
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-07-01T14:32:51.895Z",
+    "updatedAt": "2026-05-09T14:32:51.895Z",
+    "version": 1,
+    "dataHash": "945758977c72880d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

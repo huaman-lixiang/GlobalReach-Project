@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00331",
+  "emailAccount": "account-004",
+  "basicInfo": {
+    "name": "Betty Mitchell",
+    "email": "betty.mitchell@yahoo.com",
+    "company": "Joyful Walker Distribution",
+    "website": "www.joyfulwalkerdistribution.com",
+    "country": "NG",
+    "countryName": "Nigeria",
+    "timezone": "Africa/Lagos",
+    "language": "en",
+    "phone": "+8076070970309",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "rc-toys",
+      "infant-toddler",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-02-14",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-04-30",
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "11:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 87,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-25T14:32:51.796Z",
+    "updatedAt": "2026-05-09T14:32:51.796Z",
+    "version": 1,
+    "dataHash": "6908d498121c4f50",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

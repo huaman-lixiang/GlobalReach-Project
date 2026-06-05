@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03624",
+  "emailAccount": "account-037",
+  "basicInfo": {
+    "name": "Daniel Mitchell",
+    "email": "daniel.mitchell@yahoo.com",
+    "company": "Fantastic Wilson Corp.",
+    "website": "www.fantasticwilsoncorp.com",
+    "country": "BE",
+    "countryName": "Belgium",
+    "timezone": "Europe/Brussels",
+    "language": "en",
+    "phone": "+285039376029",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2025-03-22",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 12,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-11-01T14:32:52.832Z",
+    "updatedAt": "2026-05-09T14:32:52.832Z",
+    "version": 1,
+    "dataHash": "fef4a1fd2340e57e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

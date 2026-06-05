@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04131",
+  "emailAccount": "account-042",
+  "basicInfo": {
+    "name": "Samantha White",
+    "email": "samantha.white@bigpond.com",
+    "company": "Omega Smith PlayTime",
+    "website": "www.omegasmithplaytime.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+4708413231585",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-02-20",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": null,
+    "replyRate": 300,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "classic-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 91,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-09-23T14:32:52.983Z",
+    "updatedAt": "2026-05-09T14:32:52.983Z",
+    "version": 1,
+    "dataHash": "934a332cd3c519f6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

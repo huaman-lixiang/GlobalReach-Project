@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02156",
+  "emailAccount": "account-022",
+  "basicInfo": {
+    "name": "Rachel Lopez",
+    "email": "rachel.lopez@company.com",
+    "company": "Creative Hill Kids World",
+    "website": "www.creativehillkidsworld.com",
+    "country": "IE",
+    "countryName": "Ireland",
+    "timezone": "Europe/Dublin",
+    "language": "en",
+    "phone": "+4934872853656",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2025-03-02",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 29,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 18,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-05-02T14:32:52.374Z",
+    "updatedAt": "2026-05-09T14:32:52.374Z",
+    "version": 1,
+    "dataHash": "491fd3f3846476b9",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

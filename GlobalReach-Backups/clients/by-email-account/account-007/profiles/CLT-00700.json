@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00700",
+  "emailAccount": "account-007",
+  "basicInfo": {
+    "name": "Nicole Scott",
+    "email": "nicole.scott@company.com",
+    "company": "Universal Hall DreamPlay",
+    "website": "www.universalhalldreamplay.com",
+    "country": "AR",
+    "countryName": "Argentina",
+    "timezone": "America/Buenos_Aires",
+    "language": "ar",
+    "phone": "+657370377783",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-04-29",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 16,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": "2026-05-05",
+    "replyRate": 13,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 67,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-08-22T14:32:51.913Z",
+    "updatedAt": "2026-05-09T14:32:51.913Z",
+    "version": 1,
+    "dataHash": "8735e429fb00e994",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

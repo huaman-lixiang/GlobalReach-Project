@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07062",
+  "emailAccount": "account-071",
+  "basicInfo": {
+    "name": "Robert Wright",
+    "email": "robert.wright@company.com",
+    "company": "Ultra Ramirez Co.",
+    "website": "www.ultraramirezco.com",
+    "country": "MX",
+    "countryName": "Mexico",
+    "timezone": "America/Mexico_City",
+    "language": "en",
+    "phone": "+6565971204042",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-03-01",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": null,
+    "replyRate": 400,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 74,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-08-30T14:32:53.838Z",
+    "updatedAt": "2026-05-09T14:32:53.838Z",
+    "version": 1,
+    "dataHash": "27b29bf141fcbaca",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

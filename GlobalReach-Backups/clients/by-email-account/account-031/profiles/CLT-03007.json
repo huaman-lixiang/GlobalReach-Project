@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03007",
+  "emailAccount": "account-031",
+  "basicInfo": {
+    "name": "David Wright",
+    "email": "david.wright@company.com",
+    "company": "Prime Flores Distribution",
+    "website": "www.primefloresdistribution.com",
+    "country": "ZA",
+    "countryName": "South Africa",
+    "timezone": "Africa/Johannesburg",
+    "language": "en",
+    "phone": "+5935811427805",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2024-08-01",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 26,
+    "priorityScore": 75
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-01-28T14:32:52.644Z",
+    "updatedAt": "2026-05-09T14:32:52.644Z",
+    "version": 1,
+    "dataHash": "8811fe61408991f5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

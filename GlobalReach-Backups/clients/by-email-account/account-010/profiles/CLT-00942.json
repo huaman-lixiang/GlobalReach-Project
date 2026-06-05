@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00942",
+  "emailAccount": "account-010",
+  "basicInfo": {
+    "name": "Larry Roberts",
+    "email": "larry.roberts@gmail.com",
+    "company": "Joyful Flores Co.",
+    "website": "www.joyfulfloresco.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+515249173179",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-03-01",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-04-16",
+    "replyRate": 55,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 83,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-12-26T14:32:51.986Z",
+    "updatedAt": "2026-05-09T14:32:51.986Z",
+    "version": 1,
+    "dataHash": "6ca121fc6433ae80",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

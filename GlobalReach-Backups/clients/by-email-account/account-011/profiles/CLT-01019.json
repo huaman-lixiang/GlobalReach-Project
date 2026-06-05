@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01019",
+  "emailAccount": "account-011",
+  "basicInfo": {
+    "name": "Shirley Williams",
+    "email": "shirley.williams@yahoo.com",
+    "company": "Ultra Gonzalez Distribution",
+    "website": "www.ultragonzalezdistribution.com",
+    "country": "CL",
+    "countryName": "Chile",
+    "timezone": "America/Santiago",
+    "language": "en",
+    "phone": "+8851077961363",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-05-06",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 36,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-02-25T14:32:52.011Z",
+    "updatedAt": "2026-05-09T14:32:52.011Z",
+    "version": 1,
+    "dataHash": "82c402e62fcade3f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

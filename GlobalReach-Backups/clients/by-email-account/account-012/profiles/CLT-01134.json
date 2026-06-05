@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01134",
+  "emailAccount": "account-012",
+  "basicInfo": {
+    "name": "Sharon Nguyen",
+    "email": "sharon.nguyen@gmail.com",
+    "company": "Sun Hill International",
+    "website": "www.sunhillinternational.com",
+    "country": "PH",
+    "countryName": "Philippines",
+    "timezone": "Asia/Manila",
+    "language": "en",
+    "phone": "+3102758216011",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-06-05",
+    "status": "sleeping",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 39,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-12-15T14:32:52.054Z",
+    "updatedAt": "2026-05-09T14:32:52.054Z",
+    "version": 1,
+    "dataHash": "f977d9376e2b72b5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02902",
+  "emailAccount": "account-030",
+  "basicInfo": {
+    "name": "Jonathan Rivera",
+    "email": "jonathan.rivera@company.com",
+    "company": "Joyful Wright Inc.",
+    "website": "www.joyfulwrightinc.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+1714608360047",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-04-25",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-05-08",
+    "replyRate": 167,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 90,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-08-07T14:32:52.613Z",
+    "updatedAt": "2026-05-09T14:32:52.613Z",
+    "version": 1,
+    "dataHash": "df7e227a60ae98a3",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

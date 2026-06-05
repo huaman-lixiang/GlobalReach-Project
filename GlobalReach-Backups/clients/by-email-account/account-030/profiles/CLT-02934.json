@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02934",
+  "emailAccount": "account-030",
+  "basicInfo": {
+    "name": "Brandon Hall",
+    "email": "brandon.hall@company.co.uk",
+    "company": "Apex Hernandez Ltd.",
+    "website": "www.apexhernandezltd.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+391178045139",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "infant-toddler",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-03-25",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": null,
+    "replyRate": 36,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "infant-toddler",
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 64,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-11-03T14:32:52.622Z",
+    "updatedAt": "2026-05-09T14:32:52.622Z",
+    "version": 1,
+    "dataHash": "a4de5488aa106ef3",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

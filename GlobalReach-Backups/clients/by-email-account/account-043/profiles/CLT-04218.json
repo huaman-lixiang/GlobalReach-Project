@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04218",
+  "emailAccount": "account-043",
+  "basicInfo": {
+    "name": "David Jackson",
+    "email": "david.jackson@web.de",
+    "company": "Global Anderson WonderToys",
+    "website": "www.globalandersonwondertoys.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+3885583034273",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "infant-toddler",
+      "educational",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-02-17",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-04-27",
+    "replyRate": 46,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "10:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "infant-toddler",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 75,
+    "priorityScore": 76
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-05-13T14:32:53.010Z",
+    "updatedAt": "2026-05-09T14:32:53.010Z",
+    "version": 1,
+    "dataHash": "72a2ce8c82b3871f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

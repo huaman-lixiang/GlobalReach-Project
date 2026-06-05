@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02101",
+  "emailAccount": "account-022",
+  "basicInfo": {
+    "name": "Jessica Flores",
+    "email": "jessica.flores@company.de",
+    "company": "Grand Harris FunZone",
+    "website": "www.grandharrisfunzone.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+6857422847572",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-01-28",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 3,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-06-05T14:32:52.356Z",
+    "updatedAt": "2026-05-09T14:32:52.356Z",
+    "version": 1,
+    "dataHash": "d382e9f707008e5f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

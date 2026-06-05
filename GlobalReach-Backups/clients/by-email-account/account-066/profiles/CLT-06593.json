@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-06593",
+  "emailAccount": "account-066",
+  "basicInfo": {
+    "name": "Carol Adams",
+    "email": "carol.adams@gmail.com",
+    "company": "Super Jones Enterprises",
+    "website": "www.superjonesenterprises.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+5288991232466",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2022,
+    "lastContactDate": "2026-04-25",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-24",
+    "replyRate": 267,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 86,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-09-03T14:32:53.701Z",
+    "updatedAt": "2026-05-09T14:32:53.701Z",
+    "version": 1,
+    "dataHash": "3bbcdf54b3961f2a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

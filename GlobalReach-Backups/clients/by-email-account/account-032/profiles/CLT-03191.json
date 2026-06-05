@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03191",
+  "emailAccount": "account-032",
+  "basicInfo": {
+    "name": "Patricia Mitchell",
+    "email": "patricia.mitchell@gmail.com",
+    "company": "Pinnacle Sanchez PlayTime",
+    "website": "www.pinnaclesanchezplaytime.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+1834102211338",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-04-11",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": null,
+    "replyRate": 64,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "11:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 90,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-03-03T14:32:52.699Z",
+    "updatedAt": "2026-05-09T14:32:52.699Z",
+    "version": 1,
+    "dataHash": "0a3669df371e189c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

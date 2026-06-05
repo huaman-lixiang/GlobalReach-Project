@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05790",
+  "emailAccount": "account-058",
+  "basicInfo": {
+    "name": "Jacob Williams",
+    "email": "jacob.williams@gmail.com",
+    "company": "Prime Nguyen PlayTime",
+    "website": "www.primenguyenplaytime.com",
+    "country": "TR",
+    "countryName": "Turkey",
+    "timezone": "Europe/Istanbul",
+    "language": "en",
+    "phone": "+4753473455207",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-01-05",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 32,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-05-01T14:32:53.468Z",
+    "updatedAt": "2026-05-09T14:32:53.468Z",
+    "version": 1,
+    "dataHash": "05d8f91fb2732594",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

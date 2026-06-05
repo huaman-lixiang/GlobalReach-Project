@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07513",
+  "emailAccount": "account-076",
+  "basicInfo": {
+    "name": "John Garcia",
+    "email": "john.garcia@gmail.com",
+    "company": "Moon Miller Co.",
+    "website": "www.moonmillerco.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+136909061149",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-05-09",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 16,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-24",
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 90,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-08-13T14:32:53.971Z",
+    "updatedAt": "2026-05-09T14:32:53.971Z",
+    "version": 1,
+    "dataHash": "fbf872ed6e346d5a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

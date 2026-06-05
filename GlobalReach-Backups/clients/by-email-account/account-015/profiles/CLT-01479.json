@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01479",
+  "emailAccount": "account-015",
+  "basicInfo": {
+    "name": "Kathleen King",
+    "email": "kathleen.king@company.com",
+    "company": "Pinnacle Campbell WonderToys",
+    "website": "www.pinnaclecampbellwondertoys.com",
+    "country": "BE",
+    "countryName": "Belgium",
+    "timezone": "Europe/Brussels",
+    "language": "en",
+    "phone": "+7527781990738",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2025-02-02",
+    "status": "churned",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 8,
+    "priorityScore": 58
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-08T14:32:52.158Z",
+    "updatedAt": "2026-05-09T14:32:52.158Z",
+    "version": 1,
+    "dataHash": "77b70b9e4379338a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

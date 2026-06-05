@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00127",
+  "emailAccount": "account-002",
+  "basicInfo": {
+    "name": "Mary Thomas",
+    "email": "mary.thomas@company.com",
+    "company": "Royal Lee LLC",
+    "website": "www.royalleellc.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+2969846246645",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-02-21",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-21",
+    "replyRate": 71,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "16:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 70,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-05-30T14:32:51.733Z",
+    "updatedAt": "2026-05-09T14:32:51.733Z",
+    "version": 1,
+    "dataHash": "78dc2851d7c46917",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07577",
+  "emailAccount": "account-076",
+  "basicInfo": {
+    "name": "Patricia King",
+    "email": "patricia.king@company.com",
+    "company": "Mighty Lopez International",
+    "website": "www.mightylopezinternational.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+9506540687743",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-04-15",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": null,
+    "replyRate": 700,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 61,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-05-05T14:32:53.989Z",
+    "updatedAt": "2026-05-09T14:32:53.989Z",
+    "version": 1,
+    "dataHash": "0ddce444d054f61c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

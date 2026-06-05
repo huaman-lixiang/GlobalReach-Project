@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00969",
+  "emailAccount": "account-010",
+  "basicInfo": {
+    "name": "Ronald Adams",
+    "email": "ronald.adams@company.com",
+    "company": "Grand Allen ToyBox",
+    "website": "www.grandallentoybox.com",
+    "country": "TR",
+    "countryName": "Turkey",
+    "timezone": "Europe/Istanbul",
+    "language": "en",
+    "phone": "+5892759264892",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "rc-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-03-10",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-04-12",
+    "replyRate": 38,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "11:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "rc-toys",
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 86,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-01-18T14:32:51.994Z",
+    "updatedAt": "2026-05-09T14:32:51.994Z",
+    "version": 1,
+    "dataHash": "86049585e4e8e5fd",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

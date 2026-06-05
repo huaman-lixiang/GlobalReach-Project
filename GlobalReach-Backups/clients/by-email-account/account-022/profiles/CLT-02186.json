@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02186",
+  "emailAccount": "account-022",
+  "basicInfo": {
+    "name": "Charles Robinson",
+    "email": "charles.robinson@orange.fr",
+    "company": "Global Robinson ToyBox",
+    "website": "www.globalrobinsontoybox.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+5639172324013",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-04-19",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": null,
+    "replyRate": 73,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 84,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-12-15T14:32:52.384Z",
+    "updatedAt": "2026-05-09T14:32:52.384Z",
+    "version": 1,
+    "dataHash": "2816560846af92c8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

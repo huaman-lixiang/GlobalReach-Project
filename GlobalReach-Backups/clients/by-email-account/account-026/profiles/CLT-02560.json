@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02560",
+  "emailAccount": "account-026",
+  "basicInfo": {
+    "name": "Larry Garcia",
+    "email": "larry.garcia@company.com",
+    "company": "Imperial Miller Co.",
+    "website": "www.imperialmillerco.com",
+    "country": "PT",
+    "countryName": "Portugal",
+    "timezone": "Europe/Lisbon",
+    "language": "en",
+    "phone": "+4998723606010",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-03-22",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-25",
+    "replyRate": 63,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "13:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "educational",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 86,
+    "priorityScore": 56
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-12-23T14:32:52.505Z",
+    "updatedAt": "2026-05-09T14:32:52.505Z",
+    "version": 1,
+    "dataHash": "cd4ea906816d562d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

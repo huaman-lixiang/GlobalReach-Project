@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05158",
+  "emailAccount": "account-052",
+  "basicInfo": {
+    "name": "Thomas Brown",
+    "email": "thomas.brown@gmail.com",
+    "company": "Zenith Sanchez Co.",
+    "website": "www.zenithsanchezco.com",
+    "country": "GR",
+    "countryName": "Greece",
+    "timezone": "Europe/Athens",
+    "language": "en",
+    "phone": "+2971089391842",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-04-14",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 38,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 88,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-04-26T14:32:53.291Z",
+    "updatedAt": "2026-05-09T14:32:53.291Z",
+    "version": 1,
+    "dataHash": "984d98f8112a9bb5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

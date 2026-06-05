@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04163",
+  "emailAccount": "account-042",
+  "basicInfo": {
+    "name": "Benjamin Campbell",
+    "email": "benjamin.campbell@web.de",
+    "company": "Mega Lopez Enterprises",
+    "website": "www.megalopezenterprises.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+45069063745",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "smart-toys",
+      "classic-toys",
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-02-24",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 12,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-26",
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "12:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 95,
+    "priorityScore": 62
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-07-07T14:32:52.993Z",
+    "updatedAt": "2026-05-09T14:32:52.993Z",
+    "version": 1,
+    "dataHash": "84d1a556063ee6b0",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07636",
+  "emailAccount": "account-077",
+  "basicInfo": {
+    "name": "Jennifer Smith",
+    "email": "jennifer.smith@yahoo.com",
+    "company": "Sun Nelson Inc.",
+    "website": "www.sunnelsoninc.com",
+    "country": "IN",
+    "countryName": "India",
+    "timezone": "Asia/Kolkata",
+    "language": "en",
+    "phone": "+2590429451739",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "smart-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-04-06",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-05-08",
+    "replyRate": 150,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "smart-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 64,
+    "priorityScore": 84
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-01T14:32:54.007Z",
+    "updatedAt": "2026-05-09T14:32:54.007Z",
+    "version": 1,
+    "dataHash": "095eb0ecdd4686d4",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

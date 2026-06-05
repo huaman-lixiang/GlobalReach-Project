@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00074",
+  "emailAccount": "account-001",
+  "basicInfo": {
+    "name": "John Wilson",
+    "email": "john.wilson@yahoo.com",
+    "company": "Imperial Robinson International",
+    "website": "www.imperialrobinsoninternational.com",
+    "country": "IE",
+    "countryName": "Ireland",
+    "timezone": "Europe/Dublin",
+    "language": "en",
+    "phone": "+8037406586515",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "rc-toys",
+      "educational",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-04-19",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-12",
+    "replyRate": 42,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "11:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 65,
+    "priorityScore": 75
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-07-17T14:32:51.716Z",
+    "updatedAt": "2026-05-09T14:32:51.716Z",
+    "version": 1,
+    "dataHash": "ed9b9258f9397af6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

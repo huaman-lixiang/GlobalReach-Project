@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06538",
+  "emailAccount": "account-066",
+  "basicInfo": {
+    "name": "Nicole Moore",
+    "email": "nicole.moore@company.com",
+    "company": "Star Brown Corp.",
+    "website": "www.starbrowncorp.com",
+    "country": "PH",
+    "countryName": "Philippines",
+    "timezone": "Asia/Manila",
+    "language": "en",
+    "phone": "+3900345585158",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-03-10",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 88,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-21T14:32:53.685Z",
+    "updatedAt": "2026-05-09T14:32:53.685Z",
+    "version": 1,
+    "dataHash": "1a155b8697f37062",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

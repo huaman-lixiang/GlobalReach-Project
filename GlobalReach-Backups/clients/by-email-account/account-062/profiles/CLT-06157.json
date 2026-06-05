@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06157",
+  "emailAccount": "account-062",
+  "basicInfo": {
+    "name": "Jason Taylor",
+    "email": "jason.taylor@gmail.com",
+    "company": "Alpha Thomas Distribution",
+    "website": "www.alphathomasdistribution.com",
+    "country": "VN",
+    "countryName": "Vietnam",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "language": "en",
+    "phone": "+8404740510735",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-04-29",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 23,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "12:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 62,
+    "priorityScore": 80
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-07-05T14:32:53.574Z",
+    "updatedAt": "2026-05-09T14:32:53.574Z",
+    "version": 1,
+    "dataHash": "b60cba92eb8c5631",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05194",
+  "emailAccount": "account-052",
+  "basicInfo": {
+    "name": "Pamela Brown",
+    "email": "pamela.brown@company.it",
+    "company": "Summit Hall WonderToys",
+    "website": "www.summithallwondertoys.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+930559284426",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "educational",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-04-04",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 17,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-05-05",
+    "replyRate": 35,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "13:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational",
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 77,
+    "priorityScore": 58
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-02-07T14:32:53.301Z",
+    "updatedAt": "2026-05-09T14:32:53.301Z",
+    "version": 1,
+    "dataHash": "32221893476ced83",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

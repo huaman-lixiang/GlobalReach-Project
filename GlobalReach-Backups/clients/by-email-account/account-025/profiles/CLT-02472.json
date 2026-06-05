@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02472",
+  "emailAccount": "account-025",
+  "basicInfo": {
+    "name": "Larry Jackson",
+    "email": "larry.jackson@gmail.com",
+    "company": "Omega Thompson PlayTime",
+    "website": "www.omegathompsonplaytime.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+5931215055850",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-28",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-05-02",
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 65,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-10-25T14:32:52.477Z",
+    "updatedAt": "2026-05-09T14:32:52.477Z",
+    "version": 1,
+    "dataHash": "d83631dcf5fa1b84",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

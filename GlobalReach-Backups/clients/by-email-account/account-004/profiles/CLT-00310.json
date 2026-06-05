@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00310",
+  "emailAccount": "account-004",
+  "basicInfo": {
+    "name": "Jeffrey Moore",
+    "email": "jeffrey.moore@gmail.com",
+    "company": "Summit Perez Distribution",
+    "website": "www.summitperezdistribution.com",
+    "country": "MA",
+    "countryName": "Morocco",
+    "timezone": "Africa/Casablanca",
+    "language": "en",
+    "phone": "+5902559454231",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-02-16",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-22",
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 78,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-12-02T14:32:51.790Z",
+    "updatedAt": "2026-05-09T14:32:51.790Z",
+    "version": 1,
+    "dataHash": "50f3c485d6b59a5f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04674",
+  "emailAccount": "account-047",
+  "basicInfo": {
+    "name": "Joshua Taylor",
+    "email": "joshua.taylor@company.com",
+    "company": "Premier Garcia International",
+    "website": "www.premiergarciainternational.com",
+    "country": "AE",
+    "countryName": "UAE",
+    "timezone": "Asia/Dubai",
+    "language": "ar",
+    "phone": "+4430867845826",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-02-17",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": null,
+    "replyRate": 175,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "16:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 67,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-02-21T14:32:53.150Z",
+    "updatedAt": "2026-05-09T14:32:53.150Z",
+    "version": 1,
+    "dataHash": "860d824e81edbd2b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

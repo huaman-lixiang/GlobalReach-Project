@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03530",
+  "emailAccount": "account-036",
+  "basicInfo": {
+    "name": "Kenneth Davis",
+    "email": "kenneth.davis@company.com",
+    "company": "Imaginative Clark Enterprises",
+    "website": "www.imaginativeclarkenterprises.com",
+    "country": "BE",
+    "countryName": "Belgium",
+    "timezone": "Europe/Brussels",
+    "language": "en",
+    "phone": "+6730635872305",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-03-27",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-04-28",
+    "replyRate": 150,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 95,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-04-02T14:32:52.803Z",
+    "updatedAt": "2026-05-09T14:32:52.803Z",
+    "version": 1,
+    "dataHash": "427b5f8b5d1a3101",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01888",
+  "emailAccount": "account-019",
+  "basicInfo": {
+    "name": "Thomas Green",
+    "email": "thomas.green@company.com",
+    "company": "Moon Ramirez Little Stars",
+    "website": "www.moonramirezlittlestars.com",
+    "country": "IL",
+    "countryName": "Israel",
+    "timezone": "Asia/Jerusalem",
+    "language": "en",
+    "phone": "+3521064965353",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2025-08-28",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 39,
+    "priorityScore": 99
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-05-04T14:32:52.282Z",
+    "updatedAt": "2026-05-09T14:32:52.282Z",
+    "version": 1,
+    "dataHash": "33007da56512d7c5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

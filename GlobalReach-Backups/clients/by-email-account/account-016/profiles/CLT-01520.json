@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01520",
+  "emailAccount": "account-016",
+  "basicInfo": {
+    "name": "Anna Torres",
+    "email": "anna.torres@gmail.com",
+    "company": "Star Johnson International",
+    "website": "www.starjohnsoninternational.com",
+    "country": "IL",
+    "countryName": "Israel",
+    "timezone": "Asia/Jerusalem",
+    "language": "en",
+    "phone": "+9615510636808",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-03-12",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "12:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 99,
+    "priorityScore": 77
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-05-06T14:32:52.171Z",
+    "updatedAt": "2026-05-09T14:32:52.171Z",
+    "version": 1,
+    "dataHash": "64fe0463f351a398",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-02693",
+  "emailAccount": "account-027",
+  "basicInfo": {
+    "name": "Kevin Hall",
+    "email": "kevin.hall@gmail.com",
+    "company": "Ultra King Ltd.",
+    "website": "www.ultrakingltd.com",
+    "country": "QA",
+    "countryName": "Qatar",
+    "timezone": "Asia/Qatar",
+    "language": "en",
+    "phone": "+8034597130608",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "infant-toddler",
+      "educational",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2015,
+    "lastContactDate": "2024-06-12",
+    "status": "sleeping",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 5,
+    "priorityScore": 59
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-12-24T14:32:52.549Z",
+    "updatedAt": "2026-05-09T14:32:52.549Z",
+    "version": 1,
+    "dataHash": "0e5a6aa4ace6faba",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

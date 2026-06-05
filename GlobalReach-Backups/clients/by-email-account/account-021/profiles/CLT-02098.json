@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02098",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Samuel Williams",
+    "email": "samuel.williams@outlook.com",
+    "company": "Prime Clark Corp.",
+    "website": "www.primeclarkcorp.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+4677420637984",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-03-21",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-23",
+    "replyRate": 31,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 97,
+    "priorityScore": 89
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-10-02T14:32:52.355Z",
+    "updatedAt": "2026-05-09T14:32:52.355Z",
+    "version": 1,
+    "dataHash": "3b5b7b1a952d4eab",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

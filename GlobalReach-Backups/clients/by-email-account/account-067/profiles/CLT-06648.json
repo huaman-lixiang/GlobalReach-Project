@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06648",
+  "emailAccount": "account-067",
+  "basicInfo": {
+    "name": "Jonathan Hernandez",
+    "email": "jonathan.hernandez@company.ca",
+    "company": "Star Lewis Imports",
+    "website": "www.starlewisimports.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+6174956326925",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "smart-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-04-26",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": null,
+    "replyRate": 83,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "15:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "smart-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 94,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-02-04T14:32:53.717Z",
+    "updatedAt": "2026-05-09T14:32:53.717Z",
+    "version": 1,
+    "dataHash": "18421afc66d518df",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

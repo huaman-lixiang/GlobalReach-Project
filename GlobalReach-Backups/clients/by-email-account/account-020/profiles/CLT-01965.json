@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01965",
+  "emailAccount": "account-020",
+  "basicInfo": {
+    "name": "Stephanie Adams",
+    "email": "stephanie.adams@outlook.com.au",
+    "company": "Whimsical Perez Co.",
+    "website": "www.whimsicalperezco.com.au",
+    "country": "AU",
+    "countryName": "Australia",
+    "timezone": "Australia/Sydney",
+    "language": "en",
+    "phone": "+7461108236282",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-04-11",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": null,
+    "replyRate": 114,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "12:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 99,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-07T14:32:52.307Z",
+    "updatedAt": "2026-05-09T14:32:52.307Z",
+    "version": 1,
+    "dataHash": "786032c2be05fc02",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

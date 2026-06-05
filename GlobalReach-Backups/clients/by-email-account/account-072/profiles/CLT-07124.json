@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07124",
+  "emailAccount": "account-072",
+  "basicInfo": {
+    "name": "Daniel Taylor",
+    "email": "daniel.taylor@company.com",
+    "company": "Creative Lee DreamPlay",
+    "website": "www.creativeleedreamplay.com",
+    "country": "PE",
+    "countryName": "Peru",
+    "timezone": "America/Lima",
+    "language": "en",
+    "phone": "+3727600484080",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-02-25",
+    "status": "churned",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 39,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-08-25T14:32:53.856Z",
+    "updatedAt": "2026-05-09T14:32:53.856Z",
+    "version": 1,
+    "dataHash": "0b120352d0b2047e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

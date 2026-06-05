@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07538",
+  "emailAccount": "account-076",
+  "basicInfo": {
+    "name": "Alexander Gonzalez",
+    "email": "alexander.gonzalez@company.com",
+    "company": "Imaginative Moore Corp.",
+    "website": "www.imaginativemoorecorp.com",
+    "country": "FI",
+    "countryName": "Finland",
+    "timezone": "Europe/Helsinki",
+    "language": "en",
+    "phone": "+784883289179",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-11-06",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 13,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "13:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 22,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-11-11T14:32:53.978Z",
+    "updatedAt": "2026-05-09T14:32:53.978Z",
+    "version": 1,
+    "dataHash": "3fb63ab1af345ca8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

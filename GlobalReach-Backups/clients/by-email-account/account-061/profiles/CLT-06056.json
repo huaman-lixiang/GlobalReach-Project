@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06056",
+  "emailAccount": "account-061",
+  "basicInfo": {
+    "name": "Donald Ramirez",
+    "email": "donald.ramirez@libero.it",
+    "company": "Whimsical Moore Kids World",
+    "website": "www.whimsicalmoorekidsworld.com",
+    "country": "IT",
+    "countryName": "Italy",
+    "timezone": "Europe/Rome",
+    "language": "en",
+    "phone": "+1737364958637",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-04-03",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-10",
+    "replyRate": 29,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 75,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-14T14:32:53.545Z",
+    "updatedAt": "2026-05-09T14:32:53.545Z",
+    "version": 1,
+    "dataHash": "3bf99f261a46c1ec",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

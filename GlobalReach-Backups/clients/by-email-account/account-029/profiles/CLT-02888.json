@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02888",
+  "emailAccount": "account-029",
+  "basicInfo": {
+    "name": "Ronald Thompson",
+    "email": "ronald.thompson@company.co.uk",
+    "company": "Fantastic Roberts Toys & Games",
+    "website": "www.fantasticrobertstoysgames.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+69329317959",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-03-12",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 17,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": "2026-05-09",
+    "replyRate": 12,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "10:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 65,
+    "priorityScore": 82
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-28T14:32:52.608Z",
+    "updatedAt": "2026-05-09T14:32:52.608Z",
+    "version": 1,
+    "dataHash": "5f62d82afb16c733",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

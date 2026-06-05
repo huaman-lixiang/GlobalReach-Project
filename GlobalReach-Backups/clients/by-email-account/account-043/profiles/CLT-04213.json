@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04213",
+  "emailAccount": "account-043",
+  "basicInfo": {
+    "name": "Stephanie Hill",
+    "email": "stephanie.hill@outlook.com",
+    "company": "Ultra Hernandez Kids World",
+    "website": "www.ultrahernandezkidsworld.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+1986128045453",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-04-24",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-05-08",
+    "replyRate": 117,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 65,
+    "priorityScore": 81
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-09-13T14:32:53.008Z",
+    "updatedAt": "2026-05-09T14:32:53.008Z",
+    "version": 1,
+    "dataHash": "d1ad8f637e1d0e74",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

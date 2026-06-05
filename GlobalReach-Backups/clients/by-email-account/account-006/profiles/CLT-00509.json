@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00509",
+  "emailAccount": "account-006",
+  "basicInfo": {
+    "name": "Stephanie Anderson",
+    "email": "stephanie.anderson@yahoo.com",
+    "company": "Star Gonzalez PlayTime",
+    "website": "www.stargonzalezplaytime.com",
+    "country": "TW",
+    "countryName": "Taiwan",
+    "timezone": "Asia/Taipei",
+    "language": "en",
+    "phone": "+9398197633845",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-05-01",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-30",
+    "replyRate": 400,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 82,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-01T14:32:51.854Z",
+    "updatedAt": "2026-05-09T14:32:51.854Z",
+    "version": 1,
+    "dataHash": "9a06a0a120155851",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02232",
+  "emailAccount": "account-023",
+  "basicInfo": {
+    "name": "Brenda Harris",
+    "email": "brenda.harris@company.com",
+    "company": "Prime Campbell WonderToys",
+    "website": "www.primecampbellwondertoys.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+3359202135130",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2024-09-08",
+    "status": "sleeping",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 16,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-06-25T14:32:52.400Z",
+    "updatedAt": "2026-05-09T14:32:52.400Z",
+    "version": 1,
+    "dataHash": "7fb9f08150ca5034",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

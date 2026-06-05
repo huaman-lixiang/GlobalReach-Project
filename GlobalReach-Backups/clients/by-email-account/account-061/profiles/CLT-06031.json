@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-06031",
+  "emailAccount": "account-061",
+  "basicInfo": {
+    "name": "Rachel Harris",
+    "email": "rachel.harris@yahoo.com",
+    "company": "Grand Rodriguez LLC",
+    "website": "www.grandrodriguezllc.com",
+    "country": "SE",
+    "countryName": "Sweden",
+    "timezone": "Europe/Stockholm",
+    "language": "en",
+    "phone": "+6931167783486",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-03-01",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 16,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": null,
+    "replyRate": 44,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "09:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 62,
+    "priorityScore": 57
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-02-19T14:32:53.538Z",
+    "updatedAt": "2026-05-09T14:32:53.538Z",
+    "version": 1,
+    "dataHash": "623441e3920b9f13",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

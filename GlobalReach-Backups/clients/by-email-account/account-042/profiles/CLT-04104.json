@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04104",
+  "emailAccount": "account-042",
+  "basicInfo": {
+    "name": "Larry Miller",
+    "email": "larry.miller@company.com",
+    "company": "Elite Hernandez Corp.",
+    "website": "www.elitehernandezcorp.com",
+    "country": "CO",
+    "countryName": "Colombia",
+    "timezone": "America/Bogota",
+    "language": "en",
+    "phone": "+4447277414841",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-03-01",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 13,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-19",
+    "replyRate": 62,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "12:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 84,
+    "priorityScore": 75
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-03-13T14:32:52.975Z",
+    "updatedAt": "2026-05-09T14:32:52.975Z",
+    "version": 1,
+    "dataHash": "8f329d0ab4b4402a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

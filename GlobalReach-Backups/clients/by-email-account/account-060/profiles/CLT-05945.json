@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05945",
+  "emailAccount": "account-060",
+  "basicInfo": {
+    "name": "Joshua Brown",
+    "email": "joshua.brown@outlook.com",
+    "company": "Prime Johnson International",
+    "website": "www.primejohnsoninternational.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+9137329258335",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-04-24",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 30,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 100,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-09-17T14:32:53.513Z",
+    "updatedAt": "2026-05-09T14:32:53.513Z",
+    "version": 1,
+    "dataHash": "a39ed1d891afeef9",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

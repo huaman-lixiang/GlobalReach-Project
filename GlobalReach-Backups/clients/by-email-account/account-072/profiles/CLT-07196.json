@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-07196",
+  "emailAccount": "account-072",
+  "basicInfo": {
+    "name": "Christine Ramirez",
+    "email": "christine.ramirez@outlook.com",
+    "company": "Prime Nguyen Ltd.",
+    "website": "www.primenguyenltd.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+9856375900256",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-02-24",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 40,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 6,
+    "priorityScore": 63
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-09-24T14:32:53.877Z",
+    "updatedAt": "2026-05-09T14:32:53.877Z",
+    "version": 1,
+    "dataHash": "cf039305a352dc99",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

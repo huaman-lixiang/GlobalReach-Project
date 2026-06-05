@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04553",
+  "emailAccount": "account-046",
+  "basicInfo": {
+    "name": "Samuel Hill",
+    "email": "samuel.hill@company.com",
+    "company": "Prime Martinez Co.",
+    "website": "www.primemartinezco.com",
+    "country": "HK",
+    "countryName": "Hong Kong",
+    "timezone": "Asia/Hong_Kong",
+    "language": "en",
+    "phone": "+5047220685285",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-03-04",
+    "status": "active",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "15:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 91,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-09-01T14:32:53.113Z",
+    "updatedAt": "2026-05-09T14:32:53.113Z",
+    "version": 1,
+    "dataHash": "762c6ded4a87e6e8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

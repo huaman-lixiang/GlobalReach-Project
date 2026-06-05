@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05210",
+  "emailAccount": "account-053",
+  "basicInfo": {
+    "name": "Sharon Thompson",
+    "email": "sharon.thompson@company.com",
+    "company": "Moon Williams Co.",
+    "website": "www.moonwilliamsco.com",
+    "country": "NG",
+    "countryName": "Nigeria",
+    "timezone": "Africa/Lagos",
+    "language": "en",
+    "phone": "+8402869531328",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2024-08-05",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 20,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 20,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-12-16T14:32:53.306Z",
+    "updatedAt": "2026-05-09T14:32:53.306Z",
+    "version": 1,
+    "dataHash": "6e0e68abf84967c1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

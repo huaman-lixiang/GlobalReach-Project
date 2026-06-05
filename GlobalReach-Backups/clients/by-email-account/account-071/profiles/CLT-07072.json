@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07072",
+  "emailAccount": "account-071",
+  "basicInfo": {
+    "name": "Anthony Gonzalez",
+    "email": "anthony.gonzalez@gmail.com",
+    "company": "Joyful Gonzalez International",
+    "website": "www.joyfulgonzalezinternational.com",
+    "country": "PE",
+    "countryName": "Peru",
+    "timezone": "America/Lima",
+    "language": "en",
+    "phone": "+1716142910408",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2025-09-23",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 24,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-05-31T14:32:53.841Z",
+    "updatedAt": "2026-05-09T14:32:53.841Z",
+    "version": 1,
+    "dataHash": "f339913810c9b35a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

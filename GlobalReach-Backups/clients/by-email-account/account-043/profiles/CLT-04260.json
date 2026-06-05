@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04260",
+  "emailAccount": "account-043",
+  "basicInfo": {
+    "name": "Stephen Hall",
+    "email": "stephen.hall@company.com",
+    "company": "Prime Jones Inc.",
+    "website": "www.primejonesinc.com",
+    "country": "HK",
+    "countryName": "Hong Kong",
+    "timezone": "Asia/Hong_Kong",
+    "language": "en",
+    "phone": "+6106301242778",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational",
+      "classic-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2025-03-29",
+    "status": "sleeping",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "12:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational",
+      "classic-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 9,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-09-05T14:32:53.022Z",
+    "updatedAt": "2026-05-09T14:32:53.022Z",
+    "version": 1,
+    "dataHash": "ab4f04974994cdb3",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-07318",
+  "emailAccount": "account-074",
+  "basicInfo": {
+    "name": "Stephanie Smith",
+    "email": "stephanie.smith@company.de",
+    "company": "Universal Carter Group",
+    "website": "www.universalcartergroup.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+228153799840",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-03-17",
+    "status": "active",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-25",
+    "replyRate": 26,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 75,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-04-23T14:32:53.913Z",
+    "updatedAt": "2026-05-09T14:32:53.913Z",
+    "version": 1,
+    "dataHash": "dbb6286f6db8b530",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-05605",
+  "emailAccount": "account-057",
+  "basicInfo": {
+    "name": "James Garcia",
+    "email": "james.garcia@gmail.com",
+    "company": "Imperial Robinson ToyBox",
+    "website": "www.imperialrobinsontoybox.com",
+    "country": "FI",
+    "countryName": "Finland",
+    "timezone": "Europe/Helsinki",
+    "language": "en",
+    "phone": "+2948376916181",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "outdoor",
+      "educational",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-04-04",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-27",
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "13:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 70,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-07-19T14:32:53.416Z",
+    "updatedAt": "2026-05-09T14:32:53.416Z",
+    "version": 1,
+    "dataHash": "0b975ef73d377d87",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

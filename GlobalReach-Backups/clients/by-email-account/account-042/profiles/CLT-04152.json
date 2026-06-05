@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04152",
+  "emailAccount": "account-042",
+  "basicInfo": {
+    "name": "Richard Perez",
+    "email": "richard.perez@company.com",
+    "company": "Sun Carter Group",
+    "website": "www.suncartergroup.com",
+    "country": "NO",
+    "countryName": "Norway",
+    "timezone": "Europe/Oslo",
+    "language": "en",
+    "phone": "+513479874750",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-02",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-05-04",
+    "replyRate": 32,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 64,
+    "priorityScore": 57
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-08-06T14:32:52.989Z",
+    "updatedAt": "2026-05-09T14:32:52.989Z",
+    "version": 1,
+    "dataHash": "36ef91390ed09ed9",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

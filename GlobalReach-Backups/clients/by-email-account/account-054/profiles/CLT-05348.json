@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05348",
+  "emailAccount": "account-054",
+  "basicInfo": {
+    "name": "Christopher Adams",
+    "email": "christopher.adams@company.com",
+    "company": "Moon Walker DreamPlay",
+    "website": "www.moonwalkerdreamplay.com",
+    "country": "EG",
+    "countryName": "Egypt",
+    "timezone": "Africa/Cairo",
+    "language": "en",
+    "phone": "+3292188777744",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-03-04",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": null,
+    "replyRate": 64,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "infant-toddler",
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 79,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-24T14:32:53.344Z",
+    "updatedAt": "2026-05-09T14:32:53.344Z",
+    "version": 1,
+    "dataHash": "dd08c90ebfe23fc4",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

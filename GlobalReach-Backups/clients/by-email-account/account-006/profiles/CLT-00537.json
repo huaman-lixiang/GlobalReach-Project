@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00537",
+  "emailAccount": "account-006",
+  "basicInfo": {
+    "name": "Donald Rivera",
+    "email": "donald.rivera@yahoo.com",
+    "company": "Global Lewis FunZone",
+    "website": "www.globallewisfunzone.com",
+    "country": "PT",
+    "countryName": "Portugal",
+    "timezone": "Europe/Lisbon",
+    "language": "en",
+    "phone": "+934134046863",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "classic-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2017,
+    "lastContactDate": "2025-01-01",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 33,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 13,
+    "priorityScore": 86
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-06T14:32:51.863Z",
+    "updatedAt": "2026-05-09T14:32:51.863Z",
+    "version": 1,
+    "dataHash": "394a30a7e29c4c9c",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

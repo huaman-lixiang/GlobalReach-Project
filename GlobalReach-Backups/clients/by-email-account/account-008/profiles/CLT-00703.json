@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00703",
+  "emailAccount": "account-008",
+  "basicInfo": {
+    "name": "Stephen Johnson",
+    "email": "stephen.johnson@company.co.uk",
+    "company": "Ultra Adams Distribution",
+    "website": "www.ultraadamsdistribution.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+6468120047655",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Toy Retail Chain",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-03-31",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-04-27",
+    "replyRate": 300,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "13:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 66,
+    "priorityScore": 52
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-08-01T14:32:51.914Z",
+    "updatedAt": "2026-05-09T14:32:51.914Z",
+    "version": 1,
+    "dataHash": "fb745d18bbe85175",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

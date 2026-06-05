@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00103",
+  "emailAccount": "account-002",
+  "basicInfo": {
+    "name": "Cynthia Mitchell",
+    "email": "cynthia.mitchell@company.com",
+    "company": "Super Allen Ltd.",
+    "website": "www.superallenltd.com",
+    "country": "NG",
+    "countryName": "Nigeria",
+    "timezone": "Africa/Lagos",
+    "language": "en",
+    "phone": "+7485559439125",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "outdoor",
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-03-04",
+    "status": "sleeping",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 31,
+    "priorityScore": 68
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-11-06T14:32:51.725Z",
+    "updatedAt": "2026-05-09T14:32:51.725Z",
+    "version": 1,
+    "dataHash": "66f86ac73980eb21",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

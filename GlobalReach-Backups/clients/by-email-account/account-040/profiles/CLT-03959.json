@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03959",
+  "emailAccount": "account-040",
+  "basicInfo": {
+    "name": "Robert Gonzalez",
+    "email": "robert.gonzalez@company.com",
+    "company": "Universal Thomas Imports",
+    "website": "www.universalthomasimports.com",
+    "country": "PT",
+    "countryName": "Portugal",
+    "timezone": "Europe/Lisbon",
+    "language": "en",
+    "phone": "+6413794319029",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2025-01-10",
+    "status": "churned",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 11,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "smart-toys",
+      "classic-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 25,
+    "priorityScore": 62
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-05-29T14:32:52.932Z",
+    "updatedAt": "2026-05-09T14:32:52.932Z",
+    "version": 1,
+    "dataHash": "75ddff253ad35472",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

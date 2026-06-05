@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-07481",
+  "emailAccount": "account-075",
+  "basicInfo": {
+    "name": "Jason Nelson",
+    "email": "jason.nelson@gmail.com",
+    "company": "Royal Ramirez Toys & Games",
+    "website": "www.royalramireztoysgames.ca",
+    "country": "CA",
+    "countryName": "Canada",
+    "timezone": "America/Toronto",
+    "language": "en",
+    "phone": "+2388849223802",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-04-09",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 17,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 18,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "13:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 72,
+    "priorityScore": 50
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-10-18T14:32:53.961Z",
+    "updatedAt": "2026-05-09T14:32:53.961Z",
+    "version": 1,
+    "dataHash": "427ff0d36fbcd03a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

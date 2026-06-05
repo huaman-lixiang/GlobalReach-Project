@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-02508",
+  "emailAccount": "account-026",
+  "basicInfo": {
+    "name": "Linda Carter",
+    "email": "linda.carter@company.com",
+    "company": "Mega Clark Toys & Games",
+    "website": "www.megaclarktoysgames.com",
+    "country": "TW",
+    "countryName": "Taiwan",
+    "timezone": "Asia/Taipei",
+    "language": "en",
+    "phone": "+3881774970284",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2024-09-09",
+    "status": "churned",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 14,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 27,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-07-31T14:32:52.489Z",
+    "updatedAt": "2026-05-09T14:32:52.489Z",
+    "version": 1,
+    "dataHash": "44d4087a124cedb6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

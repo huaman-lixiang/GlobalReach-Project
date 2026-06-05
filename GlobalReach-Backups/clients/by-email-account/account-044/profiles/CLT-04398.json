@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04398",
+  "emailAccount": "account-044",
+  "basicInfo": {
+    "name": "Anna Walker",
+    "email": "anna.walker@company.com",
+    "company": "Whimsical Johnson Imports",
+    "website": "www.whimsicaljohnsonimports.com",
+    "country": "PE",
+    "countryName": "Peru",
+    "timezone": "America/Lima",
+    "language": "en",
+    "phone": "+5477467100080",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2024,
+    "lastContactDate": "2024-05-30",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 29,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 29,
+    "priorityScore": 60
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-08-10T14:32:53.064Z",
+    "updatedAt": "2026-05-09T14:32:53.064Z",
+    "version": 1,
+    "dataHash": "2624c04de52a4c8a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-06697",
+  "emailAccount": "account-067",
+  "basicInfo": {
+    "name": "Emma Baker",
+    "email": "emma.baker@gmail.com",
+    "company": "Grand Young Enterprises",
+    "website": "www.grandyoungenterprises.com",
+    "country": "MY",
+    "countryName": "Malaysia",
+    "timezone": "Asia/Kuala_Lumpur",
+    "language": "en",
+    "phone": "+4223560774880",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational",
+      "smart-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-02-15",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-24",
+    "replyRate": 500,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "educational",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 79,
+    "priorityScore": 79
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-11-26T14:32:53.731Z",
+    "updatedAt": "2026-05-09T14:32:53.731Z",
+    "version": 1,
+    "dataHash": "dac75e02849f19ec",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

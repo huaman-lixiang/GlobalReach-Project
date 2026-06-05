@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00311",
+  "emailAccount": "account-004",
+  "basicInfo": {
+    "name": "Donna Lee",
+    "email": "donna.lee@outlook.com",
+    "company": "Prime Taylor Enterprises",
+    "website": "www.primetaylorenterprises.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+4935315391397",
+    "position": "Procurement Officer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2026-03-29",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": null,
+    "replyRate": 26,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "13:00",
+    "responsePattern": "quality-focused",
+    "interestProducts": [
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 78,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-04-10T14:32:51.790Z",
+    "updatedAt": "2026-05-09T14:32:51.790Z",
+    "version": 1,
+    "dataHash": "05e515c7a93f142f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

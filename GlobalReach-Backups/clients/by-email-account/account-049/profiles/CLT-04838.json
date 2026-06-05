@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-04838",
+  "emailAccount": "account-049",
+  "basicInfo": {
+    "name": "Mary Robinson",
+    "email": "mary.robinson@yahoo.com",
+    "company": "Ultra Robinson FunZone",
+    "website": "www.ultrarobinsonfunzone.com",
+    "country": "PT",
+    "countryName": "Portugal",
+    "timezone": "Europe/Lisbon",
+    "language": "en",
+    "phone": "+9576675615359",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "outdoor",
+      "smart-toys",
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2019,
+    "lastContactDate": "2024-09-08",
+    "status": "sleeping",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "smart-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 17,
+    "priorityScore": 51
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-08-24T14:32:53.200Z",
+    "updatedAt": "2026-05-09T14:32:53.200Z",
+    "version": 1,
+    "dataHash": "3abac2917367a01a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-01028",
+  "emailAccount": "account-011",
+  "basicInfo": {
+    "name": "Anna Carter",
+    "email": "anna.carter@company.com",
+    "company": "Pinnacle Davis ToyBox",
+    "website": "www.pinnacledavistoybox.com",
+    "country": "MA",
+    "countryName": "Morocco",
+    "timezone": "Africa/Casablanca",
+    "language": "en",
+    "phone": "+5291893637729",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "outdoor",
+      "infant-toddler",
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-09-22",
+    "status": "sleeping",
+    "preferredContactTime": "12:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor",
+      "infant-toddler"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 28,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-08-26T14:32:52.014Z",
+    "updatedAt": "2026-05-09T14:32:52.014Z",
+    "version": 1,
+    "dataHash": "6c338bcac2af76de",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

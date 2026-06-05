@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00058",
+  "emailAccount": "account-001",
+  "basicInfo": {
+    "name": "Elizabeth Martinez",
+    "email": "elizabeth.martinez@yahoo.co.uk",
+    "company": "Ultra Rivera Little Stars",
+    "website": "www.ultrariveralittlestars.co.uk",
+    "country": "GB",
+    "countryName": "United Kingdom",
+    "timezone": "Europe/London",
+    "language": "en",
+    "phone": "+7434870720535",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Gift Shop Chain",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2024,
+    "lastContactDate": "2026-02-17",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-26",
+    "replyRate": 250,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 82,
+    "priorityScore": 75
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-07-21T14:32:51.711Z",
+    "updatedAt": "2026-05-09T14:32:51.711Z",
+    "version": 1,
+    "dataHash": "99b5c262f5790749",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

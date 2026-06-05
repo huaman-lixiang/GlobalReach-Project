@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02035",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Kevin Harris",
+    "email": "kevin.harris@gmail.com",
+    "company": "Royal Hill Imports",
+    "website": "www.royalhillimports.com",
+    "country": "TW",
+    "countryName": "Taiwan",
+    "timezone": "Asia/Taipei",
+    "language": "en",
+    "phone": "+8009251817657",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2022,
+    "lastContactDate": "2025-04-30",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 14,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 15,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-08-10T14:32:52.332Z",
+    "updatedAt": "2026-05-09T14:32:52.332Z",
+    "version": 1,
+    "dataHash": "78851ea77a3e520a",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

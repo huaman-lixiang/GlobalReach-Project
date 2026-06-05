@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-04817",
+  "emailAccount": "account-049",
+  "basicInfo": {
+    "name": "Anna Jones",
+    "email": "anna.jones@gmail.com",
+    "company": "Premier Hall PlayTime",
+    "website": "www.premierhallplaytime.com",
+    "country": "MY",
+    "countryName": "Malaysia",
+    "timezone": "Asia/Kuala_Lumpur",
+    "language": "en",
+    "phone": "+6111122070231",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-11",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 18,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-04-23",
+    "replyRate": 28,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 85,
+    "priorityScore": 58
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-10-16T14:32:53.193Z",
+    "updatedAt": "2026-05-09T14:32:53.193Z",
+    "version": 1,
+    "dataHash": "f3d687eda4af2148",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05571",
+  "emailAccount": "account-056",
+  "basicInfo": {
+    "name": "Jennifer Miller",
+    "email": "jennifer.miller@gmail.com",
+    "company": "Prime White LLC",
+    "website": "www.primewhitellc.com",
+    "country": "KW",
+    "countryName": "Kuwait",
+    "timezone": "Asia/Kuwait",
+    "language": "en",
+    "phone": "+1043106731212",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2024-05-25",
+    "status": "sleeping",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 200,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "14:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 14,
+    "priorityScore": 69
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-13T14:32:53.406Z",
+    "updatedAt": "2026-05-09T14:32:53.406Z",
+    "version": 1,
+    "dataHash": "8200e7ecff7329c9",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

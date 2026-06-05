@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-00654",
+  "emailAccount": "account-007",
+  "basicInfo": {
+    "name": "Stephen Gonzalez",
+    "email": "stephen.gonzalez@company.de",
+    "company": "Creative Allen Distribution",
+    "website": "www.creativeallendistribution.de",
+    "country": "DE",
+    "countryName": "Germany",
+    "timezone": "Europe/Berlin",
+    "language": "de",
+    "phone": "+4471896019769",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2016,
+    "lastContactDate": "2026-04-21",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 17,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 6,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "16:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 62,
+    "priorityScore": 64
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-01-09T14:32:51.899Z",
+    "updatedAt": "2026-05-09T14:32:51.899Z",
+    "version": 1,
+    "dataHash": "876b119984b615c3",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

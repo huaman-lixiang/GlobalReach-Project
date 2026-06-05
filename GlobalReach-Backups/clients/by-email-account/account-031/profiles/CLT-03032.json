@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03032",
+  "emailAccount": "account-031",
+  "basicInfo": {
+    "name": "Elizabeth Green",
+    "email": "elizabeth.green@yahoo.com",
+    "company": "Royal Roberts Co.",
+    "website": "www.royalrobertsco.com",
+    "country": "IL",
+    "countryName": "Israel",
+    "timezone": "Asia/Jerusalem",
+    "language": "en",
+    "phone": "+7542972663495",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2023,
+    "lastContactDate": "2026-04-19",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 3,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-26",
+    "replyRate": 267,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "12:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 89,
+    "priorityScore": 83
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-09-01T14:32:52.652Z",
+    "updatedAt": "2026-05-09T14:32:52.652Z",
+    "version": 1,
+    "dataHash": "180c9e25bf113199",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

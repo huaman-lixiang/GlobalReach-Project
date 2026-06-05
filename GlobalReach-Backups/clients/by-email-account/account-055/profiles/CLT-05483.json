@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05483",
+  "emailAccount": "account-055",
+  "basicInfo": {
+    "name": "Amy Rodriguez",
+    "email": "amy.rodriguez@company.com",
+    "company": "Royal Hill Trading",
+    "website": "www.royalhilltrading.com",
+    "country": "KW",
+    "countryName": "Kuwait",
+    "timezone": "Asia/Kuwait",
+    "language": "en",
+    "phone": "+7317273776496",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2016,
+    "lastContactDate": "2025-07-10",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 17,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "15:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 24,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2026-01-05T14:32:53.381Z",
+    "updatedAt": "2026-05-09T14:32:53.381Z",
+    "version": 1,
+    "dataHash": "ce337b761ceebe54",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

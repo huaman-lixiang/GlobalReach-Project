@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04567",
+  "emailAccount": "account-046",
+  "basicInfo": {
+    "name": "Ryan Gonzalez",
+    "email": "ryan.gonzalez@gmail.com",
+    "company": "Apex Moore Kids World",
+    "website": "www.apexmoorekidsworld.com",
+    "country": "ZA",
+    "countryName": "South Africa",
+    "timezone": "Africa/Johannesburg",
+    "language": "en",
+    "phone": "+1504710304079",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-04-04",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-18",
+    "replyRate": 89,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 70,
+    "priorityScore": 62
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-11-05T14:32:53.117Z",
+    "updatedAt": "2026-05-09T14:32:53.117Z",
+    "version": 1,
+    "dataHash": "9d37228f62578ceb",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

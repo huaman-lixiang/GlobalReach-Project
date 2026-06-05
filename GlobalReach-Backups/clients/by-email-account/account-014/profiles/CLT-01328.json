@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01328",
+  "emailAccount": "account-014",
+  "basicInfo": {
+    "name": "Barbara Taylor",
+    "email": "barbara.taylor@company.com",
+    "company": "Summit Taylor Trading",
+    "website": "www.summittaylortrading.com",
+    "country": "TW",
+    "countryName": "Taiwan",
+    "timezone": "Asia/Taipei",
+    "language": "en",
+    "phone": "+5719028341334",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "11-50",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Shanghai Toy Expo",
+    "firstContactYear": 2022,
+    "lastContactDate": "2024-10-25",
+    "status": "sleeping",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 22,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 32,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-04-07T14:32:52.114Z",
+    "updatedAt": "2026-05-09T14:32:52.114Z",
+    "version": 1,
+    "dataHash": "5d535d505056f66f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

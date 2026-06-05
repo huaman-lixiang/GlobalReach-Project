@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00330",
+  "emailAccount": "account-004",
+  "basicInfo": {
+    "name": "Carol Mitchell",
+    "email": "carol.mitchell@company.fr",
+    "company": "Sun Martin Group",
+    "website": "www.sunmartingroup.fr",
+    "country": "FR",
+    "countryName": "France",
+    "timezone": "Europe/Paris",
+    "language": "fr",
+    "phone": "+5077697001284",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1000+",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Las Vegas Licensing Expo",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-05-06",
+    "status": "active",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": null,
+    "replyRate": 83,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "classic-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 95,
+    "priorityScore": 54
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-06-21T14:32:51.796Z",
+    "updatedAt": "2026-05-09T14:32:51.796Z",
+    "version": 1,
+    "dataHash": "6251ac7f69f95dcd",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-06434",
+  "emailAccount": "account-065",
+  "basicInfo": {
+    "name": "Richard Mitchell",
+    "email": "richard.mitchell@gmail.com",
+    "company": "Moon Martin PlayTime",
+    "website": "www.moonmartinplaytime.com",
+    "country": "QA",
+    "countryName": "Qatar",
+    "timezone": "Asia/Qatar",
+    "language": "en",
+    "phone": "+8729236190355",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "smart-toys",
+      "educational",
+      "classic-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Dubai Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2026-03-13",
+    "status": "active",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-04-22",
+    "replyRate": 43,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "12:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "smart-toys",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 99,
+    "priorityScore": 61
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-07-19T14:32:53.654Z",
+    "updatedAt": "2026-05-09T14:32:53.654Z",
+    "version": 1,
+    "dataHash": "e468bd91f39a81c6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

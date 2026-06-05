@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04914",
+  "emailAccount": "account-050",
+  "basicInfo": {
+    "name": "Amanda Jones",
+    "email": "amanda.jones@company.com",
+    "company": "Joyful Baker WonderToys",
+    "website": "www.joyfulbakerwondertoys.com",
+    "country": "QA",
+    "countryName": "Qatar",
+    "timezone": "Asia/Qatar",
+    "language": "en",
+    "phone": "+454155751310",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "infant-toddler"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2023,
+    "lastContactDate": "2024-11-16",
+    "status": "churned",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 10,
+    "priorityScore": 63
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-12-17T14:32:53.222Z",
+    "updatedAt": "2026-05-09T14:32:53.222Z",
+    "version": 1,
+    "dataHash": "9a056981799e6137",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00451",
+  "emailAccount": "account-005",
+  "basicInfo": {
+    "name": "Rachel Smith",
+    "email": "rachel.smith@gmail.com",
+    "company": "Bright Martinez Kids World",
+    "website": "www.brightmartinezkidsworld.com",
+    "country": "US",
+    "countryName": "United States",
+    "timezone": "America/New_York",
+    "language": "en",
+    "phone": "+7602562816830",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "501-1000",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Moscow Toy Show",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-04-13",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 8,
+    "lastReplyDate": "2026-04-24",
+    "replyRate": 114,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "12:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 89,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-07-17T14:32:51.835Z",
+    "updatedAt": "2026-05-09T14:32:51.835Z",
+    "version": 1,
+    "dataHash": "fbd0ddcb4c065b20",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

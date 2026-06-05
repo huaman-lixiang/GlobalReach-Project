@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02032",
+  "emailAccount": "account-021",
+  "basicInfo": {
+    "name": "Michelle Nguyen",
+    "email": "michelle.nguyen@yahoo.com",
+    "company": "Mighty Williams Kids World",
+    "website": "www.mightywilliamskidsworld.com",
+    "country": "TR",
+    "countryName": "Turkey",
+    "timezone": "Europe/Istanbul",
+    "language": "en",
+    "phone": "+3442792627296",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "201-500",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2017,
+    "lastContactDate": "2026-03-09",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 5,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": "2026-04-12",
+    "replyRate": 60,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "15:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 75,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-12-30T14:32:52.331Z",
+    "updatedAt": "2026-05-09T14:32:52.331Z",
+    "version": 1,
+    "dataHash": "f296c77767a49731",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

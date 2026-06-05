@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01223",
+  "emailAccount": "account-013",
+  "basicInfo": {
+    "name": "Matthew Torres",
+    "email": "matthew.torres@yahoo.com",
+    "company": "Bright Gonzalez Little Stars",
+    "website": "www.brightgonzalezlittlestars.com",
+    "country": "SE",
+    "countryName": "Sweden",
+    "timezone": "Europe/Stockholm",
+    "language": "en",
+    "phone": "+3614108366646",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-05-04",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-13",
+    "replyRate": 44,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "10:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 87,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-09-30T14:32:52.081Z",
+    "updatedAt": "2026-05-09T14:32:52.081Z",
+    "version": 1,
+    "dataHash": "852e8fea51b5efbd",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

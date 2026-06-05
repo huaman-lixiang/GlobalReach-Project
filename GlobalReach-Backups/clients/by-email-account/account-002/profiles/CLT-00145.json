@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00145",
+  "emailAccount": "account-002",
+  "basicInfo": {
+    "name": "Cynthia Nguyen",
+    "email": "cynthia.nguyen@yahoo.com",
+    "company": "Zenith Wilson Inc.",
+    "website": "www.zenithwilsoninc.com",
+    "country": "CO",
+    "countryName": "Colombia",
+    "timezone": "America/Bogota",
+    "language": "en",
+    "phone": "+8237756115708",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "classic-toys",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1000+",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-02-20",
+    "status": "active",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": "2026-05-03",
+    "replyRate": 25,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "13:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "classic-toys",
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 68,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-12-21T14:32:51.738Z",
+    "updatedAt": "2026-05-09T14:32:51.738Z",
+    "version": 1,
+    "dataHash": "6c36d93947b3e6c8",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

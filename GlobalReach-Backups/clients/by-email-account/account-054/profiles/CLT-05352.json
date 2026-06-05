@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-05352",
+  "emailAccount": "account-054",
+  "basicInfo": {
+    "name": "Andrew Robinson",
+    "email": "andrew.robinson@company.com",
+    "company": "Star Rivera Imports",
+    "website": "www.starriveraimports.com",
+    "country": "TW",
+    "countryName": "Taiwan",
+    "timezone": "Asia/Taipei",
+    "language": "en",
+    "phone": "+4695178939427",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2024-06-03",
+    "status": "sleeping",
+    "preferredContactTime": "17:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 22,
+    "priorityScore": 55
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-07-12T14:32:53.345Z",
+    "updatedAt": "2026-05-09T14:32:53.345Z",
+    "version": 1,
+    "dataHash": "6b221f358435a261",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

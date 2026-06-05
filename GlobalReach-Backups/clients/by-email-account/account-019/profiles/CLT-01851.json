@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-01851",
+  "emailAccount": "account-019",
+  "basicInfo": {
+    "name": "Melissa Allen",
+    "email": "melissa.allen@gmail.com",
+    "company": "Apex Harris International",
+    "website": "www.apexharrisinternational.com",
+    "country": "CO",
+    "countryName": "Colombia",
+    "timezone": "America/Bogota",
+    "language": "en",
+    "phone": "+3436148178357",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "201-500",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2022,
+    "lastContactDate": "2026-02-16",
+    "status": "active",
+    "preferredContactTime": "11:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 11,
+    "totalRepliesReceived": 5,
+    "lastReplyDate": "2026-05-02",
+    "replyRate": 45,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "13:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 77,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-09-22T14:32:52.271Z",
+    "updatedAt": "2026-05-09T14:32:52.271Z",
+    "version": 1,
+    "dataHash": "aa1ded94e3fd28f5",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

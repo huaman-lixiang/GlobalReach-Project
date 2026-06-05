@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04166",
+  "emailAccount": "account-042",
+  "basicInfo": {
+    "name": "John Jackson",
+    "email": "john.jackson@gmail.com",
+    "company": "Omega Young Happy Kids",
+    "website": "www.omegayounghappykids.com",
+    "country": "CO",
+    "countryName": "Colombia",
+    "timezone": "America/Bogota",
+    "language": "en",
+    "phone": "+1717206974832",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Import Export Company",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$50M+",
+    "firstContactExhibition": "London Toy Fair",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-03-02",
+    "status": "churned",
+    "preferredContactTime": "09:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 1,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": null,
+    "replyRate": 100,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 6,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-02-04T14:32:52.994Z",
+    "updatedAt": "2026-05-09T14:32:52.994Z",
+    "version": 1,
+    "dataHash": "33317c38b5f10b35",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-03837",
+  "emailAccount": "account-039",
+  "basicInfo": {
+    "name": "Emily Thompson",
+    "email": "emily.thompson@company.com",
+    "company": "Royal Nelson Little Stars",
+    "website": "www.royalnelsonlittlestars.com",
+    "country": "FI",
+    "countryName": "Finland",
+    "timezone": "Europe/Helsinki",
+    "language": "en",
+    "phone": "+4116541548029",
+    "position": "Owner",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2022,
+    "lastContactDate": "2026-04-13",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-15",
+    "replyRate": 37,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Wednesday",
+    "optimalTime": "09:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "rc-toys",
+      "smart-toys"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 67,
+    "priorityScore": 66
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-03-09T14:32:52.896Z",
+    "updatedAt": "2026-05-09T14:32:52.896Z",
+    "version": 1,
+    "dataHash": "7ce41325b42b87c1",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

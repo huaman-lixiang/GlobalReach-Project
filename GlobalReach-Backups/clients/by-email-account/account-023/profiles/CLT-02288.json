@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-02288",
+  "emailAccount": "account-023",
+  "basicInfo": {
+    "name": "Laura Smith",
+    "email": "laura.smith@company.com",
+    "company": "Star Campbell Little Stars",
+    "website": "www.starcampbelllittlestars.com",
+    "country": "TR",
+    "countryName": "Turkey",
+    "timezone": "Europe/Istanbul",
+    "language": "en",
+    "phone": "+3096572080858",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "51-200",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Hong Kong Toys & Games Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-02-16",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-04-20",
+    "replyRate": 86,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 84,
+    "priorityScore": 98
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-01-24T14:32:52.417Z",
+    "updatedAt": "2026-05-09T14:32:52.417Z",
+    "version": 1,
+    "dataHash": "0360799ce0d3227d",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

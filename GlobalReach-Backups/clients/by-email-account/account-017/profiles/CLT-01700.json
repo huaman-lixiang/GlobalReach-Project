@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-01700",
+  "emailAccount": "account-017",
+  "basicInfo": {
+    "name": "Laura Jones",
+    "email": "laura.jones@yahoo.com",
+    "company": "Alpha Clark Happy Kids",
+    "website": "www.alphaclarkhappykids.com",
+    "country": "AE",
+    "countryName": "UAE",
+    "timezone": "Asia/Dubai",
+    "language": "ar",
+    "phone": "+2790948863053",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "51-200",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-03-28",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 19,
+    "totalRepliesReceived": 4,
+    "lastReplyDate": "2026-04-22",
+    "replyRate": 21,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 100,
+    "priorityScore": 60
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-04-11T14:32:52.225Z",
+    "updatedAt": "2026-05-09T14:32:52.225Z",
+    "version": 1,
+    "dataHash": "40a7f03e66c7d3af",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

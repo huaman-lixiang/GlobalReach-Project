@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalReach 文件同步说明</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            padding: 15px;
+            border-left: 4px solid #28a745;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .info {
+            background-color: #d1ecf1;
+            padding: 15px;
+            border-left: 4px solid #17a2b8;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        ul {
+            line-height: 1.8;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span class="emoji">🔄</span> GlobalReach 文件同步说明文档</h1>
+        
+        <div class="highlight">
+            <h3>⚠️ 重要提示：双轨制工作区架构</h3>
+            <p>由于系统安全限制，本项目采用<strong>双轨制文件管理架构</strong>：</p>
+            <ul>
+                <li><strong>C盘工作区</strong>: AI开发和文件管理的主区域（AI可完全操作）</li>
+                <li><strong>D盘发布区</strong>: 您的正式工作区（通过同步获取最新文档）</li>
+            </ul>
+        </div>
+
+        <h2><span class="emoji">📂</span> 目录结构说明</h2>
+        
+        <div class="info">
+            <h3>📍 C盘主工作区 (AI操作区域)</h3>
+            <pre><code>C:\Users\Administrator\Documents\trae_projects\GlobalReach-Project\
+├── 📁 01-CORE-DOCUMENTS\     ← ⭐ 9大核心文档（始终最新版本）
+├── 📁 02-DEVELOPMENT\         ← 开发中的临时文件
+├── 📁 03-TEMPLATES\           ← 可复用模板
+├── 📁 04-ARCHIVED\            ← 历史版本归档
+├── 📁 05-SCRIPTS\             ← 自动化工具脚本
+└── 📄 PROJECT-MANIFEST.json   ← 项目清单与配置</code></pre>
+        </div>
+
+        <div class="success">
+            <h3>🎯 D盘发布区 (您的工作区域)</h3>
+            <pre><code>D:\trae\1海外客户业务拓展-GlobalReach系统\
+├── 📁 01-CORE-DOCUMENTS\     ← 从C盘同步的核心文档
+└── 📄 README-SYNC.html       ← 本说明文件</code></pre>
+        </div>
+
+        <h2><span class="emoji">🚀</span> 快速开始指南</h2>
+
+        <h3>步骤 1: 获取最新文档（首次使用或更新后）</h3>
+        <p>打开 PowerShell，执行以下命令：</p>
+        <pre><code># 进入脚本目录
+cd "C:\Users\Administrator\Documents\trae_projects\GlobalReach-Project\05-SCRIPTS"
+
+# 执行智能同步
+.\smart-sync.ps1 -Mode Full -Verbose</code></pre>
+
+        <h3>步骤 2: 验证同步结果</h3>
+        <p>检查D盘目录确认文件已更新：</p>
+        <pre><code># 查看D盘核心文档
+dir "D:\trae\1海外客户业务拓展-GlobalReach系统\01-CORE-DOCUMENTS"</code></pre>
+
+        <h2><span class="emoji">🛠️</span> 可用工具说明</h2>
+
+        <h3>1. 智能同步工具 (smart-sync.ps1)</h3>
+        <table style="width:100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background-color: #f2f2f2;">
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">模式</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">用途</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">命令示例</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><strong>Auto</strong> (默认)</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">仅同步变更的文件，跳过未修改的</td>
+                <td style="padding: 10px; border: 1px solid #ddd;"><code>.\smart-sync.ps1</code></td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><strong>Full</strong></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">强制同步所有文件，确保完全一致</td>
+                <td style="padding: 10px; border: 1px solid #ddd;"><code>.\smart-sync.ps1 -Mode Full</code></td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;"><strong>DryRun</strong></td>
+                <td style="padding: 10px; border: 1px solid #ddd;">预览模式，显示将要执行的操作但不实际运行</td>
+                <td style="padding: 10px; border: 1px solid #ddd;"><code>.\smart-sync.ps1 -Mode DryRun</code></td>
+            </tr>
+        </table>
+
+        <h3>2. 文件清理工具 (cleanup-redundant.ps1)</h3>
+        <p>当发现C盘根目录有散落的项目文件时使用：</p>
+        <pre><code># 预览将要清理的文件（不实际删除）
+.\cleanup-redundant.ps1 -WhatIf
+
+# 执行实际清理
+.\cleanup-redundant.ps1</code></pre>
+
+        <h3>3. 项目初始化工具 (init-project.ps1)</h3>
+        <p>如果目录结构被破坏，重新创建标准结构：</p>
+        <pre><code>.\init-project.ps1</code></pre>
+
+        <h2><span class="emoji">📋</span> 核心文档清单</h2>
+        
+        <p>以下9个核心文档已准备就绪，可通过同步获取到D盘：</p>
+        
+        <ol style="line-height: 2;">
+            <li><strong>GLOBALREACH_PROJECT_FULL_PROPOSAL_v1.0.md</strong> - 项目全案</li>
+            <li><strong>GLOBALREACH_CONSTITUTION_v1.0.md</strong> - 项目宪法</li>
+            <li><strong>GLOBALREACH_COMPLETENESS_MATRIX_100_v1.0.md</strong> - 完整度矩阵</li>
+            <li><strong>GLOBALREACH_SESSION_START_v1.0.md</strong> - 自执行协议</li>
+            <li><strong>GLOBALREACH_ULTIMATE_START_COMMAND_v1.0.md</strong> - 终极启动指令</li>
+            <li><strong>GLOBALREACH_USER_TRAINING_MANUAL_v1.0.md</strong> - 使用培训手册</li>
+            <li><strong>GLOBALREACH_MARKETING_COPY_v1.0.md</strong> - 社媒宣传文案</li>
+            <li><strong>GLOBALREACH_BUSINESS_VALUE_REPORT_v1.0.md</strong> - 商业价值报告</li>
+            <li><strong>GLOBALREACH_AI_DIGITAL_EMPLOYEE_v1.0.md</strong> - AI数字员工白皮书</li>
+        </ol>
+
+        <h2><span class="emoji">❓</span> 常见问题 FAQ</h2>
+
+        <h3>Q: 为什么需要这种复杂的同步机制？</h3>
+        <p><strong>A:</strong> Trae IDE出于安全考虑限制了文件操作范围。AI只能在指定的C盘目录内工作，无法直接访问您的D盘工作区。因此我们设计了这套自动化的同步机制来确保您能及时获得最新的项目文档。</p>
+
+        <h3>Q: 如何确保我的D盘文档是最新的？</h3>
+        <p><strong>A:</strong> 建议在每次重要开发完成后运行一次同步：<code>.\smart-sync.ps1 -Mode Full</code></p>
+
+        <h3>Q: 如果发现文件散乱怎么办？</h3>
+        <p><strong>A:</strong> 运行清理脚本：<code>.\cleanup-redundant.ps1</code>，它会自动将散落的文件归档到正确位置。</p>
+
+        <h3>Q: 可以修改这个同步规则吗？</h3>
+        <p><strong>A:</strong> 可以！编辑 <code>PROJECT-MANIFEST.json</code> 和 <code>FILE-ARCHIVE-SYSTEM-v2.0.md</code> 来自定义规则。</p>
+
+        <h2><span class="emoji">📞</span> 技术支持</h2>
+        
+        <div class="info">
+            <p><strong>遇到问题？</strong> 请检查以下几点：</p>
+            <ul>
+                <li>✅ 确认PowerShell以管理员身份运行</li>
+                <li>✅ 检查C盘和D盘都有足够的磁盘空间</li>
+                <li>✅ 查看同步日志文件了解详细错误信息</li>
+                <li>✅ 确认目标目录存在且有写入权限</li>
+            </ul>
+        </div>
+
+        <hr style="margin: 30px 0; border: none; border-top: 2px solid #eee;">
+        
+        <p style="text-align: center; color: #666; font-size: 0.9em;">
+            <strong>GlobalReach 双轨制文件管理系统 v2.0</strong><br>
+            最后更新: 2026-05-09 | 维护者: GlobalReach 项目团队<br>
+            <em>让项目管理更简单、更高效、更有序</em> 🎯
+        </p>
+    </div>
+</body>
+</html>

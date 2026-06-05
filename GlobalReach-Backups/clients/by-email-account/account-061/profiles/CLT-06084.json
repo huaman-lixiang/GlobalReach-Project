@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-06084",
+  "emailAccount": "account-061",
+  "basicInfo": {
+    "name": "Helen Wright",
+    "email": "helen.wright@company.com",
+    "company": "Summit Rivera WonderToys",
+    "website": "www.summitriverawondertoys.com",
+    "country": "CO",
+    "countryName": "Colombia",
+    "timezone": "America/Bogota",
+    "language": "en",
+    "phone": "+6177331469014",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "501-1000",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "Bangkok Toys & Games Fair",
+    "firstContactYear": 2020,
+    "lastContactDate": "2026-02-25",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 30,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "16:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "infant-toddler",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 98,
+    "priorityScore": 67
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-03T14:32:53.553Z",
+    "updatedAt": "2026-05-09T14:32:53.553Z",
+    "version": 1,
+    "dataHash": "136dfcc6a4f2d2be",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

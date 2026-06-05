@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-00651",
+  "emailAccount": "account-007",
+  "basicInfo": {
+    "name": "Betty Clark",
+    "email": "betty.clark@yahoo.com",
+    "company": "Royal Hall ToyBox",
+    "website": "www.royalhalltoybox.com",
+    "country": "KW",
+    "countryName": "Kuwait",
+    "timezone": "Asia/Kuwait",
+    "language": "en",
+    "phone": "+4093606062641",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Wholesaler",
+    "purchaseCategory": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2017,
+    "lastContactDate": "2025-12-19",
+    "status": "sleeping",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 7,
+    "totalRepliesReceived": 0,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys",
+      "outdoor"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 35,
+    "priorityScore": 53
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-10-28T14:32:51.898Z",
+    "updatedAt": "2026-05-09T14:32:51.898Z",
+    "version": 1,
+    "dataHash": "42aa0d9d4daf2659",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

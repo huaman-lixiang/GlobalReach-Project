@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05662",
+  "emailAccount": "account-057",
+  "basicInfo": {
+    "name": "Carol Scott",
+    "email": "carol.scott@yahoo.com",
+    "company": "Universal Baker Inc.",
+    "website": "www.universalbakerinc.com",
+    "country": "KE",
+    "countryName": "Kenya",
+    "timezone": "Africa/Nairobi",
+    "language": "en",
+    "phone": "+5878795673889",
+    "position": "Category Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2026-03-27",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 22,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Tuesday",
+    "optimalTime": "16:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "classic-toys",
+      "outdoor"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 63,
+    "priorityScore": 96
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-08-14T14:32:53.432Z",
+    "updatedAt": "2026-05-09T14:32:53.432Z",
+    "version": 1,
+    "dataHash": "6399617bafb05e0b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

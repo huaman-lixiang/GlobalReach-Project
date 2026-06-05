@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-03003",
+  "emailAccount": "account-031",
+  "basicInfo": {
+    "name": "Alexander Green",
+    "email": "alexander.green@company.com",
+    "company": "Creative Martin PlayTime",
+    "website": "www.creativemartinplaytime.com",
+    "country": "RU",
+    "countryName": "Russia",
+    "timezone": "Europe/Moscow",
+    "language": "en",
+    "phone": "+36605223972",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$100K-$500K",
+    "firstContactExhibition": "Mexico Toy Expo",
+    "firstContactYear": 2025,
+    "lastContactDate": "2025-12-06",
+    "status": "churned",
+    "preferredContactTime": "14:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 9,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 22,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "11:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 25,
+    "priorityScore": 80
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2021-11-29T14:32:52.643Z",
+    "updatedAt": "2026-05-09T14:32:52.643Z",
+    "version": 1,
+    "dataHash": "26e08cfb3e60890f",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

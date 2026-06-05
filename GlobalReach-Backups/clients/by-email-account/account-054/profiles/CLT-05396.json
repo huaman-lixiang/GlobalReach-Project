@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-05396",
+  "emailAccount": "account-054",
+  "basicInfo": {
+    "name": "Amy Scott",
+    "email": "amy.scott@company.com",
+    "company": "Alpha Robinson ToyBox",
+    "website": "www.alpharobinsontoybox.com",
+    "country": "RU",
+    "countryName": "Russia",
+    "timezone": "Europe/Moscow",
+    "language": "en",
+    "phone": "+9985644662166",
+    "position": "Buyer",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "C",
+    "industry": "Online Marketplace",
+    "purchaseCategory": [
+      "classic-toys",
+      "rc-toys",
+      "smart-toys"
+    ],
+    "estimatedVolume": "small",
+    "companySize": "11-50",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "New York Toy Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-04-03",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 4,
+    "totalRepliesReceived": 3,
+    "lastReplyDate": null,
+    "replyRate": 75,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "09:00",
+    "responsePattern": "considerate",
+    "interestProducts": [
+      "classic-toys",
+      "rc-toys"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 65,
+    "priorityScore": 65
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-12-30T14:32:53.357Z",
+    "updatedAt": "2026-05-09T14:32:53.357Z",
+    "version": 1,
+    "dataHash": "68816b6593b236d6",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,71 @@
+# GlobalReach V2.0 — .gitignore
+# S076: Production-ready gitignore
+
+# === Dependencies ===
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# === Build Output ===
+dist/
+build/
+.next/
+out/
+
+# === Environment & Secrets ===
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+api/.env
+
+# === Docker ===
+docker-compose.override.yml
+
+# === SSL Certificates (private keys) ===
+nginx/ssl/**/*.key
+ssl/**/*.key
+!nginx/ssl/**/example.key
+
+# === Logs ===
+logs/
+*.log
+pm2-*.log
+
+# === OS Files ===
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# === IDE ===
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# === Test Coverage ===
+coverage/
+.nyc_output/
+
+# === Temporary Files ===
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# === Database ===
+*.sqlite
+*.sqlite3
+*.db
+
+# === Session Reports (optional - keep in repo) ===
+# 02-ENTERPRISE-REPORTS/  ← Intentionally included
+
+# === Load Test Scripts (dev tools) ===
+scripts/s075-*.js

@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05097",
+  "emailAccount": "account-051",
+  "basicInfo": {
+    "name": "Emma Wright",
+    "email": "emma.wright@company.com",
+    "company": "Playful Miller ToyBox",
+    "website": "www.playfulmillertoybox.com",
+    "country": "RU",
+    "countryName": "Russia",
+    "timezone": "Europe/Moscow",
+    "language": "en",
+    "phone": "+8482305314950",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "A",
+    "industry": "Distributor",
+    "purchaseCategory": [
+      "outdoor",
+      "educational"
+    ],
+    "estimatedVolume": "large",
+    "companySize": "11-50",
+    "annualRevenue": "$10M-$50M",
+    "firstContactExhibition": "São Paulo Toy Fair",
+    "firstContactYear": 2018,
+    "lastContactDate": "2026-05-02",
+    "status": "active",
+    "preferredContactTime": "10:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 2,
+    "totalRepliesReceived": 1,
+    "lastReplyDate": "2026-04-16",
+    "replyRate": 50,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "09:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "outdoor",
+      "educational"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 68,
+    "priorityScore": 97
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-09-16T14:32:53.273Z",
+    "updatedAt": "2026-05-09T14:32:53.273Z",
+    "version": 1,
+    "dataHash": "66c1fbf800e3b586",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04639",
+  "emailAccount": "account-047",
+  "basicInfo": {
+    "name": "Mary Perez",
+    "email": "mary.perez@gmail.com",
+    "company": "Moon Scott DreamPlay",
+    "website": "www.moonscottdreamplay.com",
+    "country": "RU",
+    "countryName": "Russia",
+    "timezone": "Europe/Moscow",
+    "language": "en",
+    "phone": "+7771392013882",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Supermarket",
+    "purchaseCategory": [
+      "rc-toys"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$500K-$2M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2021,
+    "lastContactDate": "2024-09-30",
+    "status": "churned",
+    "preferredContactTime": "08:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 0,
+    "totalRepliesReceived": 2,
+    "lastReplyDate": null,
+    "replyRate": 0,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Thursday",
+    "optimalTime": "16:00",
+    "responsePattern": null,
+    "interestProducts": [
+      "rc-toys"
+    ],
+    "stylePreference": "friendly",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 26,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2024-04-22T14:32:53.139Z",
+    "updatedAt": "2026-05-09T14:32:53.139Z",
+    "version": 1,
+    "dataHash": "d99aa1cf0f97f55b",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

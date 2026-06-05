@@ -1,0 +1,63 @@
+{
+  "clientId": "CLT-05256",
+  "emailAccount": "account-053",
+  "basicInfo": {
+    "name": "Alexander White",
+    "email": "alexander.white@company.com",
+    "company": "Super Miller Group",
+    "website": "www.supermillergroup.com",
+    "country": "KE",
+    "countryName": "Kenya",
+    "timezone": "Africa/Nairobi",
+    "language": "en",
+    "phone": "+9932373281804",
+    "position": "Purchasing Manager",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "E-commerce Platform",
+    "purchaseCategory": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "51-200",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Tokyo Gift Show",
+    "firstContactYear": 2019,
+    "lastContactDate": "2026-03-27",
+    "status": "active",
+    "preferredContactTime": "15:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 10,
+    "totalRepliesReceived": 6,
+    "lastReplyDate": "2026-04-21",
+    "replyRate": 60,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Monday",
+    "optimalTime": "11:00",
+    "responsePattern": "quick-responder",
+    "interestProducts": [
+      "rc-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "professional",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 78,
+    "priorityScore": 87
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2023-07-05T14:32:53.318Z",
+    "updatedAt": "2026-05-09T14:32:53.318Z",
+    "version": 1,
+    "dataHash": "035c737d353f7dbf",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "clientId": "CLT-00887",
+  "emailAccount": "account-009",
+  "basicInfo": {
+    "name": "Gregory Hall",
+    "email": "gregory.hall@company.com",
+    "company": "Star Scott Toys & Games",
+    "website": "www.starscotttoysgames.com",
+    "country": "KE",
+    "countryName": "Kenya",
+    "timezone": "Africa/Nairobi",
+    "language": "en",
+    "phone": "+262675527488",
+    "position": "CEO",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Department Store",
+    "purchaseCategory": [
+      "smart-toys",
+      "infant-toddler",
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "1-10",
+    "annualRevenue": "$2M-$10M",
+    "firstContactExhibition": "Nuremberg Toy Fair",
+    "firstContactYear": 2026,
+    "lastContactDate": "2026-03-09",
+    "status": "active",
+    "preferredContactTime": "13:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 6,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-05-06",
+    "replyRate": 117,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "14:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "smart-toys",
+      "infant-toddler"
+    ],
+    "stylePreference": "formal",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 73,
+    "priorityScore": 85
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2025-04-23T14:32:51.969Z",
+    "updatedAt": "2026-05-09T14:32:51.969Z",
+    "version": 1,
+    "dataHash": "081ac17b3153079e",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}

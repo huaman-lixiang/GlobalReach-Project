@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-05-09T13:49:40.917Z",
+  "system": "GlobalReach v1.0 Product Knowledge Base",
+  "catalog_summary": {
+    "total_products": 11,
+    "categories": [
+      "rc-toys",
+      "smart-toys",
+      "classic-toys"
+    ],
+    "total_skus": 11,
+    "active_products": 11,
+    "avg_popularity": 89,
+    "price_range_global": {
+      "min_fob": "$6.00",
+      "max_fob": "$42.00"
+    }
+  },
+  "category_breakdown": {
+    "rc-toys": {
+      "count": 6,
+      "subcategories": [
+        "racing-cars",
+        "off-road",
+        "drones",
+        "boats",
+        "construction",
+        "robots"
+      ],
+      "description": "Remote control toys including cars, drones, boats, and robots"
+    },
+    "smart-toys": {
+      "count": 3,
+      "subcategories": [
+        "coding-kits",
+        "ar-vr",
+        "interactive"
+      ],
+      "description": "Technology-integrated toys featuring coding, AR/VR, and AI"
+    },
+    "classic-toys": {
+      "count": 2,
+      "subcategories": [
+        "building-blocks",
+        "board-games"
+      ],
+      "description": "Traditional evergreen toys with proven market demand"
+    }
+  },
+  "target_market_coverage": {
+    "regions_served": [
+      "North America",
+      "Western Europe",
+      "Eastern Europe",
+      "East Asia",
+      "Southeast Asia",
+      "South Asia",
+      "Middle East & North Africa",
+      "Sub-Saharan Africa",
+      "Latin America & Caribbean",
+      "Oceania"
+    ],
+    "languages_supported": [
+      "English",
+      "Spanish",
+      "French",
+      "German",
+      "Arabic",
+      "Chinese"
+    ],
+    "key_certifications": [
+      "CE",
+      "EN71",
+      "ASTM",
+      "FCC",
+      "ROHS",
+      "CCC"
+    ]
+  },
+  "ai_readiness": {
+    "products_with_ai_content": 11,
+    "products_with_marketing_copy": 11,
+    "products_with_keywords": 11,
+    "estimated_email_templates_possible": 55,
+    "notes": "All products have structured data ready for business-email-writer Skill consumption"
+  },
+  "maintenance_schedule": {
+    "inventory_sync": "daily",
+    "price_updates": "weekly",
+    "description_refresh": "monthly",
+    "seasonal_adjustments": "quarterly"
+  }
+}

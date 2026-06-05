@@ -1,0 +1,289 @@
+// Prisma Schema for GlobalReach V2.0 Enterprise
+// Database: PostgreSQL 15
+// Generated at S037 (D01 - Database Persistence)
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// 1. Users - 用户认证表
+// ============================================
+model User {
+  id              String    @id @default(uuid())
+  email           String    @unique
+  passwordHash    String    @map("password_hash")
+  name            String
+  role            UserRole  @default(USER)
+  isEmailVerified Boolean   @default(false) @map("is_email_verified")
+  avatar          String?
+  lastLoginAt     DateTime? @map("last_login_at")
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+
+  // Relations
+  accounts        EmailAccount[]
+  clients         Client[]
+  campaigns       Campaign[]
+  emails          Email[]
+  refreshTokens   RefreshToken[]
+  auditLogs       AuditLog[]
+
+  @@index([email])
+  @@index([role])
+  @@map("users")
+}
+
+// ============================================
+// 2. Email Accounts - 邮箱账号池
+// ============================================
+model EmailAccount {
+  id              String      @id @default(uuid())
+  userId          String      @map("user_id")
+  platform        Platform
+  email           String
+  passwordEncrypted String    @map("password_encrypted")
+  imapHost        String?     @map("imap_host")
+  imapPort        Int?        @map("imap_port")
+  smtpHost        String?     @map("smtp_host")
+  smtpPort        Int?        @map("smtp_port")
+  encryptionType  EncryptionType @default(SSL) @map("encryption_type")
+  status          AccountStatus @default(ACTIVE)
+  displayName     String?     @map("display_name")
+  dailyLimit      Int         @default(100) @map("daily_limit")
+  hourlyLimit     Int         @default(20) @map("hourly_limit")
+  sentToday       Int         @default(0) @map("sent_today")
+  lastUsedAt      DateTime?   @map("last_used_at")
+  healthScore     Int         @default(100) @map("health_score")
+  metadata        Json?
+  createdAt       DateTime    @default(now()) @map("created_at")
+  updatedAt       DateTime    @updatedAt @map("updated_at")
+
+  // Relations
+  user            User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  emails          Email[]
+
+  @@index([userId])
+  @@index([platform])
+  @@index([status])
+  @@index([email])
+  @@map("email_accounts")
+}
+
+// ============================================
+// 3. Clients - 客户数据表
+// ============================================
+model Client {
+  id              String    @id @default(uuid())
+  userId          String    @map("user_id")
+  email           String
+  firstName       String?   @map("first_name")
+  lastName        String?   @map("last_name")
+  company         String?
+  country         String?
+  industry        String?
+  status          ClientStatus @default(PROSPECT)
+  tags            String[]
+  phone           String?
+  website         String?
+  customFields    Json?     @map("custom_fields")
+  notes           String?   @db.Text
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+
+  // Relations
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  emails          Email[]
+
+  @@index([userId])
+  @@index([email])
+  @@index([country])
+  @@index([status])
+  @@map("clients")
+}
+
+// ============================================
+// 4. Campaigns - 营销活动表
+// ============================================
+model Campaign {
+  id              String      @id @default(uuid())
+  userId          String      @map("user_id")
+  name            String
+  type            CampaignType @default(COLD_WARM)
+  status          CampaignStatus @default(DRAFT)
+  subjectTemplate String     @map("subject_template")
+  bodyTemplate    String     @db.Text @map("body_template")
+  targetSegment   Json?      @map("target_segment")
+  accountIds      String[]   @map("account_ids")
+  scheduleConfig  Json?      @map("schedule_config")
+  stats           Json?      // { sent, delivered, opened, clicked, bounced }
+  startedAt       DateTime?  @map("started_at")
+  completedAt     DateTime?  @map("completed_at")
+  createdAt       DateTime   @default(now()) @map("created_at")
+  updatedAt       DateTime   @updatedAt @map("updated_at")
+
+  // Relations
+  user            User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  emails          Email[]
+
+  @@index([userId])
+  @@index([status])
+  @@index([type])
+  @@map("campaigns")
+}
+
+// ============================================
+// 5. Emails - 邮件记录表
+// ============================================
+model Email {
+  id                String         @id @default(uuid())
+  userId            String?        @map("user_id")
+  campaignId        String?        @map("campaign_id")
+  clientId          String         @map("client_id")
+  accountId         String         @map("account_id")
+  toAddress         String         @map("to_address")
+  fromAddress       String         @map("from_address")
+  subject           String
+  bodyHtml          String?    @db.Text @map("body_html")
+  bodyText          String?    @db.Text @map("body_text")
+  status            EmailStatus    @default(PENDING)
+  sentAt            DateTime?      @map("sent_at")
+  deliveredAt       DateTime?      @map("delivered_at")
+  openedAt          DateTime?      @map("opened_at")
+  clickedAt         DateTime?      @map("clicked_at")
+  bouncedReason     String?    @db.Text @map("bounced_reason")
+  errorMessage      String?    @db.Text @map("error_message")
+  providerMessageId String?        @map("provider_message_id")
+  createdAt         DateTime       @default(now()) @map("created_at")
+
+  // Relations
+  user              User?          @relation(fields: [userId], references: [id], onDelete: SetNull)
+  campaign          Campaign?      @relation(fields: [campaignId], references: [id], onDelete: SetNull)
+  client            Client         @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  account           EmailAccount   @relation(fields: [accountId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([campaignId])
+  @@index([clientId])
+  @@index([accountId])
+  @@index([status])
+  @@index([toAddress])
+  @@index([createdAt])
+  @@map("emails")
+}
+
+// ============================================
+// 6. Refresh Tokens - JWT刷新令牌
+// ============================================
+model RefreshToken {
+  id          String    @id @default(uuid())
+  userId      String    @map("user_id")
+  tokenHash   String    @map("token_hash")
+  expiresAt   DateTime  @map("expires_at")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  revokedAt   DateTime? @map("revoked_at")
+
+  // Relations
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([tokenHash])
+  @@index([expiresAt])
+  @@map("refresh_tokens")
+}
+
+// ============================================
+// 7. Audit Logs - 操作审计日志
+// ============================================
+model AuditLog {
+  id            BigInt    @id @default(autoincrement())
+  userId        String?   @map("user_id")
+  action        String
+  resourceType  String?   @map("resource_type")
+  resourceId    String?   @map("resource_id")
+  ipAddress     String?  @map("ip_address")
+  userAgent     String?  @map("user_agent")
+  details       Json?
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  // Relations
+  user          User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([action])
+  @@index([resourceType])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+// ============================================
+// Enums
+// ============================================
+enum UserRole {
+  ADMIN
+  USER
+  VIEWER
+}
+
+enum Platform {
+  GMAIL
+  OUTLOOK
+  QQ
+  NETEASE_163
+  CUSTOM_SMTP
+}
+
+enum EncryptionType {
+  SSL
+  TLS
+  STARTTLS
+  NONE
+}
+
+enum AccountStatus {
+  ACTIVE
+  RESTRICTED
+  BANNED
+  ERROR
+}
+
+enum ClientStatus {
+  PROSPECT
+  LEAD
+  CUSTOMER
+  CHURNED
+  UNSUBSCRIBED
+}
+
+enum CampaignType {
+  COLD_WARM
+  FOLLOW_UP
+  NEWSLETTER
+  TRANSACTIONAL
+}
+
+enum CampaignStatus {
+  DRAFT
+  SCHEDULED
+  SENDING
+  PAUSED
+  COMPLETED
+  CANCELLED
+}
+
+enum EmailStatus {
+  PENDING
+  QUEUED
+  SENT
+  DELIVERED
+  OPENED
+  CLICKED
+  BOUNCED
+  FAILED
+}

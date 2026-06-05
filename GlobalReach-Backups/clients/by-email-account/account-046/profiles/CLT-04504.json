@@ -1,0 +1,61 @@
+{
+  "clientId": "CLT-04504",
+  "emailAccount": "account-046",
+  "basicInfo": {
+    "name": "Nicole Gonzalez",
+    "email": "nicole.gonzalez@gmail.com",
+    "company": "Star Lee DreamPlay",
+    "website": "www.starleedreamplay.com",
+    "country": "BR",
+    "countryName": "Brazil",
+    "timezone": "America/Sao_Paulo",
+    "language": "en",
+    "phone": "+6797524861276",
+    "position": "Director",
+    "linkedIn": ""
+  },
+  "businessProfile": {
+    "clientLevel": "B",
+    "industry": "Specialty Store",
+    "purchaseCategory": [
+      "educational"
+    ],
+    "estimatedVolume": "medium",
+    "companySize": "501-1000",
+    "annualRevenue": "$<100K",
+    "firstContactExhibition": "Australian Toy Association Fair",
+    "firstContactYear": 2015,
+    "lastContactDate": "2026-03-06",
+    "status": "active",
+    "preferredContactTime": "16:00",
+    "notes": ""
+  },
+  "communicationHistory": {
+    "totalEmailsSent": 8,
+    "totalRepliesReceived": 7,
+    "lastReplyDate": "2026-04-10",
+    "replyRate": 88,
+    "lastReplyIntent": null
+  },
+  "aiInsights": {
+    "bestSendingDay": "Friday",
+    "optimalTime": "11:00",
+    "responsePattern": "price-sensitive",
+    "interestProducts": [
+      "educational"
+    ],
+    "stylePreference": "direct",
+    "lastDistillMatchScore": 0,
+    "engagementScore": 95,
+    "priorityScore": 78
+  },
+  "tags": [],
+  "metadata": {
+    "createdAt": "2022-04-03T14:32:53.097Z",
+    "updatedAt": "2026-05-09T14:32:53.097Z",
+    "version": 1,
+    "dataHash": "b4dd9d47a956f775",
+    "importSource": "system-initialization",
+    "importBatch": "batch-001-2026-05-09"
+  }
+}
