@@ -58,6 +58,8 @@ temp/
 *.tmp
 *.bak
 *.backup
+backups/
+~$*
 
 # === Database ===
 *.sqlite

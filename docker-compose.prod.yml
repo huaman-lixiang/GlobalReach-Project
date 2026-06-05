@@ -117,6 +117,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prometheus/rules:/etc/prometheus/rules:ro
       - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -143,6 +144,7 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
       - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/provisioning/dashboards:/var/lib/grafana/dashboards:ro
     environment:
       GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin123}
       GF_USERS_ALLOW_SIGN_UP: "false"
@@ -155,6 +157,33 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: globalreach-node-exporter
+    restart: unless-stopped
+    networks:
+      - globalreach-network
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+  postgres-exporter:
+    image: prometheuscommunity/postgres-exporter:latest
+    container_name: globalreach-pg-exporter
+    restart: unless-stopped
+    environment:
+      DATA_SOURCE_NAME: "postgresql://${DB_USER:-globalreach_user}:${DB_PASSWORD:-changeme}@postgres:5432/${DB_NAME:-globalreach_prod}?sslmode=disable"
+    networks:
+      - globalreach-network
+    depends_on:
+      postgres:
+        condition: service_started
+    deploy:
+      resources:
+        limits:
+          memory: 128M
 
 volumes:
   postgres_data:
