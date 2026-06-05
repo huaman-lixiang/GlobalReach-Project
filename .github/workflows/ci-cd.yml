@@ -2,17 +2,19 @@
 # S071: Production-ready pipeline with real deployment
 # S082/G04: Security hardening — Node.js upgrade path documented
 #
-# ⚠️ NODE.js UPGRADE PATH (S082 G04):
-#   Current: Node.js 20.x (LTS, deprecates 2026-06-16)
-#   Target:  Node.js 22.x LTS → eventually 24.x
-#   Action items:
-#     1. Change NODE_VERSION below from '20.x' to '22.x'
-#     2. Update Dockerfile base image: node:20-alpine → node:22-alpine
-#     3. Update docker-compose.prod.yml API resource limits if needed
-#     4. Run full test suite after upgrade
-#   Note: GitHub Actions will auto-enforce Node24 for JS actions in future.
-#         Set FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: false to opt out if needed.
-#         Ref: https://github.blog/changelog/2025-02-06-node-js-21-will-be-the-default-for-javascript-actions/
+# ⚠️ NODE.js UPGRADE PATH (S089 COMPLETE):
+#   Previous: Node.js 20.x (LTS, Active ended 2026-04-30)
+#   Current:  Node.js 24.x LTS 'Krypton' (supported until 2028-04-30)
+#   Upgrade completed in S089 session:
+#     1. ✅ Changed NODE_VERSION below from '20.x' to '24.x'
+#     2. ✅ Updated Dockerfile base image: node:20-alpine → node:24-alpine
+#     3. ✅ Updated api/package.json engines field
+#     4. ✅ Verified all dependencies compatible with Node 24
+#   Key Node 24 changes for this project:
+#     - V8 13.6: better GC (--max-old-space-size still works)
+#     - OpenSSL 3.5: stricter TLS (self-signed certs may need update)
+#     - npm 11: stricter peer dep resolution
+#     - New: --max-heap-size CLI option (alternative to --max-old-space-size)
 
 name: GlobalReach CI/CD Pipeline
 
@@ -34,8 +36,8 @@ on:
         type: boolean
 
 env:
-  # TODO(S085): Upgrade to '22.x' before Node.js 20 EOL (2026-06-16)
-  NODE_VERSION: '20.x'
+  # S089: Node.js upgraded to 24.x LTS (Krypton) — EOL 2028-04-30
+  NODE_VERSION: '24.x'
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}/api
 

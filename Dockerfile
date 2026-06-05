@@ -1,8 +1,11 @@
 # GlobalReach V2.0 — Production Dockerfile
-# S082/G04: Node 20 → 22 upgrade: change both `node:20-alpine` to `node:22-alpine`
-# See ci-cd.yml header for full upgrade checklist
+# S082/G04: Node 20 → 22 upgrade path documented
+# S089/UPGRADE: Node 22 → 24 LTS (Krypton) — EOL bypass
+#   Node 20 Active LTS ends 2026-04-30, Maintenance ends 2027-04
+#   Node 24 LTS (v24.11.0+) supported until 2028-04-30
+#   Breaking changes handled: V8 13.6, OpenSSL 3.5, npm 11
 
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 
 WORKDIR /app
 
@@ -10,7 +13,7 @@ COPY api/package*.json ./
 
 RUN npm install --omit=dev && npm cache clean --force
 
-FROM node:20-alpine AS production
+FROM node:24-alpine AS production
 
 RUN apk add --no-cache \
     curl \
