@@ -98,6 +98,7 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./nginx/ssl/globalreach:/etc/nginx/ssl/globalreach:ro
+      - ./docs:/usr/share/nginx/html/docs:ro  # S088: Serve documentation via Nginx
       - nginx_logs:/var/log/nginx
     ports:
       - "80:80"
