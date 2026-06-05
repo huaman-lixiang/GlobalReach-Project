@@ -45,6 +45,13 @@ const User = sequelize.define('User', {
     defaultValue: false,
     field: 'is_email_verified',
   },
+  // S085/L04 FIX: isActive was missing from model but used in auth routes
+  // Without this field, user.isActive is always undefined → Login returns 403
+  isActive: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: true,
+    field: 'is_active',
+  },
   avatar: { type: DataTypes.STRING },
   lastLoginAt: { type: DataTypes.DATE, field: 'last_login_at' },
 }, {

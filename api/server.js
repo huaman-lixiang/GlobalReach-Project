@@ -319,7 +319,9 @@ if (require.main === module) {
       
       // Step 1: Sync database schema
       appLog.info('Step 1: Synchronizing database...');
-      await sequelize.sync({ alter: false });
+      // S085/L04: Changed alter:false → alter:true to auto-add new columns (e.g., isActive)
+      // In production, use proper migrations instead of sync({alter:true})
+      await sequelize.sync({ alter: true });
       appLog.info('Database synchronized (Sequelize). Tables ready');
 
       // Step 1.5: Auto-seed if database is empty (D04)
