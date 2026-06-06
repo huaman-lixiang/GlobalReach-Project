@@ -1,0 +1,27 @@
+# S102/PhaseH: Grafana Tempo Datasource Provisioning
+apiVersion: 1
+
+datasources:
+  - name: Tempo
+    type: tempo
+    access: proxy
+    url: http://tempo:3200
+    editable: false
+    jsonData:
+      httpMethod: POST
+      tracesToLogsV2:
+        datasourceUid: 'loki'
+        filterByTraceId: true
+        spanStartTimeShift: '0m'
+        spanEndTimeShift: '0m'
+        tags: ['job', 'instance', 'service_name']
+      search:
+        hide: false
+      nodeGraph:
+        enabled: true
+      serviceMap:
+        enabled: true
+      traceToProfiles:
+        datasourceUid: ''
+      lokiSearch:
+        datasourceUid: 'loki'

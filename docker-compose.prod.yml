@@ -222,6 +222,25 @@ services:
     networks:
       - globalreach-network
 
+  # S102/PhaseH: Grafana Tempo — Distributed Tracing Backend
+  # Accepts OTLP (gRPC:4317, HTTP:4318) from instrumented applications
+  # Query via Grafana Tempo datasource or /api/traces endpoint
+  tempo:
+    image: grafana/tempo:2.5.0
+    container_name: globalreach-tempo
+    restart: unless-stopped
+    user: "0:0"
+    command: ["-config.file=/etc/tempo/tempo-config.yml", "-target=all", "-server.http-listen-port=3200"]
+    volumes:
+      - ./tempo/tempo-config.yml:/etc/tempo/tempo-config.yml:ro
+      - tempo_data:/var/lib/tempo
+    ports:
+      - "3200:3200"     # Tempo query API + UI
+      - "4317:4317"     # OTLP gRPC receiver
+      - "4318:4318"     # OTLP HTTP receiver
+    networks:
+      - globalreach-network
+
   # S101/PhaseH: Let's Encrypt Certificate Management (certbot)
   # Usage:
   #   Initial request:  docker compose run --rm certbot certonly --webroot ...
@@ -250,6 +269,7 @@ volumes:
   grafana_data:
   loki_data:
   promtail_positions:
+  tempo_data:
 
 networks:
   globalreach-network:

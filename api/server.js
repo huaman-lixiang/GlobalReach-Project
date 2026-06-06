@@ -1,3 +1,6 @@
+// S102/PhaseH: OpenTelemetry — MUST be first import (auto-instruments all modules)
+require('./otel');
+
 // S098/PhaseH: V8 Heap Memory Tuning
 // Restored from 256→384 (256 caused false 83% warnings due to V8 pre-allocation)
 // Container limit is 512MB, 384MB = 75% of container (safe ceiling)
