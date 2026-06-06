@@ -1,35 +1,55 @@
-# S100/PhaseH: Grafana Alerting Provisioning — Loki Log-based Alerts
-# Uses Grafana Alerting engine with LogQL queries against Loki datasource
-# Complements existing Prometheus metric alerts (14 rules) with log-pattern detection
+# S106/PhaseH: Grafana Alerting — Final Stable Configuration (v13 Compatible)
+#
+# GRAFANA v13 PROVISIONING FORMAT REQUIREMENTS (verified):
+#   - Key names: camelCase — contactPoints / policies / groups (NOT snake_case)
+#   - Bool values: true/false (NOT "true"/"false" strings)
+#   - No env var substitution in settings (${VAR} won't expand)
+#   - Email settings: addresses (required), singleEmail (bool)
+#   - Webhook settings: url (required)
+#   - multi-channel: routes array with receiverUid references
+#
+# LIMITATIONS (verified via testing):
+#   - relativeTimeRange in alert-rules.yml: Grafana parser rejects ALL formats
+#     Tried: {from: 300, to: now}, {from: "300s", to: "now"},
+#            {from: 300s, to: now}, {from: 5m, to: now}, omitted entirely
+#     Error: "invalid relative time range [From: 0s, To: 0s]"
+#     WORKAROUND: Use only Prometheus instant queries (no relativeTimeRange needed)
+#   - HTTP API POST/PUT to /api/v1/provisioning/* returns "bad request data"
+#     The API JSON format differs from file provisioning format (undocumented diff)
+#   - Policies in same file as contactPoints: silently ignored
+#     WORKAROUND: Use separate file or Grafana UI for policies
+#
+# ARCHITECTURE NOTE:
+#   Prometheus alerts (14 rules in prometheus/rules/alerts.yml) are SEPARATE from
+#   Grafana managed alerts. Prometheus alerts need AlertManager for notifications.
+#   This file configures Grafana's OWN alerting system only.
 
 apiVersion: 1
 
-alertingContactPoints:
+# ============================================
+# Contact Points (Notification Channels)
+# Verified working: email type
+# ============================================
+contactPoints:
   - orgId: 1
-    name: globalreach-default
+    name: globalreach-alerting
     receivers:
-      - uid: "" # Default receiver (console notification)
 
-alertingPolicies:
-  - orgId: 1
-    receiver: globalreach-default
-    group_by: ['alertname', 'severity']
-    group_wait: 30s
-    group_interval: 5m
-    repeat_interval: 4h
-    routes:
-      # Critical alerts — immediate
-      - matchers:
-          - severity = critical
-        receiver: globalreach-default
-        continue: true
-        group_wait: 10s
-        repeat_interval: 1h
+      # Receiver 1: Email (Primary — VERIFIED WORKING)
+      - uid: email-primary
+        name: globalreach-email
+        type: email
+        disableResolveMessage: false
+        settings:
+          addresses: 'admin@globalreach.local'
+          singleEmail: true
 
-      # Warning alerts — aggregated
-      - matchers:
-          - severity = warning
-        receiver: globalreach-default
-        continue: true
-        group_wait: 60s
-        repeat_interval: 4h
+      # Receiver 2: Webhook (for future Slack/DingTalk/WeChat integration)
+      # NOTE: Configure GRAFANA_ALERT_WEBHOOK_URL env var or update url below
+      - uid: webhook-integration
+        name: globalreach-webhook
+        type: webhook
+        disableResolveMessage: false
+        settings:
+          url: 'http://host.docker.internal:9999/webhook'
+          httpMethod: POST

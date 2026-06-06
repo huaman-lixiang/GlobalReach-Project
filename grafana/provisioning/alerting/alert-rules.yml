@@ -1,0 +1,118 @@
+# S106/PhaseH: Grafana Native Alert Rules — Final Stable (v13 Compatible)
+# Only Prometheus instant queries — no relativeTimeRange needed
+#
+# WARNING: Do NOT add Loki range queries to this file!
+# Grafana v13 alerting provisioning YAML parser rejects ALL relativeTimeRange formats:
+#   - Raw integer:       {from: 300, to: now}     → "invalid duration now"
+#   - Go duration:       {from: 300s, to: now}    → "invalid duration 300s"
+#   - Short duration:    {from: 5m, to: now}      → "invalid duration 5m"
+#   - Omitted entirely:                        → "invalid relative time range [From: 0s, To: 0s]"
+#
+# For Loki-based alerts, use Grafana UI or HTTP API instead of file provisioning.
+
+apiVersion: 1
+
+groups:
+  # Group 1: API Health (Prometheus Instant Queries)
+  - orgId: 1
+    name: globalreach-grafana-api
+    folder: GlobalReach
+    interval: 60s
+    rules:
+      - uid: grafana-error-rate-spike
+        title: "API Error Rate Elevated"
+        condition: A
+        data:
+          - refId: A
+            datasourceUid: prometheus
+            queryType: instant
+            model:
+              expr: '(rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m])) > 0.05'
+              instant: true
+        for: 120s
+        annotations:
+          summary: "API error rate above 5%"
+          description: "Error rate elevated. Value: {{ $value }}"
+        labels:
+          severity: warning
+          team: platform
+
+      - uid: grafana-api-latency
+        title: "API Response Latency High"
+        condition: A
+        data:
+          - refId: A
+            datasourceUid: prometheus
+            queryType: instant
+            model:
+              expr: 'histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 1'
+              instant: true
+        for: 120s
+        annotations:
+          summary: "API P95 latency above 1 second"
+          description: "P95 latency: {{ $values.A }}s"
+        labels:
+          severity: warning
+          team: platform
+
+  # Group 2: Infrastructure (Prometheus Instant Queries)
+  - orgId: 1
+    name: globalreach-grafana-infra
+    folder: GlobalReach
+    interval: 90s
+    rules:
+      - uid: grafana-containers-down
+        title: "GlobalReach Containers Unhealthy"
+        condition: A
+        data:
+          - refId: A
+            datasourceUid: prometheus
+            queryType: instant
+            model:
+              expr: 'count(up{job=~"globalreach.*"} == 0) or vector(0)'
+              instant: true
+        for: 120s
+        annotations:
+          summary: "{{ $values.A }} container(s) are down"
+          description: "Run: docker ps --filter name=globalreach"
+        labels:
+          severity: critical
+          team: infra
+
+      - uid: grafana-disk-trend
+        title: "Disk Space Projected Low"
+        condition: A
+        data:
+          - refId: A
+            datasourceUid: prometheus
+            queryType: instant
+            model:
+              expr: 'predict_linear(node_filesystem_avail_bytes{fstype!~"tmpfs|overlay"}[1h], 86400) < node_filesystem_size_bytes{fstype!~"tmpfs|overlay"} * 0.15'
+              instant: true
+        noDataState: OK
+        for: 900s
+        annotations:
+          summary: "Disk space projected below 15% within 24h"
+          description: "Consider cleanup: docker system prune"
+        labels:
+          severity: info
+          team: infra
+
+      - uid: grafana-pg-connections
+        title: "PostgreSQL Connection Pool Pressure"
+        condition: A
+        data:
+          - refId: A
+            datasourceUid: prometheus
+            queryType: instant
+            model:
+              expr: 'pg_stat_activity_count{datname="globalreach_prod"} > 80'
+              instant: true
+        noDataState: OK
+        for: 300s
+        annotations:
+          summary: "PostgreSQL connections above 80"
+          description: "Active connections: {{ $values.A }}"
+        labels:
+          severity: warning
+          team: database
