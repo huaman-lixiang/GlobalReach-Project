@@ -252,6 +252,29 @@ services:
     networks:
       - globalreach-network
 
+  # S107/PhaseH: Prometheus AlertManager — Notification Routing
+  # Routes Prometheus alerts (14 rules) to email/webhook receivers
+  alertmanager:
+    image: prom/alertmanager:latest
+    container_name: globalreach-alertmanager
+    restart: unless-stopped
+    volumes:
+      - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
+      - alertmanager_data:/alertmanager
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+      - '--storage.path=/alertmanager'
+      - '--web.external-url=http://localhost:9093'
+    ports:
+      - "9093:9093"
+    networks:
+      - globalreach-network
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:9093/-/healthy"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
   # S101/PhaseH: Let's Encrypt Certificate Management (certbot)
   # Usage:
   #   Initial request:  docker compose run --rm certbot certonly --webroot ...
@@ -281,6 +304,7 @@ volumes:
   loki_data:
   promtail_positions:
   tempo_data:
+  alertmanager_data:
 
 networks:
   globalreach-network:

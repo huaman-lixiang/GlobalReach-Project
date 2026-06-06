@@ -1,0 +1,137 @@
+# S107/PhaseH: Prometheus AlertManager Configuration
+# GlobalReach V2.0 Production Notification System
+#
+# Architecture:
+#   Prometheus (14 rules) → AlertManager → Email / Webhook receivers
+#
+# Routing Strategy:
+#   severity=critical  → immediate email (5m repeat)
+#   severity=warning   → aggregated email (4h repeat)
+#   team=database      → warning-digest (6h repeat)
+#   team=infra         → warning-digest (6h repeat)
+
+global:
+  resolve_timeout: 5m
+
+# Inhibition rules: suppress lower-severity alerts when higher ones fire
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'instance']
+
+  - source_match:
+      alertname: 'APIHealthCritical'
+    target_match:
+      alertname: 'APIHealthDegraded'
+    equal: ['instance', 'job']
+
+# ============================================
+# Receivers (Notification Channels)
+# ============================================
+receivers:
+  # --- Receiver 1: Email (Primary Channel) ---
+  - name: 'email-primary'
+    email_configs:
+      - to: 'admin@globalreach.local'
+        from: 'alert@globalreach.local'
+        smarthost: 'host.docker.internal:25'  # Local SMTP relay
+        require_tls: false
+        send_resolved: true
+        html: |
+          <h2 style="color: {{ if eq .Status "firing" }}red{{ else }}green{{ end }}">
+            {{ .Status | toUpper }}
+          </h2>
+          <table border="1" cellpadding="4">
+            <tr><td><b>Alert</b></td><td>{{ .CommonLabels.alertname }}</td></tr>
+            <tr><td><b>Severity</b></td><td>{{ .CommonLabels.severity }}</td></tr>
+            <tr><td><b>Instance</b></td><td>{{ .CommonLabels.instance }}</td></tr>
+            <tr><td><b>Team</b></td><td>{{ .CommonLabels.team }}</td></tr>
+            <tr><td><b>Fired At</b></td><td>{{ .Alerts.Firing.StartsAt.Format "2006-01-02 15:04:05" }}</td></tr>
+          </table>
+          <p><b>Summary:</b> {{ .CommonAnnotations.summary }}</p>
+          <p><b>Description:</b> {{ .CommonAnnotations.description }}</p>
+          {{ if gt (len .Alerts.Resolved) 0 }}
+          <p style="color:green"><b>Resolved:</b> {{ .Alerts.Resolved.EndsAt.Format "2006-01-02 15:04:05" }}</p>
+          {{ end }}
+
+  # --- Receiver 2: Webhook (Extensible for Slack/DingTalk/PagerDuty) ---
+  - name: 'webhook-integration'
+    webhook_configs:
+      - url: 'http://host.docker.internal:9999/webhook'
+        send_resolved: true
+        max_alerts: 10
+
+  # --- Receiver 3: Critical Multi-channel (Email + Webhook) ---
+  - name: 'critical-multi'
+    email_configs:
+      - to: 'admin@globalreach.local'
+        from: 'alert@globalreach.local'
+        smarthost: 'host.docker.internal:25'
+        require_tls: false
+        send_resolved: true
+    webhook_configs:
+      - url: 'http://host.docker.internal:9999/webhook'
+        send_resolved: true
+        max_alerts: 10
+
+# ============================================
+# Route Tree (Notification Routing by Severity + Team)
+# ============================================
+route:
+  receiver: 'email-primary'           # Default receiver for unmatched alerts
+  group_by: ['alertname', 'severity', 'team']
+  group_wait: 30s                     # Wait before sending first notification
+  group_interval: 5m                  # Wait before sending new notification about same group
+  repeat_interval: 8h                 # Resend after 8 hours if still firing
+  routes:
+    # Route 1: CRITICAL → Immediate multi-channel (email+webhook, 30m repeat)
+    - matchers:
+        - severity = "critical"
+      receiver: 'critical-multi'
+      continue: true
+      group_by: ['alertname', 'instance']
+      group_wait: 10s
+      group_interval: 2m
+      repeat_interval: 30m
+
+    # Route 2: WARNING → Aggregated email (4h repeat)
+    - matchers:
+        - severity = "warning"
+      receiver: 'email-primary'
+      continue: true
+      group_by: ['alertname', 'team']
+      group_wait: 60s
+      group_interval: 10m
+      repeat_interval: 4h
+
+    # Route 3: Team Platform → Critical escalation path
+    - matchers:
+        - team = "platform"
+      receiver: 'critical-multi'
+      continue: true
+      group_by: ['alertname', 'severity']
+      group_wait: 15s
+      group_interval: 5m
+      repeat_interval: 2h
+
+    # Route 4: Team Database → Warning digest
+    - matchers:
+        - team = "database"
+      receiver: 'email-primary'
+      continue: false
+      group_by: ['alertname', 'severity']
+      group_wait: 60s
+      group_interval: 15m
+      repeat_interval: 6h
+
+    # Route 5: Team Infra → Warning digest
+    - matchers:
+        - team = "infra"
+      receiver: 'email-primary'
+      continue: false
+      group_by: ['alertname', 'severity']
+      group_wait: 60s
+      group_interval: 15m
+      repeat_interval: 6h
