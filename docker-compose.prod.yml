@@ -98,8 +98,10 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
       - ./nginx/ssl/globalreach:/etc/nginx/ssl/globalreach:ro
+      - ./nginx/ssl/letsencrypt:/etc/nginx/ssl/le:ro          # S101: Let's Encrypt certs (when issued)
       - ./frontend/dist:/var/www/frontend/dist:ro
       - ./docs:/usr/share/nginx/html/docs:ro  # S088: Serve documentation via Nginx
+      - ./nginx/acme-challenge:/var/www/acme-challenge:ro  # S101: ACME challenge (simplified path)
       - nginx_logs:/var/log/nginx
     ports:
       - "80:80"
@@ -219,6 +221,26 @@ services:
       - promtail_positions:/tmp
     networks:
       - globalreach-network
+
+  # S101/PhaseH: Let's Encrypt Certificate Management (certbot)
+  # Usage:
+  #   Initial request:  docker compose run --rm certbot certonly --webroot ...
+  #   Renewal:          docker compose run --rm certbot renew
+  #   Dry-run test:     docker compose run --rm certbot renew --dry-run
+  certbot:
+    image: certbot/certbot:latest
+    container_name: globalreach-certbot
+    profiles: ["ssl"]  # Only start when explicitly requested: --profile ssl
+    volumes:
+      - ./nginx/ssl/letsencrypt:/etc/letsencrypt
+      - ./nginx/acme-challenge:/var/www/acme-challenge
+    networks:
+      - globalreach-network
+    command: ["certonly", "--webroot", "-w", "/var/www",
+              "-d", "api.globalreach.com", "-d", "app.globalreach.com",
+              "-d", "monitor.globalreach.com", "-d", "grafana.globalreach.com",
+              "--email", "${LETSENCRYPT_EMAIL:-admin@globalreach.com}",
+              "--agree-tos", "--no-eff-email", "--force-renewal"]
 
 volumes:
   postgres_data:
