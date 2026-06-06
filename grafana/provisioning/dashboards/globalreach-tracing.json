@@ -1,0 +1,668 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "GlobalReach V2.0 Distributed Tracing Dashboard | Grafana Tempo + OpenTelemetry",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "tempo",
+        "uid": "tempo"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 200
+              },
+              {
+                "color": "red",
+                "value": 500
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogsLink": true,
+        "persistedQueries": {
+          "datasourceUid": "loki",
+          "queries": [
+            {
+              "refId": "traceIdSearch",
+              "query": "traceId=\"${__trace.traceId}\""
+            }
+          ]
+        },
+        "query": {
+          "queryType": "search",
+          "dataSourceUid": "tempo",
+          "filters": [],
+          "groupBy": [
+            "service.name"
+          ],
+          "limit": 20,
+          "query": "",
+          "spansFilters": {},
+          "tableType": "traces"
+        },
+        "showTimeFilter": true,
+        "spanBar": {
+          "mode": "Duration"
+        },
+        "type": "topology"
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "tempo",
+            "uid": "tempo"
+          },
+          "hide": false,
+          "queryType": "both",
+          "refId": "TraceSearch",
+          "traces": {
+            "dataSourceUid": "tempo",
+            "filters": [],
+            "groupBy": [
+              "service.name"
+            ],
+            "limit": 20,
+            "query": "",
+            "queryType": "search",
+            "spansFilters": {}
+          }
+        }
+      ],
+      "title": "Trace Search — GlobalReach API",
+      "type": "traces"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 20,
+            "gradientMode": "none",
+            "hideFrom": {
+              "tooltip": false,
+              "viz": false,
+              "legend": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "quantile"
+            },
+            "properties": [
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    10,
+                    10
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "avg",
+            "p95"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.50, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))",
+          "format": "time_series",
+          "hide": false,
+          "legendFormat": "P50",
+          "refId": "P50"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))",
+          "format": "time_series",
+          "hide": false,
+          "legendFormat": "P95",
+          "refId": "P95"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))",
+          "format": "time_series",
+          "hide": false,
+          "legendFormat": "P99",
+          "refId": "P99"
+        }
+      ],
+      "title": "P50 / P95 / P99 Latency",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "req/s",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "tooltip": false,
+              "viz": false,
+              "legend": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "reqps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 3,
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "sum(rate(http_requests_total{job=\"globalreach-api\"}[5m])) by (method, path)",
+          "format": "time_series",
+          "legendFormat": "{{method}} {{path}}",
+          "refId": "Throughput"
+        }
+      ],
+      "title": "Request Throughput by Endpoint",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "tempo",
+        "uid": "tempo"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 500
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "id": 4,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogsLink": true,
+        "persistedQueries": {
+          "datasourceUid": "loki",
+          "queries": [
+            {
+              "refId": "traceIdSearch",
+              "query": "traceId=\"${__trace.traceId}\""
+            }
+          ]
+        },
+        "query": {
+          "dataSourceUid": "tempo",
+          "filters": [],
+          "groupBy": [
+            "rootServiceName",
+            "rootTraceName"
+          ],
+          "limit": 15,
+          "query": "{ .status = 'error' } | duration > 500000000",
+          "queryType": "search",
+          "spansFilters": {},
+          "tableType": "traces"
+        },
+        "showTimeFilter": true,
+        "spanBar": {
+          "mode": "Duration"
+        },
+        "type": "topology"
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "tempo",
+            "uid": "tempo"
+          },
+          "hide": false,
+          "queryType": "both",
+          "refId": "ErrorTraces",
+          "traces": {
+            "dataSourceUid": "tempo",
+            "filters": [],
+            "groupBy": [
+              "rootServiceName",
+              "rootTraceName"
+            ],
+            "limit": 15,
+            "query": "{ .status = 'error' } | duration > 500000000",
+            "queryType": "search",
+            "spansFilters": {}
+          }
+        }
+      ],
+      "title": "Slow / Error Traces (>500ms or error)",
+      "type": "traces"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "loki"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "id": 5,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "paginate": true,
+        "showHeader": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "expr": "{job=\"globalreach-api\"} |= `error` or |=`4xx` or |=`5xx`",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "maxLines": 0,
+          "refId": "ApiErrors"
+        }
+      ],
+      "title": "API Error Logs (Loki)",
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "tempo",
+        "uid": "tempo"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 200
+              },
+              {
+                "color": "red",
+                "value": 500
+              }
+            ]
+          },
+          "unit": "duration_us"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 6,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogsLink": true,
+        "persistedQueries": {
+          "datasourceUid": "loki",
+          "queries": [
+            {
+              "refId": "traceIdSearch",
+              "query": "traceId=\"${__trace.traceId}\""
+            }
+          ]
+        },
+        "query": {
+          "dataSourceUid": "tempo",
+          "filters": [],
+          "groupBy": [
+            "service.name"
+          ],
+          "limit": 15,
+          "query": "",
+          "queryType": "search",
+          "spansFilters": {},
+          "tableType": "traces"
+        },
+        "showTimeFilter": true,
+        "spanBar": {
+          "mode": "Duration"
+        },
+        "type": "topology"
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "tempo",
+            "uid": "tempo"
+          },
+          "hide": false,
+          "queryType": "both",
+          "refId": "RecentTraces",
+          "traces": {
+            "dataSourceUid": "tempo",
+            "filters": [],
+            "groupBy": [
+              "service.name"
+            ],
+            "limit": 15,
+            "query": "",
+            "queryType": "search",
+            "spansFilters": {}
+          }
+        }
+      ],
+      "title": "Recent Traces — Last 15",
+      "type": "traces"
+    },
+    {
+      "datasource": {
+        "type": "grafana",
+        "uid": "-- Grafana --"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": null
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 32
+      },
+      "id": 7,
+      "options": {
+        "content": "<div style=\"padding: 16px; font-family: system-ui, sans-serif;\"><h2 style=\"margin-bottom: 12px; color: #3274d9;\">GlobalReach — Distributed Tracing Navigation</h2><table style=\"width: 100%; border-collapse: collapse; font-size: 13px;\"><tr><td style=\"padding: 6px 0; border-bottom: 1px solid #333;\"><strong>Tempo Explore</strong></td><td><a href=\"/explore?left=%7B%22datasource%22%3A%22tempo%22%7D\" target=\"_blank\">Open Trace Explorer</a> (Service Map + Waterfall)</td></tr><tr><td style=\"padding: 6px 0; border-bottom: 1px solid #333;\"><strong>Loki Logs</strong></td><td><a href=\"/explore?left=%7B%22datasource%22%3A%22loki%22%7D\" target=\"_blank\">Open Log Explorer</a> (traceId linked)</td></tr><tr><td style=\"padding: 6px 0; border-bottom: 1px solid #333;\"><strong>System Overview</strong></td><td><a href=\"/d/globalreach-overview\" target=\"_blank\">Dashboard Link</a></td></tr><tr><td style=\"padding: 6px 0; border-bottom: 1px solid #333;\"><strong>API Performance</strong></td><td><a href=\"/d/globalreach-api-performance\" target=\"_blank\">Dashboard Link</a></td></tr><tr><td style=\"padding: 6px 0; border-bottom: 1px solid #333;\"><strong>Infrastructure</strong></td><td><a href=\"/d/globalreach-infrastructure\" target=\"_blank\">Dashboard Link</a></td></tr><tr><td style=\"padding: 6px 0;\"><strong>Data Source</strong></td><td>Grafana Tempo v2.5.0 | OTLP :4317(gRPC) / :4318(HTTP) | Retention: 14d</td></tr></table></div>",
+        "mode": "html"
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "refId": "info"
+        }
+      ],
+      "title": "Navigation & Info",
+      "type": "text"
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 38,
+  "tags": [
+    "globalreach",
+    "tracing",
+    "tempo",
+    "opentelemetry",
+    "observability"
+  ],
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "GlobalReach — Distributed Tracing (Tempo)",
+  "uid": "globalreach-tracing",
+  "version": 1,
+  "weekStart": ""
+}
