@@ -1,7 +1,6 @@
 const db = require('../db');
 
 let admin;
-let apn;
 
 try {
   admin = require('firebase-admin');
@@ -9,16 +8,13 @@ try {
   console.warn('[PushNotification] firebase-admin not available, FCM disabled');
 }
 
-try {
-  apn = require('apn');
-} catch (e) {
-  console.warn('[PushNotification] apn not available, APN disabled');
-}
+// S095/PhaseH: Removed apn package (unmaintained, jsonwebtoken HIGH CVEs)
+// iOS push notifications now routed through FCM (firebase-admin)
+// APNs direct support removed — requires Apple credentials not configured
 
 class PushNotificationService {
   constructor() {
     this.fcmInitialized = false;
-    this.apnProvider = null;
   }
 
   initializeFCM() {
@@ -38,27 +34,7 @@ class PushNotificationService {
     }
   }
 
-  initializeAPN() {
-    if (this.apnProvider) return;
-    
-    try {
-      const apnOptions = {
-        token: {
-          key: process.env.APN_KEY || '',
-          keyId: process.env.APN_KEY_ID || '',
-          teamId: process.env.APN_TEAM_ID || '',
-        },
-        production: process.env.NODE_ENV === 'production',
-      };
-      
-      if (apnOptions.token.key && apnOptions.token.keyId && apnOptions.token.teamId) {
-        this.apnProvider = new apn.Provider(apnOptions);
-        console.log('[PushNotification] APN initialized successfully');
-      }
-    } catch (error) {
-      console.warn('[PushNotification] APN initialization failed:', error.message);
-    }
-  }
+  // S095: initializeAPN removed — apn package removed (unmaintained, HIGH CVEs)
 
   async registerDevice(userId, deviceToken, platform, deviceId) {
     const existingDevice = await db.Device.findOne({
@@ -112,11 +88,8 @@ class PushNotificationService {
 
     for (const device of devices) {
       try {
-        if (device.platform === 'ios') {
-          await this.sendToAPN(device.deviceToken, title, body, data);
-        } else {
-          await this.sendToFCM(device.deviceToken, title, body, data);
-        }
+        // S095: All platforms routed through FCM (apn removed)
+        await this.sendToFCM(device.deviceToken, title, body, data);
         success++;
       } catch (error) {
         console.error('[PushNotification] Failed to send to device:', error.message);
@@ -128,33 +101,11 @@ class PushNotificationService {
   }
 
   async sendToDevice(deviceToken, platform, title, body, data = {}) {
-    if (platform === 'ios') {
-      return this.sendToAPN(deviceToken, title, body, data);
-    }
+    // S095: All platforms use FCM (apn package removed)
     return this.sendToFCM(deviceToken, title, body, data);
   }
 
-  async sendToAPN(deviceToken, title, body, data = {}) {
-    this.initializeAPN();
-    
-    if (!this.apnProvider) {
-      throw new Error('APN not configured');
-    }
-
-    const note = new apn.Notification();
-    note.expiry = Math.floor(Date.now() / 1000) + 3600;
-    note.badge = 1;
-    note.sound = 'ping.aiff';
-    note.alert = { title, body };
-    note.payload = data;
-    note.topic = process.env.APN_TOPIC || '';
-
-    const result = await this.apnProvider.send(note, deviceToken);
-    
-    if (result.failed.length > 0) {
-      throw new Error(`APN delivery failed: ${result.failed[0].response.reason}`);
-    }
-  }
+  // S095: sendToAPN removed — apn package removed, iOS via FCM
 
   async sendToFCM(deviceToken, title, body, data = {}) {
     this.initializeFCM();
