@@ -1,0 +1,16 @@
+# S099/PhaseH: Grafana Loki Datasource Provisioning
+apiVersion: 1
+
+datasources:
+  - name: Loki
+    type: loki
+    access: proxy
+    url: http://loki:3100
+    editable: false
+    jsonData:
+      maxLines: 1000
+      derivedFields:
+        - name: TraceID
+          matcherRegex: '"traceId":"(\w+)"'
+          url: '$${__value.raw}'
+          datasourceUid: tempo  # Optional: link to Tempo if deployed later

@@ -187,12 +187,47 @@ services:
         limits:
           memory: 128M
 
+  # S099/PhaseH: Grafana Loki — Log Aggregation (Monolithic Mode)
+  # Note: grafana/loki image is distroless (no curl/wget) — healthcheck disabled
+  # Readiness verified externally: curl localhost:3100/ready → "ready"
+  loki:
+    image: grafana/loki:latest
+    container_name: globalreach-loki
+    restart: unless-stopped
+    command: -config.file=/etc/loki/loki-config.yml
+    volumes:
+      - ./loki/loki-config.yml:/etc/loki/loki-config.yml:ro
+      - loki_data:/loki
+    ports:
+      - "3100:3100"
+    networks:
+      - globalreach-network
+
+  # S099/PhaseH: Promtail — Log Collector for Docker Containers
+  promtail:
+    image: grafana/promtail:latest
+    container_name: globalreach-promtail
+    restart: unless-stopped
+    depends_on:
+      loki:
+        condition: service_started
+    command: -config.file=/etc/promtail/promtail-config.yml
+    volumes:
+      - ./loki/promtail-config.yml:/etc/promtail/promtail-config.yml:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - promtail_positions:/tmp
+    networks:
+      - globalreach-network
+
 volumes:
   postgres_data:
   redis_data:
   nginx_logs:
   prometheus_data:
   grafana_data:
+  loki_data:
+  promtail_positions:
 
 networks:
   globalreach-network:
