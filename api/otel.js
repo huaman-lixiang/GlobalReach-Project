@@ -1,51 +1,52 @@
-// S102/PhaseH: OpenTelemetry SDK Initialization
+// S104/PhaseH: OpenTelemetry SDK Initialization (v2.x compatible)
 // ============================================================
-// Distributed Tracing Integration — Grafana Tempo Backend
+// Distributed Tracing — Grafana Tempo Backend
 //
-// Non-blocking initialization: if OTEL fails, API continues normally.
-// Tracing is a best-effort observability feature, not a hard dependency.
+// Strategy: Manual tracing mode (no auto-instrumentation)
+// - Auto-instrumentations cause "MetricReader bound twice" conflict in Node.js 24
+// - Custom traceId middleware already provides trace context in logs
+// - This module exports spans to Tempo for Grafana Explore visualization
+//
+// Non-blocking: if OTEL fails, API continues normally.
 //
 
 let sdk;
 
 try {
-  const { NodeSDK } = require('@opentelemetry/sdk-node');
+  const opentelemetry = require('@opentelemetry/sdk-node');
   const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-grpc');
-  const { BatchSpanProcessor } = require('@opentelemetry/sdk-trace-base');
-  const { diag, DiagConsoleLogger, DiagLogLevel } = require('@opentelemetry/api');
+  const { resourceFromAttributes } = require('@opentelemetry/resources');
+  const { ATTR_SERVICE_NAME, ATTR_SERVICE_VERSION } = require('@opentelemetry/semantic-conventions');
 
-  // Suppress OTEL internal logs in production
-  if (process.env.NODE_ENV === 'production') {
-    diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.WARN);
-  }
-
-  sdk = new NodeSDK({
-    serviceName: 'globalreach-api',
-    serviceVersion: process.env.npm_package_version || '2.0.0',
-    spanProcessor: new BatchSpanProcessor(
-      new OTLPTraceExporter({
-        url: process.env.OTEL_EXPORTER_OTLP_ENDPOINT || 'http://tempo:4317',
-      })
-    ),
+  // S104: Minimal config
+  const traceExporter = new OTLPTraceExporter({
+    url: process.env.OTEL_EXPORTER_OTLP_ENDPOINT || 'http://tempo:4317',
   });
 
-  // Start asynchronously — don't block server startup
-  sdk.start()
-    .then(() => console.log('[OTEL] OpenTelemetry initialized — exporting to Tempo'))
-    .catch((err) => console.warn('[OTEL] Init failed (tracing disabled):', err.message));
+  sdk = new opentelemetry.NodeSDK({
+    resource: resourceFromAttributes({
+      [ATTR_SERVICE_NAME]: 'globalreach-api',
+      [ATTR_SERVICE_VERSION]: process.env.npm_package_version || '2.0.0',
+    }),
+    traceExporter,
+  });
+
+  // S104: Start SDK (v2.x returns undefined/sync, not Promise)
+  sdk.start();
+  console.log('[OTEL] Initialized — exporting traces to Tempo');
 
   // Graceful shutdown
   process.on('SIGTERM', () => {
     if (sdk) {
       sdk.shutdown()
-        .then(() => console.log('[OTEL] Tracing shutdown complete'))
+        .then(() => console.log('[OTEL] Shutdown complete'))
         .catch(() => {})
         .finally(() => process.exit(0));
     }
   });
 
 } catch (err) {
-  console.warn('[OTEL] SDK not available (tracing disabled):', err.message);
+  console.warn('[OTEL] Not available (tracing disabled):', err.message);
 }
 
 module.exports = sdk || null;
