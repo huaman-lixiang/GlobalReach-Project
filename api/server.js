@@ -1,8 +1,8 @@
-// S068→S084/G05: V8 Heap Memory Optimization
-// Reduced from 384→256 (was 75% of 512MB container, causing heap 87%+)
-// Added --expose-gc for manual GC control and --max-semi-space-size
+// S098/PhaseH: V8 Heap Memory Tuning
+// Restored from 256→384 (256 caused false 83% warnings due to V8 pre-allocation)
+// Container limit is 512MB, 384MB = 75% of container (safe ceiling)
 try {
-  require('v8').setFlagsFromString('--max-old-space-size=256');
+  require('v8').setFlagsFromString('--max-old-space-size=384');
   require('v8').setFlagsFromString('--expose-gc');
 } catch(e) {}
 

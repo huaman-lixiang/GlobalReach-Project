@@ -252,17 +252,25 @@ async function checkSystemResources() {
   const memUsage = process.memoryUsage();
   const uptime = process.uptime();
 
-  // Memory usage percentages (approximate)
+  // Memory usage metrics
   const heapUsedMB = Math.round(memUsage.heapUsed / 1024 / 1024);
   const heapTotalMB = Math.round(memUsage.heapTotal / 1024 / 1024);
   const rssMB = Math.round(memUsage.rss / 1024 / 1024);
   const externalMB = Math.round(memUsage.external / 1024 / 1024);
   const heapUsagePercent = heapTotalMB > 0 ? Math.round((heapUsedMB / heapTotalMB) * 100) : 0;
 
-  // Determine memory health
+  // S098/PhaseH: Dual-threshold memory health check
+  // Primary: RSS vs container limit (512MB) — reflects real OS memory pressure
+  // Secondary: Heap % — V8 internal metric, tolerant of pre-allocation behavior
+  const CONTAINER_MEMORY_MB = 512;
+  const rssPercent = Math.round((rssMB / CONTAINER_MEMORY_MB) * 100);
+
   let memoryStatus = 'healthy';
-  if (heapUsagePercent > 90) memoryStatus = 'critical';
-  else if (heapUsagePercent > 75) memoryStatus = 'warning';
+  if (rssPercent > 90 || heapUsagePercent > 95) {
+    memoryStatus = 'critical';
+  } else if (rssPercent > 75 || heapUsagePercent > 85) {
+    memoryStatus = 'warning';
+  }
 
   // Event loop lag check (simplified)
   let eventLoopLagMs = 0;
@@ -283,6 +291,7 @@ async function checkSystemResources() {
         heapTotal: `${heapTotalMB} MB`,
         heapUsagePercent,
         rss: `${rssMB} MB`,
+        rssPercent: `${rssPercent}%`,
         external: `${externalMB} MB`,
         arrayBuffers: `${Math.round(memUsage.arrayBuffers / 1024 / 1024)} MB`,
       },
