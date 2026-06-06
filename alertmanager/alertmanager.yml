@@ -31,12 +31,12 @@ inhibit_rules:
 # Receivers (Notification Channels)
 # ============================================
 receivers:
-  # --- Receiver 1: Email (Primary Channel) ---
+  # --- Receiver 1: Email (Primary Channel via Mailpit SMTP) ---
   - name: 'email-primary'
     email_configs:
       - to: 'admin@globalreach.local'
         from: 'alert@globalreach.local'
-        smarthost: 'host.docker.internal:25'  # Local SMTP relay
+        smarthost: 'mailpit:1025'   # S108: Mailpit SMTP relay
         require_tls: false
         send_resolved: true
         html: |
@@ -63,12 +63,12 @@ receivers:
         send_resolved: true
         max_alerts: 10
 
-  # --- Receiver 3: Critical Multi-channel (Email + Webhook) ---
+  # --- Receiver 3: Critical Multi-channel (Email via Mailpit + Webhook) ---
   - name: 'critical-multi'
     email_configs:
       - to: 'admin@globalreach.local'
         from: 'alert@globalreach.local'
-        smarthost: 'host.docker.internal:25'
+        smarthost: 'mailpit:1025'   # S108: Mailpit SMTP relay
         require_tls: false
         send_resolved: true
     webhook_configs:
