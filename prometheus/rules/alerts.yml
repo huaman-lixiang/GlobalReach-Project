@@ -183,3 +183,9 @@ groups:
         annotations:
           summary: "API Throughput Dropped 50%+"
           description: "Current throughput is {{ $value | humanizePercentage }} of 30-min average."
+
+  # ──────────────────────────────────────────────
+  # LOG-BASED ALERTS: See prometheus/rules/loki-alerts-reference.yml
+  # These use LogQL syntax (|=, |~) which is Loki-specific.
+  # Import into Grafana Alerting or use loki-adapter with Prometheus.
+  # ──────────────────────────────────────────────

@@ -1,0 +1,35 @@
+# S100/PhaseH: Grafana Alerting Provisioning — Loki Log-based Alerts
+# Uses Grafana Alerting engine with LogQL queries against Loki datasource
+# Complements existing Prometheus metric alerts (14 rules) with log-pattern detection
+
+apiVersion: 1
+
+alertingContactPoints:
+  - orgId: 1
+    name: globalreach-default
+    receivers:
+      - uid: "" # Default receiver (console notification)
+
+alertingPolicies:
+  - orgId: 1
+    receiver: globalreach-default
+    group_by: ['alertname', 'severity']
+    group_wait: 30s
+    group_interval: 5m
+    repeat_interval: 4h
+    routes:
+      # Critical alerts — immediate
+      - matchers:
+          - severity = critical
+        receiver: globalreach-default
+        continue: true
+        group_wait: 10s
+        repeat_interval: 1h
+
+      # Warning alerts — aggregated
+      - matchers:
+          - severity = warning
+        receiver: globalreach-default
+        continue: true
+        group_wait: 60s
+        repeat_interval: 4h

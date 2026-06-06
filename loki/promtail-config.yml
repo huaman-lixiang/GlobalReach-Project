@@ -55,5 +55,51 @@ scrape_configs:
       - labels:
           level:
           stream:
+
+      # S100/PhaseH: Metric Extraction — push log-derived counters to Loki/Mimir
+      # These metrics are queryable via LogQL: sum(rate(...))
+      - metrics:
+          # API request count by HTTP method
+          api_requests_total:
+            type: Counter
+            description: "Total API requests extracted from logs"
+            config:
+              match_all: true
+              source: output
+              action: inc
+              bucket: "5m"
+              labels:
+                container_name: container_name
+                method: method
+
+          # API error count (status >= 400)
+          api_errors_total:
+            type: Counter
+            description: "Total API errors (4xx/5xx) from logs"
+            config:
+              match_all: true
+              source: output
+              action: inc
+              bucket: "5m"
+              filters:
+                - pattern: '"status":(4|5)\\d{1}'
+                  value: ""
+              labels:
+                container_name: container_name
+                status: status
+
+          # Log volume per container (general throughput)
+          log_lines_total:
+            type: Counter
+            description: "Total log lines per container"
+            config:
+              match_all: true
+              source: output
+              action: inc
+              bucket: "5m"
+              labels:
+                container_name: container_name
+                level: level
+
       - output:
           source: output
