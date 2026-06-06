@@ -2,7 +2,7 @@ const db = require('../db');
 const { Op } = require('sequelize');
 
 let json2csv;
-let XLSX;
+let ExcelJS;
 let PDFDocument;
 
 try {
@@ -12,9 +12,9 @@ try {
 }
 
 try {
-  XLSX = require('xlsx');
+  ExcelJS = require('exceljs');
 } catch (e) {
-  console.warn('[ExportService] xlsx not available, Excel export disabled');
+  console.warn('[ExportService] exceljs not available, Excel export disabled');
 }
 
 try {
@@ -106,11 +106,12 @@ class ExportService {
       'Created At': e.createdAt.toLocaleString(),
     }));
 
-    const worksheet = XLSX.utils.json_to_sheet(data);
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Emails');
-
-    const buffer = XLSX.write(workbook, { type: 'buffer', bookType: 'xlsx' });
+    // S094/PhaseH: Migrated from xlsx (2 HIGH CVEs) → ExcelJS
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet('Emails');
+    worksheet.columns = Object.keys(data[0] || {}).map(key => ({ header: key, key }));
+    worksheet.addRows(data);
+    const buffer = await workbook.xlsx.writeBuffer();
 
     return {
       filename: `emails_${Date.now()}.xlsx`,
