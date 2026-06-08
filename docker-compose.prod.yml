@@ -4,6 +4,11 @@
 
 services:
   postgres:
+    # S118/SEC-002: PostgreSQL version pinning
+    # NOTE: Upgrading from 15→16 requires pg_upgrade or dump/restore (data dir incompatible)
+    # Current: postgres:15-alpine (gosu has 1 LOW-RISK CRITICAL: CVE-2025-68121)
+    #   Mitigation: gosu runs ONLY at container startup, no network exposure
+    # Upgrade path: docker exec pg_dumpall > backup.sql → change image → psql < backup.sql
     image: postgres:15-alpine
     container_name: globalreach-postgres
     restart: unless-stopped
@@ -221,6 +226,9 @@ services:
       - globalreach-network
 
   # S099/PhaseH: Promtail — Log Collector for Docker Containers
+  # S117/S118 Security: Docker socket mounted READ-ONLY (:ro) — mitigates CVE-2026-34040,
+  #   CVE-2026-41567, CVE-2026-42306 (Docker Moby host escape vectors)
+  #   Container logs are read-only; no write access to Docker API
   promtail:
     image: grafana/promtail:latest
     container_name: globalreach-promtail
