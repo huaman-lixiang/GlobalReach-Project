@@ -1,8 +1,14 @@
 const rateLimit = require('express-rate-limit');
 
+// S112/PhaseI: Production rate limit tuning
+// Default: 30000 req / 15 min = ~33 rps (was 1000 = 1.11 rps, too strict for load testing)
+// Override via env: RATE_LIMIT_MAX (per 15-min window) or RATE_LIMIT_WINDOW_MS
+const rateLimitMax = parseInt(process.env.RATE_LIMIT_MAX || '30000');
+const rateLimitWindowMs = parseInt(process.env.RATE_LIMIT_WINDOW_MS || String(15 * 60 * 1000));
+
 const rateLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 1000,
+  windowMs: rateLimitWindowMs,
+  max: rateLimitMax,
   standardHeaders: true,
   legacyHeaders: false,
   message: {
@@ -10,7 +16,7 @@ const rateLimiter = rateLimit({
     error: 'RATE_LIMIT_EXCEEDED',
     message: 'Too many requests from this IP, please try again later',
     code: 'RATE_001',
-    retryAfter: Math.ceil(15 * 60)
+    retryAfter: Math.ceil(rateLimitWindowMs / 1000)
   },
   handler: (req, res) => {
     res.status(429).json({
@@ -18,7 +24,7 @@ const rateLimiter = rateLimit({
       error: 'RATE_LIMIT_EXCEEDED',
       message: 'Too many requests from this IP, please try again later',
       code: 'RATE_001',
-      retryAfter: Math.ceil(15 * 60)
+      retryAfter: Math.ceil(rateLimitWindowMs / 1000)
     });
   }
 });

@@ -64,6 +64,10 @@ services:
       APP_NAME: GlobalReach-V2
       LOG_LEVEL: info
       PORT: "3000"
+      # S112/PhaseI: Rate Limit tuning (production values)
+      # L2 Express rate limiter: 30000 req / 15min = ~33 rps (was 1000 = 1.11 rps)
+      RATE_LIMIT_MAX: ${RATE_LIMIT_MAX:-30000}
+      RATE_LIMIT_WINDOW_MS: ${RATE_LIMIT_WINDOW_MS:-900000}
     networks:
       - globalreach-network
     ports:
