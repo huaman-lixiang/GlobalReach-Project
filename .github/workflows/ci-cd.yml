@@ -27,6 +27,9 @@ on:
       - '.github/ISSUE_TEMPLATE/**'
   pull_request:
     branches: [ main ]
+  # S128/M-C01: Weekly scheduled full-stack security scan
+  schedule:
+    - cron: '0 2 * * 0'  # Every Sunday 02:00 UTC (10:00 CST)
   workflow_dispatch:
     inputs:
       skip_tests:
@@ -240,7 +243,8 @@ jobs:
   deploy:
     name: Deploy to Production
     needs: docker-build
-    if: github.ref == 'refs/heads/main'
+    # S128/M-C01: Only deploy on push (not on schedule or PR)
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     environment:
       name: production
@@ -378,15 +382,21 @@ jobs:
           echo "| Security Scan | ${{ needs.security-scan.result }} |" >> $GITHUB_STEP_SUMMARY
 
   # ──────────────────────────────────────────────
-  # JOB 6: Full Stack Security Scan (S121/Trivy)
+  # JOB 6: Full Stack Security Scan (S121/Trivy + S128/M-C01)
   # ──────────────────────────────────────────────
-  # Scans ALL 13 container images from docker-compose.prod.yml
+  # Scans ALL 15 container images from docker-compose.prod.yml
   # Uses AWS ECR mirror for Trivy DB (bypasses GCR rate limits)
   # Generates SARIF report + table summary for each image
+  # S128/M-C01: Added weekly schedule + SARIF + updated to 15 images
   security-scan:
     name: Container Security Scan (Trivy)
     needs: [quality-gate]
-    if: always() && needs.quality-gate.result != 'skipped'
+    # S128/M-C01: Run on push/PR + weekly schedule (skip deploy on schedule)
+    if: |
+      always() && (
+        (github.event_name == 'schedule') ||
+        (needs.quality-gate.result != 'skipped')
+      )
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -414,21 +424,23 @@ jobs:
           echo "=== GlobalReach V2.0 — Full Container Security Scan ==="
           echo ""
 
-          # Image list extracted from docker-compose.prod.yml (S121 pinned versions)
+          # Image list extracted from docker-compose.prod.yml (S128/M-C01: updated to 15 images)
           IMAGES=(
-            "postgres:15-alpine"
-            "redis:7.4.9-alpine"
-            "nginx:1.31.1-alpine"
-            "prom/prometheus:v3.12.0"
-            "grafana/grafana:13.0.2"
-            "prom/node-exporter:v1.11.1"
-            "prometheuscommunity/postgres-exporter:v0.19.1"
-            "grafana/loki:3.7.2"
-            "grafana/promtail:3.6.8"
-            "grafana/tempo:2.5.0"
-            "prom/alertmanager:v0.32.2"
-            "axllent/mailpit:v1.30.1"
-            "certbot/certbot:latest"
+            "node:24-alpine"                              # API base image
+            "postgres:15-alpine"                           # PostgreSQL 15
+            "redis:7.4.9-alpine"                           # Redis 7
+            "nginx:1.31.1-alpine"                          # Nginx reverse proxy
+            "prom/prometheus:v3.12.0"                      # Prometheus
+            "grafana/grafana:13.0.2"                       # Grafana (S121 pinned)
+            "prom/node-exporter:v1.11.1"                   # Node Exporter (S121 pinned)
+            "prometheuscommunity/postgres-exporter:v0.19.1"# PG Exporter (S121 pinned)
+            "grafana/loki:3.7.2"                           # Loki log aggregation
+            "grafana/promtail:3.6.8"                       # Promtail log collector
+            "grafana/tempo:2.5.0"                         # Tempo tracing (S127+)
+            "prom/alertmanager:v0.32.2"                    # AlertManager
+            "axllent/mailpit:v1.30.1"                      # Mailpit email testing (S127+)
+            "prom/pushgateway:v1"                          # PushGateway
+            "certbot/certbot:latest"                       # Let's Encrypt client
           )
 
           TOTAL_VULNS=0
@@ -497,3 +509,20 @@ except: print('0|0')" 2>/dev/null || echo "0|0")
           name: trivy-scan-report
           path: trivy-results.txt
           retention-days: 14
+
+      # S128/M-C01: SARIF upload for GitHub Security Tab integration
+      - name: Run Trivy filesystem scan (SARIF for GitHub Security)
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          ignore-unfixed: true
+          severity: 'CRITICAL,HIGH'
+
+      - name: Upload SARIF to GitHub Security Tab
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-results.sarif'
