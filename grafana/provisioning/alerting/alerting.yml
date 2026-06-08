@@ -41,7 +41,7 @@ contactPoints:
         type: email
         disableResolveMessage: false
         settings:
-          addresses: 'admin@globalreach.local'
+          addresses: 'admin@globalreach.com'
           singleEmail: true
 
       # Receiver 2: Webhook (for future Slack/DingTalk/WeChat integration)

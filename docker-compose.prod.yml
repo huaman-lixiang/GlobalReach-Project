@@ -157,13 +157,13 @@ services:
     environment:
       GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin123}
       GF_USERS_ALLOW_SIGN_UP: "false"
-      # S106/PhaseH: Grafana Alerting — SMTP Configuration (configurable)
+      # S106/PhaseH: Grafana Alerting — SMTP Configuration (S116: Production-ready)
       GF_SMTP_ENABLED: "true"
-      GF_SMTP_HOST: ${GRAFANA_SMTP_HOST:-localhost:25}
+      GF_SMTP_HOST: ${GRAFANA_SMTP_HOST:-mailpit:1025}
       GF_SMTP_USER: ${GRAFANA_SMTP_USER:-""}
       GF_SMTP_PASSWORD: ${GRAFANA_SMTP_PASSWORD:-""}
-      GF_SMTP_FROM_ADDRESS: ${GRAFANA_SMTP_FROM:-alert@globalreach.local}
-      GF_SMTP_FROM_NAME: "GlobalReach AlertManager"
+      GF_SMTP_FROM_ADDRESS: ${GRAFANA_SMTP_FROM:-noreply@globalreach.com}
+      GF_SMTP_FROM_NAME: "GlobalReach Monitor"
       # S106/PhaseH: Alert Notification Environment Variables
       GRAFANA_ALERT_EMAIL_TO: ${GRAFANA_ALERT_EMAIL_TO:-admin@globalreach.local}
       GRAFANA_ALERT_WEBHOOK_URL: ${GRAFANA_ALERT_WEBHOOK_URL:-}
@@ -258,6 +258,7 @@ services:
 
   # S107/PhaseH: Prometheus AlertManager — Notification Routing
   # Routes Prometheus alerts (14 rules) to email/webhook receivers
+  # S116: Production SMTP support via ALERTMANAGER_* env vars
   alertmanager:
     image: prom/alertmanager:latest
     container_name: globalreach-alertmanager
@@ -265,6 +266,17 @@ services:
     volumes:
       - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
       - alertmanager_data:/alertmanager
+    environment:
+      # S116: Override alertmanager.yml defaults with production SMTP settings
+      # These are passed through to the config file's ${VAR} placeholders
+      ALERTMANAGER_SMTP_SMARTHOST: ${ALERTMANAGER_SMTP_SMARTHOST:-mailpit:1025}
+      ALERTMANAGER_SMTP_USER: ${ALERTMANAGER_SMTP_USER:-}
+      ALERTMANAGER_SMTP_PASS: ${ALERTMANAGER_SMTP_PASS:-}
+      ALERTMANAGER_SMTP_FROM: ${ALERTMANAGER_SMTP_FROM:-alert@globalreach.local}
+      ALERTMANAGER_EMAIL_TO: ${ALERTMANAGER_EMAIL_TO:-admin@globalreach.com}
+      ALERTMANAGER_SMTP_REQUIRE_TLS: ${ALERTMANAGER_SMTP_REQUIRE_TLS:-false}
+      ALERTMANAGER_SMTP_HELLO: ${ALERTMANAGER_SMTP_HELLO:-localhost}
+      ALERTMANAGER_WEBHOOK_URL: ${ALERTMANAGER_WEBHOOK_URL:-}
     command:
       - '--config.file=/etc/alertmanager/alertmanager.yml'
       - '--storage.path=/alertmanager'
