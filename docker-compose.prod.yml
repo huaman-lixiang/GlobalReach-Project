@@ -27,7 +27,8 @@ services:
       retries: 3
 
   redis:
-    image: redis:7-alpine
+    # S121/SEC-003: Image version pinning — prevents drift
+    image: redis:7.4.9-alpine
     container_name: globalreach-redis
     restart: unless-stopped
     volumes:
@@ -97,7 +98,8 @@ services:
         max-file: "3"
 
   nginx:
-    image: nginx:alpine
+    # S121/SEC-003: Image version pinning — prevents drift
+    image: nginx:1.31.1-alpine
     container_name: globalreach-nginx-prod
     restart: unless-stopped
     depends_on:
@@ -125,7 +127,8 @@ services:
       start_period: 10s
 
   prometheus:
-    image: prom/prometheus:latest
+    # S121/SEC-003: Pinned from :latest → v3.12.0
+    image: prom/prometheus:v3.12.0
     container_name: globalreach-prometheus
     restart: unless-stopped
     volumes:
@@ -148,7 +151,8 @@ services:
       retries: 3
 
   grafana:
-    image: grafana/grafana:latest
+    # S121/SEC-003: Pinned from :latest → 13.0.2
+    image: grafana/grafana:13.0.2
     container_name: globalreach-grafana
     restart: unless-stopped
     depends_on:
@@ -183,7 +187,8 @@ services:
       retries: 3
 
   node-exporter:
-    image: prom/node-exporter:latest
+    # S121/SEC-003: Pinned from :latest → v1.11.1
+    image: prom/node-exporter:v1.11.1
     container_name: globalreach-node-exporter
     restart: unless-stopped
     networks:
@@ -194,7 +199,8 @@ services:
           memory: 128M
 
   postgres-exporter:
-    image: prometheuscommunity/postgres-exporter:latest
+    # S121/SEC-003: Pinned from :latest → v0.19.1
+    image: prometheuscommunity/postgres-exporter:v0.19.1
     container_name: globalreach-pg-exporter
     restart: unless-stopped
     environment:
@@ -213,7 +219,8 @@ services:
   # Note: grafana/loki image is distroless (no curl/wget) — healthcheck disabled
   # Readiness verified externally: curl localhost:3100/ready → "ready"
   loki:
-    image: grafana/loki:latest
+    # S121/SEC-003: Pinned from :latest → 3.7.2
+    image: grafana/loki:3.7.2
     container_name: globalreach-loki
     restart: unless-stopped
     command: -config.file=/etc/loki/loki-config.yml
@@ -230,7 +237,8 @@ services:
   #   CVE-2026-41567, CVE-2026-42306 (Docker Moby host escape vectors)
   #   Container logs are read-only; no write access to Docker API
   promtail:
-    image: grafana/promtail:latest
+    # S121/SEC-003: Pinned from :latest → 3.6.8
+    image: grafana/promtail:3.6.8
     container_name: globalreach-promtail
     restart: unless-stopped
     depends_on:
@@ -268,7 +276,8 @@ services:
   # Routes Prometheus alerts (14 rules) to email/webhook receivers
   # S116: Production SMTP support via ALERTMANAGER_* env vars
   alertmanager:
-    image: prom/alertmanager:latest
+    # S121/SEC-003: Pinned from :latest → v0.32.2
+    image: prom/alertmanager:v0.32.2
     container_name: globalreach-alertmanager
     restart: unless-stopped
     volumes:
@@ -303,7 +312,8 @@ services:
   # Provides SMTP (:1025) + Web UI (:8025) for alert email verification
   # In production, replace with real SMTP relay (Gmail SES, SendGrid, etc.)
   mailpit:
-    image: axllent/mailpit:latest
+    # S121/SEC-003: Pinned from :latest → v1.30.1
+    image: axllent/mailpit:v1.30.1
     container_name: globalreach-mailpit
     restart: unless-stopped
     ports:
