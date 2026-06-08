@@ -12,13 +12,13 @@
 
 global:
   resolve_timeout: 5m
-  # S125/Gmail SMTP Production Configuration
-  smtp_smarthost: 'smtp.gmail.com:587'
-  smtp_from: 'wendyhouse112@gmail.com'
-  smtp_hello: 'gmail.com'
+  # S126/QQ Mail SMTP Production Configuration
+  smtp_smarthost: 'smtp.qq.com:465'
+  smtp_from: '1390885333@qq.com'
+  smtp_hello: 'qq.com'
   smtp_require_tls: true
-  smtp_auth_username: 'wendyhouse112@gmail.com'
-  smtp_auth_password: 'kyxa iuxh tfdr Icyw'
+  smtp_auth_username: '1390885333@qq.com'
+  smtp_auth_password: 'zhrtbpzlgfoehjgj'
 
 # Inhibition rules: suppress lower-severity alerts when higher ones fire
 inhibit_rules:
@@ -38,14 +38,14 @@ inhibit_rules:
 # Receivers (Notification Channels)
 # ============================================
 receivers:
-  # --- Receiver 1: Email (Primary Channel via Gmail SMTP) ---
+  # --- Receiver 1: Email (Primary Channel via QQ Mail SMTP) ---
   - name: 'email-primary'
     email_configs:
       - to: '1390885333@qq.com'
-        from: 'wendyhouse112@gmail.com'
-        smarthost: 'smtp.gmail.com:587'
-        auth_username: 'wendyhouse112@gmail.com'
-        auth_password: 'kyxa iuxh tfdr Icyw'
+        from: '1390885333@qq.com'
+        smarthost: 'smtp.qq.com:465'
+        auth_username: '1390885333@qq.com'
+        auth_password: 'zhrtbpzlgfoehjgj'
         require_tls: true
         send_resolved: true
         html: |
@@ -72,14 +72,14 @@ receivers:
         send_resolved: true
         max_alerts: 10
 
-  # --- Receiver 3: Critical Multi-channel (Email via Gmail + Webhook) ---
+  # --- Receiver 3: Critical Multi-channel (Email via QQ Mail + Webhook) ---
   - name: 'critical-multi'
     email_configs:
       - to: '1390885333@qq.com'
-        from: 'wendyhouse112@gmail.com'
-        smarthost: 'smtp.gmail.com:587'
-        auth_username: 'wendyhouse112@gmail.com'
-        auth_password: 'kyxa iuxh tfdr Icyw'
+        from: '1390885333@qq.com'
+        smarthost: 'smtp.qq.com:465'
+        auth_username: '1390885333@qq.com'
+        auth_password: 'zhrtbpzlgfoehjgj'
         require_tls: true
         send_resolved: true
     webhook_configs:

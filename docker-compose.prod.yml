@@ -166,15 +166,15 @@ services:
     environment:
       GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin123}
       GF_USERS_ALLOW_SIGN_UP: "false"
-      # S125/Gmail SMTP Production Migration (from Mailpit)
+      # S126/QQ Mail SMTP Production Migration (from Gmail)
       GF_SMTP_ENABLED: "true"
-      GF_SMTP_HOST: "smtp.gmail.com:587"
-      GF_SMTP_USER: "wendyhouse112@gmail.com"
-      GF_SMTP_PASSWORD: "kyxa iuxh tfdr Icyw"
-      GF_SMTP_FROM_ADDRESS: "wendyhouse112@gmail.com"
+      GF_SMTP_HOST: "smtp.qq.com:465"
+      GF_SMTP_USER: "1390885333@qq.com"
+      GF_SMTP_PASSWORD: "zhrtbpzlgfoehjgj"
+      GF_SMTP_FROM_ADDRESS: "1390885333@qq.com"
       GF_SMTP_FROM_NAME: "GlobalReach Monitor"
       # S106/PhaseH: Alert Notification Environment Variables
-      GRAFANA_ALERT_EMAIL_TO: ${GRAFANA_ALERT_EMAIL_TO:-admin@globalreach.local}
+      GRAFANA_ALERT_EMAIL_TO: ${GRAFANA_ALERT_EMAIL_TO:-1390885333@qq.com}
       GRAFANA_ALERT_WEBHOOK_URL: ${GRAFANA_ALERT_WEBHOOK_URL:-}
     ports:
       - "3002:3000"
