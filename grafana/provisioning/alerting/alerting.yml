@@ -1,4 +1,4 @@
-# S106/PhaseH: Grafana Alerting — Final Stable Configuration (v13 Compatible)
+# S106/S120/PhaseH: Grafana Alerting — Contact Points Configuration (v13 Compatible)
 #
 # GRAFANA v13 PROVISIONING FORMAT REQUIREMENTS (verified):
 #   - Key names: camelCase — contactPoints / policies / groups (NOT snake_case)
@@ -6,36 +6,28 @@
 #   - No env var substitution in settings (${VAR} won't expand)
 #   - Email settings: addresses (required), singleEmail (bool)
 #   - Webhook settings: url (required)
-#   - multi-channel: routes array with receiverUid references
 #
-# LIMITATIONS (verified via testing):
-#   - relativeTimeRange in alert-rules.yml: Grafana parser rejects ALL formats
-#     Tried: {from: 300, to: now}, {from: "300s", to: "now"},
-#            {from: 300s, to: now}, {from: 5m, to: now}, omitted entirely
-#     Error: "invalid relative time range [From: 0s, To: 0s]"
-#     WORKAROUND: Use only Prometheus instant queries (no relativeTimeRange needed)
-#   - HTTP API POST/PUT to /api/v1/provisioning/* returns "bad request data"
-#     The API JSON format differs from file provisioning format (undocumented diff)
-#   - Policies in same file as contactPoints: silently ignored
-#     WORKAROUND: Use separate file or Grafana UI for policies
+# CRITICAL ARCHITECTURE NOTE (S110 verified):
+#   This file contains CONTACT POINTS ONLY.
+#   Notification Policies are in: grafana/provisioning/alerting/policies.yml
+#   If policies are placed here → silently ignored by Grafana v13!
 #
-# ARCHITECTURE NOTE:
-#   Prometheus alerts (14 rules in prometheus/rules/alerts.yml) are SEPARATE from
-#   Grafana managed alerts. Prometheus alerts need AlertManager for notifications.
-#   This file configures Grafana's OWN alerting system only.
+# ALERT ROUTING ARCHITECTURE:
+#   Prometheus (14 rules) → AlertManager → Email/Webhook  [Path A: Infrastructure alerts]
+#   Grafana Native Alerts → Grafana Alerting → Email/Webhook    [Path B: Application alerts]
+#   Both paths use these contact points as notification channels.
 
 apiVersion: 1
 
-# ============================================
-# Contact Points (Notification Channels)
-# Verified working: email type
-# ============================================
 contactPoints:
   - orgId: 1
     name: globalreach-alerting
     receivers:
 
-      # Receiver 1: Email (Primary — VERIFIED WORKING)
+      # ══════════════════════════════════════════
+      # RECEIVER 1: Primary Email (Default/Catch-all)
+      # Used by: Default policy route, most warning-level alerts
+      # ══════════════════════════════════════════
       - uid: email-primary
         name: globalreach-email
         type: email
@@ -44,8 +36,84 @@ contactPoints:
           addresses: 'admin@globalreach.com'
           singleEmail: true
 
-      # Receiver 2: Webhook (for future Slack/DingTalk/WeChat integration)
-      # NOTE: Configure GRAFANA_ALERT_WEBHOOK_URL env var or update url below
+      # ══════════════════════════════════════════
+      # RECEIVER 2: Critical Email (Urgent, Immediate)
+      # Used by: All severity=critical alerts via Route 1
+      # S116: Uses production SMTP when configured
+      # ══════════════════════════════════════════
+      - uid: critical-email
+        name: globalreach-critical-email
+        type: email
+        disableResolveMessage: false
+        settings:
+          addresses: 'admin@globalreach.com,oncall@globalreach.com'
+          singleEmail: false          # Separate emails per alert for urgency
+
+      # ══════════════════════════════════════════
+      # RECEIVER 3: Platform On-Call (Critical + Platform Team)
+      # Used by: Critical alerts with team=platform (Route 1a)
+      # Most urgent channel — for APIDown, HighErrorRate, APIHealthCritical
+      # ══════════════════════════════════════════
+      - uid: platform-critical
+        name: globalreach-platform-oncall
+        type: email
+        disableResolveMessage: false
+        settings:
+          addresses: 'oncall@globalreach.com,admin@globalreach.com'
+          singleEmail: false
+
+      # ══════════════════════════════════════════
+      # RECEIVER 4: Database Digest (Aggregated DB Alerts)
+      # Used by: team=database alerts (PostgresConnectionHigh, RedisMemoryHigh)
+      # ══════════════════════════════════════════
+      - uid: db-digest-email
+        name: globalreach-db-digest
+        type: email
+        disableResolveMessage: false
+        settings:
+          addresses: 'dba@globalreach.com,admin@globalreach.com'
+          singleEmail: true           # Digest mode = grouped email
+
+      # ══════════════════════════════════════════
+      # RECEIVER 5: Infrastructure Digest (Infra Alerts)
+      # Used by: team=infra alerts (CPU/Disk/Memory)
+      # ══════════════════════════════════════════
+      - uid: infra-digest-email
+        name: globalreach-infra-digest
+        type: email
+        disableResolveMessage: false
+        settings:
+          addresses: 'infra@globalreach.com,admin@globalreach.com'
+          singleEmail: true           # Digest mode = grouped email
+
+      # ══════════════════════════════════════════
+      # RECEIVER 6: Health Priority (Elevated Attention)
+      # Used by: APIHealthDegraded, APIHealthCritical (warning level)
+      # ══════════════════════════════════════════
+      - uid: health-priority-email
+        name: globalreach-health-priority
+        type: email
+        disableResolveMessage: false
+        settings:
+          addresses: 'admin@globalreach.com,sre@globalreach.com'
+          singleEmail: true
+
+      # ══════════════════════════════════════════
+      # RECEIVER 7: Latency Watch (Performance Monitoring)
+      # Used by: HighLatencyP95, APILatencyP50Elevated
+      # ══════════════════════════════════════════
+      - uid: latency-watch-email
+        name: globalreach-latency-watch
+        type: email
+        disableResolveMessage: false
+        settings:
+          addresses: 'perf-team@globalreach.com,admin@globalreach.com'
+          singleEmail: true
+
+      # RECEIVER 8: Webhook Integration (Slack/DingTalk/WeChat)
+      # Used by: Critical multi-channel route (future enhancement)
+      # NOTE: Grafana provisioning does NOT expand ${VAR} env vars!
+      #       To change URL, edit this file directly.
       - uid: webhook-integration
         name: globalreach-webhook
         type: webhook
@@ -53,3 +121,4 @@ contactPoints:
         settings:
           url: 'http://host.docker.internal:9999/webhook'
           httpMethod: POST
+          maxAlerts: 10
