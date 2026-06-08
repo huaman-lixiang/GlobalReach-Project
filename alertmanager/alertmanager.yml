@@ -72,7 +72,9 @@ receivers:
         send_resolved: true
         max_alerts: 10
 
-  # --- Receiver 3: Critical Multi-channel (Email via QQ Mail + Webhook) ---
+  # --- Receiver 3: Critical Multi-channel (Email via QQ Mail) ---
+  # S127: Webhook disabled — host.docker.internal:9999 not available
+  # Re-enable when webhook listener service is deployed
   - name: 'critical-multi'
     email_configs:
       - to: '1390885333@qq.com'
@@ -82,10 +84,10 @@ receivers:
         auth_password: 'zhrtbpzlgfoehjgj'
         require_tls: true
         send_resolved: true
-    webhook_configs:
-      - url: 'http://host.docker.internal:9999/webhook'
-        send_resolved: true
-        max_alerts: 10
+    # webhook_configs:
+    #   - url: 'http://host.docker.internal:9999/webhook'
+    #     send_resolved: true
+    #     max_alerts: 10
 
 # ============================================
 # Route Tree (Notification Routing by Severity + Team)
