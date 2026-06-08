@@ -194,6 +194,112 @@ router.get('/preview', [
   }
 });
 
+// M-A07: GET /api/emails/preview/template/:templateName - Preview system email template
+router.get('/preview/template/:templateName', (req, res) => {
+  try {
+    const { templateName } = req.params;
+    // Sample context for preview
+    const sampleContext = {
+      client: {
+        firstName: '张',
+        lastName: '三',
+        email: 'zhangsan@example.com',
+        company: '示例公司',
+        country: '中国',
+      },
+      user: {
+        name: '管理员',
+        email: 'admin@globalreach.com',
+        company: 'GlobalReach',
+      },
+      campaign: {
+        name: '示例营销活动',
+        type: 'cold_outreach',
+      },
+      ...req.query, // Allow query params to override context
+    };
+
+    const rendered = emailService.previewTemplate(templateName, sampleContext);
+    res.json({
+      success: true,
+      data: {
+        ...rendered,
+        previewUrl: `/api/v1/email/preview/${templateName}`,
+      },
+    });
+  } catch (error) {
+    const statusCode = error.message.includes('not found') ? 404 : 500;
+    res.status(statusCode).json({
+      success: false,
+      error: 'TEMPLATE_PREVIEW_FAILED',
+      message: error.message,
+    });
+  }
+});
+
+// M-A07: GET /api/emails/smtp/providers - List configured SMTP providers
+router.get('/smtp/providers', (req, res) => {
+  try {
+    const providers = {};
+    const activeNames = emailService.getActiveProviders();
+    for (const name of activeNames) {
+      providers[name] = {
+        ...emailService.getProviderConfig(name),
+        pass: undefined, // Never expose credentials
+      };
+    }
+    res.json({
+      success: true,
+      data: {
+        activeProviders: activeNames,
+        allProviders: Object.keys(emailService._loadSmtpConfig().providers),
+        providerDetails: providers,
+        queueConfig: emailService._loadSmtpConfig().queueConfig,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, error: 'PROVIDER_FETCH_FAILED', message: error.message });
+  }
+});
+
+// M-A07: GET /api/emails/send-stats - Send statistics with success rate
+router.get('/send-stats', async (req, res) => {
+  try {
+    const since = req.query.since; // ISO date string or relative (e.g., "2026-01-01")
+    const stats = emailService.getSendStats({ since });
+
+    // Also get DB-level stats for comparison
+    const dbStats = await emailService.getEmailStats(req.user.id, {
+      from: since,
+      to: req.query.to,
+    });
+
+    res.json({
+      success: true,
+      data: {
+        realtime: stats,       // In-memory log stats (M-A07)
+        database: dbStats,     // DB persisted stats
+      },
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, error: 'STATS_FETCH_FAILED', message: error.message });
+  }
+});
+
+// M-A07: GET /api/emails/send-log - Recent send log entries
+router.get('/send-log', (req, res) => {
+  try {
+    const logs = emailService.getSendLogs({
+      limit: parseInt(req.query.limit) || 50,
+      status: req.query.status,
+      since: req.query.since,
+    });
+    res.json({ success: true, data: logs, total: logs.length });
+  } catch (error) {
+    res.status(500).json({ success: false, error: 'LOG_FETCH_FAILED', message: error.message });
+  }
+});
+
 // GET /api/emails/format/:platform - Platform-specific format sample
 router.get('/format/:platform', (req, res) => {
   try {

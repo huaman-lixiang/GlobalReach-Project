@@ -74,6 +74,16 @@ services:
       # L2 Express rate limiter: 30000 req / 15min = ~33 rps (was 1000 = 1.11 rps)
       RATE_LIMIT_MAX: ${RATE_LIMIT_MAX:-30000}
       RATE_LIMIT_WINDOW_MS: ${RATE_LIMIT_WINDOW_MS:-900000}
+      # M-A07: SMTP Configuration for Application-Level Email Sending
+      # Primary: QQ Mail SMTP (current production provider)
+      SMTP_QQ_USER: "1390885333@qq.com"
+      SMTP_QQ_FROM: "1390885333@qq.com"
+      # SMTP_QQ_PASS / SMTP_QQ_AUTH_CODE — set in .env.prod or Docker secrets
+      # Queue control (M-A07)
+      SEND_CONCURRENCY: ${SEND_CONCURRENCY:-5}
+      SEND_MAX_RETRIES: ${SEND_MAX_RETRIES:-3}
+      SEND_RETRY_DELAY: ${SEND_RETRY_DELAY:-1000}
+      SEND_RATE_LIMIT: ${SEND_RATE_LIMIT:-3}
     networks:
       - globalreach-network
     ports:

@@ -4,6 +4,14 @@
  * Bridges API routes with M8 platform adapters, email formatting,
  * failover logic, template engine, and DB persistence.
  *
+ * M-A07 Enhancement: Multi-provider SMTP configuration with:
+ *   - Multi-template management (email-templates.json)
+ *   - Queue depth control (concurrency/rate-limit/retry/timeout)
+ *   - Email send log tracking
+ *   - Success rate statistics API
+ *   - Round-robin sender rotation
+ *   - Auto failover on account failure
+ *
  * Architecture:
  *   Route → EmailService → TemplateEngine (render)
  *                      → AccountService (account selection)
@@ -17,6 +25,8 @@
 
 const db = require('../db');
 const { v4: uuidv4 } = require('uuid');
+const path = require('path');
+const fs = require('fs');
 
 // M7/M8 Engine modules
 let AccountPoolManager, FailoverManager, EmailFormatter;
@@ -51,17 +61,229 @@ try {
 let emailQueue;
 
 // ============================================
+// M-A07: Multi-Provider SMTP Configuration
+// ============================================
+
+/**
+ * Load SMTP provider configuration from email-templates.json.
+ * Falls back to environment variables for sensitive credentials.
+ */
+let _smtpConfig = null;
+let _roundRobinIndex = 0;  // Round-robin rotation index
+let _sendLog = [];          // In-memory send log (circular buffer)
+const SEND_LOG_MAX_SIZE = 1000;
+
+function _loadSmtpConfig() {
+  if (_smtpConfig) return _smtpConfig;
+
+  const configPath = path.join(__dirname, '../config/email-templates.json');
+  try {
+    if (fs.existsSync(configPath)) {
+      const raw = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+      _smtpConfig = {
+        templates: raw.templates || {},
+        providers: raw.providers || {},
+        queueConfig: raw.queueConfig || {},
+        trackingConfig: raw.trackingConfig || { enabled: true },
+      };
+      console.log(`[EmailService/M-A07] Loaded SMTP config: ${Object.keys(_smtpConfig.providers).length} providers, ${Object.keys(_smtpConfig.templates).length} templates`);
+    } else {
+      console.warn('[EmailService/M-A07] email-templates.json not found, using defaults');
+      _smtpConfig = { templates: {}, providers: {}, queueConfig: {}, trackingConfig: { enabled: true } };
+    }
+  } catch (e) {
+    console.error('[EmailService/M-A07] Failed to load config:', e.message);
+    _smtpConfig = { templates: {}, providers: {}, queueConfig: {}, trackingConfig: { enabled: true } };
+  }
+
+  return _smtpConfig;
+}
+
+/**
+ * Get resolved provider config with env var substitution.
+ * Passwords/auth codes are NEVER stored in the JSON — always from env vars.
+ */
+function getProviderConfig(providerName) {
+  const config = _loadSmtpConfig();
+  const provider = config.providers[providerName];
+  if (!provider) return null;
+
+  // Resolve env vars in 'from' field (e.g., ${SMTP_QQ_FROM:-default})
+  const resolveEnv = (val) => {
+    if (typeof val !== 'string') return val;
+    const match = val.match(/^\$\{([^}:]+)(?::(.*))?\}$/);
+    if (match) {
+      return process.env[match[1]] || (match[2] !== undefined ? match[2] : '');
+    }
+    return val;
+  };
+
+  return {
+    ...provider,
+    host: resolveEnv(provider.host),
+    port: typeof provider.port === 'string' ? parseInt(resolveEnv(provider.port)) || 587 : provider.port,
+    secure: typeof provider.secure === 'string' ? resolveEnv(provider.secure) === 'true' : !!provider.secure,
+    from: resolveEnv(provider.from),
+    // Credentials from env vars only (never from config file)
+    user: process.env[`SMTP_${providerName.toUpperCase()}_USER`] || process.env.SMTP_QQ_USER || '',
+    pass: process.env[`SMTP_${providerName.toUpperCase()}_PASS`] || process.env.SMTP_QQ_AUTH_CODE || process.env.SMTP_QQ_PASSWORD || '',
+  };
+}
+
+/**
+ * Get all active (configured) provider names.
+ */
+function getActiveProviders() {
+  const config = _loadSmtpConfig();
+  return Object.entries(config.providers)
+    .filter(([name, p]) => {
+      const resolved = getProviderConfig(name);
+      return resolved && resolved.from && resolved.host;
+    })
+    .map(([name]) => name);
+}
+
+// ============================================
+// M-A07: Sender Rotation (Round-Robin)
+// ============================================
+
+/**
+ * Get next sending account via round-robin across active accounts.
+ * Falls back to engine's FailoverManager if available.
+ *
+ * @param {string} preferredPlatform - Preferred platform (e.g., 'qq')
+ * @returns {{ accountId: string|null, platform: string }}
+ */
+function getNextSender(preferredPlatform) {
+  // If M7 engine is available with active accounts, use it for round-robin
+  if (poolManager && poolManager.accounts.size > 0) {
+    const activeAccounts = [];
+    for (const [id, account] of poolManager.accounts) {
+      if (account.status === 'active' &&
+          (!preferredPlatform || account.platform === preferredPlatform)) {
+        activeAccounts.push({ id, ...account });
+      }
+    }
+
+    if (activeAccounts.length > 0) {
+      // Round-robin selection
+      const idx = _roundRobinIndex % activeAccounts.length;
+      _roundRobinIndex++;
+      const selected = activeAccounts[idx];
+      console.log(`[EmailService/M-A07] Round-robin selected account: ${selected.id} (${selected.platform}) [index=${idx}/${activeAccounts.length}]`);
+      return { accountId: selected.id, platform: selected.platform };
+    }
+  }
+
+  // Fallback: use configured SMTP provider directly
+  const providers = getActiveProviders();
+  const target = preferredPlatform && providers.includes(preferredPlatform)
+    ? preferredPlatform
+    : (providers.length > 0 ? providers[0] : 'qq');
+
+  return { accountId: null, platform: target };
+}
+
+/**
+ * Reset round-robin index (useful after account pool changes).
+ */
+function resetRoundRobin() {
+  _roundRobinIndex = 0;
+}
+
+// ============================================
+// M-A07: Send Log Tracking
+// ============================================
+
+/**
+ * Record a send attempt to the in-memory log.
+ * Used for real-time send statistics.
+ */
+function _recordSendLog(entry) {
+  if (!_loadSmtpConfig().trackingConfig.enabled) return;
+
+  _sendLog.push({
+    ...entry,
+    timestamp: new Date().toISOString(),
+    logId: uuidv4(),
+  });
+
+  // Circular buffer: keep only last SEND_LOG_MAX_SIZE entries
+  if (_sendLog.length > SEND_LOG_MAX_SIZE) {
+    _sendLog = _sendLog.slice(-SEND_LOG_MAX_SIZE);
+  }
+}
+
+/**
+ * Get recent send logs with optional filtering.
+ * @param {{ limit?: number, status?: string, since?: string }} options
+ */
+function getSendLogs(options = {}) {
+  const { limit = 100, status, since } = options;
+  let logs = [..._sendLog];
+
+  if (status) {
+    logs = logs.filter(l => l.status === status.toUpperCase());
+  }
+  if (since) {
+    logs = logs.filter(l => l.timestamp >= since);
+  }
+
+  return logs.slice(-limit);
+}
+
+/**
+ * Calculate send success rate from logs.
+ * @param {{ since?: string }} options
+ */
+function getSendStats(options = {}) {
+  const { since } = options;
+  const logs = since ? _sendLog.filter(l => l.timestamp >= since) : [..._sendLog];
+
+  const total = logs.length;
+  const succeeded = logs.filter(l => l.status === 'SENT').length;
+  const failed = logs.filter(l => l.status === 'FAILED').length;
+
+  // Per-provider breakdown
+  const byProvider = {};
+  for (const log of logs) {
+    if (!byProvider[log.provider]) {
+      byProvider[log.provider] = { total: 0, sent: 0, failed: 0 };
+    }
+    byProvider[log.provider].total++;
+    if (log.status === 'SENT') byProvider[log.provider].sent++;
+    else if (log.status === 'FAILED') byProvider[log.provider].failed++;
+  }
+
+  return {
+    total,
+    succeeded,
+    failed,
+    successRate: total > 0 ? ((succeeded / total) * 100).toFixed(2) + '%' : 'N/A',
+    byProvider,
+    period: since ? `since ${since}` : 'all time',
+    logSize: _sendLog.length,
+  };
+}
+
+// ============================================
 // Single Email Send
 // ============================================
 
 /**
  * Send a single email with full engine integration.
- * Flow: validate → format → select account → send → persist
+ * M-A07 Enhanced: auto round-robin, timeout control, send logging.
+ * Flow: validate → format → select account (round-robin) → send → persist → log
  */
 async function sendEmail(userId, emailData) {
+  const startTime = Date.now();
+  const queueConfig = _loadSmtpConfig().queueConfig;
+  const connectionTimeout = (queueConfig && queueConfig.connectionTimeoutMs) || 10000;
+  const sendTimeout = (queueConfig && queueConfig.sendTimeoutMs) || 30000;
+
   // 1. Validate input via EmailFormatter
   const rawEmail = {
-    from: emailData.from || userId, // fallback to user identifier
+    from: emailData.from || userId,
     to: emailData.to,
     cc: emailData.cc,
     bcc: emailData.bcc,
@@ -75,12 +297,21 @@ async function sendEmail(userId, emailData) {
   if (emailFormatter) {
     const validation = emailFormatter.validateEmail(rawEmail);
     if (!validation.valid) {
+      _recordSendLog({ userId, to: String(rawEmail.to), subject: rawEmail.subject, status: 'FAILED', error: validation.errors[0], provider: 'validation' });
       throw Object.assign(new Error(validation.errors[0]), { code: 'INVALID_EMAIL', details: validation.errors });
     }
   }
 
-  // 2. Determine target platform
-  const targetPlatform = emailData.platform || 'gmail';
+  // 2. Determine target platform / use round-robin if no specific account
+  let targetPlatform = emailData.platform || 'qq';
+  let effectiveAccountId = emailData.accountId || null;
+
+  // M-A07: Auto round-robin when no accountId specified
+  if (!effectiveAccountId) {
+    const nextSender = getNextSender(targetPlatform);
+    effectiveAccountId = nextSender.accountId;
+    targetPlatform = nextSender.platform;
+  }
 
   // 3. Format email for target platform
   let formattedEmail = rawEmail;
@@ -88,28 +319,38 @@ async function sendEmail(userId, emailData) {
     formattedEmail = emailFormatter.formatEmail(rawEmail, targetPlatform);
   }
 
-  // 4. Select sending account and send
+  // 4. Send with timeout wrapper + retry
   let sendResult;
-  const accountId = emailData.accountId;
-
-  if (failoverManager && !accountId) {
-    // Use failover manager for automatic account selection + retry
-    sendResult = await _sendWithFailover(formattedEmail, { requiredPlatform: targetPlatform, ...emailData });
-  } else if (accountId) {
-    // Use specific account
-    sendResult = await _sendWithAccount(accountId, formattedEmail, userId);
-  } else {
-    // Fallback: direct nodemailer send without engine
-    sendResult = await _sendDirect(formattedEmail, targetPlatform);
+  try {
+    sendResult = await Promise.race([
+      _doSend(effectiveAccountId, formattedEmail, targetPlatform, userId, { connectionTimeout, sendTimeout }),
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error(`Send timeout after ${sendTimeout}ms`)), sendTimeout)
+      ),
+    ]);
+  } catch (error) {
+    sendResult = { success: false, error: error.message, accountId: effectiveAccountId, platform: targetPlatform };
   }
 
-  // 5. Persist email record to DB
+  // 5. Record send log
+  _recordSendLog({
+    userId,
+    to: Array.isArray(formattedEmail.to) ? formattedEmail.to.map(r => r.email || r).join(',') : String(formattedEmail.to),
+    subject: formattedEmail.subject,
+    status: sendResult.success ? 'SENT' : 'FAILED',
+    provider: sendResult.platform || targetPlatform,
+    error: sendResult.success ? null : sendResult.error,
+    duration: Date.now() - startTime,
+    accountId: sendResult.accountId,
+  });
+
+  // 6. Persist email record to DB
   const emailRecord = await db.Email.create({
     userId,
     clientId: emailData.clientId || null,
     accountId: sendResult.accountId || null,
     campaignId: emailData.campaignId || null,
-    toAddress: Array.isArray(formattedEmail.to) ? formattedEmail.to.map(r => r.email).join(',') : formattedEmail.to,
+    toAddress: Array.isArray(formattedEmail.to) ? formattedEmail.to.map(r => r.email || r).join(',') : formattedEmail.to,
     fromAddress: typeof formattedEmail.from === 'object' ? formattedEmail.from.email : formattedEmail.from,
     subject: formattedEmail.subject,
     bodyHtml: formattedEmail.html || null,
@@ -129,6 +370,58 @@ async function sendEmail(userId, emailData) {
     sentAt: emailRecord.sentAt,
     status: emailRecord.status,
   };
+}
+
+// ============================================
+// M-A07: Internal Send Dispatcher with Retry
+// ============================================
+
+/**
+ * Internal dispatch: route to appropriate send method based on availability.
+ * Wraps send with exponential backoff retry.
+ */
+async function _doSend(accountId, formattedEmail, platform, userId, timeouts) {
+  const maxRetries = (_loadSmtpConfig().queueConfig.maxRetries) || 3;
+  const baseDelay = (_loadSmtpConfig().queueConfig.retryBaseDelayMs) || 1000;
+  let lastError;
+
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      if (attempt > 0) {
+        // Exponential backoff: 1s → 2s → 4s → 8s
+        const delay = baseDelay * Math.pow(2, attempt - 1);
+        console.log(`[EmailService/M-A07] Retry attempt ${attempt}/${maxRetries} after ${delay}ms`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+
+      let result;
+      if (failoverManager && !accountId) {
+        result = await _sendWithFailover(formattedEmail, { requiredPlatform: platform });
+      } else if (accountId) {
+        result = await _sendWithAccount(accountId, formattedEmail, userId);
+      } else {
+        result = await _sendDirect(formattedEmail, platform);
+      }
+
+      return result; // Success — return immediately
+    } catch (error) {
+      lastError = error;
+      console.warn(`[EmailService/M-A07] Send attempt ${attempt + 1} failed: ${error.message}`);
+
+      // On account-level failure, try rotating to next account before retrying
+      if (accountId && attempt < maxRetries) {
+        const rotated = getNextSender(platform);
+        if (rotated.accountId && rotated.accountId !== accountId) {
+          console.log(`[EmailService/M-A07] Auto failover: ${accountId} → ${rotated.accountId}`);
+          accountId = rotated.accountId;
+          platform = rotated.platform;
+        }
+      }
+    }
+  }
+
+  // All retries exhausted
+  return { success: false, error: lastError?.message || 'Max retries exceeded', accountId, platform };
 }
 
 // ============================================
@@ -682,4 +975,33 @@ module.exports = {
   get failoverManager() { return failoverManager; },
   get emailFormatter() { return emailFormatter; },
   get templateEngine() { return templateEngine; },
+
+  // M-A07: Multi-Provider SMTP Configuration
+  getProviderConfig,
+  getActiveProviders,
+  _loadSmtpConfig,      // For testing/diagnostics
+
+  // M-A07: Sender Rotation
+  getNextSender,
+  resetRoundRobin,
+
+  // M-A07: Send Log Tracking & Statistics
+  getSendLogs,
+  getSendStats,
+
+  // M-A07: Template Management
+  getSystemTemplates() { return _loadSmtpConfig().templates; },
+  previewTemplate(templateName, context = {}) {
+    const templates = _loadSmtpConfig().templates;
+    const tpl = templates[templateName];
+    if (!tpl) throw new Error(`Template "${templateName}" not found. Available: ${Object.keys(templates).join(', ')}`);
+    if (!templateEngine) throw new Error('TemplateEngine not available');
+    const ctx = { client: context.client || {}, user: context.user || {}, campaign: context.campaign || {}, ...context };
+    return {
+      subject: templateEngine.render(tpl.subject, ctx),
+      html: templateEngine.render(tpl.body, ctx),
+      templateName,
+      category: tpl.category || 'custom',
+    };
+  },
 };
