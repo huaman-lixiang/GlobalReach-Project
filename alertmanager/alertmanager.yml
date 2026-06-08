@@ -12,6 +12,13 @@
 
 global:
   resolve_timeout: 5m
+  # S125/Gmail SMTP Production Configuration
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'wendyhouse112@gmail.com'
+  smtp_hello: 'gmail.com'
+  smtp_require_tls: true
+  smtp_auth_username: 'wendyhouse112@gmail.com'
+  smtp_auth_password: 'kyxa iuxh tfdr Icyw'
 
 # Inhibition rules: suppress lower-severity alerts when higher ones fire
 inhibit_rules:
@@ -31,13 +38,15 @@ inhibit_rules:
 # Receivers (Notification Channels)
 # ============================================
 receivers:
-  # --- Receiver 1: Email (Primary Channel via Mailpit SMTP) ---
+  # --- Receiver 1: Email (Primary Channel via Gmail SMTP) ---
   - name: 'email-primary'
     email_configs:
-      - to: 'admin@globalreach.local'
-        from: 'alert@globalreach.local'
-        smarthost: 'mailpit:1025'   # S108: Mailpit SMTP relay
-        require_tls: false
+      - to: '1390885333@qq.com'
+        from: 'wendyhouse112@gmail.com'
+        smarthost: 'smtp.gmail.com:587'
+        auth_username: 'wendyhouse112@gmail.com'
+        auth_password: 'kyxa iuxh tfdr Icyw'
+        require_tls: true
         send_resolved: true
         html: |
           <h2 style="color: {{ if eq .Status "firing" }}red{{ else }}green{{ end }}">
@@ -63,13 +72,15 @@ receivers:
         send_resolved: true
         max_alerts: 10
 
-  # --- Receiver 3: Critical Multi-channel (Email via Mailpit + Webhook) ---
+  # --- Receiver 3: Critical Multi-channel (Email via Gmail + Webhook) ---
   - name: 'critical-multi'
     email_configs:
-      - to: 'admin@globalreach.local'
-        from: 'alert@globalreach.local'
-        smarthost: 'mailpit:1025'   # S108: Mailpit SMTP relay
-        require_tls: false
+      - to: '1390885333@qq.com'
+        from: 'wendyhouse112@gmail.com'
+        smarthost: 'smtp.gmail.com:587'
+        auth_username: 'wendyhouse112@gmail.com'
+        auth_password: 'kyxa iuxh tfdr Icyw'
+        require_tls: true
         send_resolved: true
     webhook_configs:
       - url: 'http://host.docker.internal:9999/webhook'

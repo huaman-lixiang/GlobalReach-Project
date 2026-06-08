@@ -166,12 +166,12 @@ services:
     environment:
       GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin123}
       GF_USERS_ALLOW_SIGN_UP: "false"
-      # S106/PhaseH: Grafana Alerting — SMTP Configuration (S116: Production-ready)
+      # S125/Gmail SMTP Production Migration (from Mailpit)
       GF_SMTP_ENABLED: "true"
-      GF_SMTP_HOST: ${GRAFANA_SMTP_HOST:-mailpit:1025}
-      GF_SMTP_USER: ${GRAFANA_SMTP_USER:-""}
-      GF_SMTP_PASSWORD: ${GRAFANA_SMTP_PASSWORD:-""}
-      GF_SMTP_FROM_ADDRESS: ${GRAFANA_SMTP_FROM:-noreply@globalreach.com}
+      GF_SMTP_HOST: "smtp.gmail.com:587"
+      GF_SMTP_USER: "wendyhouse112@gmail.com"
+      GF_SMTP_PASSWORD: "kyxa iuxh tfdr Icyw"
+      GF_SMTP_FROM_ADDRESS: "wendyhouse112@gmail.com"
       GF_SMTP_FROM_NAME: "GlobalReach Monitor"
       # S106/PhaseH: Alert Notification Environment Variables
       GRAFANA_ALERT_EMAIL_TO: ${GRAFANA_ALERT_EMAIL_TO:-admin@globalreach.local}
