@@ -312,11 +312,15 @@ services:
     networks:
       - globalreach-network
 
-  # S101/PhaseH: Let's Encrypt Certificate Management (certbot)
+  # S119/Post-Go-Live: Let's Encrypt Certificate Management (certbot)
+  #
   # Usage:
-  #   Initial request:  docker compose run --rm certbot certonly --webroot ...
-  #   Renewal:          docker compose run --rm certbot renew
-  #   Dry-run test:     docker compose run --rm certbot renew --dry-run
+  #   Initial issuance: docker compose -f docker-compose.prod.yml run --rm --profile ssl certbot
+  #   Renewal:          docker compose -f docker-compose.prod.yml run --rm --profile ssl certbot renew
+  #   Dry-run test:     docker compose -f docker-compose.prod.yml run --rm --profile ssl certbot renew --dry-run
+  #   One-click switch: bash scripts/ssl-switch-to-letsencrypt.sh
+  #
+  # S119 Enhancement: Added deploy hooks for auto-reload on renewal
   certbot:
     image: certbot/certbot:latest
     container_name: globalreach-certbot
@@ -324,13 +328,25 @@ services:
     volumes:
       - ./nginx/ssl/letsencrypt:/etc/letsencrypt
       - ./nginx/acme-challenge:/var/www/acme-challenge
+      - /var/run/docker.sock:/var/run/docker.sock  # S119: Allow deploy hook to reload Nginx
+    environment:
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-admin@globalreach.com}
+      CERTBOT_DOMAINS: ${CERTBOT_DOMAINS:-api.globalreach.com,app.globalreach.com,monitor.globalreach.com,grafana.globalreach.com}
     networks:
       - globalreach-network
-    command: ["certonly", "--webroot", "-w", "/var/www",
-              "-d", "api.globalreach.com", "-d", "app.globalreach.com",
-              "-d", "monitor.globalreach.com", "-d", "grafana.globalreach.com",
-              "--email", "${LETSENCRYPT_EMAIL:-admin@globalreach.com}",
-              "--agree-tos", "--no-eff-email", "--force-renewal"]
+    entrypoint: ["sh", "-c"]
+    # S119: Interactive mode — use 'certonly' for initial issue, 'renew' for续期
+    # Deploy hook automatically reloads Nginx container after successful renewal
+    command: |
+      certonly --webroot \
+        -w /var/www/acme-challenge \
+        -d api.globalreach.com \
+        -d app.globalreach.com \
+        -d monitor.globalreach.com \
+        -d grafana.globalreach.com \
+        --email "${LETSENCRYPT_EMAIL:-admin@globalreach.com}" \
+        --agree-tos --no-eff-email \
+        --deploy-hook "docker exec globalreach-nginx nginx -s reload" || true
 
 volumes:
   postgres_data:
