@@ -15,6 +15,7 @@
  */
 
 const express = require('express');
+const v8 = require('v8');
 const router = express.Router();
 
 // DB
@@ -257,7 +258,14 @@ async function checkSystemResources() {
   const heapTotalMB = Math.round(memUsage.heapTotal / 1024 / 1024);
   const rssMB = Math.round(memUsage.rss / 1024 / 1024);
   const externalMB = Math.round(memUsage.external / 1024 / 1024);
-  const heapUsagePercent = heapTotalMB > 0 ? Math.round((heapUsedMB / heapTotalMB) * 100) : 0;
+
+  // S128/M-A01: Fix heapUsagePercent calculation
+  // Use V8 heap_size_limit (max-old-space-size) instead of heapTotal (allocated)
+  // Previously: heapUsed/heapTotal showed 88% (53MB/60MB allocated) — misleading
+  // Now:     heapUsed/heap_size_limit shows ~14% (53MB/384MB limit) — accurate
+  const v8HeapStats = v8.getHeapStatistics();
+  const heapSizeLimitMB = Math.round(v8HeapStats.heap_size_limit / 1024 / 1024);
+  const heapUsagePercent = heapSizeLimitMB > 0 ? Math.round((heapUsedMB / heapSizeLimitMB) * 100) : 0;
 
   // S098/PhaseH: Dual-threshold memory health check
   // Primary: RSS vs container limit (512MB) — reflects real OS memory pressure
@@ -289,6 +297,7 @@ async function checkSystemResources() {
       memory: {
         heapUsed: `${heapUsedMB} MB`,
         heapTotal: `${heapTotalMB} MB`,
+        heapSizeLimit: `${heapSizeLimitMB} MB`,
         heapUsagePercent,
         rss: `${rssMB} MB`,
         rssPercent: `${rssPercent}%`,
