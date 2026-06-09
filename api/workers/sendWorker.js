@@ -1,14 +1,18 @@
 /**
- * Send Worker (D03)
+ * Send Worker (D03) - M-A04 Enhanced
  *
  * Background job processor that consumes the EmailQueue.
  * Each worker instance runs a processing loop:
  *   1. Dequeue next available job from EmailQueue
  *   2. Render email content via TemplateEngine
  *   3. Call emailService.sendEmail() for actual sending
- *   4. Update DB record with result
- *   5. Report back to queue (complete/fail)
- *   6. Emit progress events for SSE subscribers
+ *   4. Report back to queue (complete/fail) → Queue handles batch DB writes
+ *   5. Emit progress events for SSE subscribers
+ *
+ * M-A04 Optimizations:
+ *   - Removed direct DB updates (now handled by queue's batch buffer)
+ *   - Better error isolation per job
+ *   - Memory-efficient job handling
  *
  * Can run as:
  *   - In-process (default): Started with server, processes jobs in background
@@ -16,7 +20,6 @@
  */
 
 const EmailQueue = require('../queue/emailQueue');
-const db = require('../db');
 
 class SendWorker {
   constructor(options = {}) {
@@ -31,7 +34,7 @@ class SendWorker {
     this._processNext = this._processNext.bind(this);
     this._handleJob = this._handleJob.bind(this);
 
-    console.log(`[SendWorker] Initialized (pollInterval=${this.pollInterval}ms)`);
+    console.log(`[SendWorker/M-A04] Initialized (pollInterval=${this.pollInterval}ms)`);
   }
 
   /**
@@ -120,6 +123,7 @@ class SendWorker {
 
   /**
    * Process a send_email job.
+   * M-A04: Removed direct DB updates (now handled by queue's batch buffer)
    */
   async _sendEmailJob(job) {
     let sendResult;
@@ -142,22 +146,10 @@ class SendWorker {
       // Step 2: Call emailService for actual sending
       sendResult = await this.emailService.sendEmail(job.userId, emailData);
 
-      // Step 3: Update DB email record
-      if (job.emailId) {
-        await db.Email.update(
-          {
-            status: sendResult.success ? 'SENT' : 'FAILED',
-            accountId: sendResult.accountId || null,
-            fromAddress: sendResult.fromAddress || emailData.from || '',
-            sentAt: sendResult.success ? new Date() : null,
-            errorMessage: sendResult.success ? null : (sendResult.error || null),
-            providerMessageId: sendResult.messageId || null,
-          },
-          { where: { id: job.emailId } }
-        );
-      }
+      // M-A04: Step 3 removed - No direct DB update here
+      // Queue's complete() method now handles batch buffering
 
-      // Step 4: Mark job complete
+      // Step 4: Mark job complete → Queue handles DB write via batch buffer
       this.queue.complete(job.id, {
         success: sendResult.success,
         messageId: sendResult.messageId,
@@ -170,18 +162,9 @@ class SendWorker {
       this.jobCount.succeeded++;
 
     } catch (error) {
-      console.error(`[SendWorker] Send failed for job ${job.id}:`, error.message);
+      console.error(`[SendWorker/M-A04] Send failed for job ${job.id}:`, error.message);
 
-      // Update DB on failure
-      if (job.emailId) {
-        try {
-          await db.Email.update(
-            { status: 'FAILED', errorMessage: error.message },
-            { where: { id: job.emailId } }
-          );
-        } catch (_) {}
-      }
-
+      // M-A04: No direct DB update on failure - queue handles it
       this.queue.fail(job.id, error);
       this.jobCount.failed++;
     }

@@ -240,6 +240,12 @@ app.use('/api/v1/stats', statsRoutes);
 app.use('/api/v1/health', healthRoutes);       // D14: Deep health check
 app.use('/api/v1/progress', progressRoutes);     // D03: SSE progress
 app.use('/api/v1/metrics', metricsRoutes);          // D15: Prometheus metrics
+
+// M-A04: Inject emailQueue instance into metrics route for queue-specific endpoints
+if (emailQueue && typeof metricsRoutes.setQueue === 'function') {
+  metricsRoutes.setQueue(emailQueue);
+  console.log('[Server/M-A04] EmailQueue injected into metrics routes');
+}
 app.use('/api/v1/docs', docsRoutes);                // D16: Swagger UI documentation
 app.use('/api/v1/analytics', analyticsRoutes);      // D22: Advanced Analytics
 app.use('/api/v1/teams', teamsRoutes);              // D23: Team Collaboration
