@@ -4,6 +4,7 @@ import { UserOutlined, LockOutlined, SafetyCertificateOutlined } from '@ant-desi
 import { useNavigate, Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '@/store'
 import { login, clearError } from '@/store/slices/authSlice'
+import { useTranslation } from 'react-i18next'
 
 const { Title, Text } = Typography
 
@@ -12,12 +13,13 @@ const LoginPage: React.FC = () => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const { error } = useAppSelector((state) => state.auth)
+  const { t } = useTranslation()
 
   const onFinish = async (values: { email: string; password: string }) => {
     try {
       setLoading(true)
       await dispatch(login(values)).unwrap()
-      message.success('登录成功！欢迎回来')
+      message.success(t('auth.loginSuccess'))
       navigate('/dashboard')
     } catch (err: any) {
       message.error(err.message || '登录失败，请检查邮箱和密码')
@@ -131,10 +133,10 @@ const LoginPage: React.FC = () => {
         >
           <div style={{ marginBottom: 36 }}>
             <Title level={3} style={{ marginBottom: 6, fontWeight: 800 }}>
-              欢迎回来
+              {t('dashboard.welcome')}
             </Title>
             <Text type="secondary" style={{ fontSize: 14 }}>
-              请输入您的账号信息以访问管理后台
+              {t('auth.pleaseLogin')}
             </Text>
           </div>
 
@@ -146,27 +148,27 @@ const LoginPage: React.FC = () => {
           >
             <Form.Item
               name="email"
-              label={<span style={{ fontWeight: 600, fontSize: 13 }}>邮箱地址</span>}
+              label={<span style={{ fontWeight: 600, fontSize: 13 }}>{t('auth.email')}</span>}
               rules={[
-                { required: true, message: '请输入邮箱地址' },
-                { type: 'email', message: '请输入有效的邮箱地址' },
+                { required: true, message: t('validation.required', { field: t('auth.email') }) },
+                { type: 'email', message: t('common.invalidEmail') },
               ]}
             >
               <Input
                 prefix={<UserOutlined style={{ color: 'var(--gr-gray-400)' }} />}
-                placeholder="请输入您的邮箱"
+                placeholder={t('auth.email')}
                 autoComplete="email"
               />
             </Form.Item>
 
             <Form.Item
               name="password"
-              label={<span style={{ fontWeight: 600, fontSize: 13 }}>密码</span>}
-              rules={[{ required: true, message: '请输入密码' }]}
+              label={<span style={{ fontWeight: 600, fontSize: 13 }}>{t('auth.password')}</span>}
+              rules={[{ required: true, message: t('validation.required', { field: t('auth.password') }) }]}
             >
               <Input.Password
                 prefix={<LockOutlined style={{ color: 'var(--gr-gray-400)' }} />}
-                placeholder="请输入您的密码"
+                placeholder={t('auth.password')}
                 autoComplete="current-password"
               />
             </Form.Item>
@@ -186,9 +188,9 @@ const LoginPage: React.FC = () => {
 
           <div style={{ textAlign: 'center' }}>
             <Text type="secondary" style={{ fontSize: 13 }}>
-              还没有账号？{' '}
+              {t('auth.register')}?{' '}
               <Link to="/register" style={{ fontWeight: 700, color: 'var(--gr-primary)' }}>
-                立即注册账号
+                {t('auth.register')}
               </Link>
             </Text>
           </div>

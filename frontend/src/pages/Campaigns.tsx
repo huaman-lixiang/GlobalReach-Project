@@ -34,6 +34,7 @@ import {
   createCampaign,
 } from '@/store/slices/campaignsSlice'
 import api from '@/services/api'
+import { useTranslation } from 'react-i18next'
 
 const { Title, Text } = Typography
 const { Option } = Select
@@ -71,11 +72,12 @@ const CreateWizardModal: React.FC<CreateWizardProps> = ({ visible, onClose, onSu
   const [form] = Form.useForm()
   const [currentStep, setCurrentStep] = useState(0)
   const [submitting, setSubmitting] = useState(false)
+  const { t } = useTranslation()
 
   const steps = [
-    { title: '基本信息', description: '活动名称与类型' },
-    { title: '邮件内容', description: '主题与正文模板' },
-    { title: '发送设置', description: '目标账号选择' },
+    { title: t('settings.personalInfo'), description: t('campaigns.name') },
+    { title: t('emails.body'), description: t('campaigns.subject') },
+    { title: t('emails.sendEmail'), description: t('emails.to') },
   ]
 
   const handleNext = async () => {
@@ -104,7 +106,7 @@ const CreateWizardModal: React.FC<CreateWizardProps> = ({ visible, onClose, onSu
       onClose()
       onSuccess()
     } catch (err: any) {
-      message.error(err.message || '创建失败')
+      message.error(err.message || t('errors.internalServerError'))
     } finally {
       setSubmitting(false)
     }
@@ -112,7 +114,7 @@ const CreateWizardModal: React.FC<CreateWizardProps> = ({ visible, onClose, onSu
 
   return (
     <Modal
-      title="创建营销活动"
+      title={t('campaigns.createCampaign')}
       open={visible}
       onCancel={() => { form.resetFields(); setCurrentStep(0); onClose() }}
       width={720}
@@ -158,8 +160,8 @@ const CreateWizardModal: React.FC<CreateWizardProps> = ({ visible, onClose, onSu
             >
               <Input placeholder="例如: Hi {{client.name}} - 关于{{company}}的合作邀请" />
             </Form.Item>
-            <Form.Item name="body_template" label="邮件正文 (支持HTML)"
-              rules={[{ required: true, message: '请输入邮件内容' }]}
+            <Form.Item name="body_template" label={t('emails.body') + ' (支持HTML)'}
+              rules={[{ required: true, message: t('validation.required', { field: t('emails.body') }) }]}
             >
               <TextArea
                 rows={10}
@@ -207,19 +209,19 @@ const CreateWizardModal: React.FC<CreateWizardProps> = ({ visible, onClose, onSu
 
       <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 24 }}>
         <Button disabled={currentStep === 0} onClick={handlePrev}>
-          上一步
+          {t('common.previous')}
         </Button>
         <Space>
           <Button onClick={() => { form.resetFields(); setCurrentStep(0); onClose() }}>
-            取消
+            {t('common.cancel')}
           </Button>
           {currentStep < 2 ? (
             <Button type="primary" onClick={handleNext}>
-              下一步
+              {t('common.next')}
             </Button>
           ) : (
             <Button type="primary" loading={submitting} onClick={handleSubmit} icon={<SendOutlined />}>
-              创建活动
+              {t('campaigns.createCampaign')}
             </Button>
           )}
         </Space>
@@ -275,12 +277,12 @@ const SendProgressModal: React.FC<ProgressModalProps> = ({ visible, campaignId, 
 
   return (
     <Modal
-      title="发送进度"
+      title={t('emails.sendEmail')}
       open={visible}
       onCancel={onClose}
       footer={[
         <Button key="close" onClick={onClose}>
-          {isComplete ? '完成' : '后台运行'}
+          {isComplete ? t('common.success') : t('campaigns.sending')}
         </Button>,
       ]}
       width={550}
@@ -295,12 +297,12 @@ const SendProgressModal: React.FC<ProgressModalProps> = ({ visible, campaignId, 
         />
         <div style={{ marginTop: 16 }}>
           <Text>
-            已完成: <strong>{progress?.completedJobs || 0}</strong> / {progress?.totalJobs || 0}
+            {t('common.completed')}: <strong>{progress?.completedJobs || 0}</strong> / {progress?.totalJobs || 0}
           </Text>
         </div>
         {progress?.failedJobs > 0 && (
           <div style={{ marginTop: 8 }}>
-            <Text type="warning">失败: {progress.failedJobs}</Text>
+            <Text type="warning">{t('emails.failed')}: {progress.failedJobs}</Text>
           </div>
         )}
         {isComplete && (
@@ -308,8 +310,8 @@ const SendProgressModal: React.FC<ProgressModalProps> = ({ visible, campaignId, 
             type="success"
             showIcon
             style={{ marginTop: 16 }}
-            message="发送完成!"
-            description={`共处理 ${progress.totalJobs} 封邮件`}
+            message={t('emails.emailSent')}
+            description={`${t('dashboard.totalEmails')} ${progress.totalJobs}`}
           />
         )}
       </div>
@@ -328,6 +330,7 @@ const CampaignsPage: React.FC = () => {
   const [progressVisible, setProgressVisible] = useState(false)
   const [sendingId, setSendingId] = useState<string | null>(null)
   const [progressCampaignId, setProgressCampaignId] = useState<string | null>(null)
+  const { t } = useTranslation()
 
   useEffect(() => {
     dispatch(fetchCampaigns())
@@ -353,7 +356,7 @@ const CampaignsPage: React.FC = () => {
         message.error(data.message || '发送失败')
       }
     } catch (err: any) {
-      message.error(err.message || '发送请求失败')
+      message.error(err.message || t('errors.internalServerError'))
     } finally {
       setSendingId(null)
     }
@@ -366,13 +369,13 @@ const CampaignsPage: React.FC = () => {
 
   const columns = [
     {
-      title: '活动名称',
+      title: t('campaigns.name'),
       dataIndex: 'name',
       key: 'name',
       render: (text: string) => <Text strong>{text}</Text>,
     },
     {
-      title: '类型',
+      title: t('campaigns.type'),
       dataIndex: 'type',
       key: 'type',
       width: 130,
@@ -382,14 +385,14 @@ const CampaignsPage: React.FC = () => {
       },
     },
     {
-      title: '状态',
+      title: t('campaigns.status'),
       dataIndex: 'status',
       key: 'status',
       width: 100,
       render: (status: string) => getStatusTag(status),
     },
     {
-      title: '发送进度',
+      title: t('emails.history'),
       key: 'progress',
       width: 200,
       render: (_: any, record: any) => {
@@ -413,40 +416,40 @@ const CampaignsPage: React.FC = () => {
       },
     },
     {
-      title: '创建时间',
+      title: t('emails.sentAt'),
       dataIndex: 'createdAt',
       key: 'createdAt',
       width: 170,
       render: (val: string) => val ? new Date(val).toLocaleString() : '-',
     },
     {
-      title: '操作',
+      title: t('common.actions'),
       key: 'action',
       width: 220,
       render: (_: any, record: any) => (
         <Space size="small">
-          <Tooltip title="查看详情">
+          <Tooltip title={t('common.details')}>
             <Button type="link" size="small" icon={<EyeOutlined />} />
           </Tooltip>
-          <Tooltip title="编辑">
+          <Tooltip title={t('common.edit')}>
             <Button type="link" size="small" icon={<EditOutlined />} />
           </Tooltip>
           {(record.status === 'DRAFT' || record.status === 'SCHEDULED') && (
             <Popconfirm
-              title="确定要立即发送此活动吗？"
+              title={t('campaigns.confirmDelete')}
               onConfirm={() => handleSend(record)}
-              okText="确认发送"
-              cancelText="取消"
+              okText={t('common.confirm')}
+              cancelText={t('common.cancel')}
             >
-              <Button
-                type="link" size="small"
-                icon={<PlayCircleOutlined />}
-                loading={sendingId === record.id}
-                style={{ color: 'var(--gr-primary)', fontWeight: 600 }}
-              >
-                发送
-              </Button>
-            </Popconfirm>
+                <Button
+                  type="link" size="small"
+                  icon={<PlayCircleOutlined />}
+                  loading={sendingId === record.id}
+                  style={{ color: 'var(--gr-primary)', fontWeight: 600 }}
+                >
+                  {t('campaigns.start')}
+                </Button>
+              </Popconfirm>
           )}
           {record.status === 'SENDING' && (
             <Button
@@ -454,7 +457,7 @@ const CampaignsPage: React.FC = () => {
               icon={<ReloadOutlined />}
               onClick={() => { setProgressCampaignId(record.id); setProgressVisible(true) }}
             >
-              查看进度
+              {t('emails.viewDetails')}
             </Button>
           )}
         </Space>
@@ -487,7 +490,7 @@ const CampaignsPage: React.FC = () => {
             pageSize: 10,
             showSizeChanger: true,
             showQuickJumper: true,
-            showTotal: (total) => `共 ${total} 个活动`,
+            showTotal: (total) => `${t('common.total')} ${total} ${t('campaigns.title')}`,
           }}
           size="middle"
         />

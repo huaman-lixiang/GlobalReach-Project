@@ -27,6 +27,7 @@ import {
 } from 'recharts'
 import { useAppDispatch, useAppSelector } from '@/store'
 import { fetchStats } from '@/store/slices/statsSlice'
+import { useTranslation } from 'react-i18next'
 
 const { Title, Text } = Typography
 
@@ -34,16 +35,17 @@ const COLORS = ['#1a56db', '#0d9488', '#f59e0b', '#dc2626', '#7c3aed']
 
 // Platform display name mapping
 const platformLabels: Record<string, string> = {
-  GMAIL: 'Gmail',
-  OUTLOOK: 'Outlook',
-  QQ: 'QQ邮箱',
-  NETEASE_163: '163邮箱',
-  CUSTOM_SMTP: '企业邮',
+  GMAIL: t('accounts.gmail'),
+  OUTLOOK: t('accounts.outlook'),
+  QQ: t('accounts.qq'),
+  NETEASE_163: t('accounts.163'),
+  CUSTOM_SMTP: t('accounts.custom'),
 }
 
 const Dashboard: React.FC = () => {
   const dispatch = useAppDispatch()
   const { data: stats, loading, error } = useAppSelector((state) => state.stats)
+  const { t } = useTranslation()
 
   useEffect(() => {
     dispatch(fetchStats())
@@ -52,39 +54,39 @@ const Dashboard: React.FC = () => {
   if (loading) {
     return (
       <div style={{ textAlign: 'center', padding: 100 }}>
-        <Spin size="large" tip="正在加载统计数据..." />
+        <Spin size="large" tip={t('common.loading')} />
       </div>
     )
   }
 
   if (error) {
-    return <Alert message="数据加载错误" description={error} type="error" showIcon />
+    return <Alert message={t('errors.internalServerError')} description={error} type="error" showIcon />
   }
 
   const statCards = [
     {
-      title: '已发送邮件',
+      title: t('dashboard.totalEmails'),
       value: stats?.totalEmailsSent || 0,
       icon: <SendOutlined style={{ color: 'var(--gr-primary)', fontSize: 22 }} />,
       suffix: '封',
       cardClass: 'primary',
     },
     {
-      title: '活跃账号',
+      title: t('dashboard.totalAccounts'),
       value: stats?.totalAccounts || 0,
       icon: <TeamOutlined style={{ color: 'var(--gr-success)', fontSize: 22 }} />,
       suffix: '个',
       cardClass: 'success',
     },
     {
-      title: '进行中活动',
+      title: t('dashboard.activeCampaigns'),
       value: stats?.activeCampaigns || 0,
       icon: <MailOutlined style={{ color: 'var(--gr-warning)', fontSize: 22 }} />,
       suffix: '个',
       cardClass: 'warning',
     },
     {
-      title: '打开率',
+      title: t('dashboard.openRate'),
       value: stats?.openRate || 0,
       icon: <EyeOutlined style={{ color: '#7c3aed', fontSize: 22 }} />,
       prefix: stats?.openRate && stats.openRate > 50 ? <RiseOutlined /> : <FallOutlined />,
@@ -223,7 +225,7 @@ const Dashboard: React.FC = () => {
           <Card title={
             <span>
               <BarChartOutlined style={{ marginRight: 8, color: 'var(--gr-primary)' }} />
-              每日发送趋势（近7天）
+              {t('dashboard.recentCampaigns')}
             </span>
           }>
             {dailyStats.length > 0 ? (
@@ -260,7 +262,7 @@ const Dashboard: React.FC = () => {
                 </LineChart>
               </ResponsiveContainer>
             ) : (
-              <Empty description="暂无发送数据" style={{ padding: 80 }} />
+              <Empty description={t('dashboard.noData')} style={{ padding: 80 }} />
             )}
           </Card>
         </Col>
@@ -269,7 +271,7 @@ const Dashboard: React.FC = () => {
           <Card title={
             <span>
               <PieChartOutlined style={{ marginRight: 8, color: 'var(--gr-success)' }} />
-              平台分布
+              {t('reports.platformBreakdown')}
             </span>
           }>
             {platformData.length > 0 ? (
@@ -335,7 +337,7 @@ const Dashboard: React.FC = () => {
                 </BarChart>
               </ResponsiveContainer>
             ) : (
-              <Empty description="暂无数据" style={{ padding: 60 }} />
+              <Empty description={t('common.noRecords')} style={{ padding: 60 }} />
             )}
           </Card>
         </Col>
@@ -348,19 +350,19 @@ const Dashboard: React.FC = () => {
             title={
               <span>
                 <ClockCircleOutlined style={{ marginRight: 8, color: 'var(--gr-primary)' }} />
-                最近活动
+                {t('dashboard.recentCampaigns')}
               </span>
             }
             extra={
               <a onClick={() => dispatch(fetchStats())} style={{ fontWeight: 600, color: 'var(--gr-primary)' }}>
-                刷新数据
+                {t('common.refresh')}
               </a>
             }
           >
             {timelineItems.length > 0 ? (
               <Timeline items={timelineItems} />
             ) : (
-              <Empty description="暂无活动记录" />
+              <Empty description={t('dashboard.noData')} />
             )}
           </Card>
         </Col>

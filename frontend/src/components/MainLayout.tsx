@@ -16,6 +16,8 @@ import {
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '@/store'
 import { logoutUser } from '@/store/slices/authSlice'
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const { Header, Sider, Content } = Layout
 const { Text } = Typography
@@ -26,6 +28,7 @@ const MainLayout: React.FC = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const { user } = useAppSelector((state) => state.auth)
+  const { t } = useTranslation()
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken()
@@ -34,32 +37,32 @@ const MainLayout: React.FC = () => {
     {
       key: '/dashboard',
       icon: <DashboardOutlined />,
-      label: '仪表盘',
+      label: t('common.dashboard'),
     },
     {
       key: '/accounts',
       icon: <TeamOutlined />,
-      label: '账号管理',
+      label: t('common.accounts'),
     },
     {
       key: '/campaigns',
       icon: <MailOutlined />,
-      label: '营销活动',
+      label: t('common.campaigns'),
     },
     {
       key: '/emails',
       icon: <SendOutlined />,
-      label: '邮件记录',
+      label: t('common.emails'),
     },
     {
       key: '/reports',
       icon: <BarChartOutlined />,
-      label: '数据报表',
+      label: t('common.reports'),
     },
     {
       key: '/settings',
       icon: <SettingOutlined />,
-      label: '系统设置',
+      label: t('common.settings'),
     },
   ]
 
@@ -67,7 +70,7 @@ const MainLayout: React.FC = () => {
     {
       key: 'profile',
       icon: <SettingOutlined />,
-      label: '个人设置',
+      label: t('settings.profile'),
     },
     {
       type: 'divider' as const,
@@ -75,7 +78,7 @@ const MainLayout: React.FC = () => {
     {
       key: 'logout',
       icon: <LogoutOutlined />,
-      label: '退出登录',
+      label: t('auth.logout'),
       danger: true,
     },
   ]
@@ -250,6 +253,9 @@ const MainLayout: React.FC = () => {
           </Space>
 
           <Space size={20} align="center">
+            {/* Language Switcher */}
+            <LanguageSwitcher />
+
             {/* Notifications */}
             <Badge count={0} size="small">
               <BellOutlined
@@ -293,7 +299,7 @@ const MainLayout: React.FC = () => {
                 />
                 <div style={{ lineHeight: 1.3 }}>
                   <Text strong style={{ fontSize: 13, display: 'block' }}>
-                    {user?.name || '用户'}
+                    {user?.name || t('auth.name')}
                   </Text>
                   <Text
                     style={{

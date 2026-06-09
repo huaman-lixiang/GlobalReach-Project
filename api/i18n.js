@@ -6,7 +6,7 @@ const i18n = i18next
   .use(Backend)
   .use(i18nextMiddleware.LanguageDetector)
   .init({
-    fallbackLng: 'en',
+    fallbackLng: 'zh',
     debug: process.env.NODE_ENV !== 'production',
     interpolation: {
       escapeValue: false,

@@ -1,0 +1,317 @@
+# M-B03: GlobalReach V2.0 Prometheus Alert Rules (Loki/Promtail Metrics)
+# ===================================================
+# 版本: 2.0 (M-B03 Enhanced)
+# 创建日期: 2026-06-09
+# 说明: 使用 Promtail 从日志中提取的指标进行告警
+#       这些规则可直接加载到 Prometheus 中使用
+#
+# 指标来源: promtail-config.yml 中的 metrics pipeline_stages
+# 可用指标:
+#   - api_requests_total: API请求计数器 (按method)
+#   - api_errors_total: API错误计数器 (按status, 4xx/5xx)
+#   - log_lines_total: 日志行计数器 (按container_name, level)
+#   - auth_failures_total: 认证失败计数器 (M-B03新增)
+#   - slow_requests_total: 慢请求计数器 (>1s) (M-B03新增)
+#
+# 加载方式:
+#   此文件应被 prometheus.yml 的 rule_files 引用:
+#   rule_files:
+#     - /etc/prometheus/rules/loki-metrics-alerts.yml
+#
+# ===================================================
+
+groups:
+  # ──────────────────────────────────────────
+  # GROUP 1: API 可用性监控 (API Availability)
+  # ──────────────────────────────────────────
+  - name: globalreach_api_availability
+    interval: 30s
+    rules:
+
+      # ALERT 1: API 错误率过高 (>5%)
+      - alert: GlobalReachAPIHighErrorRate
+        expr: |
+          (
+            sum(rate(api_errors_total[5m]))
+            /
+            sum(rate(api_requests_total[5m]))
+          ) > 0.05
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+          category: reliability
+        annotations:
+          summary: "⚠️ GlobalReach API 错误率超过5%"
+          description: |
+            API错误率: {{ $value | humanizePercentage }}
+            基于Promtail从日志提取的指标
+            
+            影响: 用户可能遇到API调用失败
+            排查: 查看 Loki Dashboard "错误Top10"面板
+          runbook_url: "https://docs.globalreach.com/runbooks/api-error-rate"
+
+      # ALERT 2: API 完全不可用 (无请求)
+      - alert: GlobalReachAPINoRequests
+        expr: |
+          sum(rate(api_requests_total[10m])) == 0
+        for: 5m
+        labels:
+          severity: critical
+          team: platform
+          category: availability
+        annotations:
+          summary: "🔴 GlobalReach API 无任何请求 (可能宕机)"
+          description: |
+            过去10分钟内未检测到任何API请求
+            
+            可能原因:
+            - API服务完全宕机
+            - Promtail未正常采集日志
+            - 网络层故障（负载均衡、DNS）
+            
+            立即检查:
+            docker ps | grep globalreach-api
+            curl -I http://localhost:3000/health
+          runbook_url: "https://docs.globalreach.com/runbooks/api-down"
+
+  # ──────────────────────────────────────────
+  # GROUP 2: 性能告警 (Performance Alerts)
+  # ──────────────────────────────────────────
+  - name: globalreach_performance_alerts
+    interval: 60s
+    rules:
+
+      # ALERT 3: 慢请求比例过高 (M-B03新增)
+      - alert: GlobalReachHighSlowRequestRate
+        expr: |
+          (
+            sum(rate(slow_requests_total[5m]))
+            /
+            sum(rate(api_requests_total[5m]))
+          ) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+          category: performance
+        annotations:
+          summary: "🐌 超过10%的API请求耗时>1秒"
+          description: |
+            慢请求占比: {{ $value | humanizePercentage }}
+            阈值: >1秒的请求被视为慢请求
+            
+            性能优化建议:
+            1. 检查数据库查询性能（EXPLAIN ANALYZE）
+            2. 查看是否存在N+1查询问题
+            3. 评估是否需要添加缓存层
+            4. 检查外部API调用延迟
+            
+            详细分析:
+            Grafana Dashboard → "慢API请求"面板
+          runbook_url: "https://docs.globalreach.com/runbooks/slow-requests"
+
+      # ALERT 4: 日志量异常下降
+      - alert: GlobalReachLogVolumeDrop
+        expr: |
+          sum(rate(log_lines_total[10m]))
+          <
+          sum(rate(log_lines_total[30m] offset 10m)) * 0.2
+        for: 15m
+        labels:
+          severity: warning
+          team: platform
+          category: availability
+        annotations:
+          summary: "📉 日志量骤降>80%，服务可能异常"
+          description: |
+            当前日志速率仅为基线的 {{ $value | humanizePercentage }}
+            
+            可能原因:
+            - 应用进程挂起或死锁
+            - Promtail断连或Docker Socket问题
+            - OOM Kill导致容器重启循环
+            
+            排查命令:
+            docker logs --tail 50 <container>
+            docker stats --no-stream
+          runbook_url: "https://docs.globalreach.com/runbooks/log-volume-drop"
+
+  # ──────────────────────────────────────────
+  # GROUP 3: 安全告警 (Security Alerts)
+  # ──────────────────────────────────────────
+  - name: globalreach_security_alerts
+    interval: 15s
+    rules:
+
+      # ALERT 5: 认证失败激增 (M-B03新增，基于Promtail指标)
+      - alert: GlobalReachAuthFailureSpike
+        expr: |
+          sum(rate(auth_failures_total[5m])) > 10
+        for: 2m
+        labels:
+          severity: warning
+          team: security
+          category: security
+        annotations:
+          summary: "🔒 认证失败频率过高 ({{ $value }}/秒)"
+          description: |
+            每秒认证失败次数: {{ $value }}
+            
+            安全建议:
+            1. 检查是否有暴力破解攻击
+            2. 审计受影响IP地址
+            3. 验证账户锁定机制是否生效
+            4. 必要时临时封禁可疑IP
+            
+            LogQL查询:
+            {container_name="globalreach-api-prod"} |= "401" | json | line_format "{{.timestamp}} IP={{.ip}} User={{.user}}"
+          runbook_url: "https://docs.globalreach.com/runbooks/auth-spike"
+
+      # ALERT 6: 持续认证失败 (长时间低频攻击)
+      - alert: GlobalReachSustainedAuthFailures
+        expr: |
+          sum(rate(auth_failures_total[1h])) > 60
+        for: 30m
+        labels:
+          severity: info
+          team: security
+          category: security
+        annotations:
+          summary: "🔍 检测到持续性认证失败尝试 (过去1小时>{{ $value }}次)"
+          description: |
+            过去1小时累计认证失败: {{ $value }}次
+            这可能是低频率的暴力破解或凭证填充攻击
+            
+            建议:
+            - 审计失败IP列表
+            - 检查是否有账户被锁定
+            - 考虑加强密码策略
+          runbook_url: "https://docs.globalreach.com/runbooks/sustained-auth"
+
+  # ──────────────────────────────────────────
+  # GROUP 4: 日志质量监控 (Log Quality Monitoring)
+  # ──────────────────────────────────────────
+  - name: globalreach_log_quality
+    interval: 120s
+    rules:
+
+      # ALERT 7: ERROR级别日志过多
+      - alert: GlobalReachHighErrorLogVolume
+        expr: |
+          sum(rate(log_lines_total{level="error"}[15m])) > 100
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+          category: reliability
+        annotations:
+          summary: "📝 ERROR级别日志量过大 ({{ $value }}/秒)"
+          description: |
+            ERROR日志产生速率: {{ $value }}/秒
+            
+            可能问题:
+            - 应用存在大量未处理的错误
+            - 依赖服务故障导致级联错误
+            - 配置错误导致重复失败
+            
+            排查:
+            {job=~"globalreach.*"} |= "error" | json | line_format "{{.level}}: {{.message}}"
+          runbook_url: "https://docs.globalreach.com/runbooks/error-log-volume"
+
+      # ALERT 8: 日志量突增 (可能的日志风暴)
+      - alert: GlobalReachLogVolumeSpike
+        expr: |
+          sum(rate(log_lines_total[10m]))
+          >
+          sum(rate(log_lines_total[30m] offset 10m)) * 3
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+          category: capacity
+        annotations:
+          summary: "📈 日志量突增至基线的 {{ $value | humanizePercentage }}"
+          description: |
+            日志吞吐量异常增长
+            
+            可能原因:
+            - DEBUG日志意外开启
+            - 应用进入无限循环
+            - DDoS攻击导致请求暴增
+            - 批量任务异常执行
+            
+            处理建议:
+            1. 检查应用日志级别配置
+            2. 查看请求量是否正常
+            3. 如必要，调整Promtail采样率
+          runbook_url: "https://docs.globalreach.com/runbooks/log-spike"
+
+# ===================================================
+# 📋 录制规则 (Recording Rules) - 优化Dashboard性能
+# ===================================================
+  - name: globalreach_log_recording_rules
+    interval: 15s
+    rules:
+
+      # RR1: 按容器统计API请求速率
+      - record: globalreach:api_requests_rate
+        expr: sum by (container_name, method) (rate(api_requests_total[5m]))
+
+      # RR2: 按状态码统计错误速率
+      - record: globalreach:api_errors_rate
+        expr: sum by (container_name, status) (rate(api_errors_total[5m]))
+
+      # RR3: 总体API错误率
+      - record: globalreach:api_error_percentage
+        expr: |
+          (
+            sum(rate(api_errors_total[5m]))
+            /
+            sum(rate(api_requests_total[5m]))
+          ) * 100
+
+      # RR4: 慢请求速率 (M-B03)
+      - record: globalreach:slow_requests_rate
+        expr: sum by (container_name, method) (rate(slow_requests_total[5m]))
+
+      # RR5: 认证失败速率 (M-B03)
+      - record: globalreach:auth_failures_rate
+        expr: sum by (container_name, ip) (rate(auth_failures_total[5m]))
+
+      # RR6: 按级别统计日志速率
+      - record: globalreach:log_rate_by_level
+        expr: sum by (container_name, level) (rate(log_lines_total[5m]))
+
+# ===================================================
+# 🔧 使用说明
+# ===================================================
+#
+# 1. 将此文件复制到 Prometheus 规则目录:
+#    cp loki-metrics-alerts.yml /etc/prometheus/rules/
+#
+# 2. 在 prometheus.yml 中添加引用:
+#    rule_files:
+#      - '/etc/prometheus/rules/*.yml'
+#
+# 3. 重载 Prometheus 配置:
+#    curl -X POST http://localhost:9090/-/reload
+#
+# 4. 验证规则加载:
+#    访问 http://localhost:9090/rules
+#
+# 5. 测试告警:
+#    访问 http://localhost:9090/alerts
+#
+# 注意事项:
+#   - 这些规则依赖 Promtail metrics pipeline 正常工作
+#   - 如果 Promtail 未运行或配置有误，指标将为空
+#   - 建议与 Loki Ruler 规则配合使用以获得完整覆盖
+#
+# 相关文件:
+#   - loki/promtail-config.yml (指标定义)
+#   - loki/rules/alert-rules.yml (Loki Ruler格式)
+#   - grafana/provisioning/dashboards/globalreach-logs.json (可视化)
+#   - docs/LOKI_LOGQL_QUERIES.md (查询手册)
+#
+# ===================================================

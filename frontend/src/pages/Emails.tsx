@@ -9,6 +9,7 @@ import {
 } from '@ant-design/icons'
 import { useAppDispatch, useAppSelector } from '@/store'
 import { fetchEmails, resendEmail } from '@/store/slices/emailsSlice'
+import { useTranslation } from 'react-i18next'
 
 const { Title, Text } = Typography
 
@@ -22,25 +23,29 @@ interface EmailDetailModalProps {
 
 const EmailDetailModal: React.FC<EmailDetailModalProps> = ({ visible, record, onClose }) => {
   if (!record) return null
+  const { t } = useTranslation()
 
   const statusColors: Record<string, string> = {
     pending: 'default', sent: 'processing', delivered: 'success',
     bounced: 'warning', failed: 'error',
   }
   const statusLabels: Record<string, string> = {
-    pending: '待发送', sent: '已发送', delivered: '已送达',
-    bounced: '退信', failed: '失败',
+    pending: t('emails.pending'),
+    sent: t('emails.delivered'),
+    delivered: t('emails.delivered'),
+    bounced: t('emails.bounced'),
+    failed: t('emails.failed'),
   }
 
   return (
-    <Modal title="邮件详情" open={visible} onCancel={onClose} footer={null} width={650}>
+    <Modal title={t('emails.viewDetails')} open={visible} onCancel={onClose} footer={null} width={650}>
       <Descriptions column={1} bordered size="small">
-        <Descriptions.Item label="邮件ID">
+        <Descriptions.Item label="ID">
           <Text copyable>{record.id}</Text>
         </Descriptions.Item>
-        <Descriptions.Item label="收件人">{record.toAddress}</Descriptions.Item>
-        <Descriptions.Item label="发件人">{record.fromAddress}</Descriptions.Item>
-        <Descriptions.Item label="主题">{record.subject}</Descriptions.Item>
+        <Descriptions.Item label={t('emails.to')}>{record.toAddress}</Descriptions.Item>
+        <Descriptions.Item label={t('emails.from')}>{record.fromAddress}</Descriptions.Item>
+        <Descriptions.Item label={t('emails.subject')}>{record.subject}</Descriptions.Item>
         <Descriptions.Item label="状态">
           <Tag color={statusColors[record.status] || 'default'}>
             {statusLabels[record.status] || record.status}

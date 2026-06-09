@@ -1,0 +1,379 @@
+# M-B03: GlobalReach V2.0 Loki Ruler Alert Rules
+# ===================================================
+# 版本: 2.0 (M-B03 Enhanced)
+# 创建日期: 2026-06-09
+# 用途: 当启用 Loki Ruler 时，加载此配置到 loki-config.yml
+#
+# 启用方法:
+#   1. 在 loki-config.yml 中添加:
+#      ruler:
+#        storage:
+#          type: local
+#          local:
+#            directory: /loki/rules
+#   2. 重启 Loki 容器
+#   3. 规则将自动从 /loki/rules 目录加载
+#
+# 注意: 当前环境使用 Prometheus 告警，此文件为备用方案
+# ===================================================
+
+groups:
+  # ──────────────────────────────────────────
+  # GROUP 1: 错误率监控 (Error Rate Monitoring)
+  # ──────────────────────────────────────────
+  - name: globalreach_error_rate
+    interval: 60s
+    rules:
+
+      # ALERT 1: 高错误率 (>5%)
+      # 当 ERROR/WARN 级别日志超过总日志量的5%时触发
+      - alert: HighErrorRate
+        expr: |
+          sum(rate({job=~"globalreach.*"} |= "error" or |= "warn" | __error__="" [5m]))
+          /
+          sum(rate({job=~"globalreach.*"} | __error__="" [5m])) > 0.05
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+          category: reliability
+        annotations:
+          summary: "🚨 日志错误率超过5%"
+          description: |
+            错误率已达到 {{ $value | humanizePercentage }}
+            时间范围: 过去5分钟
+            影响: 可能存在应用异常或未处理的错误
+            
+            排查步骤:
+            1. 查看 Grafana Dashboard: "GlobalReach — 日志聚合分析仪表板"
+            2. 执行 LogQL: {job=~"globalreach.*"} |= "error" | json
+            3. 检查最近部署或配置变更
+          runbook_url: "https://docs.globalreach.com/runbooks/high-error-rate"
+          logql_debug: '{job=~"globalreach.*"} |= "error" or |= "warn" | __error__=""'
+
+      # ALERT 2: 严重错误率 (>15%)
+      - alert: CriticalErrorRate
+        expr: |
+          sum(rate({job=~"globalreach.*"} |= "error" | __error__="" [5m]))
+          /
+          sum(rate({job=~"globalreach.*"} | __error__="" [5m])) > 0.15
+        for: 2m
+        labels:
+          severity: critical
+          team: platform
+          category: reliability
+          pagerduty: "high"
+        annotations:
+          summary: "💥 日志错误率超过15% (CRITICAL)"
+          description: |
+            严重错误率已达 {{ $value | humanizePercentage }}
+            需要立即处理！可能影响用户体验。
+            
+            快速排查:
+            - 检查服务是否正常运行: docker ps | grep globalreach
+            - 查看最新错误: {container_name="globalreach-api-prod"} |= "ERROR" | json
+            - 检查系统资源: top / htop
+          logql_debug: '{job=~"globalreach.*"} |= "error" | __error__=""'
+
+  # ──────────────────────────────────────────
+  # GROUP 2: 日志量异常监控 (Log Volume Anomaly)
+  # ──────────────────────────────────────────
+  - name: globalreach_log_volume
+    interval: 120s
+    rules:
+
+      # ALERT 3: 日志量骤降 (>80%下降)
+      # 可能表示服务挂起、死锁或 Promtail 断连
+      - alert: LogVolumeDrop
+        expr: |
+          sum(rate({job=~"globalreach.*"} | __error__="" [10m]))
+          <
+          sum(rate({job=~"globalreach.*"} | __error__="" [30m] offset 10m)) * 0.2
+        for: 15m
+        labels:
+          severity: warning
+          team: platform
+          category: availability
+        annotations:
+          summary: "⚠️ 日志量骤降超过80%，可能服务异常"
+          description: |
+            容器 {{ $labels.container_name }} 的日志吞吐量降至基线的 {{ $value | humanizePercentage }}
+            
+            可能原因:
+            - 服务进程挂起或死锁
+            - Promtail 与 Docker Socket 连接断开
+            - 应用程序日志输出停止
+            - OOM Kill 或容器崩溃
+            
+            排查命令:
+            docker logs --tail 100 <container_name>
+            docker stats --no-stream
+          runbook_url: "https://docs.globalreach.com/runbooks/log-volume-drop"
+
+      # ALERT 4: 日志量突增 (>300%增长)
+      # 可能表示日志风暴、无限循环或攻击
+      - alert: LogVolumeSpike
+        expr: |
+          sum(rate({job=~"globalreach.*"} | __error__="" [10m]))
+          >
+          sum(rate({job=~"globalreach.*"} | __error__="" [30m] offset 10m)) * 3
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+          category: capacity
+        annotations:
+          summary: "📈 日志量突增超过300%"
+          description: |
+            日志吞吐量增至基线的 {{ $value | humanizePercentage }}
+            
+            可能原因:
+            - 应用进入无限循环
+            - 日志级别意外设置为 DEBUG
+            - DDoS 攻击导致请求量暴增
+            - 批量任务异常执行
+            
+            建议:
+            1. 检查是否有 DEBUG 日志泛滥
+            2. 查看请求量是否正常
+            3. 考虑临时调整日志级别
+          logql_debug: 'sum by (container_name) (rate({job=~"globalreach.*"} [5m]))'
+
+  # ──────────────────────────────────────────
+  # GROUP 3: 安全审计告警 (Security Auditing)
+  # ──────────────────────────────────────────
+  - name: globalreach_security_alerts
+    interval: 30s
+    rules:
+
+      # ALERT 5: 认证失败激增 (暴力破解检测)
+      - alert: AuthenticationFailureSpike
+        expr: |
+          sum(rate({job=~"globalreach.*"} |= "login" |= "failed" or |= "401" or |= "unauthorized" | __error__="" [5m]))
+          > 10
+        for: 2m
+        labels:
+          severity: warning
+          team: security
+          category: security
+        annotations:
+          summary: "🔒 认证失败频率过高 (可能暴力破解)"
+          description: |
+            每 {{ $labels.window }} 认证失败次数: {{ $value }}
+            
+            安全建议:
+            1. 检查受影响IP: {job=~".*"} |= "401" | json | line_format "IP={{.ip}}"
+            2. 考虑暂时封禁可疑IP
+            3. 检查账户锁定策略是否生效
+            4. 审计管理员账号活动
+            
+            LogQL查询:
+            {container_name="globalreach-api-prod"} |= "401" | json | line_format "{{.timestamp}} IP={{.ip}} User={{.user}}"
+          runbook_url: "https://docs.globalreach.com/runbooks/auth-failure-spike"
+          logql_debug: '{job=~"globalreach.*"} |= "401" or |= "failed login"'
+
+      # ALERT 6: 权限拒绝异常
+      - alert: AccessDeniedAnomaly
+        expr: |
+          sum(rate({job=~"globalreach.*"} |= "403" or |= "forbidden" | __error__="" [5m]))
+          > 20
+        for: 5m
+        labels:
+          severity: info
+          team: security
+          category: security
+        annotations:
+          summary: "🚫 403 Forbidden 错误频率升高"
+          description: "每分钟 403 错误数: {{ $value }}"
+          logql_debug: '{job=~"globalreach.*"} |= "403" or |= "forbidden"'
+
+  # ──────────────────────────────────────────
+  # GROUP 4: 性能退化告警 (Performance Degradation)
+  # ──────────────────────────────────────────
+  - name: globalreach_performance_alerts
+    interval: 60s
+    rules:
+
+      # ALERT 7: 慢请求比例过高 (>10%的请求>1秒)
+      - alert: HighSlowRequestRate
+        expr: |
+          (
+            sum(rate({container_name="globalreach-api-prod"} | json | duration > 1000 | __error__="" [5m]))
+            /
+            sum(rate({container_name="globalreach-api-prod"} | json | __error__="" [5m]))
+          ) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+          category: performance
+        annotations:
+          summary: "🐌 慢API请求占比超过10%"
+          description: |
+            超过1秒的慢请求占比: {{ $value | humanizePercentage }}
+            
+            性能分析建议:
+            1. 定位慢端点: {container_name="globalreach-api-prod"} | json | duration > 1000 | line_format "{{.method}} {{.url}} = {{.duration}}ms"
+            2. 检查数据库查询性能
+            3. 查看外部API调用延迟
+            4. 分析是否存在N+1查询问题
+            
+            Top10慢请求:
+            topk(10, {container_name="globalreach-api-prod"} | json | duration > 1000 | unwrap duration | sum by (url) (rate([5m])))
+          runbook_url: "https://docs.globalreach.com/runbooks/slow-requests"
+          logql_debug: '{container_name="globalreach-api-prod"} | json | duration > 1000'
+
+      # ALERT 8: 5xx错误率升高
+      - alert: ServerErrorRateHigh
+        expr: |
+          (
+            sum(rate({container_name="globalreach-api-prod"} |= `5[0-9][0-9]` | json | __error__="" [5m]))
+            /
+            sum(rate({container_name="globalreach-api-prod"} | json | __error__="" [5m]))
+          ) > 0.01
+        for: 3m
+        labels:
+          severity: critical
+          team: platform
+          category: reliability
+        annotations:
+          summary: "🔴 HTTP 5xx 错误率超过1%"
+          description: |
+            服务端错误率: {{ $value | humanizePercentage }}
+            
+            紧急处理:
+            1. 检查应用日志中的异常堆栈
+            2. 验证数据库连接状态
+            3. 检查依赖服务可用性
+            4. 如有必要，考虑回滚最近部署
+            
+            错误详情:
+            {container_name="globalreach-api-prod"} | json | status >= 500 | line_format "{{.status}} {{.method}} {{.url}} - {{.message}}"
+          runbook_url: "https://docs.globalreach.com/runbooks/server-errors"
+          logql_debug: '{container_name="globalreach-api-prod"} |= `5[0-9][0-9]` | json'
+
+  # ──────────────────────────────────────────
+  # GROUP 5: 业务流程监控 (Business Process Monitoring)
+  # ──────────────────────────────────────────
+  - name: globalreach_business_alerts
+    interval: 120s
+    rules:
+
+      # ALERT 9: 邮件发送失败率升高
+      - alert: EmailSendingFailureRate
+        expr: |
+          (
+            sum(rate({job=~"globalreach.*"} |= "email" |= "failed" | __error__="" [15m]))
+            /
+            sum(rate({job=~"globalreach.*"} |= "email" | __error__="" [15m]))
+          ) > 0.2
+        for: 10m
+        labels:
+          severity: warning
+          team: operations
+          category: business
+        annotations:
+          summary: "✉️ 邮件发送失败率超过20%"
+          description: |
+            邮件服务失败率: {{ $value | humanizePercentage }}
+            
+            影响范围:
+            - 用户注册确认邮件
+            - 密码重置邮件
+            - 系统通知邮件
+            
+            排查步骤:
+            1. 检查SMTP服务器连接状态
+            2. 查看邮箱服务商限制/黑名单
+            3. 检查邮件模板是否有效
+            4. 审查邮件队列积压情况
+            
+            失败详情:
+            {job=~"globalreach.*"} |= "email" |= "failed" | json | line_format "收件人={{.to}} 错误={{.error}}"
+          runbook_url: "https://docs.globalreach.com/runbooks/email-failures"
+          logql_debug: '{job=~"globalreach.*"} |= "email" |= "failed"'
+
+      # ALERT 10: 关键业务操作异常中断
+      - alert: CriticalBusinessProcessFailure
+        expr: |
+          sum(count_over_time({job=~"globalreach.*"} |= "FATAL" or |= "CRITICAL" | __error__="" [10m])) > 0
+        for: 1m
+        labels:
+          severity: critical
+          team: operations
+          category: business
+          pagerduty: "critical"
+        annotations:
+          summary: "💼 检测到关键业务流程致命错误"
+          description: |
+            发现 FATAL 或 CRITICAL 级别错误
+            
+            立即行动:
+            1. 召集on-call工程师
+            2. 评估业务影响范围
+            3. 准备应急响应方案
+            4. 通知相关利益方
+            
+            错误日志:
+            {job=~"globalreach.*"} |= "FATAL" or |= "CRITICAL" | json | line_format "{{.timestamp}} [{{.level}}] {{.message}}"
+          runbook_url: "https://docs.globalreach.com/runbooks/critical-failure"
+          logql_debug: '{job=~"globalreach.*"} |= "FATAL" or |= "CRITICAL"'
+
+# ===================================================
+# 📊 录制规则 (Recording Rules) - 用于预计算常用指标
+# 提高Dashboard查询性能
+# ===================================================
+  - name: globalreach_log_recording_rules
+    interval: 30s
+    rules:
+
+      # RR1: 按容器和级别统计日志速率
+      - record: globalreach:log_rate_by_container_level
+        expr: sum by (container_name, level) (rate({job=~"globalreach.*"} [5m]))
+
+      # RR2: 总体错误率
+      - record: globalreach:error_rate_total
+        expr: |
+          sum(rate({job=~"globalreach.*"} |= "error" or |= "warn" [5m]))
+          /
+          sum(rate({job=~"globalreach.*"} [5m]))
+
+      # RR3: 5xx错误速率
+      - record: globalreach:http_5xx_rate
+        expr: sum(rate({container_name="globalreach-api-prod"} |= `5[0-9][0-9]` | json [5m]))
+
+      # RR4: 认证失败速率
+      - record: globalreach:auth_failure_rate
+        expr: sum(rate({job=~"globalreach.*"} |= "401" or |= "failed login" [5m]))
+
+      # RR5: 慢请求速率
+      - record: globalreach:slow_request_rate
+        expr: sum(rate({container_name="globalreach-api-prod"} | json | duration > 1000 [5m]))
+
+# ===================================================
+# 🔧 配置说明与最佳实践
+# ===================================================
+#
+# 告警等级定义:
+#   - critical: 需要立即处理，影响用户或数据完整性
+#   - warning: 需要在短时间内调查，潜在问题
+#   - info: 信息性告警，用于趋势观察
+#
+# 持续时间 (for) 建议:
+#   - critical: 1-3分钟 (快速响应)
+#   - warning: 5-15分钟 (避免抖动)
+#   - info: 15-30分钟 (长期趋势)
+#
+# 优化提示:
+#   1. 使用 __error__="" 过滤查询错误
+#   2. 合理设置持续时间避免告警风暴
+#   3. 为每个告警提供详细的 runbook_url
+#   4. 在 annotations 中包含可执行的 LogQL 查询
+#   5. 使用录制规则减少重复计算
+#
+# 维护计划:
+#   - 每季度审查阈值合理性
+#   - 根据业务变化更新告警规则
+#   - 测试告警通知链路有效性
+#
+# ===================================================

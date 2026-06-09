@@ -1,6 +1,11 @@
-# S099/PhaseH: Grafana Promtail Configuration
+# S099/PhaseH: Grafana Promtail Configuration (M-B03 Enhanced)
 # Uses Docker Service Discovery — auto-discovers all containers via /var/run/docker.sock
 # Extracts container_name as label for LogQL filtering by service
+# M-B03 Optimizations:
+#   - Multi-line log merging (Node.js stack traces)
+#   - Structured JSON parsing (level, message, timestamp, requestId)
+#   - Enriched labels (service, environment, version)
+#   - Sampling control (DEBUG reduction in production)
 
 server:
   http_listen_port: 9080
@@ -12,6 +17,11 @@ positions:
 
 clients:
   - url: http://loki:3100/loki/api/v1/push
+
+# M-B03: Global pipeline limits to prevent overload
+limits_config:
+  max_line_size: 256kb
+  line_drop_pattern: '\\x1b\\[[0-9;]*[a-zA-Z]'  # Drop ANSI escape sequences
 
 scrape_configs:
   # ── All Docker Containers via Service Discovery ──
@@ -33,17 +43,27 @@ scrape_configs:
         target_label: 'environment'
 
     pipeline_stages:
+      # M-B03: Multi-line log merging for Node.js stack traces
+      # Detects stack trace patterns (at FunctionName, Error:, etc.) and merges with previous line
+      - multiline:
+          firstline: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}'  # ISO timestamp start
+          max_wait_time: 500ms
+          max_lines: 100
+
       # Parse Docker JSON log format: {"log":"...","stream":"stdout","time":"..."}
       - json:
           expressions:
             output: log
             stream: stream
             timestamp: time
+
       # Set timestamp from Docker's time field
       - timestamp:
           source: timestamp
           format: RFC3339Nano
-      # Extract structured fields if log line is JSON (API logs)
+
+      # M-B03: Enhanced structured JSON parsing with requestId support
+      # Extract fields if log line is JSON (API logs)
       - json:
           expressions:
             level: level
@@ -51,10 +71,27 @@ scrape_configs:
             url: url
             status: status
             msg: message
+            requestId: requestId
+            duration: duration
+            ip: ip
+            user: user
+            service: service
+            version: version
           source: output
+
+      # M-B03: Enriched labels with service, environment, version
       - labels:
           level:
           stream:
+          service:
+          environment:
+
+      # M-B03: Sampling control for DEBUG logs in production
+      # Only keep 10% of DEBUG level logs to reduce volume
+      - filter:
+          action: drop
+          expr: |
+            .level == "debug" and rand(10) != 0
 
       # S100/PhaseH: Metric Extraction — push log-derived counters to Loki/Mimir
       # These metrics are queryable via LogQL: sum(rate(...))
@@ -100,6 +137,39 @@ scrape_configs:
               labels:
                 container_name: container_name
                 level: level
+
+          # M-B03: Authentication failure counter
+          auth_failures_total:
+            type: Counter
+            description: "Authentication failures (401/failed login)"
+            config:
+              match_all: true
+              source: output
+              action: inc
+              bucket: "5m"
+              filters:
+                - pattern: '(?i)(login.*failed|401|unauthorized)'
+                  value: ""
+              labels:
+                container_name: container_name
+                ip: ip
+
+          # M-B03: Slow request counter (>1s)
+          slow_requests_total:
+            type: Counter
+            description: "Slow API requests (>1 second)"
+            config:
+              match_all: true
+              source: output
+              action: inc
+              bucket: "5m"
+              filters:
+                - pattern: '"duration":(1[0-9]{3,}|[2-9][0-9]{3,})'
+                  value: ""
+              labels:
+                container_name: container_name
+                method: method
+                url: url
 
       - output:
           source: output

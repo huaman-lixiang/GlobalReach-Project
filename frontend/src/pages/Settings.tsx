@@ -10,6 +10,7 @@ import {
 } from '@ant-design/icons'
 import { useAppSelector, useAppDispatch } from '@/store'
 import api from '@/services/api'
+import { useTranslation } from 'react-i18next'
 
 const { Title, Text } = Typography
 
@@ -21,11 +22,12 @@ const SettingsPage: React.FC = () => {
   const [passwordModalVisible, setPasswordModalVisible] = useState(false)
   const [passwordForm] = Form.useForm()
   const [saving, setSaving] = useState(false)
+  const { t } = useTranslation()
 
   const roleConfig: Record<string, { color: string; label: string }> = {
-    ADMIN: { color: 'red', label: '管理员' },
-    USER: { color: 'blue', label: '普通用户' },
-    VIEWER: { color: 'default', label: '访客' },
+    ADMIN: { color: 'red', label: t('auth.role') + ' - Admin' },
+    USER: { color: 'blue', label: t('auth.role') + ' - User' },
+    VIEWER: { color: 'default', label: t('auth.role') + ' - Viewer' },
   }
 
   const handleSaveProfile = async () => {
@@ -33,7 +35,7 @@ const SettingsPage: React.FC = () => {
       setSaving(true)
       const values = await profileForm.validateFields()
       // TODO: Call profile update API when available
-      message.success('个人资料已更新（演示模式）')
+      message.success(t('settings.changesSaved'))
       setEditingProfile(false)
     } catch (_) {
       // Validation failed
@@ -60,7 +62,7 @@ const SettingsPage: React.FC = () => {
       setPasswordModalVisible(false)
       passwordForm.resetFields()
     } catch (err: any) {
-      message.error(err.message || '密码修改失败')
+      message.error(err.message || t('settings.invalidCurrentPassword'))
     } finally {
       setSaving(false)
     }
@@ -72,10 +74,10 @@ const SettingsPage: React.FC = () => {
       <div className="gr-page-header">
         <Title level={3}>
           <SettingOutlined style={{ color: 'var(--gr-primary)' }} />
-          系统设置
+          {t('settings.title')}
         </Title>
         <Text type="secondary" style={{ fontSize: 13 }}>
-          账号配置 · 安全管理
+          {t('settings.account')} · {t('settings.security')}
         </Text>
       </div>
 
@@ -94,8 +96,8 @@ const SettingsPage: React.FC = () => {
       >
         {editingProfile ? (
           <Form form={profileForm} layout="vertical" onFinish={handleSaveProfile} style={{ maxWidth: 400 }}>
-            <Form.Item name="name" label="用户名" rules={[{ required: true }]}>
-              <Input placeholder="输入您的名称" />
+            <Form.Item name="name" label={t('auth.name')} rules={[{ required: true }]}>
+              <Input placeholder={t('auth.name')} />
             </Form.Item>
             <Form.Item>
               <Space>
