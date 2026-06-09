@@ -1,0 +1,357 @@
+# ============================================
+# S132/O01: AIOps 智能告警降噪 - 专用告警规则
+# ============================================
+#
+# 本文件包含 AIOps 系统专用的元监控告警规则：
+# - 告警风暴检测
+# - 级联故障检测
+# - 根因候选标记
+# - 抖动告警检测
+# - 维护窗口违规
+# - 自愈动作通知
+#
+# 集成方式:
+#   在 prometheus.yml 的 rule_files 中添加:
+#     - 'rules/aiops-alerts.yml'
+#
+# 依赖指标:
+#   - globalreach_aiops_alerts_total (由 alertCorrelationService.js 注册)
+#   - globalreach_aiops_correlation_duration_seconds
+#   - globalreach_aiops_active_clusters
+#   - globalreach_aiops_deduplication_rate
+
+groups:
+  # ──────────────────────────────────────────────
+  # AIOps 元监控: 系统自身健康状态
+  # ──────────────────────────────────────────────
+  - name: aiops-self-monitoring
+    interval: 30s
+    rules:
+
+      # AlertStormDetected — 告警风暴检测
+      # 当 AIOps 引擎在 1 分钟窗口内处理超过阈值数量的告警时触发
+      - alert: AlertStormDetected
+        expr: |
+          increase(globalreach_aiops_alerts_total{status="correlated|raw"}[1m]) > 10
+        for: 1m
+        labels:
+          severity: critical
+          team: platform
+          category: aiops_meta
+        annotations:
+          summary: "AIOps Alert Storm Detected (>10 alerts/minute)"
+          description: >
+            AIOps correlation engine is processing {{ $value }} alerts per minute,
+            which exceeds the storm threshold of 10. This may indicate a cascade failure
+            or widespread system issue requiring immediate attention.
+          runbook_url: "https://docs.globalreach.com/runbooks/aiops-alert-storm"
+          suggested_action: "Check active clusters via GET /api/v1/alerts/clusters"
+
+      # CascadeFailureSuspected — 级联故障检测
+      # 当多个不同组件同时触发告警时，怀疑存在级联故障
+      - alert: CascadeFailureSuspected
+        expr: |
+          (
+            count(ALERTS{severity="critical"}) BY (instance) > 1
+            and count(ALERTS{alertname=~"APIDown|HighErrorRate|APIHealthCritical"}) > 0
+          )
+        for: 2m
+        labels:
+          severity: warning
+          team: platform
+          category: aiops_correlation
+        annotations:
+          summary: "Cascade Failure Suspected - Multiple Components Affected"
+          description: >
+            Detected {{ $value }} critical alerts across different instances simultaneously.
+            This pattern suggests a cascade failure originating from an upstream component.
+            Check the root cause analysis in the AIOps dashboard.
+          runbook_url: "https://docs.globalreach.com/runbooks/cascade-failure"
+          suggested_action: "Review cluster details via GET /api/v1/alerts/clusters"
+
+      # RootCauseCandidate — 根因候选标记（基于拓扑上游优先）
+      # 标记可能为根因的告警，供运维人员参考
+      - alert: RootCauseCandidate
+        expr: |
+          ALERTS{alertname=~"APIDown|PostgresConnectionHigh|RedisMemoryHigh|NodeFileSystemFull"}
+          and on(instance) (
+            ALERTS{alertname=~"HighErrorRate|APIHealthCritical|APILatencyP50Elevated"}
+          )
+        for: 3m
+        labels:
+          severity: info
+          team: platform
+          category: aiops_root_cause
+        annotations:
+          summary: "Root Cause Candidate: {{ $labels.alertname }} on {{ $labels.instance }}"
+          description: >
+            Alert "{{ $labels.alertname }}" on instance "{{ $labels.instance }}"
+            has been identified as a potential root cause candidate based on
+            topological analysis. Upstream services are more likely to be the root cause.
+          runbook_url: "https://docs.globalreach.com/runbooks/root-cause-analysis"
+          confidence: "medium"
+
+  # ──────────────────────────────────────────────
+  # AIOps 行为分析: 告警模式检测
+  # ──────────────────────────────────────────────
+  - name: aiops-behavior-analysis
+    interval: 60s
+    rules:
+
+      # FlappingAlert — 抖动告警检测
+      # 同一告警在 5 分钟内状态切换超过 3 次
+      - alert: FlappingAlert
+        expr: |
+          (
+            changes(ALERTS{alertname!=""}[5m])
+            -
+            changes(ALERTS_FOR_DURATION{alertname!=""}[5m] offset 5m)
+          ) > 3
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+          category: aiops_behavior
+        annotations:
+          summary: "Flapping Alert Detected: {{ $labels.alertname }}"
+          description: >
+            Alert "{{ $labels.alertname }}" has changed state more than 3 times
+            in the last 5 minutes, indicating flapping behavior near threshold boundaries.
+            Current value: {{ $value }} transitions.
+          runbook_url: "https://docs.globalreach.com/runbooks/flapping-alert"
+          suggested_action: >
+            Consider adding hysteresis band or adjusting threshold.
+            Check AIOps suppression decision for this alert.
+
+      # MaintenanceWindowViolation — 维护窗口外告警
+      # 在非维护时间窗内触发的 critical/warning 告警
+      # 注意：此规则需要配合维护窗口配置使用
+      - alert: MaintenanceWindowViolation
+        expr: |
+          ALERTS{severity="critical"}
+          and ON() hour() < 2 OR hour() > 6
+          and ON() day_of_week() != 0
+        for: 0m
+        labels:
+          severity: info
+          team: platform
+          category: aiops_compliance
+        annotations:
+          summary: "Critical Alert Outside Maintenance Window: {{ $labels.alertname }}"
+          description: >
+            Critical alert "{{ $labels.alertname}}" fired outside of scheduled
+            maintenance window (02:00-06:00 UTC on Sundays).
+            Verify if this is expected or requires immediate attention.
+          runbook_url: "https://docs.globalreach.com/runbooks/maintenance-window"
+          current_time: "{{ __timestamp__ | humanizeTimestamp }}"
+
+      # AutoHealingTriggered — 自愈动作执行通知
+      # 记录自愈动作的执行情况（用于审计和监控）
+      - alert: AutoHealingTriggered
+        expr: |
+          increase(globalreach_aiops_auto_heal_total[5m]) > 0
+        for: 0m
+        labels:
+          severity: info
+          team: platform
+          category: aiops_autoheal
+        annotations:
+          summary: "Auto-Healing Action Executed (Level: {{ $labels.level }})"
+          description: >
+            An auto-healing action of type "{{ $labels.action_type }}" at level
+            "{{ $labels.level }}" was executed with result: "{{ $labels.result }}".
+            Total actions in last 5 minutes: {{ $value }}.
+          runbook_url: "https://docs.globalreach.com/runbooks/auto-healing"
+          action_details: >
+            Level: {{ $labels.level }},
+            Type: {{ $labels.action_type }},
+            Result: {{ $labels.result }}
+
+  # ──────────────────────────────────────────────
+  # AIOps 性能监控: 引擎性能指标
+  # ──────────────────────────────────────────────
+  - name: aiops-performance-monitoring
+    interval: 60s
+    rules:
+
+      # AIOpsCorrelationLatencyHigh — 关联分析延迟过高
+      - alert: AIOpsCorrelationLatencyHigh
+        expr: |
+          histogram_quantile(0.95,
+            rate(globalreach_aiops_correlation_duration_seconds_bucket[5m])
+          ) > 2
+        for: 10m
+        labels:
+          severity: warning
+          team: platform
+          category: aiops_performance
+        annotations:
+          summary: "AIOps Correlation Latency High (>2s P95)"
+          description: >
+            The P95 latency of alert correlation analysis is {{ $value }}s,
+            which exceeds the 2s threshold. This may impact real-time deduplication.
+          runbook_url: "https://docs.globalreach.com/runbooks/aiops-latency"
+          suggested_action: "Check system resources and correlation algorithm complexity"
+
+      # AIOpsDedupRateDropped — 降噪率下降
+      # 当降噪率低于目标值时发出警告
+      - alert: AIOpsDedupRateDropped
+        expr: |
+          globalreach_aiops_deduplication_rate < 0.5
+        for: 30m
+        labels:
+          severity: warning
+          team: platform
+          category: aiops_effectiveness
+        annotations:
+          summary: "AIOps Deduplication Rate Below Target (<50%)"
+          description: >
+            Current deduplication rate is {{ $value | humanizePercentage }},
+            which is below the 70% target. The system may not be effectively
+            reducing alert noise.
+          runbook_url: "https://docs.globalreach.com/runbooks/dedup-rate"
+          target_rate: "70%"
+          current_rate: "{{ $value | humanizePercentage }}"
+          suggested_action: >
+            Review correlation thresholds and check if learning phase needs adjustment.
+
+      # AIOpsActiveClustersHigh — 活跃集群数量过多
+      - alert: AIOpsActiveClustersHigh
+        expr: |
+          globalreach_aiops_active_clusters > 20
+        for: 15m
+        labels:
+          severity: warning
+          team: platform
+          category: aiops_capacity
+        annotations:
+          summary: "High Number of Active Alert Clusters (>20)"
+          description: >
+            There are currently {{ $value }} active alert clusters being tracked.
+            This may indicate ongoing issues or require cluster cleanup.
+          runbook_url: "https://docs.globalreach.com/runbooks/cluster-management"
+          suggested_action: "Review and resolve long-running clusters via API"
+
+  # ──────────────────────────────────────────────
+  # AIOps 自检: 确保 AIOps 系统自身可靠性
+  # ──────────────────────────────────────────────
+  - name: aiops-self-check
+    interval: 60s
+    rules:
+
+      # AIOpsEngineDown — AIOps 引擎宕机检测
+      # 当 GlobalReach API 完全不可用时触发
+      - alert: AIOpsEngineDown
+        expr: up{job="globalreach-api"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          team: platform
+          category: aiops_availability
+        annotations:
+          summary: "AIOps Correlation Engine is DOWN"
+          description: >
+            The GlobalReach API instance that hosts the AIOps correlation engine
+            is down. Alert deduplication and auto-healing features are unavailable.
+          runbook_url: "https://docs.globalreach.com/runbooks/aiops-engine-down"
+          impact: "All AIOps features disabled; raw alerts will be forwarded directly"
+          recovery_action: "Restart globalreach-api container"
+
+      # AIOpsMetricsMissing — 关键指标缺失
+      # 当 AIOps 专用 Prometheus 指标不可用时触发
+      - alert: AIOpsMetricsMissing
+        expr: |
+          absent(globalreach_aiops_alerts_total)
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+          category: aiops_monitoring
+        annotations:
+          summary: "AIOps Custom Metrics Not Available"
+          description: >
+            The AIOps-specific Prometheus metrics (globalreach_aiops_*) are not
+            being exported. This may indicate that the alertCorrelationService
+            is not properly initialized or metrics module is unavailable.
+          runbook_url: "https://docs.globalreach.com/runbooks/aiops-metrics-missing"
+          affected_metrics: >
+            globalreach_aiops_alerts_total,
+            globalreach_aiops_correlation_duration_seconds,
+            globalreach_aiops_active_clusters,
+            globalreach_aiops_deduplication_rate
+
+# ============================================
+# Recording Rules: AIOps 预计算指标
+# ============================================
+# 这些 recording rules 用于提高查询性能和简化复杂查询
+
+groups:
+  - name: aiops-recording-rules
+    interval: 30s
+    rules:
+
+      # 每分钟告警接收速率
+      - record: globalreach_aiops:alerts_received_rate:1m
+        expr: |
+          rate(globalreach_aiops_alerts_total[1m])
+
+      # 降噪率计算（基于最近 1 小时）
+      - record: globalreach_aiops:deduplication_rate:1h
+        expr: |
+          (
+            sum(increase(globalreach_aiops_alerts_total{status="suppressed"}[1h]))
+            /
+            sum(increase(globalreach_aiops_alerts_total[1h]))
+          ) or vector(0)
+
+      # 各级别自愈动作计数
+      - record: globalreach_aiops:auto_heal_by_level:total
+        expr: |
+          sum by (level) (increase(globalreach_aiops_auto_heal_total[1h]))
+
+      # 自愈成功率
+      - record: globalreach_aiops:auto_heal_success_rate:1h
+        expr: |
+          (
+            sum(increase(globalreach_aiops_auto_heal_total{result="success"}[1h]))
+            /
+            sum(increase(globalreach_aiops_auto_heal_total[1h]))
+          ) or vector(0)
+
+      # 平均关联耗时
+      - record: globalreach_aiops:correlation_latency_avg:5m
+        expr: |
+          avg by (algorithm) (rate(globalreach_aiops_correlation_duration_seconds_sum[5m])
+            / rate(globalreach_aiops_correlation_duration_seconds_count[5m]))
+
+      # 活跃集群按严重程度分布
+      - record: globalreach_aiops:clusters_by_severity:active
+        expr: |
+          count by (severity) (globalreach_aiops_active_clusters)
+
+# ============================================
+# 文档说明
+# ============================================
+#
+# 使用指南:
+#
+# 1. 将此文件添加到 prometheus.yml:
+#    rule_files:
+#      - 'rules/aiops-alerts.yml'
+#
+# 2. 重载 Prometheus 配置:
+#    curl -X POST http://localhost:9090/-/reload
+#
+# 3. 在 Grafana 中导入仪表盘:
+#    - 导入 grafana/dashboards/aiops-overview.json
+#
+# 4. 验证规则加载:
+#    curl http://localhost:9090/api/v1/rules | jq '.data.groups[].name' | grep aiops
+#
+# 注意事项:
+# - 此文件中的部分规则依赖 alertCorrelationService.js 注册的自定义指标
+# - 如果服务未启动或指标未注册，相关规则将处于 INACTIVE 或 ERROR 状态
+# - 建议在生产环境部署前先在测试环境验证所有规则
+#
+# 版本历史:
+# v1.0.0 (2026-06-09): 初始版本，S132/O01 实现

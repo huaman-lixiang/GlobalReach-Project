@@ -58,6 +58,30 @@ inhibit_rules:
       alertname: '.*Memory.*|.*CPU.*'
     equal: ['instance']
 
+  # S132/O01: AIOps Enhanced Inhibition Rules
+  # Rule 6: AlertStormDetected suppresses individual component alerts during storm
+  - source_match:
+      alertname: 'AlertStormDetected'
+    target_match_re:
+      alertname: '.+'
+    equal: ['team']
+    target_match:
+      severity: 'warning'
+
+  # Rule 7: RootCauseCandidate suppresses symptom alerts (downstream)
+  - source_match:
+      alertname: 'RootCauseCandidate'
+    target_match_re:
+      alertname: '.*Error.*|.*Latency.*|.*Degraded.*|.*Health.*'
+    equal: ['instance']
+
+  # Rule 8: AutoHealingTriggered suppresses duplicate notifications for auto-healed issues
+  - source_match:
+      alertname: 'AutoHealingTriggered'
+    target_match:
+      severity: 'warning'
+    equal: ['instance']
+
 # ============================================
 # Receivers (Notification Channels)
 # ============================================
@@ -114,6 +138,33 @@ receivers:
         send_resolved: true
         http_config:
           bearer_token: '${WEBHOOK_SECRET:-}'
+
+  # S132/O01: AIOps Dedicated Receivers
+  # --- Receiver 4: AIOps Webhook (Primary for correlation engine) ---
+  - name: 'aiops-webhook-primary'
+    webhook_configs:
+      - url: 'http://globalreach-api:3000/api/v1/webhooks/alertmanager'
+        send_resolved: true
+        http_config:
+          bearer_token: '${WEBHOOK_SECRET:-}'
+
+  # --- Receiver 5: AIOps Info-level (Low priority, aggregated) ---
+  - name: 'aiops-info-digest'
+    email_configs:
+      - to: '1390885333@qq.com'
+        from: '1390885333@qq.com'
+        smarthost: 'smtp.qq.com:465'
+        auth_username: '1390885333@qq.com'
+        auth_password: 'zhrtbpzlgfoehjgj'
+        require_tls: true
+        send_resolved: true
+        html: |
+          <h3 style="color: #666">AIOps Information Digest</h3>
+          <p><b>Alert:</b> {{ .CommonLabels.alertname }}</p>
+          <p><b>Category:</b> {{ .CommonLabels.category }}</p>
+          <p><b>Summary:</b> {{ .CommonAnnotations.summary }}</p>
+          <hr>
+          <small>This is an automated AIOps informational alert. No immediate action required.</small>
 
 # ============================================
 # Route Tree (Notification Routing by Severity + Team)
@@ -174,3 +225,45 @@ route:
       group_wait: 60s
       group_interval: 15m
       repeat_interval: 6h
+
+    # S132/O01: AIOps Route Branches
+    # Route 6: AIOps Meta Alerts → Dedicated AIOps receiver with info-level handling
+    - matchers:
+        - category =~ "aiops_.*"
+      receiver: 'aiops-webhook-primary'
+      continue: true
+      group_by: ['category', 'alertname']
+      group_wait: 10s
+      group_interval: 1m
+      repeat_interval: 30m
+
+    # Route 7: AIOps Info-level alerts → Digest email (low priority)
+    - matchers:
+        - category = "aiops_meta"
+        - severity = "info"
+      receiver: 'aiops-info-digest'
+      continue: false
+      group_by: ['category', 'alertname']
+      group_wait: 300s
+      group_interval: 30m
+      repeat_interval: 24h
+
+    # Route 8: Root Cause Candidates → Webhook for correlation engine analysis
+    - matchers:
+        - alertname = "RootCauseCandidate"
+      receiver: 'aiops-webhook-primary'
+      continue: true
+      group_by: ['instance', 'alertname']
+      group_wait: 5s
+      group_interval: 30s
+      repeat_interval: 1h
+
+    # Route 9: Auto-healing notifications → Webhook for audit trail
+    - matchers:
+        - alertname = "AutoHealingTriggered"
+      receiver: 'aiops-webhook-primary'
+      continue: false
+      group_by: ['level', 'action_type', 'result']
+      group_wait: 5s
+      group_interval: 1m
+      repeat_interval: 4h
