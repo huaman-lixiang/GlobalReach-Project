@@ -16,6 +16,24 @@ const sequelize = new Sequelize(process.env.DATABASE_URL || 'postgresql://global
   },
 });
 
+// S130/N01: 多租户架构 — Tenant 模型定义
+const initTenantModel = require('../models/Tenant');
+const Tenant = initTenantModel(sequelize);
+
+// S130/N01: 默认租户 ID（向后兼容常量）
+const DEFAULT_TENANT_ID = 1;
+
+// S130/N01: 租户 ID 字段定义（所有业务表共用）
+const tenantIdField = {
+  tenantId: {
+    type: DataTypes.INTEGER,
+    field: 'tenant_id',
+    defaultValue: DEFAULT_TENANT_ID, // 向后兼容：默认归属默认租户
+    allowNull: false,
+    comment: '多租户隔离标识 (S130/N01)',
+  },
+};
+
 const User = sequelize.define('User', {
   id: {
     type: DataTypes.UUID,
@@ -54,10 +72,16 @@ const User = sequelize.define('User', {
   },
   avatar: { type: DataTypes.STRING },
   lastLoginAt: { type: DataTypes.DATE, field: 'last_login_at' },
+  ...tenantIdField,
 }, {
   tableName: 'users',
   timestamps: true,
   underscored: true,
+  indexes: [
+    // S130/N01: 多租户索引 — 加速按租户过滤查询
+    { fields: ['tenant_id'] },
+    { fields: ['tenant_id', 'email'] }, // 复合索引：租户内唯一邮箱查找
+  ],
 });
 
 const EmailAccount = sequelize.define('EmailAccount', {
@@ -93,10 +117,16 @@ const EmailAccount = sequelize.define('EmailAccount', {
   lastUsedAt: { type: DataTypes.DATE, field: 'last_used_at' },
   healthScore: { type: DataTypes.INTEGER, defaultValue: 100, field: 'health_score' },
   metadata: { type: DataTypes.TEXT },
+  ...tenantIdField,
 }, {
   tableName: 'email_accounts',
   timestamps: true,
   underscored: true,
+  indexes: [
+    // S130/N01: 多租户索引
+    { fields: ['tenant_id'] },
+    { fields: ['tenant_id', 'user_id'] },
+  ],
 });
 
 const Client = sequelize.define('Client', {
@@ -121,10 +151,17 @@ const Client = sequelize.define('Client', {
   website: { type: DataTypes.STRING(500) },
   customFields: { type: DataTypes.TEXT, field: 'custom_fields' },
   notes: { type: DataTypes.TEXT },
+  ...tenantIdField,
 }, {
   tableName: 'clients',
   timestamps: true,
   underscored: true,
+  indexes: [
+    // S130/N01: 多租户索引
+    { fields: ['tenant_id'] },
+    { fields: ['tenant_id', 'user_id'] },
+    { fields: ['tenant_id', 'status'] },
+  ],
 });
 
 const Campaign = sequelize.define('Campaign', {
@@ -151,10 +188,17 @@ const Campaign = sequelize.define('Campaign', {
   stats: { type: DataTypes.TEXT },
   startedAt: { type: DataTypes.DATE, field: 'started_at' },
   completedAt: { type: DataTypes.DATE, field: 'completed_at' },
+  ...tenantIdField,
 }, {
   tableName: 'campaigns',
   timestamps: true,
   underscored: true,
+  indexes: [
+    // S130/N01: 多租户索引
+    { fields: ['tenant_id'] },
+    { fields: ['tenant_id', 'status'] },
+    { fields: ['tenant_id', 'user_id'] },
+  ],
 });
 
 const Email = sequelize.define('Email', {
@@ -183,10 +227,17 @@ const Email = sequelize.define('Email', {
   bouncedReason: { type: DataTypes.TEXT, field: 'bounced_reason' },
   errorMessage: { type: DataTypes.TEXT, field: 'error_message' },
   providerMessageId: { type: DataTypes.STRING(255), field: 'provider_message_id' },
+  ...tenantIdField,
 }, {
   tableName: 'emails',
   timestamps: true,
   underscored: true,
+  indexes: [
+    // S130/N01: 多租户索引
+    { fields: ['tenant_id'] },
+    { fields: ['tenant_id', 'status'] },
+    { fields: ['tenant_id', 'sent_at'] },
+  ],
 });
 
 const RefreshToken = sequelize.define('RefreshToken', {
@@ -199,11 +250,16 @@ const RefreshToken = sequelize.define('RefreshToken', {
   tokenHash: { type: DataTypes.STRING(255), field: 'token_hash', allowNull: false },
   expiresAt: { type: DataTypes.DATE, field: 'expires_at', allowNull: false },
   revokedAt: { type: DataTypes.DATE, field: 'revoked_at' },
+  ...tenantIdField,
 }, {
   tableName: 'refresh_tokens',
   timestamps: true,
   updatedAt: false,
   underscored: true,
+  indexes: [
+    // S130/N01: 多租户索引
+    { fields: ['tenant_id'] },
+  ],
 });
 
 const AuditLog = sequelize.define('AuditLog', {
@@ -228,6 +284,7 @@ const AuditLog = sequelize.define('AuditLog', {
     defaultValue: 'SUCCESS',
   },
   sessionId: { type: DataTypes.STRING(255), field: 'session_id' },
+  ...tenantIdField,
 }, {
   tableName: 'audit_logs',
   timestamps: true,
@@ -241,6 +298,9 @@ const AuditLog = sequelize.define('AuditLog', {
     { fields: ['status'] },
     { fields: ['created_at'] },
     { fields: ['user_id', 'created_at'] },
+    // S130/N01: 多租户索引
+    { fields: ['tenant_id'] },
+    { fields: ['tenant_id', 'created_at'] },
   ],
 });
 
@@ -259,10 +319,15 @@ const ErrorLog = sequelize.define('ErrorLog', {
   userAgent: { type: DataTypes.TEXT, field: 'user_agent' },
   statusCode: { type: DataTypes.INTEGER, field: 'status_code' },
   metadata: { type: DataTypes.TEXT },
+  ...tenantIdField,
 }, {
   tableName: 'error_logs',
   timestamps: true,
   underscored: true,
+  indexes: [
+    // S130/N01: 多租户索引
+    { fields: ['tenant_id'] },
+  ],
 });
 
 const Feedback = sequelize.define('Feedback', {
@@ -280,10 +345,15 @@ const Feedback = sequelize.define('Feedback', {
   message: { type: DataTypes.TEXT },
   rating: { type: DataTypes.INTEGER },
   metadata: { type: DataTypes.TEXT },
+  ...tenantIdField,
 }, {
   tableName: 'feedbacks',
   timestamps: true,
   underscored: true,
+  indexes: [
+    // S130/N01: 多租户索引
+    { fields: ['tenant_id'] },
+  ],
 });
 
 const MaintenanceLog = sequelize.define('MaintenanceLog', {
@@ -295,6 +365,7 @@ const MaintenanceLog = sequelize.define('MaintenanceLog', {
   eventType: { type: DataTypes.STRING(100), field: 'event_type' },
   message: { type: DataTypes.TEXT },
   details: { type: DataTypes.TEXT },
+  ...tenantIdField,
 }, {
   tableName: 'maintenance_logs',
   timestamps: true,
@@ -312,10 +383,16 @@ const Device = sequelize.define('Device', {
   platform: { type: DataTypes.ENUM('ios', 'android'), allowNull: false },
   deviceId: { type: DataTypes.STRING(255), field: 'device_id', allowNull: false },
   enabled: { type: DataTypes.BOOLEAN, defaultValue: true },
+  ...tenantIdField,
 }, {
   tableName: 'devices',
   timestamps: true,
   underscored: true,
+  indexes: [
+    // S130/N01: 多租户索引
+    { fields: ['tenant_id'] },
+    { fields: ['tenant_id', 'user_id'] },
+  ],
 });
 
 User.hasMany(EmailAccount, { foreignKey: 'userId', as: 'accounts', onDelete: 'CASCADE' });
@@ -350,6 +427,11 @@ Device.belongsTo(User, { foreignKey: 'userId', as: 'user' });
 
 module.exports = {
   sequelize,
+  // S130/N01: 多租户常量
+  DEFAULT_TENANT_ID,
+  // S130/N01: 租户模型（新增）
+  Tenant,
+  // 业务模型
   User,
   EmailAccount,
   Client,

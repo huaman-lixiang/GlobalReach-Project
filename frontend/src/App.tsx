@@ -12,6 +12,7 @@ const Campaigns = lazy(() => import('@/pages/Campaigns'))
 const Reports = lazy(() => import('@/pages/Reports'))
 const Settings = lazy(() => import('@/pages/Settings'))
 const Emails = lazy(() => import('@/pages/Emails'))
+const TenantAdmin = lazy(() => import('@/pages/TenantAdmin'))
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated)
@@ -44,6 +45,7 @@ const App: React.FC = () => {
             <Route path="campaigns" element={<Campaigns />} />
             <Route path="emails" element={<Emails />} />
             <Route path="reports" element={<Reports />} />
+            <Route path="tenant-admin" element={<TenantAdmin />} />
             <Route path="settings" element={<Settings />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
