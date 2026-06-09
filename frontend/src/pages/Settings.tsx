@@ -68,9 +68,16 @@ const SettingsPage: React.FC = () => {
 
   return (
     <div>
-      <Title level={3} style={{ marginBottom: 24 }}>
-        系统设置
-      </Title>
+      {/* Page Header */}
+      <div className="gr-page-header">
+        <Title level={3}>
+          <SettingOutlined style={{ color: 'var(--gr-primary)' }} />
+          系统设置
+        </Title>
+        <Text type="secondary" style={{ fontSize: 13 }}>
+          账号配置 · 安全管理
+        </Text>
+      </div>
 
       {/* Profile Section */}
       <Card

@@ -151,7 +151,7 @@ const EmailsPage: React.FC = () => {
               <Button
                 type="link" size="small" icon={<SendOutlined />}
                 loading={resendingId === record.id}
-                style={{ color: '#1890ff' }}
+                style={{ color: 'var(--gr-primary)', fontWeight: 600 }}
               >
                 重发
               </Button>
@@ -164,15 +164,18 @@ const EmailsPage: React.FC = () => {
 
   return (
     <div>
+      {/* Page Header */}
+      <div className="gr-page-header">
+        <Title level={4} style={{ margin: 0, display: 'flex', alignItems: 'center', gap: 10 }}>
+          <SendOutlined style={{ color: 'var(--gr-primary)', fontSize: 20 }} />
+          邮件发送记录
+        </Title>
+        <Button icon={<ReloadOutlined />} onClick={() => dispatch(fetchEmails(searchParams))}>
+          刷新数据
+        </Button>
+      </div>
+
       <Card>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-          <Title level={4} style={{ margin: 0 }}>
-            📨 邮件发送记录
-          </Title>
-          <Button icon={<ReloadOutlined />} onClick={() => dispatch(fetchEmails(searchParams))}>
-            刷新
-          </Button>
-        </div>
 
         <Space style={{ marginBottom: 16 }} wrap>
           <Input

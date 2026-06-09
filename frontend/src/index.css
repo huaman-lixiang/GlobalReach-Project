@@ -1,22 +1,533 @@
-* {
+/* ============================================
+   GlobalReach V2.0 - Enterprise Design System
+   ============================================ */
+
+/* --- Font Import (Inter) --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* --- CSS Custom Properties (Enterprise Color System) --- */
+:root {
+  /* Primary - Deep Blue */
+  --gr-primary: #1a56db;
+  --gr-primary-hover: #1544b8;
+  --gr-primary-active: #1237a0;
+  --gr-primary-bg: #eef2ff;
+  --gr-primary-border: #c7d7fe;
+
+  /* Success - Teal */
+  --gr-success: #0d9488;
+  --gr-success-bg: #f0fdfa;
+  --gr-success-border: #99f6e4;
+
+  /* Warning - Amber */
+  --gr-warning: #f59e0b;
+  --gr-warning-bg: #fffbeb;
+  --gr-warning-border: #fde68a;
+
+  /* Error - Red */
+  --gr-error: #dc2626;
+  --gr-error-bg: #fef2f2;
+  --gr-error-border: #fecaca;
+
+  /* Neutral Palette */
+  --gr-gray-50: #f9fafb;
+  --gr-gray-100: #f3f4f6;
+  --gr-gray-200: #e5e7eb;
+  --gr-gray-300: #d1d5db;
+  --gr-gray-400: #9ca3af;
+  --gr-gray-500: #6b7280;
+  --gr-gray-600: #4b5563;
+  --gr-gray-700: #374151;
+  --gr-gray-800: #1f2937;
+  --gr-gray-900: #111827;
+
+  /* Layout */
+  --gr-sidebar-width: 250px;
+  --gr-sidebar-collapsed-width: 80px;
+  --gr-header-height: 64px;
+  --gr-border-radius: 10px;
+  --gr-border-radius-lg: 16px;
+  --gr-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --gr-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --gr-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --gr-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+  /* Transitions */
+  --gr-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --gr-transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --gr-transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Variables */
+[data-theme='dark'] {
+  --gr-primary-bg: rgba(26, 86, 219, 0.15);
+  --gr-primary-border: rgba(26, 86, 219, 0.35);
+  --gr-success-bg: rgba(13, 148, 136, 0.12);
+  --gr-warning-bg: rgba(245, 158, 11, 0.12);
+  --gr-error-bg: rgba(220, 38, 38, 0.12);
+  --gr-gray-50: #0f172a;
+  --gr-gray-100: #1e293b;
+  --gr-gray-200: #334155;
+  --gr-gray-300: #475569;
+  --gr-gray-400: #64748b;
+  --gr-gray-500: #94a3b8;
+  --gr-gray-600: #cbd5e1;
+  --gr-gray-700: #e2e8f0;
+  --gr-gray-800: #f1f5f9;
+  --gr-gray-900: #f8fafc;
+  --gr-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --gr-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --gr-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji';
+html {
+  font-size: 14px;
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5f5f5;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  color: var(--gr-gray-800);
+  background-color: var(--gr-gray-50);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
 }
 
 #root {
   min-height: 100vh;
 }
 
-.ant-layout {
-  min-height: 100vh;
+/* --- Ant Design Global Overrides for Enterprise Theme --- */
+
+/* Primary color override */
+.ant-btn-primary {
+  background: var(--gr-primary) !important;
+  border-color: var(--gr-primary) !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 2px rgba(26, 86, 219, 0.25);
+  transition: all var(--gr-transition-fast) !important;
+}
+
+.ant-btn-primary:hover {
+  background: var(--gr-primary-hover) !important;
+  border-color: var(--gr-primary-hover) !important;
+  box-shadow: 0 4px 12px rgba(26, 86, 219, 0.35) !important;
+  transform: translateY(-1px);
+}
+
+.ant-btn-primary:active {
+  background: var(--gr-primary-active) !important;
+  border-color: var(--gr-primary-active) !important;
+  transform: translateY(0);
+}
+
+/* Danger button */
+.ant-btn-dangerous {
+  font-weight: 600;
+  border-radius: 8px !important;
+}
+
+/* Default button */
+.ant-btn-default {
+  border-radius: 8px !important;
+  font-weight: 500;
+  transition: all var(--gr-transition-fast) !important;
+}
+
+.ant-btn-default:hover {
+  color: var(--gr-primary) !important;
+  border-color: var(--gr-primary) !important;
+}
+
+/* Link button */
+.ant-btn-link {
+  font-weight: 500;
+  transition: all var(--gr-transition-fast) !important;
+}
+
+/* Card enhancements */
+.ant-card {
+  border-radius: var(--gr-border-radius) !important;
+  border: 1px solid var(--gr-gray-200) !important;
+  box-shadow: var(--gr-shadow-sm) !important;
+  transition: box-shadow var(--gr-transition-base) !important;
+}
+
+.ant-card:hover {
+  box-shadow: var(--gr-shadow-md) !important;
+}
+
+.ant-card-head {
+  border-bottom-color: var(--gr-gray-100) !important;
+}
+
+.ant-card-head-title {
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  color: var(--gr-gray-800) !important;
+}
+
+/* Table enhancements */
+.ant-table {
+  border-radius: var(--gr-border-radius) !important;
+  overflow: hidden;
+}
+
+.ant-table-thead > tr > th {
+  background: var(--gr-gray-50) !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gr-gray-500) !important;
+  white-space: nowrap;
+}
+
+.ant-table-thead > tr > th::before {
+  display: none !important;
+}
+
+.ant-table-tbody > tr > td {
+  transition: background var(--gr-transition-fast) !important;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: var(--gr-primary-bg) !important;
+}
+
+/* Form inputs */
+.ant-input,
+.ant-input-password,
+.ant-input-affix-wrapper,
+.ant-select-selector,
+.ant-picker {
+  border-radius: 8px !important;
+  border-color: var(--gr-gray-300) !important;
+  transition: all var(--gr-transition-fast) !important;
+}
+
+.ant-input:hover,
+.ant-input-password:hover,
+.ant-input-affix-wrapper:hover,
+.ant-select-selector:hover,
+.ant-picker:hover {
+  border-color: var(--gr-primary) !important;
+}
+
+.ant-input:focus,
+.ant-input-focused,
+.ant-input-affix-wrapper-focused,
+.ant-select-focused .ant-select-selector,
+.ant-picker-focused {
+  border-color: var(--gr-primary) !important;
+  box-shadow: 0 0 0 3px var(--gr-primary-bg) !important;
+}
+
+/* Modal */
+.ant-modal-content {
+  border-radius: var(--gr-border-radius-lg) !important;
+  box-shadow: var(--gr-shadow-xl) !important;
+}
+
+.ant-modal-header {
+  border-radius: var(--gr-border-radius-lg) var(--gr-border-radius-lg) 0 0 !important;
+}
+
+.ant-modal-title {
+  font-weight: 700 !important;
+  font-size: 17px !important;
+}
+
+/* Tag */
+.ant-tag {
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  padding: 2px 10px !important;
+  border: none !important;
+}
+
+/* Menu / Sidebar */
+.ant-layout-sider {
+  box-shadow: var(--gr-shadow-lg) !important;
+  z-index: 100;
+}
+
+.ant-menu-dark {
+  background: transparent !important;
+}
+
+.ant-menu-dark .ant-menu-item {
+  margin: 4px 8px !important;
+  border-radius: 8px !important;
+  height: 44px !important;
+  line-height: 44px !important;
+  transition: all var(--gr-transition-fast) !important;
+  font-weight: 500 !important;
+}
+
+.ant-menu-dark .ant-menu-item:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.ant-menu-dark .ant-menu-item-selected {
+  background: var(--gr-primary) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(26, 86, 219, 0.4);
+}
+
+.ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon {
+  color: #fff !important;
+}
+
+/* Header */
+.ant-layout-header {
+  z-index: 99;
+}
+
+/* Statistic */
+.ant-statistic-title {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--gr-gray-500) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.ant-statistic-content {
+  font-weight: 700 !important;
+}
+
+/* Pagination */
+.ant-pagination-item {
+  border-radius: 8px !important;
+}
+
+.ant-pagination-item-active {
+  border-color: var(--gr-primary) !important;
+}
+
+.ant-pagination-item-active a {
+  color: var(--gr-primary) !important;
+}
+
+/* Progress */
+.ant-progress-circle .ant-progress-text {
+  font-weight: 700 !important;
+}
+
+/* Breadcrumb / Page title area */
+.ant-typography h3,
+.ant-typography h4 {
+  font-weight: 800 !important;
+  color: var(--gr-gray-900) !important;
+}
+
+/* Tooltip */
+.ant-tooltip-inner {
+  border-radius: 8px !important;
+  font-size: 13px !important;
+}
+
+/* Badge */
+.ant-badge-status-dot {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+/* Descriptions */
+.ant-descriptions-bordered .ant-descriptions-item-label {
+  font-weight: 600 !important;
+  background: var(--gr-gray-50) !important;
+  font-size: 13px !important;
+}
+
+/* Alert */
+.ant-alert {
+  border-radius: var(--gr-border-radius) !important;
+}
+
+/* Dropdown menu */
+.ant-dropdown-menu {
+  border-radius: var(--gr-border-radius) !important;
+  box-shadow: var(--gr-shadow-lg) !important;
+  padding: 6px !important;
+}
+
+.ant-dropdown-menu-item {
+  border-radius: 6px !important;
+  padding: 8px 14px !important;
+  transition: all var(--gr-transition-fast) !important;
+}
+
+/* Tabs */
+.ant-tabs-tab {
+  font-weight: 600 !important;
+  padding: 10px 0 !important;
+}
+
+.ant-tabs-ink-bar {
+  height: 3px !important;
+  border-radius: 2px !important;
+}
+
+/* Steps */
+.ant-steps-item-process .ant-steps-item-icon {
+  background: var(--gr-primary) !important;
+  border-color: var(--gr-primary) !important;
+}
+
+/* Spin */
+.ant-spin-text {
+  font-weight: 500 !important;
+  color: var(--gr-gray-500) !important;
+}
+
+/* Timeline */
+.ant-timeline-item-content {
+  font-size: 13px !important;
+}
+
+/* Popconfirm */
+.ant-popconfirm-message-icon {
+  color: var(--gr-warning) !important;
+}
+
+/* Select option */
+.ant-select-dropdown {
+  border-radius: var(--gr-border-radius) !important;
+  box-shadow: var(--gr-shadow-lg) !important;
+}
+
+/* Avatar */
+.ant-avatar {
+  box-shadow: 0 0 0 2px var(--gr-gray-100) !important;
+}
+
+/* Divider */
+.ant-divider {
+  border-color: var(--gr-gray-200) !important;
+}
+
+/* Empty state */
+.ant-empty-description {
+  color: var(--gr-gray-400) !important;
+  font-weight: 500 !important;
+}
+
+/* --- Custom Utility Classes --- */
+
+/* Enterprise stat card */
+.gr-stat-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.gr-stat-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  opacity: 0.06;
+  transform: translate(30%, -30%);
+}
+
+.gr-stat-card.primary::after { background: var(--gr-primary); }
+.gr-stat-card.success::after { background: var(--gr-success); }
+.gr-stat-card.warning::after { background: var(--gr-warning); }
+.gr-stat-card.error::after { background: var(--gr-error); }
+
+/* Page header area */
+.gr-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gr-page-header h3,
+.gr-page-header .ant-typography h3 {
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  margin-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gr-gray-300);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gr-gray-400);
+}
+
+/* Selection color */
+::selection {
+  background: var(--gr-primary-bg);
+  color: var(--gr-primary);
+}
+
+/* Focus visible outline */
+:focus-visible {
+  outline: 2px solid var(--gr-primary);
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+
+  .ant-card {
+    border-radius: 8px !important;
+  }
+
+  .gr-page-header h3,
+  .gr-page-header .ant-typography h3 {
+    font-size: 18px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+
+  .ant-table-wrapper {
+    overflow-x: auto;
+  }
 }

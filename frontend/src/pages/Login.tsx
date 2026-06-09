@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Form, Input, Button, Card, Typography, message } from 'antd'
-import { UserOutlined, LockOutlined } from '@ant-design/icons'
+import { Form, Input, Button, Card, Typography, message, Divider } from 'antd'
+import { UserOutlined, LockOutlined, SafetyCertificateOutlined } from '@ant-design/icons'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '@/store'
 import { login, clearError } from '@/store/slices/authSlice'
@@ -17,67 +17,202 @@ const LoginPage: React.FC = () => {
     try {
       setLoading(true)
       await dispatch(login(values)).unwrap()
-      message.success('登录成功！')
+      message.success('登录成功！欢迎回来')
       navigate('/dashboard')
     } catch (err: any) {
-      message.error(err.message || '登录失败')
+      message.error(err.message || '登录失败，请检查邮箱和密码')
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    }}>
-      <Card style={{ width: 400, boxShadow: '0 8px 24px rgba(0,0,0,0.15)' }}>
-        <div style={{ textAlign: 'center', marginBottom: 32 }}>
-          <Title level={2} style={{ marginBottom: 8 }}>
-            🚀 GlobalReach V2.0
+    <div
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      {/* Left Panel - Branding */}
+      <div
+        style={{
+          flex: '1',
+          background: 'linear-gradient(135deg, #1a56db 0%, #1e40af 50%, #7c3aed 100%)',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: 60,
+          position: 'relative',
+        }}
+      >
+        {/* Decorative circles */}
+        <div style={{
+          position: 'absolute', top: -80, right: -80,
+          width: 300, height: 300, borderRadius: '50%',
+          background: 'rgba(255,255,255,0.06)',
+        }} />
+        <div style={{
+          position: 'absolute', bottom: -60, left: -60,
+          width: 240, height: 240, borderRadius: '50%',
+          background: 'rgba(255,255,255,0.04)',
+        }} />
+        <div style={{
+          position: 'absolute', top: '40%', left: '20%',
+          width: 160, height: 160, borderRadius: '50%',
+          background: 'rgba(255,255,255,0.03)',
+        }} />
+
+        {/* Brand content */}
+        <div style={{ zIndex: 1, textAlign: 'center' }}>
+          <div
+            style={{
+              width: 72,
+              height: 72,
+              borderRadius: 18,
+              background: 'rgba(255,255,255,0.15)',
+              backdropFilter: 'blur(10px)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 28px',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
+            }}
+          >
+            <SafetyCertificateOutlined style={{ color: '#fff', fontSize: 36 }} />
+          </div>
+          <Title level={1} style={{ color: '#fff', marginBottom: 12, fontWeight: 800 }}>
+            GlobalReach V2.0
           </Title>
-          <Text type="secondary">企业级邮件营销平台</Text>
+          <Text style={{ color: 'rgba(255,255,255,0.75)', fontSize: 17, lineHeight: 1.7, display: 'block', maxWidth: 360 }}>
+            企业级智能邮件营销平台<br />
+            多渠道触达 · 精准投放 · 数据驱动
+          </Text>
+
+          <Divider style={{ borderColor: 'rgba(255,255,255,0.2)', maxWidth: 280, margin: '36px auto' }} />
+
+          <div style={{ display: 'flex', gap: 32, justifyContent: 'center' }}>
+            <div style={{ textAlign: 'center' }}>
+              <Text strong style={{ color: '#fff', fontSize: 24, display: 'block' }}>99.9%</Text>
+              <Text style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12 }}>送达率</Text>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <Text strong style={{ color: '#fff', fontSize: 24, display: 'block' }}>5+</Text>
+              <Text style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12 }}>邮件平台</Text>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <Text strong style={{ color: '#fff', fontSize: 24, display: 'block' }}>JWT</Text>
+              <Text style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12 }}>安全认证</Text>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <Form
-          name="login"
-          onFinish={onFinish}
-          layout="vertical"
-          size="large"
+      {/* Right Panel - Login Form */}
+      <div
+        style={{
+          flex: '1',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: 40,
+          background: '#ffffff',
+        }}
+      >
+        <Card
+          style={{
+            width: 420,
+            border: 'none',
+            boxShadow: 'none',
+            padding: '8px 0',
+          }}
         >
-          <Form.Item
-            name="email"
-            rules={[
-              { required: true, message: '请输入邮箱地址' },
-              { type: 'email', message: '请输入有效的邮箱地址' },
-            ]}
-          >
-            <Input prefix={<UserOutlined />} placeholder="邮箱地址" />
-          </Form.Item>
-
-          <Form.Item
-            name="password"
-            rules={[{ required: true, message: '请输入密码' }]}
-          >
-            <Input.Password prefix={<LockOutlined />} placeholder="密码" />
-          </Form.Item>
-
-          <Form.Item>
-            <Button type="primary" htmlType="submit" loading={loading} block>
-              登录
-            </Button>
-          </Form.Item>
-
-          <div style={{ textAlign: 'center' }}>
-            <Text type="secondary">
-              还没有账号？ <Link to="/register">立即注册</Link>
+          <div style={{ marginBottom: 36 }}>
+            <Title level={3} style={{ marginBottom: 6, fontWeight: 800 }}>
+              欢迎回来
+            </Title>
+            <Text type="secondary" style={{ fontSize: 14 }}>
+              请输入您的账号信息以访问管理后台
             </Text>
           </div>
-        </Form>
-      </Card>
+
+          <Form
+            name="login"
+            onFinish={onFinish}
+            layout="vertical"
+            size="large"
+          >
+            <Form.Item
+              name="email"
+              label={<span style={{ fontWeight: 600, fontSize: 13 }}>邮箱地址</span>}
+              rules={[
+                { required: true, message: '请输入邮箱地址' },
+                { type: 'email', message: '请输入有效的邮箱地址' },
+              ]}
+            >
+              <Input
+                prefix={<UserOutlined style={{ color: 'var(--gr-gray-400)' }} />}
+                placeholder="请输入您的邮箱"
+                autoComplete="email"
+              />
+            </Form.Item>
+
+            <Form.Item
+              name="password"
+              label={<span style={{ fontWeight: 600, fontSize: 13 }}>密码</span>}
+              rules={[{ required: true, message: '请输入密码' }]}
+            >
+              <Input.Password
+                prefix={<LockOutlined style={{ color: 'var(--gr-gray-400)' }} />}
+                placeholder="请输入您的密码"
+                autoComplete="current-password"
+              />
+            </Form.Item>
+
+            <Form.Item style={{ marginBottom: 20 }}>
+              <Button
+                type="primary"
+                htmlType="submit"
+                loading={loading}
+                block
+                style={{ height: 46, fontSize: 15 }}
+              >
+                登录系统
+              </Button>
+            </Form.Item>
+          </Form>
+
+          <div style={{ textAlign: 'center' }}>
+            <Text type="secondary" style={{ fontSize: 13 }}>
+              还没有账号？{' '}
+              <Link to="/register" style={{ fontWeight: 700, color: 'var(--gr-primary)' }}>
+                立即注册账号
+              </Link>
+            </Text>
+          </div>
+
+          {/* Security badge */}
+          <div
+            style={{
+              marginTop: 28,
+              padding: '12px 16px',
+              background: 'var(--gr-success-bg)',
+              border: '1px solid var(--gr-success-border)',
+              borderRadius: 10,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+            }}
+          >
+            <SafetyCertificateOutlined style={{ color: 'var(--gr-success)', fontSize: 16, flexShrink: 0 }} />
+            <Text style={{ color: 'var(--gr-success)', fontSize: 12, fontWeight: 500 }}>
+              采用 JWT Dual-Token 安全认证，数据传输全程加密保护
+            </Text>
+          </div>
+        </Card>
+      </div>
     </div>
   )
 }

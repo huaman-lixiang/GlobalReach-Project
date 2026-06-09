@@ -26,6 +26,7 @@ import {
   EyeOutlined,
   PlayCircleOutlined,
   ReloadOutlined,
+  MailOutlined,
 } from '@ant-design/icons'
 import { useAppDispatch, useAppSelector } from '@/store'
 import {
@@ -441,7 +442,7 @@ const CampaignsPage: React.FC = () => {
                 type="link" size="small"
                 icon={<PlayCircleOutlined />}
                 loading={sendingId === record.id}
-                style={{ color: '#1890ff' }}
+                style={{ color: 'var(--gr-primary)', fontWeight: 600 }}
               >
                 发送
               </Button>
@@ -463,15 +464,18 @@ const CampaignsPage: React.FC = () => {
 
   return (
     <div>
+      {/* Page Header */}
+      <div className="gr-page-header">
+        <Title level={4} style={{ margin: 0, display: 'flex', alignItems: 'center', gap: 10 }}>
+          <MailOutlined style={{ color: 'var(--gr-primary)', fontSize: 20 }} />
+          营销活动管理
+        </Title>
+        <Button type="primary" icon={<PlusOutlined />} onClick={() => setWizardVisible(true)}>
+          创建活动
+        </Button>
+      </div>
+
       <Card>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-          <Title level={4} style={{ margin: 0 }}>
-            营销活动管理
-          </Title>
-          <Button type="primary" icon={<PlusOutlined />} onClick={() => setWizardVisible(true)}>
-            创建活动
-          </Button>
-        </div>
 
         <Table
           columns={columns}

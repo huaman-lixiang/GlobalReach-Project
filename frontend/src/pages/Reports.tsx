@@ -21,6 +21,7 @@ import {
   ArrowUpOutlined,
   ArrowDownOutlined,
   DownloadOutlined,
+  BarChartOutlined,
 } from '@ant-design/icons'
 import { useAppSelector } from '@/store'
 import { fetchStats } from '@/store/slices/statsSlice'
@@ -29,7 +30,7 @@ import api from '@/services/api'
 
 const { Title, Text } = Typography
 
-const COLORS = ['#1890ff', '#52c41a', '#faad14', '#f5222d', '#722ed1']
+const COLORS = ['#1a56db', '#0d9488', '#f59e0b', '#dc2626', '#7c3aed']
 
 const platformLabels: Record<string, string> = {
   GMAIL: 'Gmail', OUTLOOK: 'Outlook', QQ: 'QQ邮箱',
@@ -95,9 +96,16 @@ const ReportsPage: React.FC = () => {
 
   return (
     <div>
-      <Title level={3} style={{ marginBottom: 24 }}>
-        数据报表分析
-      </Title>
+      {/* Page Header */}
+      <div className="gr-page-header">
+        <Title level={3}>
+          <BarChartOutlined style={{ color: 'var(--gr-primary)' }} />
+          数据报表分析
+        </Title>
+        <Text type="secondary" style={{ fontSize: 13 }}>
+          深度洞察 · 数据驱动决策
+        </Text>
+      </div>
 
       {/* KPI Cards */}
       <Row gutter={[16, 16]} style={{ marginBottom: 24 }}>
@@ -112,17 +120,17 @@ const ReportsPage: React.FC = () => {
                 prefix={
                   item.metric === '退信率'
                     ? (item.value > item.benchmark
-                      ? <ArrowDownOutlined style={{ color: '#52c41a' }} />
-                      : <ArrowUpOutlined style={{ color: '#f5222d' }} />)
+                      ? <ArrowDownOutlined style={{ color: 'var(--gr-success)' }} />
+                      : <ArrowUpOutlined style={{ color: 'var(--gr-error)' }} />)
                     : (item.value > item.benchmark
-                      ? <ArrowUpOutlined style={{ color: '#52c41a' }} />
-                      : <ArrowDownOutlined style={{ color: '#f5222d' }} />)
+                      ? <ArrowUpOutlined style={{ color: 'var(--gr-success)' }} />
+                      : <ArrowDownOutlined style={{ color: 'var(--gr-error)' }} />)
                 }
                 valueStyle={{
                   color:
                     item.metric === '退信率'
-                      ? (item.value > item.benchmark ? '#52c41a' : '#f5222d')
-                      : (item.value > item.benchmark ? '#52c41a' : '#f5222d'),
+                      ? (item.value > item.benchmark ? 'var(--gr-success)' : 'var(--gr-error)')
+                      : (item.value > item.benchmark ? 'var(--gr-success)' : 'var(--gr-error)'),
                 }}
               />
               <div style={{ marginTop: 8 }}>
@@ -160,24 +168,24 @@ const ReportsPage: React.FC = () => {
                   type="monotone"
                   dataKey="sent"
                   name="发送数"
-                  stroke="#1890ff"
-                  fill="#1890ff"
-                  fillOpacity={0.15}
+                  stroke="#1a56db"
+                  fill="#1a56db"
+                  fillOpacity={0.12}
                 />
                 <Area
                   type="monotone"
                   dataKey="opened"
                   name="打开数"
-                  stroke="#52c41a"
-                  fill="#52c41a"
-                  fillOpacity={0.15}
+                  stroke="#0d9488"
+                  fill="#0d9488"
+                  fillOpacity={0.12}
                 />
                 <Area
                   type="monotone"
                   dataKey="clicked"
                   name="点击数"
-                  stroke="#faad14"
-                  fill="#faad14"
+                  stroke="#f59e0b"
+                  fill="#f59e0b"
                   fillOpacity={0.15}
                 />
               </AreaChart>
@@ -193,7 +201,7 @@ const ReportsPage: React.FC = () => {
                 <XAxis dataKey="hour" interval={2} />
                 <YAxis />
                 <Tooltip />
-                <Bar dataKey="emails" name="发送量" fill="#1890ff" radius={[2, 2, 0, 0]} />
+                <Bar dataKey="emails" name="发送量" fill="#1a56db" radius={[2, 2, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </Card>
@@ -211,9 +219,9 @@ const ReportsPage: React.FC = () => {
                   <YAxis />
                   <Tooltip />
                   <Legend />
-                  <Bar dataKey="sent" name="发送量" fill="#1890ff" radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="opened" name="打开量" fill="#52c41a" radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="clicked" name="点击量" fill="#faad14" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="sent" name="发送量" fill="#1a56db" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="opened" name="打开量" fill="#0d9488" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="clicked" name="点击量" fill="#f59e0b" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             ) : (
@@ -268,7 +276,7 @@ const ReportsPage: React.FC = () => {
                   type="monotone"
                   dataKey="opened"
                   name="打开量"
-                  stroke="#52c41a"
+                  stroke="#0d9488"
                   strokeWidth={2}
                   dot={false}
                 />
@@ -276,7 +284,7 @@ const ReportsPage: React.FC = () => {
                   type="monotone"
                   dataKey="clicked"
                   name="点击量"
-                  stroke="#faad14"
+                  stroke="#f59e0b"
                   strokeWidth={2}
                   dot={false}
                 />

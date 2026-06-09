@@ -30,6 +30,7 @@ import {
   PlayCircleOutlined,
   PauseCircleOutlined,
   DashboardOutlined,
+  TeamOutlined,
 } from '@ant-design/icons'
 import { useAppDispatch, useAppSelector } from '@/store'
 import {
@@ -253,7 +254,7 @@ const AccountsPage: React.FC = () => {
           {record.status !== 'ACTIVE' ? (
             <Button
               type="link" size="small" icon={<PlayCircleOutlined />}
-              style={{ color: '#52c41a' }}
+              style={{ color: 'var(--gr-success)', fontWeight: 600 }}
               onClick={() => handleActivate(record.id)}
             >
               激活
@@ -283,10 +284,15 @@ const AccountsPage: React.FC = () => {
 
   return (
     <div>
-      <Card>
-        <Title level={4} style={{ marginBottom: 16 }}>
+      {/* Page Header */}
+      <div className="gr-page-header">
+        <Title level={4} style={{ margin: 0, display: 'flex', alignItems: 'center', gap: 10 }}>
+          <TeamOutlined style={{ color: 'var(--gr-primary)', fontSize: 20 }} />
           账号管理中心
         </Title>
+      </div>
+
+      <Card>
 
         {/* Engine Health Summary */}
         {healthData && (
