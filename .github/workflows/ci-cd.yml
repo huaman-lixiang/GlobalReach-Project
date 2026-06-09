@@ -15,6 +15,37 @@
 #     - OpenSSL 3.5: stricter TLS (self-signed certs may need update)
 #     - npm 11: stricter peer dep resolution
 #     - New: --max-heap-size CLI option (alternative to --max-old-space-size)
+#
+# ──────────────────────────────────────────────────────────────
+# M-E01: Self-hosted Runner 切换说明
+# ──────────────────────────────────────────────────────────────
+# 当前所有 Job 使用 GitHub-hosted runners (ubuntu-latest)。
+# 如需切换到 Self-hosted Runner，请按以下方式修改各 Job 的 runs-on 字段:
+#
+#   Job 映射表:
+#   ┌─────────────────────┬──────────────────────────────────────────┐
+#   │ Job                  │ 推荐的 self-hosted label 组合           │
+#   ├─────────────────────┼──────────────────────────────────────────┤
+#   │ quality-gate        │ [self-hosted, windows, globalreach-build] │
+#   │ unit-tests          │ [self-hosted, windows, globalreach-build] │
+#   │ docker-build        │ [self-hosted, windows, globalreach-docker]│
+#   │ deploy              │ [self-hosted, windows, globalreach-deploy]│
+#   │ notify              │ [self-hosted, windows, globalreach-build] │
+#   │ security-scan       │ ubuntu-latest (建议保持 GitHub-hosted)    │
+#   │ backup-verification │ [self-hosted, windows, globalreach-build] │
+#   └─────────────────────┴──────────────────────────────────────────┘
+#
+# 前置步骤:
+#   1. 运行 scripts/setup-runner.ps1 注册 Runner
+#   2. 参考 docs/SELF_HOSTED_RUNNER_GUIDE.md 完整指南
+#   3. 使用 scripts/maintain-runner.ps1 进行日常维护
+#
+# 示例 - 切换 quality-gate Job 到 self-hosted:
+#   # 原始:
+#     runs-on: ubuntu-latest
+#   # 改为:
+#     runs-on: [self-hosted, windows, globalreach-build]
+# ──────────────────────────────────────────────────────────────
 
 name: GlobalReach CI/CD Pipeline
 
@@ -332,6 +363,7 @@ jobs:
     name: Pipeline Status
     needs: [quality-gate, unit-tests, docker-build, deploy, security-scan]
     if: always()
+    # M-E01: 切换到 self-hosted → runs-on: [self-hosted, windows, globalreach-build]
     runs-on: ubuntu-latest
     steps:
       - name: Determine status
@@ -535,6 +567,7 @@ except: print('0|0')" 2>/dev/null || echo "0|0")
   backup-verification:
     name: Backup Integrity Verification (M-D04)
     if: github.event_name == 'schedule'
+    # M-E01: 切换到 self-hosted → runs-on: [self-hosted, windows, globalreach-build]
     runs-on: ubuntu-latest
 
     steps:
