@@ -3,9 +3,9 @@
 > **协议版本**: Enterprise-v6.0-STEADY-STATE-EVOLUTION
 > **基于范式**: Trae_IDE 范式进阶飞轮知识库架构 v2.0 (五层模型 + 飞轮效应 + 进化引擎 + 防幻觉体系)
 > **前置协议**: GLOBALREACH_S036_SELF_EXECUTE_PROTOCOL_v5.0.md (Enterprise-v5.0-GO-LIVE)
-> **升级触发**: S130 Phase N全量完成(8/8), 13/13容器healthy, Git HEAD 5ad11c7 (待push)
-> **目标**: 从 S129 基准稳态 → 持续进化运营模式 → 企业级增强与长期维护 (Phase L → M → N ✅)
-> **协议定位**: 本协议是 GlobalReach V2.0 进入**生产后稳态运维阶段**的权威操作指南，覆盖 S131 及之后的所有 Session
+> **升级触发**: S132 Phase O规划完成, 13/13容器healthy, Git HEAD待更新
+> **目标**: 从 S129 基准稳态 → 持续进化运营模式 → 企业级增强与长期维护 (Phase L → M → N ✅ → O 🔄)
+> **协议定位**: 本协议是 GlobalReach V2.0 进入**生产后稳态运维阶段**的权威操作指南，覆盖 S132 及之后的所有 Session
 
 ---
 
@@ -34,7 +34,7 @@
 ║                                                                      ║
 ╚═════════════════════════════════════════════════════════════════════╝
 
-【项目当前状态 — S130 基准快照 (2026-06-09)】
+【项目当前状态 — S132 基准快照 (2026-06-09)】
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📌 身份信息
@@ -45,18 +45,19 @@
   工作区根路径: C:\Users\Administrator\Documents\trae_projects\GlobalReach-Project\
   GitHub:       huaman-lixiang/GlobalReach-Project (Private)
   Git分支:      main
-  Git HEAD:     5ad11c7 (待push到origin/main)
+  Git HEAD:     ad52257 (S131 HA架构完善)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📊 运行时状态
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  最新Session:   S130 (Phase N全量完成 8/8) ✅
-  当前Phase:     Post-Phase N — ENTERPRISE-GRADE READY [STEADY STATE]
+  最新Session:   S132 (Phase O 运营优化规划) 🔄
+  当前Phase:     Phase O — 运营优化阶段 [PLANNING]
   协议版本:      v6.0-STEADY-STATE-EVOLUTION (本文件)
-  飞轮位置:      #1 连续零错误构建 (51+连击!)
-  企业级完整度:  100% (开发完成) + 企业级增强完成 + 稳态运维中
+  飞轮位置:      #1 连续零错误构建 (52+连击!)
+  企业级完整度:  100% (开发完成) + 企业级增强完成 + 稳态运维中 + 运营优化规划中
   Phase M进度:   26/26 全部完成 ✅ (S128:17 + S129:9)
   Phase N进度:   8/8 全部完成 ✅ (S130)
+  Phase O进度:   规划中 — 8/8 任务已定义 (S132)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🐳 容器矩阵 (13/13 Healthy ✅)
@@ -127,9 +128,11 @@
   Phase K - 最终收尾 (S115-S122) ✅ CLOSED
   Post-Phase K 稳态运维 (S123-S129) ✅ CLOSED
   Phase N 企业级增强 (S130) ✅ CLOSED
-  Post-Phase N 稳态运维 (S131+) ✅ ACTIVE
+  Post-Phase N 稳态运维 (S131) ✅ CLOSED
+  Phase O 运营优化规划 (S132) 🔄 ACTIVE
+  Post-Phase O 智能运维 (S133+) ⏳ PLANNED
   ────────────────────────────────────────────────
-  总计: 102个Session全部交付 (S029-S130)
+  总计: 103个Session (S029-S132, 含规划中)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⚠️ 已知Bug清单 (共6个, 全部已修复)
@@ -142,9 +145,9 @@
   #6 [S068] API容器DATABASE_URL缺失导致崩溃 → FIXED
 
 【下一步建议】
-Option A: S131→新功能开发/增量优化/生产验证 [推荐]
-Option B: S131→基础设施准备(DNS/Secrets/LE证书) [Blocked-需公网服务器]
-Option C: S131→进入 Phase O 运营优化阶段 [可选]
+Option A: S133→启动 Phase O 任务执行 (O01 AIOps/O02知识库) [推荐]
+Option B: S133→继续增量优化/生产验证
+Option C: S133→基础设施准备(DNS/Secrets/LE证书) [Blocked]
 Option D: 结束当前Session, 输出交接报告
 ```
 
@@ -511,6 +514,293 @@ Phase M 操作法则 = 最小变更原则 × 渐进式改进 × 可回滚保证
 
 ---
 
+### 3.4 Phase O — 运营优化阶段
+
+> **目标**: 从"企业级功能完备"迈向"智能化自主运营"
+> **入口条件**: Phase N 全部完成 + 系统稳定运行 > 1周
+> **出口条件**: 系统具备 AIOps 能力，运营效率提升 50%+
+> **核心理念**: 让系统自己发现问题、解决问题、报告问题
+
+#### Phase O 任务预览
+
+| ID | 任务名称 | 优先级 | 预估工作量 | 类别 | 说明 |
+|----|---------|--------|-----------|------|------|
+| O01 | AIOps智能告警降噪 | 🔴 P0 | 12h | 智能运维 | 告警关联+根因分析+自愈 |
+| O02 | 运营知识库构建 | 🔴 P0 | 8h | 知识管理 | Runbook库+故障模式库+决策树 |
+| O03 | 自动化巡检引擎 | 🟡 P1 | 8h | 自动化 | 定期健康检查+报告生成 |
+| O04 | 容量规划自动化 | 🟡 P1 | 6h | 容量 | 基于趋势的容量预测+扩容建议 |
+| O05 | 变更风险评分系统 | 🟡 P1 | 6h | 风险管控 | 变更影响评估+回滚决策支持 |
+| O06 | 成本优化仪表盘 | 🟢 P2 | 4h | 成本 | 资源利用率追踪+优化建议 |
+| O07 | 团队协作工作流 | 🟢 P2 | 4h | 协作 | On-call流程+事件响应SOP数字化 |
+| O08 | 技术债务追踪板 | 🟢 P2 | 3h | 工程 | Debt量化+偿还计划+Interest计算 |
+
+#### O01: AIOps 智能告警降噪
+
+**详细描述**:
+
+GlobalReach V2.0 当前已具备完整的监控告警体系（Prometheus + AlertManager + Grafana + Loki），但告警仍处于"原始规则触发"阶段——每条告警独立通知，缺乏关联分析和智能降噪能力。O01 的核心目标是在现有监控基础设施之上构建 AIOps（Artificial Intelligence for IT Operations）智能告警层，实现从"被动响应"到"主动自愈"的跨越。
+
+具体而言，O01 将建设三大核心能力：① 告警风暴识别与降噪 —— 通过时间窗口聚类、拓扑关联和标签相似度算法，将同一根因触发的多条告警合并为单一事件，减少告警噪声 70%+；② 根因分析引擎 —— 基于服务依赖拓扑图和告警时序模式，自动推断故障根因并生成诊断报告；③ 自愈动作编排 —— 针对常见故障模式定义可执行的自动修复动作（如重启异常容器、临时扩容、流量切换至备用节点），在人工确认或预授权条件下自动执行。
+
+该任务不引入外部商业 AIOps 平台，而是基于开源生态（Prometheus + AlertManager + 自研逻辑层）构建轻量级智能运维能力，确保与现有 13 容器架构完全兼容。
+
+**交付物清单**:
+- `docs/AIOPS_ALERT_DEDUPlication_DESIGN.md` — 告警降噪架构设计文档
+- `alertmanager/aiops-rules.yml` — AIOps 增强告警规则（抑制/分组/路由）
+- `api/services/alertCorrelationService.js` — 告警关联分析服务
+- `api/services/rootCauseAnalyzer.js` — 根因分析引擎
+- `api/services/selfHealingOrchestrator.js` — 自愈动作编排器
+- `prometheus/rules/aiops-alerts.yml` — AIOps 专用 Prometheus 告警规则
+- `grafana/provisioning/dashboards/globalreach-aiops.json` — AIOps 运营仪表盘
+
+**前置依赖**:
+- Phase N 全部完成（N04 HA架构提供拓扑数据基础）
+- 现有 Prometheus + AlertManager + Loki 监控栈稳定运行
+- Webhook Listener 服务可用（M-C03 已完成）
+
+**验收标准**:
+- [ ] 告警降噪率 ≥ 70%（模拟告警风暴场景验证）
+- [ ] 根因分析准确率 ≥ 80%（基于历史故障案例回测）
+- [ ] 至少定义 5 种自愈动作模板并通过测试
+- [ ] AIOps 仪表盘可展示告警关联图谱和自愈历史
+- [ ] 所有新组件在 13 容器架构内运行，不增加额外容器
+
+**预估复杂度理由**: P0 最高优先级，12h 工作量。复杂度来源：需要设计告警关联算法（涉及时间序列分析和图论）、集成多个现有系统（Prometheus/AlertManager/Webhook）、以及定义安全的自愈动作边界。这是 Phase O 的基石任务，后续 O02-O08 多数依赖其产出的告警智能化能力。
+
+---
+
+#### O02: 运营知识库构建
+
+**详细描述**:
+
+经过 Phase A 到 N 的 102 个 Session 积累，GlobalReach 项目已产生大量运维经验、故障处理记录和最佳实践，但这些知识分散在 Session Report、Changelog、FAQ 和各个技术文档中，缺乏体系化的整理和结构化的检索能力。O02 的目标是构建一套完整的运营知识库（Operations Knowledge Base, OKB），将隐性经验转化为显性资产，让任何接手运维的人员都能快速定位问题和执行标准操作。
+
+知识库包含三大核心模块：① Runbook 库 —— 为系统中每个组件（Nginx、API Gateway、PostgreSQL、Redis、Prometheus、Grafana、AlertManager、Loki、Mailpit、Tempo）编写标准操作手册，涵盖健康检查、日常维护、常见故障处理、性能调优等维度；② 故障模式库（Failure Mode Base, FMB）—— 系统性记录已知的所有故障模式（含 Phase A-N 中遇到的 6 个 Bug 及其修复方案），每个条目包含症状描述、排查步骤、解决方案、预防措施和关联的 Runbook；③ 故障排查决策树（Troubleshooting Decision Tree）—— 将复杂的故障排查过程可视化为分步决策流程，帮助运维人员快速定位问题。
+
+知识库采用 Markdown 格式存储于 `docs/knowledge-base/` 目录，支持全文搜索和标签分类。同时建立知识库维护流程：每次 Session 结束后如有新的故障处理经验，必须更新对应的知识库条目。
+
+**交付物清单**:
+- `docs/knowledge-base/README.md` — 知识库索引与使用指南
+- `docs/knowledge-base/runbooks/` — 10+ 组件 Runbook（每个组件一个文件）
+  - `nginx-runbook.md`, `api-gateway-runbook.md`, `postgresql-runbook.md`
+  - `redis-runbook.md`, `prometheus-runbook.md`, `grafana-runbook.md`
+  - `alertmanager-runbook.md`, `loki-runbook.md`, `mailpit-runbook.md`, `tempo-runbook.md`
+  - `docker-compose-runbook.md`, `networking-runbook.md`
+- `docs/knowledge-base/failure-modes/fmb-catalog.md` — 故障模式总目录
+- `docs/knowledge-base/failure-modes/` — 各类故障模式详细记录（按组件分类）
+- `docs/knowledge-base/decision-trees/` — 故障排查决策树（按场景分类）
+  - `api-unavailable-tree.md`, `database-slow-tree.md`, `email-failure-tree.md`
+  - `alert-storm-tree.md`, `memory-leak-tree.md`, `ssl-cert-expiry-tree.md`
+- `docs/knowledge-base/MAINTENANCE_PROCESS.md` — 知识库维护流程规范
+
+**前置依赖**:
+- 无硬性前置依赖（可独立启动）
+- 建议 O01 同步进行，AIOps 发现的新故障模式可直接入库
+
+**验收标准**:
+- [ ] 13 个容器中每个都有对应的 Runbook（至少覆盖健康检查+Top 5 常见故障）
+- [ ] 故障模式库收录 ≥ 30 个已知故障模式（含历史 6 个 Bug）
+- [ ] 决策树覆盖 Top 6 最可能发生的故障场景
+- [ ] 知识库支持通过标签和关键词检索
+- [ ] 维护流程文档化，包含新增/审核/归档的标准 SOP
+
+**预估复杂度理由**: P0 最高优先级，8h 工作量。虽然概念上简单（写文档），但质量要求高——每个 Runbook 必须基于真实系统状态编写，每个故障模式必须有完整的排查路径，决策树必须经得起实际场景验证。这是运营团队的"大脑"，质量直接影响后续所有任务的执行效率。
+
+---
+
+#### O03: 自动化巡检引擎
+
+**详细描述**:
+
+当前 GlobalReach 的健康检查主要依赖手动执行（`docker compose ps`、`curl health endpoint`、查看 Prometheus Targets 页面等），虽然 CI/CD pipeline 包含了部分自动化检查，但缺乏一个统一的、定期的、全面的自动化巡检机制。O03 的目标是构建一个自动化巡检引擎（Automated Inspection Engine），按照预设的时间表自动执行全系统的健康检查，生成结构化的巡检报告，并在发现异常时主动通知。
+
+巡检引擎将检查以下维度：① 基础设施层 —— 13 个容器的运行状态、资源使用情况（CPU/内存/磁盘/网络）、Docker daemon 健康状态；② 应用层 —— API 健康端点响应、数据库连接池状态、Redis 连接状态、邮件队列积压量；③ 监控层 —— Prometheus 目标可达性、AlertManager 告警状态、Loki 日志采集正常、Grafana Dashboard 可访问；④ 安全层 —— SSL 证书有效期、安全头配置完整性、最近的安全扫描结果；⑤ 数据层 —— 最近备份的成功状态、数据库表空间使用率、慢查询统计。
+
+巡检结果以结构化 JSON 格式输出，同时生成人类可读的 Markdown 报告。巡检频率可配置（建议：深度巡检每日一次，快速巡检每小时一次）。异常项会触发分级通知（P0 异常立即通知，P1/P2 汇总到日报）。
+
+**交付物清单**:
+- `scripts/inspection-engine.js` — 自动化巡检主程序（Node.js 脚本）
+- `scripts/inspection-config.yml` — 巡检配置（检查项/频率/阈值/通知规则）
+- `scripts/inspection-templates/` — 巡检报告模板
+- `prometheus/rules/inspection-alerts.yml` — 巡检异常专用告警规则
+- `docs/INSPECTION_ENGINE_DESIGN.md` — 巡检引擎设计文档
+- `.github/workflows/daily-inspection.yml` — GitHub Actions 定期巡检工作流（可选）
+
+**前置依赖**:
+- O02 知识库中的 Runbook 提供各组件的健康检查标准
+- 现有监控指标可作为巡检数据源
+
+**验收标准**:
+- [ ] 巡检引擎可一次性检查全部 13 个容器的 5 大维度
+- [ ] 巡检报告包含：总体评分、各维度详情、异常清单、趋势对比
+- [ ] 支持配置不同的巡检 profile（快速/完整/自定义）
+- [ ] 异常检测准确率 ≥ 95%（无漏报，误报率 < 5%）
+- [ ] 巡检过程本身不影响系统性能（资源占用 < 1% CPU）
+
+**预估复杂度理由**: P1 优先级，8h 工作量。需要设计灵活的检查框架（插件式架构以便扩展）、对接多种数据源（Docker API / Prometheus HTTP API / 直接 HTTP 请求）、以及设计清晰的报告格式。难度适中但工作量不小。
+
+---
+
+#### O04: 容量规划自动化
+
+**详细描述**:
+
+GlobalReach V2.0 当前运行在单机 Docker Compose 环境下，13 个容器的资源分配主要基于初始估算和经验值，缺乏系统化的容量管理和预测能力。随着业务增长（更多租户、更大邮件发送量、更丰富的监控数据），资源瓶颈可能在不知不觉中出现。O04 的目标是建立容量规划自动化能力，基于历史监控数据进行趋势分析，预测未来的资源需求，并提供扩容/优化建议。
+
+容量规划涵盖以下资源维度：① 计算资源 —— 各容器的 CPU 使用率趋势、堆内存增长趋势、容器重启频率；② 存储资源 —— PostgreSQL 数据目录大小增长速率、Loki 日志存储占用、Docker 镜像和卷的总磁盘使用；③ 网络资源 —— API 请求量趋势、邮件发送量趋势、Prometheus 指标采样量；④ 连接资源 —— PostgreSQL 连接池使用率、Redis 客户端连接数、Nginx 并发连接数。
+
+系统将基于 Prometheus 历史数据（通过 PromQL 查询）进行线性回归和季节性分析，生成未来 30/60/90 天的资源预测曲线。当预测值接近预设阈值时，自动生成扩容建议报告。对于 Docker Compose 环境，扩容建议包括：调整容器 resource limits、增加磁盘空间、优化数据保留策略、考虑迁移至 HA 架构（Phase N-N04 已准备 docker-compose.ha.yml）。
+
+**交付物清单**:
+- `scripts/capacity-planner.js` — 容量规划分析脚本
+- `scripts/capacity-config.yml` — 容量规划配置（资源维度/预测周期/阈值）
+- `docs/CAPACITY_PLANNING_GUIDE.md` — 容量规划方法论指南
+- `grafana/provisioning/dashboards/globalreach-capacity.json` — 容量趋势仪表盘
+- `prometheus/rules/capacity-alerts.yml` — 容量预警规则（预测型）
+
+**前置依赖**:
+- Prometheus 具有足够的历史数据（建议运行 > 2 周）
+- O01 AIOps 的指标增强（可选，有则更精确）
+
+**验收标准**:
+- [ ] 支持 4 大资源维度的趋势分析和预测
+- [ ] 预测模型在回测中误差率 < 20%
+- [ ] 扩容建议报告包含：当前状态、预测曲线、建议措施、优先级排序
+- [ ] 容量仪表盘展示关键资源的实时和历史趋势
+- [ ] 当资源利用率超过预警阈值时自动触发告警
+
+**预估复杂度理由**: P1 优先级，6h 工作量。核心难点在于选择合适的预测算法（简单的线性回归 vs 更复杂的时序模型）以及确定合理的阈值。由于是单机 Docker 环境，不需要考虑分布式集群的复杂调度，因此工作量可控。
+
+---
+
+#### O05: 变更风险评分系统
+
+**详细描述**:
+
+GlobalReach 项目至今已完成 103+ 个 Session，经历了从核心开发到企业级增强的全过程。每次变更都伴随着一定的风险——代码变更可能导致回归 bug，配置变更可能导致服务中断，依赖更新可能引入兼容性问题。当前的风险管控主要依靠人工判断和 Git 版本控制，缺乏系统化的变更前风险评估和变更后影响分析机制。O05 的目标是构建一套变更风险评分系统（Change Risk Scoring System），在每次变更执行前自动评估风险等级，为决策提供数据支撑。
+
+风险评分系统将从以下维度评估变更风险：① 变更范围 —— 涉及多少个文件、哪些组件（核心组件 vs 辅助组件）、是否涉及数据库 Schema 变更；② 变更类型 —— 代码变更 / 配置变更 / 依赖更新 / 基础设施变更，不同类型的基准风险权重不同；③ 历史影响 —— 该文件/组件的历史变更频率和关联故障率；④ 回滚复杂度 —— 如果变更失败，回滚的难度和时间成本；⑤ 测试覆盖 —— 变更涉及的代码是否有对应的单元测试和集成测试。
+
+系统输出 0-100 的综合风险分数，映射到 5 个风险等级（极低/低/中等/高/极高），每个等级对应不同的审批流程和回滚策略建议。高风险变更将强制要求：详细的回滚计划、变更窗口安排、预生产环境验证。系统还将记录每次变更的实际影响（是否导致故障），用于持续校准评分模型的准确性。
+
+**交付物清单**:
+- `scripts/change-risk-scorer.js` — 变更风险评分引擎
+- `scripts/risk-scoring-config.yml` — 风险评分模型配置（权重/阈值/规则）
+- `docs/CHANGE_RISK_SCORING_POLICY.md` — 变更风险管理政策
+- `api/middleware/changeRiskGate.js` — 变更风险门禁中间件（可选，用于 API 变更保护）
+- `grafana/provisioning/dashboards/globalreach-change-risk.json` — 变更风险趋势仪表盘
+
+**前置依赖**:
+- Git 历史数据充足（103+ commits 可用于训练/校准模型）
+- O02 知识库中的故障模式数据可用于校准风险权重
+
+**验收标准**:
+- [ ] 风险评分引擎可在 5 秒内完成对单次 commit 的风险评估
+- [ ] 评分模型覆盖 5 大评估维度，权重可配置
+- [ ] 基于 S029-S131 历史数据的回测准确率 ≥ 75%（高风险变更被正确标记的比例）
+- [ ] 不同风险等级对应明确的审批流程和回滚策略
+- [ ] 风险评分结果可集成到 Git pre-commit hook 或 CI pipeline 中
+
+**预估复杂度理由**: P1 优先级，6h 工作量。核心挑战在于设计合理且可解释的风险评分模型——过于简化则不准确，过于复杂则难以维护。需要平衡科学性和实用性，采用加权评分法而非黑盒 ML 模型，确保运维人员理解和信任评分结果。
+
+---
+
+#### O06: 成本优化仪表盘
+
+**详细描述**:
+
+GlobalReach V2.0 作为自托管部署的企业级平台，虽然不涉及云服务费用，但仍存在"隐形成本"：服务器硬件资源消耗、运维人力投入、能源消耗等。即使当前运行在开发/测试环境，建立成本意识和资源优化习惯对未来生产环境的规模化部署至关重要。O06 的目标是构建一个成本优化仪表盘（Cost Optimization Dashboard），追踪各类资源的利用率和效率指标，识别浪费和优化机会。
+
+仪表盘关注的成本维度包括：① 资源利用率 —— 13 个容器的 CPU/内存平均使用率和峰值使用率，识别长期低负载的容器（可能存在过度配置）；② 存储效率 —— 日志保留策略的效果（Loki 数据量）、备份存储占用、Docker 镜像和悬空资源的清理效果；③ 能效指标 —— 在有条件的情况下追踪整体功耗趋势；④ 运维效率 proxy —— 通过 MTTR（平均恢复时间）、MTTD（平均检测时间）、变更频率等指标衡量运维投入产出比。
+
+仪表盘不仅展示"现状"，还提供具体的优化建议：例如某容器内存 limit 设置过高（实际使用仅 20%），建议降低限制释放资源；日志保留期过长导致磁盘占用过高，建议调整 retention policy；某个服务的请求量极低，可以考虑降频或合并部署。
+
+**交付物清单**:
+- `grafana/provisioning/dashboards/globalreach-cost-optimization.json` — 成本优化仪表盘（15+ 面板）
+- `prometheus/rules/cost-efficiency-rules.yml` — 成本效率相关录制规则
+- `docs/COST_OPTIMIZATION_BEST_PRACTICES.md` — 成本优化最佳实践指南
+- `scripts/resource-auditor.sh` — 资源审计脚本（定期扫描浪费）
+
+**前置依赖**:
+- Prometheus 有足够的指标数据（基础资源指标已有 node-exporter/pg-exporter）
+- O04 容量规划的数据可作为输入
+
+**验收标准**:
+- [ ] 仪表盘覆盖 4 大成本维度，每个维度至少 3 个可视化面板
+- [ ] 优化建议基于可量化的数据（非主观判断）
+- [ ] 资源审计脚本可一键生成优化建议报告
+- [ ] 仪表盘数据刷新延迟 < 30s
+- [ ] 至少识别出 3 个可立即执行的优化机会
+
+**预估复杂度理由**: P2 优先级，4h 工作量。主要是 Grafana 仪表盘设计和 PromQL 查询编写，技术门槛不高。价值在于建立长期的资源优化意识和文化。
+
+---
+
+#### O07: 团队协作工作流
+
+**详细描述**:
+
+GlobalReach 项目目前主要由 AI Agent 协助开发和运维，但随着系统复杂度的提升和企业级特性的完善，未来可能引入多人协作（多名运维人员、开发者甚至业务人员）。即使在当前的 AI-Agent 主导模式下，也需要建立规范的团队协作工作流来确保：事件响应的一致性、On-call 责任的清晰划分、知识传递的有效性、以及跨角色沟通的标准化。
+
+O07 将数字化以下协作流程：① On-call 排班与交接 —— 定义 On-call 值班制度（即使是 AI Agent 也需要明确的"值班"上下文），标准化交接内容（当前状态、活跃事件、待办事项）；② 事件响应 SOP —— 将事件响应流程数字化（检测 → 分级 → 响应 → 升级 → 恢复 → 复盘），每个步骤有明确的责任人、行动项和时限；③ 变更评审流程 —— 定义变更的分类标准和评审要求，高风险变更需要多角色确认；④ 复盘机制 —— 每次 P1+ 事件或重大变更后的结构化复盘模板。
+
+这些流程将以 Markdown 模板和 checklist 形式存在，集成到现有的 Session Report 体系中。核心产出是一套可立即使用的协作模板集合，而非复杂的协作平台。
+
+**交付物清单**:
+- `docs/workflows/on-call-handbook.md` — On-call 值班手册
+- `docs/workflows/incident-response-sop.md` — 事件响应标准操作程序
+- `docs/workflows/change-review-checklist.md` — 变更评审清单
+- `docs/workflows/postmortem-template.md` — 复盘报告模板
+- `docs/workflows/handover-checklist.md` — 交接核对清单
+- `docs/workflows/TEAM_COLLABORATION_PLAYBOOK.md` — 团队协作总 playbook
+
+**前置依赖**:
+- O02 知识库提供背景知识（Runbook 是事件响应的基础）
+- O01 AIOps 提供事件检测能力
+
+**验收标准**:
+- [ ] On-call 手册包含排班模板、交接模板、升级条件
+- [ ] 事件响应 SOP 覆盖 P0-P3 四个级别的事件处理流程
+- [ ] 变更评审清单可指导完成一次标准的变更评审会议
+- [ ] 复盘模板包含：事件概述、时间线、根因、改进措施、行动计划
+- [ ] 所有模板均可独立使用，无需额外工具依赖
+
+**预估复杂度理由**: P2 优先级，4h 工作量。主要是流程文档和模板的编写，不涉及代码开发。复杂度在于需要设计符合实际运维场景的流程，而非照搬通用 ITIL 框架。
+
+---
+
+#### O08: 技术债务追踪板
+
+**详细描述**:
+
+经过 130+ 个 Session 的快速迭代，GlobalReach 项目积累了大量"技术债务"——为了快速交付而做的妥协（TODO 注释、临时的 workaround、缺失的测试、过时的依赖、未重构的旧代码）。这些债务如果不加管理，会逐渐侵蚀系统的可维护性和稳定性。O08 的目标是建立一个系统化的技术债务追踪板（Technical Debt Tracking Board），量化债务规模、追踪偿还进度、计算债务"利息"（即债务导致的额外维护成本）。
+
+技术债务追踪板将包含：① 债务登记册 —— 每笔债务记录：位置（文件/行号）、类型（代码异味/缺失测试/过时依赖/架构偏差）、严重程度、预估修复工作量、引入日期、关联的 Session；② 债务量化指标 —— 总债务数量、按类型分布、按严重程度分布、债务密度（每千行代码的债务数）、债务增长率；③ 偿还计划 —— 基于优先级的债务偿还路线图，结合每个 Session 的可用工作量安排偿还任务；④ 利息计算器 —— 估算未偿还债务导致的额外维护成本（如：缺少单元测试的模块每次变更需要 2x 的手动测试时间）。
+
+追踪板采用轻量级格式（YAML + Markdown），可以手动维护也可以半自动化（通过静态分析工具辅助发现潜在债务）。每个 Session 结束时应更新债务状态（新增/偿还/关闭）。
+
+**交付物清单**:
+- `docs/technical-debt/debt-register.yml` — 技术债务登记册
+- `docs/technical-debt/debt-dashboard.md` — 债务概览仪表盘（Markdown 格式）
+- `docs/technical-debt/repayment-roadmap.md` — 债务偿还路线图
+- `scripts/debt-scanner.js` — 技术债务自动扫描脚本（检测 TODO/FIXME/HACK 等）
+- `docs/TECHNICAL_DEBT_MANAGEMENT_POLICY.md` — 技术债务管理政策
+
+**前置依赖**:
+- 无硬性前置依赖（可独立启动）
+- 建议在 O05 变更风险评分之后执行（两者可互补）
+
+**验收标准**:
+- [ ] 债务登记册支持至少 5 种债务类型的分类
+- [ ] 债务扫描脚本可自动发现代码中的 TODO/FIXME/HACK 标记
+- [ ] 债务概览展示总量、分布、趋势等关键指标
+- [ ] 偿还路线图与 Phase O 的任务执行计划对齐
+- [ ] 每笔债务都有明确的严重程度评级和预估修复工作量
+
+**预估复杂度理由**: P2 优先级，3h 工作量。最轻量的 Phase O 任务，主要是建立框架和初始盘点。债务扫描脚本有一定开发量但逻辑简单（正则匹配 + AST 分析可选）。价值在于让技术债务"可见"，从而驱动持续的代码质量改善。
+
+---
+
 ## 四、飞轮规则更新 (稳态版)
 
 ### 4.1 稳态飞轮旋转规则
@@ -550,9 +840,9 @@ Phase M 操作法则 = 最小变更原则 × 渐进式改进 × 可回滚保证
 ║  ✗ 违反宪法约束 → 飞轮停止 (必须纠正)                                  ║
 ║                                                                       ║
 ║  【当前飞轮状态】                                                      ║
-║  连击记录: 51+ consecutive zero-error sessions                         ║
+║  连击记录: 52+ consecutive zero-error sessions                         ║
 ║  飞轮位置: #1 (最高档位)                                              ║
-║  动能储备: 充足 (102个成功Session积累, 含Phase N企业级增强)            ║
+║  动能储备: 充足 (103个成功Session积累, 含Phase O运营优化规划)            ║
 ║                                                                       ║
 ╚═════════════════════════════════════════════════════════════════════╝
 ```
@@ -614,6 +904,7 @@ Step 6: 会话交接 (3分钟)
 | QG-06 | 无新增Error日志 | 0 errors | `docker compose logs --tail=100 \| grep -i error` | 🟡 警告但可继续 |
 | QG-07 | Git工作区干净 | clean or staged | `git status` | 🟡 警告但可继续 |
 | QG-08 | CI/CD Pipeline | Latest green | GitHub Actions页面 | ⚪ 信息性 |
+| QG-09 | 配置兼容性检查通过 | 无冲突 | `docker compose config` + 环境变量校验 | 🟡 警告但可继续 |
 
 ### 5.2 变更特定门禁
 
@@ -1020,18 +1311,18 @@ docker compose -f docker-compose.prod.yml up -d
 |---------|---------|---------|
 | **项目路径** | `C:\Users\Administrator\Documents\trae_projects\GlobalReach-Project\` | LS工具 |
 | **GitHub地址** | huaman-lixiang/GlobalReach-Project (Private) | gh repo view |
-| **Git HEAD** | 5ad11c7 (待push到origin/main) | git log -1 |
+| **Git HEAD** | ad52257 (S131 HA架构完善) | git log -1 |
 | **容器数量** | 13个 (含Mailpit+Tempo) | docker compose ps |
 | **技术栈** | Node 24 + Express + PostgreSQL 15 + Redis 7 + Nginx | package.json / docker-compose |
 | **数据库表数** | 11张表 | psql \dt |
 | **API端口** | 3000 | docker compose ps |
 | **Grafana端口** | 3002 | docker compose ps |
 | **Prometheus端口** | 9090 | docker compose ps |
-| **当前Phase** | Post-Phase N Enterprise-Grade Ready Steady State | 本协议定义 |
+| **当前Phase** | Phase O — 运营优化阶段 [PLANNING] | 本协议定义 |
 | **当前协议版本** | v6.0 (本文件) | 文件名 |
 | **SSL有效期** | 至2031-06-04 | openssl x509 |
 | **CI/CD Jobs** | 6个 (QualityGate/UnitTest/Build/Trivy/Deploy/Notify) | .github/workflows/ |
-| **已完成Session** | S029-S130 共102个 | ls 02-ENTERPRISE-REPORTS/ |
+| **已完成Session** | S029-S132 共103个(含规划中) | ls 02-ENTERPRISE-REPORTS/ |
 | **已知Bug** | 6个，全部已修复 | 本协议第一节 |
 | **邮件管道** | 多提供商SMTP (QQ/Gmail/Outlook/163) operational | S128 Report |
 | **Webhook Listener** | 已启用 (AlertManager集成+HMAC验证) | S128 Report |
@@ -1372,8 +1663,8 @@ docker image prune -f                              # 清理悬空镜像
 
 > **协议版本**: Enterprise-v6.0-STEADY-STATE-EVOLUTION
 > **生成日期**: 2026-06-09
-> **基于基准**: S130 Session Report (Phase N全量完成, 8/8)
-> **适用范围**: S131 及之后的所有稳态运维Session
+> **基于基准**: S132 Session Report (Phase O运营优化规划, 8任务定义)
+> **适用范围**: S132 及之后的所有稳态运维Session（含Phase O执行阶段）
 > **下次审查**: S135 Session完成后 (或发生重大变更时)
 >
 > **⚠️ 重要提醒**: 本协议是 GlobalReach V2.0 进入稳态运维阶段的**唯一权威操作指南**。
