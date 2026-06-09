@@ -107,10 +107,10 @@ const ReportsPage: React.FC = () => {
         </Text>
       </div>
 
-      {/* KPI Cards */}
-      <Row gutter={[16, 16]} style={{ marginBottom: 24 }}>
+      {/* KPI Cards - 移动端响应式 */}
+      <Row gutter={[mobile.isMobile ? 12 : 16, mobile.isMobile ? 12 : 16]} style={{ marginBottom: mobile.isMobile ? 16 : 24 }}>
         {performanceData.map((item, index) => (
-          <Col xs={24} sm={12} lg={6} key={index}>
+          <Col xs={24} sm={12} md={12} lg={6} key={index}>
             <Card>
               <Statistic
                 title={item.metric}
@@ -233,11 +233,11 @@ const ReportsPage: React.FC = () => {
         </Col>
       </Row>
 
-      <Row gutter={[16, 16]}>
+      <Row gutter={[mobile.isMobile ? 12 : 16, mobile.isMobile ? 12 : 16]}>
         <Col xs={24} md={12}>
           <Card title="平台占比分析">
             {platformData.length > 0 ? (
-              <ResponsiveContainer width="100%" height={300}>
+              <ResponsiveContainer width="100%" height={mobile.isMobile ? 240 : 300}>
                 <PieChart>
                   <Pie
                     data={platformData}

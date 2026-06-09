@@ -506,7 +506,10 @@ body {
   outline-offset: 2px;
 }
 
-/* Responsive adjustments */
+/* --- Mobile Responsive Styles (N08) --- */
+@import './styles/responsive.css';
+
+/* Responsive adjustments - 增强移动端断点规则 */
 @media (max-width: 768px) {
   html {
     font-size: 13px;

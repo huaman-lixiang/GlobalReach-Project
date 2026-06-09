@@ -18,6 +18,7 @@ import {
   Popconfirm,
   Badge,
   Descriptions,
+  Drawer,
 } from 'antd'
 import {
   PlusOutlined,
@@ -27,6 +28,7 @@ import {
   PlayCircleOutlined,
   ReloadOutlined,
   MailOutlined,
+  FilterOutlined,
 } from '@ant-design/icons'
 import { useAppDispatch, useAppSelector } from '@/store'
 import {
@@ -35,6 +37,7 @@ import {
 } from '@/store/slices/campaignsSlice'
 import api from '@/services/api'
 import { useTranslation } from 'react-i18next'
+import useMobile from '@/hooks/useMobile'
 
 const { Title, Text } = Typography
 const { Option } = Select
@@ -320,6 +323,88 @@ const SendProgressModal: React.FC<ProgressModalProps> = ({ visible, campaignId, 
 }
 
 // ============================================
+// 移动端卡片列表项组件
+// ============================================
+
+interface CampaignCardItemProps {
+  record: any
+  onSend: (record: any) => void
+  sendingId: string | null
+  onDetail: (record: any) => void
+}
+
+const CampaignCardItem: React.FC<CampaignCardItemProps> = ({ record, onSend, sendingId, onDetail }) => {
+  const total = record.emailCount || record.totalCount || 0
+  const sent = record.sentCount || 0
+  const pct = total > 0 ? Math.round((sent / total) * 100) : 0
+  const cfg = statusConfig[record.status] || statusConfig.DRAFT
+  const typeOpt = typeOptions.find(t => t.value === record.type)
+
+  return (
+    <div className="mobile-card-item" onClick={() => onDetail(record)}>
+      <div className="mobile-card-header">
+        <span className="mobile-card-title">{record.name}</span>
+        <Tag color={cfg.color}>{cfg.text}</Tag>
+      </div>
+      <div className="mobile-card-meta">
+        <span className="mobile-card-meta-item">
+          {typeOpt ? <Tag>{typeOpt.label}</Tag> : <Tag>{record.type}</Tag>}
+        </span>
+        <span className="mobile-card-meta-item">
+          {record.createdAt ? new Date(record.createdAt).toLocaleDateString() : '-'}
+        </span>
+      </div>
+      {total > 0 && (
+        <div style={{ marginTop: 8 }}>
+          <Progress
+            percent={pct}
+            size="small"
+            status={pct === 100 ? 'success' : record.status === 'SENDING' ? 'active' : 'normal'}
+            format={() => `${sent}/${total}`}
+          />
+        </div>
+      )}
+      <div className="mobile-card-actions mobile-action-buttons">
+        {(record.status === 'DRAFT' || record.status === 'SCHEDULED') && (
+          <Popconfirm
+            title={t('campaigns.confirmDelete')}
+            onConfirm={(e) => { e?.stopPropagation(); onSend(record) }}
+            okText={t('common.confirm')}
+            cancelText={t('common.cancel')}
+          >
+            <Button
+              type="primary"
+              size="small"
+              icon={<PlayCircleOutlined />}
+              loading={sendingId === record.id}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {t('campaigns.start')}
+            </Button>
+          </Popconfirm>
+        )}
+        {record.status === 'SENDING' && (
+          <Button
+            size="small"
+            icon={<ReloadOutlined />}
+            onClick={(e) => { e?.stopPropagation(); onSend(record) }}
+          >
+            {t('emails.viewDetails')}
+          </Button>
+        )}
+        <Button
+          size="small"
+          icon={<EditOutlined />}
+          onClick={(e) => { e?.stopPropagation(); }}
+        >
+          {t('common.edit')}
+        </Button>
+      </div>
+    </div>
+  )
+}
+
+// ============================================
 // Main Campaigns Page
 // ============================================
 
@@ -330,7 +415,9 @@ const CampaignsPage: React.FC = () => {
   const [progressVisible, setProgressVisible] = useState(false)
   const [sendingId, setSendingId] = useState<string | null>(null)
   const [progressCampaignId, setProgressCampaignId] = useState<string | null>(null)
+  const [filterDrawerVisible, setFilterDrawerVisible] = useState(false)
   const { t } = useTranslation()
+  const mobile = useMobile()
 
   useEffect(() => {
     dispatch(fetchCampaigns())
@@ -449,7 +536,7 @@ const CampaignsPage: React.FC = () => {
                 >
                   {t('campaigns.start')}
                 </Button>
-              </Popconfirm>
+            </Popconfirm>
           )}
           {record.status === 'SENDING' && (
             <Button
@@ -473,27 +560,128 @@ const CampaignsPage: React.FC = () => {
           <MailOutlined style={{ color: 'var(--gr-primary)', fontSize: 20 }} />
           营销活动管理
         </Title>
-        <Button type="primary" icon={<PlusOutlined />} onClick={() => setWizardVisible(true)}>
-          创建活动
-        </Button>
+        {/* 移动端：创建按钮移入 FAB 或保留在 header */}
+        {!mobile.isMobile && (
+          <Button type="primary" icon={<PlusOutlined />} onClick={() => setWizardVisible(true)}>
+            创建活动
+          </Button>
+        )}
       </div>
 
       <Card>
 
-        <Table
-          columns={columns}
-          dataSource={campaigns}
-          rowKey="id"
-          loading={loading}
-          pagination={{
-            total,
-            pageSize: 10,
-            showSizeChanger: true,
-            showQuickJumper: true,
-            showTotal: (total) => `${t('common.total')} ${total} ${t('campaigns.title')}`,
-          }}
-          size="middle"
-        />
+        {/* 筛选区域 - 移动端使用抽屉触发器 */}
+        {mobile.isMobile ? (
+          <div style={{ marginBottom: 12 }}>
+            <button
+              className="mobile-filter-trigger"
+              onClick={() => setFilterDrawerVisible(true)}
+              type="button"
+            >
+              <FilterOutlined /> 筛选与搜索
+            </button>
+
+            {/* 移动端筛选抽屉 */}
+            <Drawer
+              title="筛选条件"
+              placement="bottom"
+              height="auto"
+              open={filterDrawerVisible}
+              onClose={() => setFilterDrawerVisible(false)}
+              styles={{ body: { paddingTop: 16 } }}
+            >
+              <Space direction="vertical" style={{ width: '100%' }} size={12}>
+                <Input placeholder="搜索活动名称..." allowClear prefix={<SearchOutlined />} />
+                <Select placeholder="活动类型" allowClear style={{ width: '100%' }}>
+                  {typeOptions.map(opt => (
+                    <Option key={opt.value} value={opt.value}>{opt.label}</Option>
+                  ))}
+                </Select>
+                <Select placeholder="状态筛选" allowClear style={{ width: '100%' }}>
+                  <Option value="DRAFT">草稿</Option>
+                  <Option value="SCHEDULED">已计划</Option>
+                  <Option value="SENDING">发送中</Option>
+                  <Option value="COMPLETED">已完成</Option>
+                </Select>
+                <Button type="primary" block onClick={() => setFilterDrawerVisible(false)}>
+                  应用筛选
+                </Button>
+              </Space>
+            </Drawer>
+          </div>
+        ) : (
+          <Space style={{ marginBottom: 16 }} wrap>
+            <Input
+              placeholder="搜索活动名称..."
+              allowClear
+              style={{ width: 250 }}
+              prefix={<SearchOutlined />}
+            />
+            <Select placeholder="活动类型" allowClear style={{ width: 140 }}>
+              {typeOptions.map(opt => (
+                <Option key={opt.value} value={opt.value}>{opt.label}</Option>
+              ))}
+            </Select>
+            <Select placeholder="状态筛选" allowClear style={{ width: 120 }}>
+              <Option value="DRAFT">草稿</Option>
+              <Option value="SCHEDULED">已计划</Option>
+              <Option value="SENDING">发送中</Option>
+              <Option value="COMPLETED">已完成</Option>
+            </Select>
+            <Button icon={<FilterOutlined />}>筛选</Button>
+          </Space>
+        )}
+
+        {/* 移动端：卡片列表视图；桌面端：表格视图 */}
+        {mobile.isMobile ? (
+          <div className="mobile-card-list">
+            {campaigns.length === 0 && !loading && (
+              <Empty description={t('dashboard.noData')} style={{ padding: '40px 0' }} />
+            )}
+            {campaigns.map((record: any) => (
+              <CampaignCardItem
+                key={record.id}
+                record={record}
+                onSend={handleSend}
+                sendingId={sendingId}
+                onDetail={() => {}}
+              />
+            ))}
+
+            {/* 移动端 FAB 创建按钮 */}
+            <Button
+              type="primary"
+              shape="circle"
+              icon={<PlusOutlined />}
+              className="fab-button"
+              onClick={() => setWizardVisible(true)}
+            />
+
+            {/* 分页 - 移动端简化 */}
+            {total > 10 && (
+              <div style={{ textAlign: 'center', marginTop: 16 }}>
+                <Text type="secondary" style={{ fontSize: 12 }}>
+                  共 {total} 条记录
+                </Text>
+              </div>
+            )}
+          </div>
+        ) : (
+          <Table
+            columns={columns}
+            dataSource={campaigns}
+            rowKey="id"
+            loading={loading}
+            pagination={{
+              total,
+              pageSize: 10,
+              showSizeChanger: true,
+              showQuickJumper: true,
+              showTotal: (total) => `${t('common.total')} ${total} ${t('campaigns.title')}`,
+            }}
+            size="middle"
+          />
+        )}
       </Card>
 
       <CreateWizardModal

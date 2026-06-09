@@ -11,6 +11,7 @@ const RegisterPage: React.FC = () => {
   const [loading, setLoading] = useState(false)
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
+  const mobile = useMobile()
 
   const onFinish = async (values: { name: string; email: string; password: string; confirmPassword: string }) => {
     if (values.password !== values.confirmPassword) {
@@ -113,27 +114,54 @@ const RegisterPage: React.FC = () => {
           </div>
         </div>
       </div>
+      ) : null}
 
-      {/* Right Panel - Registration Form */}
+      {/* Right Panel - Registration Form - 移动端全宽 */}
       <div
         style={{
           flex: '1',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          padding: 40,
-          background: '#ffffff',
+          padding: mobile.isMobile ? '24px 16px' : 40,
+          background: mobile.isMobile ? 'linear-gradient(135deg, #0d9488 0%, #1a56db 100%)' : '#ffffff',
+          minHeight: mobile.isMobile ? '100vh' : 'auto',
         }}
       >
         <Card
           style={{
-            width: 440,
+            width: mobile.isMobile ? '100%' : 440,
+            maxWidth: mobile.isMobile ? 400 : 'auto',
             border: 'none',
-            boxShadow: 'none',
-            padding: '8px 0',
+            boxShadow: mobile.isMobile ? '0 8px 32px rgba(0,0,0,0.15)' : 'none',
+            padding: mobile.isMobile ? '20px 16px' : '8px 0',
+            borderRadius: mobile.isMobile ? 16 : undefined,
+            background: '#ffffff',
           }}
         >
-          <div style={{ marginBottom: 32 }}>
+          {/* 移动端 Logo */}
+          {mobile.isMobile && (
+            <div style={{ textAlign: 'center', marginBottom: 20 }}>
+              <div
+                style={{
+                  width: 52,
+                  height: 52,
+                  borderRadius: 14,
+                  background: 'rgba(255,255,255,0.2)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 10px',
+                }}
+              >
+                <MailOutlined style={{ color: '#fff', fontSize: 26 }} />
+              </div>
+              <Title level={4} style={{ color: '#fff', marginBottom: 2 }}>创建账号</Title>
+              <Text style={{ color: 'rgba(255,255,255,0.7)', fontSize: 12 }}>加入 GlobalReach</Text>
+            </div>
+          )}
+
+          <div style={{ marginBottom: mobile.isMobile ? 24 : 32 }}>
             <Title level={3} style={{ marginBottom: 6, fontWeight: 800 }}>
               注册新账号
             </Title>

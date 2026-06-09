@@ -84,6 +84,7 @@ const AccountsPage: React.FC = () => {
   })
   const [testingId, setTestingId] = useState<string | null>(null)
   const [healthData, setHealthData] = useState<any>(null)
+  const mobile = useMobile()
 
   useEffect(() => {
     dispatch(fetchAccounts(searchParams))
@@ -294,29 +295,41 @@ const AccountsPage: React.FC = () => {
 
       <Card>
 
-        {/* Engine Health Summary */}
+        {/* 引擎健康摘要 - 移动端简化 */}
         {healthData && (
           <div style={{
             background: '#f6ffed',
             border: '1px solid #b7eb8f',
             borderRadius: 8,
-            padding: '12px 20px',
+            padding: mobile.isMobile ? '10px 14px' : '12px 20px',
             marginBottom: 16,
-            display: 'flex',
-            gap: 24,
+            display: mobile.isMobile ? 'grid' : 'flex',
+            gap: mobile.isMobile ? 8 : 24,
             alignItems: 'center',
+            gridTemplateColumns: mobile.isMobile ? '1fr 1fr' : undefined,
           }}>
             <Badge status="success" text={`引擎状态: ${healthData.engineStatus || 'ONLINE'}`} />
             <span>注册账号: <strong>{healthData.totalRegistered || accounts.length}</strong></span>
-            <span>活跃账号: <strong>{healthData.activeCount || accounts.filter((a: any) => a.status === 'ACTIVE').length}</strong></span>
-            <span>平均健康度: <strong>{healthData.avgHealthScore || '-'}</strong></span>
+            {!mobile.isMobile && (
+              <>
+                <span>活跃账号: <strong>{healthData.activeCount || accounts.filter((a: any) => a.status === 'ACTIVE').length}</strong></span>
+                <span>平均健康度: <strong>{healthData.avgHealthScore || '-'}</strong></span>
+              </>
+            )}
             <Button size="small" icon={<ReloadOutlined />} onClick={loadHealthStatus}>
               刷新状态
             </Button>
           </div>
         )}
 
-        <Space style={{ marginBottom: 16 }} wrap>
+        {/* 筛选区域 - 移动端使用抽屉 */}
+        {mobile.isMobile ? (
+          <div style={{ marginBottom: 12 }}>
+            <button className="mobile-filter-trigger" type="button">
+              <FilterOutlined /> 筛选与搜索
+            </button>
+          </div>
+        ) : (
           <Select
             placeholder="筛选平台"
             allowClear
@@ -350,6 +363,7 @@ const AccountsPage: React.FC = () => {
             新增账号
           </Button>
         </Space>
+        )}
 
         <Table
           columns={columns}

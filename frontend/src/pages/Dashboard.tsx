@@ -28,6 +28,7 @@ import {
 import { useAppDispatch, useAppSelector } from '@/store'
 import { fetchStats } from '@/store/slices/statsSlice'
 import { useTranslation } from 'react-i18next'
+import useMobile from '@/hooks/useMobile'
 
 const { Title, Text } = Typography
 
@@ -179,10 +180,10 @@ const Dashboard: React.FC = () => {
                     prefix={card.prefix}
                     suffix={card.suffix}
                     valueStyle={{
-                      fontSize: 26,
-                      fontWeight: 800,
-                      color: 'var(--gr-gray-900)',
-                    }}
+                    fontSize: mobile.isMobile ? 22 : 26,
+                    fontWeight: 800,
+                    color: 'var(--gr-gray-900)',
+                  }}
                   />
                 </div>
               </div>
@@ -344,7 +345,7 @@ const Dashboard: React.FC = () => {
       </Row>
 
       {/* Recent Activity Timeline */}
-      <Row gutter={[20, 20]}>
+      <Row gutter={[mobile.isMobile ? 12 : 20, mobile.isMobile ? 12 : 20]}>
         <Col span={24}>
           <Card
             title={
