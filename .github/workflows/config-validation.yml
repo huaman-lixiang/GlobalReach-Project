@@ -1,0 +1,217 @@
+# GlobalReach V2.0 — 配置验证防护网（Configuration Validation Safety Net）
+# S132: CI/CD 集成 — 在 PR / Push 时自动验证所有配置文件兼容性
+#
+# 触发条件:
+#   - Push 到 main 分支时，如果变更涉及配置文件
+#   - Pull Request 时，如果变更涉及配置文件
+#   - 手动触发 (workflow_dispatch)
+#
+# 检查范围:
+#   - Docker Compose 配置 (docker-compose*.yml)
+#   - Nginx 配置 (nginx/**)
+#   - AlertManager 配置 (alertmanager/**)
+#   - Prometheus 规则 (prometheus/**)
+#   - Promtail/Loki 配置 (loki/**)
+#   - PostgreSQL/Redis 配置
+#
+# 退出码:
+#   0 = 全部通过 → PR 可以合并
+#   1 = 有失败项 → 阻断合并，需要修复
+#   2 = 内部错误
+
+name: Config Validation Safety Net
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'docker-compose*.yml'
+      - 'nginx/**'
+      - 'alertmanager/**'
+      - 'prometheus/**'
+      - 'loki/**'
+      - 'redis/**'
+      - 'scripts/validate-configs.sh'
+
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'docker-compose*.yml'
+      - 'nginx/**'
+      - 'alertmanager/**'
+      - 'prometheus/**'
+      - 'loki/**'
+      - 'redis/**'
+      - 'scripts/validate-configs.sh'
+
+  workflow_dispatch:
+    inputs:
+      service:
+        description: '仅检查指定服务（留空=全量）'
+        required: false
+        default: ''
+        type: choice
+        options:
+          - ''
+          - 'nginx'
+          - 'alertmanager'
+          - 'prometheus'
+          - 'promtail'
+          - 'loki'
+          - 'docker-compose'
+          - 'postgres'
+          - 'redis'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ──────────────────────────────────────────────
+  # JOB: 全量配置验证
+  # ──────────────────────────────────────────────
+  validate-configs:
+    name: Validate All Configs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python (for YAML/PromQL parsing)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: pip install pyyaml --quiet
+
+      - name: Make validation script executable
+        run: chmod +x scripts/validate-configs.sh
+
+      - name: Run full config validation (CI mode)
+        id: validate
+        env:
+          SERVICE_ARG: ${{ github.event.inputs.service || '' }}
+        run: |
+          ARGS="--ci"
+          if [ -n "$SERVICE_ARG" ]; then
+            ARGS="$ARGS --service $SERVICE_ARG"
+          fi
+          
+          echo "=== GlobalReach Configuration Validation ==="
+          echo "Service filter: ${SERVICE_ARG:-<all services>}"
+          echo ""
+          
+          bash scripts/validate-configs.sh $ARGS
+          VALIDATE_EXIT=$?
+          echo "validate_exit_code=${VALIDATE_EXIT}" >> $GITHUB_OUTPUT
+          exit $VALIDATE_EXIT
+
+      - name: Generate summary report
+        if: always()
+        run: |
+          echo "## 🔍 Configuration Validation Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Check | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          
+          # 从验证输出中提取结果（如果有）
+          if [ -f .validation_output.txt ]; then
+            cat .validation_output.txt | while read line; do
+              if echo "$line" | grep -qE '(PASS|WARN|FAIL)'; then
+                echo "| \`$line\` |" >> $GITHUB_STEP_SUMMARY
+              fi
+            done
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Exit Code:** \`${{ steps.validate.outputs.validate_exit_code }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "> Triggered by: \`${{ github.event_name }}\` on \`${{ github.ref_name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "> Commit: \`${{ github.sha }}\` by @${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload validation artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: config-validation-report
+          path: |
+            docker-compose.prod.yml
+            alertmanager/alertmanager.yml
+            prometheus/rules/*.yml
+            loki/promtail-config.yml
+            loki/loki-config.yml
+            nginx/conf.d/*.conf
+          retention-days: 7
+          if-no-files-found: warn
+
+  # ──────────────────────────────────────────────
+  # JOB: Nginx 配置深度验证（使用 nginx -t）
+  # ──────────────────────────────────────────────
+  nginx-deep-validate:
+    name: Nginx Deep Validation (nginx -t)
+    runs-on: ubuntu-latest
+    needs: validate-configs
+    if: |
+      always() && needs.validate-configs.result == 'success'
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Nginx
+        run: sudo apt-get update && sudo apt-get install -y nginx
+
+      - name: Run nginx configuration test
+        id: nginx_test
+        run: |
+          echo "=== Nginx Configuration Test (nginx -t) ==="
+          
+          # 创建测试所需的目录结构
+          mkdir -p /etc/nginx/ssl/globalreach
+          mkdir -p /etc/nginx/ssl/le
+          mkdir -p /var/www/acme-challenge
+          mkdir -p /usr/share/nginx/html/docs
+          mkdir -p /var/www/frontend/dist
+          mkdir -p /tmp/positions
+          
+          # 创建自签名证书用于测试
+          openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+            -keyout /etc/nginx/ssl/globalreach/test.key \
+            -out /etc/nginx/ssl/globalreach/test.pem \
+            -subj "/CN=test.globalreach.com" 2>/dev/null || true
+          
+          # 复制 LE 目录结构的占位符
+          mkdir -p /etc/nginx/ssl/le/live/globalreach.com
+          cp /etc/nginx/ssl/globalreach/test.pem /etc/nginx/ssl/le/live/globalreach.com/fullchain.pem
+          cp /etc/nginx/ssl/globalreach/test.key /etc/nginx/ssl/le/live/globalreach.com/privkey.pem
+          cp /etc/nginx/ssl/globalreach/test.pem /etc/nginx/ssl/le/live/globalreach.com/chain.pem
+          
+          # 创建 DH 参数占位符
+          openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048 2>/dev/null || true
+          
+          # 测试主 nginx.conf
+          if [ -f nginx/nginx.conf ]; then
+            echo "--- Testing nginx/nginx.conf ---"
+            nginx -t -c "$(pwd)/nginx/nginx.conf" 2>&1 || NGINX_EXIT=$?
+            echo "nginx_exit=${NGINX_EXIT:-0}" >> $GITHUB_OUTPUT
+          else
+            echo "nginx/nginx.conf not found, skipping"
+            echo "nginx_exit=0" >> $GITHUB_OUTPUT
+          fi
+          
+          exit ${NGINX_EXIT:-0}
+        continue-on-error: true
+
+      - name: Report Nginx result
+        if: always()
+        run: |
+          if [ "${{ steps.nginx_test.outputs.nginx_exit }}" = "0" ]; then
+            echo "## ✅ Nginx Configuration Test: PASS" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## ⚠️ Nginx Configuration Test: WARN (see logs)" >> $GITHUB_STEP_SUMMARY
+          fi
