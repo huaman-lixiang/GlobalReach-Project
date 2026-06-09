@@ -1,0 +1,122 @@
+# ============================================
+# M-B02: GlobalReach Business Alert Rules
+# ============================================
+# Business-level alerts for email marketing operations.
+# These complement the infrastructure alerts in alerts.yml.
+
+groups:
+  - name: globalreach_business_alerts
+    interval: 30s
+    rules:
+      # ── Email Delivery Alerts ───────────────────────────
+
+      # Email success rate drops below 90%
+      - alert: HighEmailFailureRate
+        expr: globalreach:email_success_rate_5m < 0.9
+        for: 5m
+        labels:
+          severity: warning
+          team: operations
+        annotations:
+          summary: "邮件发送成功率低于90%"
+          description: "5分钟内邮件发送成功率 {{ $value | humanizePercentage }}，需要检查SMTP提供商状态和队列健康度"
+          runbook_url: "https://docs.globalreach.com/runbooks/email-failure-rate"
+
+      # Zero emails sent in last 10 minutes (pipeline stall)
+      - alert: EmailPipelineStalled
+        expr: globalreach:emails_per_minute_5m == 0
+        for: 10m
+        labels:
+          severity: info
+          team: operations
+        annotations:
+          summary: "邮件发送管道停滞"
+          description: "过去10分钟内没有邮件被发送，请检查SendWorker和EmailQueue状态"
+
+      # ── API Performance Alerts ──────────────────────────
+
+      # API P99 latency exceeds 3 seconds
+      - alert: HighAPILatency
+        expr: globalreach:api_p99_latency_ms_5m > 3000
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "API P99延迟过高"
+          description: "API P99延迟达到 {{ $value }}ms（阈值3s），用户可能感知到明显卡顿"
+
+      # API error rate exceeds 5%
+      - alert: HighAPIErrorRate
+        expr: globalreach:api_error_rate_5m > 0.05
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "API错误率过高 (>5%)"
+          description: "5分钟内API错误率为 {{ $value | humanizePercentage }}，请检查错误日志"
+
+      # ── Queue Backlog Alerts ─────────────────────────────
+
+      # Pending queue exceeds 1000 emails
+      - alert: EmailQueueBacklog
+        expr: globalreach_queue_depth{state="pending"} > 1000
+        for: 10m
+        labels:
+          severity: info
+          team: operations
+        annotations:
+          summary: "邮件队列积压"
+          description: "待发送邮件队列深度 {{ $value }}，超过1000的告警阈值"
+
+      # Pending queue critically high (>5000)
+      - alert: EmailQueueCritical
+        expr: globalreach_queue_depth{state="pending"} > 5000
+        for: 5m
+        labels:
+          severity: critical
+          team: operations
+        annotations:
+          summary: "邮件队列严重积压"
+          description: "待发送邮件队列深度 {{ $value }}，超过5000临界值！需立即扩容或排查阻塞原因"
+
+      # Failed queue accumulating (>100)
+      - alert: EmailFailuresAccumulating
+        expr: globalreach_queue_depth{state="failed"} > 100
+        for: 15m
+        labels:
+          severity: warning
+          team: operations
+        annotations:
+          summary: "失败邮件持续累积"
+          description: "失败队列中已有 {{ $value }} 封邮件，请检查失败原因并考虑重试策略"
+
+      # ── Business Health Alerts ───────────────────────────
+
+      # No active campaigns (business may be idle or broken)
+      - alert: NoActiveCampaigns
+        expr: globalreach_campaigns_active == 0
+        for: 30m
+        labels:
+          severity: info
+          team: business
+        annotations:
+          summary: "无活跃营销活动"
+          description: "已连续30分钟没有活跃的营销活动，如非预期请确认业务状态"
+
+      # Sudden spike in client count (data anomaly detection)
+      - alert: ClientCountAnomaly
+        expr: |
+          abs(
+            globalreach_clients_total
+            -
+            globalreach:clients_current_snapshot offset 1h
+          ) / globalreach:clients_current_snapshot offset 1h > 0.5
+        for: 5m
+        labels:
+          severity: info
+          team: business
+        annotations:
+          summary: "客户数量异常波动"
+          description: "客户数量在1小时内变化超过50%，当前值 {{ $value }}"

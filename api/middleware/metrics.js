@@ -186,6 +186,92 @@ const dbPoolSize = new client.Gauge({
 });
 
 // ============================================
+// M-B02: Custom Business Metrics
+// ============================================
+
+// --- Email Sending Business Metrics ---
+
+/**
+ * Total emails sent with status and campaign_id labels.
+ * Replaces the older emails_sent_total / emails_failed_total for unified tracking.
+ * status: success | fail | bounced
+ */
+const emailsTotal = new client.Counter({
+  name: `${METRICS_PREFIX}emails_total`,
+  help: 'Total number of emails sent, labeled by status and campaign_id',
+  labelNames: ['status', 'campaign_id'],
+});
+
+/** Duration of individual email send operations */
+const emailSendDurationSeconds = new client.Histogram({
+  name: `${METRICS_PREFIX}email_send_duration_seconds`,
+  help: 'Duration of single email send operations in seconds',
+  labelNames: ['platform', 'campaign_id'],
+  buckets: [0.1, 0.5, 1, 2.5, 5, 10, 15, 30, 60],
+});
+
+/** Number of currently active (running) marketing campaigns */
+const campaignsActive = new client.Gauge({
+  name: `${METRICS_PREFIX}campaigns_active`,
+  help: 'Number of currently active marketing campaigns',
+});
+
+// --- User / Client Business Metrics ---
+
+/** Total number of registered clients */
+const clientsTotal = new client.Gauge({
+  name: `${METRICS_PREFIX}clients_total`,
+  help: 'Total number of registered clients',
+});
+
+/** Number of currently online users */
+const usersOnline = new client.Gauge({
+  name: `${METRICS_PREFIX}users_online`,
+  help: 'Number of currently online users',
+});
+
+/**
+ * Total API requests counter with endpoint/method/status labels.
+ * More granular than http_requests_total which uses route paths.
+ */
+const apiRequestsTotal = new client.Counter({
+  name: `${METRICS_PREFIX}api_requests_total`,
+  help: 'Total API requests labeled by endpoint, method, and status',
+  labelNames: ['endpoint', 'method', 'status'],
+});
+
+/** API request latency histogram for P50/P95/P99 analysis */
+const apiRequestDurationSeconds = new client.Histogram({
+  name: `${METRICS_PREFIX}api_request_duration_seconds`,
+  help: 'API request duration in seconds for latency analysis',
+  labelNames: ['endpoint', 'method'],
+  buckets: [0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5, 10],
+});
+
+// --- System Resource Business Metrics ---
+
+/** Active database connections (from pool) */
+const dbConnectionsActive = new client.Gauge({
+  name: `${METRICS_PREFIX}db_connections_active`,
+  help: 'Number of active database connections',
+});
+
+/** Redis operation duration histogram */
+const redisOpsDurationSeconds = new client.Histogram({
+  name: `${METRICS_PREFIX}redis_ops_duration_seconds`,
+  help: 'Duration of Redis operations in seconds',
+  labelNames: ['operation'], // get, set, del, hget, hset, etc.
+  buckets: [0.0005, 0.001, 0.005, 0.01, 0.025, 0.05, 0.1, 0.25],
+});
+
+/** Email queue depth by state (pending, sending, completed, failed) */
+const queueDepth = new client.Gauge({
+  name: `${METRICS_PREFIX}queue_depth`,
+  help: 'Email queue depth by state',
+  labelNames: ['state'], // pending, sending, completed, failed
+});
+
+// ============================================
 // Middleware: Auto-Instrumentation
 // ============================================
 
@@ -339,6 +425,93 @@ function recordEmailSend(platform, success, failureReason) {
   }
 }
 
+// ============================================
+// M-B02: Business Metric Helpers
+// ============================================
+
+/**
+ * Record an email send result with unified status label (M-B02).
+ * Use this instead of recordEmailSend for business-level tracking.
+ *
+ * @param {object} params
+ * @param {string} params.status - 'success' | 'fail' | 'bounced'
+ * @param {string} [params.campaign_id] - Campaign UUID
+ * @param {string} [params.platform] - SMTP platform name
+ * @param {number} [params.durationSec] - Send duration in seconds
+ */
+function recordBusinessEmailSend({ status, campaign_id, platform, durationSec }) {
+  emailsTotal.inc({ status, campaign_id: campaign_id || '' });
+  if (durationSec !== undefined) {
+    emailSendDurationSeconds.observe({ platform: platform || 'unknown', campaign_id: campaign_id || '' }, durationSec);
+  }
+}
+
+/**
+ * Update active campaigns count.
+ * @param {number} count
+ */
+function updateCampaignsActive(count) {
+  campaignsActive.set(count);
+}
+
+/**
+ * Update total clients count.
+ * @param {number} count
+ */
+function updateClientsTotal(count) {
+  clientsTotal.set(count);
+}
+
+/**
+ * Update online users count.
+ * @param {number} count
+ */
+function updateUsersOnline(count) {
+  usersOnline.set(count);
+}
+
+/**
+ * Record an API request (M-B02 business-level).
+ * Called alongside the existing HTTP auto-instrumentation.
+ *
+ * @param {string} endpoint - e.g. '/api/campaigns', '/api/v1/auth/login'
+ * @param {string} method - GET|POST|PUT|DELETE
+ * @param {number|string} status - HTTP status code
+ * @param {number} [durationSec] - Request duration in seconds
+ */
+function recordApiRequest(endpoint, method, status, durationSec) {
+  apiRequestsTotal.inc({ endpoint, method, status: String(status) });
+  if (durationSec !== undefined) {
+    apiRequestDurationSeconds.observe({ endpoint, method }, durationSec);
+  }
+}
+
+/**
+ * Update active DB connections count.
+ * @param {number} count
+ */
+function updateDbConnectionsActive(count) {
+  dbConnectionsActive.set(count);
+}
+
+/**
+ * Record a Redis operation duration.
+ * @param {string} operation - get|set|del|hget|hset|etc
+ * @param {number} durationSec - Operation duration in seconds
+ */
+function recordRedisOp(operation, durationSec) {
+  redisOpsDurationSeconds.observe({ operation }, durationSec);
+}
+
+/**
+ * Update queue depth by state.
+ * @param {string} state - pending|sending|completed|failed
+ * @param {number} count
+ */
+function updateQueueDepth(state, count) {
+  queueDepth.set({ state }, count);
+}
+
 /**
  * Record a CSRF validation failure.
  *
@@ -349,16 +522,19 @@ function recordCsrfFailure(reason) {
 }
 
 /**
- * Start periodic metric collection (system resources + error rates).
+ * Start periodic metric collection (system resources + error rates + business metrics).
  * Returns a cleanup function to stop the timer.
  *
  * @param {object} deps - Optional dependencies for richer metrics
+ * @param {Function} [deps.getErrorSummary] - D11 error tracker
+ * @param {Function} [deps.getCsrfInfo] - D10 CSRF module
+ * @param {Function} [deps.getBusinessMetrics] - M-B02: async fn returning { activeCampaigns, totalClients, queueDepths }
  * @returns {{ stop: Function }} Handle to stop collection
  */
 function startPeriodicCollection(deps = {}) {
   const intervalMs = parseInt(process.env.METRICS_COLLECTION_INTERVAL_MS || '10000');
 
-  const timer = setInterval(() => {
+  const timer = setInterval(async () => {
     try {
       updateSystemMetrics();
 
@@ -370,6 +546,24 @@ function startPeriodicCollection(deps = {}) {
       // Integrate with D10 CSRF if available
       if (deps.getCsrfInfo) {
         updateCsrfMetrics(deps.getCsrfInfo());
+      }
+
+      // M-B02: Collect business metrics if provider is available
+      if (deps.getBusinessMetrics) {
+        try {
+          const biz = await deps.getBusinessMetrics();
+          if (biz.activeCampaigns !== undefined) updateCampaignsActive(biz.activeCampaigns);
+          if (biz.totalClients !== undefined) updateClientsTotal(biz.totalClients);
+          if (biz.onlineUsers !== undefined) updateUsersOnline(biz.onlineUsers);
+          if (biz.dbConnectionsActive !== undefined) updateDbConnectionsActive(biz.dbConnectionsActive);
+          if (biz.queueDepths && typeof biz.queueDepths === 'object') {
+            for (const [state, count] of Object.entries(biz.queueDepths)) {
+              updateQueueDepth(state, count);
+            }
+          }
+        } catch (_) {
+          // Business metrics collection failure should not crash
+        }
       }
     } catch (e) {
       // Silently fail — metrics collection should never crash the app
@@ -420,6 +614,16 @@ module.exports = {
   recordEmailSend,
   recordCsrfFailure,
 
+  // M-B02: Business metric helpers
+  recordBusinessEmailSend,
+  updateCampaignsActive,
+  updateClientsTotal,
+  updateUsersOnline,
+  recordApiRequest,
+  updateDbConnectionsActive,
+  recordRedisOp,
+  updateQueueDepth,
+
   // Individual metric objects (for direct manipulation)
   metrics: {
     // HTTP
@@ -449,6 +653,17 @@ module.exports = {
     // Database
     databaseQueryDurationSeconds,
     dbPoolSize,
+    // M-B02: Business Metrics
+    emailsTotal,
+    emailSendDurationSeconds,
+    campaignsActive,
+    clientsTotal,
+    usersOnline,
+    apiRequestsTotal,
+    apiRequestDurationSeconds,
+    dbConnectionsActive,
+    redisOpsDurationSeconds,
+    queueDepth,
   },
 
   // Config

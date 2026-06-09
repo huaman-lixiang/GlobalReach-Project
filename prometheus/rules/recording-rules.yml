@@ -1,0 +1,125 @@
+# ============================================
+# M-B02: GlobalReach Business Recording Rules
+# ============================================
+# Pre-computed business metrics for dashboard queries.
+# Evaluated every 30s by Prometheus.
+#
+# These rules create derived metrics from raw counters/histograms
+# to improve query performance and provide business-level KPIs.
+
+groups:
+  - name: globalreach_business
+    interval: 30s
+    rules:
+      # ── Email Sending KPIs ──────────────────────────────
+
+      # Email success rate over 5-minute window
+      - record: globalreach:email_success_rate_5m
+        expr: |
+          sum(rate(globalreach_emails_total{status="success"}[5m]))
+          /
+          sum(rate(globalreach_emails_total[5m]))
+
+      # Average emails sent per minute (5-min window)
+      - record: globalreach:emails_per_minute_5m
+        expr: sum(rate(globalreach_emails_total[5m])) * 60
+
+      # Email send throughput per campaign (per minute)
+      - record: globalreach:emails_per_campaign_per_min_5m
+        expr: >
+          sum by (campaign_id)
+          (rate(globalreach_emails_total[5m])) * 60
+
+      # Average email send duration in seconds (5-min)
+      - record: globalreach:email_send_avg_duration_5m
+        expr: >
+          avg(globalreach_email_send_duration_seconds)
+          or
+          rate(globalreach_email_send_duration_seconds_sum[5m])
+          /
+          rate(globalreach_email_send_duration_seconds_count[5m])
+
+      # ── API Performance KPIs ───────────────────────────
+
+      # API error rate (HTTP 5xx) over 5-minute window
+      - record: globalreach:api_error_rate_5m
+        expr: |
+          sum(rate(globalreach_api_requests_total{status=~"5.."}[5m]))
+          /
+          sum(rate(globalreach_api_requests_total[5m]))
+
+      # Total API QPS (queries per second, 5-min window)
+      - record: globalreach:api_qps_5m
+        expr: sum(rate(globalreach_api_requests_total[5m]))
+
+      # P99 API latency in milliseconds (5-min window)
+      - record: globalreach:api_p99_latency_ms_5m
+        expr: >
+          histogram_quantile(0.99,
+            sum(rate(globalreach_api_request_duration_seconds_bucket[5m]))
+            by (le)
+          ) * 1000
+
+      # P95 API latency in milliseconds (5-min window)
+      - record: globalreach:api_p95_latency_ms_5m
+        expr: >
+          histogram_quantile(0.95,
+            sum(rate(globalreach_api_request_duration_seconds_bucket[5m]))
+            by (le)
+          ) * 1000
+
+      # P50 API latency in milliseconds (5-min window)
+      - record: globalreach:api_p50_latency_ms_5m
+        expr: >
+          histogram_quantile(0.50,
+            sum(rate(globalreach_api_request_duration_seconds_bucket[5m]))
+            by (le)
+          ) * 1000
+
+      # API requests per endpoint (QPS breakdown)
+      - record: globalreach:api_qps_by_endpoint_5m
+        expr: >
+          sum by (endpoint)
+          (rate(globalreach_api_requests_total[5m]))
+
+      # ── Business Health Summary ─────────────────────────
+
+      # Campaign activity ratio (active vs potential)
+      - record: globalreach:campaign_activity_ratio
+        expr: >
+          globalreach_campaigns_active
+          /
+          (
+            globalreach_campaigns_active > bool 0
+            or vector(1)
+          )
+
+      # Client growth indicator (current snapshot)
+      - record: globalreach:clients_current_snapshot
+        expr: globalreach_clients_total
+
+      # Online user ratio
+      - record: globalreach:user_online_ratio
+        expr: >
+          globalreach_users_online
+          /
+          (
+            globalreach_users_online + globalreach_clients_total > bool 0
+            or vector(1)
+          )
+
+      # ── Queue & Resource Health ─────────────────────────
+
+      # Total queue depth (all states summed)
+      - record: globalreach:queue_total_depth
+        expr: sum(globalreach_queue_depth)
+
+      # Queue pending ratio
+      - record: globalreach:queue_pending_ratio
+        expr: >
+          globalreach_queue_depth{state="pending"}
+          /
+          (
+            sum(globalreach_queue_depth) > bool 0
+            or vector(1)
+          )
