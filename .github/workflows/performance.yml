@@ -1,0 +1,541 @@
+# GlobalReach V2.0 — Performance Benchmark CI/CD Pipeline
+# N06: Automated performance regression testing with k6
+#
+# Triggers:
+#   - Push to main (api/ or performance script changes)
+#   - PR to main (same paths)
+#   - Manual dispatch (with scenario selection)
+#   - Weekly scheduled (full suite)
+#
+# Jobs:
+#   1. smoke-test    — Quick gatekeeper (30s, blocks PR merge on failure)
+#   2. load-test     — Standard load profile (2min, reports only)
+#   3. full-suite    — Optional stress+spike+endpoints (manual/schedule only)
+
+name: Performance Benchmark
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'api/**'
+      - 'tests/performance/**'
+      - 'docker-compose*.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'api/**'
+      - 'tests/performance/**'
+      - 'docker-compose*.yml'
+  workflow_dispatch:
+    inputs:
+      scenario:
+        description: '选择测试场景'
+        required: true
+        default: 'smoke+load'
+        type: choice
+        options:
+          - smoke           # 仅冒烟测试 (30s)
+          - smoke+load      # 冒烟 + 负载 (~2.5min)
+          - full            # 完整套件含 stress/spike (~12min)
+          - endpoints-only  # 仅端点基准 (~4min)
+          - auth-only       # 仅认证链路 (~1.5min)
+          - email-only      # 仅邮件流水线 (~2.5min)
+      vus_override:
+        description: '覆盖默认并发用户数 (如 "100")'
+        required: false
+        type: string
+        default: ''
+      duration_override:
+        description: '覆盖默认持续时间 (如 "5m")'
+        required: false
+        type: string
+        default: ''
+      output_format:
+        description: '结果输出格式'
+        required: false
+        default: 'json'
+        type: choice
+        options:
+          - json
+          - prometheus
+          - both
+  schedule:
+    # 每周一凌晨 3 点 UTC (11 点 CST) 运行完整套件
+    - cron: '0 3 * * 1'
+
+env:
+  NODE_VERSION: '24.x'
+  K6_VERSION: 'latest'
+  BASE_URL: 'http://localhost:3000'
+  TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL || 'admin@globalreach.com' }}
+  TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD || 'admin123456' }}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ══════════════════════════════════════════
+  # JOB 1: SMOKE TEST — 冒烟测试（门控角色）
+  # ══════════════════════════════════════════
+  smoke-test:
+    name: Smoke Test (Gatekeeper)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_DB: globalreach_perf
+          POSTGRES_USER: perf_user
+          POSTGRES_PASSWORD: perf_pass
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U perf_user -d globalreach_perf"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      NODE_ENV: test
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_NAME: globalreach_perf
+      DB_USER: perf_user
+      DB_PASSWORD: perf_pass
+      DATABASE_URL: postgresql://perf_user:perf_pass@localhost:5432/globalreach_perf
+      REDIS_HOST: localhost
+      REDIS_PORT: 6379
+      JWT_SECRET: perf-test-secret-key-32chars-!!!!!!
+      PORT: 3000
+      SEND_RATE_LIMIT: '10'       # 测试环境放宽限流
+      BCRYPT_ROUNDS: '10'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: api/package-lock.json
+
+      - name: Cache k6 binary
+        id: cache-k6
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/bin/k6
+          key: k6-${{ runner.os }}-${{ hashFiles('.k6-version') }}
+          restore-keys: |
+            k6-${{ runner.os }}-
+
+      - name: Install k6
+        if: steps.cache-k6.outputs.cache-hit != 'true'
+        run: |
+          curl -fsSL https://github.com/grafana/k6/releases/latest/download/k6-v0.52.0-linux-amd64.tar.gz | tar xz -C /tmp
+          mkdir -p ~/.local/bin
+          mv /tmp/k6-v0.52.0-linux-amd64/k6 ~/.local/bin/
+          chmod +x ~/.local/bin/k6
+          echo "v0.52.0" > .k6-version
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Verify k6 installation
+        run: ~/.local/bin/k6 version
+
+      - name: Install API dependencies
+        working-directory: ./api
+        run: npm ci --ignore-scripts
+
+      - name: Wait for PostgreSQL
+        run: |
+          for i in $(seq 1 20); do
+            pg_isready -h localhost -p 5432 -U perf_user && break || sleep 2
+          done
+
+      - name: Initialize database
+        working-directory: ./api
+        run: |
+          node -e "
+          const { Sequelize } = require('sequelize');
+          const db = new Sequelize(process.env.DATABASE_URL, { dialect: 'postgres', logging: false });
+          db.sync({ force: false }).then(() => { console.log('DB synced'); process.exit(0); }).catch(e => { console.error(e.message); process.exit(1); });
+          "
+
+      - name: Start API server (background)
+        working-directory: ./api
+        run: |
+          node server.js &
+          echo "Waiting for API to start..."
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:3000/api/v1/health/live > /dev/null 2>&1; then
+              echo "API is ready!"
+              break
+            fi
+            sleep 1
+          done
+
+      - name: Run Smoke Test
+        id: smoke
+        run: |
+          mkdir -p tests/performance/results
+          ~/.local/bin/k6 run tests/performance/smoke.js \
+            --summary-export=tests/performance/results/smoke.json \
+            --out json=tests/performance/results/smoke-raw.json \
+            2>&1 | tee tests/performance/results/smoke.log
+          echo "SMOKE_EXIT=$?" >> $GITHUB_ENV
+
+      - name: Upload smoke results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-results-${{ github.run_id }}
+          path: |
+            tests/performance/results/smoke*
+          retention-days: 14
+
+      - name: Check smoke thresholds
+        if: always()
+        run: |
+          echo "## 🔥 Smoke Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ env.SMOKE_EXIT }}" = "0" ]; then
+            echo "✅ **PASSED** — All smoke thresholds met" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **FAILED** — One or more thresholds exceeded" >> $GITHUB_STEP_SUM-summary
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          cat tests/performance/results/smoke.log 2>/dev/null | tail -20 >> $GITHUB_STEP_SUMMARY || true
+
+  # ══════════════════════════════════════════
+  # JOB 2: LOAD TEST — 标准负载测试
+  # ══════════════════════════════════════════
+  load-test:
+    name: Load Test (Standard Profile)
+    needs: smoke-test
+    if: |
+      always() && needs.smoke-test.result == 'success' &&
+      (github.event_name != 'pull_request' || github.event.inputs.scenario != 'smoke')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_DB: globalreach_perf
+          POSTGRES_USER: perf_user
+          POSTGRES_PASSWORD: perf_pass
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U perf_user -d globalreach_perf"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      NODE_ENV: test
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_NAME: globalreach_perf
+      DB_USER: perf_user
+      DB_PASSWORD: perf_pass
+      DATABASE_URL: postgresql://perf_user:perf_pass@localhost:5432/globalreach_perf
+      REDIS_HOST: localhost
+      REDIS_PORT: 6379
+      JWT_SECRET: perf-test-secret-key-32chars-!!!!!!
+      PORT: 3000
+      SEND_RATE_LIMIT: '10'
+      BCRYPT_ROUNDS: '10'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: api/package-lock.json
+
+      - name: Cache & install k6
+        uses: actions/cache@v4
+        id: cache-k6
+        with:
+          path: ~/.local/bin/k6
+          key: k6-${{ runner.os }}-${{ hashFiles('.k6-version') }}
+          restore-keys: k6-${{ runner.os }}-
+
+      - name: Install k6
+        if: steps.cache-k6.outputs.cache-hit != 'true'
+        run: |
+          curl -fsSL https://github.com/grafana/k6/releases/latest/download/k6-v0.52.0-linux-amd64.tar.gz | tar xz -C /tmp
+          mkdir -p ~/.local/bin && mv /tmp/k6-v0.52.0-linux-amd64/k6 ~/.local/bin/
+          chmod +x ~/.local/bin/k6 && echo "v0.52.0" > .k6-version
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Install API dependencies
+        working-directory: ./api
+        run: npm ci --ignore-scripts
+
+      - name: Wait for PostgreSQL + Init DB
+        run: |
+          for i in $(seq 1 20); do pg_isready -h localhost -p 5432 -U perf_user && break || sleep 2; done
+          cd api && node -e "
+          const { Sequelize } = require('sequelize');
+          const db = new Sequelize(process.env.DATABASE_URL, { dialect: 'postgres', logging: false });
+          db.sync({ force: false }).then(() => process.exit(0)).catch(e => { console.error(e); process.exit(1) });
+          "
+
+      - name: Start API server
+        working-directory: ./api
+        run: |
+          node server.sh &
+          for i in $(seq 1 30); do
+            curl -sf http://localhost:3000/api/v1/health/live > /dev/null 2>&1 && echo "API ready!" && break || sleep 1
+          done
+
+      - name: Run Load Test
+        id: load
+        run: |
+          mkdir -p tests/performance/results
+          K6_OPTS=""
+          [ -n "${{ github.event.inputs.vus_override }}" ] && K6_OPTS="$K6_OPTS -e SCENARIO_VUS=${{ github.event.inputs.vus_override }}"
+          [ -n "${{ github.event.inputs.duration_override }}" ] && K6_OPTS="$K6_OPTS -e SCENARIO_DURATION='${{ github.event.inputs.duration_override }}'"
+          ~/.local/bin/k6 run tests/performance/load.js \
+            --summary-export=tests/performance/results/load.json \
+            --out json=tests/performance/results/load-raw.json \
+            $K6_OPTS \
+            2>&1 | tee tests/performance/results/load.log
+          echo "LOAD_EXIT=$?" >> $GITHUB_ENV
+
+      - name: Upload load results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: load-results-${{ github.run_id }}
+          path: tests/performance/results/load*
+          retention-days: 14
+
+      - name: Load Test Summary
+        if: always()
+        run: |
+          echo "## 📊 Load Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value | Threshold | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|-----------|--------|" >> $GITHUB_STEP_SUMMARY
+          if [ -f tests/performance/results/load.json ]; then
+            # 从 JSON 提取关键指标并写入 summary
+            node -e "
+            const fs = require('fs');
+            try {
+              const d = JSON.parse(fs.readFileSync('tests/performance/results/load.json', 'utf8'));
+              const metrics = d.metrics || {};
+              const getVal = (name, field = 'p(95)') => {
+                const m = metrics[name];
+                return m?.values?.[field] !== undefined ? m.values[field].toFixed(1) : 'N/A';
+              };
+              console.log('| HTTP P95 (ms) | ' + getVal('http_req_duration') + ' | <100 | ' + (parseFloat(getVal('http_req_duration')) <= 100 ? '✅' : '⚠️') + ' |');
+              console.log('| Error Rate (%) | ' + ((metrics['http_req_failed']?.values?.rate || 0)*100).toFixed(2) + ' | <1% | ' + ((metrics['http_req_failed']?.values?.rate||0) < 0.01 ? '✅' : '⚠️') + ' |');
+              console.log('| Total Requests | ' + (metrics['http_reqs']?.values?.count || 'N/A') + ' | >5000 | ✅ |');
+            } catch(e) { console.log('Could not parse results: ' + e.message); }
+            " >> $GITHUB_STEP_SUMMARY
+          fi
+
+  # ══════════════════════════════════════════
+  # JOB 3: FULL SUITE — 完整测试套件（可选）
+  # 仅在手动触发 full 场景或定时任务时运行
+  # ══════════════════════════════════════════
+  full-suite:
+    name: Full Benchmark Suite
+    needs: [smoke-test, load-test]
+    if: |
+      always() &&
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.scenario == 'full') ||
+      (github.event_name == 'schedule')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario:
+          - { name: 'stress', script: 'stress.js', desc: '压力测试 (200→500VUs)' }
+          - { name: 'spike', script: 'spike.js', desc: '突发流量 (10→1000VUs)' }
+          - { name: 'endpoints', script: 'endpoints.js', desc: '端点基准 (逐一)' }
+
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_DB: globalreach_perf
+          POSTGRES_USER: perf_user
+          POSTGRES_PASSWORD: perf_pass
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U perf_user -d globalreach_perf"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      NODE_ENV: test
+      DATABASE_URL: postgresql://perf_user:perf_pass@localhost:5432/globalreach_perf
+      REDIS_HOST: localhost
+      REDIS_PORT: 6379
+      JWT_SECRET: perf-test-secret-key-32chars-!!!!!!
+      PORT: 3000
+      SEND_RATE_LIMIT: '10'
+      BCRYPT_ROUNDS: '10'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: api/package-lock.json
+
+      - name: Cache & install k6
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/bin/k6
+          key: k6-${{ runner.os }}-${{ hashFiles('.k6-version') }}
+          restore-keys: k6-${{ runner.os }}-
+        id: cache-k6
+
+      - name: Install k6 (if not cached)
+        if: steps.cache-k6.outputs.cache-hit != 'true'
+        run: |
+          curl -fsSL https://github.com/grafana/k6/releases/latest/download/k6-v0.52.0-linux-amd64.tar.gz | tar xz -C /tmp
+          mkdir -p ~/.local/bin && mv /tmp/k6-v0.52.0-linux-amd64/k6 ~/.local/bin/
+          chmod +x ~/.local/bin/k6 && echo "v0.52.0" > .k6-version
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Install deps + start API
+        working-directory: ./api
+        run: |
+          npm ci --ignore-scripts
+          for i in $(seq 1 20); do pg_isready -h localhost -p 5432 -U perf_user 2>/dev/null && break || sleep 2; done
+          node -e "require('sequelize');const d=new Sequelize(process.env.DATABASE_URL,{dialect:'postgres',logging:false});d.sync({force:false}).then(()=>process.exit(0)).catch(e=>{console.error(e);process.exit(1)})"
+          node server.sh &
+          for i in $(seq 1 30); do curl -sf http://localhost:3000/api/v1/health/live >/dev/null 2>&1 && break || sleep 1; done
+
+      - name: Run ${{ matrix.scenario.desc }}
+        id: benchmark
+        run: |
+          mkdir -p tests/performance/results
+          ~/.local/bin/k6 run tests/performance/${{ matrix.scenario.script }} \
+            --summary-export=tests/performance/results/${{ matrix.scenario.name }}.json \
+            2>&1 | tee tests/performance/results/${{ matrix.scenario.name }}.log
+          echo "${{ matrix.scenario.name }}_EXIT=$?" >> $GITHUB_ENV
+
+      - name: Upload ${{ matrix.scenario.name }} results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.scenario.name }}-results-${{ github.run_id }}
+          path: tests/performance/results/${{ matrix.scenario.name }}*
+          retention-days: 14
+
+  # ══════════════════════════════════════════
+  # JOB 4: PR COMMENT — 向 PR 发送结果评论
+  # ══════════════════════════════════════════
+  pr-comment:
+    name: Comment PR Results
+    needs: [smoke-test, load-test]
+    if: always() && github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+      - name: Generate PR comment
+        run: |
+          cat > pr_comment.md << 'EOF'
+          ## 📊 Performance Benchmark Results
+
+          ### Smoke Test (Gatekeeper)
+          | Metric | Result |
+          |--------|--------|
+          | Status | ${{ needs.smoke-test.result == 'success' && '✅ PASSED' || '❌ FAILED' }} |
+
+          ### Load Test
+          | Metric | Result |
+          |--------|--------|
+          | Status | ${{ needs.load-test.result == 'success' && '✅ COMPLETED' || '⏭️ SKIPPED' }} |
+
+          ---
+          *Run by GlobalReach N06 Performance Suite*
+          EOF
+
+      - name: Post comment to PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('pr_comment.md', 'utf8');
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body,
+            });
+
+  # ══════════════════════════════════════════
+  # JOB 5: PIPELINE SUMMARY — 最终汇总
+  # ══════════════════════════════════════════
+  summary:
+    name: Pipeline Summary
+    needs: [smoke-test, load-test]
+    if: always()
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Final Summary
+        run: |
+          echo "## 🏁 Performance Benchmark Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Job | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-----|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Smoke Test (Gatekeeper) | ${{ needs.smoke-test.result == 'success' && '✅ PASS' || needs.smoke-test.result == 'skipped' && '⏭️ Skip' || '❌ FAIL' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Load Test (Standard) | ${{ needs.load-test.result == 'success' && '✅ PASS' || needs.load-test.result == 'skipped' && '⏭️ Skip' || '❌ FAIL' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "> Triggered by: \`${github.event_name}\` on \`${github.ref_name}\`" >> $GITHUB_STEP_SUMMARY

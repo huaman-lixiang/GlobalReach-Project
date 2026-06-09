@@ -1,0 +1,276 @@
+# ============================================
+# M-N06: GlobalReach Performance Regression Alert Rules
+# ============================================
+#
+# 性能退化检测告警规则。
+# 与 k6 性能基准测试套件 (N06) 配合使用，
+# 用于生产环境持续监控 API 性能趋势。
+#
+# 这些规则补充了 business-alerts.yml 中的业务级告警，
+# 专注于**性能回归检测**和**基线偏离预警**。
+#
+
+groups:
+  - name: globalreach_performance_regressions
+    interval: 60s
+    eval_interval: 15s
+    rules:
+
+      # ── 延迟回归检测 ─────────────────────────────
+
+      # API P95 延迟较 24 小时前恶化超过 20%
+      - alert: PerformanceRegressionP95
+        expr: |
+          (
+            histogram_quantile(0.95,
+              sum(rate(globalreach_api_request_duration_seconds_bucket[5m])) by (le)
+            ) -
+            histogram_quantile(0.95,
+              sum(rate(globalreach_api_request_duration_seconds_bucket offset 24h][5m])) by (le)
+          )
+          /
+          histogram_quantile(0.95,
+            sum(rate(globalreach_api_request_duration_seconds_bucket offset 24h][5m])) by (le)
+          > 0.2
+        for: 15m
+        labels:
+          severity: warning
+          team: platform
+          category: performance_regression
+        annotations:
+          summary: "API P95 延迟较昨日恶化超过 20%"
+          description: |
+            当前 P95={{ $value | humanizeDuration }}，较 24 小时前基线恶化超过 20%。
+            请排查最近的代码变更、数据库查询优化、或基础设施变化。
+            可能影响用户体验。
+          runbook_url: "https://docs.globalreach.com/runbooks/p95-regression"
+
+      # API P99 延迟较 24 小时前恶化超过 30%
+      - alert: PerformanceRegressionP99
+        expr: |
+          (
+            histogram_quantile(0.99,
+              sum(rate(globalreach_api_request_duration_seconds_bucket[5m])) by (le)
+            ) -
+            histogram_quantile(0.99,
+              sum(rate(globalreach_api_request_duration_seconds_bucket offset 24h][5m])) by (le)
+          )
+          /
+          histogram_quantile(0.99,
+            sum(rate(globalreach_api_request_duration_seconds_bucket offset 24h][5m])) by (le)
+          > 0.3
+        for: 10m
+        labels:
+          severity: warning
+          team: platform
+          category: performance_regression
+        annotations:
+          summary: "API P99 延迟较昨日恶化超过 30%"
+          description: |
+            当前 P99={{ $value | humanizeDuration }}，尾部延迟显著增加。
+            这可能影响最慢的 1% 用户请求，建议立即排查。
+          runbook_url: "https://docs.globalreach.com/runbooks/p99-regression"
+
+      # ── 错误率突增检测 ────────────────────────────
+
+      # API 错误率超过 3%（正常应 <1%）
+      - alert: PerformanceErrorRateSpike
+        expr: |
+          (
+            sum(increase(globalreach_api_errors_total[5m]))
+            /
+            sum(increase(globalreach_api_requests_total[5m]))
+          ) > 0.03
+        for: 10m
+        labels:
+          severity: critical
+          team: platform
+          category: error_spike
+        annotations:
+          summary: "API 错误率超过 3%"
+          description: |
+            当前错误率 {{ $value | humanizePercentage }}，远高于正常水平 (<1%)。
+            请检查：
+            1. 最近部署是否有 bug 引入
+            2. 数据库连接是否正常
+            3. 外部依赖服务是否可用
+            4. 限流策略是否需要调整
+          runbook_url: "https://docs.globalreach.com/runbooks/error-spike"
+
+      # 错误率较 1 小时前翻倍
+      - alert: PerformanceErrorRateDoubling
+        expr: |
+          (
+            sum(rate(globalreach_api_errors_total[5m]))
+            /
+            sum(rate(globalreach_api_requests_total[5m]))
+          )
+          >
+          (
+            sum(rate(globalreach_api_errors_total offset 1h][5m]))
+            /
+            sum(rate(globalreach_api_requests_total offset 1h][5m]))
+          ) * 2
+        for: 15m
+        labels:
+          severity: warning
+          team: platform
+          category: error_trend
+        annotations:
+          summary: "API 错误率在 1 小时内翻倍"
+          description: |
+            当前错误率 {{ $value | humanizePercentage }}，
+            是 1 小时前水平的两倍以上。错误率呈加速上升趋势。
+          runbook_url: "https://docs.globalreach.com/runbooks/error-trend"
+
+      # ── 吞吐量下降检测 ─────────────────────────
+
+      # 吞吐量 (RPS) 较 1 小时前下降超过 30%
+      - alert: PerformanceThroughputDrop
+        expr: |
+          (
+            sum(rate(globalreach_api_requests_total offset 1h][5m])) -
+            sum(rate(globalreach_api_requests_total[5m]))
+          )
+          /
+          sum(rate(globalreach_api_requests_total offset 1h][5m])) > 0.3
+        for: 10m
+        labels:
+          severity: warning
+          team: platform
+          category: throughput
+        annotations:
+          summary: "API 吞吐量下降超过 30%"
+          description: |
+            当前 RPS 相比 1 小时前下降了 {{ $value | humanizePercentage }}。
+            可能原因：系统资源争用、慢查询阻塞、外部依赖超时。
+          runbook_url: "https://docs.globalreach.com/runbooks/throughput-drop"
+
+      # ── 数据库层性能检测 ─────────────────────────
+
+      # 数据库查询 P95 延迟超过 200ms
+      - alert: DatabaseQueryLatencyHigh
+        expr: |
+          histogram_quantile(0.95,
+            sum(rate(globalreach_db_query_duration_seconds_bucket[5m])) by (le, query_type)
+          ) > 0.2
+        for: 10m
+        labels:
+          severity: warning
+          team: database
+          category: database_performance
+        annotations:
+          summary: "数据库查询 P95 延迟超过 200ms"
+          description: |
+            查询类型: {{ $labels.query_type }}
+            当前 P95: {{ $value | humanizeDuration }}
+            正常基线: <50ms
+            建议: 检查是否缺少索引、表数据量增长、或锁竞争。
+          runbook_url: "https://docs.globalreach.com/runbooks/db-slow-query"
+
+      # 数据库连接池使用率超过 80%（来自 business-alerts 补充）
+      - alert: DatabaseConnectionPoolExhaustion
+        expr: |
+          globalreach_db_connections_active
+          /
+          globalreach_db_connections_max
+          > 0.85
+        for: 5m
+        labels:
+          severity: warning
+          team: database
+          category: resource_exhaustion
+        annotations:
+          summary: "数据库连接池使用率超过 85%"
+          description: |
+            活跃连接: {{ $value | humanizePercentage }}
+            当连接池接近耗尽时，新请求将排队等待，导致延迟激增。
+            考虑增加 max_connections 或优化长查询持有时间。
+          runbook_url: "https://docs.globalreach.com/runbooks/db-pool-exhaustion"
+
+      # ── 缓存层性能检测 ─────────────────────────
+
+      # Redis 操作 P95 延迟超过 50ms
+      - alert: RedisOperationLatencyHigh
+        expr: |
+          histogram_quantile(0.95,
+            sum(rate(globalreach_redis_operation_duration_seconds_bucket[5m])) by (le, operation)
+          ) > 0.05
+        for: 10m
+        labels:
+          severity: info
+          team: database
+          category: cache_performance
+        annotations:
+          summary: "Redis 操作 P95 延迟超过 50ms"
+          description: |
+            操作类型: {{ $labels.operation }}
+            当前 P95: {{ $value | humanizeDuration }}
+            正常基线: <5ms
+            Redis 延迟升高可能影响缓存命中率，进而影响整体 API 性能。
+          runbook_url: "https://docs.globalreach.com/runbooks/redis-latency"
+
+      # ── 内存与资源检测 ────────────────────────────
+
+      # Node.js 堆内存使用率持续高于 85%（超过 10 分钟）
+      - alert: HeapMemoryUsageHigh
+        expr: |
+          globalreach_process_heap_used_bytes
+          /
+          globalreach_process_heap_size_limit_bytes
+          > 0.85
+        for: 10m
+        labels:
+          severity: warning
+          team: platform
+          category: resource_usage
+        annotations:
+          summary: "Node.js 堆内存使用率超过 85%"
+          description: |
+            当前堆内存使用率: {{ $value | humanizePercentage }}
+            容器限制: 512MB, 当前 --max-old-space-size: 384MB
+            高堆使用可能导致频繁 GC，影响请求延迟。
+            如持续升高可能存在内存泄漏。
+          runbook_url: "https://docs.globalreach.com/runbooks/high-memory"
+
+      # RSS 内存使用率超过容器限制的 80%
+      - alert: RSSMemoryApproachingLimit
+        expr: |
+          globalreach_process_rss_bytes
+          /
+          (512 * 1024 * 1024)
+          > 0.80
+        for: 10m
+        labels:
+          severity: warning
+          team: platform
+          category: resource_usage
+        annotations:
+          summary: "进程 RSS 内存接近容器限制 (80%)"
+          description: |
+            当前 RSS: {{ $value }} bytes ({{ $value | humanize1024 }})
+            容器限制: 512MB
+            RSS 接近限制可能触发 OOM Kill。
+          runbook_url: "https://docs.globalreach.com/runbooks/rss-high"
+
+      # ── k6 基准测试指标告警 (当集成 Prometheus 时) ──
+
+      # k6 基准测试中 P95 延迟超过阈值（用于 CI/CD 后验证）
+      - alert: K6BenchmarkThresholdBreached
+        expr: |
+          histogram_quantile(0.95,
+            sum(rate(gr_smoke_health_duration_bucket[5m])) by (le)
+          ) > 0.05
+        for: 5m
+        labels:
+          severity: warning
+          team: platform
+          category: benchmark_regression
+          source: k6_benchmark
+        annotations:
+          summary: "k6 基准测试: Health 端点 P95 超过 50ms 阈值"
+          description: |
+            k6 性能基准测试中 health 端点的 P95 延迟为 {{ $value | humanizeDuration }}，
+            超过了 50ms 的阈值。这表明可能存在性能回归。
+            请对比最近代码变更进行分析。
+          runbook_url: "https://docs.globalreach.com/runbooks/benchmark-fail"
