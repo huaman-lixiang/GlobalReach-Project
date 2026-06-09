@@ -1,0 +1,37 @@
+title = "GlobalReach Leaks"
+
+[[rules]]
+id = "globalreach-password"
+description = "Hardcoded password detection"
+regex = '''(?i)(password|passwd|pwd)\s*[:=]\s*["'][^"']{3,}["']'''
+tags = ["key", "password"]
+
+[[rules]]
+id = "globalreach-secret"
+description = "Secret key detection"
+regex = '''(?i)(secret|api_key|apikey|token|auth)\s*[:=]\s*["'][^"']{8,}["']'''
+tags = ["key", "secret"]
+
+[[rules]]
+id = "globalreach-smtp"
+description = "SMTP auth code detection (QQ Mail)"
+regex = '''[a-z]{10,16}'''  # QQ SMTP auth code pattern (simplified)
+tags = ["smtp", "credential"]
+
+[allowlist]
+paths = [
+  '''.env''',
+  '''.env\.''',
+  '''.env\.prod''',
+  '''\.env\.template''',
+  '''\.env\.example''',
+  '''node_modules''',
+  '''\.git/''',
+]
+regexes = [
+  '''\${[A-Z_]+}''',  # Allow env var references like ${PASSWORD}
+  '''changeme''',
+  '''change-this''',
+  '''placeholder''',
+  '''<.*>''',          # Allow template placeholders
+]
