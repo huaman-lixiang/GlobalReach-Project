@@ -374,7 +374,7 @@ check_nginx() {
 
         # B2. upstream 引用检查
         local upstream_names
-        upstream_names=$(grep -oP 'proxy_pass\s+http://[\w.-]+' "$conf_file" 2>/dev/null | sed 's/.*http:\/\/://' | sort -u || true)
+        upstream_names=$(grep -oP 'proxy_pass\s+https?://[\w.:.-]+' "$conf_file" 2>/dev/null | sed 's/.*https?:\/\///' | sort -u | grep -v '^proxy_pass$' | grep -v '^http' || true)
 
         # 检查 upstream 块定义
         local defined_upstreams
@@ -399,8 +399,10 @@ check_nginx() {
 
             # 如果不是 upstream 定义的名称，检查是否是容器名（Docker DNS）
             if [ "$found_upstream" -eq 0 ]; then
-                # 容器名通常包含 globalreach- 前缀或为 postgres/redis/api 等
-                if echo "$up_ref" | grep -qE '^(globalreach-|postgres|redis|api|loki|grafana|prometheus|alertmanager|promtail|tempo|mailpit|node-exporter|pg-exporter|certbot)'; then
+                # 容器名通常包含 globalreach- 前缀或为 postgres/redis/api 等（支持带端口）
+                # 提取主机部分（去掉端口号）
+                local host_part="${up_ref%%:*}"
+                if echo "$host_part" | grep -qE '^(globalreach-|postgres|redis|api|loki|grafana|prometheus|alertmanager|promtail|tempo|mailpit|node-exporter|pg-exporter|certbot)'; then
                     : # 合法的容器名/DNS 引用
                 else
                     log_warn "$basename: upstream 引用 '$up_ref' 未在 upstream 块中定义且不像合法的容器名"
