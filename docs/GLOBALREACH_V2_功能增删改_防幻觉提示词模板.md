@@ -38,7 +38,7 @@
 ║  ✦ 远程仓库:     huaman-lixiang/GlobalReach-Project                   ║
 ║  ✦ 可见性:        Private (私有仓库)                                   ║
 ║  ✦ 当前分支:      main                                               ║
-║  ✦ 最新HEAD:      3988c8d (S128 Phase M全量完成, 待push)                        ║
+║  ✦ 最新HEAD:      4f5b305 (S129事实修复完成, 已push到origin/main)                ║
 ║  ✦ 总Session数:   S029-S128 共100个全部交付                            ║
 ║                                                                       ║
 ║  【技术栈 (铁律)】                                                     ║
@@ -55,8 +55,8 @@
 ║                                                                       ║
 ║  【运行时状态 (S128基准)】                                              ║
 ║  ─────────────────────────────────────────────────────────────────   ║
-║  ✦ 容器数量:      15个 (含Mailpit+Tempo, 非6/13!)                        ║
-║  ✦ 容器健康:      15/15 Healthy ✅                                    ║
+║  ✦ 容器数量:      13个 (含Mailpit+Tempo, 非6个!)                        ║
+║  ✦ 容器健康:      13/13 Healthy ✅                                    ║
 ║  ✦ API端口:       3000                                               ║
 ║  ✦ Grafana端口:   3002                                               ║
 ║  ✦ Prometheus端口: 9090                                             ║
@@ -86,10 +86,10 @@
 ║  7. alertmanager              (AlertManager告警)                      ║
 ║  8. node-exporter             (系统指标采集)                           ║
 ║  9. postgres-exporter         (PG指标采集)                             ║
-║  10. redis-exporter           (Redis指标采集)                          ║
-║  11. loki                     (日志聚合)                               ║
-║  12. promtail                 (日志收集)                               ║
-║  13. pushgateway              (指标推送网关)                           ║
+║  10. loki                    (日志聚合)                               ║
+║  11. promtail                (日志收集)                               ║
+║  12. globalreach-mailpit     (邮件测试, S127+)        ← 新增          ║
+║  13. globalreach-tempo       (分布式追踪, S127+)      ← 新增          ║
 ║                                                                       ║
 ║  【已知Bug记录 (共6个, 全部已修复)】                                     ║
 ║  ─────────────────────────────────────────────────────────────────   ║
@@ -467,7 +467,7 @@ git log -1 --oneline       # 必须: 5e265f8 或更新
 git status                 # 必须: clean 或预期变更
 
 # 2.3 确认运行时状态
-docker compose -f docker-compose.prod.yml ps  # 必须: 15 services
+docker compose -f docker-compose.prod.yml ps  # 必须: 13 services
 curl http://localhost:3000/api/v1/health      # 必须: HTTP 200
 
 # Step 3: 重新加载权威文档
@@ -503,9 +503,9 @@ echo "=== 状态重置完成，可以继续工作 ==="
 ║  FACT-01: 项目名称 = GlobalReach V2.0 (全球触达)                      ║
 ║  FACT-02: 工作区路径 = C:\Users\Administrator\...\GlobalReach-Project\ ║
 ║  FACT-03: 技术栈 = Node 24 + Express + PG15 + Redis7 + Nginx          ║
-║  FACT-04: 容器数 = 15个 (含Mailpit+Tempo, 全栈监控已部署)                              ║
+║  FACT-04: 容器数 = 13个 (含Mailpit+Tempo, 全栈监控已部署)                              ║
 ║  FACT-05: 数据库 = PostgreSQL 15, 11张表                              ║
-║  FACT-06: Git HEAD = 3988c8d (S128 Phase M全量完成, 待push)                  ║
+║  FACT-06: Git HEAD = 4f5b305 (S129事实修复完成, 已push到origin/main)              ║
 ║  FACT-07: Grafana匿名访问已启用 (Viewer角色, M-B01完成)                   ║
 ║  FACT-08: Trivy SARIF已集成GitHub Security Tab (M-C01完成)              ║
 ║  FACT-09: 业务指标采集已部署 (12个Prometheus指标+8条告警, M-B02完成)     ║
@@ -520,13 +520,15 @@ echo "=== 状态重置完成，可以继续工作 ==="
 ║  FACT-18: 已知Bug = 6个，全部已修复                                   ║
 ║  FACT-19: 邮件管道 = 多提供商SMTP operational (QQ/Gmail/Outlook/163)    ║
 ║  FACT-20: React前端UI = 企业级升级完成 (+1516行代码, M-A03完成)          ║
+║  FACT-21: S128引入的容器数错误已在S129纠正(15→13)                        ║
+║  FACT-22: pushgateway和redis-exporter从未在compose中定义                    ║
 ║                                                                       ║
 ║  【🟡 待确认假设 (使用前必须验证!)】                                    ║
 ║  ─────────────────────────────────────────────────────────────────   ║
 ║  这些信息可能在S128之后发生变化，使用前必须重新验证:                   ║
 ║                                                                       ║
 ║  ASSUME-01: 容器仍然全部healthy → 验证: docker compose ps             ║
-║  ASSUME-02: Git HEAD仍然是3988c8d → 验证: git log -1                  ║
+║  ASSUME-02: Git HEAD是4f5b305或更新 → 验证: git log -1                  ║
 ║  ASSUME-03: 工作区仍然是clean → 验证: git status                      ║
 ║  ASSUME-04: API仍然返回200 → 验证: curl health endpoint               ║
 ║  ASSUME-05: 用户需求未发生变化 → 验证: 询问用户                       ║
@@ -697,7 +699,7 @@ echo "=== 状态重置完成，可以继续工作 ==="
 ║  ✦ GitHub Secrets当前为占位符 (获取服务器后替换)                      ║
 ║                                                                       ║
 ║  【铁律 #3: 稳定性铁律】                                               ║
-║  ✦ 15/15容器健康是不可妥协的底线                                      ║
+║  ✦ 13/13容器健康是不可妥协的底线                                      ║
 ║  ✦ 已验证的功能不轻易改动                                            ║
 ║  ✦ 每次变更必须有回滚方案                                            ║
 ║  ✦ 最小变更原则: 每次只做一件事                                       ║
@@ -898,7 +900,7 @@ echo "=== 状态重置完成，可以继续工作 ==="
 
 | 目的 | 命令 | 预期输出 |
 |------|------|---------|
-| 验证容器 | `docker compose -f docker-compose.prod.yml ps` | 15 services, all Up |
+| 验证容器 | `docker compose -f docker-compose.prod.yml ps` | 13 services, all Up |
 | 验证API | `curl http://localhost:3000/api/v1/health` | HTTP 200, score 100 |
 | 验证Git | `git log -1 --oneline` | 5e265f8 or newer |
 | 验证分支 | `git branch --show-current` | main |
