@@ -18,7 +18,7 @@ global:
   smtp_hello: 'qq.com'
   smtp_require_tls: true
   smtp_auth_username: '1390885333@qq.com'
-  smtp_auth_password: 'zhrtbpzlgfoehjgj'
+  smtp_auth_password: '${GF_SMTP_PASSWORD}'
 
 # Inhibition rules: suppress lower-severity alerts when higher ones fire
 # M-B04: Enhanced inhibition rules for noise reduction
@@ -93,7 +93,7 @@ receivers:
         from: '1390885333@qq.com'
         smarthost: 'smtp.qq.com:465'
         auth_username: '1390885333@qq.com'
-        auth_password: 'zhrtbpzlgfoehjgj'
+        auth_password: '${GF_SMTP_PASSWORD}'
         require_tls: true
         send_resolved: true
         html: |
@@ -130,7 +130,7 @@ receivers:
         from: '1390885333@qq.com'
         smarthost: 'smtp.qq.com:465'
         auth_username: '1390885333@qq.com'
-        auth_password: 'zhrtbpzlgfoehjgj'
+        auth_password: '${GF_SMTP_PASSWORD}'
         require_tls: true
         send_resolved: true
     webhook_configs:
@@ -155,7 +155,7 @@ receivers:
         from: '1390885333@qq.com'
         smarthost: 'smtp.qq.com:465'
         auth_username: '1390885333@qq.com'
-        auth_password: 'zhrtbpzlgfoehjgj'
+        auth_password: '${GF_SMTP_PASSWORD}'
         require_tls: true
         send_resolved: true
         html: |
