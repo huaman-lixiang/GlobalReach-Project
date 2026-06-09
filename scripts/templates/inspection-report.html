@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalReach V2.0 — 自动化巡检报告</title>
+    <style>
+        /* ============================================
+           GlobalReach Inspection Report Styles
+           O03: Automated Inspection Engine
+           ============================================ */
+
+        :root {
+            --primary-color: #2563eb;
+            --success-color: #16a34a;
+            --warning-color: #ca8a04;
+            --danger-color: #dc2626;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* 打印样式 */
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid var(--border-color);
+            }
+        }
+
+        /* 容器 */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* 头部 */
+        .report-header {
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+            color: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .report-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .report-header .meta {
+            font-size: 14px;
+            opacity: 0.9;
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .report-header .meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* 总览卡片区域 */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        /* 卡片基础样式 */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 分数仪表盘 */
+        .score-gauge-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .score-circle svg {
+            transform: rotate(-90deg);
+            width: 100%;
+            height: 100%;
+        }
+
+        .score-circle .bg {
+            fill: none;
+            stroke: var(--border-color);
+            stroke-width: 12;
+        }
+
+        .score-circle .progress {
+            fill: none;
+            stroke-width: 12;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1s ease-in-out;
+        }
+
+        .score-value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .score-value .number {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .score-value .label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .score-status {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .status-excellent { background: #dcfce7; color: #166534; }
+        .status-good { background: #dbeafe; color: #1e40af; }
+        .status-warning { background: #fef9c3; color: #854d0e; }
+        .status-critical { background: #fee2e2; color: #991b1b; }
+
+        /* 统计卡片 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+            background: var(--bg-color);
+        }
+
+        .stat-item .value {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .stat-item .label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .stat-pass { border-left: 4px solid var(--success-color); }
+        .stat-warn { border-left: 4px solid var(--warning-color); }
+        .stat-fail { border-left: 4px solid var(--danger-color); }
+        .stat-total { border-left: 4px solid var(--primary-color); }
+
+        .stat-pass .value { color: var(--success-color); }
+        .stat-warn .value { color: var(--warning-color); }
+        .stat-fail .value { color: var(--danger-color); }
+        .stat-total .value { color: var(--primary-color); }
+
+        /* 维度分数条 */
+        .dimension-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .dimension-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .dimension-label {
+            min-width: 120px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .dimension-bar-container {
+            flex: 1;
+            height: 28px;
+            background: var(--bg-color);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .dimension-bar {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 1s ease-out;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: white;
+            min-width: fit-content;
+        }
+
+        .bar-excellent { background: linear-gradient(90deg, #16a34a, #22c55e); }
+        .bar-good { background: linear-gradient(90deg, #2563eb, #3b82f6); }
+        .bar-warning { background: linear-gradient(90deg, #ca8a04, #eab308); }
+        .bar-critical { background: linear-gradient(90deg, #dc2626, #ef4444); }
+
+        .dimension-score {
+            min-width: 50px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* 雷达图占位 */
+        .radar-chart-placeholder {
+            width: 100%;
+            height: 280px;
+            background: var(--bg-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* 维度详情表格 */
+        .section {
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dimension-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .icon-infra { background: #dbeafe; }
+        .icon-app { background: #dcfce7; }
+        .icon-sec { background: #fef9c3; }
+        .icon-data { background: #ede9fe; }
+        .icon-mon { background: #fce7f3; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        thead {
+            background: var(--bg-color);
+        }
+
+        th {
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:hover {
+            background: rgba(37, 99, 235, 0.02);
+        }
+
+        /* 状态标签 */
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-pass { background: #dcfce7; color: #166534; }
+        .badge-warn { background: #fef9c3; color: #854d0e; }
+        .badge-fail { background: #fee2e2; color: #991b1b; }
+
+        /* 失败/警告详情 */
+        .detail-card {
+            background: var(--bg-color);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 8px;
+            border-left: 4px solid;
+        }
+
+        .detail-fail { border-left-color: var(--danger-color); }
+        .detail-warn { border-left-color: var(--warning-color); }
+
+        .detail-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .detail-diagnosis,
+        .detail-suggestion {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .detail-diagnosis::before {
+            content: "→ 诊断: ";
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .detail-suggestion::before {
+            content: "→ 建议: ";
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* 操作按钮 */
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-color);
+        }
+
+        /* 页脚 */
+        .report-footer {
+            text-align: center;
+            padding: 24px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            .report-header { padding: 20px; }
+            .report-header h1 { font-size: 22px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .overview-grid { grid-template-columns: 1fr; }
+            .score-circle { width: 160px; height: 160px; }
+            .score-value .number { font-size: 36px; }
+            table { font-size: 12px; }
+            th, td { padding: 8px 10px; }
+        }
+
+        /* 动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 操作按钮 -->
+        <div class="action-buttons no-print">
+            <button class="btn btn-outline" onclick="window.print()">
+                🖨️ 导出 PDF
+            </button>
+            <button class="btn btn-outline" onclick="downloadJSON()">
+                📥 下载 JSON
+            </button>
+            <button class="btn btn-primary" onclick="location.reload()">
+                🔄 刷新报告
+            </button>
+        </div>
+
+        <!-- 报告头部 -->
+        <header class="report-header animate-in">
+            <h1>🔍 GlobalReach 自动化巡检报告</h1>
+            <div class="meta" id="reportMeta">
+                <span>📅 时间: <strong id="timestamp">--</strong></span>
+                <span>🆔 巡检ID: <strong id="inspectionId">--</strong></span>
+                <span>⚙️ 模式: <strong id="mode">--</strong></span>
+                <span>📌 Git: <strong id="gitHead">--</strong></span>
+            </div>
+        </header>
+
+        <!-- 总览区域 -->
+        <div class="overview-grid">
+            <!-- 分数仪表盘 -->
+            <div class="card animate-in delay-1">
+                <h2 class="card-title">📊 健康评分</h2>
+                <div class="score-gauge-container">
+                    <div class="score-circle">
+                        <svg viewBox="0 0 120 120">
+                            <circle class="bg" cx="60" cy="60" r="54"></circle>
+                            <circle class="progress" id="scoreProgress"
+                                cx="60" cy="60" r="54"
+                                stroke="#2563eb"
+                                stroke-dasharray="339.292"
+                                stroke-dashoffset="339.292">
+                            </circle>
+                        </svg>
+                        <div class="score-value">
+                            <div class="number" id="overallScore">--</div>
+                            <div class="label">总分</div>
+                        </div>
+                    </div>
+                    <div class="score-status" id="scoreStatus">--</div>
+                </div>
+            </div>
+
+            <!-- 统计数据 -->
+            <div class="card animate-in delay-2">
+                <h2 class="card-title">📈 巡检统计</h2>
+                <div class="stats-grid">
+                    <div class="stat-item stat-total">
+                        <div class="value" id="totalChecks">--</div>
+                        <div class="label">总检查项</div>
+                    </div>
+                    <div class="stat-item stat-pass">
+                        <div class="value" id="passCount">--</div>
+                        <div class="label">通过 ✅</div>
+                    </div>
+                    <div class="stat-item stat-warn">
+                        <div class="value" id="warnCount">--</div>
+                        <div class="label">警告 ⚠️</div>
+                    </div>
+                    <div class="stat-item stat-fail">
+                        <div class="value" id="failCount">--</div>
+                        <div class="label">失败 ❌</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 各维度分数 -->
+            <div class="card animate-in delay-3">
+                <h2 class="card-title">🎯 各维度评分</h2>
+                <div class="dimension-bars" id="dimensionBars">
+                    <!-- 动态生成 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 趋势图表占位（如果有历史数据） -->
+        <div class="card animate-in delay-4 no-print" style="margin-bottom: 24px;">
+            <h2 class="card-title">📉 历史趋势</h2>
+            <div class="radar-chart-placeholder" id="trendChart">
+                📊 趋势图表加载中... (需要历史数据)
+            </div>
+        </div>
+
+        <!-- D1: 基础设施层 -->
+        <div class="section card" id="section-infrastructure">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="dimension-icon icon-infra">🏗️</span>
+                    D1 基础设施层 (Infrastructure)
+                </h2>
+                <span class="badge badge-pass" id="dim-badge-infra">--</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>检查项</th>
+                        <th>状态</th>
+                        <th>详情</th>
+                    </tr>
+                </thead>
+                <tbody id="table-infrastructure">
+                    <!-- 动态生成 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- D2: 应用层 -->
+        <div class="section card" id="section-application">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="dimension-icon icon-app">⚙️</span>
+                    D2 应用层 (Application)
+                </h2>
+                <span class="badge badge-pass" id="dim-badge-app">--</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>检查项</th>
+                        <th>状态</th>
+                        <th>详情</th>
+                    </tr>
+                </thead>
+                <tbody id="table-application">
+                    <!-- 动态生成 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- D3: 安全层 -->
+        <div class="section card" id="section-security">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="dimension-icon icon-sec">🔒</span>
+                    D3 安全层 (Security)
+                </h2>
+                <span class="badge badge-pass" id="dim-badge-sec">--</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>检查项</th>
+                        <th>状态</th>
+                        <th>详情</th>
+                    </tr>
+                </thead>
+                <tbody id="table-security">
+                    <!-- 动态生成 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- D4: 数据层 -->
+        <div class="section card" id="section-data">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="dimension-icon icon-data">💾</span>
+                    D4 数据层 (Data)
+                </h2>
+                <span class="badge badge-pass" id="dim-badge-data">--</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>检查项</th>
+                        <th>状态</th>
+                        <th>详情</th>
+                    </tr>
+                </thead>
+                <tbody id="table-data">
+                    <!-- 动态生成 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- D5: 监控层 -->
+        <div class="section card" id="section-monitoring">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="dimension-icon icon-mon">📡</span>
+                    D5 监控层 (Monitoring)
+                </h2>
+                <span class="badge badge-pass" id="dim-badge-mon">--</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>检查项</th>
+                        <th>状态</th>
+                        <th>详情</th>
+                    </tr>
+                </thead>
+                <tbody id="table-monitoring">
+                    <!-- 动态生成 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 失败项汇总 -->
+        <div class="card" id="failuresSection" style="display: none;">
+            <h2 class="card-title" style="color: var(--danger-color);">❌ 失败项详情</h2>
+            <div id="failuresList"></div>
+        </div>
+
+        <!-- 警告项汇总 -->
+        <div class="card" id="warningsSection" style="display: none;">
+            <h2 class="card-title" style="color: var(--warning-color);">⚠️ 警告项详情</h2>
+            <div id="warningsList"></div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="report-footer">
+            <p>GlobalReach V2.0 Enterprise — Automated Inspection Engine (O03)</p>
+            <p>报告自动生成于 <span id="footerTime"></span> | 仅限内部使用</p>
+        </footer>
+    </div>
+
+    <script>
+        /**
+         * GlobalReach Inspection Report Renderer
+         * 将巡检JSON结果渲染为可视化HTML报告
+         */
+
+        // 巡检数据（由脚本注入或从URL参数获取）
+        let inspectionData = null;
+
+        // 从页面中的JSON数据或URL参数加载数据
+        function loadInspectionData() {
+            // 方式1: 内嵌JSON数据（脚本替换占位符）
+            const embeddedJson = document.querySelector('script[type="application/inspection-json"]');
+            if (embeddedJson) {
+                try {
+                    return JSON.parse(embeddedJson.textContent);
+                } catch (e) {
+                    console.error('解析内嵌JSON失败:', e);
+                }
+            }
+
+            // 方式2: URL参数 (?json=...)
+            const urlParams = new URLSearchParams(window.location.search);
+            const jsonParam = urlParams.get('json');
+            if (jsonParam) {
+                try {
+                    return JSON.parse(decodeURIComponent(jsonParam));
+                } catch (e) {
+                    console.error('解析URL JSON失败:', e);
+                }
+            }
+
+            // 方式3: 示例数据（用于模板预览）
+            return getSampleData();
+        }
+
+        // 示例数据（用于模板预览和测试）
+        function getSampleData() {
+            return {
+                inspectionId: "INS-20260609-180000",
+                timestamp: "2026-06-09T18:00:00+08:00",
+                mode: "full",
+                gitHead: "abc1234",
+                overall: { score: 85, total: 40, pass: 34, warn: 5, fail: 1 },
+                dimensions: {
+                    infrastructure: { score: 100, total: 8, pass: 8, warn: 0, fail: 0 },
+                    application: { score: 78, total: 9, pass: 7, warn: 1, fail: 1 },
+                    security: { score: 75, total: 6, pass: 4, warn: 2, fail: 0 },
+                    data: { score: 88, total: 7, pass: 6, warn: 1, fail: 0 },
+                    monitoring: { score: 95, total: 8, pass: 8, warn: 0, fail: 0 }
+                },
+                results: [
+                    // Infrastructure samples
+                    { dimension: "infrastructure", name: "Docker Daemon", status: "pass", message: "运行正常" },
+                    { dimension: "infrastructure", name: "容器健康状态", status: "pass", message: "13/13 运行中 (100%)" },
+                    { dimension: "infrastructure", name: "CPU使用率", status: "pass", message: "45% (<80%)" },
+                    { dimension: "infrastructure", name: "内存使用率", status: "pass", message: "62% (<85%)" },
+                    { dimension: "infrastructure", name: "磁盘使用率", status: "pass", message: "52% (<85%)" },
+                    { dimension: "infrastructure", name: "网络连通性", status: "pass", message: "localhost延迟 0.1ms" },
+                    { dimension: "infrastructure", name: "Docker网络", status: "pass", message: "globalreach-network 正常" },
+                    // Application samples
+                    { dimension: "application", name: "API可达性", status: "pass", message: "HTTP 200" },
+                    { dimension: "application", name: "API响应时间", status: "fail", message: "1200ms (>500ms)", diagnosis: "可能DB查询慢或GC压力", suggestion: "检查慢查询日志, 查看 metrics.js 输出" },
+                    { dimension: "application", name: "Health Score", status: "warn", message: "78/100 (<80)" },
+                    { dimension: "application", name: "Redis连接", status: "pass", message: "PONG" },
+                    { dimension: "application", name: "Nginx状态", status: "pass", message: "HTTP 301" },
+                    // Security samples
+                    { dimension: "security", name: "TLS证书", status: "warn", message: "证书文件不存在", diagnosis: "Phase L Blocked", suggestion: "执行 ssl-switch-to-letsencrypt.sh" },
+                    { dimension: "security", name: "JWT Secret强度", status: "pass", message: "长度 50 字符 (>=32)" },
+                    // Data samples
+                    { dimension: "data", name: "PG连接数", status: "pass", message: "15/100 (15%)" },
+                    { dimension: "data", name: "PG最近备份", status: "warn", message: "26小时前 (>24h)" },
+                    { dimension: "data", name: "Redis内存", status: "pass", message: "128MB (25%)" },
+                    // Monitoring samples
+                    { dimension: "monitoring", name: "Prometheus", status: "pass", message: "运行正常" },
+                    { dimension: "monitoring", name: "Grafana", status: "pass", message: "运行正常" },
+                    { dimension: "monitoring", name: "AlertManager", status: "pass", message: "运行正常" },
+                    { dimension: "monitoring", name: "Loki", status: "pass", message: "就绪" }
+                ],
+                failures: ["[application] API响应时间: 1200ms (>500ms)\n  → 诊断: 可能DB查询慢或GC压力\n  → 建议: 检查慢查询日志"],
+                warnings: ["[security] TLS证书: 证书文件不存在\n  → 诊断: Phase L Blocked\n  → 建议: 执行 ssl-switch-to-letsencrypt.sh"]
+            };
+        }
+
+        // 渲染分数仪表盘
+        function renderScoreGauge(score) {
+            const circumference = 2 * Math.PI * 54; // r=54
+            const progress = document.getElementById('scoreProgress');
+            const offset = circumference - (score / 100) * circumference;
+
+            setTimeout(() => {
+                if (progress) {
+                    progress.style.strokeDashoffset = offset;
+
+                    // 根据分数设置颜色
+                    if (score >= 90) {
+                        progress.setAttribute('stroke', '#16a34a');
+                    } else if (score >= 70) {
+                        progress.setAttribute('stroke', '#2563eb');
+                    } else if (score >= 50) {
+                        progress.setAttribute('stroke', '#ca8a04');
+                    } else {
+                        progress.setAttribute('stroke', '#dc2626');
+                    }
+                }
+            }, 100);
+
+            document.getElementById('overallScore').textContent = score;
+
+            const statusEl = document.getElementById('scoreStatus');
+            if (score >= 90) {
+                statusEl.textContent = '✨ 优秀';
+                statusEl.className = 'score-status status-excellent';
+            } else if (score >= 70) {
+                statusEl.textContent = '👍 良好';
+                statusEl.className = 'score-status status-good';
+            } else if (score >= 50) {
+                statusEl.textContent = '⚠️ 注意';
+                statusEl.className = 'score-status status-warning';
+            } else {
+                statusEl.textContent = '❌ 危急';
+                statusEl.className = 'score-status status-critical';
+            }
+        }
+
+        // 渲染维度分数条
+        function renderDimensionBars(dimensions) {
+            const container = document.getElementById('dimensionBars');
+            const dimConfig = {
+                infrastructure: { label: 'D1 基础设施', icon: '🏗️' },
+                application: { label: 'D2 应用层', icon: '⚙️' },
+                security: { label: 'D3 安全层', icon: '🔒' },
+                data: { label: 'D4 数据层', icon: '💾' },
+                monitoring: { label: 'D5 监控层', icon: '📡' }
+            };
+
+            container.innerHTML = '';
+
+            Object.entries(dimensions).forEach(([key, dim]) => {
+                const config = dimConfig[key] || { label: key, icon: '📋' };
+                const barClass = dim.score >= 90 ? 'bar-excellent' :
+                                 dim.score >= 70 ? 'bar-good' :
+                                 dim.score >= 50 ? 'bar-warning' : 'bar-critical';
+
+                container.innerHTML += `
+                    <div class="dimension-item">
+                        <span class="dimension-label">${config.icon} ${config.label}</span>
+                        <div class="dimension-bar-container">
+                            <div class="dimension-bar ${barClass}" style="width: ${dim.score}%">${dim.score}%</div>
+                        </div>
+                        <span class="dimension-score">${dim.score}</span>
+                    </div>
+                `;
+            });
+        }
+
+        // 渲染检查结果表格
+        function renderResultTable(dimensionKey, results) {
+            const tbody = document.getElementById(`table-${dimensionKey}`);
+            if (!tbody || !results) return;
+
+            tbody.innerHTML = results
+                .filter(r => r.dimension === dimensionKey)
+                .map(r => `
+                    <tr>
+                        <td><strong>${r.name}</strong></td>
+                        <td><span class="badge badge-${r.status}">${
+                            r.status === 'pass' ? '✅ PASS' :
+                            r.status === 'warn' ? '⚠️ WARN' : '❌ FAIL'
+                        }</span></td>
+                        <td>${r.message}${r.diagnosis ? `
+                            <div class="detail-card detail-${r.status === 'fail' ? 'fail' : 'warn'}">
+                                <div class="detail-diagnosis">${r.diagnosis}</div>
+                                ${r.suggestion ? `<div class="detail-suggestion">${r.suggestion}</div>` : ''}
+                            </div>
+                        ` : ''}</td>
+                    </tr>
+                `).join('');
+        }
+
+        // 渲染失败/警告列表
+        function renderFailuresAndWarnings(failures, warnings) {
+            const failSection = document.getElementById('failuresSection');
+            const warnSection = document.getElementById('warningsSection');
+            const failList = document.getElementById('failuresList');
+            const warnList = document.getElementById('warningsList');
+
+            if (failures && failures.length > 0) {
+                failSection.style.display = 'block';
+                failList.innerHTML = failures.map(f => `
+                    <div class="detail-card detail-fail" style="margin-bottom: 12px;">
+                        <pre style="white-space: pre-wrap; font-family: inherit;">${f.replace(/\n/g, '<br>')}</pre>
+                    </div>
+                `).join('');
+            }
+
+            if (warnings && warnings.length > 0) {
+                warnSection.style.display = 'block';
+                warnList.innerHTML = warnings.map(w => `
+                    <div class="detail-card detail-warn" style="margin-bottom: 12px;">
+                        <pre style="white-space: pre-wrap; font-family: inherit;">${w.replace(/\n/g, '<br>')}</pre>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // 更新维度徽章
+        function updateDimensionBadges(dimensions) {
+            const badges = {
+                'infra': dimensions.infrastructure,
+                'app': dimensions.application,
+                'sec': dimensions.security,
+                'data': dimensions.data,
+                'mon': dimensions.monitoring
+            };
+
+            Object.entries(badges).forEach(([key, dim]) => {
+                const el = document.getElementById(`dim-badge-${key}`);
+                if (el && dim) {
+                    if (dim.fail > 0) {
+                        el.textContent = `${dim.score}% ❌`;
+                        el.className = 'badge badge-fail';
+                    } else if (dim.warn > 0) {
+                        el.textContent = `${dim.score}% ⚠️`;
+                        el.className = 'badge badge-warn';
+                    } else {
+                        el.textContent = `${dim.score}% ✅`;
+                        el.className = 'badge badge-pass';
+                    }
+                }
+            });
+        }
+
+        // 下载JSON功能
+        function downloadJSON() {
+            if (!inspectionData) return;
+
+            const blob = new Blob([JSON.stringify(inspectionData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${inspectionData.inspectionId}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // 主初始化函数
+        function initReport() {
+            inspectionData = loadInspectionData();
+
+            // 更新元信息
+            document.getElementById('timestamp').textContent = inspectionData.timestamp || '--';
+            document.getElementById('inspectionId').textContent = inspectionData.inspectionId || '--';
+            document.getElementById('mode').textContent = (inspectionData.mode || 'full').toUpperCase();
+            document.getElementById('gitHead').textContent = inspectionData.gitHead || '--';
+            document.getElementById('footerTime').textContent = new Date().toLocaleString('zh-CN');
+
+            // 更新统计数据
+            const overall = inspectionData.overall || {};
+            document.getElementById('totalChecks').textContent = overall.total || 0;
+            document.getElementById('passCount').textContent = overall.pass || 0;
+            document.getElementById('warnCount').textContent = overall.warn || 0;
+            document.getElementById('failCount').textContent = overall.fail || 0;
+
+            // 渲染各组件
+            renderScoreGauge(overall.score || 0);
+            renderDimensionBars(inspectionData.dimensions || {});
+            updateDimensionBadges(inspectionData.dimensions || {});
+
+            // 渲染各维度表格
+            renderResultTable('infrastructure', inspectionData.results);
+            renderResultTable('application', inspectionData.results);
+            renderResultTable('security', inspectionData.results);
+            renderResultTable('data', inspectionData.results);
+            renderResultTable('monitoring', inspectionData.results);
+
+            // 渲染失败/警告
+            renderFailuresAndWarnings(inspectionData.failures, inspectionData.warnings);
+
+            // 更新趋势占位
+            const trendChart = document.getElementById('trendChart');
+            if (trendChart) {
+                trendChart.innerHTML = `
+                    <div style="text-align: center; padding: 20px;">
+                        <p style="font-size: 48px; margin-bottom: 12px;">📈</p>
+                        <p>历史趋势图表</p>
+                        <p style="font-size: 12px; color: var(--text-secondary);">
+                            可通过 GET /api/v1/inspection/trends 接口获取历史数据<br>
+                            并集成 Chart.js/ECharts 进行可视化
+                        </p>
+                    </div>
+                `;
+            }
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initReport);
+    </script>
+
+    <!-- 巡检JSON数据占位符（由health-inspection.sh脚本替换） -->
+    <!--
+    <script type="application/inspection-json">{{INSPECTION_JSON}}</script>
+    -->
+</body>
+</html>
