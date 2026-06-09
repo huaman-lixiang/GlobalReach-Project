@@ -21,7 +21,6 @@ clients:
 # M-B03: Global pipeline limits to prevent overload
 limits_config:
   max_line_size: 256kb
-  line_drop_pattern: '\\x1b\\[[0-9;]*[a-zA-Z]'  # Drop ANSI escape sequences
 
 scrape_configs:
   # ── All Docker Containers via Service Discovery ──
@@ -87,11 +86,12 @@ scrape_configs:
           environment:
 
       # M-B03: Sampling control for DEBUG logs in production
+      # Note: filter stage replaced with drop for compatibility
       # Only keep 10% of DEBUG level logs to reduce volume
-      - filter:
-          action: drop
-          expr: |
-            .level == "debug" and rand(10) != 0
+      - drop:
+          source: output
+          expr: '.level == "debug" and rand(10) != 0'
+          drop_counter_reason: "debug_sample"
 
       # S100/PhaseH: Metric Extraction — push log-derived counters to Loki/Mimir
       # These metrics are queryable via LogQL: sum(rate(...))

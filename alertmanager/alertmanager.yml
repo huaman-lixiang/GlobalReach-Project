@@ -97,7 +97,6 @@ receivers:
         send_resolved: true
         http_config:
           bearer_token: '${WEBHOOK_SECRET:-}'
-        max_alerts_per_message: 50
 
   # --- Receiver 3: Critical Multi-channel (Email via QQ Mail + Webhook) ---
   # M-C03: Webhook enabled — routes alerts to GlobalReach API for processing
@@ -115,7 +114,6 @@ receivers:
         send_resolved: true
         http_config:
           bearer_token: '${WEBHOOK_SECRET:-}'
-        max_alerts_per_message: 50
 
 # ============================================
 # Route Tree (Notification Routing by Severity + Team)

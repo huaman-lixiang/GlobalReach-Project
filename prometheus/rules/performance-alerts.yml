@@ -13,7 +13,6 @@
 groups:
   - name: globalreach_performance_regressions
     interval: 60s
-    eval_interval: 15s
     rules:
 
       # ── 延迟回归检测 ─────────────────────────────
@@ -26,12 +25,13 @@ groups:
               sum(rate(globalreach_api_request_duration_seconds_bucket[5m])) by (le)
             ) -
             histogram_quantile(0.95,
-              sum(rate(globalreach_api_request_duration_seconds_bucket offset 24h][5m])) by (le)
+              sum(rate(globalreach_api_request_duration_seconds_bucket[5m] offset 24h)) by (le)
+            )
           )
           /
           histogram_quantile(0.95,
-            sum(rate(globalreach_api_request_duration_seconds_bucket offset 24h][5m])) by (le)
-          > 0.2
+            sum(rate(globalreach_api_request_duration_seconds_bucket[5m] offset 24h)) by (le)
+          ) > 0.2
         for: 15m
         labels:
           severity: warning
@@ -53,12 +53,13 @@ groups:
               sum(rate(globalreach_api_request_duration_seconds_bucket[5m])) by (le)
             ) -
             histogram_quantile(0.99,
-              sum(rate(globalreach_api_request_duration_seconds_bucket offset 24h][5m])) by (le)
+              sum(rate(globalreach_api_request_duration_seconds_bucket[5m] offset 24h)) by (le)
+            )
           )
           /
           histogram_quantile(0.99,
-            sum(rate(globalreach_api_request_duration_seconds_bucket offset 24h][5m])) by (le)
-          > 0.3
+            sum(rate(globalreach_api_request_duration_seconds_bucket[5m] offset 24h)) by (le)
+          ) > 0.3
         for: 10m
         labels:
           severity: warning
@@ -107,9 +108,9 @@ groups:
           )
           >
           (
-            sum(rate(globalreach_api_errors_total offset 1h][5m]))
+            sum(rate(globalreach_api_errors_total[5m] offset 1h))
             /
-            sum(rate(globalreach_api_requests_total offset 1h][5m]))
+            sum(rate(globalreach_api_requests_total[5m] offset 1h))
           ) * 2
         for: 15m
         labels:
@@ -129,11 +130,11 @@ groups:
       - alert: PerformanceThroughputDrop
         expr: |
           (
-            sum(rate(globalreach_api_requests_total offset 1h][5m])) -
+            sum(rate(globalreach_api_requests_total[5m] offset 1h)) -
             sum(rate(globalreach_api_requests_total[5m]))
           )
           /
-          sum(rate(globalreach_api_requests_total offset 1h][5m])) > 0.3
+          sum(rate(globalreach_api_requests_total[5m] offset 1h)) > 0.3
         for: 10m
         labels:
           severity: warning
