@@ -32,7 +32,7 @@ services:
     image: redis:7.4.9-alpine
     container_name: globalreach-redis
     restart: unless-stopped
-    command: redis-server --requirepass ${REDIS_PASSWORD:?ERROR: REDIS_PASSWORD is required} --maxmemory 128mb --maxmemory-policy allkeys-lru
+    command: "redis-server --requirepass ${REDIS_PASSWORD:?ERROR: REDIS_PASSWORD is required} --maxmemory 128mb --maxmemory-policy allkeys-lru"
     volumes:
       - redis_data:/data
     networks:
@@ -66,10 +66,10 @@ services:
       DB_PASSWORD: ${DB_PASSWORD:-changeme}
       REDIS_HOST: redis
       REDIS_PORT: "6379"
-      REDIS_PASSWORD: ${REDIS_PASSWORD:?ERROR: REDIS_PASSWORD is required}
-      JWT_SECRET: ${JWT_SECRET:?ERROR: JWT_SECRET is required and must be >= 32 random characters}
+      REDIS_PASSWORD: "${REDIS_PASSWORD:?ERROR: REDIS_PASSWORD is required}"
+      JWT_SECRET: "${JWT_SECRET:?ERROR: JWT_SECRET is required and must be >= 32 random characters}"
       JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-24h}
-      CSRF_SECRET: ${CSRF_SECRET:?ERROR: CSRF_SECRET is required and must be >= 32 random characters}
+      CSRF_SECRET: "${CSRF_SECRET:?ERROR: CSRF_SECRET is required and must be >= 32 random characters}"
       APP_NAME: GlobalReach-V2
       LOG_LEVEL: info
       PORT: "3000"
@@ -90,7 +90,7 @@ services:
       # M-C03: Webhook Listener Configuration
       # WEBHOOK_SECRET: HMAC-SHA256 signature verification secret (MUST change in production!)
       # Generate with: openssl rand -hex 32
-      WEBHOOK_SECRET: ${WEBHOOK_SECRET:?ERROR: WEBHOOK_SECRET is required and must be >= 32 random characters}
+      WEBHOOK_SECRET: "${WEBHOOK_SECRET:?ERROR: WEBHOOK_SECRET is required and must be >= 32 random characters}"
       # Rate limiting: max requests per minute per IP (default: 100)
       WEBHOOK_RATE_LIMIT: ${WEBHOOK_RATE_LIMIT:-100}
     networks:
@@ -187,14 +187,14 @@ services:
       # DEBT-008: 强制必填 — 弱默认值 admin123 (Top10 弱密码) 已移除
       # 安全要求: >=20字符, 含大小写+数字+特殊字符
       # 端口安全: Grafana 监听容器内 3000, 映射到宿主机 3002 — 生产环境应通过 Nginx 反代或防火墙限制访问
-      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:?ERROR: GRAFANA_ADMIN_PASSWORD is required}
+      GF_SECURITY_ADMIN_PASSWORD: "${GRAFANA_ADMIN_PASSWORD:?ERROR: GRAFANA_ADMIN_PASSWORD is required}"
       GF_USERS_ALLOW_SIGN_UP: "false"
       # S126/QQ Mail SMTP Production Migration (from Gmail)
       GF_SMTP_ENABLED: "true"
       GF_SMTP_HOST: "smtp.qq.com:465"
       GF_SMTP_USER: "1390885333@qq.com"
       # DEBT-007: 硬编码 SMTP 授权码已移除 — 必须通过环境变量传入
-      GF_SMTP_PASSWORD: ${GF_SMTP_PASSWORD:?ERROR: GF_SMTP_PASSWORD is required}
+      GF_SMTP_PASSWORD: "${GF_SMTP_PASSWORD:?ERROR: GF_SMTP_PASSWORD is required}"
       GF_SMTP_FROM_ADDRESS: "1390885333@qq.com"
       GF_SMTP_FROM_NAME: "GlobalReach Monitor"
       # S106/PhaseH: Alert Notification Environment Variables
@@ -311,7 +311,7 @@ services:
       # S116: Override alertmanager.yml defaults with production SMTP settings
       # These are passed through to the config file's ${VAR} placeholders
       # DEBT-007: GF_SMTP_PASSWORD 传递给 AlertManager 容器，用于替换 alertmanager.yml 中的 ${GF_SMTP_PASSWORD} 占位符
-      GF_SMTP_PASSWORD: ${GF_SMTP_PASSWORD:?ERROR: GF_SMTP_PASSWORD is required}
+      GF_SMTP_PASSWORD: "${GF_SMTP_PASSWORD:?ERROR: GF_SMTP_PASSWORD is required}"
       ALERTMANAGER_SMTP_SMARTHOST: ${ALERTMANAGER_SMTP_SMARTHOST:-mailpit:1025}
       ALERTMANAGER_SMTP_USER: ${ALERTMANAGER_SMTP_USER:-}
       ALERTMANAGER_SMTP_PASS: ${ALERTMANAGER_SMTP_PASS:-}
@@ -321,7 +321,7 @@ services:
       ALERTMANAGER_SMTP_HELLO: ${ALERTMANAGER_SMTP_HELLO:-localhost}
       ALERTMANAGER_WEBHOOK_URL: ${ALERTMANAGER_WEBHOOK_URL:-}
       # M-C03: Webhook Secret shared with API for bearer token auth
-      WEBHOOK_SECRET: ${WEBHOOK_SECRET:?ERROR: WEBHOOK_SECRET is required and must be >= 32 random characters}
+      WEBHOOK_SECRET: "${WEBHOOK_SECRET:?ERROR: WEBHOOK_SECRET is required and must be >= 32 random characters}"
     command:
       - '--config.file=/etc/alertmanager/alertmanager.yml'
       - '--storage.path=/alertmanager'
