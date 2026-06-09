@@ -233,11 +233,11 @@ const ReportsPage: React.FC = () => {
         </Col>
       </Row>
 
-      <Row gutter={[mobile.isMobile ? 12 : 16, mobile.isMobile ? 12 : 16]}>
+      <Row gutter={[16, 16]}>
         <Col xs={24} md={12}>
           <Card title="平台占比分析">
             {platformData.length > 0 ? (
-              <ResponsiveContainer width="100%" height={mobile.isMobile ? 240 : 300}>
+              <ResponsiveContainer width="100%" height={300}>
                 <PieChart>
                   <Pie
                     data={platformData}
@@ -265,7 +265,7 @@ const ReportsPage: React.FC = () => {
 
         <Col xs={24} md={12}>
           <Card title="关键指标趋势">
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={mobile.isMobile ? 240 : 300}>
               <LineChart data={extendedDaily.slice(-14)}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="date" />

@@ -3076,4 +3076,578 @@ sudo systemctl stop nginx
 sudo systemctl start nginx
 # 等待 ~3 秒 (如果 nopreempt=false, VIP 应漂回 MASTER)
 
-# 6. 模
+# 6. 模拟脑裂 (Split-Brain) - 拔掉 MASTER 的网线
+# (仅限测试环境, 生产环境禁止!)
+# 观察: 两台节点是否都认为自己是 MASTER (严重故障!)
+
+# 7. 常用运维命令
+sudo ip addr show eth0 | grep 192.168.1.100   # 查看 VIP 绑定状态
+sudo keepalivedctl show_state                   # 查看 VRRP 状态
+cat /proc/net/ipvs                             # 查看 IPVS 规则 (如有 LVS)
+```
+
+#### 4.4.2 DNS Round Robin 备选方案
+
+当无法使用 Keepalived VIP 时（如云环境不支持 ARP 广播），可采用 **DNS 轮询** 作为简化方案：
+
+```yaml
+dns_rr_configuration:
+  provider_options:
+    cloudflare:
+      type: "DNS Load Balancing"
+      health_check: "✅ 原生支持"
+      ttl: "可设为自动 (智能路由)"
+      geo_routing: "✅ 支持"
+      
+    route53:
+      type: "Alias Record + Health Checks"
+      health_check: "✅ HTTP/TCP 探测"
+      failover_policy: "主备切换或加权轮询"
+      
+    aliyun_dns:
+      type: "A 记录多值 + 云解析健康检查"
+      health_check: "✅ HTTP/TCP/UDP 探测"
+      failover_mode: "自动故障转移"
+
+  limitations:
+    - "客户端 DNS 缓存可能导致短暂故障感知延迟"
+    - "不适合需要会话保持的场景 (Session Affinity)"
+    - "SSL 证书需覆盖所有后端 IP (或使用通配符证书)"
+```
+
+### 4.5 监控系统高可用实现
+
+#### 4.5.1 Prometheus HA 方案
+
+**Thanos Sidecar 模式** (推荐):
+
+```
+┌─────────────────────────────────────────────────────┐
+│              Prometheus HA (Thanos)                  │
+│                                                      │
+│  ┌──────────┐    ┌──────────┐                       │
+│  │Prom-01   │    │Prom-02   │                       │
+│  │(Active)  │    │(Standby) │                       │
+│  │┌────────┐│    │┌────────┐│                       │
+│  ││ Thanos ││    ││ Thanos ││                       │
+│  ││Sidecar ││    ││Sidecar ││                       │
+│  │└───┬────┘│    │└───┬────┘│                       │
+│  └────┼─────┘    └────┼─────┘                       │
+│       │ Upload         │ Upload                      │
+│       ▼                 ▼                              │
+│  ┌─────────────────────────┐                          │
+│  │     Object Storage      │ ◀── S3/GCS/MinIO        │
+│  │  (TSDB 数据统一存储)     │                          │
+│  └─────────────────────────┘                          │
+│                                                      │
+│  ┌──────────┐                                       │
+│  │ Thanos   │ ◀── 全局查询层                         │
+│  │ Query    │    (合并多个 Prometheus 数据)           │
+│  └──────────┘                                       │
+└─────────────────────────────────────────────────────┘
+```
+
+**配置要点**:
+
+```yaml
+# thanos-sidecar.yml
+thanos_sidecar_config:
+  tsdb:
+    path: /prometheus
+    retention: 15d             # 本地保留时间
+    
+  objstore:
+    config:
+      type: S3                 # 或 GCS, AZURE, FILESYSTEM
+      config:
+        bucket: globalreach-prometheus-data
+        endpoint: s3.amazonaws.com
+        access_key_id: ${AWS_ACCESS_KEY_ID}
+        secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+        
+  upload:
+    interval: 2m               # 上传间隔
+    
+  metadata:
+    update_metrics_interval: 15m
+
+# prometheus.yml (HA 配置)
+prometheus_ha_settings:
+  global:
+    scrape_interval: 15s
+    evaluation_interval: 15s
+    external_labels:
+      replica: $(HOSTNAME)     # 区分不同实例
+      
+  # 避免重复告警 (仅 Active 实例发送)
+  alert_relabel_configs:
+    - source_labels: [__address__]
+      regex: 'prometheus-01.*'  # 仅 Prom-01 发送告警
+      action: keep
+```
+
+#### 4.5.2 Grafana 多实例 + 共享存储
+
+```yaml
+grafana_ha_deployment:
+  architecture: "Stateless Frontend + Shared Database"
+  
+  components:
+    grafana_instances:
+      count: 2                    # 多实例负载均衡
+      state: "无状态 (所有数据在外部存储)"
+      
+    shared_database:
+      options:
+        - "PostgreSQL (推荐, 已有 HA)"
+        - "MySQL (需额外 HA 配置)"
+        
+    shared_storage:
+      purpose: "Dashboard JSON / Provisioning Files"
+      options:
+        - "NFS 共享卷 (简单, 单点风险)"
+        - "S3/GCS 对象存储 (推荐, 天然冗余)"
+
+  session_management:
+    provider: "Redis (已有 Sentinel HA)"
+```
+
+#### 4.5.3 AlertManager 高可用 (Gossip Cluster)
+
+```yaml
+alertmanager_ha_cluster:
+  topology: "Gossip Protocol (SWIM) - 去中心化"
+  
+  cluster_members:
+    - alertmanager-01:9094
+    - alertmanager-02:9094
+    - alertmanager-03:9094
+    
+  quorum: 2                     # 至少 2 个节点存活即可工作
+  
+  configuration:
+    global:
+      resolve_timeout: 5m
+      
+    cluster:
+      peers:
+        - alertmanager-01:9094
+        - alertmanager-02:9094
+        - alertmanager-03:9094
+      advertise-address: "$(HOST_IP):9094"
+      
+    inhibit_rules:
+      - source_match:
+          severity: 'critical'
+        target_match:
+          severity: 'warning'
+        equal: ['alertname', 'instance']
+        
+    route:
+      group_by: ['alertname', 'cluster', 'service']
+      group_wait: 30s
+      group_interval: 5m
+      repeat_interval: 12h
+      receiver: 'default-receiver'
+      
+    receivers:
+      - name: 'default-receiver'
+        email_configs:
+          - to: ops@globalreach.com
+            send_resolved: true
+            
+  docker_compose_example:
+    alertmanager-01:
+      image: prom/alertmanager:v0.32.2
+      command:
+        - '--config.file=/etc/alertmanager/alertmanager.yml'
+        - '--storage.path=/alertmanager'
+        - '--cluster.peer=alertmanager-02:9094'
+        - '--cluster.peer=alertmanager-03:9094'
+        - '--cluster.listen-address=0.0.0.0:9094'
+        - '--web.external-url=http://alertmanager-01:9093'
+      ports: ["9093:9093", "9094:9094"]
+```
+
+---
+
+## 第五章：网络与存储
+
+### 5.1 Docker 网络隔离策略
+
+#### 5.1.1 当前网络架构分析
+
+**现状**: 所有容器运行在单一 `globalreach-network` bridge 网络（默认网络驱动）
+
+**问题**:
+1. **安全边界缺失**: API 可直接访问 PostgreSQL (应通过 PgBouncer)
+2. **广播风暴风险**: 大量容器同网段 → ARP 泛洪
+3. **跨主机不可用**: Bridge 网络仅限于单 Docker Daemon
+4. **端口冲突**: 多实例部署时端口管理复杂
+
+#### 5.1.2 HA 网络架构设计
+
+**方案: Overlay Network (多主机) + 网络分段**
+
+**Docker Compose 网络定义** (`docker-compose.ha.yml`):
+
+```yaml
+networks:
+  ha-overlay:
+    driver: overlay
+    attachable: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.0.0/16
+  
+  dmz-network:
+    driver: overlay
+    internal: false
+    ipam:
+      config:
+        - subnet: 10.0.10.0/24
+        
+  app-network:
+    driver: overlay
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.0.20.0/24
+        
+  data-network:
+    driver: overlay
+    internal: true
+    ipam:
+      config:
+        - subnet: 10.0.30.0/24
+        
+  monitor-network:
+    driver: overlay
+    internal: false
+    ipam:
+      config:
+        - subnet: 10.0.40.0/24
+```
+
+### 5.2 共享存储选择
+
+**GlobalReach 推荐 (Docker Compose 场景)**:
+
+```yaml
+recommended_storage_setup:
+  primary_choice: "NFS v4 + RAID 10 (成本效益最优)"
+  configuration:
+    nfs_server: "192.168.1.50"
+    export_path: "/data/globalreach-ha"
+    mount_options: "vers=4.1,rw,sync,noatime,intr"
+    
+  backup_integration:
+    tool: "restic/borgbackup"
+    schedule: "每日全量 + 每小时增量"
+    target: "S3 Compatible Storage (MinIO)"
+    encryption: "AES-256-GCM"
+```
+
+### 5.3 数据一致性保障机制
+
+#### 5.3.1 PostgreSQL 数据一致性
+
+```yaml
+postgresql_consistency_guarantees:
+  protection_levels:
+    synchronous_commit: "local"  # GlobalReach 设置
+    guarantees:
+      - "已提交事务在 Primary Crash 后一定可恢复"
+      - "RPO ≤ 5min (取决于 checkpoint 频率和复制速度)"
+      
+  validation_methods:
+    continuous:
+      - "pg_stat_replication (监控复制延迟)"
+      - "Patroni lag 监控 (maximum_lag_on_failover)"
+    periodic:
+      - "pg_verifybackup (每周验证物理备份完整性)"
+      - "SELECT count(*) 对比主从行数 (关键表)"
+```
+
+#### 5.3.2 Redis 数据一致性
+
+```yaml
+redis_consistency_guarantees:
+  replication_model:
+    type: "Async Replication (Master-Slave)"
+    risk: "Master Crash 后最多丢失最后 N 秒写入"
+    
+  mitigation_strategies:
+    aof_persistence:
+      mode: "everysec"           # 每秒 fsync
+      data_loss_window: "≤ 1秒"
+```
+
+---
+
+## 第六章：故障转移 SOP
+
+### 6.1 故障检测方法
+
+| 组件 | 检测方式 | 检测工具 | 检测频率 | 自动响应 |
+|------|---------|---------|---------|---------|
+| **PostgreSQL** | 进程存活 + SQL 查询 | Patroni health check | 每 2 秒 | ✅ 自动故障转移 |
+| **Redis Master** | PING 响应 + Role | Sentinel SDOWN | 每 10 秒 | ✅ 自动故障转移 |
+| **API Instance** | HTTP 健康端点 | Nginx upstream check | 每 5 秒 | ✅ 自动摘除 |
+| **Nginx** | 进程存活 + 端口监听 | Keepalived track_script | 每 2-5 秒 | ✅ VIP 切换 |
+
+### 6.2 自动/手动故障转移步骤
+
+#### PostgreSQL 故障转移 SOP
+
+**场景 A: 自动故障转移 (Patroni 触发)**
+
+```
+T+00s  监控告警: PostgreSQL Primary Down (P1)
+T+05s  确认: patronictl list 显示 Replica 正在提升
+T+15s  验证: curl http://pgbouncer:6432 返回正常
+T+30s  通知: 发送故障转移公告
+T+60s  检查: SELECT count(*) FROM users; (数据完整性)
+T+10min 分析原因: docker logs ha-postgres-primary
+```
+
+**手动干预清单** (当自动故障转移失败时):
+
+```bash
+#!/bin/bash
+echo "[Emergency] 开始手动 PostgreSQL 故障转移..."
+
+if docker exec ha-postgres-primary pg_isready -t 2 >/dev/null; then
+    echo "❌ Primary 仍存活! 请勿手动故障转移!"
+    exit 1
+fi
+
+docker exec ha-postgres-replica bash -c "
+    pg_ctl promote -D \$PGDATA || true
+    patronictl failover --candidate postgresql-replica
+" || docker exec ha-postgres-replica psql -U postgres -c "SELECT pg_promote();"
+
+sleep 5
+if docker exec ha-pgbouncer psql -h pgbouncer -p 6432 -U globalreach_user -d globalreach_prod -c "SELECT 1;" >/dev/null 2>&1; then
+    echo "✅ 手动故障转移成功!"
+else
+    echo "❌ 验证失败!"
+    exit 1
+fi
+```
+
+#### Redis 故障转移 SOP
+
+```bash
+# 监控 Sentinel 日志
+docker logs -f ha-redis-sentinel-1 2>&1 | grep -E "(switch-master|odown|failover)"
+
+# 查看当前拓扑
+docker exec ha-redis-sentinel-1 redis-cli -p 26379 SENTINEL masters
+docker exec ha-redis-sentinel-1 redis-cli -p 26379 SENTINEL replicas mymaster
+
+# 验证新 Master 写入能力
+NEW_MASTER=$(docker exec ha-redis-sentinel-1 redis-cli -p 26379 SENTINEL get-master-addr-by-name mymaster | head -1)
+docker exec ha-redis-master redis-cli -h "$NEW_MASTER" -a "${REDIS_PASSWORD}" SET ha:test "$(date)" OK
+```
+
+### 6.3 回归测试检查清单
+
+```markdown
+## PostgreSQL 故障转移回归测试
+- [ ] 用户登录/登出 (Session 通过 Redis Store)
+- [ ] 创建/编辑/删除 Campaign (CRUD 操作)
+- [ ] 发送测试邮件 (SMTP 集成)
+- [ ] SELECT count(*) 主从一致
+- [ ] API P95 < 500ms, DB P95 < 100ms
+- [ ] Prometheus targets 全部 UP
+
+## Redis 故障转移回归测试
+- [ ] Session 创建/读取/销毁
+- [ ] Rate Limiter 计数器正常
+- [ ] Bull Queue 任务入队/消费
+- [ ] Cache hit ratio > 80%
+```
+
+### 6.4 数据完整性验证流程
+
+```bash
+#!/bin/bash
+set -euo pipefail
+DB_USER="${DB_USER:-globalreach_user}"
+DB_NAME="${DB_NAME:-globalreach_prod}"
+
+TABLES=("users" "campaigns" "email_logs" "contacts")
+INCONSISTENCIES=0
+
+for table in "${TABLES[@]}"; do
+    PRIMARY=$(docker exec ha-postgres-primary psql -U "$DB_USER" -d "$DB_NAME" -t -c "SELECT COUNT(*) FROM $table;" | tr -d ' ')
+    REPLICA=$(docker exec ha-postgres-replica psql -U "$DB_USER" -d "$DB_NAME" -t -c "SELECT COUNT(*) FROM $table;" | tr -d ' ')
+    [ "$PRIMARY" = "$REPLICA" ] && echo "✅ $table: 一致" || { echo "❌ $table: 不一致"; INCONSISTENCIES=$((INCONSISTENCIES+1)); }
+done
+
+[ "$INCONSISTENCIES" -eq 0 ] && echo "🎉 所有检查通过!" && exit 0 || echo "⚠️ 发现问题!" && exit 1
+```
+
+---
+
+## 第七章：容量规划
+
+### 7.1 各组件最小 HA 部署规格
+
+**Host-A (Primary Node)**:
+
+| 组件 | CPU | 内存 | 磁盘 |
+|------|-----|------|------|
+| PostgreSQL Primary | 2 核 | 2 GB | 100 GB |
+| PgBouncer | 0.25 核 | 128 MB | 1 GB |
+| Redis Master | 0.5 核 | 512 MB | 10 GB |
+| API Instance 01 | 1 核 | 512 MB | 1 GB |
+| Nginx LB | 0.5 核 | 256 MB | 1 GB |
+| Keepalived | 0.1 核 | 32 MB | - |
+| Prometheus | 1 核 | 2 GB | 50 GB |
+| Grafana | 0.5 核 | 512 MB | 10 GB |
+| Loki | 1 核 | 1 GB | 50 GB |
+| AlertManager | 0.25 核 | 128 MB | 1 GB |
+| Tempo | 1 核 | 1 GB | 50 GB |
+| 其他 (Exporters/Promtail/Mailpit) | ~1 核 | ~512 MB | ~5 GB |
+| **合计** | **~8.75 核** | **~8.5 GB** | **~276 GB** |
+
+**推荐服务器配置**:
+
+```yaml
+server_specifications:
+  host_a_primary:
+    cpu: "8 cores"
+    ram: "16 GB DDR4 ECC"
+    storage: "512 GB NVMe SSD (RAID 1)"
+    network: "Dual 1 Gbps NIC"
+    os: "Ubuntu 22.04 LTS / Debian 12"
+    estimated_cost_monthly: "¥3,000-5,000"
+```
+
+### 7.2 成本估算表
+
+| 方案 | 年成本 | TCO (3年) | 优势 |
+|------|--------|-----------|------|
+| 自建 On-Premise | ¥200K | ¥600K | 长期成本低, 数据完全可控 |
+| 云 ECS 自建 DB | ¥102K | ¥306K | 弹性伸缩, 快速扩容 |
+| 云全托管 (RDS+ECS) | ¥126K | ¥378K | 最省心, 自动备份/HA |
+
+### 7.3 扩展策略
+
+**水平扩展 (Scale Out)**: API Instance、Redis Slave、Prometheus Worker
+**垂直扩展 (Scale Up)**: PostgreSQL、Redis Master (内存/CPU/磁盘 IOPS)
+
+---
+
+## 第八章：实施路线图
+
+### 8.1 Phase 1: Redis Sentinel (第 1 周)
+
+| Day | 任务 | 验证标准 |
+|-----|------|---------|
+| D1 | 创建 sentinel.conf | 配置语法正确 |
+| D2 | 编写 docker-compose.ha.yml Redis 部分 | docker compose config 通过 |
+| D3 | 部署 Master + 2 Slave + 3 Sentinel | INFO replication 显示正确拓扑 |
+| D4 | 应用代码改为 Sentinel 模式 | npm test 通过 |
+| D5 | 模拟 Master 故障转移 | RTO ≤ 2min |
+
+### 8.2 Phase 2: PostgreSQL 主从+Patroni (第 2-3 周)
+
+| Week | 任务 | 验证标准 |
+|------|------|---------|
+| W2 D1-2 | 部署 etcd 集群 | etcdctl endpoint health |
+| W2 D3-4 | 安装 Patroni (Primary) | patronictl list 显示 Leader |
+| W2 D5 | 初始化 Replica (pg_basebackup) | pg_stat_replication streaming |
+| W3 D1 | 配置 PgBouncer | 应用通过 6432 连接正常 |
+| W3 D2 | 应用层适配 DATABASE_URL 变更 | 集成测试通过 |
+| W3 D3 | 故障转移演练 | RTO ≤ 5min, 自动切换成功 |
+
+### 8.3 Phase 3: API多实例+Nginx LB (第 4 周)
+
+| Day | 任务 | 验证标准 |
+|-----|------|---------|
+| D1 | API 无状态化验证 & Nginx upstream 配置 | nginx -t 通过 |
+| D2 | 部署 api-prod-02 + 负载均衡 | ab 测试负载均匀 |
+| D3 | 滚动部署演练 | 零停机完成 |
+
+### 8.4 Phase 4: Nginx Keepalived (第 5-6 周)
+
+**注意**: 需要额外服务器或云主机。替代方案: 云 LB (~¥5,000/年) 或 DNS Round Robin。
+
+### 8.5 Phase 5: 监控HA (可与 Phase 2-4 并行)
+
+| Component | HA 方案 | 优先级 |
+|-----------|---------|--------|
+| Prometheus | Thanos Sidecar | P1 |
+| Grafana | 多实例 + 共享 PG | P2 |
+| AlertManager | Gossip Cluster (3 节点) | P1 |
+| Loki | 读写分离 | P2 |
+
+### 8.6 总体验收标准
+
+```markdown
+## GlobalReach HA 验收 Checklist
+
+### 可用性验收
+- [ ] PostgreSQL: Primary Crash → 自动故障转移 ≤ 15s
+- [ ] Redis: Master Crash → Sentinel 切换 ≤ 30s
+- [ ] API: 停止任一实例 → 另一实例无缝接管
+- [ ] Nginx: Keepalived Master Down → VIP 5s 内漂移
+
+### 数据完整性验收
+- [ ] PostgreSQL 故障转移后: SELECT count(*) 主从一致
+- [ ] Redis 故障转移后: Session 不丢失 (AOF everysec)
+- [ ] API 滚动部署后: 无 5xx spike
+
+### 性能验收
+- [ ] API P95 < 500ms, DB P95 < 100ms, Redis P99 < 10ms
+
+### 运维验收
+- [ ] 完整 Runbook 文档
+- [ ] 故障转移演练记录 ≥ 3 次
+- [ ] 回滚方案验证 (每 Phase 至少 1 次)
+- [ ] 监控告警覆盖所有 HA 组件
+- [ ] 团队培训完成 (≥ 2 人掌握操作)
+```
+
+---
+
+## 附录
+
+### A. 术语表
+
+| 术语 | 解释 |
+|------|------|
+| HA | 高可用性 |
+| SPOF | 单点故障 |
+| RPO/RTO | 恢复点/时间目标 |
+| Failover/Switchover | 故障转移/计划切换 |
+| Split-Brain | 脑裂 |
+| WAL | 预写式日志 |
+| Streaming Replication | 流复制 |
+| Sentinel | Redis 哨兵 |
+| VRRP/VIP | 虚拟路由冗余协议/虚拟IP |
+| PgBouncer/Patroni | 连接池/HA管理器 |
+| Thanos | Prometheus HA 扩展 |
+| Gossip Protocol | 最终一致性协议 |
+
+### B. 参考资源
+
+- PostgreSQL HA: https://www.postgresql.org/docs/current/high-availability.html
+- Patroni: https://patroni.readthedocs.io/
+- Redis Sentinel: https://redis.io/docs/manual/sentinel/
+- Keepalived: https://www.keepalived.org/manpage.html
+
+### C. 版本历史
+
+| 版本 | 日期 | 说明 |
+|------|------|------|
+| v1.0 | 2026-06-09 | 初始版本, 完整 HA 架构设计 |
+
+---
+
+> **文档结束**
+> **下一步行动**: 从 Phase 1 (Redis Sentinel) 开始逐步落地。
