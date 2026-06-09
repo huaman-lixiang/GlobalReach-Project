@@ -1,0 +1,16 @@
+# GlobalReach V2.0 — PgBouncer 用户凭证文件
+# ============================================
+# 格式: "用户名" "密码" (MD5 或明文)
+# 生成命令: pg_md5 密码
+#
+# 注意: 此文件权限应设为 0600 (仅 owner 可读写)
+# ============================================
+
+# 应用程序连接用户
+"globalreach_user" "md5xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# PgBouncer 管理员 (用于 Admin 接口 :6433)
+"pgbouncer_admin" "md5yyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+
+# PgBouncer 只读统计用户
+"pgbouncer_stats" "md5zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"

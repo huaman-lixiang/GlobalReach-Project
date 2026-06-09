@@ -1,0 +1,853 @@
+# GlobalReach V2.0 — High Availability (HA) Docker Compose
+# ============================================================
+# 架构: Docker Compose Multi-Host HA
+# 特性:
+#   - PostgreSQL 主从复制 (Streaming Replication) + Patroni 集群管理
+#   - Redis Sentinel 哨兵模式 (1主2从3哨兵)
+#   - API 多实例 (api-prod-01/02) + Nginx 负载均衡
+#   - PgBouncer 连接池中间件
+#
+# 用法:
+#   docker compose -f docker-compose.ha.yml up -d
+#
+# 前置条件:
+#   1. 两台服务器 (Host-A / Host-B) 或单机测试模式
+#   2. Docker Overlay 网络已创建 (或使用 bridge 模式)
+#   3. .env 文件包含所有密码配置
+#
+# 文档: docs/HIGH_AVAILABILITY_ARCHITECTURE.md
+# ============================================================
+
+services:
+
+  # ============================================================
+  # PostgreSQL Primary (主库)
+  # ============================================================
+  # HA特性说明:
+  #   - wal_level=replica: 启用流复制所需的 WAL 归档
+  #   - max_wal_senders=3: 允许最多3个流复制连接 (1个Replica + 2个PgBouncer)
+  #   - hot_standby=on: 允许 Replica 执行只读查询 (未来用于报表/备份)
+  #   - synchronous_commit=off: 异步提交 (性能优先, RPO ≤ 5min)
+  # ============================================================
+  postgres-primary:
+    image: postgres:15-alpine
+    container_name: ha-postgres-primary
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-globalreach_prod}
+      POSTGRES_USER: ${DB_USER:-globalreach_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-changeme}
+      # 复制用户 (用于流复制连接, Patroni 也使用此用户)
+      POSTGRES_REPLICATION_USER: replicator
+      POSTGRES_REPLICATION_PASSWORD: ${REPLICATOR_PASSWORD:-replicator_secret_2026}
+    command:
+      - "postgres"
+      - "-c" "wal_level=replica"
+      - "-c" "max_wal_senders=3"
+      - "-c" "wal_keep_size=2GB"
+      - "-c" "hot_standby=on"
+      - "-c" "max_replication_slots=3"
+      - "-c" "hot_standby_feedback=on"
+      - "-c" "shared_buffers=256MB"
+      - "-c" "effective_cache_size=768MB"
+      - "-c" "maintenance_work_mem=128MB"
+      - "-c" "max_connections=200"
+      - "-c" "synchronous_commit=off"
+    volumes:
+      - postgres_primary_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"              # 主库对外端口 (应用通过 PgBouncer 连接)
+    networks:
+      - data-network              # 数据网络 (仅数据库组件可见)
+      - monitor-network            # 监控网络 (导出指标给 PG Exporter)
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-globalreach_user} -d ${DB_NAME:-globalreach_prod}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          memory: 512M
+
+  # ============================================================
+  # PostgreSQL Replica (从库)
+  # ============================================================
+  # HA特性说明:
+  #   - 通过 pg_basebackup 从 Primary 初始化数据
+  #   - 以 standby 模式启动, 接收 WAL 流并应用
+  #   - 当 Primary 故障时, 可被 Patroni 提升为新 Primary
+  #   - start_period=60s: 因为首次需要执行 basebackup (耗时较长)
+  # ============================================================
+  postgres-replica:
+    image: postgres:15-alpine
+    container_name: ha-postgres-replica
+    restart: unless-stopped
+    environment:
+      PGUSER: replicator
+      PGPASSWORD: ${REPLICATOR_PASSWORD:-replicator_secret_2026}
+    command:
+      - "bash"
+      - "-c"
+      - |
+        if [ ! -f "$$PGDATA/PG_VERSION" ]; then
+          echo "[Init] 正在从 Primary 执行基础备份..."
+          pg_basebackup \
+            -h postgres-primary \
+            -p 5432 \
+            -U replicator \
+            -D $$PGDATA \
+            -Fp \
+            -Xs \
+            -P \
+            -R
+          touch $$PGDATA/standby.signal
+          cat >> $$PGDATA/postgresql.auto.conf <<EOF
+          primary_conninfo='host=postgres-primary port=5432 user=replicator'
+          EOF
+        fi
+        exec postgres
+    volumes:
+      - postgres_replica_data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"              # Replica 只读端口 (可用于报表查询/冷备)
+    networks:
+      - data-network
+      - monitor-network
+    depends_on:
+      postgres-primary:
+        condition: service_healthy  # 等待 Primary 健康后再初始化
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-globalreach_user} -d ${DB_NAME:-globalreach_prod}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s           # Replica 初始化较慢 (basebackup 可能需要数分钟)
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          memory: 512M
+
+  # ============================================================
+  # PgBouncer (PostgreSQL 连接池)
+  # ============================================================
+  # HA特性说明:
+  #   - 连接池模式: transaction (事务级, 推荐)
+  #   - 复用少量长连接给大量短连接应用
+  #   - 减少 PostgreSQL 进程开销 (每个连接 ~2-5MB)
+  #   - 与 Patroni 集成: 当 Primary 切换时自动更新目标地址
+  # ============================================================
+  pgbouncer:
+    image: edoburu/pgbouncer:latest
+    container_name: ha-pgbouncer
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: "globalreach_prod=postgres-primary:5432 globalreach_prod,${DB_USER:-globalreach_user},${DB_PASSWORD:-changeme}"
+      DEFAULT_USER: "pgbouncer_admin"
+      DEFAULT_PASSWORD: "${PGBOUNCER_ADMIN_PASSWORD:-pgbouncer_admin_2026}"
+      ADMIN_USERS: "pgbouncer_admin"
+      STATS_USERS: "pgbouncer_stats"
+    volumes:
+      - ./pgbouncer/pgbouncer.ini:/etc/pgbouncer/pgbouncer.ini:ro
+      - ./pgbouncer/userlist.txt:/etc/pgbouncer/userlist.txt:ro
+    ports:
+      - "6432:6432"              # PgBouncer 监听端口 (应用实际连接此端口)
+      - "6433:6432"              # Admin 管理接口 (可选)
+    networks:
+      - app-network                # 应用网络 (API 实例可访问)
+      - data-network               # 数据网络 (可访问 PostgreSQL)
+    depends_on:
+      postgres-primary:
+        condition: service_healthy
+      postgres-replica:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "pgbouncer --show-config"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 128M
+
+  # ============================================================
+  # Redis Master (主节点)
+  # ============================================================
+  # HA特性说明:
+  #   - AOF 持久化 (everysec): 每秒 fsync, 平衡性能与安全
+  #   - maxmemory-policy=allkeys-lru: 内存满时淘汰任意键
+  #   - replica-announce-ip/port: 声明在 Docker 网络中的可达地址
+  # ============================================================
+  redis-master:
+    image: redis:7.4.9-alpine
+    container_name: ha-redis-master
+    restart: unless-stopped
+    command:
+      - "redis-server"
+      - "--appendonly"             # 开启 AOF 持久化
+      - "--appendfsync"            # AOF 同步策略
+      - "everysec"                 # 每秒同步 (平衡性能与安全)
+      - "--maxmemory"              # 内存限制
+      - "256mb"
+      - "--maxmemory-policy"       # 内存淘汰策略
+      - "allkeys-lru"              # LRU 淘汰任意键
+      - "--requirepass"            # 密码认证
+      - "${REDIS_PASSWORD:-redis_ha_secret_2026}"
+      - "--masterauth"             # Replica 连接密码
+      - "${REDIS_PASSWORD:-redis_ha_secret_2026}"
+      - "--replica-announce-ip"     # 声明 IP (Docker 网络)
+      - "redis-master"
+      - "--replica-announce-port"
+      - "6379"
+    volumes:
+      - redis_master_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - data-network
+      - app-network                # API 实例可通过 Sentinel 访问
+      - monitor-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-redis_ha_secret_2026}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+
+  # ============================================================
+  # Redis Slave-1 (从节点 1)
+  # ============================================================
+  redis-slave-1:
+    image: redis:7.4.9-alpine
+    container_name: ha-redis-slave-1
+    restart: unless-stopped
+    command:
+      - "redis-server"
+      - "--appendonly"
+      - "appendfsync"
+      - "everysec"
+      - "--maxmemory"
+      - "256mb"
+      - "--maxmemory-policy"
+      - "allkeys-lru"
+      - "--requirepass"
+      - "${REDIS_PASSWORD:-redis_ha_secret_2026}"
+      - "--masterauth"
+      - "${REDIS_PASSWORD:-redis_ha_secret_2026}"
+      - "--replicaof"              # 声明为 Replica
+      - "redis-master"
+      - "6379"
+      - "--replica-announce-ip"
+      - "redis-slave-1"
+      - "--replica-announce-port"
+      - "6379"
+    volumes:
+      - redis_slave_1_data:/data
+    networks:
+      - data-network
+      - monitor-network
+    depends_on:
+      redis-master:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-redis_ha_secret_2026}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+
+  # ============================================================
+  # Redis Slave-2 (从节点 2)
+  # ============================================================
+  redis-slave-2:
+    image: redis:7.4.9-alpine
+    container_name: ha-redis-slave-2
+    restart: unless-stopped
+    command:
+      - "redis-server"
+      - "--appendonly"
+      - "appendfsync"
+      - "everysec"
+      - "--maxmemory"
+      - "256mb"
+      - "--maxmemory-policy"
+      - "allkeys-lru"
+      - "--requirepass"
+      - "${REDIS_PASSWORD:-redis_ha_secret_2026}"
+      - "--masterauth"
+      - "${REDIS_PASSWORD:-redis_ha_secret_2026}"
+      - "--replicaof"
+      - "redis-master"
+      - "6379"
+      - "--replica-announce-ip"
+      - "redis-slave-2"
+      - "--replica-announce-port"
+      - "6379"
+    volumes:
+      - redis_slave_2_data:/data
+    networks:
+      - data-network
+      - monitor-network
+    depends_on:
+      redis-master:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-redis_ha_secret_2026}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+
+  # ============================================================
+  # Redis Sentinel-1 (哨兵节点 1)
+  # ============================================================
+  # HA特性说明:
+  #   - 监控 Redis Master 的健康状态
+  #   - 当 Master 宕机时自动执行故障转移 (选举新 Master)
+  #   - quorum=2: 3个Sentinel中至少2个判定宕机才触发切换 (防误判)
+  #   - down-after-milliseconds=30000: 30秒内无响应则判定 SDOWN
+  # ============================================================
+  redis-sentinel-1:
+    image: redis:7.4.9-alpine
+    container_name: ha-redis-sentinel-1
+    restart: unless-stopped
+    command:
+      - "redis-sentinel"
+      - "/usr/local/etc/redis/sentinel.conf"
+    volumes:
+      - ./redis/sentinel.conf:/usr/local/etc/redis/sentinel.conf:ro
+      - redis_sentinel_1_data:/data
+    ports:
+      - "26379:26379"             # Sentinel 端口
+    networks:
+      - app-network                # API 应用连接此端口
+      - data-network
+      - monitor-network
+    depends_on:
+      redis-master:
+        condition: service_healthy
+      redis-slave-1:
+        condition: service_started
+      redis-slave-2:
+        condition: service_started
+    deploy:
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 64M
+
+  # ============================================================
+  # Redis Sentinel-2 (哨兵节点 2)
+  # ============================================================
+  redis-sentinel-2:
+    image: redis:7.4.9-alpine
+    container_name: ha-redis-sentinel-2
+    restart: unless-stopped
+    command:
+      - "redis-sentinel"
+      - "/usr/local/etc/redis/sentinel.conf"
+    volumes:
+      - ./redis/sentinel.conf:/usr/local/etc/redis/sentinel.conf:ro
+      - redis_sentinel_2_data:/data
+    ports:
+      - "26380:26379"
+    networks:
+      - app-network
+      - data-network
+    depends_on:
+      redis-master:
+        condition: service_healthy
+      redis-slave-1:
+        condition: service_started
+      redis-slave-2:
+        condition: service_started
+    deploy:
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 64M
+
+  # ============================================================
+  # Redis Sentinel-3 (哨兵节点 3)
+  # ============================================================
+  redis-sentinel-3:
+    image: redis:7.4.9-alpine
+    container_name: ha-redis-sentinel-3
+    restart: unless-stopped
+    command:
+      - "redis-sentinel"
+      - "/usr/local/etc/redis/sentinel.conf"
+    volumes:
+      - ./redis/sentinel.conf:/usr/local/etc/redis/sentinel.conf:ro
+      - redis_sentinel_3_data:/data
+    ports:
+      - "26381:26379"
+    networks:
+      - app-network
+      - data-network
+    depends_on:
+      redis-master:
+        condition: service_healthy
+      redis-slave-1:
+        condition: service_started
+      redis-slave-2:
+        condition: service_started
+    deploy:
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 64M
+
+  # ============================================================
+  # API Instance 01 (应用实例 1)
+  # ============================================================
+  # HA特性说明:
+  #   - 无状态化设计: Session 存储在 Redis (connect-redis)
+  #   - 通过 PgBouncer (6432) 连接数据库 (而非直连 PostgreSQL)
+  #   - 通过 Redis Sentinel (26379) 连接缓存 (而非直连 Redis)
+  #   - 健康检查: /api/v1/health 端点
+  # ============================================================
+  api-prod-01:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: globalreach-project-api:${IMAGE_TAG:-latest}
+    container_name: ha-api-prod-01
+    restart: unless-stopped
+    depends_on:
+      pgbouncer:
+        condition: service_healthy
+      redis-sentinel-1:
+        condition: service_started
+    environment:
+      NODE_ENV: production
+      NODE_OPTIONS: --max-old-space-size=384
+      # 数据库连接 (通过 PgBouncer 连接池)
+      DATABASE_URL: "postgresql://${DB_USER:-globalreach_user}:${DB_PASSWORD:-changeme}@pgbouncer:6432/${DB_NAME:-globalreach_prod}"
+      DB_HOST: pgbouncer
+      DB_PORT: "6432"
+      DB_NAME: ${DB_NAME:-globalreach_prod}
+      DB_USER: ${DB_USER:-globalreach_user}
+      DB_PASSWORD: ${DB_PASSWORD:-changeme}
+      # Redis 连接 (通过 Sentinel)
+      REDIS_HOST: redis-sentinel-1
+      REDIS_PORT: "26379"
+      REDIS_MASTER_NAME: mymaster
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-redis_ha_secret_2026}
+      # JWT & Session
+      JWT_SECRET: ${JWT_SECRET:-change-this-secret-in-production-min-32-chars}
+      SESSION_SECRET: ${SESSION_SECRET:-session-secret-ha-mode}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-24h}
+      CSRF_SECRET: ${CSRF_SECRET:-change-this-csrf-secret}
+      APP_NAME: GlobalReach-V2-HA
+      LOG_LEVEL: info
+      PORT: "3000"
+      # Rate Limiting (生产值)
+      RATE_LIMIT_MAX: ${RATE_LIMIT_MAX:-30000}
+      RATE_LIMIT_WINDOW_MS: ${RATE_LIMIT_WINDOW_MS:-900000}
+      # SMTP Configuration
+      SMTP_QQ_USER: "1390885333@qq.com"
+      SMTP_QQ_FROM: "1390885333@qq.com"
+      SEND_CONCURRENCY: ${SEND_CONCURRENCY:-5}
+      SEND_MAX_RETRIES: ${SEND_MAX_RETRIES:-3}
+      SEND_RETRY_DELAY: ${SEND_RETRY_DELAY:-1000}
+      SEND_RATE_LIMIT: ${SEND_RATE_LIMIT:-3}
+      # Webhook
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET:-gr_webhook_secret_change_me_2026_prod}
+      WEBHOOK_RATE_LIMIT: ${WEBHOOK_RATE_LIMIT:-100}
+    networks:
+      - app-network
+      - monitor-network            # 导出指标给 Prometheus
+    expose:
+      - "3000"                    # 内部端口 (不直接暴露到主机)
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/v1/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          memory: 256M
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ============================================================
+  # API Instance 02 (应用实例 2)
+  # ============================================================
+  # 说明: 与 api-prod-01 配置完全相同, 用于负载均衡
+  # ============================================================
+  api-prod-02:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: globalreach-project-api:${IMAGE_TAG:-latest}
+    container_name: ha-api-prod-02
+    restart: unless-stopped
+    depends_on:
+      pgbouncer:
+        condition: service_healthy
+      redis-sentinel-1:
+        condition: service_started
+    environment:
+      NODE_ENV: production
+      NODE_OPTIONS: --max-old-space-size=384
+      DATABASE_URL: "postgresql://${DB_USER:-globalreach_user}:${DB_PASSWORD:-changeme}@pgbouncer:6432/${DB_NAME:-globalreach_prod}"
+      DB_HOST: pgbouncer
+      DB_PORT: "6432"
+      DB_NAME: ${DB_NAME:-globalreach_prod}
+      DB_USER: ${DB_USER:-globalreach_user}
+      DB_PASSWORD: ${DB_PASSWORD:-changeme}
+      REDIS_HOST: redis-sentinel-1
+      REDIS_PORT: "26379"
+      REDIS_MASTER_NAME: mymaster
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-redis_ha_secret_2026}
+      JWT_SECRET: ${JWT_SECRET:-change-this-secret-in-production-min-32-chars}
+      SESSION_SECRET: ${SESSION_SECRET:-session-secret-ha-mode}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-24h}
+      CSRF_SECRET: ${CSRF_SECRET:-change-this-csrf-secret}
+      APP_NAME: GlobalReach-V2-HA
+      LOG_LEVEL: info
+      PORT: "3000"
+      RATE_LIMIT_MAX: ${RATE_LIMIT_MAX:-30000}
+      RATE_LIMIT_WINDOW_MS: ${RATE_LIMIT_WINDOW_MS:-900000}
+      SMTP_QQ_USER: "1390885333@qq.com"
+      SMTP_QQ_FROM: "1390885333@qq.com"
+      SEND_CONCURRENCY: ${SEND_CONCURRENCY:-5}
+      SEND_MAX_RETRIES: ${SEND_MAX_RETRIES:-3}
+      SEND_RETRY_DELAY: ${SEND_RETRY_DELAY:-1000}
+      SEND_RATE_LIMIT: ${SEND_RATE_LIMIT:-3}
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET:-gr_webhook_secret_change_me_2026_prod}
+      WEBHOOK_RATE_LIMIT: ${WEBHOOK_RATE_LIMIT:-100}
+    networks:
+      - app-network
+      - monitor-network
+    expose:
+      - "3000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/v1/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          memory: 256M
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ============================================================
+  # Nginx Load Balancer (反向代理 + 负载均衡)
+  # ============================================================
+  # HA特性说明:
+  #   - upstream api_backend: 使用 least_conn 算法 (最少连接)
+  #   - keepalive 32: 长连接保持 (减少 TCP 握手开销)
+  #   - max_fails=3: 连续失败 3 次后暂时摘除该实例
+  #   - proxy_next_upstream: 上游故障时自动尝试下一个
+  # ============================================================
+  nginx-lb:
+    image: nginx:1.31.1-alpine
+    container_name: ha-nginx-lb
+    restart: unless-stopped
+    depends_on:
+      api-prod-01:
+        condition: service_healthy
+      api-prod-02:
+        condition: service_healthy
+    volumes:
+      - ./nginx/conf.d/upstream-ha.conf:/etc/nginx/conf.d/upstream-ha.conf:ro
+      - ./nginx/nginx-ha.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl/globalreach:/etc/nginx/ssl/globalreach:ro
+      - ./nginx/ssl/letsencrypt:/etc/nginx/ssl/le:ro
+      - ./frontend/dist:/var/www/frontend/dist:ro
+      - ./docs:/usr/share/nginx/html/docs:ro
+      - nginx_logs:/var/log/nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - dmz-network                # DMZ 网络 (对外暴露)
+      - app-network                # 可访问 API 实例
+    healthcheck:
+      test: ["CMD-SHELL", "kill -0 $$(cat /var/run/nginx.pid 2>/dev/null) 2>/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+
+  # ============================================================
+  # Monitoring Stack (监控组件 - 保持与 prod.yml 一致)
+  # ============================================================
+
+  prometheus:
+    image: prom/prometheus:v3.12.0
+    container_name: ha-prometheus
+    restart: unless-stopped
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prometheus/rules:/etc/prometheus/rules:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+    ports:
+      - "9090:9090"
+    networks:
+      - monitor-network
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:9090/-/healthy"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  grafana:
+    image: grafana/grafana:13.0.2
+    container_name: ha-grafana
+    restart: unless-stopped
+    depends_on:
+      prometheus:
+        condition: service_started
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini:ro
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/provisioning/dashboards:/var/lib/grafana/dashboards:ro
+      - ./grafana/provisioning/alerting:/etc/grafana/provisioning/alerting:ro
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin123}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_SMTP_ENABLED: "true"
+      GF_SMTP_HOST: "smtp.qq.com:465"
+      GF_SMTP_USER: "1390885333@qq.com"
+      GF_SMTP_PASSWORD: "zhrtbpzlgfoehjgj"
+      GF_SMTP_FROM_ADDRESS: "1390885333@qq.com"
+      GF_SMTP_FROM_NAME: "GlobalReach Monitor-HA"
+      GRAFANA_ALERT_EMAIL_TO: ${GRAFANA_ALERT_EMAIL_TO:-1390885333@qq.com}
+    ports:
+      - "3002:3000"
+    networks:
+      - monitor-network
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  node-exporter:
+    image: prom/node-exporter:v1.11.1
+    container_name: ha-node-exporter
+    restart: unless-stopped
+    networks:
+      - monitor-network
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+  postgres-exporter:
+    image: prometheuscommunity/postgres-exporter:v0.19.1
+    container_name: ha-pg-exporter
+    restart: unless-stopped
+    environment:
+      DATA_SOURCE_NAME: "postgresql://${DB_USER:-globalreach_user}:${DB_PASSWORD:-changeme}@postgres-primary:5432/${DB_NAME:-globalreach_prod}?sslmode=disable"
+    networks:
+      - monitor-network
+    depends_on:
+      postgres-primary:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+  loki:
+    image: grafana/loki:3.7.2
+    container_name: ha-loki
+    restart: unless-stopped
+    command: -config.file=/etc/loki/loki-config.yml
+    volumes:
+      - ./loki/loki-config.yml:/etc/loki/loki-config.yml:ro
+      - loki_data:/loki
+    ports:
+      - "3100:3100"
+    networks:
+      - monitor-network
+
+  promtail:
+    image: grafana/promtail:3.6.8
+    container_name: ha-promtail
+    restart: unless-stopped
+    depends_on:
+      loki:
+        condition: service_started
+    command: -config.file=/etc/promtail/promtail-config.yml
+    volumes:
+      - ./loki/promtail-config.yml:/etc/promtail/promtail-config.yml:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - promtail_positions:/tmp
+    networks:
+      - monitor-network
+
+  tempo:
+    image: grafana/tempo:2.5.0
+    container_name: ha-tempo
+    restart: unless-stopped
+    user: "0:0"
+    command: ["-config.file=/etc/tempo/tempo-config.yml", "-target=all", "-server.http-listen-port=3200"]
+    volumes:
+      - ./tempo/tempo-config.yml:/etc/tempo/tempo-config.yml:ro
+      - tempo_data:/var/lib/tempo
+    ports:
+      - "3200:3200"
+      - "4317:4317"
+      - "4318:4318"
+    networks:
+      - monitor-network
+
+  alertmanager:
+    image: prom/alertmanager:v0.32.2
+    container_name: ha-alertmanager
+    restart: unless-stopped
+    volumes:
+      - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
+      - alertmanager_data:/alertmanager
+    environment:
+      ALERTMANAGER_SMTP_SMARTHOST: ${ALERTMANAGER_SMTP_SMARTHOST:-mailpit:1025}
+      ALERTMANAGER_SMTP_USER: ${ALERTMANAGER_SMTP_USER:-}
+      ALERTMANAGER_SMTP_PASS: ${ALERTMANAGER_SMTP_PASS:-}
+      ALERTMANAGER_SMTP_FROM: ${ALERTMANAGER_SMTP_FROM:-alert@globalreach.local}
+      ALERTMANAGER_EMAIL_TO: ${ALERTMANAGER_EMAIL_TO:-admin@globalreach.com}
+      ALERTMANAGER_SMTP_REQUIRE_TLS: ${ALERTMANAGER_SMTP_REQUIRE_TLS:-false}
+      ALERTMANAGER_SMTP_HELLO: ${ALERTMANAGER_SMTP_HELLO:-localhost}
+      ALERTMANAGER_WEBHOOK_URL: ${ALERTMANAGER_WEBHOOK_URL:-}
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET:-gr_webhook_secret_change_me_2026_prod}
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+      - '--storage.path=/alertmanager'
+      - '--web.external-url=http://localhost:9093'
+    ports:
+      - "9093:9093"
+    networks:
+      - monitor-network
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:9093/-/healthy"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  mailpit:
+    image: axllent/mailpit:v1.30.1
+    container_name: ha-mailpit
+    restart: unless-stopped
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+    networks:
+      - monitor-network
+
+# ============================================================
+# Volumes (持久化卷定义)
+# ============================================================
+volumes:
+  # PostgreSQL HA 数据卷
+  postgres_primary_data:
+    driver: local
+  postgres_replica_data:
+    driver: local
+  
+  # Redis 数据卷 (Master + 2 Slaves + 3 Sentinels)
+  redis_master_data:
+    driver: local
+  redis_slave_1_data:
+    driver: local
+  redis_slave_2_data:
+    driver: local
+  redis_sentinel_1_data:
+    driver: local
+  redis_sentinel_2_data:
+    driver: local
+  redis_sentinel_3_data:
+    driver: local
+  
+  # 监控组件数据卷 (与 prod.yml 共享或独立)
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+  loki_data:
+    driver: local
+  promtail_positions:
+    driver: local
+  tempo_data:
+    driver: local
+  alertmanager_data:
+    driver: local
+  nginx_logs:
+    driver: local
+
+# ============================================================
+# Networks (HA 网络分段)
+# ============================================================
+networks:
+  # DMZ 区域 (对外暴露的服务: Nginx)
+  dmz-network:
+    driver: bridge
+    name: ha-dmz-network
+  
+  # 应用区域 (API 实例之间通信)
+  app-network:
+    driver: bridge
+    name: ha-app-network
+  
+  # 数据区域 (PostgreSQL, Redis, PgBouncer)
+  data-network:
+    driver: bridge
+    name: ha-data-network
+  
+  # 监控区域 (Prometheus, Grafana, Loki 等)
+  monitor-network:
+    driver: bridge
+    name: ha-monitor-network
