@@ -97,8 +97,15 @@ const clientRoutes = require('./routes/clients');            // M-A05: Client Im
 
 // D11: Unified Error Handling (enhanced classes, rate tracking, classification)
 const { errorHandler, notFoundHandler, getErrorSummary } = require('./middleware/errorHandler');
-// Rate limiter
-const { rateLimiter } = require('./middleware/rateLimiter');
+// Rate limiting - M-C04: 三层限流架构
+const {
+  rateLimiter,
+  autoEndpointLimiter,
+  authLimiter,
+  emailSendLimiter,
+  batchOperationLimiter,
+  initMetrics
+} = require('./middleware/rateLimiter');
 // D07+D13: Structured Logging + Request Tracing
 const { requestLogger, requestIdMiddleware, createLogger, tracingContext } = require('./middleware/logger');
 // D08: Input Validation
@@ -180,8 +187,12 @@ app.use(startMetricsCollection());
 // D07: Structured request logger
 app.use(requestLogger);
 
-// Rate limiting on all /api routes
+// Rate limiting on all /api routes (Layer 2: Global)
 app.use('/api/', rateLimiter);
+
+// M-C04: Per-endpoint granular rate limiting (Layer 3)
+// Automatically applies different limits based on endpoint path and method
+app.use('/api/', autoEndpointLimiter);
 
 // ============================================
 // Expose pipeline components to routes via app locals
@@ -371,11 +382,20 @@ if (require.main === module) {
       }
 
       // Step 3.5: Start D15 Prometheus metrics collection
-      const metricsCollector = startPeriodicCollection({
-        getErrorSummary,
-        getCsrfInfo,
-      });
-      appLog.info(`D15 Metrics collection started (interval=10s, prefix=globalreach_)`);
+const metricsCollector = startPeriodicCollection({
+  getErrorSummary,
+  getCsrfInfo,
+});
+appLog.info(`D15 Metrics collection started (interval=10s, prefix=globalreach_)`);
+
+// M-C04: Initialize rate limiting Prometheus metrics
+try {
+  const { Counter } = require('prom-client');
+  initMetrics(Counter);
+  appLog.info(`M-C04 Rate limiting metrics initialized (metric: globalreach_rate_limited_total)`);
+} catch(e) {
+  appLog.warn('M-C04: Failed to initialize rate limiting metrics:', e.message);
+}
 
       // Step 3.6: D17 - Initialize Redis Cache Service
       const cacheConnected = await cacheService.connect();
@@ -462,6 +482,15 @@ if (require.main === module) {
             openApiSpec: '/api/v1/docs/openapi.json',
             endpointsDocumented: 68,
             tagGroups: 10,
+          },
+
+          // M-C04: Rate limiting (三层限流架构)
+          rateLimiting: {
+            layers: ['nginx_l1', 'express_global_l2', 'endpoint_granular_l3'],
+            globalLimit: { max: parseInt(process.env.RATE_LIMIT_MAX || '120'), windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS || '60000') },
+            endpointCount: Object.keys(require('./middleware/rateLimiter').endpointLimits).length,
+            metricsEnabled: !!global.rateLimitedCounter,
+            whitelistEnabled: true, // Internal services bypass
           },
         });
       });
