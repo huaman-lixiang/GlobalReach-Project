@@ -219,11 +219,29 @@ const AuditLog = sequelize.define('AuditLog', {
   ipAddress: { type: DataTypes.STRING(50), field: 'ip_address' },
   userAgent: { type: DataTypes.TEXT, field: 'user_agent' },
   details: { type: DataTypes.TEXT },
+  severity: {
+    type: DataTypes.ENUM('INFO', 'WARN', 'ERROR', 'CRITICAL'),
+    defaultValue: 'INFO',
+  },
+  status: {
+    type: DataTypes.ENUM('SUCCESS', 'FAILURE'),
+    defaultValue: 'SUCCESS',
+  },
+  sessionId: { type: DataTypes.STRING(255), field: 'session_id' },
 }, {
   tableName: 'audit_logs',
   timestamps: true,
   updatedAt: false,
   underscored: true,
+  indexes: [
+    { fields: ['user_id'] },
+    { fields: ['action'] },
+    { fields: ['resource_type'] },
+    { fields: ['severity'] },
+    { fields: ['status'] },
+    { fields: ['created_at'] },
+    { fields: ['user_id', 'created_at'] },
+  ],
 });
 
 const ErrorLog = sequelize.define('ErrorLog', {

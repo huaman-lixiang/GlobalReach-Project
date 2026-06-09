@@ -94,6 +94,8 @@ const exportsRoutes = require('./routes/exports');          // D27: Data Export
 const mobileRoutes = require('./routes/mobile');            // D28: Mobile Integration
 const maintenanceRoutes = require('./routes/maintenance');  // D29: Maintenance & Support
 const clientRoutes = require('./routes/clients');            // M-A05: Client Import/Export
+const auditRoutes = require('./routes/audit');                // N03: Audit & Compliance
+const complianceRoutes = require('./routes/compliance');      // N03: GDPR/PIPL Compliance
 
 // D11: Unified Error Handling (enhanced classes, rate tracking, classification)
 const { errorHandler, notFoundHandler, getErrorSummary } = require('./middleware/errorHandler');
@@ -236,6 +238,8 @@ app.get('/', (req, res) => {
       metrics: '/api/v1/metrics', // D15
       docs: '/api/v1/docs', // D16: Swagger UI
       clients: '/api/v1/clients', // M-A05: Client Import/Export
+      audit: '/api/v1/audit', // N03: Audit & Compliance
+      compliance: '/api/v1/compliance', // N03: GDPR/PIPL Compliance
     },
   });
 });
@@ -269,6 +273,8 @@ app.use('/api/v1/export', exportsRoutes);           // D27: Data Export
 app.use('/api/v1/mobile', mobileRoutes);            // D28: Mobile Integration
 app.use('/api/v1/maintenance', maintenanceRoutes);   // D29: Maintenance & Support
 app.use('/api/v1/clients', clientRoutes);              // M-A05: Client Import/Export
+app.use('/api/v1/audit', auditRoutes);                  // N03: Audit & Compliance
+app.use('/api/v1/compliance', complianceRoutes);        // N03: GDPR/PIPL Compliance
 
 // Backward compatibility: redirect /api/ to /api/v1/ for legacy clients
 app.use('/api/accounts', accountRoutes);
