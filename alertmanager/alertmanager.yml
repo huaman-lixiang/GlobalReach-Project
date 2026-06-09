@@ -21,18 +21,42 @@ global:
   smtp_auth_password: 'zhrtbpzlgfoehjgj'
 
 # Inhibition rules: suppress lower-severity alerts when higher ones fire
+# M-B04: Enhanced inhibition rules for noise reduction
 inhibit_rules:
+  # Rule 1: When any critical alert fires, suppress warnings on same instance
   - source_match:
       severity: 'critical'
     target_match:
       severity: 'warning'
-    equal: ['alertname', 'instance']
+    equal: ['instance']
 
+  # Rule 2: APIHealthCritical suppresses APIHealthDegraded (same resource)
   - source_match:
       alertname: 'APIHealthCritical'
     target_match:
       alertname: 'APIHealthDegraded'
     equal: ['instance', 'job']
+
+  # Rule 3: APIDown suppresses all other API-related alerts on same instance
+  - source_match:
+      alertname: 'APIDown'
+    target_match_re:
+      alertname: '.*API.*|.*Latency.*|.*Error.*|.*Throughput.*'
+    equal: ['instance']
+
+  # Rule 4: EmailQueueCritical suppresses EmailQueueBacklog (same queue)
+  - source_match:
+      alertname: 'EmailQueueCritical'
+    target_match:
+      alertname: 'EmailQueueBacklog'
+    equal: ['team']
+
+  # Rule 5: ContainerRestartLoop suppresses memory/CPU pressure on same container
+  - source_match:
+      alertname: 'ContainerRestartLoop'
+    target_match_re:
+      alertname: '.*Memory.*|.*CPU.*'
+    equal: ['instance']
 
 # ============================================
 # Receivers (Notification Channels)
@@ -98,7 +122,7 @@ receivers:
 # ============================================
 route:
   receiver: 'email-primary'           # Default receiver for unmatched alerts
-  group_by: ['alertname', 'severity', 'team']
+  group_by: ['severity', 'alertname', 'team']  # M-B04: Priority grouping by severity first
   group_wait: 30s                     # Wait before sending first notification
   group_interval: 5m                  # Wait before sending new notification about same group
   repeat_interval: 8h                 # Resend after 8 hours if still firing

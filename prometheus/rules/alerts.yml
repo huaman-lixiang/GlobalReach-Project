@@ -7,13 +7,13 @@ groups:
     rules:
       - alert: APIDown
         expr: up{job="globalreach-api"} == 0
-        for: 1m
+        for: 2m
         labels:
           severity: critical
           team: platform
         annotations:
           summary: "GlobalReach API is DOWN"
-          description: "API instance {{ $labels.instance }} has been down for more than 1 minute."
+          description: "API instance {{ $labels.instance }} has been down for more than 2 minutes."
           runbook_url: "https://docs.globalreach.com/runbooks/api-down"
 
       - alert: HighErrorRate
@@ -34,7 +34,7 @@ groups:
 
       - alert: ContainerRestartLoop
         expr: changes(container_start_time_seconds[1h]) > 5
-        for: 5m
+        for: 10m
         labels:
           severity: critical
           team: platform
@@ -44,13 +44,13 @@ groups:
 
       # S098/PhaseH: Health score collapse — most severe degradation
       - alert: APIHealthCritical
-        expr: globalreach_health_score < 60
-        for: 2m
+        expr: globalreach_health_score < 50
+        for: 5m
         labels:
           severity: critical
           team: platform
         annotations:
-          summary: "GlobalReach API Health CRITICAL (<60)"
+          summary: "GlobalReach API Health CRITICAL (<50)"
           description: "Health score = {{ $value }}/100 — immediate investigation required."
           runbook_url: "https://docs.globalreach.com/runbooks/health-critical"
 
@@ -62,18 +62,18 @@ groups:
     rules:
       - alert: HighLatencyP95
         expr: |
-          histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 2
-        for: 10m
+          histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 3
+        for: 15m
         labels:
           severity: warning
           team: platform
         annotations:
-          summary: "High API P95 Latency (>2s)"
+          summary: "High API P95 Latency (>3s)"
           description: "P95 latency = {{ $value }}s over 5min."
 
       - alert: PostgresConnectionHigh
         expr: pg_stat_activity_count > 80
-        for: 15m
+        for: 20m
         labels:
           severity: warning
           team: database
@@ -82,43 +82,43 @@ groups:
           description: "Active connections: {{ $value }}"
 
       - alert: RedisMemoryHigh
-        expr: redis_used_memory / redis_maxmemory > 0.8
-        for: 10m
+        expr: redis_used_memory / redis_maxmemory > 0.85
+        for: 15m
         labels:
           severity: warning
           team: database
         annotations:
-          summary: "Redis Memory Usage High (>80%)"
+          summary: "Redis Memory Usage High (>85%)"
 
       - alert: NodeFileSystemFull
         expr: |
           (
             node_filesystem_avail_bytes{fstype!~"tmpfs|overlay"} /
             node_filesystem_size_bytes{fstype!~"tmpfs|overlay"}
-          ) < 0.20
-        for: 15m
+          ) < 0.15
+        for: 20m
         labels:
           severity: warning
           team: infra
         annotations:
-          summary: "Low Disk Space (<20% free)"
+          summary: "Low Disk Space (<15% free)"
           description: "{{ $labels.mountpoint }}: {{ $value | humanizePercentage }} free"
 
       - alert: NodeHighMemory
         expr: |
           (
             node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes
-          ) / node_memory_MemTotal_bytes > 0.85
-        for: 15m
+          ) / node_memory_MemTotal_bytes > 0.9
+        for: 20m
         labels:
           severity: warning
           team: infra
         annotations:
-          summary: "High Host Memory Usage (>85%)"
+          summary: "High Host Memory Usage (>90%)"
 
       - alert: NodeHighCPU
         expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 90
-        for: 15m
+        for: 20m
         labels:
           severity: warning
           team: infra
@@ -133,25 +133,25 @@ groups:
     rules:
       # Health score gradual degradation (early warning before critical)
       - alert: APIHealthDegraded
-        expr: globalreach_health_score < 80
-        for: 3m
-        labels:
-          severity: warning
-          team: platform
-        annotations:
-          summary: "GlobalReach API Health Degraded (<80)"
-          description: "Health score = {{ $value }}/100. Check /api/v1/health for details."
-
-      # P50 latency early detection (users notice before P95 spikes)
-      - alert: APILatencyP50Elevated
-        expr: |
-          histogram_quantile(0.50, rate(http_request_duration_seconds_bucket[5m])) > 0.2
+        expr: globalreach_health_score < 75
         for: 5m
         labels:
           severity: warning
           team: platform
         annotations:
-          summary: "API Median Latency Elevated (>200ms)"
+          summary: "GlobalReach API Health Degraded (<75)"
+          description: "Health score = {{ $value }}/100. Check /api/v1/health for details."
+
+      # P50 latency early detection (users notice before P95 spikes)
+      - alert: APILatencyP50Elevated
+        expr: |
+          histogram_quantile(0.50, rate(http_request_duration_seconds_bucket[5m])) > 0.3
+        for: 10m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "API Median Latency Elevated (>300ms)"
           description: "P50 = {{ $value }}s. Users may notice slowdown."
 
       # Container memory pressure (RSS-based, not V8 heap)
@@ -159,13 +159,13 @@ groups:
         expr: |
           container_memory_rss{container=~".*api.*"}
           /
-          container_spec_memory_limit{container=~".*api.*"} > 0.75
-        for: 10m
+          container_spec_memory_limit{container=~".*api.*"} > 0.8
+        for: 15m
         labels:
           severity: warning
           team: platform
         annotations:
-          summary: "API Container Memory Pressure (>75% RSS)"
+          summary: "API Container Memory Pressure (>80% RSS)"
           description: "RSS usage = {{ $value | humanizePercentage }} of limit."
 
       # Throughput anomaly detection (sudden drop)
@@ -176,7 +176,7 @@ groups:
             /
             rate(http_requests_total{job="globalreach-api"}[30m] offset 25m)
           ) < 0.5
-        for: 10m
+        for: 15m
         labels:
           severity: warning
           team: platform

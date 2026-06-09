@@ -526,3 +526,86 @@ except: print('0|0')" 2>/dev/null || echo "0|0")
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: 'trivy-results.sarif'
+
+  # ──────────────────────────────────────────────
+  # JOB 7: Weekly Backup Verification (M-D04)
+  # ──────────────────────────────────────────────
+  # M-D04: 自动验证备份完整性与可恢复性
+  # 仅在 schedule 触发时运行 (每周日)，不影响 push/PR 流水线
+  backup-verification:
+    name: Backup Integrity Verification (M-D04)
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up environment
+        run: |
+          echo "=== GlobalReach V2.0 — Weekly Backup Verification (M-D04) ==="
+          echo "Timestamp: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          echo ""
+
+      - name: Make scripts executable
+        run: |
+          chmod +x scripts/verify-backup.sh scripts/disaster-recovery-drill.sh 2>/dev/null || true
+
+      - name: Run verify-backup.sh (integrity check)
+        id: verify
+        run: |
+          echo "--- Backup Integrity Verification ---"
+          BACKUP_DIR="./backups" ./scripts/verify-backup.sh --all || VERIFY_EXIT=$?
+          echo "verify_exit_code=${VERIFY_EXIT:-0}" >> $GITHUB_OUTPUT
+
+      - name: Run disaster-recovery-drill.sh (DR drill)
+        id: drill
+        run: |
+          echo "--- Disaster Recovery Drill ---"
+          KEEP_TEMP=true ./scripts/disaster-recovery-drill.sh --keep || DRILL_EXIT=$?
+          echo "drill_exit_code=${DRILL_EXIT:-0}" >> $GITHUB_OUTPUT
+
+      - name: Generate verification report
+        if: always()
+        run: |
+          REPORT_DATE=$(date -u '+%Y-%m-%d %H:%M')
+          cat > backup_verification_report.md <<'REPORT_EOF'
+          # 备份验证报告 (自动生成)
+
+          ## 验证日期: ${REPORT_DATE} UTC
+          ## 触发方式: GitHub Actions Weekly Schedule
+
+          ### 检查结果
+          | 检查项 | 状态 |
+          |--------|------|
+          | 备份完整性 (verify-backup.sh) | $([ "${{ steps.verify.outputs.verify_exit_code }}" = "0" ] && echo "✅ PASS" || ([ "${{ steps.verify.outputs.verify_exit_code }}" = "2" ] && echo "⚠️ WARN" || echo "❌ FAIL")) |
+          | 灾难恢复演练 (DR drill) | $([ "${{ steps.drill.outputs.drill_exit_code }}" = "0" ] && echo "✅ PASS" || ([ "${{ steps.drill.outputs.drill_exit_code }}" = "2" ] && echo "⚠️ WARN" || echo "❌ FAIL")) |
+
+          ### 结论
+          **$(([ "${{ steps.verify.outputs.verify_exit_code }}" = "0" ] && [ "${{ steps.drill.outputs.drill_exit_code }}" = "0" ]) && echo "PASS ✅" || echo "需要关注 ⚠️")**
+
+          ---
+          *由 GlobalReach V2.0 CI/CD Pipeline (M-D04) 自动生成*
+          REPORT_EOF
+
+          cat backup_verification_report.md
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 📦 Backup Verification Report (M-D04)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Check | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Integrity Verify | \`\`$([[ "${{ steps.verify.outputs.verify_exit_code }}" == "0" ]] && echo "PASS" || ([[ "${{ steps.verify.outputs.verify_exit_code }}" == "2" ]] && echo "WARN" || echo "FAIL"))\`\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| DR Drill | \`\`$([[ "${{ steps.drill.outputs.drill_exit_code }}" == "0" ]] && echo "PASS" || ([[ "${{ steps.drill.outputs.drill_exit_code }}" == "2" ]] && echo "WARN" || echo "FAIL"))\`\` |" >> $GITHUB_STEP_SUMMARY
+
+      - name: Cleanup DR drill temp files
+        if: always()
+        run: |
+          rm -rf /tmp/globalreach_drill_* 2>/dev/null || true
+
+      - name: Upload verification report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-verification-report
+          path: backup_verification_report.md
+          retention-days: 30

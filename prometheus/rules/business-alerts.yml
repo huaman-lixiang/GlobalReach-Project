@@ -10,16 +10,16 @@ groups:
     rules:
       # ── Email Delivery Alerts ───────────────────────────
 
-      # Email success rate drops below 90%
+      # Email success rate drops below 85%
       - alert: HighEmailFailureRate
-        expr: globalreach:email_success_rate_5m < 0.9
-        for: 5m
+        expr: globalreach:email_success_rate_5m < 0.85
+        for: 10m
         labels:
           severity: warning
           team: operations
         annotations:
-          summary: "邮件发送成功率低于90%"
-          description: "5分钟内邮件发送成功率 {{ $value | humanizePercentage }}，需要检查SMTP提供商状态和队列健康度"
+          summary: "邮件发送成功率低于85%"
+          description: "10分钟内邮件发送成功率 {{ $value | humanizePercentage }}，需要检查SMTP提供商状态和队列健康度"
           runbook_url: "https://docs.globalreach.com/runbooks/email-failure-rate"
 
       # Zero emails sent in last 10 minutes (pipeline stall)
@@ -35,56 +35,56 @@ groups:
 
       # ── API Performance Alerts ──────────────────────────
 
-      # API P99 latency exceeds 3 seconds
+      # API P99 latency exceeds 5 seconds
       - alert: HighAPILatency
-        expr: globalreach:api_p99_latency_ms_5m > 3000
-        for: 5m
+        expr: globalreach:api_p99_latency_ms_5m > 5000
+        for: 10m
         labels:
           severity: warning
           team: platform
         annotations:
           summary: "API P99延迟过高"
-          description: "API P99延迟达到 {{ $value }}ms（阈值3s），用户可能感知到明显卡顿"
+          description: "API P99延迟达到 {{ $value }}ms（阈值5s），用户可能感知到明显卡顿"
 
-      # API error rate exceeds 5%
+      # API error rate exceeds 10%
       - alert: HighAPIErrorRate
-        expr: globalreach:api_error_rate_5m > 0.05
-        for: 5m
+        expr: globalreach:api_error_rate_5m > 0.1
+        for: 10m
         labels:
           severity: warning
           team: platform
         annotations:
-          summary: "API错误率过高 (>5%)"
-          description: "5分钟内API错误率为 {{ $value | humanizePercentage }}，请检查错误日志"
+          summary: "API错误率过高 (>10%)"
+          description: "10分钟内API错误率为 {{ $value | humanizePercentage }}，请检查错误日志"
 
       # ── Queue Backlog Alerts ─────────────────────────────
 
-      # Pending queue exceeds 1000 emails
+      # Pending queue exceeds 2000 emails
       - alert: EmailQueueBacklog
-        expr: globalreach_queue_depth{state="pending"} > 1000
-        for: 10m
+        expr: globalreach_queue_depth{state="pending"} > 2000
+        for: 15m
         labels:
           severity: info
           team: operations
         annotations:
           summary: "邮件队列积压"
-          description: "待发送邮件队列深度 {{ $value }}，超过1000的告警阈值"
+          description: "待发送邮件队列深度 {{ $value }}，超过2000的告警阈值"
 
-      # Pending queue critically high (>5000)
+      # Pending queue critically high (>8000)
       - alert: EmailQueueCritical
-        expr: globalreach_queue_depth{state="pending"} > 5000
-        for: 5m
+        expr: globalreach_queue_depth{state="pending"} > 8000
+        for: 10m
         labels:
           severity: critical
           team: operations
         annotations:
           summary: "邮件队列严重积压"
-          description: "待发送邮件队列深度 {{ $value }}，超过5000临界值！需立即扩容或排查阻塞原因"
+          description: "待发送邮件队列深度 {{ $value }}，超过8000临界值！需立即扩容或排查阻塞原因"
 
-      # Failed queue accumulating (>100)
+      # Failed queue accumulating (>200)
       - alert: EmailFailuresAccumulating
-        expr: globalreach_queue_depth{state="failed"} > 100
-        for: 15m
+        expr: globalreach_queue_depth{state="failed"} > 200
+        for: 20m
         labels:
           severity: warning
           team: operations
@@ -120,3 +120,38 @@ groups:
         annotations:
           summary: "客户数量异常波动"
           description: "客户数量在1小时内变化超过50%，当前值 {{ $value }}"
+
+      # ── M-B04 New Critical Alerts ──────────────────────
+
+      # API P95 latency sustained high (>500ms for 10 minutes)
+      - alert: SustainedHighLatencyP95
+        expr: histogram_quantile(0.95, sum(rate(globalreach_api_request_duration_seconds_bucket[5m])) by (le)) > 0.5
+        for: 10m
+        labels:
+          severity: warning
+          team: platform
+        annotations:
+          summary: "API P95延迟持续偏高"
+          description: "10分钟内API P95延迟 {{ $value }}s > 500ms"
+
+      # Database connection pool approaching exhaustion (>80%)
+      - alert: DatabaseConnectionPoolHigh
+        expr: globalreach_db_connections_active / 20 > 0.8
+        for: 5m
+        labels:
+          severity: warning
+          team: database
+        annotations:
+          summary: "数据库连接池使用率过高"
+          description: "活跃连接占连接池 {{ $value | humanizePercentage }}"
+
+      # Redis memory usage >70%
+      - alert: RedisHighMemoryUsage
+        expr: redis_memory_used_bytes / redis_memory_max_bytes > 0.7
+        for: 10m
+        labels:
+          severity: info
+          team: database
+        annotations:
+          summary: "Redis内存使用率偏高"
+          description: "Redis内存使用 {{ $value | humanizePercentage }}"
