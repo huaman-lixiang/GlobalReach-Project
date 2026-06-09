@@ -65,16 +65,18 @@ receivers:
           <p style="color:green"><b>Resolved:</b> {{ .Alerts.Resolved.EndsAt.Format "2006-01-02 15:04:05" }}</p>
           {{ end }}
 
-  # --- Receiver 2: Webhook (Extensible for Slack/DingTalk/PagerDuty) ---
+  # --- Receiver 2: Webhook (GlobalReach API Integration) ---
+  # M-C03: Webhook Listener Enablement - Points to GlobalReach API
   - name: 'webhook-integration'
     webhook_configs:
-      - url: 'http://host.docker.internal:9999/webhook'
+      - url: 'http://globalreach-api:3000/api/v1/webhooks/alertmanager'
         send_resolved: true
-        max_alerts: 10
+        http_config:
+          bearer_token: '${WEBHOOK_SECRET:-}'
+        max_alerts_per_message: 50
 
-  # --- Receiver 3: Critical Multi-channel (Email via QQ Mail) ---
-  # S127: Webhook disabled — host.docker.internal:9999 not available
-  # Re-enable when webhook listener service is deployed
+  # --- Receiver 3: Critical Multi-channel (Email via QQ Mail + Webhook) ---
+  # M-C03: Webhook enabled — routes alerts to GlobalReach API for processing
   - name: 'critical-multi'
     email_configs:
       - to: '1390885333@qq.com'
@@ -84,10 +86,12 @@ receivers:
         auth_password: 'zhrtbpzlgfoehjgj'
         require_tls: true
         send_resolved: true
-    # webhook_configs:
-    #   - url: 'http://host.docker.internal:9999/webhook'
-    #     send_resolved: true
-    #     max_alerts: 10
+    webhook_configs:
+      - url: 'http://globalreach-api:3000/api/v1/webhooks/alertmanager'
+        send_resolved: true
+        http_config:
+          bearer_token: '${WEBHOOK_SECRET:-}'
+        max_alerts_per_message: 50
 
 # ============================================
 # Route Tree (Notification Routing by Severity + Team)

@@ -84,6 +84,12 @@ services:
       SEND_MAX_RETRIES: ${SEND_MAX_RETRIES:-3}
       SEND_RETRY_DELAY: ${SEND_RETRY_DELAY:-1000}
       SEND_RATE_LIMIT: ${SEND_RATE_LIMIT:-3}
+      # M-C03: Webhook Listener Configuration
+      # WEBHOOK_SECRET: HMAC-SHA256 signature verification secret (MUST change in production!)
+      # Generate with: openssl rand -hex 32
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET:-gr_webhook_secret_change_me_2026_prod}
+      # Rate limiting: max requests per minute per IP (default: 100)
+      WEBHOOK_RATE_LIMIT: ${WEBHOOK_RATE_LIMIT:-100}
     networks:
       - globalreach-network
     ports:
@@ -305,6 +311,8 @@ services:
       ALERTMANAGER_SMTP_REQUIRE_TLS: ${ALERTMANAGER_SMTP_REQUIRE_TLS:-false}
       ALERTMANAGER_SMTP_HELLO: ${ALERTMANAGER_SMTP_HELLO:-localhost}
       ALERTMANAGER_WEBHOOK_URL: ${ALERTMANAGER_WEBHOOK_URL:-}
+      # M-C03: Webhook Secret shared with API for bearer token auth
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET:-gr_webhook_secret_change_me_2026_prod}
     command:
       - '--config.file=/etc/alertmanager/alertmanager.yml'
       - '--storage.path=/alertmanager'

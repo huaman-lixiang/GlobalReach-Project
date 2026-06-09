@@ -73,14 +73,18 @@ receivers:
             <a href="https://api.globalreach.com/api/v1/health">Health API</a>
           </p>
 
-  # --- Receiver 2: Webhook (Slack/DingTalk/PagerDuty integration point) ---
+  # --- Receiver 2: Webhook (GlobalReach API Integration) ---
+  # M-C03: Webhook Listener Enablement - Points to GlobalReach API
   - name: 'webhook-integration'
     webhook_configs:
-      - url: '${ALERTMANAGER_WEBHOOK_URL:-http://host.docker.internal:9999/webhook}'
+      - url: '${ALERTMANAGER_WEBHOOK_URL:-http://globalreach-api:3000/api/v1/webhooks/alertmanager}'
         send_resolved: true
-        max_alerts: 10
+        http_config:
+          bearer_token: '${WEBHOOK_SECRET:-}'
+        max_alerts_per_message: 50
 
   # --- Receiver 3: Critical Multi-channel (Email + Webhook) ---
+  # M-C03: Webhook enabled — routes alerts to GlobalReach API for processing
   - name: 'critical-multi'
     email_configs:
       - to: '${ALERTMANAGER_EMAIL_TO:-admin@globalreach.com}'
@@ -91,9 +95,11 @@ receivers:
         require_tls: ${ALERTMANAGER_SMTP_REQUIRE_TLS:-false}
         send_resolved: true
     webhook_configs:
-      - url: '${ALERTMANAGER_WEBHOOK_URL:-http://host.docker.internal:9999/webhook}'
+      - url: '${ALERTMANAGER_WEBHOOK_URL:-http://globalreach-api:3000/api/v1/webhooks/alertmanager}'
         send_resolved: true
-        max_alerts: 10
+        http_config:
+          bearer_token: '${WEBHOOK_SECRET:-}'
+        max_alerts_per_message: 50
 
 # ============================================
 # Route Tree (Notification Routing by Severity + Team)
