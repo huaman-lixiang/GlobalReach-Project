@@ -17,7 +17,7 @@ services:
     environment:
       POSTGRES_DB: ${DB_NAME:-globalreach_prod}
       POSTGRES_USER: ${DB_USER:-globalreach_user}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-changeme}
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:?ERROR: POSTGRES_PASSWORD is required and must NOT be 'changeme'}"
     networks:
       - globalreach-network
     healthcheck:
@@ -58,12 +58,12 @@ services:
     environment:
       NODE_ENV: production
       NODE_OPTIONS: --max-old-space-size=384
-      DATABASE_URL: postgresql://${DB_USER:-globalreach_user}:${DB_PASSWORD:-changeme}@postgres:5432/${DB_NAME:-globalreach_prod}
+      DATABASE_URL: "postgresql://${DB_USER:-globalreach_user}:${DB_PASSWORD:?ERROR: DB_PASSWORD is required}@postgres:5432/${DB_NAME:-globalreach_prod}"
       DB_HOST: postgres
       DB_PORT: "5432"
       DB_NAME: ${DB_NAME:-globalreach_prod}
       DB_USER: ${DB_USER:-globalreach_user}
-      DB_PASSWORD: ${DB_PASSWORD:-changeme}
+      DB_PASSWORD: "${DB_PASSWORD:?ERROR: DB_PASSWORD is required and must NOT be 'changeme'}"
       REDIS_HOST: redis
       REDIS_PORT: "6379"
       REDIS_PASSWORD: "${REDIS_PASSWORD:?ERROR: REDIS_PASSWORD is required}"
@@ -79,8 +79,8 @@ services:
       RATE_LIMIT_WINDOW_MS: ${RATE_LIMIT_WINDOW_MS:-900000}
       # M-A07: SMTP Configuration for Application-Level Email Sending
       # Primary: QQ Mail SMTP (current production provider)
-      SMTP_QQ_USER: "1390885333@qq.com"
-      SMTP_QQ_FROM: "1390885333@qq.com"
+      SMTP_QQ_USER: "${SMTP_USER:?ERROR: SMTP_USER is required}"
+      SMTP_QQ_FROM: "${SMTP_FROM_ADDRESS:?ERROR: SMTP_FROM_ADDRESS is required}"
       # SMTP_QQ_PASS / SMTP_QQ_AUTH_CODE — set in .env.prod or Docker secrets
       # Queue control (M-A07)
       SEND_CONCURRENCY: ${SEND_CONCURRENCY:-5}
@@ -192,13 +192,13 @@ services:
       # S126/QQ Mail SMTP Production Migration (from Gmail)
       GF_SMTP_ENABLED: "true"
       GF_SMTP_HOST: "smtp.qq.com:465"
-      GF_SMTP_USER: "1390885333@qq.com"
+      GF_SMTP_USER: "${SMTP_USER:?ERROR: SMTP_USER is required}"
       # DEBT-007: 硬编码 SMTP 授权码已移除 — 必须通过环境变量传入
       GF_SMTP_PASSWORD: "${GF_SMTP_PASSWORD:?ERROR: GF_SMTP_PASSWORD is required}"
-      GF_SMTP_FROM_ADDRESS: "1390885333@qq.com"
+      GF_SMTP_FROM_ADDRESS: "${SMTP_FROM_ADDRESS:?ERROR: SMTP_FROM_ADDRESS is required}"
       GF_SMTP_FROM_NAME: "GlobalReach Monitor"
       # S106/PhaseH: Alert Notification Environment Variables
-      GRAFANA_ALERT_EMAIL_TO: ${GRAFANA_ALERT_EMAIL_TO:-1390885333@qq.com}
+      GRAFANA_ALERT_EMAIL_TO: ${GRAFANA_ALERT_EMAIL_TO:-admin@globalreach.com}
       GRAFANA_ALERT_WEBHOOK_URL: ${GRAFANA_ALERT_WEBHOOK_URL:-}
     ports:
       - "3002:3000"
@@ -228,7 +228,7 @@ services:
     container_name: globalreach-pg-exporter
     restart: unless-stopped
     environment:
-      DATA_SOURCE_NAME: "postgresql://${DB_USER:-globalreach_user}:${DB_PASSWORD:-changeme}@postgres:5432/${DB_NAME:-globalreach_prod}?sslmode=disable"
+      DATA_SOURCE_NAME: "postgresql://${DB_USER:-globalreach_user}:${DB_PASSWORD:?ERROR: DB_PASSWORD is required}@postgres:5432/${DB_NAME:-globalreach_prod}?sslmode=disable"
     networks:
       - globalreach-network
     depends_on:
@@ -310,6 +310,9 @@ services:
     environment:
       # S116: Override alertmanager.yml defaults with production SMTP settings
       # These are passed through to the config file's ${VAR} placeholders
+      # DEBT-010: SMTP sender address — passed through to alertmanager.yml ${SMTP_FROM_ADDRESS}
+      SMTP_FROM_ADDRESS: "${SMTP_FROM_ADDRESS:?ERROR: SMTP_FROM_ADDRESS is required}"
+      SMTP_USER: "${SMTP_USER:?ERROR: SMTP_USER is required}"
       # DEBT-007: GF_SMTP_PASSWORD 传递给 AlertManager 容器，用于替换 alertmanager.yml 中的 ${GF_SMTP_PASSWORD} 占位符
       GF_SMTP_PASSWORD: "${GF_SMTP_PASSWORD:?ERROR: GF_SMTP_PASSWORD is required}"
       ALERTMANAGER_SMTP_SMARTHOST: ${ALERTMANAGER_SMTP_SMARTHOST:-mailpit:1025}

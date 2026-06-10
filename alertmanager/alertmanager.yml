@@ -14,10 +14,10 @@ global:
   resolve_timeout: 5m
   # S126/QQ Mail SMTP Production Configuration
   smtp_smarthost: 'smtp.qq.com:465'
-  smtp_from: '1390885333@qq.com'
+  smtp_from: '${SMTP_FROM_ADDRESS}'
   smtp_hello: 'qq.com'
   smtp_require_tls: true
-  smtp_auth_username: '1390885333@qq.com'
+  smtp_auth_username: '${SMTP_FROM_ADDRESS}'
   smtp_auth_password: '${GF_SMTP_PASSWORD}'
 
 # Inhibition rules: suppress lower-severity alerts when higher ones fire
@@ -89,10 +89,10 @@ receivers:
   # --- Receiver 1: Email (Primary Channel via QQ Mail SMTP) ---
   - name: 'email-primary'
     email_configs:
-      - to: '1390885333@qq.com'
-        from: '1390885333@qq.com'
+      - to: '${SMTP_FROM_ADDRESS}'
+        from: '${SMTP_FROM_ADDRESS}'
         smarthost: 'smtp.qq.com:465'
-        auth_username: '1390885333@qq.com'
+        auth_username: '${SMTP_FROM_ADDRESS}'
         auth_password: '${GF_SMTP_PASSWORD}'
         require_tls: true
         send_resolved: true
@@ -126,10 +126,10 @@ receivers:
   # M-C03: Webhook enabled — routes alerts to GlobalReach API for processing
   - name: 'critical-multi'
     email_configs:
-      - to: '1390885333@qq.com'
-        from: '1390885333@qq.com'
+      - to: '${SMTP_FROM_ADDRESS}'
+        from: '${SMTP_FROM_ADDRESS}'
         smarthost: 'smtp.qq.com:465'
-        auth_username: '1390885333@qq.com'
+        auth_username: '${SMTP_FROM_ADDRESS}'
         auth_password: '${GF_SMTP_PASSWORD}'
         require_tls: true
         send_resolved: true
@@ -151,10 +151,10 @@ receivers:
   # --- Receiver 5: AIOps Info-level (Low priority, aggregated) ---
   - name: 'aiops-info-digest'
     email_configs:
-      - to: '1390885333@qq.com'
-        from: '1390885333@qq.com'
+      - to: '${SMTP_FROM_ADDRESS}'
+        from: '${SMTP_FROM_ADDRESS}'
         smarthost: 'smtp.qq.com:465'
-        auth_username: '1390885333@qq.com'
+        auth_username: '${SMTP_FROM_ADDRESS}'
         auth_password: '${GF_SMTP_PASSWORD}'
         require_tls: true
         send_resolved: true
