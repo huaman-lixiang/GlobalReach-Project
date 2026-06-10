@@ -1,0 +1,133 @@
+groups:
+  - name: application_health
+    interval: 30s
+    rules:
+      # --- Error Rate Alerts ---
+
+      # 与 alerts.yml 的 HighErrorRate (>10%) 互补，此规则阈值更低(5%)，更早预警
+      - alert: APIHighErrorRate
+        expr: |
+          (
+            sum(rate(http_requests_total{status_code=~"5.."}[5m]))
+            /
+            sum(rate(http_requests_total[5m]))
+          ) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High API error rate ({{ $value | humanizePercentage }})"
+          description: "More than 5% of API requests are returning 5xx errors for 5 minutes"
+          runbook: "RB-001_API_SERVICE.md#Error-Rate"
+
+      # 4xx 客户端错误率告警 — 现有规则仅覆盖 5xx，4xx 完全缺失
+      - alert: APIWarningRateSpike
+        expr: |
+          (
+            sum(rate(http_requests_total{status_code=~"4.."}[5m]))
+            /
+            sum(rate(http_requests_total[5m]))
+          ) > 0.15
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "API warning rate elevated ({{ $value | humanizePercentage }})"
+          description: "More than 15% of API requests are returning 4xx"
+
+      # --- Latency Alerts ---
+
+      # P99 延迟中等阈值 — 补充 business-alerts.yml 的 HighAPILatency (>5s) 和 performance-alerts 的回归检测
+      - alert: APILatencyP99High
+        expr: |
+          histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))
+          > 2
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "API P99 latency is {{ $value }}s (threshold: 2s)"
+          description: "99th percentile API response time exceeds 2 seconds for 10 minutes"
+
+      # P95 延迟严重阈值 — 补充 alerts.yml 的 HighLatencyP95 (>3s, warning) 和 business-alerts 的 SustainedHighLatencyP95 (>500ms)
+      - alert: APILatencyP95Critical
+        expr: |
+          histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))
+          > 5
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "API P95 latency CRITICAL {{ $value }}s (threshold: 5s)"
+          description: "95th percentile response time exceeds 5 seconds - severe degradation"
+
+      # --- Auth Security Alerts ---
+
+      # JWT 认证失败率 — loki-metrics-alerts.yml 仅覆盖 auth_failures_total 原始计数，无比率计算
+      - alert: JWTFailureRateHigh
+        expr: |
+          sum(rate(jwt_auth_failures_total[5m])) / sum(rate(jwt_auth_attempts_total[5m])) > 0.3
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "JWT authentication failure rate {{ $value | humanizePercentage }}"
+          description: "More than 30% of JWT auth attempts are failing - possible attack or misconfiguration"
+
+      # 限流触发频率 — 现有规则完全缺失
+      - alert: RateLimitBreachedFrequently
+        expr: |
+          sum(rate(http_requests_rejected_rate_limited_total[5m])) > 10
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Rate limit breaches exceeding 10/sec"
+          description: "Clients frequently hitting rate limits - possible abuse or misconfigured client"
+
+      # --- Process Health ---
+
+      # 快速宕机检测 — 比 alerts.yml 的 APIDown (2m) 更快响应 (1m)，使用不同指标名便于区分
+      - alert: APIProcessUnhealthy
+        expr: up{job="globalreach-api"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "GlobalReach API process is DOWN"
+          description: "The API server health check has been failing for 1 minute"
+          runbook: "RB-001_API_SERVICE.md#Crash-Recovery"
+
+      # V8 堆内存 — 补充 performance-alerts.yml 的 HeapMemoryUsageHigh (使用 globalreach_process_* 指标)，此处使用 node_exporter 风格指标名
+      - alert: APIHeapMemoryHigh
+        expr: node_heap_used_bytes{job="globalreach-api"} / node_heap_size_bytes{job="globalreach-api"} > 0.85
+        for: 15m
+        labels:
+          severity: warning
+        annotations:
+          summary: "API heap memory usage at {{ $value | humanizePercentage }}"
+          description: "Node.js heap usage exceeds 85% - possible memory leak"
+
+      # --- Connection Pool Alerts ---
+
+      # DB 连接池高水位 — 补充 performance-alerts 的 DatabaseConnectionPoolExhaustion (>85%)，此处 90% 为 critical
+      - alert: DBConnectionPoolExhausted
+        expr: |
+          globalreach_db_pool_active_connections / globalreach_db_pool_max_connections > 0.9
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "PostgreSQL connection pool nearly exhausted ({{ $value | humanizePercentage }})"
+          description: "Database connection pool usage exceeds 90%"
+          runbook: "RB-002_POSTGRES.md#Pool-Exhaustion"
+
+      # Redis 连接错误 — 现有规则仅覆盖 Redis 内存和操作延迟，连接失败检测缺失
+      - alert: RedisConnectionFailures
+        expr: increase(redis_connection_errors_total[5m]) > 5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Redis connection failures detected"
+          description: "{{ $value }} Redis connection errors in last 5 minutes"

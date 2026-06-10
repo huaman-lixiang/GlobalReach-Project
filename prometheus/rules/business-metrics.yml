@@ -1,0 +1,73 @@
+groups:
+  - name: business_metrics
+    interval: 60s
+    rules:
+      # Email Pipeline
+
+      # 邮件投递失败率 — 与 business-alerts.yml 的 HighEmailFailureRate (成功率<85%=失败率>15%) 互补，
+      # 此处使用更低阈值(>5%)做早期预警，且基于原始 status 指标而非 recording rule
+      - alert: EmailDeliveryFailureRateHigh
+        expr: |
+          (
+            sum(rate(email_delivery_status_total{status="failed"}[15m]))
+            /
+            sum(rate(email_delivery_status_total[15m]))
+          ) > 0.05
+        for: 15m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Email delivery failure rate {{ $value | humanizePercentage }} exceeds 5%"
+          description: "Email pipeline failure rate above threshold for 15 minutes"
+          runbook: "RB-007_EMAIL_PIPELINE.md#Delivery-Failure"
+
+      # 邮件队列低水位积压 — 与 business-alerts.yml 的 EmailQueueBacklog (>2000) 和 EmailQueueCritical (>8000) 互补，
+      # 此处使用更低阈值(>100)做早期预警
+      - alert: EmailQueueBacklogGrowing
+        expr: globalreach_email_queue_depth > 100
+        for: 30m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Email queue backlog growing ({{ $value }} pending)"
+          description: "Email queue depth exceeds 100 for 30 minutes"
+
+      # Account Pool
+
+      # 账号池耗尽 — 业务层关键告警，现有规则完全缺失
+      - alert: AccountPoolExhausted
+        expr: globalreach_account_pool_available < 3
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Account pool running low ({{ $value }} available)"
+          description: "Fewer than 3 accounts available in sending pool"
+
+      # Campaign Anomaly
+
+      # 营销活动创建异常 — 与 business-alerts.yml 的 NoActiveCampaigns (==0) 互补，此处检测异常增长
+      - alert: UnusualCampaignCreationSpike
+        expr: |
+          sum(increase(campaigns_created_total[1h]))
+          > (3 * avg_over_time(sum(increase(campaigns_created_total[1h]))[1d:]))
+        for: 1h
+        labels:
+          severity: info
+        annotations:
+          summary: "Unusual campaign creation activity detected"
+          description: "Campaign creation rate is 3x higher than daily average - possible automation or abuse"
+
+      # User Activity
+
+      # 用户注册异常激增 — 安全/业务层告警，现有规则完全缺失（bot 检测）
+      - alert: NewUserRegistrationSpike
+        expr: |
+          sum(increase(users_registered_total[1h]))
+          > (5 * avg_over_time(sum(increase(users_registered_total[1h]))[7d:]))
+        for: 1h
+        labels:
+          severity: info
+        annotations:
+          summary: "Unusual user registration spike detected"
+          description: "Registration rate is 5x higher than weekly average - possible bot attack"
