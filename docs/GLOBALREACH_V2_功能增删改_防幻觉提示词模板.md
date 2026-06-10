@@ -505,7 +505,7 @@ echo "=== 状态重置完成，可以继续工作 ==="
 ║  FACT-03: 技术栈 = Node 24 + Express + PG15 + Redis7 + Nginx          ║
 ║  FACT-04: 容器数 = 13个 (含Mailpit+Tempo, 全栈监控已部署)                              ║
 ║  FACT-05: 数据库 = PostgreSQL 15, 11张表                              ║
-║  FACT-06: Git HEAD = 5fc2927 (S133 P0安全债务Batch1偿还完成5/5, 已推送到origin/main)              ║
+║  FACT-06: Git HEAD = cbe4822 (S133 P0+P1债务Batch1+2偿还完成9/9, 已推送到origin/main)              ║
 ║  FACT-07: Grafana匿名访问已启用 (Viewer角色, M-B01完成)                   ║
 ║  FACT-08: Trivy SARIF已集成GitHub Security Tab (M-C01完成)              ║
 ║  FACT-09: 业务指标采集已部署 (12个Prometheus指标+8条告警, M-B02完成)     ║
@@ -560,6 +560,12 @@ echo "=== 状态重置完成，可以继续工作 ==="
 ║  FACT-58: DEBT-011 Pre-commit Secrets扫描→gitleaks+pre-commit hook+CI集成 (c92be99) ║
 ║  FACT-59: 技术债务登记册更新至v1.1.0, OPEN:20→15, DONE:1→6 (+5 P0清零)             ║
 ║  FACT-60: 新建文件: .env.prod.template/.gitleaks.toml/generate-secrets.sh/pre-commit-secrets.sh/secrets-scan.yml ║
+║  FACT-61: S133 Batch2 P1债务偿还完成 (4/4, commits 4f3f53c/cbe4822)                ║
+║  FACT-62: DEBT-004 PG默认changeme→${VAR:?ERROR}强制必填+validate-passwords.sh (4f3f53c) ║
+║  FACT-63: DEBT-010 SMTP_QQ硬编码邮箱18处→${SMTP_FROM_ADDRESS}/${SMTP_USER} (4f3f53c)    ║
+║  FACT-64: DEBT-017 API Legacy路由Sunset废弃头→deprecation.js中间件54行+prometheus rules (cbe4822) ║
+║  FACT-65: DEBT-012 Jest单元测试框架搭建+90测试全绿(errorHandler34+auth18+rateLimiter38) (cbe4822) ║
+║  FACT-66: 技术债务登记册更新至v1.2.0, OPEN:15→11, IN_PROGRESS:3→1, DONE:6→10 (+4 P1偿还) ║
 ║                                                                       ║
 ║  【🟡 待确认假设 (使用前必须验证!)】                                    ║
 ║  ─────────────────────────────────────────────────────────────────   ║
