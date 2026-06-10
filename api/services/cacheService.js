@@ -6,6 +6,14 @@ class CacheService {
     this.connected = false;
     this.defaultTTL = 300;
     this.connectionAttempted = false;
+    // DEBT-024: Operation-level metrics for monitoring
+    this.metrics = { hits: 0, misses: 0, sets: 0, deletes: 0, errors: 0 };
+  }
+
+  _logDebug(operation, key, result, duration) {
+    if (process.env.LOG_LEVEL === 'debug') {
+      console.debug(`[CacheService] ${operation} key=${key} result=${result} duration=${duration}ms`);
+    }
   }
 
   async connect() {
@@ -58,17 +66,26 @@ class CacheService {
 
   async get(key) {
     if (!this.connected || !this.client) return null;
+    const start = Date.now();
     try {
       const value = await this.client.get(key);
       if (value) {
         try {
-          return JSON.parse(value);
+          this.metrics.hits++;
+          const parsed = JSON.parse(value);
+          this._logDebug('GET', key, 'hit', Date.now() - start);
+          return parsed;
         } catch {
+          this.metrics.hits++;
+          this._logDebug('GET', key, 'hit(raw)', Date.now() - start);
           return value;
         }
       }
+      this.metrics.misses++;
+      this._logDebug('GET', key, 'miss', Date.now() - start);
       return null;
     } catch (err) {
+      this.metrics.errors++;
       console.error('[CacheService] Get error:', err.message);
       return null;
     }
@@ -76,6 +93,7 @@ class CacheService {
 
   async set(key, value, ttl = this.defaultTTL) {
     if (!this.connected || !this.client) return false;
+    const start = Date.now();
     try {
       const serialized = typeof value === 'string' ? value : JSON.stringify(value);
       if (ttl > 0) {
@@ -83,8 +101,11 @@ class CacheService {
       } else {
         await this.client.set(key, serialized);
       }
+      this.metrics.sets++;
+      this._logDebug('SET', key, `ok(ttl=${ttl}s)`, Date.now() - start);
       return true;
     } catch (err) {
+      this.metrics.errors++;
       console.error('[CacheService] Set error:', err.message);
       return false;
     }
@@ -92,10 +113,14 @@ class CacheService {
 
   async del(key) {
     if (!this.connected || !this.client) return false;
+    const start = Date.now();
     try {
       await this.client.del(key);
+      this.metrics.deletes++;
+      this._logDebug('DEL', key, 'ok', Date.now() - start);
       return true;
     } catch (err) {
+      this.metrics.errors++;
       console.error('[CacheService] Delete error:', err.message);
       return false;
     }
@@ -103,10 +128,13 @@ class CacheService {
 
   async exists(key) {
     if (!this.connected || !this.client) return false;
+    const start = Date.now();
     try {
       const result = await this.client.exists(key);
+      this._logDebug('EXISTS', key, result === 1 ? 'true' : 'false', Date.now() - start);
       return result === 1;
     } catch (err) {
+      this.metrics.errors++;
       console.error('[CacheService] Exists error:', err.message);
       return false;
     }
@@ -163,6 +191,16 @@ class CacheService {
       this.getStatsKey(userId, 'monthly'),
     ];
     return Promise.all(keys.map(key => this.del(key)));
+  }
+
+  // DEBT-024: Expose metrics for monitoring and /metrics endpoint
+  getMetrics() {
+    const total = this.metrics.hits + this.metrics.misses;
+    return {
+      ...this.metrics,
+      hitRatio: total > 0 ? (this.metrics.hits / total).toFixed(4) : 'N/A',
+      totalOps: total + this.metrics.sets + this.metrics.deletes,
+    };
   }
 
   async disconnect() {
