@@ -1,0 +1,26 @@
+groups:
+  - name: legacy_api_deprecation
+    interval: 60s
+    rules:
+      # Count legacy API requests (those with Deprecation header)
+      - record: globalreach_legacy_api_requests_total
+        expr: increase(http_requests_total{deprecation="true"}[5m])
+
+      - alert: LegacyApiUsageAboveThreshold
+        expr: rate(globalreach_legacy_api_requests_total[1h]) > 0
+        for: 24h
+        labels:
+          severity: warning
+        annotations:
+          summary: "Legacy API still receiving traffic ({{ $value }} req/hour)"
+          description: "Legacy /api/* routes (without /v1/) should be migrated to /api/v1/*. Sunset date: 2027-06-01"
+
+      - alert: LegacyApiApproachingSunset
+        expr: |
+          (time() > (2027-03-03T00:00:00Z))
+          and (rate(globalreach_legacy_api_requests_total[1h]) > 0)
+        labels:
+          severity: critical
+        annotations:
+          summary: "Legacy API sunset approaching - 90 days remaining"
+          description: "Legacy routes will be removed on 2027-06-01. {{ $value }} req/hour still using legacy."

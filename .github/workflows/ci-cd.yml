@@ -194,7 +194,6 @@ jobs:
       - name: Run Unit Tests
         working-directory: ./api
         run: npm test -- --coverage --forceExit --detectOpenHandles 2>&1 | head -100
-        continue-on-error: true
 
       - name: Upload coverage report
         if: always()

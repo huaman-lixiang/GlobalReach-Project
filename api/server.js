@@ -118,6 +118,8 @@ const { corsMiddleware, getCorsInfo } = require('./middleware/corsConfig');
 const { csrfProtection, csrfTokenMiddleware, getCsrfInfo, enforceSameSiteCookie } = require('./middleware/csrf');
 // D12: API Versioning
 const { apiVersionMiddleware, getLatestVersion, getSupportedVersions } = require('./middleware/apiVersion');
+// DEBT-017: Legacy API Deprecation Middleware
+const deprecationMiddleware = require('./middleware/deprecation');
 // D15: Prometheus Monitoring
 const {
   startMetricsCollection,
@@ -275,6 +277,14 @@ app.use('/api/v1/maintenance', maintenanceRoutes);   // D29: Maintenance & Suppo
 app.use('/api/v1/clients', clientRoutes);              // M-A05: Client Import/Export
 app.use('/api/v1/audit', auditRoutes);                  // N03: Audit & Compliance
 app.use('/api/v1/compliance', complianceRoutes);        // N03: GDPR/PIPL Compliance
+
+// DEBT-017: Apply deprecation headers to all legacy /api/* routes (not /api/v1/*)
+app.use('/api', deprecationMiddleware({
+  sunsetDate: '2027-06-01',
+  replacementUrl: '/api/v1',
+  version: '1.0',
+  policyLink: 'https://docs.globalreach.com/api-migration-guide'
+}));
 
 // Backward compatibility: redirect /api/ to /api/v1/ for legacy clients
 app.use('/api/accounts', accountRoutes);
