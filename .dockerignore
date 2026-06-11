@@ -31,13 +31,46 @@ Thumbs.db
 coverage/
 __tests__/
 
+# API Tests & Coverage
+api/__tests__/
+api/test/
+api/*.test.js
+api/*.spec.js
+
+# Source Maps
+*.map
+
+# Git
+.git/
+
 # Documentation
 *.md
 !README.md
 
+# Enterprise Reports (not needed in container)
+02-ENTERPRISE-REPORTS/
+
+# Docs (not needed in runtime container)
+docs/
+
+# Frontend build artifacts (API server doesn't need frontend source)
+frontend/src/
+frontend/node_modules/
+frontend/.env*
+frontend/vite.config.*
+frontend/tsconfig.*
+frontend/package*.json
+frontend/index.html
+
+# Backup archives
+GlobalReach-Backups/
+
+# Misc temp files
+*.tmp
+*.temp
+
 # Archives
 04-ARCHIVED/
-GlobalReach-Backups/
 
 # Scripts (not needed in container)
 05-SCRIPTS/

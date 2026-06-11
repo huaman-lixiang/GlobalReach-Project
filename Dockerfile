@@ -4,6 +4,7 @@
 #   Node 20 Active LTS ends 2026-04-30, Maintenance ends 2027-04
 #   Node 24 LTS (v24.11.0+) supported until 2028-04-30
 #   Breaking changes handled: V8 13.6, OpenSSL 3.5, npm 11
+# S135: Docker image optimization — target <250MB
 
 FROM node:24-alpine AS builder
 
@@ -11,7 +12,7 @@ WORKDIR /app
 
 COPY api/package*.json ./
 
-RUN npm install --omit=dev && npm cache clean --force
+RUN npm ci --omit=dev && npm cache clean --force
 
 FROM node:24-alpine AS production
 
@@ -27,6 +28,11 @@ WORKDIR /app
 COPY --from=builder /app/node_modules ./node_modules
 COPY api/ ./api
 COPY src/ ./src
+
+# Remove test files, docs, and non-runtime files from production image
+RUN find /app/api -name "*.test.js" -o -name "*.spec.js" | xargs rm -f 2>/dev/null || true \
+    && rm -rf /app/api/__tests__ /app/docs /app/02-ENTERPRISE-REPORTS /app/scripts /app/05-SCRIPTS /app/04-ARCHIVED \
+    && rm -rf /app/frontend 2>/dev/null || true
 
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup \
     && chown -R appuser:appgroup /app

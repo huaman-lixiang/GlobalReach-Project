@@ -40,13 +40,14 @@ import {
 } from '@ant-design/icons'
 import api from '@/services/api'
 import { useTranslation } from 'react-i18next'
+import { tenantAdminTexts } from '../i18n/tenantAdmin'
 
 const { Title, Text } = Typography
 const { Option } = Select
 const { TextArea } = Input
 
 // ============================================
-// 类型定义
+// Type definitions
 // ============================================
 
 interface Tenant {
@@ -88,23 +89,23 @@ interface UsageStats {
 }
 
 // ============================================
-// 常量配置
+// Constants configuration
 // ============================================
 
 const planConfig: Record<string, { color: string; label: string }> = {
-  basic: { color: 'default', label: '基础版' },
-  professional: { color: 'blue', label: '专业版' },
-  enterprise: { color: 'gold', label: '企业版' },
+  basic: { color: 'default', label: tenantAdminTexts.plans.basic },
+  professional: { color: 'blue', label: tenantAdminTexts.plans.professional },
+  enterprise: { color: 'gold', label: tenantAdminTexts.plans.enterprise },
 }
 
 const statusConfig: Record<string, { color: string; icon: React.ReactNode; label: string }> = {
-  active: { color: 'success', icon: <CheckCircleOutlined />, label: '正常' },
-  suspended: { color: 'warning', icon: <WarningOutlined />, label: '已暂停' },
-  terminated: { color: 'error', icon: <CloseCircleOutlined />, label: '已终止' },
+  active: { color: 'success', icon: <CheckCircleOutlined />, label: tenantAdminTexts.statuses.active },
+  suspended: { color: 'warning', icon: <WarningOutlined />, label: tenantAdminTexts.statuses.suspended },
+  terminated: { color: 'error', icon: <CloseCircleOutlined />, label: tenantAdminTexts.statuses.terminated },
 }
 
 // ============================================
-// 创建/编辑租户弹窗
+// Create/Edit tenant modal
 // ============================================
 
 interface TenantFormModalProps {
@@ -147,17 +148,17 @@ const TenantFormModal: React.FC<TenantFormModalProps> = ({
 
       if (isEdit) {
         await api.put(`/tenants/${editingTenant.id}`, values)
-        message.success('租户更新成功')
+        message.success(tenantAdminTexts.messages.updateSuccess)
       } else {
         await api.post('/tenants', values)
-        message.success('租户创建成功')
+        message.success(tenantAdminTexts.messages.createSuccess)
       }
 
       form.resetFields()
       onClose()
       onSuccess()
     } catch (err: any) {
-      message.error(err.response?.data?.message || err.message || '操作失败')
+      message.error(err.response?.data?.message || err.message || tenantAdminTexts.messages.operationFailed)
     } finally {
       setSubmitting(false)
     }
@@ -165,13 +166,13 @@ const TenantFormModal: React.FC<TenantFormModalProps> = ({
 
   return (
     <Modal
-      title={isEdit ? `编辑租户: ${editingTenant.name}` : '创建新租户'}
+      title={isEdit ? `${tenantAdminTexts.form.editTitlePrefix}${editingTenant.name}` : tenantAdminTexts.form.createTitle}
       open={visible}
       onCancel={() => { form.resetFields(); onClose() }}
       onOk={handleSubmit}
       confirmLoading={submitting}
-      okText={isEdit ? '保存' : '创建'}
-      cancelText="取消"
+      okText={isEdit ? tenantAdminTexts.form.saveBtn : tenantAdminTexts.form.createBtn}
+      cancelText={tenantAdminTexts.form.cancelBtn}
       width={600}
       destroyOnClose
     >
@@ -180,40 +181,40 @@ const TenantFormModal: React.FC<TenantFormModalProps> = ({
           <Col span={12}>
             <Form.Item
               name="name"
-              label="租户名称"
-              rules={[{ required: true, message: '请输入租户名称' }, { min: 2, max: 100, message: '长度 2-100 个字符' }]}
+              label={tenantAdminTexts.form.name.label}
+              rules={[{ required: true, message: tenantAdminTexts.form.name.requiredMsg }, { min: 2, max: 100, message: tenantAdminTexts.form.name.lengthMsg }]}
             >
-              <Input placeholder="例如：Acme Corporation" />
+              <Input placeholder={tenantAdminTexts.form.name.placeholder} />
             </Form.Item>
           </Col>
           <Col span={12}>
             <Form.Item
               name="slug"
-              label="标识符 (Slug)"
+              label={tenantAdminTexts.form.slug.label}
               rules={[
-                { required: true, message: '请输入标识符' },
-                { pattern: /^[a-z0-9][a-z0-9-]*[a-z0-9]$/, message: '只允许小写字母、数字、连字符' },
+                { required: true, message: tenantAdminTexts.form.slug.requiredMsg },
+                { pattern: /^[a-z0-9][a-z0-9-]*[a-z0-9]$/, message: tenantAdminTexts.form.slug.patternMsg },
               ]}
             >
-              <Input placeholder="例如：acme-corp" />
+              <Input placeholder={tenantAdminTexts.form.slug.placeholder} />
             </Form.Item>
           </Col>
         </Row>
 
         <Row gutter={16}>
           <Col span={12}>
-            <Form.Item name="domain" label="自定义域名（可选）">
-              <Input placeholder="例如：acme.example.com" />
+            <Form.Item name="domain" label={tenantAdminTexts.form.domain.label}>
+              <Input placeholder={tenantAdminTexts.form.domain.placeholder} />
             </Form.Item>
           </Col>
           <Col span={12}>
             <Form.Item
               name="plan"
-              label="套餐计划"
-              rules={[{ required: true, message: '请选择套餐' }]}
+              label={tenantAdminTexts.form.plan.label}
+              rules={[{ required: true, message: tenantAdminTexts.form.plan.requiredMsg }]}
               initialValue="basic"
             >
-              <Select placeholder="选择套餐">
+              <Select placeholder={tenantAdminTexts.form.plan.placeholder}>
                 {Object.entries(planConfig).map(([key, cfg]) => (
                   <Option key={key} value={key}>{cfg.label}</Option>
                 ))}
@@ -225,13 +226,13 @@ const TenantFormModal: React.FC<TenantFormModalProps> = ({
         {isEdit && (
           <Form.Item
             name="status"
-            label="状态"
-            rules={[{ required: true, message: '请选择状态' }]}
+            label={tenantAdminTexts.form.status.label}
+            rules={[{ required: true, message: tenantAdminTexts.form.status.requiredMsg }]}
           >
-            <Select placeholder="选择状态">
-              <Option value="active">正常</Option>
-              <Option value="suspended">已暂停</Option>
-              <Option value="terminated">已终止</Option>
+            <Select placeholder={tenantAdminTexts.form.status.placeholder}>
+              <Option value="active">{tenantAdminTexts.statuses.active}</Option>
+              <Option value="suspended">{tenantAdminTexts.statuses.suspended}</Option>
+              <Option value="terminated">{tenantAdminTexts.statuses.terminated}</Option>
             </Select>
           </Form.Item>
         )}
@@ -241,7 +242,7 @@ const TenantFormModal: React.FC<TenantFormModalProps> = ({
 }
 
 // ============================================
-// 配额设置弹窗
+// Quota settings modal
 // ============================================
 
 interface QuotaModalProps {
@@ -267,11 +268,11 @@ const QuotaModal: React.FC<QuotaModalProps> = ({ visible, tenant, usage, onClose
       setSubmitting(true)
       const values = await form.validateFields()
       await api.put(`/tenants/${tenant!.id}/quota`, values)
-      message.success('配额更新成功')
+      message.success(tenantAdminTexts.messages.quotaUpdateSuccess)
       onClose()
       onSuccess()
     } catch (err: any) {
-      message.error(err.response?.data?.message || err.message || '操作失败')
+      message.error(err.response?.data?.message || err.message || tenantAdminTexts.messages.quotaUpdateFailed)
     } finally {
       setSubmitting(false)
     }
@@ -282,7 +283,8 @@ const QuotaModal: React.FC<QuotaModalProps> = ({ visible, tenant, usage, onClose
 
   const getPercentColor = (percent: number) => {
     if (percent >= 90) return '#ff4d4f'
-    if (percent >= 70) return '#faad14' return '#52c41a'
+    if (percent >= 70) return '#faad14'
+    return '#52c41a'
   }
 
   if (!tenant) return null
@@ -291,7 +293,7 @@ const QuotaModal: React.FC<QuotaModalProps> = ({ visible, tenant, usage, onClose
 
   return (
     <Modal
-      title={`配额管理 - ${tenant.name}`}
+      title={`${tenantAdminTexts.quota.titlePrefix}${tenant.name}`}
       open={visible}
       onCancel={onClose}
       footer={null}
@@ -303,13 +305,13 @@ const QuotaModal: React.FC<QuotaModalProps> = ({ visible, tenant, usage, onClose
         items={[
           {
             key: 'view',
-            label: '用量概览',
+            label: tenantAdminTexts.quota.usageOverview,
             children: (
               <div style={{ padding: '16px 0' }}>
                 <Row gutter={[16, 16]}>
                   <Col span={8}>
                     <Card size="small">
-                      <Statistic title="用户数" value={usage?.usersCount || 0} suffix={`/ ${q.maxUsers}`} />
+                      <Statistic title={tenantAdminTexts.quota.usersCount} value={usage?.usersCount || 0} suffix={`/ ${q.maxUsers}`} />
                       <Progress
                         percent={getPercent(usage?.usersCount || 0, q.maxUsers)}
                         strokeColor={getPercentColor(getPercent(usage?.usersCount || 0, q.maxUsers))}
@@ -320,7 +322,7 @@ const QuotaModal: React.FC<QuotaModalProps> = ({ visible, tenant, usage, onClose
                   </Col>
                   <Col span={8}>
                     <Card size="small">
-                      <Statistic title="客户数" value={usage?.clientsCount || 0} suffix={`/ ${q.maxClients}`} />
+                      <Statistic title={tenantAdminTexts.quota.clientsCount} value={usage?.clientsCount || 0} suffix={`/ ${q.maxClients}`} />
                       <Progress
                         percent={getPercent(usage?.clientsCount || 0, q.maxClients)}
                         strokeColor={getPercentColor(getPercent(usage?.clientsCount || 0, q.maxClients))}
@@ -331,7 +333,7 @@ const QuotaModal: React.FC<QuotaModalProps> = ({ visible, tenant, usage, onClose
                   </Col>
                   <Col span={8}>
                     <Card size="small">
-                      <Statistic title="邮箱账号" value={usage?.accountsCount || 0} suffix={`/ ${q.maxEmailAccounts}`} />
+                      <Statistic title={tenantAdminTexts.quota.accountsCount} value={usage?.accountsCount || 0} suffix={`/ ${q.maxEmailAccounts}`} />
                       <Progress
                         percent={getPercent(usage?.accountsCount || 0, q.maxEmailAccounts)}
                         strokeColor={getPercentColor(getPercent(usage?.accountsCount || 0, q.maxEmailAccounts))}
@@ -342,7 +344,7 @@ const QuotaModal: React.FC<QuotaModalProps> = ({ visible, tenant, usage, onClose
                   </Col>
                   <Col span={8}>
                     <Card size="small">
-                      <Statistic title="活跃活动" value={usage?.campaignsActive || 0} suffix={`/ ${q.maxActiveCampaigns}`} />
+                      <Statistic title={tenantAdminTexts.quota.campaignsActive} value={usage?.campaignsActive || 0} suffix={`/ ${q.maxActiveCampaigns}`} />
                       <Progress
                         percent={getPercent(usage?.campaignsActive || 0, q.maxActiveCampaigns)}
                         strokeColor={getPercentColor(getPercent(usage?.campaignsActive || 0, q.maxActiveCampaigns))}
@@ -353,7 +355,7 @@ const QuotaModal: React.FC<QuotaModalProps> = ({ visible, tenant, usage, onClose
                   </Col>
                   <Col span={8}>
                     <Card size="small">
-                      <Statistic title="本月邮件" value={usage?.emailsThisMonth || 0} suffix={`/ ${q.maxEmailsPerMonth}`} />
+                      <Statistic title={tenantAdminTexts.quota.emailsThisMonth} value={usage?.emailsThisMonth || 0} suffix={`/ ${q.maxEmailsPerMonth}`} />
                       <Progress
                         percent={getPercent(usage?.emailsThisMonth || 0, q.maxEmailsPerMonth)}
                         strokeColor={getPercentColor(getPercent(usage?.emailsThisMonth || 0, q.maxEmailsPerMonth))}
@@ -364,8 +366,8 @@ const QuotaModal: React.FC<QuotaModalProps> = ({ visible, tenant, usage, onClose
                   </Col>
                   <Col span={8}>
                     <Card size="small">
-                      <Statistic title="每日限额" value={q.maxEmailsPerDay} suffix="/ 天" />
-                      <Text type="secondary" style={{ fontSize: 12 }}>每日发送量上限</Text>
+                      <Statistic title={tenantAdminTexts.quota.dailyLimit} value={q.maxEmailsPerDay} suffix={tenantAdminTexts.quota.dailyLimitSuffix} />
+                      <Text type="secondary" style={{ fontSize: 12 }}>{tenantAdminTexts.quota.dailyLimitDesc}</Text>
                     </Card>
                   </Col>
                 </Row>
@@ -374,72 +376,72 @@ const QuotaModal: React.FC<QuotaModalProps> = ({ visible, tenant, usage, onClose
           },
           {
             key: 'edit',
-            label: '修改配额',
+            label: tenantAdminTexts.quota.editLabel,
             children: (
               <Form form={form} layout="vertical" style={{ padding: '16px 0' }}>
                 <Row gutter={16}>
                   <Col span={12}>
-                    <Form.Item name="maxUsers" label="最大用户数">
+                    <Form.Item name="maxUsers" label={tenantAdminTexts.quota.maxUsers}>
                       <InputNumber min={1} style={{ width: '100%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={12}>
-                    <Form.Item name="maxClients" label="最大客户数">
+                    <Form.Item name="maxClients" label={tenantAdminTexts.quota.maxClients}>
                       <InputNumber min={1} style={{ width: '100%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={12}>
-                    <Form.Item name="maxEmailAccounts" label="最大邮箱账号">
+                    <Form.Item name="maxEmailAccounts" label={tenantAdminTexts.quota.maxEmailAccounts}>
                       <InputNumber min={1} style={{ width: '100%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={12}>
-                    <Form.Item name="maxEmailsPerDay" label="每日发送上限">
+                    <Form.Item name="maxEmailsPerDay" label={tenantAdminTexts.quota.maxEmailsPerDay}>
                       <InputNumber min={1} style={{ width: '100%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={12}>
-                    <Form.Item name="maxEmailsPerMonth" label="每月发送上限">
+                    <Form.Item name="maxEmailsPerMonth" label={tenantAdminTexts.quota.maxEmailsPerMonth}>
                       <InputNumber min={1} style={{ width: '100%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={12}>
-                    <Form.Item name="maxActiveCampaigns" label="最大活动数">
+                    <Form.Item name="maxActiveCampaigns" label={tenantAdminTexts.quota.maxActiveCampaigns}>
                       <InputNumber min={1} style={{ width: '100%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={12}>
-                    <Form.Item name="maxStorageMB" label="存储空间 (MB)">
+                    <Form.Item name="maxStorageMB" label={tenantAdminTexts.quota.maxStorageMB}>
                       <InputNumber min={1} style={{ width: '100%' }} />
                     </Form.Item>
                   </Col>
                   <Col span={12}>
-                    <Form.Item name="apiRateLimit" label="API 速率限制 (请求/分)">
+                    <Form.Item name="apiRateLimit" label={tenantAdminTexts.quota.apiRateLimit}>
                       <InputNumber min={1} style={{ width: '100%' }} />
                     </Form.Item>
                   </Col>
                 </Row>
 
-                <Divider>功能开关</Divider>
+                <Divider>{tenantAdminTexts.quota.featureDivider}</Divider>
 
-                <Form.Item name={['features', 'customDomain']} label="自定义域名" valuePropName="checked">
-                  <Switch checkedChildren="开启" unCheckedChildren="关闭" />
+                <Form.Item name={['features', 'customDomain']} label={tenantAdminTexts.quota.customDomain} valuePropName="checked">
+                  <Switch checkedChildren={tenantAdminTexts.quota.switchOn} unCheckedChildren={tenantAdminTexts.quota.switchOff} />
                 </Form.Item>
-                <Form.Item name={['features', 'webhook']} label="Webhook 集成" valuePropName="checked">
-                  <Switch checkedChildren="开启" unCheckedChildren="关闭" />
+                <Form.Item name={['features', 'webhook']} label={tenantAdminTexts.quota.webhook} valuePropName="checked">
+                  <Switch checkedChildren={tenantAdminTexts.quota.switchOn} unCheckedChildren={tenantAdminTexts.quota.switchOff} />
                 </Form.Item>
-                <Form.Item name={['features', 'analytics']} label="高级分析" valuePropName="checked">
-                  <Switch checkedChildren="开启" unCheckedChildren="关闭" />
+                <Form.Item name={['features', 'analytics']} label={tenantAdminTexts.quota.analytics} valuePropName="checked">
+                  <Switch checkedChildren={tenantAdminTexts.quota.switchOn} unCheckedChildren={tenantAdminTexts.quota.switchOff} />
                 </Form.Item>
-                <Form.Item name={['features', 'export']} label="数据导出" valuePropName="checked">
-                  <Switch checkedChildren="开启" unCheckedChildren="关闭" />
+                <Form.Item name={['features', 'export']} label={tenantAdminTexts.quota.export} valuePropName="checked">
+                  <Switch checkedChildren={tenantAdminTexts.quota.switchOn} unCheckedChildren={tenantAdminTexts.quota.switchOff} />
                 </Form.Item>
-                <Form.Item name={['features', 'sso']} label="单点登录 (SSO)" valuePropName="checked">
-                  <Switch checkedChildren="开启" unCheckedChildren="关闭" />
+                <Form.Item name={['features', 'sso']} label={tenantAdminTexts.quota.sso} valuePropName="checked">
+                  <Switch checkedChildren={tenantAdminTexts.quota.switchOn} unCheckedChildren={tenantAdminTexts.quota.switchOff} />
                 </Form.Item>
 
                 <Button type="primary" onClick={handleSubmit} loading={submitting} block>
-                  保存配额设置
+                  {tenantAdminTexts.quota.saveBtn}
                 </Button>
               </Form>
             ),
@@ -451,7 +453,7 @@ const QuotaModal: React.FC<QuotaModalProps> = ({ visible, tenant, usage, onClose
 }
 
 // ============================================
-// 主页面组件
+// Main page component
 // ============================================
 
 const TenantAdminPage: React.FC = () => {
@@ -461,19 +463,19 @@ const TenantAdminPage: React.FC = () => {
   const [page, setPage] = useState(1)
   const [pageSize, setPageSize] = useState(10)
 
-  // 弹窗状态
+  // Modal state
   const [formVisible, setFormVisible] = useState(false)
   const [editingTenant, setEditingTenant] = useState<Tenant | null>(null)
   const [quotaVisible, setQuotaVisible] = useState(false)
   const [quotaTenant, setQuotaTenant] = useState<Tenant | null>(null)
   const [quotaUsage, setQuotaUsage] = useState<UsageStats | null>(null)
 
-  // 全局摘要数据
+  // Global summary data
   const [summary, setSummary] = useState<any>(null)
 
   const { t } = useTranslation()
 
-  // 加载租户列表
+  // Load tenant list
   const fetchTenants = async (p = page, ps = pageSize) => {
     try {
       setLoading(true)
@@ -484,19 +486,19 @@ const TenantAdminPage: React.FC = () => {
       setTenants(data.data || [])
       setTotal(data.pagination?.total || data.count || 0)
     } catch (err: any) {
-      message.error('获取租户列表失败')
+      message.error(tenantAdminTexts.messages.fetchFailed)
     } finally {
       setLoading(false)
     }
   }
 
-  // 加载全局摘要
+  // Load global summary
   const fetchSummary = async () => {
     try {
       const res: any = await api.get('/tenants/summary')
       setSummary(res.data?.data || res.data || null)
     } catch (_) {
-      // 静默失败
+      // Silent failure
     }
   }
 
@@ -510,7 +512,7 @@ const TenantAdminPage: React.FC = () => {
     fetchSummary()
   }
 
-  // 打开配额弹窗并加载用量
+  // Open quota modal and load usage
   const handleOpenQuota = async (tenant: Tenant) => {
     setQuotaTenant(tenant)
     setQuotaVisible(true)
@@ -522,41 +524,41 @@ const TenantAdminPage: React.FC = () => {
     }
   }
 
-  // 删除租户
+  // Delete tenant
   const handleDelete = async (id: number) => {
     try {
       await api.delete(`/tenants/${id}`)
-      message.success('租户已终止')
+      message.success(tenantAdminTexts.messages.terminateSuccess)
       fetchTenants(page, pageSize)
       fetchSummary()
     } catch (err: any) {
-      message.error(err.response?.data?.message || '删除失败')
+      message.error(err.response?.data?.message || tenantAdminTexts.messages.deleteFailed)
     }
   }
 
-  // 表格列定义
+  // Table column definitions
   const columns = [
     {
-      title: 'ID',
+      title: tenantAdminTexts.table.id,
       dataIndex: 'id',
       key: 'id',
       width: 60,
     },
     {
-      title: '租户名称',
+      title: tenantAdminTexts.table.tenantName,
       dataIndex: 'name',
       key: 'name',
       render: (text: string) => <Text strong>{text}</Text>,
     },
     {
-      title: '标识符',
+      title: tenantAdminTexts.table.slug,
       dataIndex: 'slug',
       key: 'slug',
       width: 140,
       render: (text: string) => <Tag>{text}</Tag>,
     },
     {
-      title: '套餐',
+      title: tenantAdminTexts.table.plan,
       dataIndex: 'plan',
       key: 'plan',
       width: 100,
@@ -566,7 +568,7 @@ const TenantAdminPage: React.FC = () => {
       },
     },
     {
-      title: '状态',
+      title: tenantAdminTexts.table.status,
       dataIndex: 'status',
       key: 'status',
       width: 90,
@@ -576,7 +578,7 @@ const TenantAdminPage: React.FC = () => {
       },
     },
     {
-      title: '域名',
+      title: tenantAdminTexts.table.domain,
       dataIndex: 'domain',
       key: 'domain',
       width: 180,
@@ -588,20 +590,20 @@ const TenantAdminPage: React.FC = () => {
         ),
     },
     {
-      title: '创建时间',
+      title: tenantAdminTexts.table.createdAt,
       dataIndex: 'createdAt',
       key: 'createdAt',
       width: 170,
       render: (val: string) => val ? new Date(val).toLocaleString() : '-',
     },
     {
-      title: '操作',
+      title: tenantAdminTexts.table.actions,
       key: 'action',
       width: 240,
       fixed: 'right' as const,
       render: (_: unknown, record: Tenant) => (
         <Space size="small">
-          <Tooltip title="查看/编辑">
+          <Tooltip title={tenantAdminTexts.table.tooltipEdit}>
             <Button
               type="link"
               size="small"
@@ -609,7 +611,7 @@ const TenantAdminPage: React.FC = () => {
               onClick={() => { setEditingTenant(record); setFormVisible(true) }}
             />
           </Tooltip>
-          <Tooltip title="配额管理">
+          <Tooltip title={tenantAdminTexts.table.tooltipQuota}>
             <Button
               type="link"
               size="small"
@@ -619,14 +621,14 @@ const TenantAdminPage: React.FC = () => {
           </Tooltip>
           {record.id !== 1 && (
             <Popconfirm
-              title={`确定要终止租户 "${record.name}" 吗？`}
-              description="此操作不可撤销，该租户的所有服务将被停止。"
+              title={`${tenantAdminTexts.table.terminateConfirm(record.name)}`}
+              description={tenantAdminTexts.table.terminateDesc}
               onConfirm={() => handleDelete(record.id)}
-              okText="确认终止"
+              okText={tenantAdminTexts.table.terminateOk}
               okType="danger"
-              cancelText="取消"
+              cancelText={tenantAdminTexts.table.terminateCancel}
             >
-              <Tooltip title="终止租户">
+              <Tooltip title={tenantAdminTexts.table.tooltipTerminate}>
                 <Button
                   type="link"
                   size="small"
@@ -643,29 +645,29 @@ const TenantAdminPage: React.FC = () => {
 
   return (
     <div>
-      {/* 页面标题 */}
+      {/* Page header */}
       <div className="gr-page-header">
         <Title level={4} style={{ margin: 0, display: 'flex', alignItems: 'center', gap: 10 }}>
           <ApartmentOutlined style={{ color: 'var(--gr-primary)', fontSize: 20 }} />
-          多租户管理
+          {tenantAdminTexts.page.title}
         </Title>
         <Space>
           <Button icon={<ReloadOutlined />} onClick={() => { fetchTenants(); fetchSummary() }}>
-            刷新
+            {tenantAdminTexts.page.refreshBtn}
           </Button>
           <Button type="primary" icon={<PlusOutlined />} onClick={() => { setEditingTenant(null); setFormVisible(true) }}>
-            创建租户
+            {tenantAdminTexts.page.createTenantBtn}
           </Button>
         </Space>
       </div>
 
-      {/* 全局统计卡片 */}
+      {/* Global statistics cards */}
       {summary && (
         <Row gutter={16} style={{ marginBottom: 20 }}>
           <Col span={6}>
             <Card size="small">
               <Statistic
-                title="总租户数"
+                title={tenantAdminTexts.page.totalTenants}
                 value={summary.totalTenants}
                 prefix={<BankOutlined />}
                 valueStyle={{ fontSize: 22 }}
@@ -675,7 +677,7 @@ const TenantAdminPage: React.FC = () => {
           <Col span={6}>
             <Card size="small">
               <Statistic
-                title="活跃租户"
+                title={tenantAdminTexts.page.activeTenants}
                 value={summary.activeTenants}
                 prefix={<CheckCircleOutlined />}
                 valueStyle={{ color: '#3f8600', fontSize: 22 }}
@@ -685,7 +687,7 @@ const TenantAdminPage: React.FC = () => {
           <Col span={6}>
             <Card size="small">
               <Statistic
-                title="总用户数"
+                title={tenantAdminTexts.page.totalUsers}
                 value={summary.totalUsers}
                 prefix={<TeamOutlined />}
                 valueStyle={{ fontSize: 22 }}
@@ -695,7 +697,7 @@ const TenantAdminPage: React.FC = () => {
           <Col span={6}>
             <Card size="small">
               <Statistic
-                title="总客户数"
+                title={tenantAdminTexts.page.totalClients}
                 value={summary.totalClients}
                 prefix={<MailOutlined />}
                 valueStyle={{ fontSize: 22 }}
@@ -705,7 +707,7 @@ const TenantAdminPage: React.FC = () => {
         </Row>
       )}
 
-      {/* 租户列表表格 */}
+      {/* Tenant list table */}
       <Card>
         <Table
           columns={columns}
@@ -719,14 +721,14 @@ const TenantAdminPage: React.FC = () => {
             total,
             showSizeChanger: true,
             showQuickJumper: true,
-            showTotal: (t) => `${t} 个租户`,
+            showTotal: (t) => `${t} ${tenantAdminTexts.pagination.totalSuffix}`,
             onChange: (p, ps) => { setPage(p); setPageSize(ps); fetchTenants(p, ps) },
           }}
           size="middle"
         />
       </Card>
 
-      {/* 创建/编辑弹窗 */}
+      {/* Create/Edit modal */}
       <TenantFormModal
         visible={formVisible}
         editingTenant={editingTenant}
@@ -734,7 +736,7 @@ const TenantAdminPage: React.FC = () => {
         onSuccess={handleCreateSuccess}
       />
 
-      {/* 配额管理弹窗 */}
+      {/* Quota management modal */}
       <QuotaModal
         visible={quotaVisible}
         tenant={quotaTenant}

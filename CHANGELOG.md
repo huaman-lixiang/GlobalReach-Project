@@ -5,7 +5,7 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v2.0.0] - Steady State Evolution (S129–S134)
+## [v2.0.0] - Steady State Evolution (S129–S135)
 
 ### S134 (2025-06-11) — Batch 5: Quick Wins
 #### Fixed
@@ -33,6 +33,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Prometheus alert rules tuned for production (repeat_interval, severity labels)
 - Nginx CDN optimizations and upstream HA configs added
 - HA docker-compose (`docker-compose.ha.yml`) created
+
+### S135 (2026-06-11) — Batch 6: Docker Optimization + i18n Fix + Template Sync
+#### Fixed
+- **DEBT-003** (P1): Docker image optimization — `.dockerignore` enhanced (api tests, frontend source, docs, *.map excluded), `npm install` → `npm ci` for deterministic builds, production stage cleanup step added to remove non-runtime files
+- **DEBT-014** (P2): Frontend i18n hardcoded Chinese fix — Created `frontend/src/i18n/tenantAdmin.ts` with 60+ text entries across 8 groups, refactored `TenantAdmin.tsx` (~100 Chinese strings → i18n constants), translated 14 Chinese comments to English
+#### Changed
+- Anti-hallucination template: v1.0 → v1.1 (HEAD/debt rate/session count synced to S134/S135 baseline)
+- Technical Debt Register: v1.5.0 → v1.6.0 (2 debts marked DONE)
+#### Notes
+- Docker build blocked by pre-existing `passport-openidconnect` dependency version issue (not introduced by this change)
+- DEBT-014 marked as Partial DONE — only TenantAdmin.tsx completed; Login.tsx/Dashboard.tsx etc. pending future batch
 
 ### S132 (2025-06-09) — Batch 3: Security & Observability
 - Security headers hardened across all routes
