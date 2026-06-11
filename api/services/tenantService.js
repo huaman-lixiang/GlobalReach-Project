@@ -401,7 +401,7 @@ async function getUsageStats(tenantId, forceRefresh = false) {
   const cacheService = global.cacheService;
   if (cacheService) {
     try {
-      await cacheService.setex(cacheKey, 3600, JSON.stringify(stats));
+      await cacheService.set(cacheKey, JSON.stringify(stats), { EX: 3600 });
     } catch (_) {
       // 缓存写入失败不影响主流程
     }

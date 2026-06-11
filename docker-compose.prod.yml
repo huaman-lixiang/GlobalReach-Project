@@ -363,7 +363,7 @@ services:
   #
   # S119 Enhancement: Added deploy hooks for auto-reload on renewal
   certbot:
-    image: certbot/certbot:latest
+    image: certbot/certbot:v2.11.0
     container_name: globalreach-certbot
     profiles: ["ssl"]  # Only start when explicitly requested: --profile ssl
     volumes:

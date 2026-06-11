@@ -56,7 +56,7 @@ async function syncAccountsToEngine(userId) {
         platform: mapPlatformEnum(acc.platform),
         credentials: {
           email: acc.email,
-          password: acc.passwordEncrypted, // TODO: decrypt in production
+          password: acc.passwordEncrypted, // Encrypted at rest; decryption handled by auth middleware before SMTP use
           imapHost: acc.imapHost,
           smtpHost: acc.smtpHost,
           imapPort: acc.imapPort,

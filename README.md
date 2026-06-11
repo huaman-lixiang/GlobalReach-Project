@@ -1,6 +1,7 @@
-# GlobalReach
+# GlobalReach V2.0
 
-> **Enterprise Email Marketing Platform**
+> **Enterprise Email Marketing Platform · Global Reach Edition**
+> **Status:** Post-O AIOps-Ready | **Protocol:** v6.0-STEADY-STATE-EVOLUTION | **Tests:** 90/90 PASS
 
 A comprehensive enterprise-grade email marketing platform built with Node.js, Express, and React.
 
@@ -39,14 +40,14 @@ A comprehensive enterprise-grade email marketing platform built with Node.js, Ex
 ## 🛠️ Tech Stack
 
 ### Backend
-- **Node.js** - Runtime environment
+- **Node.js 24** - Runtime environment
 - **Express.js** - Web framework
-- **PostgreSQL** - Relational database
-- **Redis** - Caching and session storage
+- **PostgreSQL 15** - Relational database (11 tables)
+- **Redis 7.x** - Caching and session storage
 - **Sequelize** - ORM
-- **JWT** - Authentication
-- **Prometheus** - Metrics collection
-- **Swagger UI** - API documentation
+- **JWT + CSRF** - Authentication & protection
+- **Prometheus + Grafana** - Metrics collection & visualization
+- **Alertmanager** - Alert routing (QQ Mail SMTP)
 
 ### Frontend
 - **React** - UI framework
@@ -238,11 +239,17 @@ npm run test:coverage
 
 | Metric | Value |
 |--------|-------|
-| **API Endpoints** | 118 |
-| **Unit Tests** | 196 |
-| **E2E Tests** | 24+ |
-| **Prometheus Metrics** | 18 |
-| **Code Coverage** | ~95% |
+| **Version** | V2.0 (Steady State Evolution) |
+| **Sessions Completed** | S029–S133 (104 sessions) |
+| **Git Commits** | 106+ |
+| **API Endpoints** | 118+ (26 route files) |
+| **Unit Tests (Jest)** | 90 / 90 PASS (3 suites) |
+| **Docker Containers** | 13 (full-stack monitoring) |
+| **Database Tables** | 11 |
+| **Technical Debt Repaid** | 17/28 (60.7%) |
+| **Known Bugs** | 6/6 fixed |
+| **Tech Debt Register** | `docs/technical-debt/TECHNICAL_DEBT_REGISTER.md` |
+| **Self-Execute Protocol** | `02-ENTERPRISE-REPORTS/GLOBALREACH_S037_SELF_EXECUTE_PROTOCOL_v6_0.md` |
 
 ---
 
@@ -304,20 +311,18 @@ For support, email `support@globalreach.com` or create an issue in the GitHub re
 
 ---
 
-## 📋 Changelog
+## Changelog
 
-### v2.0.0
-- Complete enterprise feature set
-- 118 API endpoints
-- 196 unit tests
-- Docker containerization
-- CI/CD pipeline
-- Mobile API integration
-- Push notifications (APNs/FCM)
-- Advanced analytics
-- Team collaboration
-- Custom templates
-- Data export (CSV/Excel/PDF)
+> Full changelog: [CHANGELOG.md](CHANGELOG.md)
+
+### v2.0.0 (Steady State) — Latest: S134
+- **S134**: Batch 5 Quick Wins — DEBT-006 (Certbot pin), DEBT-010 (SMTP_QQ cleanup), DEBT-016 (.env.cdn.example), DEBT-020 (TODO/FIXME cleanup), setex() bug fix, N+1 annotation, README sync
+- **S133**: Batch 4 — 16 debts repaid (DEBT-002/004/007-009/011-013/015/023-027), Prometheus tuning, Nginx optimization
+- **S132**: Batch 3 — Security hardening (CSP/HSTS/CORS), Docker secrets migration, alertmanager config
+- **S131**: Batch 2 — SMTP migration to QQ Mail, Grafana alerting pipeline
+- **S130**: Batch 1 — 6 known bugs fixed (email dedup, timezone, template preview, etc.)
+- **Post-O Phase**: AIOps readiness, full-stack monitoring (13 containers), runbooks RB-001~008
+- **Phase O**: Operations Hardening — backup automation, log rotation, health checks
 
 ### v1.0.0
 - Initial release

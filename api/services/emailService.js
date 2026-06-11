@@ -543,6 +543,9 @@ async function sendCampaign(userId, campaignId, options = {}) {
   // Enqueue all jobs
   const jobIds = [];
 
+  // [PERF] N+1 query risk: loads clients one-by-one inside loop.
+  // TODO(DEBT-025): Replace with `db.Client.findAll({ where: { id: clientIds } })` batch query.
+  // Impact: O(n) DB round-trips where n = clientIds.length. Acceptable for <100 clients.
   for (const clientId of clientIds) {
     const client = await db.Client.findByPk(clientId);
     if (!client) continue;
@@ -660,6 +663,8 @@ async function sendCampaignSync(userId, campaignId, options = {}) {
   const emailJobs = [];
   const processResults = [];
 
+  // [PERF] N+1 query risk (same pattern as sendCampaign above).
+  // TODO(DEBT-025): Batch-load all clients with `db.Client.findAll({ where: { id: clientIds } })`.
   for (const clientId of clientIds) {
     const client = await db.Client.findByPk(clientId);
     if (!client) continue;

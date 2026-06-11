@@ -977,8 +977,9 @@ router.post('/thresholds', (req, res) => {
             }
         }
         
-        // TODO: 在生产环境中，这里应该持久化到数据库或配置文件
-        // 当前实现仅在内存中更新，重启后会恢复默认值
+        // NOTE: Threshold overrides are stored in-memory only.
+        // Persistence to DB/config file is deferred to Phase P (Production Hardening).
+        // See DEBT-028 (Capacity Planning Baseline) for the tracking item.
         
         res.json({
             success: true,
