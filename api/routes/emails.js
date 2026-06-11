@@ -20,6 +20,7 @@ const router = express.Router();
 const emailService = require('../services/emailService');
 const { verifyToken, validateRequest } = require('../middleware/auth');
 const { emailSendLimiter, batchOperationLimiter } = require('../middleware/rateLimiter');
+const { asyncHandler } = require('../middleware/errorHandler');
 const {
   paginationRules,
   emailSendRules,
@@ -76,27 +77,19 @@ router.post('/send/batch', batchOperationLimiter, [
   body('emails').isArray({ min: 1, max: 100 }).withMessage('Emails array required (max 100)'),
   body('emails.*.to').isArray().withMessage('Each email needs recipients array'),
   body('delay').optional().isInt({ min: 0, max: 5000 }),
-], validateRequest, async (req, res) => {
-  try {
-    const result = await emailService.sendBatch(req.user.id, {
-      emails: req.body.emails,
-      delay: req.body.delay || 500,
-      campaignId: req.body.campaignId,
-    });
+], validateRequest, asyncHandler(async (req, res) => {
+  const result = await emailService.sendBatch(req.user.id, {
+    emails: req.body.emails,
+    delay: req.body.delay || 500,
+    campaignId: req.body.campaignId,
+  });
 
-    res.json({
-      success: true,
-      data: result,
-      message: `Batch completed: ${result.success}/${result.total} successful`,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: 'BATCH_SEND_FAILED',
-      message: error.message,
-    });
-  }
-});
+  res.json({
+    success: true,
+    data: result,
+    message: `Batch completed: ${result.success}/${result.total} successful`,
+  });
+}));
 
 // POST /api/emails/campaign/:id/execute - Execute a campaign send (D03: ASYNC)
 router.post('/campaign/:campaignId/execute', [
@@ -129,28 +122,19 @@ router.post('/campaign/:campaignId/execute', [
 });
 
 // GET /api/emails - List email records with pagination
-router.get('/', ...paginationRules(), async (req, res) => {
-  try {
-    const result = await emailService.listEmails(req.user.id, req.query);
-    res.json({ success: true, ...result });
-  } catch (error) {
-    console.error('[Emails] List error:', error);
-    res.status(500).json({ success: false, error: 'FETCH_EMAILS_FAILED', message: error.message });
-  }
-});
+router.get('/', ...paginationRules(), asyncHandler(async (req, res) => {
+  const result = await emailService.listEmails(req.user.id, req.query);
+  res.json({ success: true, ...result });
+}));
 
 // GET /api/emails/stats - Aggregate email statistics
-router.get('/stats', async (req, res) => {
-  try {
-    const stats = await emailService.getEmailStats(req.user.id, {
-      from: req.query.from,
-      to: req.query.to,
-    });
-    res.json({ success: true, data: stats });
-  } catch (error) {
-    res.status(500).json({ success: false, error: 'STATS_FETCH_FAILED', message: error.message });
-  }
-});
+router.get('/stats', asyncHandler(async (req, res) => {
+  const stats = await emailService.getEmailStats(req.user.id, {
+    from: req.query.from,
+    to: req.query.to,
+  });
+  res.json({ success: true, data: stats });
+}));
 
 // POST /api/emails/validate - Validate email format (M8 Formatter)
 router.post('/validate', ...emailValidateRules(), validateRequest, (req, res) => {
@@ -263,28 +247,24 @@ router.get('/smtp/providers', (req, res) => {
 });
 
 // M-A07: GET /api/emails/send-stats - Send statistics with success rate
-router.get('/send-stats', async (req, res) => {
-  try {
-    const since = req.query.since; // ISO date string or relative (e.g., "2026-01-01")
-    const stats = emailService.getSendStats({ since });
+router.get('/send-stats', asyncHandler(async (req, res) => {
+  const since = req.query.since; // ISO date string or relative (e.g., "2026-01-01")
+  const stats = emailService.getSendStats({ since });
 
-    // Also get DB-level stats for comparison
-    const dbStats = await emailService.getEmailStats(req.user.id, {
-      from: since,
-      to: req.query.to,
-    });
+  // Also get DB-level stats for comparison
+  const dbStats = await emailService.getEmailStats(req.user.id, {
+    from: since,
+    to: req.query.to,
+  });
 
-    res.json({
-      success: true,
-      data: {
-        realtime: stats,       // In-memory log stats (M-A07)
-        database: dbStats,     // DB persisted stats
-      },
-    });
-  } catch (error) {
-    res.status(500).json({ success: false, error: 'STATS_FETCH_FAILED', message: error.message });
-  }
-});
+  res.json({
+    success: true,
+    data: {
+      realtime: stats,       // In-memory log stats (M-A07)
+      database: dbStats,     // DB persisted stats
+    },
+  });
+}));
 
 // M-A07: GET /api/emails/send-log - Recent send log entries
 router.get('/send-log', (req, res) => {
@@ -333,15 +313,11 @@ router.get('/format/:platform', (req, res) => {
 // ============================================
 
 // GET /api/emails/:id - Get single email record
-router.get('/:id', [param('id').isUUID()], validateRequest, async (req, res) => {
-  try {
-    const email = await emailService.getEmail(req.params.id, req.user.id);
-    if (!email) return res.status(404).json({ success: false, error: 'EMAIL_NOT_FOUND', message: 'Email not found' });
+router.get('/:id', [param('id').isUUID()], validateRequest, asyncHandler(async (req, res) => {
+  const email = await emailService.getEmail(req.params.id, req.user.id);
+  if (!email) return res.status(404).json({ success: false, error: 'EMAIL_NOT_FOUND', message: 'Email not found' });
 
-    res.json({ success: true, data: email });
-  } catch (error) {
-    res.status(500).json({ success: false, error: 'GET_EMAIL_FAILED', message: error.message });
-  }
-});
+  res.json({ success: true, data: email });
+}));
 
 module.exports = router;

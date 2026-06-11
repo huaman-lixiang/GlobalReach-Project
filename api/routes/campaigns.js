@@ -25,6 +25,7 @@ const {
   buildSearchPattern,
   CAMPAIGN_TYPES,
 } = require('../middleware/validator');
+const { asyncHandler } = require('../middleware/errorHandler');
 
 router.use(verifyToken);
 
@@ -33,48 +34,43 @@ router.use(verifyToken);
 // ============================================
 
 // GET /api/campaigns — List with pagination + status filtering
-router.get('/', ...paginationRules(), ...searchRule(), ...statusFilterRule(), async (req, res) => {
-  try {
-    const userId = req.user.id;
-    const isAdmin = req.user.role === 'ADMIN';
-    const page = parseInt(req.query.page) || 1;
-    const pageSize = parseInt(req.query.pageSize) || 10;
-    const { status, search } = req.query;
+router.get('/', ...paginationRules(), ...searchRule(), ...statusFilterRule(), asyncHandler(async (req, res) => {
+  const userId = req.user.id;
+  const isAdmin = req.user.role === 'ADMIN';
+  const page = parseInt(req.query.page) || 1;
+  const pageSize = parseInt(req.query.pageSize) || 10;
+  const { status, search } = req.query;
 
-    const where = isAdmin ? {} : { userId };
-    if (status) where.status = status.toUpperCase();
-    if (search) {
-      // D08: Use escaped LIKE pattern to prevent wildcard injection
-      where[db.Sequelize.Op.or] = [
-        { name: { [db.Sequelize.Op.iLike]: buildSearchPattern(search) } },
-        { subject_template: { [db.Sequelize.Op.iLike]: buildSearchPattern(search) } },
-      ];
-    }
-
-    const { count, rows } = await db.Campaign.findAndCountAll({
-      where,
-      limit: parseInt(pageSize),
-      offset: (parseInt(page) - 1) * parseInt(pageSize),
-      order: [['createdAt', 'DESC']],
-      include: [{
-        model: db.User,
-        as: 'user',
-        attributes: ['id', 'name', 'email'],
-      }],
-    });
-
-    res.json({
-      success: true,
-      data: rows,
-      count,
-      page: parseInt(page),
-      pageSize: parseInt(pageSize),
-    });
-  } catch (error) {
-    console.error('[Campaigns] List error:', error);
-    res.status(500).json({ success: false, error: 'FETCH_CAMPAIGNS_FAILED', message: error.message });
+  const where = isAdmin ? {} : { userId };
+  if (status) where.status = status.toUpperCase();
+  if (search) {
+    // D08: Use escaped LIKE pattern to prevent wildcard injection
+    where[db.Sequelize.Op.or] = [
+      { name: { [db.Sequelize.Op.iLike]: buildSearchPattern(search) } },
+      { subject_template: { [db.Sequelize.Op.iLike]: buildSearchPattern(search) } },
+    ];
   }
-});
+
+  const { count, rows } = await db.Campaign.findAndCountAll({
+    where,
+    limit: parseInt(pageSize),
+    offset: (parseInt(page) - 1) * parseInt(pageSize),
+    order: [['createdAt', 'DESC']],
+    include: [{
+      model: db.User,
+      as: 'user',
+      attributes: ['id', 'name', 'email'],
+    }],
+  });
+
+  res.json({
+    success: true,
+    data: rows,
+    count,
+    page: parseInt(page),
+    pageSize: parseInt(pageSize),
+  });
+}));
 
 // POST /api/campaigns — Create campaign
 router.post('/', [
@@ -87,121 +83,101 @@ router.post('/', [
     .isLength({ max: 100000 })
     .withMessage('Body template too long (max 100KB)'),
   body('type').optional().isIn(CAMPAIGN_TYPES).withMessage(
-    `Invalid type. Must be one of: ${CAMPAIGN_TYPES.join(', ')}`),
-], validateRequest, async (req, res) => {
-  try {
-    const campaign = await db.Campaign.create({
-      userId: req.user.id,
-      name: req.body.name,
-      type: req.body.type || 'COLD_OUTREACH',
-      subject_template: req.body.subject_template || '',
-      body_template: req.body.body_template || '',
-      target_segment: req.body.targetSegment || null,
-      account_ids: req.body.accountIds || [],
-      schedule_config: req.body.scheduleConfig || null,
-      status: 'DRAFT',
-      stats: { sent: 0, delivered: 0, opened: 0, clicked: 0, bounced: 0 },
-    });
+      `Invalid type. Must be one of: ${CAMPAIGN_TYPES.join(', ')}`),
+], validateRequest, asyncHandler(async (req, res) => {
+  const campaign = await db.Campaign.create({
+    userId: req.user.id,
+    name: req.body.name,
+    type: req.body.type || 'COLD_OUTREACH',
+    subject_template: req.body.subject_template || '',
+    body_template: req.body.body_template || '',
+    target_segment: req.body.targetSegment || null,
+    account_ids: req.body.accountIds || [],
+    schedule_config: req.body.scheduleConfig || null,
+    status: 'DRAFT',
+    stats: { sent: 0, delivered: 0, opened: 0, clicked: 0, bounced: 0 },
+  });
 
-    res.status(201).json({ success: true, data: campaign, message: 'Campaign created' });
-  } catch (error) {
-    console.error('[Campaigns] Create error:', error);
-    res.status(400).json({ success: false, error: 'CREATE_CAMPAIGN_FAILED', message: error.message });
-  }
-});
+  res.status(201).json({ success: true, data: campaign, message: 'Campaign created' });
+}));
 
 // ============================================
 // Parameterized routes (/ :id)
 // ============================================
 
 // GET /api/campaigns/:id — Single campaign with stats
-router.get('/:id', [param('id').isUUID()], validateRequest, async (req, res) => {
-  try {
-    const campaign = await db.Campaign.findByPk(req.params.id, {
-      include: [
-        { model: db.User, as: 'user', attributes: ['id', 'name', 'email'] },
-        {
-          model: db.Email,
-          attributes: ['id', 'to_address', 'status', 'sent_at', 'created_at'],
-          limit: 20,
-          order: [['createdAt', 'DESC']],
-        },
-      ],
-    });
+router.get('/:id', [param('id').isUUID()], validateRequest, asyncHandler(async (req, res) => {
+  const campaign = await db.Campaign.findByPk(req.params.id, {
+    include: [
+      { model: db.User, as: 'user', attributes: ['id', 'name', 'email'] },
+      {
+        model: db.Email,
+        attributes: ['id', 'to_address', 'status', 'sent_at', 'created_at'],
+        limit: 20,
+        order: [['createdAt', 'DESC']],
+      },
+    ],
+  });
 
-    if (!campaign) {
-      return res.status(404).json({ success: false, error: 'CAMPAIGN_NOT_FOUND', message: 'Campaign not found' });
-    }
-
-    // Compute progress from associated emails
-    const emailStats = await db.Email.findAndCountAll({
-      where: { campaignId: campaign.id },
-      attributes: ['status'],
-    });
-
-    const campaignData = campaign.toJSON();
-    campaignData.emailCount = emailStats.count;
-    campaignData.sentCount = emailStats.rows.filter(e => e.status === 'sent').length;
-    campaignData.totalCount = emailStats.count;
-
-    res.json({ success: true, data: campaignData });
-  } catch (error) {
-    console.error('[Campaigns] Get error:', error);
-    res.status(500).json({ success: false, error: 'GET_CAMPAIGN_FAILED', message: error.message });
+  if (!campaign) {
+    return res.status(404).json({ success: false, error: 'CAMPAIGN_NOT_FOUND', message: 'Campaign not found' });
   }
-});
+
+  // Compute progress from associated emails
+  const emailStats = await db.Email.findAndCountAll({
+    where: { campaignId: campaign.id },
+    attributes: ['status'],
+  });
+
+  const campaignData = campaign.toJSON();
+  campaignData.emailCount = emailStats.count;
+  campaignData.sentCount = emailStats.rows.filter(e => e.status === 'sent').length;
+  campaignData.totalCount = emailStats.count;
+
+  res.json({ success: true, data: campaignData });
+}));
 
 // PUT /api/campaigns/:id — Update campaign
-router.put('/:id', [param('id').isUUID()], validateRequest, async (req, res) => {
-  try {
-    const campaign = await db.Campaign.findByPk(req.params.id);
-    if (!campaign) {
-      return res.status(404).json({ success: false, error: 'CAMPAIGN_NOT_FOUND' });
-    }
-
-    // Only owner or ADMIN can update
-    if (campaign.userId !== req.user.id && req.user.role !== 'ADMIN') {
-      return res.status(403).json({ success: false, error: 'FORBIDDEN', message: 'Not your campaign' });
-    }
-
-    const allowedFields = ['name', 'subject_template', 'body_template', 'type', 'target_segment', 'account_ids', 'schedule_config'];
-    const updateData = {};
-    for (const field of allowedFields) {
-      if (req.body[field] !== undefined) {
-        updateData[field] = req.body[field];
-      }
-    }
-
-    await campaign.update(updateData);
-
-    res.json({ success: true, data: campaign, message: 'Campaign updated' });
-  } catch (error) {
-    console.error('[Campaigns] Update error:', error);
-    res.status(500).json({ success: false, error: 'UPDATE_CAMPAIGN_FAILED', message: error.message });
+router.put('/:id', [param('id').isUUID()], validateRequest, asyncHandler(async (req, res) => {
+  const campaign = await db.Campaign.findByPk(req.params.id);
+  if (!campaign) {
+    return res.status(404).json({ success: false, error: 'CAMPAIGN_NOT_FOUND' });
   }
-});
+
+  // Only owner or ADMIN can update
+  if (campaign.userId !== req.user.id && req.user.role !== 'ADMIN') {
+    return res.status(403).json({ success: false, error: 'FORBIDDEN', message: 'Not your campaign' });
+  }
+
+  const allowedFields = ['name', 'subject_template', 'body_template', 'type', 'target_segment', 'account_ids', 'schedule_config'];
+  const updateData = {};
+  for (const field of allowedFields) {
+    if (req.body[field] !== undefined) {
+      updateData[field] = req.body[field];
+    }
+  }
+
+  await campaign.update(updateData);
+
+  res.json({ success: true, data: campaign, message: 'Campaign updated' });
+}));
 
 // DELETE /api/campaigns/:id — Delete campaign
-router.delete('/:id', [param('id').isUUID()], validateRequest, async (req, res) => {
-  try {
-    const campaign = await db.Campaign.findByPk(req.params.id);
-    if (!campaign) {
-      return res.status(404).json({ success: false, error: 'CAMPAIGN_NOT_FOUND' });
-    }
-
-    if (campaign.userId !== req.user.id && req.user.role !== 'ADMIN') {
-      return res.status(403).json({ success: false, error: 'FORBIDDEN' });
-    }
-
-    // Also delete associated emails
-    await db.Email.destroy({ where: { campaignId: campaign.id } });
-    await campaign.destroy();
-
-    res.json({ success: true, message: 'Campaign deleted' });
-  } catch (error) {
-    console.error('[Campaigns] Delete error:', error);
-    res.status(500).json({ success: false, error: 'DELETE_CAMPAIGN_FAILED', message: error.message });
+router.delete('/:id', [param('id').isUUID()], validateRequest, asyncHandler(async (req, res) => {
+  const campaign = await db.Campaign.findByPk(req.params.id);
+  if (!campaign) {
+    return res.status(404).json({ success: false, error: 'CAMPAIGN_NOT_FOUND' });
   }
-});
+
+  if (campaign.userId !== req.user.id && req.user.role !== 'ADMIN') {
+    return res.status(403).json({ success: false, error: 'FORBIDDEN' });
+  }
+
+  // Also delete associated emails
+  await db.Email.destroy({ where: { campaignId: campaign.id } });
+  await campaign.destroy();
+
+  res.json({ success: true, message: 'Campaign deleted' });
+}));
 
 module.exports = router;

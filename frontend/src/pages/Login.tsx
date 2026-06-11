@@ -15,10 +15,11 @@ import { useNavigate, Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '@/store'
 import { login, clearError } from '@/store/slices/authSlice'
 import { useTranslation } from 'react-i18next'
+import { loginTexts } from '../i18n/login'
 
 const { Title, Text } = Typography
 
-// SSO Provider 图标映射
+// SSO Provider icon mapping
 const SSO_ICON_MAP: Record<string, React.ReactNode> = {
   google: <GoogleOutlined />,
   github: <GithubOutlined />,
@@ -28,12 +29,12 @@ const SSO_ICON_MAP: Record<string, React.ReactNode> = {
   auth0: <CloudServerOutlined />,
 }
 
-// SSO Provider 显示名称映射
+// SSO Provider display name mapping
 const SSO_NAME_MAP: Record<string, string> = {
   google: 'Google',
   github: 'GitHub',
-  wecom: '企业微信',
-  dingtalk: '钉钉',
+  wecom: loginTexts.sso.wecom,
+  dingtalk: loginTexts.sso.dingtalk,
   keycloak: 'Keycloak',
   auth0: 'Auth0',
 }
@@ -47,7 +48,7 @@ const LoginPage: React.FC = () => {
   const { error } = useAppSelector((state) => state.auth)
   const { t } = useTranslation()
 
-  // 获取已启用的 SSO 提供商列表
+  // Fetch enabled SSO providers list
   useEffect(() => {
     const fetchSSOProviders = async () => {
       try {
@@ -57,17 +58,17 @@ const LoginPage: React.FC = () => {
           setSsoProviders(data.data.providers)
         }
       } catch {
-        // SSO 不可用时静默失败，不影响本地登录
-        console.warn('[Login] SSO providers 加载失败，将仅显示本地登录')
+        // Silently fail when SSO is unavailable, don't affect local login
+        console.warn(loginTexts.sso.loadFailWarn)
       }
     }
     fetchSSOProviders()
-    // 检查 URL 参数中的 SSO 错误信息
+    // Check URL params for SSO error info
     const params = new URLSearchParams(window.location.search)
     const ssoError = params.get('sso')
     if (ssoError === 'error') {
-      message.error(`SSO 登录失败: ${params.get('message') || '未知错误'}`)
-      // 清理 URL
+      message.error(`${loginTexts.sso.loginFailPrefix}${params.get('message') || loginTexts.sso.unknownError}`)
+      // Clean up URL
       window.history.replaceState({}, '', '/login')
     }
   }, [])
@@ -79,20 +80,20 @@ const LoginPage: React.FC = () => {
       message.success(t('auth.loginSuccess'))
       navigate('/dashboard')
     } catch (err: any) {
-      message.error(err.message || '登录失败，请检查邮箱和密码')
+      message.error(err.message || loginTexts.form.loginFailMsg)
     } finally {
       setLoading(false)
     }
   }
 
-  // SSO 登录处理：跳转到 IdP 授权页面
+  // SSO login handler: redirect to IdP authorization page
   const handleSSOLogin = async (provider: { name: string; displayName: string; loginUrl: string }) => {
     try {
       setSsoLoading(provider.name)
-      // 直接跳转到后端 SSO 登录端点，由 Passport.js 处理 302 重定向到 IdP
+      // Redirect directly to backend SSO login endpoint, Passport.js handles 302 redirect to IdP
       window.location.href = provider.loginUrl
     } catch {
-      message.error(`跳转 ${provider.displayName} 登录失败`)
+      message.error(loginTexts.sso.redirectFail(provider.displayName))
       setSsoLoading(null)
     }
   }
@@ -158,8 +159,8 @@ const LoginPage: React.FC = () => {
             GlobalReach V2.0
           </Title>
           <Text style={{ color: 'rgba(255,255,255,0.75)', fontSize: 17, lineHeight: 1.7, display: 'block', maxWidth: 360 }}>
-            企业级智能邮件营销平台<br />
-            多渠道触达 · 精准投放 · 数据驱动
+            {loginTexts.brand.tagline1}<br />
+            {loginTexts.brand.tagline2}
           </Text>
 
           <Divider style={{ borderColor: 'rgba(255,255,255,0.2)', maxWidth: 280, margin: '36px auto' }} />
@@ -167,22 +168,22 @@ const LoginPage: React.FC = () => {
           <div style={{ display: 'flex', gap: 32, justifyContent: 'center' }}>
             <div style={{ textAlign: 'center' }}>
               <Text strong style={{ color: '#fff', fontSize: 24, display: 'block' }}>99.9%</Text>
-              <Text style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12 }}>送达率</Text>
+              <Text style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12 }}>{loginTexts.brand.deliveryRate}</Text>
             </div>
             <div style={{ textAlign: 'center' }}>
               <Text strong style={{ color: '#fff', fontSize: 24, display: 'block' }}>5+</Text>
-              <Text style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12 }}>邮件平台</Text>
+              <Text style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12 }}>{loginTexts.brand.mailPlatforms}</Text>
             </div>
             <div style={{ textAlign: 'center' }}>
               <Text strong style={{ color: '#fff', fontSize: 24, display: 'block' }}>JWT</Text>
-              <Text style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12 }}>安全认证</Text>
+              <Text style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12 }}>{loginTexts.brand.securityAuth}</Text>
             </div>
           </div>
         </div>
       </div>
       ) : null}
 
-      {/* Right Panel - Login Form - 移动端全宽 */}
+      {/* Right Panel - Login Form - full width on mobile */}
       <div
         style={{
           flex: mobile.isMobile ? '1' : '1',
@@ -205,7 +206,7 @@ const LoginPage: React.FC = () => {
             background: '#ffffff',
           }}
         >
-          {/* 移动端 Logo */}
+          {/* Mobile Logo */}
           {mobile.isMobile && (
             <div style={{ textAlign: 'center', marginBottom: 24 }}>
               <div
@@ -223,7 +224,7 @@ const LoginPage: React.FC = () => {
                 <SafetyCertificateOutlined style={{ color: '#fff', fontSize: 28 }} />
               </div>
               <Title level={4} style={{ color: '#fff', marginBottom: 4 }}>GlobalReach</Title>
-              <Text style={{ color: 'rgba(255,255,255,0.7)', fontSize: 13 }}>企业级邮件营销平台</Text>
+              <Text style={{ color: 'rgba(255,255,255,0.7)', fontSize: 13 }}>{loginTexts.mobile.subtitle}</Text>
             </div>
           )}
 
@@ -281,16 +282,16 @@ const LoginPage: React.FC = () => {
                 block
                 style={{ height: 46, fontSize: 15 }}
               >
-                登录系统
+                {loginTexts.form.loginBtn}
               </Button>
             </Form.Item>
           </Form>
 
-          {/* SSO 单点登录按钮区域 */}
+          {/* SSO login buttons area */}
           {ssoProviders.length > 0 && (
             <>
               <Divider plain style={{ margin: '20px 0', fontSize: 13, color: 'var(--gr-gray-400)' }}>
-                或使用以下方式登录
+                {loginTexts.sso.divider}
               </Divider>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {ssoProviders.map((provider) => (
@@ -314,7 +315,7 @@ const LoginPage: React.FC = () => {
                       borderRadius: 8,
                     }}
                   >
-                    使用 {SSO_NAME_MAP[provider.name] || provider.displayName} 登录
+                    {loginTexts.sso.loginWith(SSO_NAME_MAP[provider.name] || provider.displayName)}
                   </Button>
                 ))}
               </div>
@@ -345,7 +346,7 @@ const LoginPage: React.FC = () => {
           >
             <SafetyCertificateOutlined style={{ color: 'var(--gr-success)', fontSize: 16, flexShrink: 0 }} />
             <Text style={{ color: 'var(--gr-success)', fontSize: 12, fontWeight: 500 }}>
-              采用 JWT Dual-Token 安全认证，数据传输全程加密保护
+              {loginTexts.security.badgeText}
             </Text>
           </div>
         </Card>

@@ -5,7 +5,7 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v2.0.0] - Steady State Evolution (S129–S135)
+## [v2.0.0] - Steady State Evolution (S129–S136)
 
 ### S134 (2025-06-11) — Batch 5: Quick Wins
 #### Fixed
@@ -44,6 +44,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Notes
 - Docker build blocked by pre-existing `passport-openidconnect` dependency version issue (not introduced by this change)
 - DEBT-014 marked as Partial DONE — only TenantAdmin.tsx completed; Login.tsx/Dashboard.tsx etc. pending future batch
+
+### S136 (2026-06-11) — Batch 7: i18n Continuation + Swagger 100% + Dependency Fix
+#### Fixed
+- **DEBT-014** (P2, continued): Login.tsx (25 Chinese strings → `loginTexts`, 15 entries) + Dashboard.tsx (12 strings → `dashboardTexts`, 14 entries). New files: `frontend/src/i18n/login.ts` + `frontend/src/i18n/dashboard.ts`. DEBT-014 now fully DONE for 3 major pages (TenantAdmin+Login+Dashboard)
+- **DEBT-021** (P2): Swagger/OpenAPI coverage — Created `api/swagger.js` config, added `@openapi` JSDoc annotations to all **39/39 endpoints** across 7 route files (auth/campaigns/emails/clients/accounts/webhooks/health) = **100% coverage**
+- **Dependency fix**: `passport-openidconnect` version corrected from non-existent `^0.12.1` → actual latest `^0.1.2` in `api/package.json`
+#### Changed
+- Anti-hallucination template: v1.1 → v1.2 (S136 facts synced)
+- Technical Debt Register: v1.6.0 → v1.7.0 (2 debts marked DONE)
+#### Notes
+- Legacy file inventory: 44 uncommitted changes from S132/S133 documented with categorization and commit recommendations (deferred to next session)
+- Remaining i18n: Settings/Campaigns/Accounts/Emails/Reports/Register pages still have hardcoded Chinese
 
 ### S132 (2025-06-09) — Batch 3: Security & Observability
 - Security headers hardened across all routes

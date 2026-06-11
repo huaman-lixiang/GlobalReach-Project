@@ -41,6 +41,7 @@ const { authLimiter } = require('../middleware/rateLimiter');
 const {
   validatePasswordComplexity,
 } = require('../middleware/validator');
+const { asyncHandler } = require('../middleware/errorHandler');
 
 // ============================================
 // POST /api/auth/register
@@ -57,74 +58,65 @@ router.post('/register', authLimiter, [
     .withMessage('Password: min 8 chars, upper+lower+number/special'),
   body('name').trim().notEmpty().isLength({ max: 100 }).escape()
     .withMessage('Name is required (max 100 chars)'),
-], validateRequest, async (req, res) => {
-  try {
-    const existingUser = await db.User.findOne({
-      where: { email: req.body.email.toLowerCase() },
-    });
+], validateRequest, asyncHandler(async (req, res) => {
+  const existingUser = await db.User.findOne({
+    where: { email: req.body.email.toLowerCase() },
+  });
 
-    if (existingUser) {
-      return res.status(409).json({
-        success: false,
-        error: 'EMAIL_EXISTS',
-        message: 'An account with this email already exists',
-      });
-    }
-
-    const hashedPassword = await bcrypt.hash(req.body.password, BCRYPT_ROUNDS);
-
-    const user = await db.User.create({
-      email: req.body.email.toLowerCase(),
-      passwordHash: hashedPassword,
-      name: req.body.name.trim(),
-      role: 'USER',
-      isActive: true,
-      isEmailVerified: false,
-    });
-
-    // Generate token pair for new user
-    const [accessToken, refreshToken] = await Promise.all([
-      generateAccessToken({ id: user.id, email: user.email, role: user.role }),
-      createRefreshToken(user.id, req.ip),
-    ]);
-
-    // D10: Issue CSRF token for subsequent mutating requests
-    const csrfToken = issueCsrfToken(user.id);
-
-    await db.AuditLog.create({
-      userId: user.id,
-      action: 'REGISTER',
-      resourceType: 'User',
-      resourceId: user.id,
-      ipAddress: req.ip,
-    });
-
-    res.status(201).json({
-      success: true,
-      data: {
-        accessToken,
-        refreshToken,
-        csrfToken, // D10: Include for immediate use
-        expiresIn: process.env.ACCESS_TOKEN_EXPIRES || '15m',
-        user: {
-          id: user.id,
-          email: user.email,
-          name: user.name,
-          role: user.role,
-          isEmailVerified: user.isEmailVerified,
-        },
-      },
-      message: 'Registration successful',
-    });
-  } catch (error) {
-    console.error('[Auth] Register error:', error);
-    res.status(500).json({
+  if (existingUser) {
+    return res.status(409).json({
       success: false,
-      error: 'REGISTER_FAILED',
-      message: 'Registration failed. Please try again.',
+      error: 'EMAIL_EXISTS',
+      message: 'An account with this email already exists',
     });
   }
-});
+
+  const hashedPassword = await bcrypt.hash(req.body.password, BCRYPT_ROUNDS);
+
+  const user = await db.User.create({
+    email: req.body.email.toLowerCase(),
+    passwordHash: hashedPassword,
+    name: req.body.name.trim(),
+    role: 'USER',
+    isActive: true,
+    isEmailVerified: false,
+  });
+
+  // Generate token pair for new user
+  const [accessToken, refreshToken] = await Promise.all([
+    generateAccessToken({ id: user.id, email: user.email, role: user.role }),
+    createRefreshToken(user.id, req.ip),
+  ]);
+
+  // D10: Issue CSRF token for subsequent mutating requests
+  const csrfToken = issueCsrfToken(user.id);
+
+  await db.AuditLog.create({
+    userId: user.id,
+    action: 'REGISTER',
+    resourceType: 'User',
+    resourceId: user.id,
+    ipAddress: req.ip,
+  });
+
+  res.status(201).json({
+    success: true,
+    data: {
+      accessToken,
+      refreshToken,
+      csrfToken, // D10: Include for immediate use
+      expiresIn: process.env.ACCESS_TOKEN_EXPIRES || '15m',
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        role: user.role,
+        isEmailVerified: user.isEmailVerified,
+      },
+    },
+    message: 'Registration successful',
+  });
+}));
 
 // ============================================
 // POST /api/auth/login (D05: returns dual tokens)
@@ -132,107 +124,88 @@ router.post('/register', authLimiter, [
 router.post('/login', authLimiter, [
   body('email').isEmail().withMessage('Invalid email format'), // S084/G05: removed normalizeEmail
   body('password').notEmpty().withMessage('Password is required'),
-], validateRequest, async (req, res) => {
-  try {
-    const user = await db.User.findOne({
-      where: { email: req.body.email.toLowerCase() },
-    });
+], validateRequest, asyncHandler(async (req, res) => {
+  const user = await db.User.findOne({
+    where: { email: req.body.email.toLowerCase() },
+  });
 
-    if (!user || !(await bcrypt.compare(req.body.password, user.passwordHash))) {
-      return res.status(401).json({
-        success: false,
-        error: 'INVALID_CREDENTIALS',
-        message: 'Invalid email or password',
-        code: 'AUTH_101',
-      });
-    }
-
-    if (!user.isActive) {
-      return res.status(403).json({
-        success: false,
-        error: 'ACCOUNT_DISABLED',
-        message: 'Your account has been disabled. Please contact support.',
-        code: 'AUTH_102',
-      });
-    }
-
-    // Generate dual tokens
-    const [accessToken, refreshToken] = await Promise.all([
-      generateAccessToken({ id: user.id, email: user.email, role: user.role }),
-      createRefreshToken(user.id, req.ip),
-    ]);
-
-    // D10: Issue CSRF token for subsequent mutating requests
-    const csrfToken = issueCsrfToken(user.id);
-
-    // Update last login
-    await user.update({ lastLoginAt: new Date() });
-
-    await db.AuditLog.create({
-      userId: user.id,
-      action: 'LOGIN',
-      resourceType: 'User',
-      resourceId: user.id,
-      ipAddress: req.ip,
-    });
-
-    res.json({
-      success: true,
-      data: {
-        accessToken,
-        refreshToken,
-        csrfToken, // D10: Include for immediate use
-        expiresIn: process.env.ACCESS_TOKEN_EXPIRES || '15m',
-        tokenType: 'Bearer',
-        user: {
-          id: user.id,
-          email: user.email,
-          name: user.name,
-          role: user.role,
-          avatarUrl: user.avatarUrl,
-          isEmailVerified: user.isEmailVerified,
-        },
-      },
-      message: 'Login successful',
-    });
-  } catch (error) {
-    console.error('[Auth] Login error:', error);
-    res.status(500).json({
+  if (!user || !(await bcrypt.compare(req.body.password, user.passwordHash))) {
+    return res.status(401).json({
       success: false,
-      error: 'LOGIN_FAILED',
-      message: 'Login failed. Please try again.',
+      error: 'INVALID_CREDENTIALS',
+      message: 'Invalid email or password',
+      code: 'AUTH_101',
     });
   }
-});
+
+  if (!user.isActive) {
+    return res.status(403).json({
+      success: false,
+      error: 'ACCOUNT_DISABLED',
+      message: 'Your account has been disabled. Please contact support.',
+      code: 'AUTH_102',
+    });
+  }
+
+  // Generate dual tokens
+  const [accessToken, refreshToken] = await Promise.all([
+    generateAccessToken({ id: user.id, email: user.email, role: user.role }),
+    createRefreshToken(user.id, req.ip),
+  ]);
+
+  // D10: Issue CSRF token for subsequent mutating requests
+  const csrfToken = issueCsrfToken(user.id);
+
+  // Update last login
+  await user.update({ lastLoginAt: new Date() });
+
+  await db.AuditLog.create({
+    userId: user.id,
+    action: 'LOGIN',
+    resourceType: 'User',
+    resourceId: user.id,
+    ipAddress: req.ip,
+  });
+
+  res.json({
+    success: true,
+    data: {
+      accessToken,
+      refreshToken,
+      csrfToken, // D10: Include for immediate use
+      expiresIn: process.env.ACCESS_TOKEN_EXPIRES || '15m',
+      tokenType: 'Bearer',
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        role: user.role,
+        avatarUrl: user.avatarUrl,
+        isEmailVerified: user.isEmailVerified,
+      },
+    },
+    message: 'Login successful',
+  });
+}));
 
 // ============================================
 // POST /api/auth/refresh (D05 NEW)
 // ============================================
 router.post('/refresh', [
   body('refreshToken').notEmpty().withMessage('Refresh token is required'),
-], validateRequest, async (req, res) => {
-  try {
-    const result = await verifyAndRotateRefreshToken(req.body.refreshToken, req.ip);
+], validateRequest, asyncHandler(async (req, res) => {
+  const result = await verifyAndRotateRefreshToken(req.body.refreshToken, req.ip);
 
-    res.json({
-      success: true,
-      data: {
-        ...result,
-        expiresIn: process.env.ACCESS_TOKEN_EXPIRES || '15m',
-        tokenType: 'Bearer',
-      },
-      message: 'Tokens refreshed successfully',
-    });
-  } catch (error) {
-    const statusCode = error.code === 'REFRESH_TOKEN_EXPIRED' ? 401 :
-                      error.code === 'INVALID_REFRESH_TOKEN' ? 401 : 400;
-    res.status(statusCode).json({
-      success: false,
-      error: error.code || 'REFRESH_FAILED',
-      message: error.message || 'Failed to refresh token',
-    });
-  }
-});
+  res.json({
+    success: true,
+    data: {
+      ...result,
+      expiresIn: process.env.ACCESS_TOKEN_EXPIRES || '15m',
+      tokenType: 'Bearer',
+    },
+    message: 'Tokens refreshed successfully',
+  });
+}));
 
 // ============================================
 // POST /api/auth/logout (D05 NEW)
@@ -268,32 +241,24 @@ router.post('/logout', verifyToken, async (req, res) => {
 // ============================================
 // GET /api/auth/me
 // ============================================
-router.get('/me', verifyToken, async (req, res) => {
-  try {
-    const user = await db.User.findByPk(req.user.id, {
-      attributes: { exclude: ['passwordHash'] },
-    });
+router.get('/me', verifyToken, asyncHandler(async (req, res) => {
+  const user = await db.User.findByPk(req.user.id, {
+    attributes: { exclude: ['passwordHash'] },
+  });
 
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        error: 'USER_NOT_FOUND',
-        message: 'User not found',
-      });
-    }
-
-    res.json({
-      success: true,
-      data: user.toJSON(),
-    });
-  } catch (error) {
-    res.status(500).json({
+  if (!user) {
+    return res.status(404).json({
       success: false,
-      error: 'FETCH_USER_FAILED',
-      message: 'Failed to fetch user profile',
+      error: 'USER_NOT_FOUND',
+      message: 'User not found',
     });
   }
-});
+
+  res.json({
+    success: true,
+    data: user.toJSON(),
+  });
+}));
 
 // ============================================
 // POST /api/auth/forgot-password (D05 NEW)
@@ -364,83 +329,74 @@ router.post('/reset-password', actionRateLimit('reset_password', 3), [
       }
       return true;
     }),
-], validateRequest, async (req, res) => {
-  try {
-    const user = await db.User.findOne({
-      where: { email: req.body.email.toLowerCase(), isActive: true },
+], validateRequest, asyncHandler(async (req, res) => {
+  const user = await db.User.findOne({
+    where: { email: req.body.email.toLowerCase(), isActive: true },
+  });
+
+  if (!user || !user.metadata?.passwordResetToken) {
+    return res.status(400).json({
+      success: false,
+      error: 'INVALID_RESET_REQUEST',
+      message: 'Invalid or expired password reset request. Please try again.',
     });
+  }
 
-    if (!user || !user.metadata?.passwordResetToken) {
-      return res.status(400).json({
-        success: false,
-        error: 'INVALID_RESET_REQUEST',
-        message: 'Invalid or expired password reset request. Please try again.',
-      });
-    }
+  // Verify token
+  const tokenHash = crypto.createHash('sha256').update(req.body.token).digest('hex');
+  if (tokenHash !== user.metadata.passwordResetToken) {
+    return res.status(400).json({
+      success: false,
+      error: 'INVALID_RESET_TOKEN',
+      message: 'Invalid reset token.',
+    });
+  }
 
-    // Verify token
-    const tokenHash = crypto.createHash('sha256').update(req.body.token).digest('hex');
-    if (tokenHash !== user.metadata.passwordResetToken) {
-      return res.status(400).json({
-        success: false,
-        error: 'INVALID_RESET_TOKEN',
-        message: 'Invalid reset token.',
-      });
-    }
-
-    // Check expiration
-    const expiresAt = new Date(user.metadata.passwordResetExpiresAt);
-    if (new Date() > expiresAt) {
-      // Clear the expired token
-      await user.update({
-        metadata: {
-          ...user.metadata,
-          passwordResetToken: null,
-          passwordResetExpiresAt: null,
-        },
-      });
-      return res.status(400).json({
-        success: false,
-        error: 'RESET_TOKEN_EXPIRED',
-        message: 'Password reset token has expired. Please request a new one.',
-      });
-    }
-
-    // Update password
-    const newPasswordHash = await bcrypt.hash(req.body.password, BCRYPT_ROUNDS);
+  // Check expiration
+  const expiresAt = new Date(user.metadata.passwordResetExpiresAt);
+  if (new Date() > expiresAt) {
+    // Clear the expired token
     await user.update({
-      passwordHash: newPasswordHash,
       metadata: {
         ...user.metadata,
         passwordResetToken: null,
         passwordResetExpiresAt: null,
       },
-      passwordChangedAt: new Date(),
     });
-
-    // Revoke all existing sessions (force re-login)
-    await revokeAllUserTokens(user.id);
-
-    await db.AuditLog.create({
-      userId: user.id,
-      action: 'PASSWORD_RESET',
-      resourceType: 'User',
-      resourceId: user.id,
-      ipAddress: req.ip,
-    });
-
-    res.json({
-      success: true,
-      message: 'Password reset successful. Please log in with your new password.',
-    });
-  } catch (error) {
-    console.error('[Auth] Reset password error:', error);
-    res.status(500).json({
+    return res.status(400).json({
       success: false,
-      error: 'RESET_FAILED',
-      message: 'Failed to reset password. Please try again.',
+      error: 'RESET_TOKEN_EXPIRED',
+      message: 'Password reset token has expired. Please request a new one.',
     });
   }
-});
+
+  // Update password
+  const newPasswordHash = await bcrypt.hash(req.body.password, BCRYPT_ROUNDS);
+  await user.update({
+    passwordHash: newPasswordHash,
+    metadata: {
+      ...user.metadata,
+      passwordResetToken: null,
+      passwordResetExpiresAt: null,
+    },
+    passwordChangedAt: new Date(),
+  });
+
+  // Revoke all existing sessions (force re-login)
+  await revokeAllUserTokens(user.id);
+
+  await db.AuditLog.create({
+    userId: user.id,
+    action: 'PASSWORD_RESET',
+    resourceType: 'User',
+    resourceId: user.id,
+    ipAddress: req.ip,
+  });
+
+  res.json({
+    success: true,
+    message: 'Password reset successful. Please log in with your new password.',
+  });
+}));
 
 module.exports = router;

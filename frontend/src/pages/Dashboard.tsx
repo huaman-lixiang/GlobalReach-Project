@@ -29,18 +29,22 @@ import { useAppDispatch, useAppSelector } from '@/store'
 import { fetchStats } from '@/store/slices/statsSlice'
 import { useTranslation } from 'react-i18next'
 import useMobile from '@/hooks/useMobile'
+import { dashboardTexts } from '../i18n/dashboard'
 
 const { Title, Text } = Typography
 
 const COLORS = ['#1a56db', '#0d9488', '#f59e0b', '#dc2626', '#7c3aed']
 
 // Platform display name mapping
+// NOTE: Original code uses t() hook at module top-level (outside React component),
+// which violates React Rules of Hooks. String values extracted here for i18n;
+// fixing hook placement is a separate task (DEBT).
 const platformLabels: Record<string, string> = {
-  GMAIL: t('accounts.gmail'),
-  OUTLOOK: t('accounts.outlook'),
-  QQ: t('accounts.qq'),
-  NETEASE_163: t('accounts.163'),
-  CUSTOM_SMTP: t('accounts.custom'),
+  GMAIL: dashboardTexts.platformLabels.GMAIL,
+  OUTLOOK: dashboardTexts.platformLabels.OUTLOOK,
+  QQ: dashboardTexts.platformLabels.QQ,
+  NETEASE_163: dashboardTexts.platformLabels.NETEASE_163,
+  CUSTOM_SMTP: dashboardTexts.platformLabels.CUSTOM_SMTP,
 }
 
 const Dashboard: React.FC = () => {
@@ -69,21 +73,21 @@ const Dashboard: React.FC = () => {
       title: t('dashboard.totalEmails'),
       value: stats?.totalEmailsSent || 0,
       icon: <SendOutlined style={{ color: 'var(--gr-primary)', fontSize: 22 }} />,
-      suffix: '封',
+      suffix: dashboardTexts.statSuffix.emails,
       cardClass: 'primary',
     },
     {
       title: t('dashboard.totalAccounts'),
       value: stats?.totalAccounts || 0,
       icon: <TeamOutlined style={{ color: 'var(--gr-success)', fontSize: 22 }} />,
-      suffix: '个',
+      suffix: dashboardTexts.statSuffix.count,
       cardClass: 'success',
     },
     {
       title: t('dashboard.activeCampaigns'),
       value: stats?.activeCampaigns || 0,
       icon: <MailOutlined style={{ color: 'var(--gr-warning)', fontSize: 22 }} />,
-      suffix: '个',
+      suffix: dashboardTexts.statSuffix.count,
       cardClass: 'warning',
     },
     {
@@ -121,7 +125,7 @@ const Dashboard: React.FC = () => {
       color: cfg.color,
       children: (
         <div>
-          <Text strong>{item.subject || '(无主题)'}</Text>
+          <Text strong>{item.subject || dashboardTexts.activity.noSubject}</Text>
           <br />
           <Text type="secondary">
             → {item.toAddress} | <Tag>{item.status}</Tag>
@@ -142,10 +146,10 @@ const Dashboard: React.FC = () => {
       <div className="gr-page-header">
         <Title level={3}>
           <SendOutlined style={{ color: 'var(--gr-primary)' }} />
-          仪表盘概览
+          {dashboardTexts.page.title}
         </Title>
         <Text type="secondary" style={{ fontSize: 13 }}>
-          实时数据 · 自动刷新
+          {dashboardTexts.page.subtitle}
         </Text>
       </div>
 
@@ -197,7 +201,7 @@ const Dashboard: React.FC = () => {
         <Col xs={24} sm={12}>
           <Card className="gr-stat-card success">
             <Statistic
-              title="点击率"
+              title={dashboardTexts.stats.clickRate}
               value={stats?.clickRate || 0}
               precision={1}
               prefix={<RiseOutlined style={{ color: 'var(--gr-success)', fontSize: 18 }} />}
@@ -209,7 +213,7 @@ const Dashboard: React.FC = () => {
         <Col xs={24} sm={12}>
           <Card className="gr-stat-card error">
             <Statistic
-              title="退信率"
+              title={dashboardTexts.stats.bounceRate}
               value={stats?.bounceRate || 0}
               precision={1}
               prefix={<FallOutlined style={{ color: 'var(--gr-error)', fontSize: 18 }} />}
@@ -245,7 +249,7 @@ const Dashboard: React.FC = () => {
                   <Line
                     type="monotone"
                     dataKey="sent"
-                    name="发送数"
+                    name={dashboardTexts.chart.sentCount}
                     stroke="#1a56db"
                     strokeWidth={2.5}
                     dot={{ fill: '#1a56db', r: 4 }}
@@ -254,7 +258,7 @@ const Dashboard: React.FC = () => {
                   <Line
                     type="monotone"
                     dataKey="opened"
-                    name="打开数"
+                    name={dashboardTexts.chart.openCount}
                     stroke="#0d9488"
                     strokeWidth={2.5}
                     dot={{ fill: '#0d9488', r: 4 }}
@@ -306,7 +310,7 @@ const Dashboard: React.FC = () => {
                 </PieChart>
               </ResponsiveContainer>
             ) : (
-              <Empty description="暂无平台数据" style={{ padding: 80 }} />
+              <Empty description={dashboardTexts.empty.noPlatformData} style={{ padding: 80 }} />
             )}
           </Card>
         </Col>
@@ -318,7 +322,7 @@ const Dashboard: React.FC = () => {
           <Card title={
             <span>
               <BarChartOutlined style={{ marginRight: 8, color: 'var(--gr-warning)' }} />
-              各平台发送量对比
+              {dashboardTexts.chart.platformComparison}
             </span>
           }>
             {platformData.length > 0 ? (
@@ -334,7 +338,7 @@ const Dashboard: React.FC = () => {
                       boxShadow: 'var(--gr-shadow-md)',
                     }}
                   />
-                  <Bar dataKey="count" name="发送量" fill="#1a56db" radius={[6, 6, 0, 0]} maxBarSize={50} />
+                  <Bar dataKey="count" name={dashboardTexts.chart.sendVolume} fill="#1a56db" radius={[6, 6, 0, 0]} maxBarSize={50} />
                 </BarChart>
               </ResponsiveContainer>
             ) : (
