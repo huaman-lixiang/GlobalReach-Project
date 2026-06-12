@@ -14,302 +14,262 @@
 
 const express = require('express');
 const router = express.Router();
-const { verifyToken } = require('../middleware/auth');
+const { verifyToken, optionalAuth } = require('../middleware/auth');
+const { rateLimiter } = require('../middleware/rateLimiter');
+const { asyncHandler } = require('../middleware/errorHandler');
 const { alertCorrelationService } = require('../services/alertCorrelationService');
+
+// S152: 标准安全中间件链
+// Note: /correlate endpoint uses optionalAuth to allow webhook-based alerts
+// All other endpoints require full authentication
+router.use(rateLimiter);
 
 // ============================================
 // POST /api/v1/alerts/correlate
 // 接收并关联单条告警（来自外部系统或 Webhook）
+// S152: 使用 optionalAuth 允许 webhook 调用，但优先使用认证用户信息
 // ============================================
 
-router.post('/correlate', async (req, res) => {
+router.post('/correlate', optionalAuth, asyncHandler(async (req, res) => {
   const startTime = Date.now();
+  const { alert, source, metadata } = req.body;
 
-  try {
-    const { alert, source, metadata } = req.body;
-
-    // 验证必填字段
-    if (!alert) {
-      return res.status(400).json({
-        success: false,
-        error: 'MISSING_ALERT',
-        message: 'Request body must contain "alert" object',
-      });
-    }
-
-    // 标准化告警对象
-    const normalizedAlert = {
-      fingerprint: alert.fingerprint,
-      alertName: alert.alertName || alert.labels?.alertname || 'unnamed',
-      severity: alert.severity || alert.labels?.severity || 'unknown',
-      instance: alert.instance || alert.labels?.instance,
-      team: alert.team || alert.labels?.team,
-      summary: alert.summary || alert.annotations?.summary,
-      description: alert.description || alert.annotations?.description,
-      startsAt: alert.startsAt || new Date().toISOString(),
-      endsAt: alert.endsAt,
-      receivedAt: new Date(),
-      labels: alert.labels || {},
-      annotations: alert.annotations || {},
-      status: alert.status || 'firing',
-      source: source || 'api',
-    };
-
-    // 执行关联分析
-    const result = await alertCorrelationService.receiveAlert(normalizedAlert);
-    result.processingTimeMs = Date.now() - startTime;
-
-    // 根据抑制决策设置 HTTP 状态码
-    let httpStatus = 200;
-    if (result.suppressionDecision === 'suppress') {
-      httpStatus = 200; // 成功处理但被抑制
-    }
-
-    res.status(httpStatus).json({
-      success: true,
-      message: 'Alert correlation completed',
-      ...result,
-    });
-  } catch (error) {
-    console.error('[AIOps/Correlate] Error:', error.message);
-
-    res.status(500).json({
+  // 验证必填字段
+  if (!alert) {
+    return res.status(400).json({
       success: false,
-      error: 'CORRELATION_ERROR',
-      message: error.message,
-      processingTimeMs: Date.now() - startTime,
+      error: 'MISSING_ALERT',
+      message: 'Request body must contain "alert" object',
     });
   }
-});
+
+  // 标准化告警对象
+  const normalizedAlert = {
+    fingerprint: alert.fingerprint,
+    alertName: alert.alertName || alert.labels?.alertname || 'unnamed',
+    severity: alert.severity || alert.labels?.severity || 'unknown',
+    instance: alert.instance || alert.labels?.instance,
+    team: alert.team || alert.labels?.team,
+    summary: alert.summary || alert.annotations?.summary,
+    description: alert.description || alert.annotations?.description,
+    startsAt: alert.startsAt || new Date().toISOString(),
+    endsAt: alert.endsAt,
+    receivedAt: new Date(),
+    labels: alert.labels || {},
+    annotations: alert.annotations || {},
+    status: alert.status || 'firing',
+    source: source || 'api',
+  };
+
+  // 执行关联分析
+  const result = await alertCorrelationService.receiveAlert(normalizedAlert);
+  result.processingTimeMs = Date.now() - startTime;
+
+  res.status(200).json({
+    success: true,
+    message: 'Alert correlation completed',
+    ...result,
+  });
+}));
 
 // ============================================
 // GET /api/v1/alerts/clusters
 // 列出活跃的告警集群
 // ============================================
 
-router.get('/clusters', verifyToken, async (req, res) => {
-  try {
-    const { status, limit, severity } = req.query;
+router.get('/clusters', verifyToken, asyncHandler(async (req, res) => {
+  const { status, limit, severity } = req.query;
 
-    let clusters = alertCorrelationService.getActiveClusters();
+  let clusters = alertCorrelationService.getActiveClusters();
 
-    // 过滤状态
-    if (status && status !== 'all') {
-      clusters = clusters.filter(c => c.status === status);
-    }
-
-    // 过滤严重程度
-    if (severity) {
-      clusters = clusters.filter(c =>
-        c.rootCause?.alertName && // 有根因信息
-        (c.severity === severity || c.labels?.severity === severity)
-      );
-    }
-
-    // 限制返回数量
-    const limitNum = parseInt(limit) || 50;
-    clusters = clusters.slice(0, limitNum);
-
-    res.json({
-      success: true,
-      total: clusters.length,
-      clusters: clusters.map(cluster => ({
-        id: cluster.clusterId,
-        status: cluster.status,
-        createdAt: cluster.createdAt,
-        updatedAt: cluster.updatedAt,
-        size: cluster.clusterSize,
-        rootCause: {
-          alertName: cluster.rootCause?.alertName,
-          instance: cluster.rootCause?.instance,
-          severity: cluster.severity || cluster.labels?.severity,
-          confidence: cluster.rootCause?.confidence,
-          score: cluster.rootCause?.score,
-        },
-        topAffectedServices: [
-          ...new Set([
-            cluster.instance || cluster.labels?.instance,
-            ...cluster.relatedAlerts?.map(r => r.instance) || [],
-          ].filter(Boolean)),
-        ].slice(0, 5),
-        stormDetected: cluster.stormDetected,
-        suppressionDecision: cluster.suppressionDecision,
-        suggestedAction: cluster.suggestedAction ? {
-          level: cluster.suggestedAction.level,
-          type: cluster.suggestedAction.type,
-          autoExecutable: cluster.suggestedAction.autoExecutable,
-        } : null,
-      })),
-    });
-  } catch (error) {
-    console.error('[AIOps/Clusters] Error:', error.message);
-
-    res.status(500).json({
-      success: false,
-      error: 'FETCH_CLUSTERS_FAILED',
-      message: error.message,
-    });
+  // 过滤状态
+  if (status && status !== 'all') {
+    clusters = clusters.filter(c => c.status === status);
   }
-});
+
+  // 过滤严重程度
+  if (severity) {
+    clusters = clusters.filter(c =>
+      c.rootCause?.alertName &&
+      (c.severity === severity || c.labels?.severity === severity)
+    );
+  }
+
+  // 限制返回数量
+  const limitNum = parseInt(limit) || 50;
+  clusters = clusters.slice(0, limitNum);
+
+  res.json({
+    success: true,
+    total: clusters.length,
+    clusters: clusters.map(cluster => ({
+      id: cluster.clusterId,
+      status: cluster.status,
+      createdAt: cluster.createdAt,
+      updatedAt: cluster.updatedAt,
+      size: cluster.clusterSize,
+      rootCause: {
+        alertName: cluster.rootCause?.alertName,
+        instance: cluster.rootCause?.instance,
+        severity: cluster.severity || cluster.labels?.severity,
+        confidence: cluster.rootCause?.confidence,
+        score: cluster.rootCause?.score,
+      },
+      topAffectedServices: [
+        ...new Set([
+          cluster.instance || cluster.labels?.instance,
+          ...(cluster.relatedAlerts?.map(r => r.instance) || []),
+        ].filter(Boolean)),
+      ].slice(0, 5),
+      stormDetected: cluster.stormDetected,
+      suppressionDecision: cluster.suppressionDecision,
+      suggestedAction: cluster.suggestedAction ? {
+        level: cluster.suggestedAction.level,
+        type: cluster.suggestedAction.type,
+        autoExecutable: cluster.suggestedAction.autoExecutable,
+      } : null,
+    })),
+  });
+}));
 
 // ============================================
 // GET /api/v1/alerts/clusters/:id
 // 集群详情（含完整的根因分析）
 // ============================================
 
-router.get('/clusters/:id', verifyToken, async (req, res) => {
-  try {
-    const { id } = req.params;
-    const clusters = alertCorrelationService.getActiveClusters();
+router.get('/clusters/:id', verifyToken, asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const clusters = alertCorrelationService.getActiveClusters();
 
-    // 查找指定集群
-    const cluster = clusters.find(c => c.clusterId === id);
+  // 查找指定集群
+  const cluster = clusters.find(c => c.clusterId === id);
 
-    if (!cluster) {
-      // 尝试从历史记录中查找
-      const history = await alertCorrelationService.getClusterHistory(id);
-      if (history.length > 0) {
-        return res.json({
-          success: true,
-          cluster: history[0],
-          source: 'history',
-        });
-      }
-
-      return res.status(404).json({
-        success: false,
-        error: 'CLUSTER_NOT_FOUND',
-        message: `Cluster "${id}" not found in active or historical records`,
+  if (!cluster) {
+    // 尝试从历史记录中查找
+    const history = await alertCorrelationService.getClusterHistory(id);
+    if (history.length > 0) {
+      return res.json({
+        success: true,
+        cluster: history[0],
+        source: 'history',
       });
     }
 
-    res.json({
-      success: true,
-      cluster: {
-        ...cluster,
-
-        // 增强的根因分析详情
-        rootCauseAnalysis: {
-          candidate: cluster.rootCause,
-          scoringBreakdown: {
-            topology: cluster.rootCause?._scores?.topology,
-            freshness: cluster.rootCause?._scores?.freshness,
-            severity: cluster.rootCause?._scores?.severity,
-            frequency: cluster.rootCause?._scores?.frequency,
-            history: cluster.rootCause?._scores?.history,
-          },
-          alternativeCandidates: [], // 可扩展：返回其他候选
-        },
-
-        // 关联的告警详情
-        relatedAlertsDetails: (cluster.relatedAlerts || []).map(rel => ({
-          alertName: rel.alertName,
-          instance: rel.instance,
-          relationType: rel.relationType || rel.relation,
-          severity: rel.severity,
-          timestamp: rel.startsAt || rel.timestamp,
-        })),
-
-        // 自愈动作历史
-        autoHealHistory: alertCorrelationService.autoHealEngine
-          ?.getActionHistory()
-          ?.filter(a => a.context?.clusterId === id)
-          ?.slice(-10) || [],
-      },
-    });
-  } catch (error) {
-    console.error('[AIOps/ClusterDetail] Error:', error.message);
-
-    res.status(500).json({
+    return res.status(404).json({
       success: false,
-      error: 'FETCH_CLUSTER_DETAIL_FAILED',
-      message: error.message,
+      error: 'CLUSTER_NOT_FOUND',
+      message: `Cluster "${id}" not found in active or historical records`,
     });
   }
-});
+
+  res.json({
+    success: true,
+    cluster: {
+      ...cluster,
+
+      // 增强的根因分析详情
+      rootCauseAnalysis: {
+        candidate: cluster.rootCause,
+        scoringBreakdown: {
+          topology: cluster.rootCause?._scores?.topology,
+          freshness: cluster.rootCause?._scores?.freshness,
+          severity: cluster.rootCause?._scores?.severity,
+          frequency: cluster.rootCause?._scores?.frequency,
+          history: cluster.rootCause?._scores?.history,
+        },
+        alternativeCandidates: [],
+      },
+
+      // 关联的告警详情
+      relatedAlertsDetails: (cluster.relatedAlerts || []).map(rel => ({
+        alertName: rel.alertName,
+        instance: rel.instance,
+        relationType: rel.relationType || rel.relation,
+        severity: rel.severity,
+        timestamp: rel.startsAt || rel.timestamp,
+      })),
+
+      // 自愈动作历史
+      autoHealHistory: alertCorrelationService.autoHealEngine
+        ?.getActionHistory()
+        ?.filter(a => a.context?.clusterId === id)
+        ?.slice(-10) || [],
+    },
+  });
+}));
 
 // ============================================
 // POST /api/v1/alerts/clusters/:id/action
 // 对集群执行自愈动作
 // ============================================
 
-router.post('/clusters/:id/action', verifyToken, async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { actionId, params, confirmed, operatorId } = req.body;
+router.post('/clusters/:id/action', verifyToken, asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const { actionId, params, confirmed, operatorId } = req.body;
 
-    // 验证必填字段
-    if (!actionId) {
-      return res.status(400).json({
-        success: false,
-        error: 'MISSING_ACTION_ID',
-        message: 'Request body must contain "actionId"',
-      });
-    }
-
-    // 验证集群存在
-    const clusters = alertCorrelationService.getActiveClusters();
-    const cluster = clusters.find(c => c.clusterId === id);
-
-    if (!cluster) {
-      return res.status(404).json({
-        success: false,
-        error: 'CLUSTER_NOT_FOUND',
-        message: `Cluster "${id}" not found`,
-      });
-    }
-
-    // L3+ 动作需要确认
-    const actionLevel = actionId.includes('restart') ? 'L2' :
-                       actionId.includes('collect') || actionId.includes('diags') ? 'L1' :
-                       actionId.includes('traffic') || actionId.includes('failover') ? 'L3' :
-                       actionId.includes('scale') ? 'L4' :
-                       actionId.includes('emergency') || actionId.includes('stop') ? 'L5' : 'L1';
-
-    if ((actionLevel === 'L3' || actionLevel === 'L4' || actionLevel === 'L5') && !confirmed) {
-      return res.json({
-        success: true,
-        status: 'pending_confirmation',
-        message: `Action ${actionId} (Level ${actionLevel}) requires explicit confirmation`,
-        action: {
-          id: actionId,
-          level: actionLevel,
-          params,
-          riskAssessment: this.assessActionRisk(actionLevel, cluster),
-        },
-        confirmEndpoint: `/api/v1/alerts/clusters/${id}/action`,
-        instructions: 'Re-send request with "confirmed": true to execute',
-      });
-    }
-
-    // 记录操作者信息
-    const context = {
-      clusterId: id,
-      operatorId: operatorId || req.user?.id || 'system',
-      confirmedAt: confirmed ? new Date() : null,
-      userAgent: req.get('User-Agent'),
-      ip: req.ip,
-    };
-
-    // 执行动作
-    const result = await alertCorrelationService.executeAction(actionId, params || {}, context);
-
-    res.json({
-      success: true,
-      actionResult: result,
-      executedAt: new Date(),
-      clusterId: id,
-    });
-  } catch (error) {
-    console.error('[AIOps/ExecuteAction] Error:', error.message);
-
-    res.status(500).json({
+  // 验证必填字段
+  if (!actionId) {
+    return res.status(400).json({
       success: false,
-      error: 'ACTION_EXECUTION_FAILED',
-      message: error.message,
+      error: 'MISSING_ACTION_ID',
+      message: 'Request body must contain "actionId"',
     });
   }
-});
+
+  // 验证集群存在
+  const clusters = alertCorrelationService.getActiveClusters();
+  const cluster = clusters.find(c => c.clusterId === id);
+
+  if (!cluster) {
+    return res.status(404).json({
+      success: false,
+      error: 'CLUSTER_NOT_FOUND',
+      message: `Cluster "${id}" not found`,
+    });
+  }
+
+  // L3+ 动作需要确认
+  const actionLevel = actionId.includes('restart') ? 'L2' :
+                     actionId.includes('collect') || actionId.includes('diags') ? 'L1' :
+                     actionId.includes('traffic') || actionId.includes('failover') ? 'L3' :
+                     actionId.includes('scale') ? 'L4' :
+                     actionId.includes('emergency') || actionId.includes('stop') ? 'L5' : 'L1';
+
+  if ((actionLevel === 'L3' || actionLevel === 'L4' || actionLevel === 'L5') && !confirmed) {
+    return res.json({
+      success: true,
+      status: 'pending_confirmation',
+      message: `Action ${actionId} (Level ${actionLevel}) requires explicit confirmation`,
+      action: {
+        id: actionId,
+        level: actionLevel,
+        params,
+        riskAssessment: assessActionRisk(actionLevel, cluster),
+      },
+      confirmEndpoint: `/api/v1/alerts/clusters/${id}/action`,
+      instructions: 'Re-send request with "confirmed": true to execute',
+    });
+  }
+
+  // 记录操作者信息
+  const context = {
+    clusterId: id,
+    operatorId: operatorId || req.user?.id || 'system',
+    confirmedAt: confirmed ? new Date() : null,
+    userAgent: req.get('User-Agent'),
+    ip: req.ip,
+  };
+
+  // 执行动作
+  const result = await alertCorrelationService.executeAction(actionId, params || {}, context);
+
+  res.json({
+    success: true,
+    actionResult: result,
+    executedAt: new Date(),
+    clusterId: id,
+  });
+}));
 
 /**
  * 评估动作风险等级
@@ -332,7 +292,7 @@ function assessActionRisk(actionLevel, cluster) {
       ...(cluster.relatedAlerts || []).map(r => r.instance),
     ].filter(Boolean),
     estimatedImpact: estimateImpact(actionLevel, cluster),
-    rollbackAvailable: actionLevel !== 'L5', // L5 无法自动回滚
+    rollbackAvailable: actionLevel !== 'L5',
   };
 }
 
@@ -361,78 +321,58 @@ function estimateImpact(actionLevel, cluster) {
 // AIOps 统计仪表盘数据
 // ============================================
 
-router.get('/stats', verifyToken, async (req, res) => {
-  try {
-    const stats = await alertCorrelationService.getCorrelationStats();
+router.get('/stats', verifyToken, asyncHandler(async (req, res) => {
+  const stats = await alertCorrelationService.getCorrelationStats();
 
-    res.json({
-      success: true,
-      timestamp: new Date(),
-      ...stats,
-    });
-  } catch (error) {
-    console.error('[AIOps/Stats] Error:', error.message);
-
-    res.status(500).json({
-      success: false,
-      error: 'FETCH_STATS_FAILED',
-      message: error.message,
-    });
-  }
-});
+  res.json({
+    success: true,
+    timestamp: new Date(),
+    ...stats,
+  });
+}));
 
 // ============================================
 // GET /api/v1/alerts/history
 // 历史告警关联记录
 // ============================================
 
-router.get('/history', verifyToken, async (req, res) => {
-  try {
-    const { limit, start, end, decision, clusterId } = req.query;
-    const limitNum = parseInt(limit) || 100;
+router.get('/history', verifyToken, asyncHandler(async (req, res) => {
+  const { limit, start, end, decision, clusterId } = req.query;
+  const limitNum = parseInt(limit) || 100;
 
-    // 从服务获取基础统计（包含 recentCorrelations）
-    const stats = await alertCorrelationService.getCorrelationStats();
-    let history = stats.recentCorrelations || [];
+  // 从服务获取基础统计（包含 recentCorrelations）
+  const stats = await alertCorrelationService.getCorrelationStats();
+  let history = stats.recentCorrelations || [];
 
-    // 按 clusterId 过滤
-    if (clusterId) {
-      history = history.filter(h => h.clusterId === clusterId);
-    }
+  // 按 clusterId 过滤
+  if (clusterId) {
+    history = history.filter(h => h.clusterId === clusterId);
+  }
 
-    // 按决策类型过滤
-    if (decision && decision !== 'all') {
-      history = history.filter(h => h.decision === decision);
-    }
+  // 按决策类型过滤
+  if (decision && decision !== 'all') {
+    history = history.filter(h => h.decision === decision);
+  }
 
-    // 按时间过滤
-    if (start || end) {
-      const startTime = start ? new Date(start).getTime() : 0;
-      const endTime = end ? new Date(end).getTime() : Date.now();
-      history = history.filter(h => {
-        const t = new Date(h.timestamp).getTime();
-        return t >= startTime && t <= endTime;
-      });
-    }
-
-    // 限制数量
-    history = history.slice(0, limitNum);
-
-    res.json({
-      success: true,
-      total: history.length,
-      history,
-    });
-  } catch (error) {
-    console.error('[AIOps/History] Error:', error.message);
-
-    res.status(500).json({
-      success: false,
-      error: 'FETCH_HISTORY_FAILED',
-      message: error.message,
+  // 按时间过滤
+  if (start || end) {
+    const startTime = start ? new Date(start).getTime() : 0;
+    const endTime = end ? new Date(end).getTime() : Date.now();
+    history = history.filter(h => {
+      const t = new Date(h.timestamp).getTime();
+      return t >= startTime && t <= endTime;
     });
   }
-});
+
+  // 限制数量
+  history = history.slice(0, limitNum);
+
+  res.json({
+    success: true,
+    total: history.length,
+    history,
+  });
+}));
 
 // ============================================
 // GET /api/v1/alerts/health
@@ -467,7 +407,7 @@ router.get('/health', async (req, res) => {
 
     // 判断整体状态
     const issues = [];
-    if (stats.memoryUsage?.heapUsed > 300 * 1024 * 1024) { // >300MB
+    if (stats.memoryUsage?.heapUsed > 300 * 1024 * 1024) {
       issues.push('High memory usage');
       healthStatus.components.memory = { status: 'warning' };
     }

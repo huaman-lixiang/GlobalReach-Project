@@ -31,7 +31,7 @@ let accountService;
 try {
   accountService = require('./services/accountService');
 } catch (e) {
-  console.warn('[Startup] AccountService not available:', e.message);
+  appLog.warn('AccountService not available', { error: e.message });
 }
 
 // D03: Email Service (with TemplateEngine + Queue integration)
@@ -39,7 +39,7 @@ let emailService;
 try {
   emailService = require('./services/emailService');
 } catch (e) {
-  console.warn('[Startup] EmailService not available:', e.message);
+  appLog.warn('EmailService not available', { error: e.message });
 }
 
 // D03: Pipeline components
@@ -68,11 +68,11 @@ try {
     emailService.setQueue(emailQueue);
   }
 
-  console.log('[Pipeline] EmailQueue initialized');
-  console.log('[Pipeline] SendWorker initialized');
-  console.log('[Pipeline] TemplateEngine initialized');
+  appLog.info('EmailQueue initialized');
+  appLog.info('SendWorker initialized');
+  appLog.info('TemplateEngine initialized');
 } catch (e) {
-  console.warn('[Startup] Pipeline components not available:', e.message);
+  appLog.warn('Pipeline components not available', { error: e.message });
 }
 
 // Routes
@@ -263,7 +263,7 @@ app.use('/api/v1/metrics', metricsRoutes);          // D15: Prometheus metrics
 // M-A04: Inject emailQueue instance into metrics route for queue-specific endpoints
 if (emailQueue && typeof metricsRoutes.setQueue === 'function') {
   metricsRoutes.setQueue(emailQueue);
-  console.log('[Server/M-A04] EmailQueue injected into metrics routes');
+  appLog.info('EmailQueue injected into metrics routes');
 }
 app.use('/api/v1/docs', docsRoutes);                // D16: Swagger UI documentation
 app.use('/api/v1/analytics', analyticsRoutes);      // D22: Advanced Analytics
@@ -277,6 +277,12 @@ app.use('/api/v1/maintenance', maintenanceRoutes);   // D29: Maintenance & Suppo
 app.use('/api/v1/clients', clientRoutes);              // M-A05: Client Import/Export
 app.use('/api/v1/audit', auditRoutes);                  // N03: Audit & Compliance
 app.use('/api/v1/compliance', complianceRoutes);        // N03: GDPR/PIPL Compliance
+
+// S152 Engine B: 深化集成路由
+const campaignDeliveryRoutes = require('./routes/campaign-delivery');  // 投递性检查↔Campaign
+const reportRoutes = require('./routes/reports');                      // PDF报告引擎
+app.use('/api/v1/campaign-delivery', campaignDeliveryRoutes);         // S152: Campaign投递性检查
+app.use('/api/v1/reports', reportRoutes);                              // S152: PDF报告生成与邮件发送
 
 // DEBT-017: Apply deprecation headers to all legacy /api/* routes (not /api/v1/*)
 app.use('/api', deprecationMiddleware({
@@ -512,8 +518,6 @@ try {
       });
     } catch (error) {
       appLog.error('Startup failed', { error: error.message, stack: error.stack });
-      console.error('Startup error:', error.message);
-      console.error('Stack:', error.stack);
       process.exit(1);
     }
   })();

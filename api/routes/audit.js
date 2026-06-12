@@ -19,6 +19,7 @@ const { verifyToken, requireRole } = require('../middleware/auth');
 const { auditLogger, ACTION_TYPES, SEVERITY } = require('../middleware/auditLogger');
 const db = require('../db');
 const { Op } = require('sequelize');
+const { asyncHandler } = require('../middleware/errorHandler');
 
 // ============================================
 // 所有路由需要认证
@@ -28,9 +29,8 @@ router.use(verifyToken);
 // ============================================
 // GET /api/v1/audit/logs — 审计日志列表
 // ============================================
-router.get('/logs', async (req, res) => {
-  try {
-    const {
+router.get('/logs', asyncHandler(async (req, res) => {
+  const {
       page = 1,
       limit = 20,
       userId,
@@ -125,22 +125,14 @@ router.get('/logs', async (req, res) => {
         },
       },
     });
-  } catch (error) {
-    console.error('[Audit] Failed to fetch logs:', error);
-    res.status(500).json({
-      success: false,
-      error: 'AUDIT_LOG_FETCH_FAILED',
-      message: 'Failed to fetch audit logs',
-    });
   }
-});
+}));
 
 // ============================================
 // GET /api/v1/audit/logs/export — 导出审计日志(CSV)
 // ============================================
-router.get('/logs/export', requireRole('ADMIN'), async (req, res) => {
-  try {
-    const {
+router.get('/logs/export', requireRole('ADMIN'), asyncHandler(async (req, res) => {
+  const {
       userId,
       action,
       resourceType,
@@ -216,22 +208,13 @@ router.get('/logs/export', requireRole('ADMIN'), async (req, res) => {
 
     // 添加UTF-8 BOM以支持Excel正确显示中文
     res.send('\uFEFF' + csvContent);
-  } catch (error) {
-    console.error('[Audit] Export failed:', error);
-    res.status(500).json({
-      success: false,
-      error: 'AUDIT_EXPORT_FAILED',
-      message: 'Failed to export audit logs',
-    });
-  }
-});
+}));
 
 // ============================================
 // GET /api/v1/audit/stats — 审计统计仪表盘
 // ============================================
-router.get('/stats', requireRole('ADMIN'), async (req, res) => {
-  try {
-    const today = new Date();
+router.get('/stats', requireRole('ADMIN'), asyncHandler(async (req, res) => {
+  const today = new Date();
     today.setHours(0, 0, 0, 0);
 
     const yesterday = new Date(today);
@@ -413,22 +396,13 @@ router.get('/stats', requireRole('ADMIN'), async (req, res) => {
         anomalyTrend,
       },
     });
-  } catch (error) {
-    console.error('[Audit] Stats failed:', error);
-    res.status(500).json({
-      success: false,
-      error: 'AUDIT_STATS_FAILED',
-      message: 'Failed to generate audit statistics',
-    });
-  }
-});
+}));
 
 // ============================================
 // GET /api/v1/audit/timeline/:userId — 用户操作时间线
 // ============================================
-router.get('/timeline/:userId', async (req, res) => {
-  try {
-    const { userId } = req.params;
+router.get('/timeline/:userId', asyncHandler(async (req, res) => {
+  const { userId } = req.params;
     const { startDate, endDate, limit = 50 } = req.query;
 
     // 权限检查：非管理员只能查看自己的时间线
@@ -495,14 +469,6 @@ router.get('/timeline/:userId', async (req, res) => {
         totalActions: logs.length,
       },
     });
-  } catch (error) {
-    console.error('[Audit] Timeline failed:', error);
-    res.status(500).json({
-      success: false,
-      error: 'TIMELINE_FETCH_FAILED',
-      message: 'Failed to fetch user timeline',
-    });
-  }
-});
+}));
 
 module.exports = router;

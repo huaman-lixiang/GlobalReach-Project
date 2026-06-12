@@ -18,6 +18,7 @@ const passport = require('passport');
 const db = require('../db');
 const ssoService = require('../services/ssoService');
 const { verifyToken } = require('../middleware/auth');
+const { asyncHandler } = require('../middleware/errorHandler');
 
 // ============================================
 // GET /api/v1/sso/providers — 列出已启用的 SSO 提供商
@@ -259,32 +260,23 @@ router.post('/unlink', verifyToken, async (req, res) => {
 // ============================================
 // GET /api/v1/sso/status — 当前用户 SSO 绑定状态查询
 // ============================================
-router.get('/status', verifyToken, async (req, res) => {
-  try {
-    const user = await db.User.findByPk(req.user.id, {
-      attributes: { exclude: ['passwordHash'] },
-    });
+router.get('/status', verifyToken, asyncHandler(async (req, res) => {
+  const user = await db.User.findByPk(req.user.id, {
+    attributes: { exclude: ['passwordHash'] },
+  });
 
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        error: 'USER_NOT_FOUND',
-        message: '用户不存在',
-      });
-    }
-
-    const status = ssoService.getUserSSOStatus(user);
-
-    res.json({ success: true, data: status });
-  } catch (error) {
-    console.error('[SSO/Routes] 获取 SSO 状态失败:', error.message);
-    res.status(500).json({
+  if (!user) {
+    return res.status(404).json({
       success: false,
-      error: 'FETCH_STATUS_FAILED',
-      message: '获取 SSO 绑定状态失败',
+      error: 'USER_NOT_FOUND',
+      message: '用户不存在',
     });
   }
-});
+
+  const status = ssoService.getUserSSOStatus(user);
+
+  res.json({ success: true, data: status });
+}));
 
 // ============================================
 // 辅助函数

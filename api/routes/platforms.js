@@ -11,6 +11,7 @@ const configManager = new PlatformConfigManager();
 const poolManager = new AccountPoolManager();
 const healthMonitor = new HealthMonitor();
 const { verifyToken, requireRole, validateRequest } = require('../middleware/auth');
+const { asyncHandler } = require('../middleware/errorHandler');
 
 router.use(verifyToken);
 
@@ -88,47 +89,39 @@ router.get('/:platformType/rate-limit', [
 
 router.get('/:platformType/health', [
   param('platformType').isIn(['gmail', 'outlook', 'qq', '163', 'custom'])
-], validateRequest, async (req, res) => {
-  try {
-    const accounts = poolManager.getHealthyAccounts(req.params.platformType);
-    const healthResults = [];
+], validateRequest, asyncHandler(async (req, res) => {
+  const accounts = poolManager.getHealthyAccounts(req.params.platformType);
+  const healthResults = [];
 
-    for (const account of accounts.slice(0, 5)) {
-      try {
-        const health = await healthMonitor.checkAccountHealth(account.id);
-        healthResults.push(health);
-      } catch (error) {
-        healthResults.push({
-          accountId: account.id,
-          status: 'error',
-          error: error.message
-        });
-      }
+  for (const account of accounts.slice(0, 5)) {
+    try {
+      const health = await healthMonitor.checkAccountHealth(account.id);
+      healthResults.push(health);
+    } catch (error) {
+      healthResults.push({
+        accountId: account.id,
+        status: 'error',
+        error: error.message
+      });
     }
-
-    res.success({
-      platform: req.params.platformType,
-      healthyAccounts: accounts.length,
-      checkedAccounts: healthResults.length,
-      details: healthResults
-    });
-  } catch (error) {
-    res.error(error.message, 500, 'HEALTH_CHECK_FAILED');
   }
-});
 
-router.post('/:platformType/test-connection', requireRole('admin'), async (req, res) => {
-  try {
-    const platform = PlatformFactory.create(req.params.platformType);
-    
-    const testResult = await platform.connect(req.body.credentials || {});
-    
-    await platform.disconnect();
-    
-    res.success(testResult, 'Connection test successful');
-  } catch (error) {
-    res.error(error.message, 400, 'CONNECTION_TEST_FAILED');
-  }
-});
+  res.success({
+    platform: req.params.platformType,
+    healthyAccounts: accounts.length,
+    checkedAccounts: healthResults.length,
+    details: healthResults
+  });
+}));
+
+router.post('/:platformType/test-connection', requireRole('admin'), asyncHandler(async (req, res) => {
+  const platform = PlatformFactory.create(req.params.platformType);
+
+  const testResult = await platform.connect(req.body.credentials || {});
+
+  await platform.disconnect();
+
+  res.success(testResult, 'Connection test successful');
+}));
 
 module.exports = router;

@@ -23,6 +23,7 @@ const router = express.Router();
 const tenantService = require('../services/tenantService');
 const { verifyToken, requireRole, validateRequest } = require('../middleware/auth');
 const { tenantContext } = require('../middleware/tenantContext');
+const { asyncHandler } = require('../middleware/errorHandler');
 
 // ============================================
 // 认证与授权中间件
@@ -41,35 +42,26 @@ router.get('/', [
   query('status').optional().isIn(['active', 'suspended', 'terminated']),
   query('plan').optional().isIn(['basic', 'professional', 'enterprise']),
   query('search').optional().trim().isLength({ max: 100 }).escape(),
-], validateRequest, async (req, res) => {
-  try {
-    const result = await tenantService.getAllTenants({
-      page: req.query.page,
-      pageSize: req.query.pageSize,
-      status: req.query.status,
-      plan: req.query.plan,
-      search: req.query.search,
-    });
+], validateRequest, asyncHandler(async (req, res) => {
+  const result = await tenantService.getAllTenants({
+    page: req.query.page,
+    pageSize: req.query.pageSize,
+    status: req.query.status,
+    plan: req.query.plan,
+    search: req.query.search,
+  });
 
-    res.json({
-      success: true,
-      data: result.rows,
-      pagination: {
-        total: result.count,
-        page: result.page,
-        pageSize: result.pageSize,
-        totalPages: Math.ceil(result.count / result.pageSize),
-      },
-    });
-  } catch (error) {
-    console.error('[Tenants] List error:', error.message);
-    res.status(500).json({
-      success: false,
-      error: 'FETCH_TENANTS_FAILED',
-      message: error.message,
-    });
-  }
-});
+  res.json({
+    success: true,
+    data: result.rows,
+    pagination: {
+      total: result.count,
+      page: result.page,
+      pageSize: result.pageSize,
+      totalPages: Math.ceil(result.count / result.pageSize),
+    },
+  });
+}));
 
 // ============================================
 // POST /api/v1/tenants — 创建租户
@@ -84,97 +76,63 @@ router.post('/', [
     .withMessage('无效的套餐计划'),
   body('domain').optional().trim().isLength({ max: 255 }).isURL()
     .withMessage('域名格式无效'),
-], validateRequest, async (req, res) => {
-  try {
-    // 验证 slug 唯一性（额外检查）
-    if (!tenantService.isValidSlug(req.body.slug)) {
-      return res.status(400).json({
-        success: false,
-        error: 'INVALID_SLUG',
-        message: 'Slug 格式无效',
-      });
-    }
-
-    const tenant = await tenantService.createTenant({
-      name: req.body.name,
-      slug: req.body.slug,
-      plan: req.body.plan || 'basic',
-      domain: req.body.domain || null,
-    });
-
-    res.status(201).json({
-      success: true,
-      data: tenant,
-      message: `租户 "${tenant.name}" 创建成功`,
-    });
-  } catch (error) {
-    if (error.code === 'TENANT_SLUG_CONFLICT') {
-      return res.status(409).json({
-        success: false,
-        error: error.code,
-        message: error.message,
-      });
-    }
-    console.error('[Tenants] Create error:', error.message);
-    res.status(400).json({
+], validateRequest, asyncHandler(async (req, res) => {
+  // 验证 slug 唯一性（额外检查）
+  if (!tenantService.isValidSlug(req.body.slug)) {
+    return res.status(400).json({
       success: false,
-      error: 'CREATE_TENANT_FAILED',
-      message: error.message,
+      error: 'INVALID_SLUG',
+      message: 'Slug 格式无效',
     });
   }
-});
+
+  const tenant = await tenantService.createTenant({
+    name: req.body.name,
+    slug: req.body.slug,
+    plan: req.body.plan || 'basic',
+    domain: req.body.domain || null,
+  });
+
+  res.status(201).json({
+    success: true,
+    data: tenant,
+    message: `租户 "${tenant.name}" 创建成功`,
+  });
+}));
 
 // ============================================
 // GET /api/v1/tenants/summary — 全局摘要
 // ============================================
-router.get('/summary', async (req, res) => {
-  try {
-    const summary = await tenantService.getGlobalSummary();
+router.get('/summary', asyncHandler(async (req, res) => {
+  const summary = await tenantService.getGlobalSummary();
 
-    res.json({
-      success: true,
-      data: summary,
-    });
-  } catch (error) {
-    console.error('[Tenants] Summary error:', error.message);
-    res.status(500).json({
-      success: false,
-      error: 'FETCH_SUMMARY_FAILED',
-      message: error.message,
-    });
-  }
-});
+  res.json({
+    success: true,
+    data: summary,
+  });
+}));
 
 // ============================================
 // GET /api/v1/tenants/:id — 租户详情
 // ============================================
 router.get('/:id', [
   param('id').isInt({ min: 1 }).toInt(),
-], validateRequest, async (req, res) => {
-  try {
-    const tenant = await tenantService.getTenantById(req.params.id);
+], validateRequest, asyncHandler(async (req, res) => {
+  const tenant = await tenantService.getTenantById(req.params.id);
 
-    if (!tenant) {
-      return res.status(404).json({
-        success: false,
-        error: 'TENANT_NOT_FOUND',
-        message: `ID 为 ${req.params.id} 的租户不存在`,
-      });
-    }
-
-    res.json({
-      success: true,
-      data: tenant,
-    });
-  } catch (error) {
-    console.error('[Tenants] Get error:', error.message);
-    res.status(500).json({
+  if (!tenant) {
+    return res.status(404).json({
       success: false,
-      error: 'GET_TENANT_FAILED',
-      message: error.message,
+      error: 'TENANT_NOT_FOUND',
+      message: `ID 为 ${req.params.id} 的租户不存在`,
     });
   }
-});
+
+  res.json({
+    success: true,
+    data: tenant,
+  });
+}));
 
 // ============================================
 // PUT /api/v1/tenants/:id — 更新租户
@@ -185,105 +143,57 @@ router.put('/:id', [
   body('domain').optional().trim().isLength({ max: 255 }),
   body('plan').optional().isIn(['basic', 'professional', 'enterprise']),
   body('status').optional().isIn(['active', 'suspended', 'terminated']),
-], validateRequest, async (req, res) => {
-  try {
-    const updated = await tenantService.updateTenant(req.params.id, req.body);
+], validateRequest, asyncHandler(async (req, res) => {
+  const updated = await tenantService.updateTenant(req.params.id, req.body);
 
-    res.json({
-      success: true,
-      data: updated,
-      message: '租户更新成功',
-    });
-  } catch (error) {
-    if (error.code === 'TENANT_NOT_FOUND') {
-      return res.status(404).json({
-        success: false,
-        error: error.code,
-        message: error.message,
-      });
-    }
-    console.error('[Tenants] Update error:', error.message);
-    res.status(400).json({
-      success: false,
-      error: 'UPDATE_TENANT_FAILED',
-      message: error.message,
-    });
-  }
-});
+  res.json({
+    success: true,
+    data: updated,
+    message: '租户更新成功',
+  });
+}));
 
 // ============================================
 // DELETE /api/v1/tenants/:id — 终止租户
 // ============================================
 router.delete('/:id', [
   param('id').isInt({ min: 1 }).toInt(),
-], validateRequest, async (req, res) => {
-  try {
-    await tenantService.deleteTenant(req.params.id);
+], validateRequest, asyncHandler(async (req, res) => {
+  await tenantService.deleteTenant(req.params.id);
 
-    res.json({
-      success: true,
-      message: '租户已终止',
-    });
-  } catch (error) {
-    if (error.code === 'TENANT_DELETE_FORBIDDEN') {
-      return res.status(403).json({
-        success: false,
-        error: error.code,
-        message: error.message,
-      });
-    }
-    if (error.code === 'TENANT_NOT_FOUND') {
-      return res.status(404).json({
-        success: false,
-        error: error.code,
-        message: error.message,
-      });
-    }
-    console.error('[Tenants] Delete error:', error.message);
-    res.status(400).json({
-      success: false,
-      error: 'DELETE_TENANT_FAILED',
-      message: error.message,
-    });
-  }
-});
+  res.json({
+    success: true,
+    message: '租户已终止',
+  });
+}));
 
 // ============================================
 // GET /api/v1/tenants/:id/quota — 配额详情
 // ============================================
 router.get('/:id/quota', [
   param('id').isInt({ min: 1 }).toInt(),
-], validateRequest, async (req, res) => {
-  try {
-    const tenant = await tenantService.getTenantById(req.params.id);
+], validateRequest, asyncHandler(async (req, res) => {
+  const tenant = await tenantService.getTenantById(req.params.id);
 
-    if (!tenant) {
-      return res.status(404).json({
-        success: false,
-        error: 'TENANT_NOT_FOUND',
-        message: '租户不存在',
-      });
-    }
-
-    // 并行获取当前用量
-    const usage = await tenantService.getUsageStats(req.params.id);
-
-    res.json({
-      success: true,
-      data: {
-        quota: tenant.quota || {},
-        usage,
-      },
-    });
-  } catch (error) {
-    console.error('[Tenants] Quota get error:', error.message);
-    res.status(500).json({
+  if (!tenant) {
+    return res.status(404).json({
       success: false,
-      error: 'FETCH_QUOTA_FAILED',
-      message: error.message,
+      error: 'TENANT_NOT_FOUND',
+      message: '租户不存在',
     });
   }
-});
+
+  // 并行获取当前用量
+  const usage = await tenantService.getUsageStats(req.params.id);
+
+  res.json({
+    success: true,
+    data: {
+      quota: tenant.quota || {},
+      usage,
+    },
+  });
+}));
 
 // ============================================
 // PUT /api/v1/tenants/:id/quota — 更新配额
@@ -299,24 +209,15 @@ router.put('/:id/quota', [
   body('maxStorageMB').optional().isInt({ min: 1 }),
   body('apiRateLimit').optional().isInt({ min: 1 }),
   body('features').optional().isObject(),
-], validateRequest, async (req, res) => {
-  try {
-    const updatedQuota = await tenantService.updateQuota(req.params.id, req.body);
+], validateRequest, asyncHandler(async (req, res) => {
+  const updatedQuota = await tenantService.updateQuota(req.params.id, req.body);
 
-    res.json({
-      success: true,
-      data: updatedQuota,
-      message: '配额更新成功',
-    });
-  } catch (error) {
-    console.error('[Tenants] Quota update error:', error.message);
-    res.status(400).json({
-      success: false,
-      error: 'UPDATE_QUOTA_FAILED',
-      message: error.message,
-    });
-  }
-});
+  res.json({
+    success: true,
+    data: updatedQuota,
+    message: '配额更新成功',
+  });
+}));
 
 // ============================================
 // GET /api/v1/tenants/:id/usage — 用量统计
@@ -324,25 +225,16 @@ router.put('/:id/quota', [
 router.get('/:id/usage', [
   param('id').isInt({ min: 1 }).toInt(),
   query('refresh').optional().isBoolean().toBoolean(),
-], validateRequest, async (req, res) => {
-  try {
-    const usage = await tenantService.getUsageStats(
-      req.params.id,
-      req.query.refresh === true
-    );
+], validateRequest, asyncHandler(async (req, res) => {
+  const usage = await tenantService.getUsageStats(
+    req.params.id,
+    req.query.refresh === true
+  );
 
-    res.json({
-      success: true,
-      data: usage,
-    });
-  } catch (error) {
-    console.error('[Tenants] Usage error:', error.message);
-    res.status(500).json({
-      success: false,
-      error: 'FETCH_USAGE_FAILED',
-      message: error.message,
-    });
-  }
-});
+  res.json({
+    success: true,
+    data: usage,
+  });
+}));
 
 module.exports = router;

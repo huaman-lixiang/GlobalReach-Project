@@ -17,6 +17,7 @@ const express = require('express');
 const router = express.Router();
 
 const { verifyToken } = require('../middleware/auth');
+const { asyncHandler } = require('../middleware/errorHandler');
 
 router.use(verifyToken);
 
@@ -139,7 +140,7 @@ router.get('/stats', (req, res) => {
 // ============================================
 // POST /api/progress/campaign/:campaignId/cancel - Cancel a running campaign
 // ============================================
-router.post('/campaign/:campaignId/cancel', async (req, res) => {
+router.post('/campaign/:campaignId/cancel', asyncHandler(async (req, res) => {
   const emailQueue = req.app.get('emailQueue');
 
   if (!emailQueue) {
@@ -152,19 +153,17 @@ router.post('/campaign/:campaignId/cancel', async (req, res) => {
   const cancelled = emailQueue.cancelCampaign(req.params.campaignId);
 
   // Update campaign DB status
-  try {
-    const db = require('../db');
-    await db.Campaign.update(
-      { status: 'CANCELLED' },
-      { where: { id: req.params.campaignId, userId: req.user.id } }
-    );
-  } catch (_) {}
+  const db = require('../db');
+  await db.Campaign.update(
+    { status: 'CANCELLED' },
+    { where: { id: req.params.campaignId, userId: req.user.id } }
+  );
 
   res.json({
     success: true,
     data: { cancelled, campaignId: req.params.campaignId },
     message: `${cancelled} pending jobs cancelled`,
   });
-});
+}));
 
 module.exports = router;

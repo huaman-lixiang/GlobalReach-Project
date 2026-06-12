@@ -17,6 +17,15 @@ const path = require('path');
 const fs = require('fs');
 const { execSync } = require('child_process');
 const crypto = require('crypto');
+const { verifyToken, requireRole } = require('../middleware/auth');
+const { rateLimiter } = require('../middleware/rateLimiter');
+const { asyncHandler } = require('../middleware/errorHandler');
+
+// S152: 标准安全中间件链
+// Risk assessment data is sensitive - authentication required
+// Approval endpoint requires ADMIN role
+router.use(rateLimiter);
+router.use(verifyToken);
 
 // ── 配置常量 ─────────────────────────────────────────────────────────────
 
@@ -153,49 +162,38 @@ function generateAssessmentId() {
  *   - commit: string - 指定 commit hash
  *   - diffRange: string - 自定义 diff 范围
  */
-router.post('/risk/assess', async (req, res) => {
-    try {
-        const startTime = Date.now();
+router.post('/risk/assess', asyncHandler(async (req, res) => {
+    const startTime = Date.now();
 
-        // 执行风险评估
-        const assessment = executeRiskAssessment({
-            commit: req.body.commit,
-            diffRange: req.body.diffRange
-        });
+    // 执行风险评估
+    const assessment = executeRiskAssessment({
+        commit: req.body.commit,
+        diffRange: req.body.diffRange
+    });
 
-        // 补充元数据
-        assessment.assessment_id = generateAssessmentId();
-        assessment.assessment_duration_ms = Date.now() - startTime;
-        assessment.api_version = 'v1';
-        assessment.timestamp = new Date().toISOString();
+    // 补充元数据
+    assessment.assessment_id = generateAssessmentId();
+    assessment.assessment_duration_ms = Date.now() - startTime;
+    assessment.api_version = 'v1';
+    assessment.timestamp = new Date().toISOString();
 
-        // 保存到历史记录
-        const history = loadRiskHistory();
-        history.assessments.unshift(assessment);
+    // 保存到历史记录
+    const history = loadRiskHistory();
+    history.assessments.unshift(assessment);
 
-        // 只保留最近 100 条记录
-        if (history.assessments.length > 100) {
-            history.assessments = history.assessments.slice(0, 100);
-        }
-        saveRiskHistory(history);
-
-        // 返回结果
-        res.json({
-            success: true,
-            data: assessment,
-            message: `风险评估完成，综合得分: ${assessment.summary.risk_score}/10 (${assessment.summary.risk_emoji} ${assessment.summary.risk_level})`
-        });
-
-    } catch (error) {
-        console.error('[RiskAPI] Assessment error:', error);
-        res.status(500).json({
-            success: false,
-            error: 'ASSESSMENT_FAILED',
-            message: error.message,
-            timestamp: new Date().toISOString()
-        });
+    // 只保留最近 100 条记录
+    if (history.assessments.length > 100) {
+        history.assessments = history.assessments.slice(0, 100);
     }
-});
+    saveRiskHistory(history);
+
+    // 返回结果
+    res.json({
+        success: true,
+        data: assessment,
+        message: `风险评估完成，综合得分: ${assessment.summary.risk_score}/10 (${assessment.summary.risk_emoji} ${assessment.summary.risk_level})`
+    });
+}));
 
 /**
  * GET /api/v1/risk/history

@@ -30,6 +30,7 @@ const path = require('path');
 const fs = require('fs');
 const { exec } = require('child_process');
 const { promisify } = require('utils');
+const { asyncHandler } = require('../middleware/errorHandler');
 
 const execAsync = promisify(exec);
 
@@ -172,185 +173,123 @@ function isPathSafe(targetPath) {
  *
  * Returns the most recent inspection result (full details).
  * Used by dashboards, monitoring systems, and status pages.
- *
- * Query Parameters:
- *   ?compact=true  — Return only summary metadata (smaller payload)
- *
- * Response 200:
- *   {
- *     "success": true,
- *     "data": { <full inspection JSON> },
- *     "meta": { "fileAge": "...", "isRecent": true }
- *   }
- *
- * Response 404:
- *   { "success": false, "error": "No inspection results found" }
  */
-router.get('/last', async (req, res) => {
-    try {
-        const files = scanInspectionFiles();
+router.get('/last', asyncHandler(async (req, res) => {
+    const files = scanInspectionFiles();
 
-        if (files.length === 0) {
-            return res.status(404).json({
-                success: false,
-                error: 'No inspection results found. Run: bash scripts/health-inspection.sh --report',
-                hint: 'Execute the inspection script first to generate report data.',
-            });
-        }
-
-        const latestFile = files[0];
-        const data = parseInspectionFile(latestFile.path);
-
-        if (!data) {
-            return res.status(500).json({
-                success: false,
-                error: 'Failed to parse the latest inspection result',
-            });
-        }
-
-        // Calculate file age
-        const now = new Date();
-        const ageMs = now.getTime() - latestFile.mtime.getTime();
-        const ageMinutes = Math.floor(ageMs / 60000);
-        const isRecent = ageMs < 3600000; // Within 1 hour
-
-        let responseData = data;
-        const isCompact = req.query.compact === 'true';
-
-        if (isCompact) {
-            // Return only summary to reduce bandwidth
-            responseData = extractSummary(data);
-            responseData.filePath = latestFile.path;
-        }
-
-        res.json({
-            success: true,
-            data: responseData,
-            meta: {
-                fileName: latestFile.name,
-                fileAge: `${ageMinutes} minutes ago`,
-                isRecent,
-                totalRecordsAvailable: files.length,
-            },
-        });
-    } catch (error) {
-        console.error('[Inspection] GET /last error:', error);
-        res.status(500).json({
+    if (files.length === 0) {
+        return res.status(404).json({
             success: false,
-            error: error.message,
+            error: 'No inspection results found. Run: bash scripts/health-inspection.sh --report',
+            hint: 'Execute the inspection script first to generate report data.',
         });
     }
-});
+
+    const latestFile = files[0];
+    const data = parseInspectionFile(latestFile.path);
+
+    if (!data) {
+        return res.status(500).json({
+            success: false,
+            error: 'Failed to parse the latest inspection result',
+        });
+    }
+
+    // Calculate file age
+    const now = new Date();
+    const ageMs = now.getTime() - latestFile.mtime.getTime();
+    const ageMinutes = Math.floor(ageMs / 60000);
+    const isRecent = ageMs < 3600000; // Within 1 hour
+
+    let responseData = data;
+    const isCompact = req.query.compact === 'true';
+
+    if (isCompact) {
+        responseData = extractSummary(data);
+        responseData.filePath = latestFile.path;
+    }
+
+    res.json({
+        success: true,
+        data: responseData,
+        meta: {
+            fileName: latestFile.name,
+            fileAge: `${ageMinutes} minutes ago`,
+            isRecent,
+            totalRecordsAvailable: files.length,
+        },
+    });
+}));
 
 /**
  * GET /api/v1/inspection/history
  *
  * Returns paginated list of historical inspection records.
  * Supports filtering by date range and status.
- *
- * Query Parameters:
- *   ?page=1           — Page number (default: 1)
- *   ?limit=20         — Records per page (default: 20, max: 100)
- *   ?since=2026-01-01 — Filter: only records after this date
- *   ?until=2026-12-31 — Filter: only records before this date
- *   ?status=fail      — Filter: only records with failures
- *   ?status=warn      — Filter: only records with warnings
- *
- * Response 200:
- *   {
- *     "success": true,
- *     "data": [...],
- *     "pagination": { "page": 1, "totalPages": 5, "totalCount": 98 }
- *   }
  */
-router.get('/history', async (req, res) => {
-    try {
-        const page = Math.max(1, parseInt(req.query.page, 10) || 1);
-        const limit = Math.min(100, Math.max(1, parseInt(req.query.limit, 10) || 20));
-        const since = req.query.since ? new Date(req.query.since) : null;
-        const until = req.query.until ? new Date(req.query.until) : null;
-        const statusFilter = req.query.status; // 'fail' | 'warn'
+router.get('/history', asyncHandler(async (req, res) => {
+    const page = Math.max(1, parseInt(req.query.page, 10) || 1);
+    const limit = Math.min(100, Math.max(1, parseInt(req.query.limit, 10) || 20));
+    const since = req.query.since ? new Date(req.query.since) : null;
+    const until = req.query.until ? new Date(req.query.until) : null;
+    const statusFilter = req.query.status; // 'fail' | 'warn'
 
-        let files = scanInspectionFiles();
+    let files = scanInspectionFiles();
 
-        // Apply date filters
-        if (since) {
-            files = files.filter((f) => f.mtime >= since);
-        }
-        if (until) {
-            files = files.filter((f) => f.mtime <= until);
-        }
-
-        // Parse and filter by status
-        let records = [];
-        for (const file of files.slice(0, MAX_HISTORY_RECORDS)) {
-            const data = parseInspectionFile(file.path);
-            if (!data) continue;
-
-            const summary = extractSummary(data);
-            summary.filePath = file.path;
-            summary.fileSize = file.size;
-
-            // Apply status filter
-            if (statusFilter === 'fail' && (summary.overall.fail || 0) === 0) continue;
-            if (statusFilter === 'warn' && (summary.overall.warn || 0) === 0 && (summary.overall.fail || 0) === 0) continue;
-
-            records.push(summary);
-        }
-
-        const totalCount = records.length;
-        const totalPages = Math.ceil(totalCount / limit);
-        const startIndex = (page - 1) * limit;
-        const paginatedRecords = records.slice(startIndex, startIndex + limit);
-
-        res.json({
-            success: true,
-            data: paginatedRecords,
-            pagination: {
-                page,
-                limit,
-                totalCount,
-                totalPages,
-                hasNextPage: page < totalPages,
-                hasPrevPage: page > 1,
-            },
-            filters: {
-                since: since?.toISOString() || null,
-                until: until?.toISOString() || null,
-                status: statusFilter || null,
-            },
-        });
-    } catch (error) {
-        console.error('[Inspection] GET /history error:', error);
-        res.status(500).json({
-            success: false,
-            error: error.message,
-        });
+    // Apply date filters
+    if (since) {
+        files = files.filter((f) => f.mtime >= since);
     }
-});
+    if (until) {
+        files = files.filter((f) => f.mtime <= until);
+    }
+
+    // Parse and filter by status
+    let records = [];
+    for (const file of files.slice(0, MAX_HISTORY_RECORDS)) {
+        const data = parseInspectionFile(file.path);
+        if (!data) continue;
+
+        const summary = extractSummary(data);
+        summary.filePath = file.path;
+        summary.fileSize = file.size;
+
+        // Apply status filter
+        if (statusFilter === 'fail' && (summary.overall.fail || 0) === 0) continue;
+        if (statusFilter === 'warn' && (summary.overall.warn || 0) === 0 && (summary.overall.fail || 0) === 0) continue;
+
+        records.push(summary);
+    }
+
+    const totalCount = records.length;
+    const totalPages = Math.ceil(totalCount / limit);
+    const startIndex = (page - 1) * limit;
+    const paginatedRecords = records.slice(startIndex, startIndex + limit);
+
+    res.json({
+        success: true,
+        data: paginatedRecords,
+        pagination: {
+            page,
+            limit,
+            totalCount,
+            totalPages,
+            hasNextPage: page < totalPages,
+            hasPrevPage: page > 1,
+        },
+        filters: {
+            since: since?.toISOString() || null,
+            until: until?.toISOString() || null,
+            status: statusFilter || null,
+        },
+    });
+}));
 
 /**
  * POST /api/v1/inspection/trigger
  *
  * Manually triggers a new inspection run.
  * Executes health-inspection.sh as a child process and returns the result.
- *
- * Request Body (optional):
- *   { "mode": "quick", "dimension": "infrastructure" }
- *
- * Response 200:
- *   {
- *     "success": true,
- *     "message": "Inspection triggered",
- *     "result": { <inspection JSON> },
- *     "executionTimeMs": 12345
- *   }
- *
- * Response 429:
- *   { "success": false, "error": "Rate limited", "retryAfterSeconds": 45 }
- *
- * Response 503:
- *   { "success": false, "error": "Script not found or execution failed" }
  */
 router.post('/trigger', async (req, res) => {
     // Rate limiting check
@@ -398,7 +337,6 @@ router.post('/trigger', async (req, res) => {
         }
 
         // Execute inspection script
-        // Use bash explicitly for cross-platform compatibility
         const command = `bash "${INSPECTION_SCRIPT}" ${args}`;
 
         console.log(`[Inspection] Triggering: ${command}`);
@@ -408,7 +346,6 @@ router.post('/trigger', async (req, res) => {
             cwd: path.dirname(path.dirname(__dirname)),
             env: {
                 ...process.env,
-                // Ensure clean environment for inspection
                 NODE_ENV: process.env.NODE_ENV || 'production',
             },
             maxBuffer: 1024 * 1024, // 1MB buffer for large JSON output
@@ -419,7 +356,6 @@ router.post('/trigger', async (req, res) => {
         // Parse the JSON output
         let result;
         try {
-            // stdout should contain the JSON output from --json mode
             const jsonMatch = stdout.match(/\{[\s\S]*\}$/); // Find JSON at end
             if (jsonMatch) {
                 result = JSON.parse(jsonMatch[0]);
@@ -446,7 +382,7 @@ router.post('/trigger', async (req, res) => {
                 mode,
                 dimension: dimension || 'all',
                 triggeredAt: new Date().toISOString(),
-                triggeredBy: req.user?.id || 'anonymous', // If auth middleware provides user info
+                triggeredBy: req.user?.id || 'anonymous',
             },
         });
 
@@ -485,260 +421,206 @@ router.post('/trigger', async (req, res) => {
  *
  * Returns historical trend data for each dimension's scores over time.
  * Used by Grafana dashboards and frontend charts (Chart.js/ECharts).
- *
- * Query Parameters:
- *   ?days=7          — Number of days to look back (default: 7, max: 90)
- *   ?dimensions=all  — Comma-separated dimensions or 'all' (default: all)
- *   ?format=array    — Response format: 'array' (for Chart.js) or 'object' (raw)
- *
- * Response 200:
- *   {
- *     "success": true,
- *     "period": { "start": "...", "end": "...", "days": 7 },
- *     "trends": {
- *       "infrastructure": [
- *         { "timestamp": "...", "score": 100, "pass": 8, "fail": 0 },
- *         ...
- *       ],
- *       "application": [...],
- *       ...
- *     },
- *     "averages": {
- *       "infrastructure": 98.5,
- *       "application": 82.3,
- *       ...
- *     }
- *   }
  */
-router.get('/trends', async (req, res) => {
-    try {
-        const days = Math.min(90, Math.max(1, parseInt(req.query.days, 10) || 7));
-        const dimensionsParam = req.query.dimensions || 'all';
-        const format = req.query.format || 'object';
+router.get('/trends', asyncHandler(async (req, res) => {
+    const days = Math.min(90, Math.max(1, parseInt(req.query.days, 10) || 7));
+    const dimensionsParam = req.query.dimensions || 'all';
+    const format = req.query.format || 'object';
 
-        const cutoffDate = new Date();
-        cutoffDate.setDate(cutoffDate.getDate() - days);
+    const cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - days);
 
-        // Scan files within the date range
-        const allFiles = scanInspectionFiles();
-        const recentFiles = allFiles.filter((f) => f.mtime >= cutoffDate);
+    // Scan files within the date range
+    const allFiles = scanInspectionFiles();
+    const recentFiles = allFiles.filter((f) => f.mtime >= cutoffDate);
 
-        // Parse records
-        const records = recentFiles
-            .map((file) => ({
-                ...parseInspectionFile(file.path),
-                _fileMtime: file.mtime.toISOString(),
-            }))
-            .filter((r) => r && r.inspectionId);
+    // Parse records
+    const records = recentFiles
+        .map((file) => ({
+            ...parseInspectionFile(file.path),
+            _fileMtime: file.mtime.toISOString(),
+        }))
+        .filter((r) => r && r.inspectionId);
 
-        // Determine which dimensions to include
-        const allDimensions = ['infrastructure', 'application', 'security', 'data', 'monitoring'];
-        const requestedDimensions =
-            dimensionsParam === 'all' ? allDimensions : dimensionsParam.split(',');
+    // Determine which dimensions to include
+    const allDimensions = ['infrastructure', 'application', 'security', 'data', 'monitoring'];
+    const requestedDimensions =
+        dimensionsParam === 'all' ? allDimensions : dimensionsParam.split(',');
 
-        // Build trend data structure
-        const trends = {};
-        const sums = {};
-        const counts = {};
+    // Build trend data structure
+    const trends = {};
+    const sums = {};
+    const counts = {};
+
+    for (const dim of requestedDimensions) {
+        trends[dim] = [];
+        sums[dim] = 0;
+        counts[dim] = 0;
+    }
+
+    for (const record of records) {
+        if (!record.dimensions) continue;
+
+        const point = {
+            timestamp: record.timestamp || record._fileMtime,
+            inspectionId: record.inspectionId,
+        };
 
         for (const dim of requestedDimensions) {
-            trends[dim] = [];
-            sums[dim] = 0;
-            counts[dim] = 0;
-        }
+            const dimData = record.dimensions[dim];
+            if (dimData) {
+                trends[dim].push({
+                    ...point,
+                    score: dimData.score || 0,
+                    total: dimData.total || 0,
+                    pass: dimData.pass || 0,
+                    warn: dimData.warn || 0,
+                    fail: dimData.fail || 0,
+                });
 
-        for (const record of records) {
-            if (!record.dimensions) continue;
-
-            const point = {
-                timestamp: record.timestamp || record._fileMtime,
-                inspectionId: record.inspectionId,
-            };
-
-            for (const dim of requestedDimensions) {
-                const dimData = record.dimensions[dim];
-                if (dimData) {
-                    trends[dim].push({
-                        ...point,
-                        score: dimData.score || 0,
-                        total: dimData.total || 0,
-                        pass: dimData.pass || 0,
-                        warn: dimData.warn || 0,
-                        fail: dimData.fail || 0,
-                    });
-
-                    sums[dim] += dimData.score || 0;
-                    counts[dim]++;
-                }
+                sums[dim] += dimData.score || 0;
+                counts[dim]++;
             }
         }
-
-        // Calculate averages
-        const averages = {};
-        for (const dim of requestedDimensions) {
-            averages[dim] = counts[dim] > 0 ? Math.round((sums[dim] / counts[dim]) * 10) / 10 : 0;
-        }
-
-        // Format response based on format parameter
-        let formattedTrends = trends;
-        if (format === 'array') {
-            // Chart.js friendly format: labels + datasets
-            const labels = [
-                ...new Set(
-                    Object.values(trends)
-                        .flat()
-                        .map((p) => p.timestamp)
-                        .sort()
-                ),
-            ].slice(-MAX_TREND_POINTS);
-
-            formattedTrends = {
-                labels,
-                datasets: requestedDimensions.map((dim) => ({
-                    label: dim.charAt(0).toUpperCase() + dim.slice(1),
-                    data: labels.map((label) => {
-                        const point = trends[dim]?.find((p) => p.timestamp === label);
-                        return point?.score || null;
-                    }),
-                    borderColor: getDimensionColor(dim),
-                    backgroundColor: getDimensionColor(dim, 0.2),
-                    tension: 0.3,
-                    fill: false,
-                })),
-            };
-        }
-
-        res.json({
-            success: true,
-            period: {
-                start: cutoffDate.toISOString(),
-                end: new Date().toISOString(),
-                days,
-                dataPoints: records.length,
-            },
-            trends: formattedTrends,
-            averages,
-            dimensions: requestedDimensions,
-        });
-    } catch (error) {
-        console.error('[Inspection] GET /trends error:', error);
-        res.status(500).json({
-            success: false,
-            error: error.message,
-        });
     }
-});
+
+    // Calculate averages
+    const averages = {};
+    for (const dim of requestedDimensions) {
+        averages[dim] = counts[dim] > 0 ? Math.round((sums[dim] / counts[dim]) * 10) / 10 : 0;
+    }
+
+    // Format response based on format parameter
+    let formattedTrends = trends;
+    if (format === 'array') {
+        // Chart.js friendly format: labels + datasets
+        const labels = [
+            ...new Set(
+                Object.values(trends)
+                    .flat()
+                    .map((p) => p.timestamp)
+                    .sort()
+            ),
+        ].slice(-MAX_TREND_POINTS);
+
+        formattedTrends = {
+            labels,
+            datasets: requestedDimensions.map((dim) => ({
+                label: dim.charAt(0).toUpperCase() + dim.slice(1),
+                data: labels.map((label) => {
+                    const point = trends[dim]?.find((p) => p.timestamp === label);
+                    return point?.score || null;
+                }),
+                borderColor: getDimensionColor(dim),
+                backgroundColor: getDimensionColor(dim, 0.2),
+                tension: 0.3,
+                fill: false,
+            })),
+        };
+    }
+
+    res.json({
+        success: true,
+        period: {
+            start: cutoffDate.toISOString(),
+            end: new Date().toISOString(),
+            days,
+            dataPoints: records.length,
+        },
+        trends: formattedTrends,
+        averages,
+        dimensions: requestedDimensions,
+    });
+}));
 
 /**
  * GET /api/v1/inspection/stats
  *
  * Returns aggregated statistics about inspections over time.
  * Useful for executive dashboards and SLA reporting.
- *
- * Response 200:
- *   {
- *     "success": true,
- *     "stats": {
- *       "totalInspections": 150,
- *       "avgScore": 87.5,
- *       "bestScore": 100,
- *       "worstScore": 62,
- *       "uptimePercentage": 95.2,
- *       "lastInspection": "...",
- *       "dimensionReliability": { ... }
- *     }
- *   }
  */
-router.get('/stats', async (req, res) => {
-    try {
-        const files = scanInspectionFiles();
+router.get('/stats', asyncHandler(async (req, res) => {
+    const files = scanInspectionFiles();
 
-        if (files.length === 0) {
-            return res.json({
-                success: true,
-                stats: {
-                    totalInspections: 0,
-                    message: 'No inspection data available yet',
-                },
-            });
-        }
+    if (files.length === 0) {
+        return res.json({
+            success: true,
+            stats: {
+                totalInspections: 0,
+                message: 'No inspection data available yet',
+            },
+        });
+    }
 
-        // Parse all records for statistics
-        const records = files
-            .slice(0, 200) // Limit processing
-            .map((f) => parseInspectionFile(f.path))
-            .filter(Boolean);
+    // Parse all records for statistics
+    const records = files
+        .slice(0, 200) // Limit processing
+        .map((f) => parseInspectionFile(f.path))
+        .filter(Boolean);
 
-        let totalScore = 0;
-        let bestScore = 0;
-        let worstScore = 100;
-        let perfectRuns = 0;
-        let failedRuns = 0;
+    let totalScore = 0;
+    let bestScore = 0;
+    let worstScore = 100;
+    let perfectRuns = 0;
+    let failedRuns = 0;
 
-        const dimTotals = {
-            infrastructure: { sum: 0, count: 0 },
-            application: { sum: 0, count: 0 },
-            security: { sum: 0, count: 0 },
-            data: { sum: 0, count: 0 },
-            monitoring: { sum: 0, count: 0 },
-        };
+    const dimTotals = {
+        infrastructure: { sum: 0, count: 0 },
+        application: { sum: 0, count: 0 },
+        security: { sum: 0, count: 0 },
+        data: { sum: 0, count: 0 },
+        monitoring: { sum: 0, count: 0 },
+    };
 
-        for (const record of records) {
-            const score = record.overall?.score || 0;
-            totalScore += score;
-            bestScore = Math.max(bestScore, score);
-            worstScore = Math.min(worstScore, score);
+    for (const record of records) {
+        const score = record.overall?.score || 0;
+        totalScore += score;
+        bestScore = Math.max(bestScore, score);
+        worstScore = Math.min(worstScore, score);
 
-            if (score >= 90) perfectRuns++;
-            if ((record.overall?.fail || 0) > 0) failedRuns++;
+        if (score >= 90) perfectRuns++;
+        if ((record.overall?.fail || 0) > 0) failedRuns++;
 
-            // Accumulate dimension scores
-            if (record.dimensions) {
-                for (const [dim, data] of Object.entries(record.dimensions)) {
-                    if (dimTotals[dim] && data.score !== undefined) {
-                        dimTotals[dim].sum += data.score;
-                        dimTotals[dim].count++;
-                    }
+        // Accumulate dimension scores
+        if (record.dimensions) {
+            for (const [dim, data] of Object.entries(record.dimensions)) {
+                if (dimTotals[dim] && data.score !== undefined) {
+                    dimTotals[dim].sum += data.score;
+                    dimTotals[dim].count++;
                 }
             }
         }
-
-        const avgScore = records.length > 0 ? Math.round((totalScore / records.length) * 10) / 10 : 0;
-        const uptimePercentage =
-            records.length > 0 ? Math.round(((records.length - failedRuns) / records.length) * 1000) / 10 : 0;
-
-        const dimensionReliability = {};
-        for (const [dim, totals] of Object.entries(dimTotals)) {
-            dimensionReliability[dim] =
-                totals.count > 0 ? Math.round((totals.sum / totals.count) * 10) / 10 : null;
-        }
-
-        res.json({
-            success: true,
-            stats: {
-                totalInspections: records.length,
-                avgScore,
-                bestScore,
-                worstScore,
-                perfectRuns,
-                failedRuns,
-                uptimePercentage,
-                lastInspection: files[0]?.mtime?.toISOString() || null,
-                firstInspection: files[files.length - 1]?.mtime?.toISOString() || null,
-                dataRangeDays: files.length > 1
-                    ? Math.ceil((files[0].mtime - files[files.length - 1].mtime) / (1000 * 60 * 60 * 24))
-                    : 0,
-                dimensionReliability,
-            },
-        });
-    } catch (error) {
-        console.error('[Inspection] GET /stats error:', error);
-        res.status(500).json({
-            success: false,
-            error: error.message,
-        });
     }
-});
+
+    const avgScore = records.length > 0 ? Math.round((totalScore / records.length) * 10) / 10 : 0;
+    const uptimePercentage =
+        records.length > 0 ? Math.round(((records.length - failedRuns) / records.length) * 1000) / 10 : 0;
+
+    const dimensionReliability = {};
+    for (const [dim, totals] of Object.entries(dimTotals)) {
+        dimensionReliability[dim] =
+            totals.count > 0 ? Math.round((totals.sum / totals.count) * 10) / 10 : null;
+    }
+
+    res.json({
+        success: true,
+        stats: {
+            totalInspections: records.length,
+            avgScore,
+            bestScore,
+            worstScore,
+            perfectRuns,
+            failedRuns,
+            uptimePercentage,
+            lastInspection: files[0]?.mtime?.toISOString() || null,
+            firstInspection: files[files.length - 1]?.mtime?.toISOString() || null,
+            dataRangeDays: files.length > 1
+                ? Math.ceil((files[0].mtime - files[files.length - 1].mtime) / (1000 * 60 * 60 * 24))
+                : 0,
+            dimensionReliability,
+        },
+    });
+}));
 
 // ── Utility Functions ──────────────────────────────────────────────────────
 

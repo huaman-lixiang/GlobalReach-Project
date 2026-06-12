@@ -9,6 +9,7 @@
 const express = require('express');
 const router = express.Router();
 const { getMetrics, getContentType, METRICS_PREFIX } = require('../middleware/metrics');
+const { asyncHandler } = require('../middleware/errorHandler');
 
 // M-A04: Queue metrics helper (lazy load to avoid circular dependency)
 let _emailQueue = null;
@@ -35,22 +36,14 @@ function setQueue(queueInstance) {
  * Main Prometheus metrics endpoint.
  * Scraped by Prometheus / Grafana / monitoring systems.
  */
-router.get('/', async (req, res) => {
-  try {
-    const contentType = getContentType() || 'text/plain; version=0.0.4; charset=utf-8';
-    res.set('Content-Type', contentType);
-    // Cache for 5s to prevent excessive scraping
-    res.set('Cache-Control', 'public, max-age=5');
-    const metrics = await getMetrics();
-    res.end(metrics);
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: 'METRICS_COLLECTION_FAILED',
-      message: 'Failed to collect Prometheus metrics',
-    });
-  }
-});
+router.get('/', asyncHandler(async (req, res) => {
+  const contentType = getContentType() || 'text/plain; version=0.0.4; charset=utf-8';
+  res.set('Content-Type', contentType);
+  // Cache for 5s to prevent excessive scraping
+  res.set('Cache-Control', 'public, max-age=5');
+  const metrics = await getMetrics();
+  res.end(metrics);
+}));
 
 /**
  * Metric info endpoint — returns summary of available custom metrics.
