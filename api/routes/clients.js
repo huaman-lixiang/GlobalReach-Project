@@ -3,8 +3,13 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const { verifyToken } = require('../middleware/auth');
+const { rateLimiter } = require('../middleware/rateLimiter');
 const clientImportService = require('../services/clientImportService');
 const { asyncHandler } = require('../middleware/errorHandler');
+
+// S152: 标准安全中间件链
+router.use(rateLimiter);
+router.use(verifyToken);
 
 // ============================================
 // Multer 配置（内存存储，用于文件上传）

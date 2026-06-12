@@ -18,6 +18,14 @@ const router = express.Router();
 const path = require('path');
 const fs = require('fs');
 const { execSync } = require('child_process');
+const { verifyToken, requireRole } = require('../middleware/auth');
+const { rateLimiter } = require('../middleware/rateLimiter');
+const { asyncHandler } = require('../middleware/errorHandler');
+
+// S152: 标准安全中间件链
+// Capacity data is operational - read access for authenticated users, write for admins
+router.use(rateLimiter);
+router.use(verifyToken);
 
 // ============================================
 # Configuration

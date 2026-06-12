@@ -33,6 +33,9 @@ const router = express.Router();
 const path = require('path');
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
+const { verifyToken, requireRole } = require('../middleware/auth');
+const { rateLimiter } = require('../middleware/rateLimiter');
+const { asyncHandler } = require('../middleware/errorHandler');
 
 // ── Configuration ───────────────────────────────────────────────────────────
 
@@ -550,19 +553,10 @@ const store = new TeamCollaborationStore();
 
 // ── 中间件: 认证检查 ─────────────────────────────────────────────────────
 
-/** 简单的 token 验证（复用项目现有的 auth 中间件模式） */
-function requireAuth(req, res, next) {
-  const authHeader = req.headers.authorization;
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return res.status(401).json({
-      success: false,
-      error: 'AUTH_REQUIRED',
-      message: 'Bearer token required',
-    });
-  }
-  // 在实际部署中这里会验证 JWT；当前做基本存在性检查
-  next();
-}
+/** 简单的 token 验证（复用项目现有的 auth 中间件模式） - S152: 已替换为标准 verifyToken */
+// S152: 标准安全中间件已应用到 router 级别
+router.use(rateLimiter);
+router.use(verifyToken);
 
 // ── Route Handlers ─────────────────────────────────────────────────────────
 

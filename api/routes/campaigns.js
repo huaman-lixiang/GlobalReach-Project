@@ -26,7 +26,10 @@ const {
   CAMPAIGN_TYPES,
 } = require('../middleware/validator');
 const { asyncHandler } = require('../middleware/errorHandler');
+const { rateLimiter } = require('../middleware/rateLimiter');
 
+// S152: 标准安全中间件链
+router.use(rateLimiter);
 router.use(verifyToken);
 
 // ============================================

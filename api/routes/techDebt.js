@@ -20,8 +20,20 @@
 const express = require('express');
 const router = express.Router();
 const { createLogger } = require('../middleware/logger');
+const { verifyToken, requireRole } = require('../middleware/auth');
+const { rateLimiter } = require('../middleware/rateLimiter');
+const { asyncHandler } = require('../middleware/errorHandler');
 
 const debtLog = createLogger('TechDebt');
+
+// ============================================
+// S152: Security Middleware Integration
+// ============================================
+// All tech debt endpoints require authentication
+// Write operations (POST/PATCH/DELETE) require ADMIN role
+// Rate limiting applied at router level
+router.use(rateLimiter);
+router.use(verifyToken);
 
 // ============================================
 // In-Memory Debt Store (Production: migrate to PostgreSQL)
@@ -735,9 +747,9 @@ router.get('/register/:id', (req, res) => {
 
 /**
  * POST /api/v1/debt/register
- * 登记新债务
+ * 登记新债务 (ADMIN only)
  */
-router.post('/register', (req, res) => {
+router.post('/register', requireRole('ADMIN'), (req, res) => {
   try {
     const {
       id, category, component, discoveredAt, discoverer,
@@ -814,9 +826,9 @@ router.post('/register', (req, res) => {
 
 /**
  * PATCH /api/v1/debt/register/:id
- * 更新债务状态/优先级
+ * 更新债务状态/优先级 (ADMIN only)
  */
-router.patch('/register/:id', (req, res) => {
+router.patch('/register/:id', requireRole('ADMIN'), (req, res) => {
   try {
     const debtIndex = debtStore.findIndex(d => d.id === req.params.id.toUpperCase());
     
@@ -864,9 +876,9 @@ router.patch('/register/:id', (req, res) => {
 
 /**
  * DELETE /api/v1/debt/register/:id
- * 归档已偿还债务
+ * 归档已偿还债务 (ADMIN only)
  */
-router.delete('/register/:id', (req, res) => {
+router.delete('/register/:id', requireRole('ADMIN'), (req, res) => {
   try {
     const debtIndex = debtStore.findIndex(d => d.id === req.params.id.toUpperCase());
     
@@ -1080,9 +1092,9 @@ router.get('/repayment-plan', (req, res) => {
 
 /**
  * POST /api/v1/debt/:id/start-repayment
- * 开始偿还
+ * 开始偿还 (ADMIN only)
  */
-router.post('/:id/start-repayment', (req, res) => {
+router.post('/:id/start-repayment', requireRole('ADMIN'), (req, res) => {
   try {
     const debtIndex = debtStore.findIndex(d => d.id === req.params.id.toUpperCase());
     
@@ -1137,9 +1149,9 @@ router.post('/:id/start-repayment', (req, res) => {
 
 /**
  * POST /api/v1/debt/:id/complete-repayment
- * 标记偿还完成
+ * 标记偿还完成 (ADMIN only)
  */
-router.post('/:id/complete-repayment', (req, res) => {
+router.post('/:id/complete-repayment', requireRole('ADMIN'), (req, res) => {
   try {
     const debtIndex = debtStore.findIndex(d => d.id === req.params.id.toUpperCase());
     

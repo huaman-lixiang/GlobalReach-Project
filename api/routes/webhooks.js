@@ -1,9 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const { verifyToken } = require('../middleware/auth');
+const { rateLimiter, autoEndpointLimiter } = require('../middleware/rateLimiter');
 const { asyncHandler } = require('../middleware/errorHandler');
 const { webhookService } = require('../services/webhookService');
 const { webhookListenerService } = require('../services/webhookListenerService');
+
+// S152: 标准安全中间件链
+// Note: Incoming webhook endpoints (alertmanager, github, generic) are intentionally public
+// as they receive callbacks from external services. They use service-level rate limiting.
+// Outgoing webhook management endpoints require authentication.
+router.use(rateLimiter);
 
 // ============================================
 // M-C03: Incoming Webhook Listener Endpoints
