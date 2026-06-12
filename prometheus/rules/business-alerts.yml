@@ -29,9 +29,13 @@ groups:
         labels:
           severity: info
           team: operations
+          service: email
+          runbook: "RB-007"
         annotations:
           summary: "邮件发送管道停滞"
           description: "过去10分钟内没有邮件被发送，请检查SendWorker和EmailQueue状态"
+          runbook: "RB-007_EMAIL_PIPELINE.md#Stalled"
+          escalation: "team-operations"
 
       # ── API Performance Alerts ──────────────────────────
 
@@ -42,9 +46,13 @@ groups:
         labels:
           severity: warning
           team: platform
+          service: api
+          runbook: "RB-001"
         annotations:
           summary: "API P99延迟过高"
           description: "API P99延迟达到 {{ $value }}ms（阈值5s），用户可能感知到明显卡顿"
+          runbook: "RB-001_API_SERVICE.md#Latency-P99"
+          escalation: "oncall-platform"
 
       # API error rate exceeds 10%
       - alert: HighAPIErrorRate
@@ -53,9 +61,13 @@ groups:
         labels:
           severity: warning
           team: platform
+          service: api
+          runbook: "RB-001"
         annotations:
           summary: "API错误率过高 (>10%)"
           description: "10分钟内API错误率为 {{ $value | humanizePercentage }}，请检查错误日志"
+          runbook: "RB-001_API_SERVICE.md#Error-Rate"
+          escalation: "oncall-platform"
 
       # ── Queue Backlog Alerts ─────────────────────────────
 
@@ -66,9 +78,13 @@ groups:
         labels:
           severity: info
           team: operations
+          service: email
+          runbook: "RB-007"
         annotations:
           summary: "邮件队列积压"
           description: "待发送邮件队列深度 {{ $value }}，超过2000的告警阈值"
+          runbook: "RB-007_EMAIL_PIPELINE.md#Backlog"
+          escalation: "team-operations"
 
       # Pending queue critically high (>8000)
       - alert: EmailQueueCritical
@@ -77,9 +93,13 @@ groups:
         labels:
           severity: critical
           team: operations
+          service: email
+          runbook: "RB-007"
         annotations:
           summary: "邮件队列严重积压"
           description: "待发送邮件队列深度 {{ $value }}，超过8000临界值！需立即扩容或排查阻塞原因"
+          runbook: "RB-007_EMAIL_PIPELINE.md#Critical"
+          escalation: "oncall-operations"
 
       # Failed queue accumulating (>200)
       - alert: EmailFailuresAccumulating
@@ -88,9 +108,13 @@ groups:
         labels:
           severity: warning
           team: operations
+          service: email
+          runbook: "RB-007"
         annotations:
           summary: "失败邮件持续累积"
           description: "失败队列中已有 {{ $value }} 封邮件，请检查失败原因并考虑重试策略"
+          runbook: "RB-007_EMAIL_PIPELINE.md#Failures"
+          escalation: "team-operations"
 
       # ── Business Health Alerts ───────────────────────────
 
@@ -101,9 +125,12 @@ groups:
         labels:
           severity: info
           team: business
+          service: email
+          runbook: "RB-008"
         annotations:
           summary: "无活跃营销活动"
           description: "已连续30分钟没有活跃的营销活动，如非预期请确认业务状态"
+          runbook: "RB-008_BUSINESS.md#Campaigns"
 
       # Sudden spike in client count (data anomaly detection)
       - alert: ClientCountAnomaly
@@ -117,9 +144,12 @@ groups:
         labels:
           severity: info
           team: business
+          service: globalreach
+          runbook: "RB-008"
         annotations:
           summary: "客户数量异常波动"
           description: "客户数量在1小时内变化超过50%，当前值 {{ $value }}"
+          runbook: "RB-008_BUSINESS.md#Clients"
 
       # ── M-B04 New Critical Alerts ──────────────────────
 
@@ -130,9 +160,13 @@ groups:
         labels:
           severity: warning
           team: platform
+          service: api
+          runbook: "RB-001"
         annotations:
           summary: "API P95延迟持续偏高"
           description: "10分钟内API P95延迟 {{ $value }}s > 500ms"
+          runbook: "RB-001_API_SERVICE.md#Latency-P95-Sustained"
+          escalation: "oncall-platform"
 
       # Database connection pool approaching exhaustion (>80%)
       - alert: DatabaseConnectionPoolHigh
@@ -141,9 +175,13 @@ groups:
         labels:
           severity: warning
           team: database
+          service: postgres
+          runbook: "RB-002"
         annotations:
           summary: "数据库连接池使用率过高"
           description: "活跃连接占连接池 {{ $value | humanizePercentage }}"
+          runbook: "RB-002_POSTGRES.md#Pool-High"
+          escalation: "team-database"
 
       # Redis memory usage >70%
       - alert: RedisHighMemoryUsage
@@ -152,6 +190,9 @@ groups:
         labels:
           severity: info
           team: database
+          service: redis
+          runbook: "RB-004"
         annotations:
           summary: "Redis内存使用率偏高"
           description: "Redis内存使用 {{ $value | humanizePercentage }}"
+          runbook: "RB-004_REDIS.md#Memory-Warn"

@@ -11,9 +11,14 @@ groups:
         for: 24h
         labels:
           severity: warning
+          team: platform
+          service: api
+          runbook: "RB-006"
         annotations:
           summary: "Legacy API still receiving traffic ({{ $value }} req/hour)"
           description: "Legacy /api/* routes (without /v1/) should be migrated to /api/v1/*. Sunset date: 2027-06-01"
+          runbook: "RB-006_LEGACY-API.md#Usage"
+          escalation: "oncall-platform"
 
       - alert: LegacyApiApproachingSunset
         expr: |
@@ -21,6 +26,11 @@ groups:
           and (rate(globalreach_legacy_api_requests_total[1h]) > 0)
         labels:
           severity: critical
+          team: platform
+          service: api
+          runbook: "RB-006"
         annotations:
           summary: "Legacy API sunset approaching - 90 days remaining"
           description: "Legacy routes will be removed on 2027-06-01. {{ $value }} req/hour still using legacy."
+          runbook: "RB-006_LEGACY-API.md#Sunset"
+          escalation: "oncall-platform"

@@ -38,9 +38,14 @@ groups:
         labels:
           severity: critical
           team: platform
+          service: api
+          runbook: "RB-003"
         annotations:
           summary: "Container Restart Loop Detected"
           description: "Container {{ $labels.instance }} restarted {{ $value }} times in last hour."
+          runbook: "RB-003_CONTAINER.md#Restart-Loop"
+          escalation: "oncall-platform"
+          dashboard: "grafana/dash/container-health"
 
       # S098/PhaseH: Health score collapse — most severe degradation
       - alert: APIHealthCritical
@@ -67,9 +72,14 @@ groups:
         labels:
           severity: warning
           team: platform
+          service: api
+          runbook: "RB-001"
         annotations:
           summary: "High API P95 Latency (>3s)"
           description: "P95 latency = {{ $value }}s over 5min."
+          runbook: "RB-001_API_SERVICE.md#Latency-P95"
+          escalation: "oncall-platform"
+          dashboard: "grafana/dash/api-latency"
 
       - alert: PostgresConnectionHigh
         expr: pg_stat_activity_count > 80
@@ -77,9 +87,14 @@ groups:
         labels:
           severity: warning
           team: database
+          service: postgres
+          runbook: "RB-002"
         annotations:
           summary: "High PostgreSQL Connections (>80)"
           description: "Active connections: {{ $value }}"
+          runbook: "RB-002_POSTGRES.md#Connections"
+          escalation: "team-database"
+          dashboard: "grafana/dash/postgres-overview"
 
       - alert: RedisMemoryHigh
         expr: redis_used_memory / redis_maxmemory > 0.85
@@ -87,8 +102,14 @@ groups:
         labels:
           severity: warning
           team: database
+          service: redis
+          runbook: "RB-004"
         annotations:
           summary: "Redis Memory Usage High (>85%)"
+          description: "Redis memory usage at {{ $value | humanizePercentage }} of max."
+          runbook: "RB-004_REDIS.md#Memory"
+          escalation: "team-database"
+          dashboard: "grafana/dash/redis-overview"
 
       - alert: NodeFileSystemFull
         expr: |
@@ -100,9 +121,14 @@ groups:
         labels:
           severity: warning
           team: infra
+          service: node
+          runbook: "RB-005"
         annotations:
           summary: "Low Disk Space (<15% free)"
           description: "{{ $labels.mountpoint }}: {{ $value | humanizePercentage }} free"
+          runbook: "RB-005_INFRA.md#Disk"
+          escalation: "team-infra"
+          dashboard: "grafana/dash/node-resources"
 
       - alert: NodeHighMemory
         expr: |
@@ -113,8 +139,14 @@ groups:
         labels:
           severity: warning
           team: infra
+          service: node
+          runbook: "RB-005"
         annotations:
           summary: "High Host Memory Usage (>90%)"
+          description: "Host memory usage at {{ $value | humanizePercentage }}"
+          runbook: "RB-005_INFRA.md#Memory"
+          escalation: "team-infra"
+          dashboard: "grafana/dash/node-resources"
 
       - alert: NodeHighCPU
         expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 90
@@ -122,8 +154,14 @@ groups:
         labels:
           severity: warning
           team: infra
+          service: node
+          runbook: "RB-005"
         annotations:
           summary: "High Host CPU Usage (>90%)"
+          description: "Host CPU usage at {{ $value }}%"
+          runbook: "RB-005_INFRA.md#CPU"
+          escalation: "team-infra"
+          dashboard: "grafana/dash/node-resources"
 
   # ──────────────────────────────────────────────
   # API-SPECIFIC Alerts (S098/PhaseH additions)
@@ -138,9 +176,14 @@ groups:
         labels:
           severity: warning
           team: platform
+          service: api
+          runbook: "RB-001"
         annotations:
           summary: "GlobalReach API Health Degraded (<75)"
           description: "Health score = {{ $value }}/100. Check /api/v1/health for details."
+          runbook: "RB-001_API_SERVICE.md#Health-Score"
+          escalation: "oncall-platform"
+          dashboard: "grafana/dash/api-health"
 
       # P50 latency early detection (users notice before P95 spikes)
       - alert: APILatencyP50Elevated
@@ -150,9 +193,14 @@ groups:
         labels:
           severity: warning
           team: platform
+          service: api
+          runbook: "RB-001"
         annotations:
           summary: "API Median Latency Elevated (>300ms)"
           description: "P50 = {{ $value }}s. Users may notice slowdown."
+          runbook: "RB-001_API_SERVICE.md#Latency-P50"
+          escalation: "oncall-platform"
+          dashboard: "grafana/dash/api-latency"
 
       # Container memory pressure (RSS-based, not V8 heap)
       - alert: APIMemoryPressure
@@ -164,9 +212,14 @@ groups:
         labels:
           severity: warning
           team: platform
+          service: api
+          runbook: "RB-003"
         annotations:
           summary: "API Container Memory Pressure (>80% RSS)"
           description: "RSS usage = {{ $value | humanizePercentage }} of limit."
+          runbook: "RB-003_CONTAINER.md#Memory-Pressure"
+          escalation: "oncall-platform"
+          dashboard: "grafana/dash/container-health"
 
       # Throughput anomaly detection (sudden drop)
       - alert: APIThroughputAnomaly
@@ -180,9 +233,14 @@ groups:
         labels:
           severity: warning
           team: platform
+          service: api
+          runbook: "RB-001"
         annotations:
           summary: "API Throughput Dropped 50%+"
           description: "Current throughput is {{ $value | humanizePercentage }} of 30-min average."
+          runbook: "RB-001_API_SERVICE.md#Throughput"
+          escalation: "oncall-platform"
+          dashboard: "grafana/dash/api-throughput"
 
   # ──────────────────────────────────────────────
   # LOG-BASED ALERTS: See prometheus/rules/loki-alerts-reference.yml
