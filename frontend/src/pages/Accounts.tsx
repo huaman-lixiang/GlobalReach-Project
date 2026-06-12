@@ -31,6 +31,7 @@ import {
   PauseCircleOutlined,
   DashboardOutlined,
   TeamOutlined,
+  FilterOutlined,
 } from '@ant-design/icons'
 import { useAppDispatch, useAppSelector } from '@/store'
 import {
@@ -40,6 +41,8 @@ import {
   deleteAccount,
 } from '@/store/slices/accountsSlice'
 import api from '@/services/api'
+import useMobile from '@/hooks/useMobile'
+import { accountsTexts } from '../i18n/accounts'
 
 const { Title } = Typography
 const { Option } = Select
@@ -47,11 +50,11 @@ const { TextArea } = Input
 
 // Platform config: backend values → display names
 const PLATFORM_OPTIONS = [
-  { value: 'GMAIL', label: 'Gmail', color: '#ea4335' },
-  { value: 'OUTLOOK', label: 'Outlook', color: '#0078d4' },
-  { value: 'QQ', label: 'QQ邮箱', color: '#12b7f5' },
-  { value: 'NETEASE_163', label: '163邮箱', color: '#f60' },
-  { value: 'CUSTOM_SMTP', label: '企业自定义SMTP', color: '#722ed1' },
+  { value: 'GMAIL', label: accountsTexts.platforms.gmail, color: '#ea4335' },
+  { value: 'OUTLOOK', label: accountsTexts.platforms.outlook, color: '#0078d4' },
+  { value: 'QQ', label: accountsTexts.platforms.qq, color: '#12b7f5' },
+  { value: 'NETEASE_163', label: accountsTexts.platforms.netease163, color: '#f60' },
+  { value: 'CUSTOM_SMTP', label: accountsTexts.platforms.customSmtp, color: '#722ed1' },
 ]
 
 // Platform-specific form fields (shown when creating/editing)
@@ -63,11 +66,11 @@ const PLATFORM_EXTRA_FIELDS: Record<string, { imapHost?: string; smtpHost?: stri
 }
 
 const statusConfig: Record<string, { color: string; text: string; icon: React.ReactNode }> = {
-  ACTIVE: { color: 'success', text: '正常', icon: <CheckCircleOutlined /> },
-  INACTIVE: { color: 'default', text: '停用', icon: <PauseCircleOutlined /> },
-  RESTRICTED: { color: 'warning', text: '受限', icon: <CloseCircleOutlined /> },
-  BANNED: { color: 'error', text: '封禁', icon: <CloseCircleOutlined /> },
-  ERROR: { color: 'error', text: '异常', icon: <CloseCircleOutlined /> },
+  ACTIVE: { color: 'success', text: accountsTexts.status.active, icon: <CheckCircleOutlined /> },
+  INACTIVE: { color: 'default', text: accountsTexts.status.inactive, icon: <PauseCircleOutlined /> },
+  RESTRICTED: { color: 'warning', text: accountsTexts.status.restricted, icon: <CloseCircleOutlined /> },
+  BANNED: { color: 'error', text: accountsTexts.status.banned, icon: <CloseCircleOutlined /> },
+  ERROR: { color: 'error', text: accountsTexts.status.error, icon: <CloseCircleOutlined /> },
 }
 
 const AccountsPage: React.FC = () => {
@@ -119,10 +122,10 @@ const AccountsPage: React.FC = () => {
   const handleDelete = async (id: string) => {
     try {
       await dispatch(deleteAccount(id)).unwrap()
-      message.success('删除成功')
+      message.success(accountsTexts.messages.deleteSuccess)
       dispatch(fetchAccounts(searchParams))
     } catch (error) {
-      message.error('删除失败')
+      message.error(accountsTexts.messages.deleteFailed)
     }
   }
 
@@ -132,12 +135,12 @@ const AccountsPage: React.FC = () => {
       const res: any = await api.post(`/accounts/${id}/test-connection`)
       const data = res.data || res
       if (data.connected) {
-        message.success(`连接成功! 延迟: ${data.latencyMs || '?'}ms`)
+        message.success(accountsTexts.messages.connectionSuccess(String(data.latencyMs || '?')))
       } else {
-        message.warning(`连接失败: ${data.reason || '未知错误'}`)
+        message.warning(accountsTexts.messages.connectionFailed(data.reason || ''))
       }
     } catch (err: any) {
-      message.error(err.message || '测试连接失败')
+      message.error(err.message || accountsTexts.messages.testConnectionFailed)
     } finally {
       setTestingId(null)
     }
@@ -146,20 +149,20 @@ const AccountsPage: React.FC = () => {
   const handleActivate = async (id: string) => {
     try {
       await api.post(`/accounts/${id}/activate`)
-      message.success('账号已激活')
+      message.success(accountsTexts.messages.activated)
       dispatch(fetchAccounts(searchParams))
     } catch (err: any) {
-      message.error(err.message || '激活失败')
+      message.error(err.message || accountsTexts.messages.activateFailed)
     }
   }
 
   const handleDeactivate = async (id: string) => {
     try {
       await api.post(`/accounts/${id}/deactivate`)
-      message.success('账号已停用')
+      message.success(accountsTexts.messages.deactivated)
       dispatch(fetchAccounts(searchParams))
     } catch (err: any) {
-      message.error(err.message || '停用失败')
+      message.error(err.message || accountsTexts.messages.deactivateFailed)
     }
   }
 
@@ -168,10 +171,10 @@ const AccountsPage: React.FC = () => {
       const values = await form.validateFields()
       if (editingAccount) {
         await dispatch(updateAccount({ id: editingAccount.id, ...values })).unwrap()
-        message.success('更新成功')
+        message.success(accountsTexts.messages.updateSuccess)
       } else {
         await dispatch(createAccount(values)).unwrap()
-        message.success('创建成功')
+        message.success(accountsTexts.messages.createSuccess)
       }
       setModalVisible(false)
       form.resetFields()
@@ -183,13 +186,13 @@ const AccountsPage: React.FC = () => {
 
   const columns = [
     {
-      title: '邮箱地址',
+      title: accountsTexts.table.email,
       dataIndex: 'email',
       key: 'email',
       render: (text: string) => <a>{text}</a>,
     },
     {
-      title: '平台类型',
+      title: accountsTexts.table.platform,
       dataIndex: 'platform',
       key: 'platform',
       render: (platform: string) => {
@@ -198,7 +201,7 @@ const AccountsPage: React.FC = () => {
       },
     },
     {
-      title: '状态',
+      title: accountsTexts.table.status,
       dataIndex: 'status',
       key: 'status',
       render: (status: string) => {
@@ -207,7 +210,7 @@ const AccountsPage: React.FC = () => {
       },
     },
     {
-      title: '健康度',
+      title: accountsTexts.table.health,
       dataIndex: 'healthScore',
       key: 'healthScore',
       width: 120,
@@ -221,14 +224,14 @@ const AccountsPage: React.FC = () => {
       ),
     },
     {
-      title: '今日发送',
+      title: accountsTexts.table.sentToday,
       dataIndex: 'sentToday',
       key: 'sentToday',
       width: 90,
       render: (val: number) => val || 0,
     },
     {
-      title: '创建时间',
+      title: accountsTexts.table.createdAt,
       dataIndex: 'createdAt',
       key: 'createdAt',
       render: (val: string) => val ? new Date(val).toLocaleDateString() : '-',
@@ -236,12 +239,12 @@ const AccountsPage: React.FC = () => {
         new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime(),
     },
     {
-      title: '操作',
+      title: accountsTexts.table.actions,
       key: 'action',
       width: 320,
       render: (_: any, record: any) => (
         <Space size="small" wrap>
-          <Tooltip title="测试连接">
+          <Tooltip title={accountsTexts.actions.testConnection}>
             <Button
               type="link" size="small"
               icon={<ApiOutlined />}
@@ -250,7 +253,7 @@ const AccountsPage: React.FC = () => {
             />
           </Tooltip>
           <Button type="link" size="small" icon={<EditOutlined />} onClick={() => handleEdit(record)}>
-            编辑
+            {accountsTexts.actions.edit}
           </Button>
           {record.status !== 'ACTIVE' ? (
             <Button
@@ -258,24 +261,24 @@ const AccountsPage: React.FC = () => {
               style={{ color: 'var(--gr-success)', fontWeight: 600 }}
               onClick={() => handleActivate(record.id)}
             >
-              激活
+              {accountsTexts.actions.activate}
             </Button>
           ) : (
             <Button
               type="link" size="small" icon={<PauseCircleOutlined />}
               onClick={() => handleDeactivate(record.id)}
             >
-              停用
+              {accountsTexts.actions.deactivate}
             </Button>
           )}
           <Popconfirm
-            title="确定要删除这个账号吗？"
+            title={accountsTexts.actions.deleteConfirm}
             onConfirm={() => handleDelete(record.id)}
-            okText="确定"
-            cancelText="取消"
+            okText={accountsTexts.actions.deleteOk}
+            cancelText={accountsTexts.actions.deleteCancel}
           >
             <Button type="link" size="small" danger icon={<DeleteOutlined />}>
-              删除
+              {accountsTexts.actions.delete}
             </Button>
           </Popconfirm>
         </Space>
@@ -284,18 +287,19 @@ const AccountsPage: React.FC = () => {
   ]
 
   return (
+    <BrandedPageWrapper>
     <div>
       {/* Page Header */}
       <div className="gr-page-header">
         <Title level={4} style={{ margin: 0, display: 'flex', alignItems: 'center', gap: 10 }}>
           <TeamOutlined style={{ color: 'var(--gr-primary)', fontSize: 20 }} />
-          账号管理中心
+          {accountsTexts.page.title}
         </Title>
       </div>
 
       <Card>
 
-        {/* 引擎健康摘要 - 移动端简化 */}
+        {/* Engine health summary - mobile simplified */}
         {healthData && (
           <div style={{
             background: '#f6ffed',
@@ -308,61 +312,62 @@ const AccountsPage: React.FC = () => {
             alignItems: 'center',
             gridTemplateColumns: mobile.isMobile ? '1fr 1fr' : undefined,
           }}>
-            <Badge status="success" text={`引擎状态: ${healthData.engineStatus || 'ONLINE'}`} />
-            <span>注册账号: <strong>{healthData.totalRegistered || accounts.length}</strong></span>
+            <Badge status="success" text={`${accountsTexts.health.engineStatus} ${healthData.engineStatus || 'ONLINE'}`} />
+            <span>{accountsTexts.health.registeredAccounts} <strong>{healthData.totalRegistered || accounts.length}</strong></span>
             {!mobile.isMobile && (
               <>
-                <span>活跃账号: <strong>{healthData.activeCount || accounts.filter((a: any) => a.status === 'ACTIVE').length}</strong></span>
-                <span>平均健康度: <strong>{healthData.avgHealthScore || '-'}</strong></span>
+                <span>{accountsTexts.health.activeAccounts} <strong>{healthData.activeCount || accounts.filter((a: any) => a.status === 'ACTIVE').length}</strong></span>
+                <span>{accountsTexts.health.avgHealthScore} <strong>{healthData.avgHealthScore || '-'}</strong></span>
               </>
             )}
             <Button size="small" icon={<ReloadOutlined />} onClick={loadHealthStatus}>
-              刷新状态
+              {accountsTexts.health.refresh}
             </Button>
           </div>
         )}
 
-        {/* 筛选区域 - 移动端使用抽屉 */}
+        {/* Filter area - mobile uses drawer */}
         {mobile.isMobile ? (
           <div style={{ marginBottom: 12 }}>
             <button className="mobile-filter-trigger" type="button">
-              <FilterOutlined /> 筛选与搜索
+              <FilterOutlined /> {accountsTexts.filter.filterAndSearch}
             </button>
           </div>
         ) : (
-          <Select
-            placeholder="筛选平台"
-            allowClear
-            style={{ width: 160 }}
-            onChange={(value) => setSearchParams({ ...searchParams, platform: value })}
-          >
-            {PLATFORM_OPTIONS.map(opt => (
-              <Option key={opt.value} value={opt.value}>{opt.label}</Option>
-            ))}
-          </Select>
+          <Space>
+            <Select
+              placeholder={accountsTexts.filter.platformPlaceholder}
+              allowClear
+              style={{ width: 160 }}
+              onChange={(value) => setSearchParams({ ...searchParams, platform: value })}
+            >
+              {PLATFORM_OPTIONS.map(opt => (
+                <Option key={opt.value} value={opt.value}>{opt.label}</Option>
+              ))}
+            </Select>
 
-          <Select
-            placeholder="筛选状态"
-            allowClear
-            style={{ width: 130 }}
-            onChange={(value) => setSearchParams({ ...searchParams, status: value })}
-          >
-            <Option value="ACTIVE">正常</Option>
-            <Option value="INACTIVE">停用</Option>
-            <Option value="ERROR">异常</Option>
-            <Option value="RESTRICTED">受限</Option>
-          </Select>
+            <Select
+              placeholder={accountsTexts.filter.statusPlaceholder}
+              allowClear
+              style={{ width: 130 }}
+              onChange={(value) => setSearchParams({ ...searchParams, status: value })}
+            >
+              <Option value="ACTIVE">{accountsTexts.status.active}</Option>
+              <Option value="INACTIVE">{accountsTexts.status.inactive}</Option>
+              <Option value="ERROR">{accountsTexts.status.error}</Option>
+              <Option value="RESTRICTED">{accountsTexts.status.restricted}</Option>
+            </Select>
 
-          <Button icon={<SearchOutlined />} onClick={() => setSearchParams({ ...searchParams, page: 1 })}>
-            搜索
-          </Button>
-          <Button icon={<ReloadOutlined />} onClick={() => dispatch(fetchAccounts(searchParams))}>
-            刷新
-          </Button>
-          <Button type="primary" icon={<PlusOutlined />} onClick={handleAdd}>
-            新增账号
-          </Button>
-        </Space>
+            <Button icon={<SearchOutlined />} onClick={() => setSearchParams({ ...searchParams, page: 1 })}>
+              {accountsTexts.filter.search}
+            </Button>
+            <Button icon={<ReloadOutlined />} onClick={() => dispatch(fetchAccounts(searchParams))}>
+              {accountsTexts.filter.refresh}
+            </Button>
+            <Button type="primary" icon={<PlusOutlined />} onClick={handleAdd}>
+              {accountsTexts.filter.newAccount}
+            </Button>
+          </Space>
         )}
 
         <Table
@@ -376,7 +381,7 @@ const AccountsPage: React.FC = () => {
             total,
             showSizeChanger: true,
             showQuickJumper: true,
-            showTotal: (total) => `共 ${total} 条记录`,
+            showTotal: (total) => accountsTexts.table.totalRecords(total),
             onChange: (page, pageSize) =>
               setSearchParams({ ...searchParams, page, pageSize }),
           }}
@@ -386,33 +391,33 @@ const AccountsPage: React.FC = () => {
 
       {/* Create/Edit Modal */}
       <Modal
-        title={editingAccount ? '编辑账号' : '新增邮箱账号'}
+        title={editingAccount ? accountsTexts.modal.editTitle : accountsTexts.modal.createTitle}
         open={modalVisible}
         onOk={handleSubmit}
         onCancel={() => setModalVisible(false)}
         width={650}
-        okText="保存"
-        cancelText="取消"
+        okText={accountsTexts.modal.save}
+        cancelText={accountsTexts.modal.cancel}
         destroyOnClose
       >
         <Form form={form} layout="vertical">
           <Form.Item
             name="email"
-            label="邮箱地址"
+            label={accountsTexts.modal.emailLabel}
             rules={[
-              { required: true, message: '请输入邮箱地址' },
-              { type: 'email', message: '请输入有效的邮箱地址' },
+              { required: true, message: accountsTexts.modal.emailRequired },
+              { type: 'email', message: accountsTexts.modal.emailInvalid },
             ]}
           >
-            <Input placeholder="example@gmail.com" />
+            <Input placeholder={accountsTexts.modal.emailPlaceholder} />
           </Form.Item>
 
           <Form.Item
             name="platform"
-            label="平台类型"
-            rules={[{ required: true, message: '请选择平台类型' }]}
+            label={accountsTexts.modal.platformLabel}
+            rules={[{ required: true, message: accountsTexts.modal.platformRequired }]}
           >
-            <Select placeholder="选择平台">
+            <Select placeholder={accountsTexts.modal.platformPlaceholder}>
               {PLATFORM_OPTIONS.map(opt => (
                 <Option key={opt.value} value={opt.value}>{opt.label}</Option>
               ))}
@@ -421,34 +426,35 @@ const AccountsPage: React.FC = () => {
 
           {!editingAccount && (
             <>
-              <Form.Item name="password" label="密码/应用专用密码"
-                rules={[{ required: true, message: '请输入密码或应用专用密码' }]}
+              <Form.Item name="password" label={accountsTexts.modal.passwordLabel}
+                rules={[{ required: true, message: accountsTexts.modal.passwordRequired }]}
               >
-                <Input.Password placeholder="对于Gmail请使用应用专用密码" />
+                <Input.Password placeholder={accountsTexts.modal.passwordPlaceholder} />
               </Form.Item>
 
-              <Form.Item name="encryptionType" label="加密方式" initialValue="SSL">
+              <Form.Item name="encryptionType" label={accountsTexts.modal.encryptionLabel} initialValue="SSL">
                 <Select>
-                  <Option value="SSL">SSL/TLS</Option>
-                  <Option value="STARTTLS">STARTTLS</Option>
-                  <Option value="NONE">无加密(不推荐)</Option>
+                  <Option value="SSL">{accountsTexts.modal.ssl}</Option>
+                  <Option value="STARTTLS">{accountsTexts.modal.starttls}</Option>
+                  <Option value="NONE">{accountsTexts.modal.none}</Option>
                 </Select>
               </Form.Item>
             </>
           )}
 
           {editingAccount && (
-            <Form.Item name="status" label="状态" initialValue="ACTIVE">
+            <Form.Item name="status" label={accountsTexts.modal.statusLabel} initialValue="ACTIVE">
               <Select>
-                <Option value="ACTIVE">正常</Option>
-                <Option value="INACTIVE">停用</Option>
-                <Option value="RESTRICTED">受限</Option>
+                <Option value="ACTIVE">{accountsTexts.status.active}</Option>
+                <Option value="INACTIVE">{accountsTexts.status.inactive}</Option>
+                <Option value="RESTRICTED">{accountsTexts.status.restricted}</Option>
               </Select>
             </Form.Item>
           )}
         </Form>
       </Modal>
     </div>
+    </BrandedPageWrapper>
   )
 }
 

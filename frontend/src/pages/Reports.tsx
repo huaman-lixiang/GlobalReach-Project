@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { Row, Col, Card, Typography, Spin, Statistic, Button, Table, Tag, message } from 'antd'
+import React, { useEffect, useState } from 'react'
+import { Row, Col, Card, Typography, Spin, Statistic, Button, Table, Tag, message, Input, Modal, Space } from 'antd'
 import {
   LineChart,
   Line,
@@ -22,6 +22,9 @@ import {
   ArrowDownOutlined,
   DownloadOutlined,
   BarChartOutlined,
+  MailOutlined,
+  SendOutlined,
+  ClockCircleOutlined,
 } from '@ant-design/icons'
 import { useAppSelector } from '@/store'
 import { fetchStats } from '@/store/slices/statsSlice'
@@ -40,6 +43,12 @@ const platformLabels: Record<string, string> = {
 const ReportsPage: React.FC = () => {
   const dispatch = useAppDispatch()
   const { data: stats, loading } = useAppSelector((state) => state.stats)
+
+  // PDF报告邮件发送状态
+  const [emailModalVisible, setEmailModalVisible] = useState(false)
+  const [recipientInput, setRecipientInput] = useState('')
+  const [emailSending, setEmailSending] = useState(false)
+  const [lastGeneratedReport, setLastGeneratedReport] = useState<any>(null)
 
   useEffect(() => {
     dispatch(fetchStats())
@@ -94,7 +103,75 @@ const ReportsPage: React.FC = () => {
     }
   }
 
+  // 生成PDF报告
+  const handleGeneratePDF = async (reportType: string) => {
+    try {
+      const reportData: any = {
+        stats: {
+          totalEmailsSent: stats?.totalEmailsSent || 0,
+          totalAccounts: stats?.totalAccounts || 0,
+          activeCampaigns: stats?.activeCampaigns || 0,
+          openRate: stats?.openRate || 0,
+          clickRate: stats?.clickRate || 0,
+          bounceRate: stats?.bounceRate || 0,
+        },
+        dailyStats: stats?.dailyStats || [],
+        platformData: (stats?.emailsByPlatform || []).map((p: any) => ({
+          platform: platformLabels[p.platform] || p.platform,
+          count: p.count || 0,
+          percentage: '—',
+        })),
+      }
+      const res: any = await api.post('/reports/generate', { reportType, data: reportData })
+      const data = res.data || res
+      if (data.success !== false && data.data) {
+        setLastGeneratedReport(data.data)
+        message.success(`报告已生成: ${data.data.filename}`)
+        setEmailModalVisible(true)
+      } else {
+        message.error(data.message || '报告生成失败')
+      }
+    } catch (err: any) {
+      message.error(err.message || '报告生成失败')
+    }
+  }
+
+  // 发送邮件（带PDF附件）
+  const handleSendEmail = async () => {
+    const recipients = recipientInput.split(/[,;，；\n]+/).map(e => e.trim()).filter(Boolean)
+    if (recipients.length === 0) {
+      message.warning('请输入至少一个收件人邮箱')
+      return
+    }
+    if (!lastGeneratedReport?.reportId) {
+      message.error('请先生成报告')
+      return
+    }
+    setEmailSending(true)
+    try {
+      const res: any = await api.post('/reports/email', {
+        reportId: lastGeneratedReport.reportId,
+        recipientEmails: recipients,
+        subject: 'GlobalReach 数据分析报告',
+        message: '请查收附件中的数据分析报告。由 GlobalReach V2.0 Enterprise 自动生成。',
+      })
+      const data = res.data || res
+      if (data.success !== false) {
+        message.success(`报告已发送至 ${recipients.length} 个收件人`)
+        setEmailModalVisible(false)
+        setRecipientInput('')
+      } else {
+        message.error(data.message || '发送失败')
+      }
+    } catch (err: any) {
+      message.error(err.message || '邮件发送失败')
+    } finally {
+      setEmailSending(false)
+    }
+  }
+
   return (
+    <BrandedPageWrapper>
     <div>
       {/* Page Header */}
       <div className="gr-page-header">
@@ -143,14 +220,28 @@ const ReportsPage: React.FC = () => {
         ))}
       </Row>
 
-      {/* Export Buttons */}
-      <div style={{ marginBottom: 16, display: 'flex', gap: 8 }}>
+      {/* Export & PDF Buttons */}
+      <div style={{ marginBottom: 16, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
         <Button icon={<DownloadOutlined />} onClick={() => handleExport('platform')}>
           导出平台数据 (CSV)
         </Button>
         <Button icon={<DownloadOutlined />} onClick={() => handleExport('trend')}>
           导出趋势数据 (CSV)
         </Button>
+        <Button type="primary" icon={<BarChartOutlined />} onClick={() => handleGeneratePDF('analytics_dashboard')} style={{ background: 'var(--gr-primary)' }}>
+          生成分析报告 (PDF)
+        </Button>
+        <Button type="primary" icon={<SendOutlined />} onClick={() => handleGeneratePDF('analytics_dashboard')} style={{ background: 'var(--gr-success)' }}>
+          生成报告并发送邮件
+        </Button>
+        {lastGeneratedReport && (
+          <Button
+            icon={<MailOutlined />}
+            onClick={() => setEmailModalVisible(true)}
+          >
+            邮件发送 ({lastGeneratedReport.filename?.substring(0, 16)}...)
+          </Button>
+        )}
       </div>
 
       {/* Charts */}
@@ -293,7 +384,52 @@ const ReportsPage: React.FC = () => {
           </Card>
         </Col>
       </Row>
+
+      {/* 邮件发送 Modal */}
+      <Modal
+        title={
+          <Space>
+            <SendOutlined />
+            发送报告邮件
+          </Space>
+        }
+        open={emailModalVisible}
+        onCancel={() => setEmailModalVisible(false)}
+        onOk={handleSendEmail}
+        confirmLoading={emailSending}
+        okText="发送"
+        cancelText="取消"
+        width={520}
+      >
+        {lastGeneratedReport && (
+          <div style={{
+            background: 'var(--gr-gray-50)',
+            borderRadius: 6,
+            padding: '10px 14px',
+            marginBottom: 16,
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}>
+            <Text type="secondary">
+              <ClockCircleOutlined /> {lastGeneratedReport.filename}
+            </Text>
+            <Tag color="blue">{(lastGeneratedReport.size / 1024).toFixed(1)} KB</Tag>
+          </div>
+        )}
+        <Input.TextArea
+          rows={4}
+          placeholder="输入收件人邮箱，多个邮箱用逗号或分号分隔&#10;例如：user1@example.com, user2@example.com"
+          value={recipientInput}
+          onChange={(e) => setRecipientInput(e.target.value)}
+          style={{ marginBottom: 8 }}
+        />
+        <Text type="secondary" style={{ fontSize: 12 }}>
+          报告将作为PDF附件发送至指定收件人
+        </Text>
+      </Modal>
     </div>
+    </BrandedPageWrapper>
   )
 }
 

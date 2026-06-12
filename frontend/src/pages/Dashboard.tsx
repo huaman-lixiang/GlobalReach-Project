@@ -373,6 +373,7 @@ const Dashboard: React.FC = () => {
         </Col>
       </Row>
     </div>
+    </BrandedPageWrapper>
   )
 }
 

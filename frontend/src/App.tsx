@@ -47,6 +47,7 @@ const App: React.FC = () => {
             <Route path="reports" element={<Reports />} />
             <Route path="tenant-admin" element={<TenantAdmin />} />
             <Route path="settings" element={<Settings />} />
+            <Route path="deliverability-test" element={<DeliverabilityTest />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

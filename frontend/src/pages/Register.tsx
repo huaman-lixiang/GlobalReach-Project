@@ -4,6 +4,8 @@ import { UserOutlined, LockOutlined, MailOutlined, SafetyCertificateOutlined } f
 import { useNavigate, Link } from 'react-router-dom'
 import { useAppDispatch } from '@/store'
 import { register } from '@/store/slices/authSlice'
+import { useMobile } from '@/hooks/useMobile'
+import { registerTexts } from '@/i18n/register'
 
 const { Title, Text } = Typography
 
@@ -15,7 +17,7 @@ const RegisterPage: React.FC = () => {
 
   const onFinish = async (values: { name: string; email: string; password: string; confirmPassword: string }) => {
     if (values.password !== values.confirmPassword) {
-      message.error('两次输入的密码不一致')
+      message.error(registerTexts.messages.passwordMismatch)
       return
     }
     try {
@@ -25,10 +27,10 @@ const RegisterPage: React.FC = () => {
         email: values.email,
         password: values.password,
       })).unwrap()
-      message.success('注册成功！欢迎加入 GlobalReach')
+      message.success(registerTexts.messages.registerSuccess)
       navigate('/dashboard')
     } catch (err: any) {
-      message.error(err.message || '注册失败，请稍后重试')
+      message.error(err.message || registerTexts.messages.registerFailed)
     } finally {
       setLoading(false)
     }
@@ -43,7 +45,8 @@ const RegisterPage: React.FC = () => {
         overflow: 'hidden',
       }}
     >
-      {/* Left Panel - Branding */}
+      {/* Left Panel - Branding - hide on mobile */}
+      {!mobile.isMobile ? (
       <div
         style={{
           flex: '1',
@@ -86,19 +89,19 @@ const RegisterPage: React.FC = () => {
             <MailOutlined style={{ color: '#fff', fontSize: 36 }} />
           </div>
           <Title level={1} style={{ color: '#fff', marginBottom: 12, fontWeight: 800 }}>
-            创建账号
+            {registerTexts.brand.title}
           </Title>
           <Text style={{ color: 'rgba(255,255,255,0.75)', fontSize: 17, lineHeight: 1.7, display: 'block', maxWidth: 360 }}>
-            加入 GlobalReach 企业级邮件营销平台<br />
-            开启智能化的邮件营销之旅
+            {registerTexts.brand.tagline1}<br />
+            {registerTexts.brand.tagline2}
           </Text>
 
           {/* Feature highlights */}
           <div style={{ marginTop: 40, display: 'flex', gap: 24, justifyContent: 'center', flexWrap: 'wrap' }}>
             {[
-              { icon: '\u2705', label: '多平台支持' },
-              { icon: '\uD83D\uDCCA', label: '实时数据分析' },
-              { icon: '\uD83E\uDD11', label: '安全加密传输' },
+              { icon: '\u2705', label: registerTexts.brand.featureMultiPlatform },
+              { icon: '\uD83D\uDCCA', label: registerTexts.brand.featureRealtimeAnalytics },
+              { icon: '\uD83E\uDD11', label: registerTexts.brand.featureSecureEncryption },
             ].map((feat, i) => (
               <div key={i} style={{
                 padding: '10px 18px',
@@ -116,7 +119,7 @@ const RegisterPage: React.FC = () => {
       </div>
       ) : null}
 
-      {/* Right Panel - Registration Form - 移动端全宽 */}
+      {/* Right Panel - Registration Form - fullscreen on mobile */}
       <div
         style={{
           flex: '1',
@@ -139,7 +142,7 @@ const RegisterPage: React.FC = () => {
             background: '#ffffff',
           }}
         >
-          {/* 移动端 Logo */}
+          {/* Mobile Logo */}
           {mobile.isMobile && (
             <div style={{ textAlign: 'center', marginBottom: 20 }}>
               <div
@@ -156,17 +159,17 @@ const RegisterPage: React.FC = () => {
               >
                 <MailOutlined style={{ color: '#fff', fontSize: 26 }} />
               </div>
-              <Title level={4} style={{ color: '#fff', marginBottom: 2 }}>创建账号</Title>
-              <Text style={{ color: 'rgba(255,255,255,0.7)', fontSize: 12 }}>加入 GlobalReach</Text>
+              <Title level={4} style={{ color: '#fff', marginBottom: 2 }}>{registerTexts.mobile.title}</Title>
+              <Text style={{ color: 'rgba(255,255,255,0.7)', fontSize: 12 }}>{registerTexts.mobile.subtitle}</Text>
             </div>
           )}
 
           <div style={{ marginBottom: mobile.isMobile ? 24 : 32 }}>
             <Title level={3} style={{ marginBottom: 6, fontWeight: 800 }}>
-              注册新账号
+              {registerTexts.form.title}
             </Title>
             <Text type="secondary" style={{ fontSize: 14 }}>
-              填写以下信息创建您的企业账号
+              {registerTexts.form.subtitle}
             </Text>
           </div>
 
@@ -178,68 +181,68 @@ const RegisterPage: React.FC = () => {
           >
             <Form.Item
               name="name"
-              label={<span style={{ fontWeight: 600, fontSize: 13 }}>姓名</span>}
+              label={<span style={{ fontWeight: 600, fontSize: 13 }}>{registerTexts.form.nameLabel}</span>}
               rules={[
-                { required: true, message: '请输入姓名' },
-                { min: 2, message: '姓名至少2个字符' },
+                { required: true, message: registerTexts.form.nameRequired },
+                { min: 2, message: registerTexts.form.nameMinLength },
               ]}
             >
               <Input
                 prefix={<UserOutlined style={{ color: 'var(--gr-gray-400)' }} />}
-                placeholder="请输入您的姓名"
+                placeholder={registerTexts.form.namePlaceholder}
                 autoComplete="name"
               />
             </Form.Item>
 
             <Form.Item
               name="email"
-              label={<span style={{ fontWeight: 600, fontSize: 13 }}>邮箱地址</span>}
+              label={<span style={{ fontWeight: 600, fontSize: 13 }}>{registerTexts.form.emailLabel}</span>}
               rules={[
-                { required: true, message: '请输入邮箱地址' },
-                { type: 'email', message: '请输入有效的邮箱地址' },
+                { required: true, message: registerTexts.form.emailRequired },
+                { type: 'email', message: registerTexts.form.emailInvalid },
               ]}
             >
               <Input
                 prefix={<MailOutlined style={{ color: 'var(--gr-gray-400)' }} />}
-                placeholder="请输入您的邮箱"
+                placeholder={registerTexts.form.emailPlaceholder}
                 autoComplete="email"
               />
             </Form.Item>
 
             <Form.Item
               name="password"
-              label={<span style={{ fontWeight: 600, fontSize: 13 }}>密码</span>}
+              label={<span style={{ fontWeight: 600, fontSize: 13 }}>{registerTexts.form.passwordLabel}</span>}
               rules={[
-                { required: true, message: '请输入密码' },
-                { min: 8, message: '密码至少8个字符' },
+                { required: true, message: registerTexts.form.passwordRequired },
+                { min: 8, message: registerTexts.form.passwordMinLength },
               ]}
             >
               <Input.Password
                 prefix={<LockOutlined style={{ color: 'var(--gr-gray-400)' }} />}
-                placeholder="设置密码（至少8位）"
+                placeholder={registerTexts.form.passwordPlaceholder}
                 autoComplete="new-password"
               />
             </Form.Item>
 
             <Form.Item
               name="confirmPassword"
-              label={<span style={{ fontWeight: 600, fontSize: 13 }}>确认密码</span>}
+              label={<span style={{ fontWeight: 600, fontSize: 13 }}>{registerTexts.form.confirmPasswordLabel}</span>}
               dependencies={['password']}
               rules={[
-                { required: true, message: '请确认密码' },
+                { required: true, message: registerTexts.form.confirmPasswordRequired },
                 ({ getFieldValue }) => ({
                   validator(_, value) {
                     if (!value || getFieldValue('password') === value) {
                       return Promise.resolve()
                     }
-                    return Promise.reject(new Error('两次输入的密码不一致'))
+                    return Promise.reject(new Error(registerTexts.messages.passwordMismatch))
                   },
                 }),
               ]}
             >
               <Input.Password
                 prefix={<LockOutlined style={{ color: 'var(--gr-gray-400)' }} />}
-                placeholder="再次输入密码"
+                placeholder={registerTexts.form.confirmPasswordPlaceholder}
                 autoComplete="new-password"
               />
             </Form.Item>
@@ -252,16 +255,16 @@ const RegisterPage: React.FC = () => {
                 block
                 style={{ height: 46, fontSize: 15 }}
               >
-                立即注册
+                {registerTexts.form.submitBtn}
               </Button>
             </Form.Item>
           </Form>
 
           <div style={{ textAlign: 'center' }}>
             <Text type="secondary" style={{ fontSize: 13 }}>
-              已有账号？{' '}
+              {registerTexts.footer.hasAccount}{' '}
               <Link to="/login" style={{ fontWeight: 700, color: 'var(--gr-primary)' }}>
-                返回登录
+                {registerTexts.footer.backToLogin}
               </Link>
             </Text>
           </div>
@@ -281,7 +284,7 @@ const RegisterPage: React.FC = () => {
           >
             <SafetyCertificateOutlined style={{ color: 'var(--gr-success)', fontSize: 16, flexShrink: 0 }} />
             <Text style={{ color: 'var(--gr-success)', fontSize: 12, fontWeight: 500 }}>
-              您的信息将被安全存储，采用企业级加密标准保护
+              {registerTexts.security.badgeText}
             </Text>
           </div>
         </Card>

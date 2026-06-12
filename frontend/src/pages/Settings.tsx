@@ -20,15 +20,17 @@ import {
 import { useAppSelector, useAppDispatch } from '@/store'
 import api from '@/services/api'
 import { useTranslation } from 'react-i18next'
+import { settingsTexts } from '../i18n/settings'
+import BrandedPageWrapper from '@/components/BrandedPageWrapper'
 
 const { Title, Text } = Typography
 
-// SSO Provider 图标和名称映射
+// SSO Provider icon and name mapping
 const SSO_PROVIDER_CONFIG: Record<string, { icon: React.ReactNode; name: string; color: string }> = {
   google: { icon: <GoogleOutlined />, name: 'Google', color: '#DB4437' },
   github: { icon: <GithubOutlined />, name: 'GitHub', color: '#333' },
-  wecom: { icon: <WechatOutlined />, name: '企业微信', color: '#07C160' },
-  dingtalk: { icon: <DingtalkOutlined />, name: '钉钉', color: '#0089FF' },
+  wecom: { icon: <WechatOutlined />, name: settingsTexts.ssoProvider.wecom, color: '#07C160' },
+  dingtalk: { icon: <DingtalkOutlined />, name: settingsTexts.ssoProvider.dingtalk, color: '#0089FF' },
   keycloak: { icon: <KeyOutlined />, name: 'Keycloak', color: '#4A90D9' },
   auth0: { icon: <CloudServerOutlined />, name: 'Auth0', color: '#EB5424' },
   ldap: { icon: <SafetyCertificateOutlined />, name: 'Active Directory', color: '#00A4EF' },
@@ -44,7 +46,7 @@ const SettingsPage: React.FC = () => {
   const [saving, setSaving] = useState(false)
   const { t } = useTranslation()
 
-  // SSO 相关状态
+  // SSO related state
   const [ssoStatus, setSsoStatus] = useState<{
     linkedProviders: Array<{ provider: string; providerUserId: string; linkedAt: string; lastLoginAt: string }>
     availableProviders: string[]
@@ -488,6 +490,7 @@ const SettingsPage: React.FC = () => {
         </Form>
       </Modal>
     </div>
+    </BrandedPageWrapper>
   )
 }
 

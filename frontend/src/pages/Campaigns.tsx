@@ -29,6 +29,10 @@ import {
   ReloadOutlined,
   MailOutlined,
   FilterOutlined,
+  SafetyCertificateOutlined,
+  WarningOutlined,
+  ExportOutlined,
+  CheckCircleOutlined,
 } from '@ant-design/icons'
 import { useAppDispatch, useAppSelector } from '@/store'
 import {
@@ -75,24 +79,64 @@ const CreateWizardModal: React.FC<CreateWizardProps> = ({ visible, onClose, onSu
   const [form] = Form.useForm()
   const [currentStep, setCurrentStep] = useState(0)
   const [submitting, setSubmitting] = useState(false)
+  // 投递性检查状态
+  const [deliveryCheckLoading, setDeliveryCheckLoading] = useState(false)
+  const [deliveryResult, setDeliveryResult] = useState<any>(null)
+  const [createdCampaignId, setCreatedCampaignId] = useState<string | null>(null)
   const { t } = useTranslation()
 
   const steps = [
     { title: t('settings.personalInfo'), description: t('campaigns.name') },
     { title: t('emails.body'), description: t('campaigns.subject') },
     { title: t('emails.sendEmail'), description: t('emails.to') },
+    { title: '投递性检查', description: 'SPF/DKIM/DMARC' },
   ]
 
   const handleNext = async () => {
     try {
       if (currentStep === 0) {
         await form.validateFields(['name', 'type'])
+        setCurrentStep(currentStep + 1)
       } else if (currentStep === 1) {
         await form.validateFields(['subject_template', 'body_template'])
+        setCurrentStep(currentStep + 1)
+      } else if (currentStep === 2) {
+        // Step 2→3: 先创建Campaign，再进入投递性检查
+        setSubmitting(true)
+        try {
+          const values = await form.validateFields()
+          const res: any = await api.post('/campaigns', values)
+          const data = res.data || res
+          if (data.success !== false && data.data?.id) {
+            setCreatedCampaignId(data.data.id)
+            setCurrentStep(3)
+          } else {
+            message.error(data.message || '创建活动失败')
+          }
+        } catch (err: any) {
+          message.error(err.message || t('errors.internalServerError'))
+        } finally {
+          setSubmitting(false)
+        }
       }
-      setCurrentStep(currentStep + 1)
     } catch (_) {
       // Validation failed — stay on current step
+    }
+  }
+
+  // 执行投递性检查
+  const handleDeliveryCheck = async () => {
+    if (!createdCampaignId) return
+    setDeliveryCheckLoading(true)
+    try {
+      const res: any = await api.get(`/campaign-delivery/check/${createdCampaignId}`)
+      const data = res.data || res
+      setDeliveryResult(data.data || data)
+    } catch (err: any) {
+      message.error(err.message || '投递性检查失败')
+      setDeliveryResult({ canProceed: true, warning: 'check_failed', message: '检查失败，允许继续发送' })
+    } finally {
+      setDeliveryCheckLoading(false)
     }
   }
 
@@ -208,6 +252,120 @@ const CreateWizardModal: React.FC<CreateWizardProps> = ({ visible, onClose, onSu
             </div>
           </>
         )}
+
+        {/* Step 3: Deliverability Check (投递性检查) */}
+        {currentStep === 3 && (
+          <>
+            <Alert
+              type="info"
+              showIcon
+              style={{ marginBottom: 16 }}
+              message="发送前域名投递性检查"
+              description="系统将检查发件域名的 SPF/DKIM/DMARC 配置，确保邮件能正常送达收件箱。"
+            />
+
+            {!deliveryResult ? (
+              <div style={{ textAlign: 'center', padding: '30px 0' }}>
+                <SafetyCertificateOutlined style={{ fontSize: 48, color: 'var(--gr-primary)', marginBottom: 12 }} />
+                <Title level={5}>准备就绪</Title>
+                <Text type="secondary" style={{ display: 'block', marginBottom: 16 }}>
+                  活动已创建，点击下方按钮执行投递性检查
+                </Text>
+                <Button
+                  type="primary"
+                  size="large"
+                  icon={<SafetyCertificateOutlined />}
+                  loading={deliveryCheckLoading}
+                  onClick={handleDeliveryCheck}
+                >
+                  开始投递性检查
+                </Button>
+              </div>
+            ) : (
+              <div>
+                {deliveryResult.warning === 'critical' && (
+                  <Alert
+                    type="error"
+                    showIcon
+                    banner
+                    style={{ marginBottom: 16 }}
+                    message="⚠ 投递性评分严重不足！"
+                    description={deliveryResult.message}
+                  />
+                )}
+                {deliveryResult.warning === 'low_score' && (
+                  <Alert
+                    type="warning"
+                    showIcon
+                    banner
+                    style={{ marginBottom: 16 }}
+                    message="投递性评分较低"
+                    description={deliveryResult.message}
+                  />
+                )}
+                {deliveryResult.canProceed && !deliveryResult.warning && (
+                  <Alert
+                    type="success"
+                    showIcon
+                    banner
+                    style={{ marginBottom: 16 }}
+                    message="✓ 投递性检查通过"
+                    description={deliveryResult.message || '域名配置良好，可以发送'}
+                  />
+                )}
+
+                {deliveryResult.domains && deliveryResult.domains.length > 0 && (
+                  <div style={{ marginTop: 12 }}>
+                    {deliveryResult.domains.map((d: any, idx: number) => {
+                      const gradeColors: Record<string, string> = {
+                        A: '#52c41a', B: '#1890ff', C: '#faad14', D: '#ff7a45', F: '#ff4d4f',
+                      }
+                      return (
+                        <Card key={idx} size="small" style={{ marginBottom: 8 }}>
+                          <Space style={{ width: '100%', justifyContent: 'space-between' }}>
+                            <Text strong>{d.domain}</Text>
+                            <Tag color={gradeColors[d.overall?.grade] || '#999'} style={{ fontWeight: 700, fontSize: 14 }}>
+                              {d.overall?.grade}级 ({d.overall?.score || 0}/100)
+                            </Tag>
+                          </Space>
+                          <div style={{ marginTop: 8, display: 'flex', gap: 16, fontSize: 12 }}>
+                            <span>SPF: <Tag color={d.spf?.found ? 'green' : 'red'}>{d.spf?.found ? '✓' : '✗'} {d.spf?.score || 0}</Tag></span>
+                            <span>DKIM: <Tag color={d.dkim?.found ? 'green' : 'red'}>{d.dkim?.found ? '✓' : '✗'} {d.dkim?.score || 0}</Tag></span>
+                            <span>DMARC: <Tag color={d.dmarc?.found ? 'green' : 'red'}>{d.dmarc?.found ? `✓ p=${d.dmarc.policy}` : '✗'} {d.dmarc?.score || 0}</Tag></span>
+                          </div>
+                        </Card>
+                      )
+                    })}
+                  </div>
+                )}
+
+                {deliveryResult.domains?.[0]?.recommendations && deliveryResult.domains[0].recommendations.length > 0 && (
+                  <Collapse
+                    ghost
+                    style={{ marginTop: 12 }}
+                    items={[{
+                      key: 'recs',
+                      label: <Text strong><WarningOutlined /> 查看改进建议</Text>,
+                      children: (
+                        <ul style={{ paddingLeft: 20, margin: 0 }}>
+                          {deliveryResult.domains[0].recommendations.map((r: any, i: number) => (
+                            <li key={i}><strong>[{r.priority}]</strong> {r.title}: {r.description}</li>
+                          ))}
+                        </ul>
+                      ),
+                    }]}
+                  />
+                )}
+
+                <div style={{ marginTop: 12, textAlign: 'center' }}>
+                  <Button type="link" onClick={() => window.location.href = '/deliverability-test'}>
+                    <ExportOutlined /> 查看详细投递性报告 →
+                  </Button>
+                </div>
+              </div>
+            )}
+          </>
+        )}
       </Form>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 24 }}>
@@ -215,16 +373,16 @@ const CreateWizardModal: React.FC<CreateWizardProps> = ({ visible, onClose, onSu
           {t('common.previous')}
         </Button>
         <Space>
-          <Button onClick={() => { form.resetFields(); setCurrentStep(0); onClose() }}>
+          <Button onClick={() => { form.resetFields(); setCurrentStep(0); setDeliveryResult(null); setCreatedCampaignId(null); onClose() }}>
             {t('common.cancel')}
           </Button>
-          {currentStep < 2 ? (
-            <Button type="primary" onClick={handleNext}>
-              {t('common.next')}
+          {currentStep < 3 ? (
+            <Button type="primary" onClick={handleNext} loading={submitting && currentStep === 2}>
+              {currentStep === 2 ? '创建并继续' : t('common.next')}
             </Button>
           ) : (
-            <Button type="primary" loading={submitting} onClick={handleSubmit} icon={<SendOutlined />}>
-              {t('campaigns.createCampaign')}
+            <Button type="primary" icon={<CheckCircleOutlined />} onClick={handleSubmit}>
+              完成创建
             </Button>
           )}
         </Space>
@@ -553,6 +711,7 @@ const CampaignsPage: React.FC = () => {
   ]
 
   return (
+    <BrandedPageWrapper>
     <div>
       {/* Page Header */}
       <div className="gr-page-header">
@@ -696,6 +855,7 @@ const CampaignsPage: React.FC = () => {
         onClose={() => { setProgressVisible(false); setProgressCampaignId(null) }}
       />
     </div>
+    </BrandedPageWrapper>
   )
 }
 

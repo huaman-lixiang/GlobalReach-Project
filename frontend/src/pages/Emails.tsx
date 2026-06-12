@@ -11,6 +11,7 @@ import { useAppDispatch, useAppSelector } from '@/store'
 import { fetchEmails, resendEmail } from '@/store/slices/emailsSlice'
 import { useTranslation } from 'react-i18next'
 import useMobile from '@/hooks/useMobile'
+import { emailsTexts } from '../i18n/emails'
 
 const { Title, Text } = Typography
 
@@ -45,30 +46,30 @@ const EmailDetailModal: React.FC<EmailDetailModalProps> = ({ visible, record, on
       icon: null,
       content: (
         <Descriptions column={1} bordered size="small">
-          <Descriptions.Item label="ID">
+          <Descriptions.Item label={emailsTexts.detail.id}>
             <Text copyable>{record.id}</Text>
           </Descriptions.Item>
           <Descriptions.Item label={t('emails.to')}>{record.toAddress}</Descriptions.Item>
           <Descriptions.Item label={t('emails.from')}>{record.fromAddress}</Descriptions.Item>
           <Descriptions.Item label={t('emails.subject')}>{record.subject}</Descriptions.Item>
-          <Descriptions.Item label="状态">
+          <Descriptions.Item label={t('emails.status')}>
             <Tag color={statusColors[record.status] || 'default'}>
               {statusLabels[record.status] || record.status}
             </Tag>
           </Descriptions.Item>
           {record.sentAt && (
-            <Descriptions.Item label="发送时间">{new Date(record.sentAt).toLocaleString()}</Descriptions.Item>
+            <Descriptions.Item label={emailsTexts.detail.sentTime}>{new Date(record.sentAt).toLocaleString()}</Descriptions.Item>
           )}
-          <Descriptions.Item label="创建时间">{new Date(record.createdAt).toLocaleString()}</Descriptions.Item>
+          <Descriptions.Item label={emailsTexts.detail.createdAt}>{new Date(record.createdAt).toLocaleString()}</Descriptions.Item>
           {record.errorMessage && (
-            <Descriptions.Item label="错误信息">
+            <Descriptions.Item label={emailsTexts.detail.errorMessage}>
               <Text type="danger">{record.errorMessage}</Text>
             </Descriptions.Item>
           )}
         </Descriptions>
       ),
       onOk: onClose,
-      okText: '关闭',
+      okText: emailsTexts.messages.close,
       width: mobile.isMobile ? '95%' : 650,
       centered: true,
     })
@@ -76,7 +77,7 @@ const EmailDetailModal: React.FC<EmailDetailModalProps> = ({ visible, record, on
 }
 
 // ============================================
-// 移动端邮件卡片列表项
+// Mobile email card list item
 // ============================================
 
 interface EmailCardItemProps {
@@ -88,11 +89,11 @@ interface EmailCardItemProps {
 
 const EmailCardItem: React.FC<EmailCardItemProps> = ({ record, onView, onResend, resendingId }) => {
   const config: Record<string, { color: string; text: string }> = {
-    pending: { color: 'default', text: '待发送' },
-    sent: { color: 'processing', text: '发送中' },
-    delivered: { color: 'success', text: '已送达' },
-    bounced: { color: 'warning', text: '退信' },
-    failed: { color: 'error', text: '失败' },
+    pending: { color: 'default', text: emailsTexts.status.pending },
+    sent: { color: 'processing', text: emailsTexts.status.sending },
+    delivered: { color: 'success', text: emailsTexts.status.delivered },
+    bounced: { color: 'warning', text: emailsTexts.status.bounced },
+    failed: { color: 'error', text: emailsTexts.status.failed },
   }
   const c = config[record.status] || config.pending
 
@@ -116,14 +117,14 @@ const EmailCardItem: React.FC<EmailCardItemProps> = ({ record, onView, onResend,
       </div>
       <div className="mobile-card-actions mobile-action-buttons">
         <Button size="small" icon={<EyeOutlined />} onClick={(e) => { e?.stopPropagation(); onView(record) }}>
-          详情
+          {emailsTexts.actions.details}
         </Button>
         {(record.status === 'failed' || record.status === 'bounced') && (
           <Popconfirm
-            title="确定要重新发送这封邮件吗？"
+            title={emailsTexts.actions.resendConfirm}
             onConfirm={(e) => { e?.stopPropagation(); onResend(record.id) }}
-            okText="确定"
-            cancelText="取消"
+            okText={emailsTexts.actions.resendOk}
+            cancelText={emailsTexts.actions.resendCancel}
           >
             <Button
               size="small"
@@ -132,7 +133,7 @@ const EmailCardItem: React.FC<EmailCardItemProps> = ({ record, onView, onResend,
               onClick={(e) => e.stopPropagation()}
               style={{ color: 'var(--gr-primary)', fontWeight: 600 }}
             >
-              重发
+              {emailsTexts.actions.resend}
             </Button>
           </Popconfirm>
         )}
@@ -165,10 +166,10 @@ const EmailsPage: React.FC = () => {
     setResendingId(id)
     try {
       await dispatch(resendEmail(id)).unwrap()
-      message.success('重发请求已提交')
+      message.success(emailsTexts.messages.resendSubmitted)
       dispatch(fetchEmails(searchParams))
     } catch (err: any) {
-      message.error(err.message || '重发失败')
+      message.error(err.message || emailsTexts.messages.resendFailed)
     } finally {
       setResendingId(null)
     }
@@ -176,49 +177,49 @@ const EmailsPage: React.FC = () => {
 
   const columns = [
     {
-      title: '收件人',
+      title: emailsTexts.table.recipient,
       dataIndex: 'toAddress',
       key: 'toAddress',
       ellipsis: true,
       render: (text: string) => <a>{text}</a>,
     },
     {
-      title: '主题',
+      title: emailsTexts.table.subject,
       dataIndex: 'subject',
       key: 'subject',
       ellipsis: true,
     },
     {
-      title: '状态',
+      title: emailsTexts.table.status,
       dataIndex: 'status',
       key: 'status',
       width: 100,
       render: (status: string) => {
         const config: Record<string, { color: string; text: string }> = {
-          pending: { color: 'default', text: '待发送' },
-          sent: { color: 'processing', text: '发送中' },
-          delivered: { color: 'success', text: '已送达' },
-          bounced: { color: 'warning', text: '退信' },
-          failed: { color: 'error', text: '失败' },
+          pending: { color: 'default', text: emailsTexts.status.pending },
+          sent: { color: 'processing', text: emailsTexts.status.sending },
+          delivered: { color: 'success', text: emailsTexts.status.delivered },
+          bounced: { color: 'warning', text: emailsTexts.status.bounced },
+          failed: { color: 'error', text: emailsTexts.status.failed },
         }
         const c = config[status] || config.pending
         return <Tag color={c.color}>{c.text}</Tag>
       },
     },
     {
-      title: '发送时间',
+      title: emailsTexts.table.sentAt,
       dataIndex: 'sentAt',
       key: 'sentAt',
       width: 170,
       render: (val: string) => val ? new Date(val).toLocaleString() : '-',
     },
     {
-      title: '操作',
+      title: emailsTexts.table.actions,
       key: 'action',
       width: 180,
       render: (_: any, record: any) => (
         <Space size="small">
-          <Tooltip title="查看详情">
+          <Tooltip title={emailsTexts.actions.viewDetails}>
             <Button
               type="link" size="small"
               icon={<EyeOutlined />}
@@ -227,17 +228,17 @@ const EmailsPage: React.FC = () => {
           </Tooltip>
           {(record.status === 'failed' || record.status === 'bounced') && (
             <Popconfirm
-              title="确定要重新发送这封邮件吗？"
+              title={emailsTexts.actions.resendConfirm}
               onConfirm={() => handleResend(record.id)}
-              okText="确定"
-              cancelText="取消"
+              okText={emailsTexts.actions.resendOk}
+              cancelText={emailsTexts.actions.resendCancel}
             >
               <Button
                 type="link" size="small" icon={<SendOutlined />}
                 loading={resendingId === record.id}
                 style={{ color: 'var(--gr-primary)', fontWeight: 600 }}
               >
-                重发
+                {emailsTexts.actions.resend}
               </Button>
             </Popconfirm>
           )}
@@ -247,23 +248,24 @@ const EmailsPage: React.FC = () => {
   ]
 
   return (
+    <BrandedPageWrapper>
     <div>
       {/* Page Header */}
       <div className="gr-page-header">
         <Title level={4} style={{ margin: 0, display: 'flex', alignItems: 'center', gap: 10 }}>
           <SendOutlined style={{ color: 'var(--gr-primary)', fontSize: 20 }} />
-          邮件发送记录
+          {emailsTexts.page.title}
         </Title>
         {!mobile.isMobile && (
           <Button icon={<ReloadOutlined />} onClick={() => dispatch(fetchEmails(searchParams))}>
-            刷新数据
+            {emailsTexts.page.refreshData}
           </Button>
         )}
       </div>
 
       <Card>
 
-        {/* 筛选区域 - 移动端使用抽屉 */}
+        {/* Filter area - mobile uses drawer */}
         {mobile.isMobile ? (
           <div style={{ marginBottom: 12 }}>
             <button
@@ -271,11 +273,11 @@ const EmailsPage: React.FC = () => {
               onClick={() => setFilterDrawerVisible(true)}
               type="button"
             >
-              <FilterOutlined /> 筛选与搜索
+              <FilterOutlined /> {emailsTexts.filter.filterAndSearch}
             </button>
 
             <Drawer
-              title="筛选条件"
+              title={emailsTexts.filter.drawerTitle}
               placement="bottom"
               height="auto"
               open={filterDrawerVisible}
@@ -283,17 +285,17 @@ const EmailsPage: React.FC = () => {
               styles={{ body: { paddingTop: 16 } }}
             >
               <Space direction="vertical" style={{ width: '100%' }} size={12}>
-                <Input placeholder="搜索收件人或主题..." allowClear prefix={<SearchOutlined />} />
-                <Select placeholder="状态筛选" allowClear style={{ width: '100%' }}>
-                  <Option value="pending">待发送</Option>
-                  <Option value="sent">已发送</Option>
-                  <Option value="delivered">已送达</Option>
-                  <Option value="bounced">退信</Option>
-                  <Option value="failed">失败</Option>
+                <Input placeholder={emailsTexts.filter.searchPlaceholder} allowClear prefix={<SearchOutlined />} />
+                <Select placeholder={emailsTexts.filter.statusPlaceholder} allowClear style={{ width: '100%' }}>
+                  <Option value="pending">{emailsTexts.status.pending}</Option>
+                  <Option value="sent">{emailsTexts.status.sending}</Option>
+                  <Option value="delivered">{emailsTexts.status.delivered}</Option>
+                  <Option value="bounced">{emailsTexts.status.bounced}</Option>
+                  <Option value="failed">{emailsTexts.status.failed}</Option>
                 </Select>
                 <div style={{ display: 'flex', gap: 8 }}>
-                  <Button block onClick={() => setFilterDrawerVisible(false)}>取消</Button>
-                  <Button type="primary" block icon={<SearchOutlined />}>搜索</Button>
+                  <Button block onClick={() => setFilterDrawerVisible(false)}>{emailsTexts.filter.cancel}</Button>
+                  <Button type="primary" block icon={<SearchOutlined />}>{emailsTexts.filter.search}</Button>
                 </div>
               </Space>
             </Drawer>
@@ -301,7 +303,7 @@ const EmailsPage: React.FC = () => {
         ) : (
           <Space style={{ marginBottom: 16 }} wrap>
             <Input
-              placeholder="搜索收件人或主题..."
+              placeholder={emailsTexts.filter.searchPlaceholder}
               allowClear
               style={{ width: 250 }}
               prefix={<SearchOutlined />}
@@ -309,28 +311,28 @@ const EmailsPage: React.FC = () => {
               onPressEnter={() => setSearchParams({ ...searchParams, page: 1 })}
             />
             <Select
-              placeholder="筛选状态"
+              placeholder={emailsTexts.filter.statusPlaceholder}
               allowClear
               style={{ width: 140 }}
               onChange={(value) => setSearchParams({ ...searchParams, status: value })}
             >
-              <Option value="pending">待发送</Option>
-              <Option value="sent">已发送</Option>
-              <Option value="delivered">已送达</Option>
-              <Option value="bounced">退信</Option>
-              <Option value="failed">失败</Option>
+              <Option value="pending">{emailsTexts.status.pending}</Option>
+              <Option value="sent">{emailsTexts.status.sending}</Option>
+              <Option value="delivered">{emailsTexts.status.delivered}</Option>
+              <Option value="bounced">{emailsTexts.status.bounced}</Option>
+              <Option value="failed">{emailsTexts.status.failed}</Option>
             </Select>
             <Button icon={<FilterOutlined />} onClick={() => setSearchParams({ ...searchParams, page: 1 })}>
-              筛选
+              {emailsTexts.filter.filterBtn}
             </Button>
           </Space>
         )}
 
-        {/* 移动端：卡片列表视图；桌面端：表格视图 */}
+        {/* Mobile: card list view; Desktop: table view */}
         {mobile.isMobile ? (
           <div className="mobile-card-list">
             {emails.length === 0 && !loading && (
-              <Empty description="暂无邮件记录" style={{ padding: '40px 0' }} />
+              <Empty description={emailsTexts.empty.noRecords} style={{ padding: '40px 0' }} />
             )}
             {emails.map((record: any) => (
               <EmailCardItem
@@ -342,7 +344,7 @@ const EmailsPage: React.FC = () => {
               />
             ))}
 
-            {/* 移动端刷新按钮 */}
+            {/* Mobile refresh button (FAB) */}
             <Button
               type="primary"
               shape="circle"
@@ -354,7 +356,7 @@ const EmailsPage: React.FC = () => {
 
             {total > 10 && (
               <div style={{ textAlign: 'center', marginTop: 16 }}>
-                <Text type="secondary" style={{ fontSize: 12 }}>共 {total} 条记录</Text>
+                <Text type="secondary" style={{ fontSize: 12 }}>{emailsTexts.table.totalRecords(total)}</Text>
               </div>
             )}
           </div>
@@ -370,7 +372,7 @@ const EmailsPage: React.FC = () => {
               total,
               showSizeChanger: true,
               showQuickJumper: true,
-              showTotal: (total) => `共 ${total} 条记录`,
+              showTotal: (total) => emailsTexts.table.totalRecords(total),
               onChange: (page, pageSize) =>
                 setSearchParams({ ...searchParams, page, pageSize }),
             }}
@@ -379,13 +381,14 @@ const EmailsPage: React.FC = () => {
         )}
       </Card>
 
-      {/* 邮件详情弹窗 - 移动端全屏化 */}
+      {/* Email detail modal - fullscreen on mobile */}
       <EmailDetailModal
         visible={detailVisible}
         record={selectedEmail}
         onClose={() => { setDetailVisible(false); setSelectedEmail(null) }}
       />
     </div>
+    </BrandedPageWrapper>
   )
 }
 
